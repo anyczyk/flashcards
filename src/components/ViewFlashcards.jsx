@@ -9,6 +9,7 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
     const [selectedCategory, setSelectedCategory] = useState(null);
     const [learningFilter, setLearningFilter] = useState(null); // Inicjalizacja jako null
     const [orderedFlashcards, setOrderedFlashcards] = useState([]); // Nowy stan dla uporządkowanej listy fiszek
+    const [checkedCards, setCheckedCards] = useState(new Set()); // Nowy stan dla sprawdzonych fiszek
 
     // Czy w wybranej kategorii są fiszki do nauki (know !== true)?
     const hasLearningCards = flashcards.some(fc => {
@@ -41,7 +42,7 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
         return filtered.length;
     };
 
-    // Shuffling fiszek i ustawienie orderedFlashcards tylko przy zmianie kategorii lub filtra
+    // Pierwszy useEffect: Tasowanie fiszek tylko przy zmianie kategorii lub filtra
     useEffect(() => {
         let filtered = [];
         if (selectedCategory === 'All') {
@@ -56,7 +57,7 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
             filtered = filtered.filter(fc => fc.know !== true);
         }
 
-        // Shuffle the filtered list using Fisher-Yates algorithm
+        // Tasowanie listy za pomocą algorytmu Fisher-Yates
         for (let i = filtered.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
             [filtered[i], filtered[j]] = [filtered[j], filtered[i]];
@@ -65,7 +66,7 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
         setOrderedFlashcards(filtered);
     }, [selectedCategory, learningFilter]); // Zależności tylko od kategorii i filtra
 
-    // Nowy useEffect do usuwania znanych fiszek w trybie "Do nauki"
+    // Drugi useEffect: Aktualizacja listy fiszek w trybie "Do nauki" przy zmianie flashcards
     useEffect(() => {
         if (selectedCategory !== null && learningFilter === 'learningOnly') {
             setOrderedFlashcards(prev => prev.filter(card => {
@@ -95,6 +96,12 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
         if (learningFilter === 'all' || learningFilter === 'learningOnly') {
             moveCardToFront(id);
         }
+        // Resetujemy stan sprawdzenia
+        setCheckedCards(prev => {
+            const newSet = new Set(prev);
+            newSet.delete(id);
+            return newSet;
+        });
     };
 
     const knowIt = (id) => {
@@ -104,6 +111,12 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
         if (learningFilter === 'all') {
             moveCardToFront(id);
         }
+        // Resetujemy stan sprawdzenia
+        setCheckedCards(prev => {
+            const newSet = new Set(prev);
+            newSet.delete(id);
+            return newSet;
+        });
     };
 
     // Funkcja obsługująca swipe
@@ -126,6 +139,18 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
             setFlashcardKnow(id, 'dol');
             // Opcjonalnie: Przenieś na początek, jeśli jest to wymagane
         }
+
+        // Resetujemy stan sprawdzenia po przesunięciu
+        setCheckedCards(prev => {
+            const newSet = new Set(prev);
+            newSet.delete(id);
+            return newSet;
+        });
+    };
+
+    // Funkcja do obsługi kliknięcia "Sprawdź"
+    const handleCheck = (id) => {
+        setCheckedCards(prev => new Set(prev).add(id));
     };
 
     return (
@@ -133,7 +158,7 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
             <div className="o-page-view-flashcards__header">
                 {selectedCategory !== null && (
                     <p>
-                        <button onClick={() => { setSelectedCategory(null); setLearningFilter(null); }}>
+                        <button onClick={() => { setSelectedCategory(null); setLearningFilter(null); setCheckedCards(new Set()); }}>
                             Wybierz inną kategorię
                         </button>
                     </p>
@@ -228,27 +253,39 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
                                                 zIndex: index
                                             }}
                                         >
-                                            <div className="o-list-flashcards__front">
+                                            <div className="o-list-flashcards__front o-default-box">
                                                 <p>{card.front}</p>
                                             </div>
-                                            <div className="o-list-flashcards__back">
-                                                <p>{card.back}</p>
-                                            </div>
-                                            <div className="o-list-flashcards__category">
-                                                <strong>Kategoria:</strong> {card.category && card.category.trim() !== '' ? card.category : 'Bez kategorii'}
-                                            </div>
+                                            <hr />
+                                            {checkedCards.has(card.id) && (
+                                                <div className="o-list-flashcards__back">
+                                                    <p>{card.back}</p>
+                                                </div>
+                                            )}
                                             <div className="o-list-flashcards__know">
                                                 <p>{card.know ? 'Już to znam' : 'Uczę się'}</p>
-                                                <ul className="o-list-buttons-clear">
-                                                    <li>
-                                                        <button onClick={() => learnIt(card.id)}>Uczę się</button>
-                                                    </li>
-                                                    <li>
-                                                        <button className="btn--green"
-                                                                onClick={() => knowIt(card.id)}>Już to znam
-                                                        </button>
-                                                    </li>
-                                                </ul>
+                                                {!checkedCards.has(card.id) ? (
+                                                    <button
+                                                        className="o-list-flashcards__know-check btn--blue"
+                                                        onClick={() => handleCheck(card.id)}
+                                                    >
+                                                        Sprawdź
+                                                    </button>
+                                                ) : (
+                                                    <ul className="o-list-buttons-clear">
+                                                        <li>
+                                                            <button onClick={() => learnIt(card.id)}>Uczę się</button>
+                                                        </li>
+                                                        <li>
+                                                            <button
+                                                                className="btn--green"
+                                                                onClick={() => knowIt(card.id)}
+                                                            >
+                                                                Już to znam
+                                                            </button>
+                                                        </li>
+                                                    </ul>
+                                                )}
                                             </div>
                                         </motion.li>
                                     ))}
@@ -269,6 +306,7 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
                                     onClick={() => {
                                         setSelectedCategory('All');
                                         setLearningFilter(null); // Reset filtra przy wyborze kategorii
+                                        setCheckedCards(new Set()); // Reset checkedCards przy zmianie kategorii
                                     }}
                                 >
                                     {t('all')} ({flashcards.length})
@@ -289,6 +327,7 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
                                             onClick={() => {
                                                 setSelectedCategory(cat);
                                                 setLearningFilter(null); // Reset filtra przy wyborze kategorii
+                                                setCheckedCards(new Set()); // Reset checkedCards przy zmianie kategorii
                                             }}
                                         >
                                             {(cat === 'Without category') ? t('without_category') : cat} ({count})

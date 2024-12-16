@@ -48,6 +48,7 @@ hr {
   border-bottom: none;
   margin-bottom: vars.$padding-default;
   margin-top: 0;
+  width: 100%;
 }
 
 .color-red {
@@ -152,6 +153,10 @@ hr {
 
   &__know {
     margin-top: auto;
+
+    &-check {
+      width: 100%;
+    }
 
     .o-list-buttons-clear li {
       flex: 0 0 calc(50% - (vars.$padding-smaller / 2));

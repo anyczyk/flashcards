@@ -44,6 +44,16 @@ button,
 
   }
 
+  &--blue {
+    background-color: var(--color-blue);
+
+    &:active:not([disabled]) {
+      background-color: #fff;
+      color: var(--color-blue);
+    }
+
+  }
+
   &--active {
     font-weight: 700;
   }
