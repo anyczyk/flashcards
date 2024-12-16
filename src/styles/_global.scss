@@ -144,8 +144,9 @@ hr {
     padding: vars.$padding-smaller;
     border-radius: 12px;
 
+    &:last-child,
     &:first-child {
-      box-shadow: 0 0 6px var(--color-black);
+      box-shadow: 0 0 6px var(--color-black-opacity-50);
     }
   }
 
@@ -175,4 +176,9 @@ hr {
     flex: 1;
     display: flex;
   }
+}
+
+.o-fade-hidden {
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
