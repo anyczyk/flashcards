@@ -1,20 +1,39 @@
 // App.jsx
-import React, { useState, useEffect, useCallback } from 'react';
-import { Routes, Route, Link, Navigate } from 'react-router-dom';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
+import { Routes, Route, Link, Navigate, useLocation } from 'react-router-dom';
 import CreateFlashcard from './components/CreateFlashcard';
 import EditFlashcardList from './components/EditFlashcardList';
 import ViewFlashcards from './components/ViewFlashcards';
 import ImportExport from './components/ImportExport';
 import { getAllFlashcards, addFlashcardToDB, removeFlashcardFromDB, editFlashcardInDB } from './db';
-import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 function App() {
     const { t, i18n } = useTranslation();
     const [flashcards, setFlashcards] = useState([]);
     const [categories, setCategories] = useState([]);
+    const [mainMenuVisible, setMainMenuVisible] = useState(false);
+    const closeMenuRef = useRef(null);
+    const closeMenuBtnRef = useRef(null);
+    const location = useLocation();
 
-    const navigate = useNavigate();
+    useEffect(() => {
+        const handleClick = (event) => {
+            const checkAllOutise = closeMenuRef.current && !closeMenuRef.current.contains(event.target);
+            const checkBtnMenu = closeMenuBtnRef.current && !closeMenuBtnRef.current.contains(event.target);
+            if(checkAllOutise && checkBtnMenu) {
+                setMainMenuVisible(false);
+            }
+        };
+        document.addEventListener('click', handleClick);
+        return () => {
+            document.removeEventListener('click', handleClick);
+        };
+    }, []);
+
+    const showMainMenu = () => {
+        setMainMenuVisible(prevState => !prevState);
+    };
 
     const loadData = useCallback(async () => {
         const data = await getAllFlashcards();
@@ -99,33 +118,57 @@ function App() {
     };
 
     return (
-        <div>
-            <nav>
+        <div className="o">
+            <header className="o-main-header">
+                <h1><Link to="/">Flasho</Link> - {t('simple_flashcard_creator')}</h1>
+                <button ref={closeMenuBtnRef} onClick={showMainMenu} className={`o-main-header__btn-menu ${mainMenuVisible ? 'o-main-header__btn-menu--active' : ''}`} aria-label="Open and close menu"><span>Menu</span></button>
+
+                <div ref={closeMenuRef} className={`o-main-header__menu ${mainMenuVisible ? 'o-main-header__menu--active' : ''}`}>
+                    <div>
+                        <label for="o-lang">{i18n.language}</label>
+                        <select id="o-lang" onChange={(e) => changeLanguage(e.target.value)} value={getLanguageCode(i18n.language)}>
+                            <option value="en">English</option>
+                            <option value="pl">Polski</option>
+                        </select>
+                    </div>
+                    <nav>
+                        <ul>
+                            <li><Link to="/"><i className="icon-play"></i> {t('view_flashcards')}</Link></li>
+                            <li><Link to="/create"><i className="icon-plus"></i> {t('create_flashcard')}</Link></li>
+                            <li><Link to="/list-edit"><i className="icon-wrench"></i> {t('edit_flashcards')}</Link></li>
+                            <li><Link to="/import-export"><i className="icon-export"></i> {t('import_export')}</Link></li>
+                        </ul>
+                    </nav>
+                    <div>
+                        <p>Version: v1.0.1 {window.cordova ? 'App' : 'Browser'}</p>
+                    </div>
+                </div>
+            </header>
+            <main className="o-main-content">
+                {location.pathname !== "/" && (
+                    <p><Link className="o-main-start btn btn--green" to="/"><i className="icon-play"></i> {t('view_flashcards')}</Link></p>
+                )}
+
+                <Routes>
+                    <Route path="/" element={<ViewFlashcards flashcards={flashcards} categories={categories}
+                                                             setFlashcardKnow={setFlashcardKnow}/>}/>
+                    <Route path="/create"
+                           element={<CreateFlashcard addFlashcard={addFlashcard} categories={categories}/>}/>
+                    <Route path="/list-edit"
+                           element={<EditFlashcardList flashcards={flashcards} removeFlashcard={removeFlashcard}
+                                                       editFlashcard={editFlashcard} categories={categories}/>}/>
+                    <Route path="/import-export" element={<ImportExport flashcards={flashcards} onImport={handleImport}/>}/>
+                    {/* Trasa domyślna */}
+                    <Route path="*" element={<Navigate to="/" replace/>}/>
+                </Routes>
+            </main>
+            <footer className="o-main-footer">
                 <ul>
-                    <li><Link to="/">{t('view_flashcards')}</Link></li>
-                    <li><Link to="/create">{t('create_flashcard')}</Link></li>
-                    <li><Link to="/list-edit">{t('edit_flashcards')}</Link></li>
-                    <li><Link to="/import-export">{t('import_export')}</Link></li>
+                    <li><Link aria-label={t('view_flashcards')} to="/"><i className="icon-play"></i></Link></li>
+                    <li><Link aria-label={t('create_flashcard')} to="/create"><i className="icon-plus"></i></Link></li>
+                    <li><Link aria-label={t('edit_flashcards')} to="/list-edit"><i className="icon-wrench"></i></Link></li>
+                    <li><Link aria-label={t('import_export')} to="/import-export"><i className="icon-export"></i></Link></li>
                 </ul>
-                {i18n.language}
-                <select onChange={(e) => changeLanguage(e.target.value)} value={getLanguageCode(i18n.language)}>
-                    <option value="en">English</option>
-                    <option value="pl">Polski</option>
-                </select>
-            </nav>
-
-            <Routes>
-                <Route path="/" element={<ViewFlashcards flashcards={flashcards} categories={categories}
-                                                         setFlashcardKnow={setFlashcardKnow} />} />
-                <Route path="/create" element={<CreateFlashcard addFlashcard={addFlashcard} categories={categories} />} />
-                <Route path="/list-edit" element={<EditFlashcardList flashcards={flashcards} removeFlashcard={removeFlashcard} editFlashcard={editFlashcard} categories={categories} />} />
-                <Route path="/import-export" element={<ImportExport onImport={handleImport} />} />
-                {/* Trasa domyślna */}
-                <Route path="*" element={<Navigate to="/" replace />} />
-            </Routes>
-
-            <footer>
-                <p>{window.cordova ? 'Cordova' : 'Browser'}</p>
             </footer>
         </div>
     );

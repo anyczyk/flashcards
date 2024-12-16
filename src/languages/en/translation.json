@@ -1,8 +1,10 @@
 {
-  "view_flashcards": "Flashcards",
+  "simple_flashcard_creator" : "Flashcard creator",
+  "view_flashcards": "Start your learning",
   "create_flashcard": "Create flashcard",
   "edit_flashcards": "Edit flashcards",
   "import_export": "Import/Export",
   "without_category": "Without category",
-  "all": "All"
+  "all": "All",
+  "no_flashcards": "Currently no flashcards"
 }

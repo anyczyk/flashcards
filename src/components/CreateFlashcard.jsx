@@ -49,44 +49,51 @@ function CreateFlashcard({ addFlashcard, categories }) {
     const filteredCategories = categories.filter(cat => cat.toLowerCase() !== 'Without category');
 
     return (
-        <div>
+        <div className="o-page-create-flashcard">
             <h2>Create a new Flashcard</h2>
-            {flashcardCreated && <div style={{color: 'green'}}>Fiszka utworzona!</div>}
+            <hr/>
+            {flashcardCreated && <p className="color-green">Fiszka utworzona!</p>}
             <form onSubmit={handleSubmit}>
-                <div>
-                    <label>Front:</label><br />
+                <p>
+                    <label for="o-front">Front:</label>
                     <textarea
                         value={front}
                         onChange={(e) => setFront(e.target.value)}
                         rows="3"
                         cols="30"
+                        id="o-front"
                     />
-                </div>
-                <div>
-                    <label>Back:</label><br />
+                </p>
+                <hr/>
+                <p>
+                    <label for="o-back">Back:</label>
                     <textarea
                         value={back}
                         onChange={(e) => setBack(e.target.value)}
                         rows="3"
                         cols="30"
+                        id="o-back"
                     />
-                </div>
-                <div>
-                    <label>Category (choose existing or type new):</label><br />
-                    <select onChange={handleCategorySelect} value={category ? category : ''}>
+                </p>
+                <hr/>
+                <p>
+                    <label for="o-category">Category (choose existing or type new):</label><br/>
+                    <select id="o-category" onChange={handleCategorySelect} value={category ? category : ''}>
                         <option value="">-- Select existing category --</option>
                         {filteredCategories.map((cat, index) => (
                             <option key={index} value={cat}>{cat}</option>
                         ))}
-                    </select><br />
+                    </select>
+                </p>
+                <p>
                     <input
                         type="text"
                         placeholder="Type a new category or edit selected one"
                         value={category}
                         onChange={(e) => setCategory(e.target.value)}
                     />
-                </div>
-
+                </p>
+                <hr/>
                 <button type="submit" disabled={!front.trim() || !back.trim()}>
                     Add Flashcard
                 </button>

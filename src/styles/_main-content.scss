@@ -1,0 +1,12 @@
+@use "varibles" as vars;
+
+.o-main-content {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding: vars.$padding-default;
+  min-height: calc(100vh - 100px);
+  background-color: var(--color-green-strong-dark);
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+}

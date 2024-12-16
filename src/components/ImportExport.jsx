@@ -2,8 +2,9 @@
 
 import React, { useRef, useState, useEffect } from 'react';
 import { clearAllFlashcards, addMultipleFlashcardsToDB, getAllFlashcards } from '../db';
+import cardsExport from '../functions/cardsExport';
 
-function ImportExport({ onImport }) { // Odbierz prop onImport
+function ImportExport({ flashcards, onImport }) {
     const fileInputRef = useRef(null);
     const [selectedFile, setSelectedFile] = useState(null);
     const [importSuccessMessage, setImportSuccessMessage] = useState('');
@@ -96,39 +97,33 @@ function ImportExport({ onImport }) { // Odbierz prop onImport
     };
 
     const handleExport = async () => {
-        const allData = await getAllFlashcards();
-        const jsonStr = JSON.stringify(allData, null, 2);
-
-        const blob = new Blob([jsonStr], { type: 'application/json' });
-        const url = URL.createObjectURL(blob);
-
-        // Generowanie unikalnej nazwy pliku w oparciu o timestamp
-        const fileName = `index-db-${Date.now()}.json`;
-
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = fileName;
-        a.click();
-
-        URL.revokeObjectURL(url);
+        try {
+            const cardsToExport = await getAllFlashcards();
+            await cardsExport(cardsToExport);
+        } catch (error) {
+            console.error("Błąd podczas eksportu fiszek:", error);
+            alert("Wystąpił błąd podczas eksportu fiszek.");
+        }
     };
 
     return (
-        <div>
+        <div className="o-page-import-export">
             <h2>Import / Export</h2>
-            <div>
-                <label htmlFor="fc-choose-file">Import fiszek z pliku:</label>
-                <input
-                    id="fc-choose-file"
-                    type="file"
-                    ref={fileInputRef}
-                    accept=".json"
-                    onChange={handleFileChange}
-                    aria-label="Choose File to import"
-                />
+            <hr />
+            <div className="o-default-box">
+                <p>
+                    <label htmlFor="o-choose-file">Import fiszek z pliku:</label> <input
+                        id="o-choose-file"
+                        type="file"
+                        ref={fileInputRef}
+                        accept=".json"
+                        onChange={handleFileChange}
+                        aria-label="Choose File to import"
+                    />
+                </p>
 
                 {selectedFile && (
-                    <ul>
+                    <ul className="o-list-buttons-clear">
                         <li>
                             <button onClick={handleImportAll}>Import All (Replace)</button>
                         </li>
@@ -138,14 +133,13 @@ function ImportExport({ onImport }) { // Odbierz prop onImport
                     </ul>
                 )}
             </div>
-            <div>
-                <button onClick={handleExport}>Export do pliku</button>
-            </div>
+
+            {(flashcards.length > 0) && <p><button onClick={handleExport}><i className="icon-export"></i> Export do pliku</button></p>}
 
             {importSuccessMessage && (
-                <div style={{ color: 'green', marginTop: '10px' }}>
+                <p className="color-green">
                     {importSuccessMessage}
-                </div>
+                </p>
             )}
         </div>
     );

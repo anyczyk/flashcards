@@ -1,8 +1,10 @@
 {
-  "view_flashcards": "Fiszki",
+  "simple_flashcard_creator" : "Kreator fiszek",
+  "view_flashcards": "Zacznij swoją naukę",
   "create_flashcard": "Stwórz fiszke",
   "edit_flashcards": "Edytuj fiszki",
   "import_export": "Import/Eksport",
   "without_category": "Bez kategorii",
-  "all": "Wszystkie"
+  "all": "Wszystkie",
+  "no_flashcards": "Aktualnie brak fiszek"
 }

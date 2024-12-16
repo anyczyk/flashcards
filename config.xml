@@ -14,22 +14,23 @@
 
     <!-- Wtyczki -->
     <plugin name="cordova-plugin-file" spec="^6.0.2" />
-    <plugin name="cordova-plugin-android-permissions" />
-    <plugin name="cordova-plugin-simple-file-chooser" />
-    <plugin name="cordova-plugin-filechooser" />
-    <plugin name="cordova-plugin-documentpicker" />
+    <plugin name="cordova-plugin-android-permissions" spec="^1.0.0" />
+    <plugin name="cordova-plugin-simple-file-chooser" spec="^1.0.0" />
+    <plugin name="cordova-plugin-filechooser" spec="^1.0.0" />
+    <plugin name="cordova-plugin-documentpicker" spec="^1.0.0" />
+    <plugin name="cordova-plugin-x-socialsharing" spec="^6.0.3" /> <!-- Dodaj wtyczkę SocialSharing -->
 
-    <!-- Preferencje dotyczące pamięci -->
+    <!-- Preferencje -->
     <preference name="AndroidPersistentFileLocation" value="Compatibility" />
 
-    <!-- Uprawnienia dla Androida 14 i niższych -->
+    <!-- Uprawnienia dla Androida -->
     <platform name="android">
-        <config-file parent="/manifest" target="AndroidManifest.xml">
-            <!-- Uprawnienia do odczytu/zapisu dla starszych wersji Androida -->
-            <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32"/>
-            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="29"/>
-            <!-- Zarządzanie pamięcią masową dla Androida 11 i wyższych -->
-            <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+        <config-file parent="/*" target="AndroidManifest.xml">
+            <!-- Uprawnienia są zakomentowane, upewnij się, że masz potrzebne uprawnienia -->
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+            <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+            <!-- Jeśli potrzebujesz MANAGE_EXTERNAL_STORAGE, odkomentuj poniższe -->
+            <!-- <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" /> -->
         </config-file>
     </platform>
 </widget>

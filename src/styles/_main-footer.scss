@@ -1,0 +1,39 @@
+@use "varibles" as vars;
+
+.o-main-footer {
+  background-color: var(--color-green-less-dark);
+  padding: 0 vars.$padding-default;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: vars.$max-content;
+  width: 100%;
+  box-shadow: 0 0 6px var(--color-black);
+
+  li, p {
+    font-size: 16px;
+  }
+
+  a {
+    color: var(--color-white);
+    display: block;
+    padding: .5rem;
+    border-radius: 6px;
+
+    &:active {
+      background-color: var(--color-white-opacity-10);
+    }
+  }
+
+  ul {
+    display: flex;
+    gap: vars.$padding-default;
+    justify-content: space-around;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
