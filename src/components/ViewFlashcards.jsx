@@ -2,14 +2,50 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from "react-router-dom";
-import { motion, AnimatePresence } from 'framer-motion'; // Importujemy Framer Motion
+import { motion, AnimatePresence, useAnimation } from 'framer-motion';
+import { speak, stopSpeaking } from "../functions/speak";
 
 function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
-    const { t } = useTranslation(); // Użyj hooka tłumaczenia
+    const { t } = useTranslation();
     const [selectedCategory, setSelectedCategory] = useState(null);
-    const [learningFilter, setLearningFilter] = useState(null); // Inicjalizacja jako null
-    const [orderedFlashcards, setOrderedFlashcards] = useState([]); // Nowy stan dla uporządkowanej listy fiszek
-    const [checkedCards, setCheckedCards] = useState(new Set()); // Nowy stan dla sprawdzonych fiszek
+    const [learningFilter, setLearningFilter] = useState(null); // 'all' lub 'learningOnly'
+    const [orderedFlashcards, setOrderedFlashcards] = useState([]);
+    const [checkedCards, setCheckedCards] = useState(new Set());
+    const [animatingCards, setAnimatingCards] = useState({}); // Nowy stan dla animujących się kart
+    const [draggingDirection, setDraggingDirection] = useState({}); // Nowy stan dla kierunku przeciągania
+    const [isShuffling, setIsShuffling] = useState(false); // Nowy stan dla animacji tasowania
+
+    const controls = useAnimation(); // Kontroler animacji dla kontenera <ul>
+
+    // Resetowanie checkedCards przy zmianie filtra lub kategorii
+    useEffect(() => {
+        setCheckedCards(new Set());
+    }, [learningFilter, selectedCategory]);
+
+    // Zatrzymaj mowę przy zmianie istotnych stanów
+    useEffect(() => {
+        stopSpeaking();
+    }, [
+        selectedCategory,
+        learningFilter,
+        isShuffling,
+        animatingCards,
+        draggingDirection,
+        checkedCards
+    ]);
+
+    // Zatrzymaj mowę przy odmontowaniu komponentu
+    useEffect(() => {
+        return () => {
+            stopSpeaking();
+        };
+    }, []);
+
+    // Funkcja do obsługi mowy z zatrzymaniem poprzedniej
+    const handleSpeak = (text, lang) => {
+        stopSpeaking();
+        speak(text, lang);
+    };
 
     // Czy w wybranej kategorii są fiszki do nauki (know !== true)?
     const hasLearningCards = flashcards.some(fc => {
@@ -42,7 +78,7 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
         return filtered.length;
     };
 
-    // Pierwszy useEffect: Tasowanie fiszek tylko przy zmianie kategorii lub filtra
+    // Tasowanie fiszek tylko przy zmianie kategorii lub filtra
     useEffect(() => {
         let filtered = [];
         if (selectedCategory === 'All') {
@@ -64,17 +100,30 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
         }
 
         setOrderedFlashcards(filtered);
-    }, [selectedCategory, learningFilter]); // Zależności tylko od kategorii i filtra
+    }, [selectedCategory, learningFilter]); // Usuń `flashcards` z zależności
 
-    // Drugi useEffect: Aktualizacja listy fiszek w trybie "Do nauki" przy zmianie flashcards
-    useEffect(() => {
-        if (selectedCategory !== null && learningFilter === 'learningOnly') {
-            setOrderedFlashcards(prev => prev.filter(card => {
-                const updatedCard = flashcards.find(fc => fc.id === card.id);
-                return updatedCard && updatedCard.know !== true;
-            }));
+    // Funkcja do tasowania tablicy (kopiowanie i tasowanie Fisher-Yates)
+    const shuffleArray = (array) => {
+        const shuffled = [...array];
+        for (let i = shuffled.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
         }
-    }, [flashcards, selectedCategory, learningFilter]);
+        return shuffled;
+    };
+
+    // Funkcja obsługująca kliknięcie przycisku "Tasuj"
+    const handleShuffle = async () => {
+        if (isShuffling) return; // Zapobiega wielokrotnemu klikaniu
+
+        setIsShuffling(true);
+        await controls.start("shuffling"); // Rozpoczęcie animacji
+
+        // Tasowanie fiszek po zakończeniu animacji
+        setOrderedFlashcards(prev => shuffleArray(prev));
+
+        setIsShuffling(false);
+    };
 
     // Funkcja do przenoszenia fiszki na początek listy
     const moveCardToFront = (id) => {
@@ -92,9 +141,13 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
     const learnIt = (id) => {
         // Ustawiamy know = undefined
         setFlashcardKnow(id, undefined);
-        // Jeśli filtr to "Powtórz wszystkie" lub "Do nauki", przenosimy fiszkę na początek
-        if (learningFilter === 'all' || learningFilter === 'learningOnly') {
+        if (learningFilter === 'all') {
+            // W trybie 'all' przenieś na początek
             moveCardToFront(id);
+        } else if (learningFilter === 'learningOnly') {
+            // W trybie 'learningOnly' nie usuwaj fiszki
+            // Możesz dodać dodatkową logikę, jeśli potrzebujesz
+            moveCardToFront(id); // Opcjonalne: przenieś na początek
         }
         // Resetujemy stan sprawdzenia
         setCheckedCards(prev => {
@@ -107,9 +160,12 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
     const knowIt = (id) => {
         // Ustawiamy know = true
         setFlashcardKnow(id, true);
-        // Jeśli filtr to "Powtórz wszystkie", przenosimy fiszkę na początek
         if (learningFilter === 'all') {
+            // W trybie 'all' przenieś na początek
             moveCardToFront(id);
+        } else if (learningFilter === 'learningOnly') {
+            // W trybie 'learningOnly' usuń fiszkę z listy
+            setOrderedFlashcards(prev => prev.filter(card => card.id !== id));
         }
         // Resetujemy stan sprawdzenia
         setCheckedCards(prev => {
@@ -121,24 +177,14 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
 
     // Funkcja obsługująca swipe
     const handleSwipe = (id, direction) => {
-        console.log(direction);
         if (direction === 'prawo') {
-            setFlashcardKnow(id, true);
-            if (learningFilter === 'all') {
-                moveCardToFront(id);
-            }
+            // Swipe w prawo oznacza "Już to znam"
+            setAnimatingCards(prev => ({ ...prev, [id]: 'animateRight' }));
         } else if (direction === 'lewo') {
-            setFlashcardKnow(id, undefined);
-            if (learningFilter === 'all' || learningFilter === 'learningOnly') {
-                moveCardToFront(id);
-            }
-        } else if (direction === 'gora') {
-            setFlashcardKnow(id, 'gora');
-            // Opcjonalnie: Przenieś na początek, jeśli jest to wymagane
-        } else if (direction === 'dol') {
-            setFlashcardKnow(id, 'dol');
-            // Opcjonalnie: Przenieś na początek, jeśli jest to wymagane
+            // Swipe w lewo oznacza "Uczę się"
+            setAnimatingCards(prev => ({ ...prev, [id]: 'animateLeft' }));
         }
+        // Usunięcie obsługi dla 'gora' i 'dol'
 
         // Resetujemy stan sprawdzenia po przesunięciu
         setCheckedCards(prev => {
@@ -148,9 +194,43 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
         });
     };
 
-    // Funkcja do obsługi kliknięcia "Sprawdź"
+    // Funkcja obsługująca kliknięcie "Sprawdź"
     const handleCheck = (id) => {
         setCheckedCards(prev => new Set(prev).add(id));
+    };
+
+    // Definicja wariantów animacji dla poszczególnych fiszek
+    const variants = {
+        default: {
+            x: 0,
+            rotate: 0,
+        },
+        animateLeft: {
+            x: -100,
+            rotate: -5, // Obrót w lewo
+            transition: { duration: 0.2 }
+        },
+        animateRight: {
+            x: 100,
+            rotate: 5, // Obrót w prawo
+            transition: { duration: 0.2 }
+        },
+    };
+
+    // Definicja wariantów animacji dla kontenera <ul> (drgania)
+    const containerVariants = {
+        initial: {
+            x: 0,
+            rotate: 0,
+        },
+        shuffling: {
+            x: [-10, 10, -10, 10, -5, 5, 0],
+            rotate: [-5, 5, -5, 5, -2.5, 2.5, 0],
+            transition: {
+                duration: 0.6,
+                ease: "easeInOut",
+            },
+        },
     };
 
     return (
@@ -158,7 +238,11 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
             <div className="o-page-view-flashcards__header">
                 {selectedCategory !== null && (
                     <p>
-                        <button onClick={() => { setSelectedCategory(null); setLearningFilter(null); setCheckedCards(new Set()); }}>
+                        <button onClick={() => {
+                            setSelectedCategory(null);
+                            setLearningFilter(null);
+                            setCheckedCards(new Set());
+                        }}>
                             Wybierz inną kategorię
                         </button>
                     </p>
@@ -182,9 +266,12 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
                                 <li>
                                     <button
                                         className={`btn ${learningFilter === 'all' ? 'btn--active' : ''}`}
-                                        onClick={() => setLearningFilter('all')}
+                                        onClick={() => {
+                                            setLearningFilter('all');
+                                            setCheckedCards(new Set());
+                                        }}
                                     >
-                                        Powtórz wszystkie ({getFilteredFlashcardCount('all')})
+                                        Powtórz ({getFilteredFlashcardCount('all')})
                                     </button>
                                 </li>
                             )}
@@ -192,12 +279,20 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
                                 <li>
                                     <button
                                         className={`btn ${learningFilter === 'learningOnly' ? 'btn--active' : ''}`}
-                                        onClick={() => setLearningFilter('learningOnly')}
+                                        onClick={() => {
+                                            setLearningFilter('learningOnly');
+                                            setCheckedCards(new Set());
+                                        }}
                                     >
                                         Do nauki ({getFilteredFlashcardCount('learningOnly')})
                                     </button>
                                 </li>
                             )}
+                            {!(learningFilter && orderedFlashcards.length === 0) && <li>
+                                <button onClick={handleShuffle} disabled={isShuffling}>
+                                    {isShuffling ? 'Tasowanie...' : 'Tasuj'}
+                                </button>
+                            </li>}
                         </ul>
                     </>
                 ) : null}
@@ -210,36 +305,80 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
                         <p>Gratulacje, udało ci się zapamiętać wszystkie fiszki w kategorii: {selectedCategory}!</p>
                     ) : (
                         <div className="o-page-view-flashcards__content">
-                            <ul className="o-list-flashcards">
+                            {/* Użycie motion.ul z kontrolą animacji drgań */}
+                            <motion.ul
+                                className="o-list-flashcards"
+                                variants={containerVariants}
+                                initial="initial"
+                                animate={controls}
+                            >
                                 <AnimatePresence>
-                                    {orderedFlashcards.map((card, index) => (
+                                    {orderedFlashcards.map((card) => (
                                         <motion.li
                                             className="o-list-flashcards__single-card"
                                             key={card.id}
-                                            drag={true} // Umożliwia przeciąganie w obu osiach
-                                            dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }} // Ograniczenie przeciągania do kontenera
-                                            dragElastic={0.2}
-                                            onDragEnd={(event, info) => {
-                                                const threshold = 150; // Próg w px
+                                            // Ograniczenie przeciągania tylko do osi X
+                                            drag="x"
+                                            dragConstraints={{ left: 0, right: 0 }}
+                                            dragElastic={0.9}
+                                            whileDrag={{
+                                                rotate: draggingDirection[card.id] === 'prawo'
+                                                    ? 5
+                                                    : draggingDirection[card.id] === 'lewo'
+                                                        ? -5
+                                                        : 0
+                                            }}
+                                            onDrag={(event, info) => {
                                                 const { offset } = info;
-                                                const absX = Math.abs(offset.x);
-                                                const absY = Math.abs(offset.y);
-
-                                                if (absX > absY) { // Przeciąganie bardziej w poziomie
-                                                    if (absX > threshold) {
-                                                        const direction = offset.x > 0 ? 'prawo' : 'lewo';
-                                                        handleSwipe(card.id, direction);
-                                                    }
-                                                } else { // Przeciąganie bardziej w pionie
-                                                    if (absY > threshold) {
-                                                        const direction = offset.y > 0 ? 'dol' : 'gora';
-                                                        handleSwipe(card.id, direction);
-                                                    }
+                                                const threshold = 20; // Minimalny przesunięcie do rozpoznania kierunku
+                                                if (Math.abs(offset.x) > threshold) {
+                                                    const direction = offset.x > 0 ? 'prawo' : 'lewo';
+                                                    setDraggingDirection(prev => ({ ...prev, [card.id]: direction }));
                                                 }
                                             }}
-                                            initial={{ x: 0, y: 0, opacity: 1, scale: 1 }}
-                                            animate={{ x: 0, y: 0, opacity: 1, scale: 1 }}
-                                            exit={{ opacity: 0, scale: 0.5 }}
+                                            onDragEnd={(event, info) => {
+                                                const threshold = 100; // Próg w px
+                                                const { offset } = info;
+                                                const absX = Math.abs(offset.x);
+
+                                                if (absX > threshold) { // Tylko przeciąganie w poziomie
+                                                    const direction = offset.x > 0 ? 'prawo' : 'lewo';
+                                                    handleSwipe(card.id, direction);
+                                                }
+
+                                                // Resetowanie kierunku przeciągania po zakończeniu animacji
+                                                setDraggingDirection(prev => {
+                                                    const newDrag = { ...prev };
+                                                    delete newDrag[card.id];
+                                                    return newDrag;
+                                                });
+                                            }}
+                                            variants={variants}
+                                            animate={animatingCards[card.id] || 'default'}
+                                            onAnimationComplete={() => {
+                                                if (animatingCards[card.id] === 'animateLeft') {
+                                                    learnIt(card.id);
+                                                    setAnimatingCards(prev => {
+                                                        const newAnim = { ...prev };
+                                                        delete newAnim[card.id];
+                                                        return newAnim;
+                                                    });
+                                                } else if (animatingCards[card.id] === 'animateRight') {
+                                                    knowIt(card.id);
+                                                    setAnimatingCards(prev => {
+                                                        const newAnim = { ...prev };
+                                                        delete newAnim[card.id];
+                                                        return newAnim;
+                                                    });
+                                                }
+
+                                                // Resetowanie kierunku przeciągania po zakończeniu animacji
+                                                setDraggingDirection(prev => {
+                                                    const newDrag = { ...prev };
+                                                    delete newDrag[card.id];
+                                                    return newDrag;
+                                                });
+                                            }}
                                             transition={{
                                                 type: "spring",
                                                 stiffness: 300,
@@ -247,23 +386,34 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
                                                 duration: 0.3
                                             }}
                                             style={{
-                                                position: 'absolute', // Przywrócenie pozycji absolutnej
                                                 cursor: 'grab',
                                                 listStyle: 'none',
-                                                zIndex: index
+                                                overflowY: 'auto', // Umożliwia przewijanie zawartości wewnątrz fiszki
                                             }}
                                         >
                                             <div className="o-list-flashcards__front o-default-box">
-                                                <p>{card.front}</p>
+                                                <p role="button" onClick={() => handleSpeak(card.front,"pl-PL")}>
+                                                    <i className="icon-volume"></i> {card.front}
+                                                </p>
                                             </div>
                                             <hr />
                                             {checkedCards.has(card.id) && (
                                                 <div className="o-list-flashcards__back">
-                                                    <p>{card.back}</p>
+                                                    <p role="button" onClick={() => handleSpeak(card.back,"en-US")}>
+                                                        <i className="icon-volume"></i> {card.back}
+                                                    </p>
                                                 </div>
                                             )}
                                             <div className="o-list-flashcards__know">
-                                                <p>{card.know ? 'Już to znam' : 'Uczę się'}</p>
+                                                <p className="o-list-flashcards__swipe-info-know-or-learn">
+                                                    {card.know ? <span className="color-green">Już to znam?</span> : <span className="color-brow">Uczę się?</span>}
+                                                </p>
+                                                <div className={`o-list-flashcards__swipe-info-know ${draggingDirection[card.id] === 'prawo' ? 'o-list-flashcards__swipe-info-know--visible' : ''}`}>
+                                                    <p><i className="icon-ok"></i> Już to znam</p>
+                                                </div>
+                                                <div className={`o-list-flashcards__swipe-info-learn ${draggingDirection[card.id] === 'lewo' ? 'o-list-flashcards__swipe-info-learn--visible' : ''}`}>
+                                                    <p><i className="icon-graduation-cap"></i> Uczę się</p>
+                                                </div>
                                                 {!checkedCards.has(card.id) ? (
                                                     <button
                                                         className="o-list-flashcards__know-check btn--blue"
@@ -274,12 +424,28 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
                                                 ) : (
                                                     <ul className="o-list-buttons-clear">
                                                         <li>
-                                                            <button onClick={() => learnIt(card.id)}>Uczę się</button>
+                                                            <button
+                                                                onClick={() => {
+                                                                    setDraggingDirection(prev => ({ ...prev, [card.id]: 'lewo' }));
+                                                                    setAnimatingCards(prev => ({
+                                                                        ...prev,
+                                                                        [card.id]: 'animateLeft'
+                                                                    }));
+                                                                }}
+                                                            >
+                                                                Uczę się
+                                                            </button>
                                                         </li>
                                                         <li>
                                                             <button
                                                                 className="btn--green"
-                                                                onClick={() => knowIt(card.id)}
+                                                                onClick={() => {
+                                                                    setDraggingDirection(prev => ({ ...prev, [card.id]: 'prawo' }));
+                                                                    setAnimatingCards(prev => ({
+                                                                        ...prev,
+                                                                        [card.id]: 'animateRight'
+                                                                    }));
+                                                                }}
                                                             >
                                                                 Już to znam
                                                             </button>
@@ -290,7 +456,7 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
                                         </motion.li>
                                     ))}
                                 </AnimatePresence>
-                            </ul>
+                            </motion.ul>
                         </div>
                     )
                 )
@@ -305,8 +471,8 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
                                     className={`btn ${selectedCategory === 'All' && learningFilter === 'all' ? 'btn--active' : ''}`}
                                     onClick={() => {
                                         setSelectedCategory('All');
-                                        setLearningFilter(null); // Reset filtra przy wyborze kategorii
-                                        setCheckedCards(new Set()); // Reset checkedCards przy zmianie kategorii
+                                        setLearningFilter('all');
+                                        setCheckedCards(new Set());
                                     }}
                                 >
                                     {t('all')} ({flashcards.length})
@@ -326,8 +492,8 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
                                             className={`btn ${selectedCategory === cat && learningFilter === 'all' ? 'btn--active' : ''}`}
                                             onClick={() => {
                                                 setSelectedCategory(cat);
-                                                setLearningFilter(null); // Reset filtra przy wyborze kategorii
-                                                setCheckedCards(new Set()); // Reset checkedCards przy zmianie kategorii
+                                                setLearningFilter('all');
+                                                setCheckedCards(new Set());
                                             }}
                                         >
                                             {(cat === 'Without category') ? t('without_category') : cat} ({count})
@@ -349,6 +515,7 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
             ) : null}
         </div>
     );
+
 }
 
 export default ViewFlashcards;

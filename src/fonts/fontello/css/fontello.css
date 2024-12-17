@@ -72,6 +72,9 @@
 .icon-ok-circled:before { content: '\e80f'; } /* '' */
 .icon-ok-circled2:before { content: '\e810'; } /* '' */
 .icon-plus:before { content: '\e811'; } /* '' */
+.icon-volume:before { content: '\e812'; } /* '' */
+.icon-graduation-cap:before { content: '\e813'; } /* '' */
+.icon-ok:before { content: '\e814'; } /* '' */
 .icon-spin4:before { content: '\ec06'; } /* '' */
 .icon-export:before { content: '\f081'; } /* '' */
 .icon-docs:before { content: '\f0c5'; } /* '' */

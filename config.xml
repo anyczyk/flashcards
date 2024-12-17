@@ -12,6 +12,12 @@
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
 
+    <!-- Preferencje -->
+    <preference name="AndroidPersistentFileLocation" value="Compatibility" />
+    <preference name="StatusBarBackgroundColor" value="#1a291a" />
+    <preference name="AndroidNavigationBarColor" value="#1a291a" />
+    <preference name="Orientation" value="portrait" /> <!-- Dodana preferencja orientacji -->
+
     <!-- Wtyczki -->
     <plugin name="cordova-plugin-file" spec="^6.0.2" />
     <plugin name="cordova-plugin-android-permissions" spec="^1.0.0" />
@@ -19,9 +25,6 @@
     <plugin name="cordova-plugin-filechooser" spec="^1.0.0" />
     <plugin name="cordova-plugin-documentpicker" spec="^1.0.0" />
     <plugin name="cordova-plugin-x-socialsharing" spec="^6.0.3" /> <!-- Dodaj wtyczkę SocialSharing -->
-
-    <!-- Preferencje -->
-    <preference name="AndroidPersistentFileLocation" value="Compatibility" />
 
     <!-- Uprawnienia dla Androida -->
     <platform name="android">

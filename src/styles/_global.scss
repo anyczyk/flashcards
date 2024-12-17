@@ -59,6 +59,10 @@ hr {
   color: var(--color-green);
 }
 
+.color-brow {
+  color: var(--color-brow);
+}
+
 #root {
   display: flex;
   flex-direction: column;
@@ -139,15 +143,23 @@ hr {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: var(--color-green-less-dark);
-    display: flex;
+    background-color: var(--color-green-very-light);
     flex-direction: column;
     padding: vars.$padding-smaller;
     border-radius: 12px;
+    display: none;
+    color: var(--color-green-strong-dark);
+    overflow-y: auto;
+    overflow-x: hidden;
 
     &:last-child,
     &:first-child {
       box-shadow: 0 0 6px var(--color-black-opacity-50);
+    }
+
+    &:first-child,
+    &:nth-last-child(-n+3) {
+      display: flex;
     }
   }
 
@@ -165,6 +177,67 @@ hr {
         width: 100%;
       }
     }
+  }
+
+  &__front,
+  &__back {
+    p {
+      text-align: center;
+    }
+  }
+
+  &__front {
+    p {
+      font-size: 22px;
+    }
+  }
+
+  &__back {
+    p {
+      font-size: 18px;
+    }
+  }
+
+  &__swipe-info-learn,
+  &__swipe-info-know {
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 12px;
+    border: 0.2rem solid;
+    padding: vars.$padding-smaller;
+    font-weight: 700;
+    text-transform: uppercase;
+    opacity: 0;
+    translate: -50% -50%;
+    transition: opacity 200ms ease-in-out;
+
+    &--visible {
+      opacity: .3;
+    }
+
+    p {
+      font-size: 16px;
+    }
+  }
+
+  &__swipe-info-know {
+    color: var(--color-green);
+    border-color: var(--color-green);
+    rotate: 45deg;
+  }
+
+  &__swipe-info-learn {
+    color: var(--color-brow);
+    border-color: var(--color-brow);
+    rotate: -45deg;
+  }
+
+  &__swipe-info-know-or-learn {
+    opacity: 0.3;
+    font-size: 14px;
+    font-weight: 700;
   }
 }
 

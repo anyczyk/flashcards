@@ -50,6 +50,7 @@
     "cordova-plugin-filechooser": "^1.2.0",
     "cordova-plugin-filepath": "^1.6.0",
     "cordova-plugin-simple-file-chooser": "^3.0.2",
+    "cordova-plugin-tts": "^0.2.3",
     "cordova-plugin-x-socialsharing": "^6.0.4",
     "css-loader": "^7.1.2",
     "es6-promise-plugin": "^4.2.2",
@@ -75,7 +76,8 @@
       "cordova-plugin-x-socialsharing": {},
       "cordova-plugin-android-permissions": {},
       "cordova-plugin-file": {},
-      "cordova-plugin-filepath": {}
+      "cordova-plugin-filepath": {},
+      "cordova-plugin-tts": {}
     }
   }
 }
