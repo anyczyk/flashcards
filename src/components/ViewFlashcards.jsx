@@ -17,9 +17,43 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
 
     const controls = useAnimation(); // Kontroler animacji dla kontenera <ul>
 
+    // Nowe stany do śledzenia przeglądanych fiszek i wyświetlania komunikatu
+    const [reviewedSet, setReviewedSet] = useState(new Set());
+    const [showCompleteMessage, setShowCompleteMessage] = useState(false);
+
+    // Funkcja do zastosowania filtra i tasowania fiszek
+    const applyFilterAndShuffle = () => {
+        let filtered = [];
+        if (selectedCategory === 'All') {
+            filtered = [...flashcards];
+        } else if (selectedCategory === 'Without category') {
+            filtered = flashcards.filter(fc => !fc.category || fc.category.trim() === '');
+        } else if (selectedCategory) {
+            filtered = flashcards.filter(fc => fc.category === selectedCategory);
+        }
+
+        if (learningFilter === 'learningOnly') {
+            filtered = filtered.filter(fc => fc.know !== true);
+        }
+
+        // Tasowanie listy za pomocą algorytmu Fisher-Yates
+        for (let i = filtered.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [filtered[i], filtered[j]] = [filtered[j], filtered[i]];
+        }
+
+        setOrderedFlashcards(filtered);
+    };
+
+    // Tasowanie fiszek tylko przy zmianie kategorii lub filtra
+    useEffect(() => {
+        applyFilterAndShuffle();
+    }, [selectedCategory, learningFilter]); // Usuń `flashcards` z zależności
+
     // Resetowanie checkedCards przy zmianie filtra lub kategorii
     useEffect(() => {
         setCheckedCards(new Set());
+        setReviewedSet(new Set()); // Resetowanie przeglądanych fiszek
     }, [learningFilter, selectedCategory]);
 
     // Zatrzymaj mowę przy zmianie istotnych stanów
@@ -78,30 +112,6 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
         return filtered.length;
     };
 
-    // Tasowanie fiszek tylko przy zmianie kategorii lub filtra
-    useEffect(() => {
-        let filtered = [];
-        if (selectedCategory === 'All') {
-            filtered = [...flashcards];
-        } else if (selectedCategory === 'Without category') {
-            filtered = flashcards.filter(fc => !fc.category || fc.category.trim() === '');
-        } else if (selectedCategory) {
-            filtered = flashcards.filter(fc => fc.category === selectedCategory);
-        }
-
-        if (learningFilter === 'learningOnly') {
-            filtered = filtered.filter(fc => fc.know !== true);
-        }
-
-        // Tasowanie listy za pomocą algorytmu Fisher-Yates
-        for (let i = filtered.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [filtered[i], filtered[j]] = [filtered[j], filtered[i]];
-        }
-
-        setOrderedFlashcards(filtered);
-    }, [selectedCategory, learningFilter]); // Usuń `flashcards` z zależności
-
     // Funkcja do tasowania tablicy (kopiowanie i tasowanie Fisher-Yates)
     const shuffleArray = (array) => {
         const shuffled = [...array];
@@ -120,9 +130,10 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
         await controls.start("shuffling"); // Rozpoczęcie animacji
 
         // Tasowanie fiszek po zakończeniu animacji
-        setOrderedFlashcards(prev => shuffleArray(prev));
+        applyFilterAndShuffle();
 
         setIsShuffling(false);
+        setReviewedSet(new Set()); // Resetowanie przeglądanych fiszek po tasowaniu
     };
 
     // Funkcja do przenoszenia fiszki na początek listy
@@ -142,12 +153,11 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
         // Ustawiamy know = undefined
         setFlashcardKnow(id, undefined);
         if (learningFilter === 'all') {
-            // W trybie 'all' przenieś na początek
-            moveCardToFront(id);
+            // W trybie 'all' usuń fiszkę z listy
+            setOrderedFlashcards(prev => prev.filter(card => card.id !== id));
         } else if (learningFilter === 'learningOnly') {
-            // W trybie 'learningOnly' nie usuwaj fiszki
-            // Możesz dodać dodatkową logikę, jeśli potrzebujesz
-            moveCardToFront(id); // Opcjonalne: przenieś na początek
+            // W trybie 'learningOnly' przenieś fiszkę na początek
+            moveCardToFront(id);
         }
         // Resetujemy stan sprawdzenia
         setCheckedCards(prev => {
@@ -155,14 +165,18 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
             newSet.delete(id);
             return newSet;
         });
+        // Dodanie fiszki do przeglądanych
+        if (learningFilter === 'all') {
+            setReviewedSet(prev => new Set(prev).add(id));
+        }
     };
 
     const knowIt = (id) => {
         // Ustawiamy know = true
         setFlashcardKnow(id, true);
         if (learningFilter === 'all') {
-            // W trybie 'all' przenieś na początek
-            moveCardToFront(id);
+            // W trybie 'all' usuń fiszkę z listy
+            setOrderedFlashcards(prev => prev.filter(card => card.id !== id));
         } else if (learningFilter === 'learningOnly') {
             // W trybie 'learningOnly' usuń fiszkę z listy
             setOrderedFlashcards(prev => prev.filter(card => card.id !== id));
@@ -173,6 +187,10 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
             newSet.delete(id);
             return newSet;
         });
+        // Dodanie fiszki do przeglądanych
+        if (learningFilter === 'all') {
+            setReviewedSet(prev => new Set(prev).add(id));
+        }
     };
 
     // Funkcja obsługująca swipe
@@ -206,14 +224,20 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
             rotate: 0,
         },
         animateLeft: {
-            x: -100,
+            x: -500, // 🔴 Zmieniono z -100 na -500
             rotate: -5, // Obrót w lewo
-            transition: { duration: 0.2 }
+            transition: {
+                type: "tween", // 🔴 Zmieniono z "spring" na "tween"
+                duration: 0.5 // 🔴 Zmieniono z 0.2 na 0.5
+            }
         },
         animateRight: {
-            x: 100,
+            x: 500, // 🔴 Zmieniono z 100 na 500
             rotate: 5, // Obrót w prawo
-            transition: { duration: 0.2 }
+            transition: {
+                type: "tween", // 🔴 Zmieniono z "spring" na "tween"
+                duration: 0.5 // 🔴 Zmieniono z 0.2 na 0.5
+            }
         },
     };
 
@@ -233,6 +257,15 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
         },
     };
 
+    // Monitorowanie, czy wszystkie fiszki zostały przeglądnięte w trybie 'all'
+    useEffect(() => {
+        if (learningFilter === 'all' && orderedFlashcards.length === 0) {
+            setShowCompleteMessage(true);
+        } else {
+            setShowCompleteMessage(false);
+        }
+    }, [learningFilter, orderedFlashcards]);
+
     return (
         <div className="o-page-view-flashcards">
             <div className="o-page-view-flashcards__header">
@@ -242,6 +275,7 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
                             setSelectedCategory(null);
                             setLearningFilter(null);
                             setCheckedCards(new Set());
+                            setReviewedSet(new Set()); // Resetowanie przeglądanych fiszek
                         }}>
                             Wybierz inną kategorię
                         </button>
@@ -260,8 +294,8 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
                                     : flashcards.filter(fc => fc.category === selectedCategory).length}
                             )
                         </h3>
-                        <hr/>
-                        <ul className="o-list-buttons-clear o-default-box">
+                        <hr />
+                        <ul className="o-list-buttons-clear o-list-buttons-clear--nowrap o-default-box">
                             {getFilteredFlashcardCount('learningOnly') < getFilteredFlashcardCount('all') && (
                                 <li>
                                     <button
@@ -269,9 +303,12 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
                                         onClick={() => {
                                             setLearningFilter('all');
                                             setCheckedCards(new Set());
+                                            setReviewedSet(new Set()); // Resetowanie przeglądanych fiszek
                                         }}
                                     >
-                                        Powtórz ({getFilteredFlashcardCount('all')})
+                                        Powtórz (
+                                        {learningFilter === 'all' ? orderedFlashcards.length : getFilteredFlashcardCount('all')}
+                                        )
                                     </button>
                                 </li>
                             )}
@@ -282,6 +319,7 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
                                         onClick={() => {
                                             setLearningFilter('learningOnly');
                                             setCheckedCards(new Set());
+                                            setReviewedSet(new Set()); // Resetowanie przeglądanych fiszek
                                         }}
                                     >
                                         Do nauki ({getFilteredFlashcardCount('learningOnly')})
@@ -290,21 +328,48 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
                             )}
                             {!(learningFilter && orderedFlashcards.length === 0) && <li>
                                 <button onClick={handleShuffle} disabled={isShuffling}>
-                                    {isShuffling ? 'Tasowanie...' : 'Tasuj'}
+                                    {isShuffling ? 'Resetuje...' : 'Resetuj'}
                                 </button>
                             </li>}
                         </ul>
                     </>
                 ) : null}
             </div>
+            {/* Wyświetlanie komunikatu o zakończeniu przeglądania fiszek */}
+            {showCompleteMessage && (
+                <div className="o-complete-message">
+                    <p>Przeglądnołeś wszystkie fiszki w tej kategorii.</p>
+                    <ul className="o-list-buttons-clear">
+                        <li>
+                            <button onClick={() => {
+                                setShowCompleteMessage(false);
+                                setReviewedSet(new Set());
+                                applyFilterAndShuffle();
+                            }}>
+                                Przeglądaj od nowa
+                            </button>
+                        </li>
+                        <li>
+                            <button
+                                onClick={() => {
+                                    setLearningFilter('learningOnly');
+                                    setCheckedCards(new Set());
+                                    setReviewedSet(new Set()); // Resetowanie przeglądanych fiszek
+                                }}
+                            >
+                                Przeglądaj tylko te których nie wiedziałeś
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            )}
             {selectedCategory === null ? (
                 flashcards.length > 0 && <p>Wybierz kategorię, aby załadować fiszki.</p>
             ) : (
                 learningFilter && (
-                    orderedFlashcards.length === 0 ? (
+                    (orderedFlashcards.length === 0 && learningFilter === "learningOnly") ? (
                         <p>Gratulacje, udało ci się zapamiętać wszystkie fiszki w kategorii: {selectedCategory}!</p>
-                    ) : (
-                        <div className="o-page-view-flashcards__content">
+                    ) : (<div className="o-page-view-flashcards__content">
                             {/* Użycie motion.ul z kontrolą animacji drgań */}
                             <motion.ul
                                 className="o-list-flashcards"
@@ -319,8 +384,8 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
                                             key={card.id}
                                             // Ograniczenie przeciągania tylko do osi X
                                             drag="x"
-                                            dragConstraints={{ left: 0, right: 0 }}
-                                            dragElastic={0.9}
+                                            dragConstraints={{left: 0, right: 0}}
+                                            dragElastic={0.8}
                                             whileDrag={{
                                                 rotate: draggingDirection[card.id] === 'prawo'
                                                     ? 5
@@ -329,16 +394,16 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
                                                         : 0
                                             }}
                                             onDrag={(event, info) => {
-                                                const { offset } = info;
+                                                const {offset} = info;
                                                 const threshold = 20; // Minimalny przesunięcie do rozpoznania kierunku
                                                 if (Math.abs(offset.x) > threshold) {
                                                     const direction = offset.x > 0 ? 'prawo' : 'lewo';
-                                                    setDraggingDirection(prev => ({ ...prev, [card.id]: direction }));
+                                                    setDraggingDirection(prev => ({...prev, [card.id]: direction}));
                                                 }
                                             }}
                                             onDragEnd={(event, info) => {
                                                 const threshold = 100; // Próg w px
-                                                const { offset } = info;
+                                                const {offset} = info;
                                                 const absX = Math.abs(offset.x);
 
                                                 if (absX > threshold) { // Tylko przeciąganie w poziomie
@@ -348,7 +413,7 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
 
                                                 // Resetowanie kierunku przeciągania po zakończeniu animacji
                                                 setDraggingDirection(prev => {
-                                                    const newDrag = { ...prev };
+                                                    const newDrag = {...prev};
                                                     delete newDrag[card.id];
                                                     return newDrag;
                                                 });
@@ -359,14 +424,14 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
                                                 if (animatingCards[card.id] === 'animateLeft') {
                                                     learnIt(card.id);
                                                     setAnimatingCards(prev => {
-                                                        const newAnim = { ...prev };
+                                                        const newAnim = {...prev};
                                                         delete newAnim[card.id];
                                                         return newAnim;
                                                     });
                                                 } else if (animatingCards[card.id] === 'animateRight') {
                                                     knowIt(card.id);
                                                     setAnimatingCards(prev => {
-                                                        const newAnim = { ...prev };
+                                                        const newAnim = {...prev};
                                                         delete newAnim[card.id];
                                                         return newAnim;
                                                     });
@@ -374,44 +439,55 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
 
                                                 // Resetowanie kierunku przeciągania po zakończeniu animacji
                                                 setDraggingDirection(prev => {
-                                                    const newDrag = { ...prev };
+                                                    const newDrag = {...prev};
                                                     delete newDrag[card.id];
                                                     return newDrag;
                                                 });
                                             }}
-                                            transition={{
-                                                type: "spring",
-                                                stiffness: 300,
-                                                damping: 30,
-                                                duration: 0.3
-                                            }}
+                                            // 🔴 Usunięto poniższy fragment transition, aby uniknąć konfliktów
+
+                                            // transition={{
+                                            //     type: "spring",
+                                            //     stiffness: 300,
+                                            //     damping: 30,
+                                            //     duration: 0.3
+                                            // }}
+
                                             style={{
                                                 cursor: 'grab',
                                                 listStyle: 'none',
                                                 overflowY: 'auto', // Umożliwia przewijanie zawartości wewnątrz fiszki
                                             }}
                                         >
-                                            <div className="o-list-flashcards__front o-default-box">
-                                                <p role="button" onClick={() => handleSpeak(card.front,"pl-PL")}>
-                                                    <i className="icon-volume"></i> {card.front}
+                                            <div className="o-list-flashcards__text o-list-flashcards__front o-default-box">
+                                                <p role="button"
+                                                   onClick={() => handleSpeak(card.front, card.langFront)}>
+                                                    <span className="o-list-flashcards__lang"><span className="o-list-flashcards__lang-code">{card.langFront}</span><i
+                                                    className="icon-volume"></i></span> {card.front}
                                                 </p>
                                             </div>
-                                            <hr />
+                                            <hr/>
                                             {checkedCards.has(card.id) && (
-                                                <div className="o-list-flashcards__back">
-                                                    <p role="button" onClick={() => handleSpeak(card.back,"en-US")}>
-                                                        <i className="icon-volume"></i> {card.back}
+                                                <div className="o-list-flashcards__text o-list-flashcards__back">
+                                                    <p role="button"
+                                                       onClick={() => handleSpeak(card.back, card.langBack)}>
+                                                        <span className="o-list-flashcards__lang"><span
+                                                            className="o-list-flashcards__lang-code">{card.langBack}</span><i
+                                                            className="icon-volume"></i></span> {card.back}
                                                     </p>
                                                 </div>
                                             )}
                                             <div className="o-list-flashcards__know">
                                                 <p className="o-list-flashcards__swipe-info-know-or-learn">
-                                                    {card.know ? <span className="color-green">Już to znam?</span> : <span className="color-brow">Uczę się?</span>}
+                                                    {card.know ? <span className="color-green">Już to znam?</span> :
+                                                        <span className="color-red">Uczę się?</span>}
                                                 </p>
-                                                <div className={`o-list-flashcards__swipe-info-know ${draggingDirection[card.id] === 'prawo' ? 'o-list-flashcards__swipe-info-know--visible' : ''}`}>
+                                                <div
+                                                    className={`o-list-flashcards__swipe-info-know ${draggingDirection[card.id] === 'prawo' ? 'o-list-flashcards__swipe-info-know--visible' : ''}`}>
                                                     <p><i className="icon-ok"></i> Już to znam</p>
                                                 </div>
-                                                <div className={`o-list-flashcards__swipe-info-learn ${draggingDirection[card.id] === 'lewo' ? 'o-list-flashcards__swipe-info-learn--visible' : ''}`}>
+                                                <div
+                                                    className={`o-list-flashcards__swipe-info-learn ${draggingDirection[card.id] === 'lewo' ? 'o-list-flashcards__swipe-info-learn--visible' : ''}`}>
                                                     <p><i className="icon-graduation-cap"></i> Uczę się</p>
                                                 </div>
                                                 {!checkedCards.has(card.id) ? (
@@ -425,8 +501,12 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
                                                     <ul className="o-list-buttons-clear">
                                                         <li>
                                                             <button
+                                                                className="btn--red"
                                                                 onClick={() => {
-                                                                    setDraggingDirection(prev => ({ ...prev, [card.id]: 'lewo' }));
+                                                                    setDraggingDirection(prev => ({
+                                                                        ...prev,
+                                                                        [card.id]: 'lewo'
+                                                                    }));
                                                                     setAnimatingCards(prev => ({
                                                                         ...prev,
                                                                         [card.id]: 'animateLeft'
@@ -440,7 +520,10 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
                                                             <button
                                                                 className="btn--green"
                                                                 onClick={() => {
-                                                                    setDraggingDirection(prev => ({ ...prev, [card.id]: 'prawo' }));
+                                                                    setDraggingDirection(prev => ({
+                                                                        ...prev,
+                                                                        [card.id]: 'prawo'
+                                                                    }));
                                                                     setAnimatingCards(prev => ({
                                                                         ...prev,
                                                                         [card.id]: 'animateRight'
@@ -473,6 +556,7 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
                                         setSelectedCategory('All');
                                         setLearningFilter('all');
                                         setCheckedCards(new Set());
+                                        setReviewedSet(new Set()); // Resetowanie przeglądanych fiszek
                                     }}
                                 >
                                     {t('all')} ({flashcards.length})
@@ -494,6 +578,7 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
                                                 setSelectedCategory(cat);
                                                 setLearningFilter('all');
                                                 setCheckedCards(new Set());
+                                                setReviewedSet(new Set()); // Resetowanie przeglądanych fiszek
                                             }}
                                         >
                                             {(cat === 'Without category') ? t('without_category') : cat} ({count})
@@ -506,8 +591,10 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
                         <div className="o-no-flashcards">
                             <p>{t('no_flashcards')}</p>
                             <ul className="o-list-buttons-clear">
-                                <li><Link className="btn" to="/create"><i className="icon-plus"></i> {t('create_flashcard')}</Link></li>
-                                <li><Link className="btn" to="/import-export"><i className="icon-export"></i> {t('import_export')}</Link></li>
+                                <li><Link className="btn" to="/create"><i
+                                    className="icon-plus"></i> {t('create_flashcard')}</Link></li>
+                                <li><Link className="btn" to="/import-export"><i
+                                    className="icon-export"></i> {t('import_export')}</Link></li>
                             </ul>
                         </div>
                     )}

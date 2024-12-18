@@ -57,8 +57,8 @@ function App() {
         loadData();
     }, [loadData]);
 
-    const addFlashcard = async (front, back, category) => {
-        const newFc = await addFlashcardToDB(front, back, category);
+    const addFlashcard = async (front, back, category, know, langFront, langBack) => {
+        const newFc = await addFlashcardToDB(front, back, category, know, langFront, langBack);
         setFlashcards((prev) => {
             const updated = [...prev, newFc];
             updateCategories(updated);
@@ -75,10 +75,10 @@ function App() {
         });
     };
 
-    const editFlashcard = async (id, updatedFront, updatedBack, updatedCategory, updatedKnow) => {
-        await editFlashcardInDB(id, updatedFront, updatedBack, updatedCategory, updatedKnow);
+    const editFlashcard = async (id, updatedFront, updatedBack, updatedCategory, updatedKnow, updatedFrontLang, updatedBackLang) => {
+        await editFlashcardInDB(id, updatedFront, updatedBack, updatedCategory, updatedKnow, updatedFrontLang, updatedBackLang);
         setFlashcards((prev) => {
-            const updated = prev.map(fc => fc.id === id ? { ...fc, front: updatedFront, back: updatedBack, category: updatedCategory, know: updatedKnow } : fc);
+            const updated = prev.map(fc => fc.id === id ? { ...fc, front: updatedFront, back: updatedBack, category: updatedCategory, know: updatedKnow, langFront: updatedFrontLang, langBack: updatedBackLang } : fc);
             updateCategories(updated);
             return updated;
         });
@@ -87,7 +87,7 @@ function App() {
     const setFlashcardKnow = async (id, knowValue) => {
         const card = flashcards.find(fc => fc.id === id);
         if (!card) return;
-        await editFlashcardInDB(id, card.front, card.back, card.category, knowValue);
+        await editFlashcardInDB(id, card.front, card.back, card.category, knowValue, card.langFront, card.langBack);
         setFlashcards((prev) => {
             return prev.map(fc => fc.id === id ? { ...fc, know: knowValue } : fc);
         });
@@ -125,7 +125,7 @@ function App() {
 
                 <div ref={closeMenuRef} className={`o-main-header__menu ${mainMenuVisible ? 'o-main-header__menu--active' : ''}`}>
                     <div>
-                        <label for="o-lang">{i18n.language}</label>
+                        <label htmlFor="o-lang">{i18n.language}</label>
                         <select id="o-lang" onChange={(e) => changeLanguage(e.target.value)} value={getLanguageCode(i18n.language)}>
                             <option value="en">English</option>
                             <option value="pl">Polski</option>

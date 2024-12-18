@@ -11,7 +11,7 @@ import './i18n';
 const isCordova = !!window.cordova;
 
 // Opcjonalnie: Logowanie do konsoli dla celów debugowania
-console.log('Czy aplikacja działa w Cordova?', isCordova);
+// console.log('Czy aplikacja działa w Cordova?', isCordova);
 
 // Pobranie elementu DOM, do którego będzie renderowana aplikacja
 const container = document.getElementById('root');

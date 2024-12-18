@@ -1,3 +1,4 @@
+// EditFlashcardList.jsx
 import React, { useState, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import cardsExport from '../functions/cardsExport';
@@ -12,6 +13,8 @@ function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categor
     const [editKnow, setEditKnow] = useState(false);
     const [filterCategory, setFilterCategory] = useState(null);
     const [selectedCards, setSelectedCards] = useState([]);
+    const [editFrontLang, setEditFrontLang] = useState('');
+    const [editBackLang, setEditBackLang] = useState('');
 
     const startEditing = (card) => {
         setEditMode(card.id);
@@ -19,6 +22,8 @@ function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categor
         setEditBack(card.back);
         setEditCategory(card.category || '');
         setEditKnow(card.know === true);
+        setEditFrontLang(card.langFront);
+        setEditBackLang(card.langBack);
     };
 
     const cancelEditing = () => {
@@ -27,12 +32,14 @@ function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categor
         setEditBack('');
         setEditCategory('');
         setEditKnow(false);
+        setEditFrontLang('');
+        setEditBackLang('');
     };
 
     const submitEdit = (id) => {
         if (editFront.trim() && editBack.trim()) {
             const finalKnow = editKnow ? true : undefined;
-            editFlashcard(id, editFront, editBack, editCategory.trim(), finalKnow);
+            editFlashcard(id, editFront, editBack, editCategory.trim(), finalKnow, editFrontLang.trim(), editBackLang.trim());
             cancelEditing();
         }
     };
@@ -149,7 +156,7 @@ function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categor
                         <>
                             <hr/>
 
-                            {(filteredFlashcards.length > 0 || electedCards.length > 0) &&
+                            {(filteredFlashcards.length > 0 || selectedCards.length > 0) &&
                                 <ul className="o-list-buttons-3-cols">
                                 {filteredFlashcards.length > 0 && (
                                     <li>
@@ -224,27 +231,45 @@ function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categor
                                         {editMode === card.id ? (
                                             <div className="o-list-edit-flashcards__content">
                                                 <p>
-                                                    <label for={`o-edit-front-${card.id}`}>Front:</label>
+                                                    <label htmlFor={`o-edit-front-${card.id}`}>Front:</label>
                                                     <textarea
                                                         value={editFront}
+                                                        className="o-default-box"
                                                         onChange={(e) => setEditFront(e.target.value)}
                                                         rows="2" cols="30"
                                                         id={`o-edit-front-${card.id}`}
                                                     />
+
+                                                    <label htmlFor={`o-edit-front-lang-${card.id}`}>Kod języka:</label>
+                                                    <input
+                                                        type="text"
+                                                        value={editFrontLang}
+                                                        onChange={(e) => setEditFrontLang(e.target.value)}
+                                                        id={`o-edit-front-lang-${card.id}`}
+                                                    />
                                                 </p>
-                                                <hr />
+                                                <hr/>
                                                 <p>
-                                                    <label for={`o-edit-back-${card.id}`}>Back:</label>
+                                                    <label htmlFor={`o-edit-back-${card.id}`}>Back:</label>
                                                     <textarea
+                                                        className="o-default-box"
                                                         value={editBack}
                                                         onChange={(e) => setEditBack(e.target.value)}
                                                         rows="2" cols="30"
                                                         id={`o-edit-back-${card.id}`}
                                                     />
+
+                                                    <label htmlFor={`o-edit-back-lang-${card.id}`}>Kod języka:</label>
+                                                    <input
+                                                        type="text"
+                                                        value={editBackLang}
+                                                        onChange={(e) => setEditBackLang(e.target.value)}
+                                                        id={`o-edit-back-lang-${card.id}`}
+                                                    />
                                                 </p>
-                                                <hr />
+                                                <hr/>
                                                 <p>
-                                                    <label for={`o-edit-category-${card.id}`}>Category:</label>
+                                                    <label htmlFor={`o-edit-category-${card.id}`}>Category:</label>
                                                     <input
                                                         type="text"
                                                         value={editCategory}
@@ -254,7 +279,7 @@ function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categor
                                                 </p>
                                                 <hr />
                                                 <p>
-                                                    <label for={`o-edit-know-${card.id}`}>Know:</label> <input
+                                                    <label htmlFor={`o-edit-know-${card.id}`}>Know:</label> <input
                                                         type="checkbox"
                                                         checked={editKnow}
                                                         onChange={(e) => setEditKnow(e.target.checked)}
@@ -264,16 +289,26 @@ function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categor
                                             </div>
                                         ) : (
                                             <div className="o-list-edit-flashcards__content">
-                                                <p><strong>Front:</strong><br />{card.front}</p>
-                                                <hr />
-                                                <p><strong>Back:</strong><br />{card.back}</p>
-                                                <hr />
+                                                <p><strong>Front:</strong><br/>{card.front}</p>
+                                                <p>
+                                                    <strong>Kod
+                                                        języka:</strong> {card.langFront !== '' ? card.langFront : 'Brak danych'}
+                                                </p>
+                                                <hr/>
+                                                <p><strong>Back:</strong><br/>{card.back}</p>
+                                                <p>
+                                                    <strong>Kod
+                                                        języka:</strong> {card.langBack !== '' ? card.langBack : 'Brak danych'}
+                                                </p>
+                                                <hr/>
                                                 <p>
                                                     <strong>Category:</strong> {card.category && card.category.trim() !== '' ? card.category : 'Without category'}
                                                 </p>
-                                                <hr />
+                                                <hr/>
                                                 <p>
-                                                    <p>{card.know ? <strong className="color-green">Już to znam</strong> : <strong className="color-red">Ucze się</strong>}</p>
+                                                    <p>{card.know ?
+                                                        <strong className="color-green">Już to znam</strong> :
+                                                        <strong className="color-red">Ucze się</strong>}</p>
                                                 </p>
                                             </div>
                                         )}

@@ -28,7 +28,7 @@ const stopSpeaking = () => {
         });
     } else if (window.speechSynthesis) {
         window.speechSynthesis.cancel();
-        console.log('Sukces: Mowa zatrzymana za pomocą speechSynthesis');
+        // console.log('Sukces: Mowa zatrzymana za pomocą speechSynthesis');
     } else {
         console.warn('Brak dostępnych metod TTS do zatrzymania mowy.');
     }

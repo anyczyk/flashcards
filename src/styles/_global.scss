@@ -1,5 +1,7 @@
 @use "varibles" as vars;
 
+$padding-temp: vars.$padding-smaller;
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -86,6 +88,11 @@ hr {
   gap: vars.$padding-smaller;
   flex-wrap: wrap;
   align-items: center;
+
+  &--nowrap {
+    flex-wrap: nowrap;
+    white-space: nowrap;
+  }
 }
 
 .ml-auto {
@@ -137,13 +144,24 @@ hr {
   position: relative;
   flex: 1;
 
+  &__lang {
+    white-space: nowrap;
+    opacity: .5;
+
+    &-code {
+      font-size: 10px;
+      vertical-align: middle;
+      display: inline-block;
+    }
+  }
+
   &__single-card {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: var(--color-green-very-light);
+    background-color: var(--color-card);
     flex-direction: column;
     padding: vars.$padding-smaller;
     border-radius: 12px;
@@ -151,6 +169,14 @@ hr {
     color: var(--color-green-strong-dark);
     overflow-y: auto;
     overflow-x: hidden;
+
+    button {
+      font-weight: 700;
+    }
+
+    hr {
+      border-color: var(--color-black-opacity-20);
+    }
 
     &:last-child,
     &:first-child {
@@ -160,6 +186,11 @@ hr {
     &:first-child,
     &:nth-last-child(-n+3) {
       display: flex;
+    }
+
+    &:nth-last-child(-n+3) {
+      display: flex;
+      box-shadow: 0 0 6px var(--color-black-opacity-50), inset 0 0 15px var(--color-black-opacity-80);
     }
   }
 
@@ -171,7 +202,7 @@ hr {
     }
 
     .o-list-buttons-clear li {
-      flex: 0 0 calc(50% - (vars.$padding-smaller / 2));
+      flex: 0 0 calc(50% - ($padding-temp / 2));
 
       button {
         width: 100%;
@@ -179,22 +210,16 @@ hr {
     }
   }
 
-  &__front,
-  &__back {
+  &__text {
     p {
       text-align: center;
-    }
-  }
-
-  &__front {
-    p {
-      font-size: 22px;
-    }
-  }
-
-  &__back {
-    p {
       font-size: 18px;
+    }
+
+    &:first-child {
+      p {
+        font-size: 22px;
+      }
     }
   }
 
@@ -229,8 +254,8 @@ hr {
   }
 
   &__swipe-info-learn {
-    color: var(--color-brow);
-    border-color: var(--color-brow);
+    color: var(--color-red);
+    border-color: var(--color-red);
     rotate: -45deg;
   }
 

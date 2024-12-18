@@ -2,8 +2,8 @@
 
 button,
 .btn {
-  padding: vars.$padding-smaller;
-  background-color: var(--color-brow);
+  padding: vars.$padding-button;
+  background-color: vars.$bg-color-button;
   color: #fff;
   border: none;
   border-radius: 6px;
@@ -13,6 +13,7 @@ button,
   display: inline-block;
   font-size: 14px;
   font-weight: 400;
+  box-shadow: inset 0 0 10px var(--color-black-opacity-60);
 
   &:active:not([disabled]) {
     background-color: #fff;

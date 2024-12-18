@@ -3,20 +3,17 @@ import { openDB } from 'idb';
 
 const DB_NAME = 'flashcardsDB';
 const STORE_NAME = 'flashcards';
-const DB_VERSION = 2; // Zwiększamy wersję, aby wymusić upgrade
+const DB_VERSION = 13; // Zwiększona wersja dla migracji
 
 export async function initDB() {
     const db = await openDB(DB_NAME, DB_VERSION, {
         upgrade(db) {
-            // Jeśli store już istnieje, usuwamy go w trakcie upgrade'u,
-            // aby go odtworzyć bez autoIncrement
-            if (db.objectStoreNames.contains(STORE_NAME)) {
-                db.deleteObjectStore(STORE_NAME);
+            if (!db.objectStoreNames.contains(STORE_NAME)) {
+                const store = db.createObjectStore(STORE_NAME, {
+                    keyPath: 'id'
+                });
+                store.createIndex('category', 'category', { unique: false });
             }
-            db.createObjectStore(STORE_NAME, {
-                keyPath: 'id'
-                // autoIncrement: false - domyślnie jest false, nie ustawiamy
-            });
         }
     });
     return db;
@@ -27,11 +24,13 @@ export async function getAllFlashcards() {
     return await db.getAll(STORE_NAME);
 }
 
-export async function addFlashcardToDB(front, back, category, know = undefined) {
+export async function addFlashcardToDB({ front, back, category, know = undefined, langFront = 'en-US', langBack = 'en-US' }) {
     const db = await initDB();
-    const id = crypto.randomUUID(); // Generujemy unikalny klucz
-    await db.put(STORE_NAME, { id, front, back, category, know });
-    return { id, front, back, category, know };
+    const id = crypto.randomUUID(); // Generowanie unikalnego ID
+    const flashcard = { id, front, back, category, know, langFront, langBack };
+    // console.log("Adding flashcard to DB:", flashcard); // Logowanie
+    await db.put(STORE_NAME, flashcard);
+    return flashcard;
 }
 
 export async function removeFlashcardFromDB(id) {
@@ -39,9 +38,19 @@ export async function removeFlashcardFromDB(id) {
     await db.delete(STORE_NAME, id);
 }
 
-export async function editFlashcardInDB(id, updatedFront, updatedBack, updatedCategory, updatedKnow = undefined) {
+export async function editFlashcardInDB(id, updatedFront, updatedBack, updatedCategory, updatedKnow = undefined, updatedLangFront = 'en-US', updatedLangBack = 'en-US') {
     const db = await initDB();
-    await db.put(STORE_NAME, { id, front: updatedFront, back: updatedBack, category: updatedCategory, know: updatedKnow });
+    const flashcard = {
+        id,
+        front: updatedFront,
+        back: updatedBack,
+        category: updatedCategory,
+        know: updatedKnow,
+        langFront: updatedLangFront,
+        langBack: updatedLangBack
+    };
+    // console.log("Editing flashcard in DB:", flashcard); // Logowanie
+    await db.put(STORE_NAME, flashcard);
 }
 
 export async function clearAllFlashcards() {
@@ -61,7 +70,9 @@ export async function addMultipleFlashcardsToDB(flashcards) {
             front: fc.front || '',
             back: fc.back || '',
             category: fc.category || '',
-            know: fc.know
+            know: fc.know,
+            langFront: fc.langFront || 'en-US',
+            langBack: fc.langBack || 'en-US'
         });
     }
     await tx.done;

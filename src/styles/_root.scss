@@ -1,13 +1,15 @@
 :root {
   --color-black: #000;
   --color-green: green;
-  --color-green-strong-dark: #001100;
+  --color-green-strong-dark: #001a00; // #001100;
   --color-green-less-dark: #1a291a;
   --color-green-very-light: #afb9af;
   --color-white: #fff;
-  --color-red: red;
+  --color-red: #d7311b;
   --color-brow: #754b00;
   --color-blue: rgb(21, 91, 169);
+  --color-cream: #d9cdb6;
+  --color-dark-cream: #938465;
 
   --color-black-opacity-10: rgba(0,0,0,.1);
   --color-black-opacity-20: rgba(0,0,0,.2);
@@ -28,4 +30,7 @@
   --color-white-opacity-70: rgba(255,255,255,.7);
   --color-white-opacity-80: rgba(255,255,255,.8);
   --color-white-opacity-90: rgba(255,255,255,.9);
+
+  --color-card: var(--color-cream);
+  --color-button: var(--color-dark-cream);
 }
