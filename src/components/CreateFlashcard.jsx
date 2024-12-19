@@ -1,7 +1,9 @@
 // CreateFlashcard.jsx
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { getCordovaLanguage } from '../functions/getLanguage';
+import { getCordovaLanguage } from '../utils/getLanguage';
+import { loadLanguages } from '../utils/loadLanguages';
+import SelectCodeLanguages from './sub-components/SelectCodeLanguages';
 
 function CreateFlashcard({ addFlashcard, categories }) {
     const [front, setFront] = useState('');
@@ -12,45 +14,18 @@ function CreateFlashcard({ addFlashcard, categories }) {
     const [flashcardCreated, setFlashcardCreated] = useState(false);
     const [availableLanguages, setAvailableLanguages] = useState([]);
 
-    // Ładowanie dostępnych języków
     useEffect(() => {
-        const loadLanguages = async () => {
-            if (window.cordova && window.TTS) {
-                const predefinedLanguages = [
-                    'en-US', 'en-GB', 'pl-PL', 'es-ES', 'es-MX', 'de-DE', 'fr-FR',
-                    'it-IT', 'ru-RU', 'zh-CN', 'zh-TW', 'ja-JP', 'ko-KR', 'pt-PT',
-                    'pt-BR', 'nl-NL', 'sv-SE', 'no-NO', 'da-DK', 'fi-FI', 'tr-TR',
-                    'ar-SA', 'he-IL', 'hi-IN', 'id-ID', 'ms-MY', 'th-TH', 'vi-VN',
-                    'cs-CZ', 'el-GR', 'hu-HU', 'ro-RO', 'sk-SK', 'uk-UA', 'bg-BG',
-                    'hr-HR', 'lt-LT', 'lv-LV', 'sl-SI', 'et-EE', 'fa-IR', 'bn-BD',
-                    'ta-IN', 'te-IN', 'mr-IN'
-                ];
-                setAvailableLanguages(predefinedLanguages);
-            } else if (window.speechSynthesis) {
-                const loadVoices = () => {
-                    const voices = window.speechSynthesis.getVoices();
-                    const uniqueLangs = Array.from(new Set(voices.map(voice => voice.lang)));
-                    if (uniqueLangs.length > 0) {
-                        setAvailableLanguages(uniqueLangs);
-                    } else {
-                        console.warn("No voices available, setting default language to 'en-US'.");
-                        setAvailableLanguages(['en-US']);
-                    }
-                };
-
-                window.speechSynthesis.onvoiceschanged = loadVoices;
-                loadVoices();
-
-                return () => {
-                    window.speechSynthesis.onvoiceschanged = null;
-                };
-            } else {
-                console.warn("No TTS available.");
+        const fetchLanguages = async () => {
+            try {
+                const languages = await loadLanguages();
+                setAvailableLanguages(languages);
+            } catch (error) {
+                console.error("Error loading languages:", error);
                 setAvailableLanguages(['en-US']);
             }
         };
 
-        loadLanguages();
+        fetchLanguages();
     }, []);
 
     // Ustawienie języków po załadowaniu availableLanguages
@@ -168,17 +143,18 @@ function CreateFlashcard({ addFlashcard, categories }) {
                 </p>
                 <p>
                     <label htmlFor="lang-front">Kod języka dla syntezatora mowy (Front):</label><br/>
-                    <select
-                        id="lang-front"
-                        value={langFront}
-                        onChange={(e) => setLangFront(e.target.value)}
-                        required
-                    >
-                        {availableLanguages.length === 0 && <option value="">Loading...</option>}
-                        {availableLanguages.map((lang, index) => (
-                            <option key={index} value={lang}>{lang}</option>
-                        ))}
-                    </select>
+                    <SelectCodeLanguages availableLanguages={availableLanguages} value={langFront} id={'lang-front'} setFunction={setLangFront} />
+                    {/*<select*/}
+                    {/*    id="lang-front"*/}
+                    {/*    value={langFront}*/}
+                    {/*    onChange={(e) => setLangFront(e.target.value)}*/}
+                    {/*    required*/}
+                    {/*>*/}
+                    {/*    {availableLanguages.length === 0 && <option value="">Loading...</option>}*/}
+                    {/*    {availableLanguages.map((lang, index) => (*/}
+                    {/*        <option key={index} value={lang}>{lang}</option>*/}
+                    {/*    ))}*/}
+                    {/*</select>*/}
                 </p>
                 <hr/>
                 <p>
@@ -194,17 +170,18 @@ function CreateFlashcard({ addFlashcard, categories }) {
                 </p>
                 <p>
                     <label htmlFor="lang-back">Kod języka dla syntezatora mowy (Back):</label><br/>
-                    <select
-                        id="lang-back"
-                        value={langBack}
-                        onChange={(e) => setLangBack(e.target.value)}
-                        required
-                    >
-                        {availableLanguages.length === 0 && <option value="">Loading...</option>}
-                        {availableLanguages.map((lang, index) => (
-                            <option key={index} value={lang}>{lang}</option>
-                        ))}
-                    </select>
+                    <SelectCodeLanguages availableLanguages={availableLanguages} value={langBack} id={'lang-back'} setFunction={setLangBack} />
+                    {/*<select*/}
+                    {/*    id="lang-back"*/}
+                    {/*    value={langBack}*/}
+                    {/*    onChange={(e) => setLangBack(e.target.value)}*/}
+                    {/*    required*/}
+                    {/*>*/}
+                    {/*    {availableLanguages.length === 0 && <option value="">Loading...</option>}*/}
+                    {/*    {availableLanguages.map((lang, index) => (*/}
+                    {/*        <option key={index} value={lang}>{lang}</option>*/}
+                    {/*    ))}*/}
+                    {/*</select>*/}
                 </p>
                 <hr/>
                 <p>

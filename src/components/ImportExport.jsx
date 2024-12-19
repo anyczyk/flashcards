@@ -2,7 +2,7 @@
 
 import React, { useRef, useState, useEffect } from 'react';
 import { clearAllFlashcards, addMultipleFlashcardsToDB, getAllFlashcards } from '../db';
-import cardsExport from '../functions/cardsExport';
+import cardsExport from '../utils/cardsExport';
 
 function ImportExport({ flashcards, onImport }) {
     const fileInputRef = useRef(null);

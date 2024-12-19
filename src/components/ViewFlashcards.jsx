@@ -3,7 +3,8 @@ import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence, useAnimation } from 'framer-motion';
-import { speak, stopSpeaking } from "../functions/speak";
+import { speak, stopSpeaking } from "../utils/speak";
+import { setLocalStorage, getLocalStorage, removeLocalStorage } from '../utils/storage';
 
 function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
     const { t } = useTranslation();
@@ -14,6 +15,11 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
     const [animatingCards, setAnimatingCards] = useState({}); // Nowy stan dla animujących się kart
     const [draggingDirection, setDraggingDirection] = useState({}); // Nowy stan dla kierunku przeciągania
     const [isShuffling, setIsShuffling] = useState(false); // Nowy stan dla animacji tasowania
+    const [reversFrontBack, setReversFrontBack] = useState(false);
+    const [syntAudio, setSyntAudio] = useState(() => {
+        const storedAudio = getLocalStorage('syntAudio');
+        return storedAudio !== null ? storedAudio : true;
+    });
 
     const controls = useAnimation(); // Kontroler animacji dla kontenera <ul>
 
@@ -45,6 +51,10 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
         setOrderedFlashcards(filtered);
     };
 
+    useEffect(() => {
+        setLocalStorage('syntAudio', syntAudio);
+    }, [syntAudio]);
+
     // Tasowanie fiszek tylko przy zmianie kategorii lub filtra
     useEffect(() => {
         applyFilterAndShuffle();
@@ -65,7 +75,8 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
         isShuffling,
         animatingCards,
         draggingDirection,
-        checkedCards
+        reversFrontBack,
+        syntAudio
     ]);
 
     // Zatrzymaj mowę przy odmontowaniu komponentu
@@ -224,19 +235,19 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
             rotate: 0,
         },
         animateLeft: {
-            x: -500, // 🔴 Zmieniono z -100 na -500
-            rotate: -5, // Obrót w lewo
+            x: -500,
+            rotate: -5,
             transition: {
-                type: "tween", // 🔴 Zmieniono z "spring" na "tween"
-                duration: 0.5 // 🔴 Zmieniono z 0.2 na 0.5
+                type: "tween",
+                duration: 0.5
             }
         },
         animateRight: {
-            x: 500, // 🔴 Zmieniono z 100 na 500
-            rotate: 5, // Obrót w prawo
+            x: 500,
+            rotate: 5,
             transition: {
-                type: "tween", // 🔴 Zmieniono z "spring" na "tween"
-                duration: 0.5 // 🔴 Zmieniono z 0.2 na 0.5
+                type: "tween",
+                duration: 0.5
             }
         },
     };
@@ -266,24 +277,54 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
         }
     }, [learningFilter, orderedFlashcards]);
 
+    const reversCards = () => {
+        setReversFrontBack(prev => !prev);
+    };
+
+    const audioOnOff = () => {
+        setSyntAudio(prev => !prev);
+    };
+
+    const CardFrontOrBack = ({card, cardLang}) => {
+      return (
+          <div className="o-list-flashcards__text o-list-flashcards__front o-default-box">
+              <p role="button"
+                 onClick={() => handleSpeak(card, cardLang)}>
+                                                    <span className="o-list-flashcards__lang"><span
+                                                        className="o-list-flashcards__lang-code">{cardLang}</span><i
+                                                        className="icon-volume"></i></span> {card}
+              </p>
+          </div>
+      )
+    };
+
     return (
         <div className="o-page-view-flashcards">
             <div className="o-page-view-flashcards__header">
                 {selectedCategory !== null && (
-                    <p>
-                        <button onClick={() => {
-                            setSelectedCategory(null);
-                            setLearningFilter(null);
-                            setCheckedCards(new Set());
-                            setReviewedSet(new Set()); // Resetowanie przeglądanych fiszek
-                        }}>
-                            Wybierz inną kategorię
-                        </button>
-                    </p>
+                    <ul className="o-list-buttons-clear o-list-buttons-clear--nowrap o-default-box">
+                        <li>
+                            <button onClick={() => {
+                                setSelectedCategory(null);
+                                setLearningFilter(null);
+                                setCheckedCards(new Set());
+                                setReviewedSet(new Set()); // Resetowanie przeglądanych fiszek
+                                setReversFrontBack(false);
+                            }}>
+                            Wszystkie Kategorie
+                            </button>
+                        </li>
+                        <li>
+                            <button className={reversFrontBack ? 'btn--active' : ''} onClick={reversCards}><i className="icon-switch"></i> Revers <sup>{reversFrontBack ? 'On' : 'Off'}</sup></button>
+                        </li>
+                        <li>
+                            <button className={syntAudio ? 'btn--active' : ''} onClick={audioOnOff}><i className="icon-volume"></i> Audio <sup>{syntAudio ? 'On' : 'Off'}</sup></button>
+                        </li>
+                    </ul>
                 )}
                 {selectedCategory !== null && getFilteredFlashcardCount('all') > 0 ? (
                     <>
-                        <h3>
+                        <h2 className="o-page-view-flashcards__title">
                             {selectedCategory === 'All'
                                 ? t('all')
                                 : (selectedCategory === 'Without category' ? t('without_category') : selectedCategory)} (
@@ -293,7 +334,7 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
                                     ? flashcards.filter(fc => !fc.category || fc.category.trim() === '').length
                                     : flashcards.filter(fc => fc.category === selectedCategory).length}
                             )
-                        </h3>
+                        </h2>
                         <hr />
                         <ul className="o-list-buttons-clear o-list-buttons-clear--nowrap o-default-box">
                             {getFilteredFlashcardCount('learningOnly') < getFilteredFlashcardCount('all') && (
@@ -306,9 +347,9 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
                                             setReviewedSet(new Set()); // Resetowanie przeglądanych fiszek
                                         }}
                                     >
-                                        Powtórz (
+                                        Powtórz <sup>
                                         {learningFilter === 'all' ? orderedFlashcards.length : getFilteredFlashcardCount('all')}
-                                        )
+                                        </sup>
                                     </button>
                                 </li>
                             )}
@@ -322,13 +363,13 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
                                             setReviewedSet(new Set()); // Resetowanie przeglądanych fiszek
                                         }}
                                     >
-                                        Do nauki ({getFilteredFlashcardCount('learningOnly')})
+                                        Do nauki <sup>{getFilteredFlashcardCount('learningOnly')}</sup>
                                     </button>
                                 </li>
                             )}
                             {!(learningFilter && orderedFlashcards.length === 0) && <li>
                                 <button onClick={handleShuffle} disabled={isShuffling}>
-                                    {isShuffling ? 'Resetuje...' : 'Resetuj'}
+                                    <i className="icon-spin4"></i> {isShuffling ? 'Resetuje...' : 'Resetuj'}
                                 </button>
                             </li>}
                         </ul>
@@ -349,7 +390,7 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
                                 Przeglądaj od nowa
                             </button>
                         </li>
-                        <li>
+                        {getFilteredFlashcardCount('learningOnly') > 0 && <li>
                             <button
                                 onClick={() => {
                                     setLearningFilter('learningOnly');
@@ -359,7 +400,7 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
                             >
                                 Przeglądaj tylko te których nie wiedziałeś
                             </button>
-                        </li>
+                        </li>}
                     </ul>
                 </div>
             )}
@@ -368,7 +409,7 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
             ) : (
                 learningFilter && (
                     (orderedFlashcards.length === 0 && learningFilter === "learningOnly") ? (
-                        <p>Gratulacje, udało ci się zapamiętać wszystkie fiszki w kategorii: {selectedCategory}!</p>
+                        <p>Gratulacje, udało ci się zapamiętać wszystkie fiszki w kategorii!</p>
                     ) : (<div className="o-page-view-flashcards__content">
                             {/* Użycie motion.ul z kontrolą animacji drgań */}
                             <motion.ul
@@ -444,7 +485,6 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
                                                     return newDrag;
                                                 });
                                             }}
-                                            // 🔴 Usunięto poniższy fragment transition, aby uniknąć konfliktów
 
                                             // transition={{
                                             //     type: "spring",
@@ -459,23 +499,11 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
                                                 overflowY: 'auto', // Umożliwia przewijanie zawartości wewnątrz fiszki
                                             }}
                                         >
-                                            <div className="o-list-flashcards__text o-list-flashcards__front o-default-box">
-                                                <p role="button"
-                                                   onClick={() => handleSpeak(card.front, card.langFront)}>
-                                                    <span className="o-list-flashcards__lang"><span className="o-list-flashcards__lang-code">{card.langFront}</span><i
-                                                    className="icon-volume"></i></span> {card.front}
-                                                </p>
-                                            </div>
+
+                                            {reversFrontBack ? <CardFrontOrBack card={card.back} cardLang={card.langBack} /> : <CardFrontOrBack card={card.front} cardLang={card.langFront} />}
                                             <hr/>
                                             {checkedCards.has(card.id) && (
-                                                <div className="o-list-flashcards__text o-list-flashcards__back">
-                                                    <p role="button"
-                                                       onClick={() => handleSpeak(card.back, card.langBack)}>
-                                                        <span className="o-list-flashcards__lang"><span
-                                                            className="o-list-flashcards__lang-code">{card.langBack}</span><i
-                                                            className="icon-volume"></i></span> {card.back}
-                                                    </p>
-                                                </div>
+                                                !reversFrontBack ? <CardFrontOrBack card={card.back} cardLang={card.langBack} /> : <CardFrontOrBack card={card.front} cardLang={card.langFront} />
                                             )}
                                             <div className="o-list-flashcards__know">
                                                 <p className="o-list-flashcards__swipe-info-know-or-learn">
@@ -493,7 +521,17 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
                                                 {!checkedCards.has(card.id) ? (
                                                     <button
                                                         className="o-list-flashcards__know-check btn--blue"
-                                                        onClick={() => handleCheck(card.id)}
+                                                        onClick={() => {
+                                                            handleCheck(card.id);
+                                                            if(syntAudio) {
+                                                                if(reversFrontBack) {
+                                                                    handleSpeak(card.front, card.langFront);
+                                                                } else {
+                                                                    handleSpeak(card.back, card.langBack);
+                                                                }
+                                                            }
+                                                        }
+                                                    }
                                                     >
                                                         Sprawdź
                                                     </button>

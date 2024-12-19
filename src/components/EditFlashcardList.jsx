@@ -1,8 +1,10 @@
 // EditFlashcardList.jsx
-import React, { useState, useMemo } from 'react';
+import React, {useState, useMemo, useEffect} from 'react';
 import { useTranslation } from 'react-i18next';
-import cardsExport from '../functions/cardsExport';
+import cardsExport from '../utils/cardsExport';
 import {Link} from "react-router-dom";
+import { loadLanguages } from '../utils/loadLanguages';
+import SelectCodeLanguages from './sub-components/SelectCodeLanguages';
 
 function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categories }) {
     const { t, i18n } = useTranslation(); // Użyj hooka tłumaczenia
@@ -15,6 +17,22 @@ function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categor
     const [selectedCards, setSelectedCards] = useState([]);
     const [editFrontLang, setEditFrontLang] = useState('');
     const [editBackLang, setEditBackLang] = useState('');
+
+    const [availableLanguages, setAvailableLanguages] = useState([]);
+
+    useEffect(() => {
+        const fetchLanguages = async () => {
+            try {
+                const languages = await loadLanguages();
+                setAvailableLanguages(languages);
+            } catch (error) {
+                console.error("Error loading languages:", error);
+                setAvailableLanguages(['en-US']);
+            }
+        };
+
+        fetchLanguages();
+    }, []);
 
     const startEditing = (card) => {
         setEditMode(card.id);
@@ -241,12 +259,27 @@ function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categor
                                                     />
 
                                                     <label htmlFor={`o-edit-front-lang-${card.id}`}>Kod języka:</label>
-                                                    <input
-                                                        type="text"
-                                                        value={editFrontLang}
-                                                        onChange={(e) => setEditFrontLang(e.target.value)}
-                                                        id={`o-edit-front-lang-${card.id}`}
-                                                    />
+
+                                                    <SelectCodeLanguages availableLanguages={availableLanguages} value={editFrontLang} id={`o-edit-front-lang-${card.id}`} setFunction={setEditFrontLang} />
+                                                    {/*<select*/}
+                                                    {/*    id={`o-edit-front-lang-${card.id}`}*/}
+                                                    {/*    value={editFrontLang}*/}
+                                                    {/*    onChange={(e) => setEditFrontLang(e.target.value)}*/}
+                                                    {/*    required*/}
+                                                    {/*>*/}
+                                                    {/*    {availableLanguages.length === 0 &&*/}
+                                                    {/*        <option value="">Loading...</option>}*/}
+                                                    {/*    {availableLanguages.map((lang, index) => (*/}
+                                                    {/*        <option key={index} value={lang}>{lang}</option>*/}
+                                                    {/*    ))}*/}
+                                                    {/*</select>*/}
+
+                                                    {/*<input*/}
+                                                    {/*    type="text"*/}
+                                                    {/*    value={editFrontLang}*/}
+                                                    {/*    onChange={(e) => setEditFrontLang(e.target.value)}*/}
+                                                    {/*    id={`o-edit-front-lang-${card.id}`}*/}
+                                                    {/*/>*/}
                                                 </p>
                                                 <hr/>
                                                 <p>
@@ -260,12 +293,27 @@ function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categor
                                                     />
 
                                                     <label htmlFor={`o-edit-back-lang-${card.id}`}>Kod języka:</label>
-                                                    <input
-                                                        type="text"
-                                                        value={editBackLang}
-                                                        onChange={(e) => setEditBackLang(e.target.value)}
-                                                        id={`o-edit-back-lang-${card.id}`}
-                                                    />
+
+                                                    <SelectCodeLanguages availableLanguages={availableLanguages} value={editBackLang} id={`o-edit-back-lang-${card.id}`} setFunction={setEditBackLang} />
+                                                    {/*<select*/}
+                                                    {/*    id={`o-edit-back-lang-${card.id}`}*/}
+                                                    {/*    value={editBackLang}*/}
+                                                    {/*    onChange={(e) => setEditBackLang(e.target.value)}*/}
+                                                    {/*    required*/}
+                                                    {/*>*/}
+                                                    {/*    {availableLanguages.length === 0 &&*/}
+                                                    {/*        <option value="">Loading...</option>}*/}
+                                                    {/*    {availableLanguages.map((lang, index) => (*/}
+                                                    {/*        <option key={index} value={lang}>{lang}</option>*/}
+                                                    {/*    ))}*/}
+                                                    {/*</select>*/}
+
+                                                    {/*<input*/}
+                                                    {/*    type="text"*/}
+                                                    {/*    value={editBackLang}*/}
+                                                    {/*    onChange={(e) => setEditBackLang(e.target.value)}*/}
+                                                    {/*    id={`o-edit-back-lang-${card.id}`}*/}
+                                                    {/*/>*/}
                                                 </p>
                                                 <hr/>
                                                 <p>

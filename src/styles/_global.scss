@@ -279,6 +279,13 @@ hr {
     flex: 1;
     display: flex;
   }
+
+  &__title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+  }
 }
 
 .o-fade-hidden {
