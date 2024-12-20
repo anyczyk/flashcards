@@ -92,6 +92,14 @@ hr {
   &--nowrap {
     flex-wrap: nowrap;
     white-space: nowrap;
+
+    li {
+      flex: 1;
+
+      button {
+        width: 100%;
+      }
+    }
   }
 }
 
@@ -192,6 +200,21 @@ hr {
       display: flex;
       box-shadow: 0 0 6px var(--color-black-opacity-50), inset 0 0 15px var(--color-black-opacity-80);
     }
+
+    .o-list-flashcards__text,
+    .o-list-flashcards__swipe-info-know-or-learn,
+    hr {
+      opacity: 0;
+      transition: opacity 250ms ease-in-out;
+    }
+
+    &:last-child {
+      .o-list-flashcards__text,
+      .o-list-flashcards__swipe-info-know-or-learn,
+      hr {
+        opacity: 1;
+      }
+    }
   }
 
   &__know {
@@ -286,9 +309,24 @@ hr {
     text-overflow: ellipsis;
     width: 100%;
   }
+
+  &__tools {
+    button sup {
+      background-color: var(--color-green);
+    }
+  }
 }
 
 .o-fade-hidden {
   opacity: 0;
   transition: opacity 0.3s ease;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

@@ -30,15 +30,6 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
     const [visibleCount, setVisibleCount] = useState(NR_LOADED_CARDS);
     const listRef = useRef(null);
 
-    const shuffleArray = (array) => {
-        const newArray = [...array];
-        for (let i = newArray.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
-        }
-        return newArray;
-    };
-
     const applyFilterAndShuffle = () => {
         let filtered = [];
         if (selectedCategory === 'All') {
@@ -53,8 +44,13 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
             filtered = filtered.filter(fc => fc.know !== true);
         }
 
-        const shuffled = shuffleArray(filtered);
-        setOrderedFlashcards(shuffled);
+        // Tasujemy listę tylko raz przy zmianie kategorii/filtra
+        for (let i = filtered.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [filtered[i], filtered[j]] = [filtered[j], filtered[i]];
+        }
+
+        setOrderedFlashcards(filtered);
         setVisibleCount(NR_LOADED_CARDS);
     };
 
@@ -64,6 +60,7 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
 
     useEffect(() => {
         if (selectedCategory !== null && learningFilter !== null) {
+            // Przy zmianie kategorii/filtra wczytujemy i tasujemy raz
             applyFilterAndShuffle();
         }
     }, [selectedCategory, learningFilter]);
@@ -129,20 +126,37 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
         if (isShuffling) return;
         setIsShuffling(true);
         await controls.start("shuffling");
+        // Przetasowanie po kliknięciu "Resetuj"
         applyFilterAndShuffle();
         setIsShuffling(false);
         setReviewedSet(new Set());
     };
 
-    // W nowej koncepcji dla learningOnly fiszka także jest usuwana przy lewo/uczę się.
-    // Czyli w obu trybach ("all" i "learningOnly"):
-    // - "Uczę się" (lewo): usuwa kartę permanentnie
-    // - "Już to znam" (prawo): usuwa kartę permanentnie
+    // Funckja do przeniesienia karty na początek listy
+    const moveCardToFront = (id) => {
+        setOrderedFlashcards(prev => {
+            const idx = prev.findIndex(c => c.id === id);
+            if (idx < 0) return prev;
+            const card = prev[idx];
+            const newList = [card, ...prev.slice(0, idx), ...prev.slice(idx+1)];
+            return newList;
+        });
+    };
+
+    // Uczy się:
+    // - W trybie "all" usuwamy kartę
+    // - W trybie "learningOnly" przenosimy kartę na początek listy
     const learnIt = (id) => {
         setFlashcardKnow(id, undefined);
-        setOrderedFlashcards(prev => prev.filter(card => card.id !== id));
+
         if (learningFilter === 'all') {
-            setReviewedSet(prev => new Set(prev).add(id));
+            setOrderedFlashcards(prev => prev.filter(card => card.id !== id));
+            if (learningFilter === 'all') {
+                setReviewedSet(prev => new Set(prev).add(id));
+            }
+        } else if (learningFilter === 'learningOnly') {
+            // Przenosimy kartę na początek listy
+            moveCardToFront(id);
         }
 
         setCheckedCards(prev => {
@@ -152,6 +166,7 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
         });
     };
 
+    // Znamy kartę -> usuwamy w obu trybach
     const knowIt = (id) => {
         setFlashcardKnow(id, true);
         setOrderedFlashcards(prev => prev.filter(card => card.id !== id));
@@ -274,7 +289,7 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
                                 setReviewedSet(new Set());
                                 setReversFrontBack(false);
                             }}>
-                                Kategorie
+                                Wszystkie Kategorie
                             </button>
                         </li>
                         <li>
@@ -299,7 +314,7 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
                             )
                         </h2>
                         <hr />
-                        <ul className="o-page-view-flashcards__tools o-list-buttons-clear o-list-buttons-clear--nowrap o-default-box">
+                        <ul className="o-list-buttons-clear o-list-buttons-clear--nowrap o-default-box">
                             {getFilteredFlashcardCount('learningOnly') < getFilteredFlashcardCount('all') && (
                                 <li>
                                     <button
@@ -326,7 +341,7 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
                                             setReviewedSet(new Set());
                                         }}
                                     >
-                                        Do nauki <sub>{getFilteredFlashcardCount('learningOnly')}</sub><sup>{learningFilter === 'learningOnly' ? orderedFlashcards.length : getFilteredFlashcardCount('learningOnly')}</sup>
+                                        Do nauki <sup>{getFilteredFlashcardCount('learningOnly')}</sup>
                                     </button>
                                 </li>
                             )}
@@ -371,23 +386,7 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
             ) : (
                 learningFilter && (
                     (orderedFlashcards.length === 0 && learningFilter === "learningOnly") ? (
-                        (getFilteredFlashcardCount('learningOnly') > 0 ? <><p>W tej kategorii ciągle posiadasz fiszki do nauki ({getFilteredFlashcardCount('learningOnly')})</p>
-                                <ul className="o-list-buttons-clear">
-                                    <li>
-                                        <button
-                                            onClick={() => {
-                                                setLearningFilter('learningOnly');
-                                                setCheckedCards(new Set());
-                                                setReviewedSet(new Set());
-                                                applyFilterAndShuffle();
-                                            }}
-                                        >
-                                            Powtórz raz jeszcze naukę
-                                        </button>
-                                    </li>
-                                </ul>
-                            </> :
-                            <p>Gratulacje, udało ci się zapamiętać wszystkie fiszki w kategorii!</p>)
+                        <p>Gratulacje, udało ci się zapamiętać wszystkie fiszki w kategorii!</p>
                     ) : (
                         <div className="o-page-view-flashcards__content" ref={listRef} onScroll={handleScroll}>
                             <motion.ul
@@ -396,7 +395,7 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
                                 initial="initial"
                                 animate={controls}
                             >
-                            <AnimatePresence mode="popLayout">
+                                <AnimatePresence mode="popLayout">
                                     {orderedFlashcards.slice(0, visibleCount).map((card) => (
                                         <motion.li
                                             className="o-list-flashcards__single-card"
@@ -439,10 +438,10 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
                                             animate={animatingCards[card.id] || 'default'}
                                             onAnimationComplete={() => {
                                                 if (animatingCards[card.id] === 'animateLeft') {
-                                                    // Uczę się (lewo) - usuwamy
+                                                    // Uczę się
                                                     learnIt(card.id);
                                                 } else if (animatingCards[card.id] === 'animateRight') {
-                                                    // Już to znam (prawo) - usuwamy
+                                                    // Już to znam
                                                     knowIt(card.id);
                                                 }
 
