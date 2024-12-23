@@ -92,4 +92,13 @@ button,
       background-color: var(--color-green);
     }
   }
+
+  &-revers {
+    &:not(&--active) {
+      sup {
+        background-color: var(--color-red) !important;
+      }
+    }
+  }
+
 }

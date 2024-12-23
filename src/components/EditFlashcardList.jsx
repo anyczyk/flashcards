@@ -1,10 +1,15 @@
 // EditFlashcardList.jsx
-import React, {useState, useMemo, useEffect} from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import cardsExport from '../utils/cardsExport';
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import { loadLanguages } from '../utils/loadLanguages';
 import SelectCodeLanguages from './sub-components/SelectCodeLanguages';
+import {
+    DragDropContext,
+    Droppable,
+    Draggable,
+} from '@hello-pangea/dnd';
 
 function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categories }) {
     const { t, i18n } = useTranslation(); // Użyj hooka tłumaczenia
@@ -19,6 +24,7 @@ function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categor
     const [editBackLang, setEditBackLang] = useState('');
 
     const [availableLanguages, setAvailableLanguages] = useState([]);
+    const [orderedCategories, setOrderedCategories] = useState([]);
 
     useEffect(() => {
         const fetchLanguages = async () => {
@@ -33,6 +39,36 @@ function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categor
 
         fetchLanguages();
     }, []);
+
+    useEffect(() => {
+        // Inicjalizacja orderedCategories na podstawie props.categories i zapisanej kolejności
+        const loadCategoryOrder = () => {
+            const savedOrder = localStorage.getItem('categoryOrder');
+            if (savedOrder) {
+                const orderIds = JSON.parse(savedOrder);
+                // Zakładając, że kategorie są unikalnymi nazwami lub identyfikatorami
+                const ordered = orderIds
+                    .map(id => categories.find(cat => cat === id))
+                    .filter(cat => cat !== undefined);
+                // Dodaj kategorie, które mogły zostać dodane później
+                const remaining = categories.filter(cat => !orderIds.includes(cat));
+                return [...ordered, ...remaining];
+            }
+            return categories;
+        };
+        setOrderedCategories(loadCategoryOrder());
+    }, [categories]);
+
+    const handleOnDragEnd = (result) => {
+        if (!result.destination) return;
+
+        const reorderedCategories = Array.from(orderedCategories);
+        const [movedCategory] = reorderedCategories.splice(result.source.index, 1);
+        reorderedCategories.splice(result.destination.index, 0, movedCategory);
+
+        setOrderedCategories(reorderedCategories);
+        localStorage.setItem('categoryOrder', JSON.stringify(reorderedCategories));
+    };
 
     const startEditing = (card) => {
         setEditMode(card.id);
@@ -114,50 +150,85 @@ function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categor
 
     return (
         <div className="o-page-edit-flashcard-list">
-            <h2>Flashcards (Edit Page){(filterCategory !== null) && <span> / {filterCategory === 'All' ? t('all') : (filterCategory === 'Without category' ? t('without_category') : filterCategory)} (
-                {
-                    filterCategory === 'All'
-                        ? flashcards.length
-                        : filterCategory === 'Without category'
-                            ? flashcards.filter(fc => !fc.category || fc.category.trim() === '').length
-                            : filteredFlashcards.filter(fc => fc.category === filterCategory).length
-                })
-            </span>}</h2>
+            <h2>
+                Flashcards (Edit Page)
+                {(filterCategory !== null) && (
+                    <span>
+                        / {filterCategory === 'All' ? t('all') : (filterCategory === 'Without category' ? t('without_category') : filterCategory)} (
+                        {
+                            filterCategory === 'All'
+                                ? flashcards.length
+                                : filterCategory === 'Without category'
+                                    ? flashcards.filter(fc => !fc.category || fc.category.trim() === '').length
+                                    : filteredFlashcards.filter(fc => fc.category === filterCategory).length
+                        })
+                    </span>
+                )}
+            </h2>
             <hr />
             {(flashcards.length < 1) ?
                 <div className="o-no-flashcards">
                     <p>{t('no_flashcards')}</p>
                     <ul className="o-list-buttons-clear">
-                        <li><Link className="btn" to="/create"><i className="icon-plus"></i> {t('create_flashcard')}</Link></li>
-                        <li><Link className="btn" to="/import-export"><i className="icon-export"></i> {t('import_export')}</Link></li>
+                        <li>
+                            <Link className="btn" to="/create">
+                                <i className="icon-plus"></i> {t('create_flashcard')}
+                            </Link>
+                        </li>
+                        <li>
+                            <Link className="btn" to="/import-export">
+                                <i className="icon-export"></i> {t('import_export')}
+                            </Link>
+                        </li>
                     </ul>
                 </div>
                 :
                 <>
                     {(filterCategory === null) ? (
-                        <ul className="o-list-categories">
-                            <li>
-                                <button onClick={() => setFilterCategory('All')}>
-                                    <i className="icon-wrench"></i> {t('all')} ({flashcards.length})
-                                </button>
-                            </li>
-                            {categories.map((cat) => {
-                                let count;
-                                if (cat === 'Without category') {
-                                    count = flashcards.filter(fc => !fc.category || fc.category.trim() === '').length;
-                                } else {
-                                    count = flashcards.filter(fc => fc.category === cat).length;
-                                }
+                        <DragDropContext onDragEnd={handleOnDragEnd}>
+                            <Droppable droppableId="categories">
+                                {(provided) => (
+                                    <ul
+                                        className="o-list-categories o-list-categories--edit"
+                                        {...provided.droppableProps}
+                                        ref={provided.innerRef}
+                                    >
+                                        {/* Przenieś 'All' poza listę Draggable */}
+                                        <li>
+                                            <button onClick={() => setFilterCategory('All')}>
+                                                <i className="icon-wrench"></i> {t('all')} ({flashcards.length})
+                                            </button>
+                                        </li>
+                                        {orderedCategories.map((cat, index) => {
+                                            let count;
+                                            if (cat === 'Without category') {
+                                                count = flashcards.filter(fc => !fc.category || fc.category.trim() === '').length;
+                                            } else {
+                                                count = flashcards.filter(fc => fc.category === cat).length;
+                                            }
 
-                                return (
-                                    <li key={cat}>
-                                        <button onClick={() => setFilterCategory(cat)}>
-                                            <i className="icon-wrench"></i> {(cat === 'Without category') ? t('without_category') : cat} ({count})
-                                        </button>
-                                    </li>
-                                );
-                            })}
-                        </ul>
+                                            return (
+                                                <Draggable key={cat} draggableId={cat} index={index}>
+                                                    {(provided) => (
+                                                        <li
+                                                            ref={provided.innerRef}
+                                                            {...provided.draggableProps}
+                                                            {...provided.dragHandleProps}
+                                                        >
+                                                            <button onClick={() => setFilterCategory(cat)}>
+                                                                <i className="icon-wrench"></i> {(cat === 'Without category') ? t('without_category') : cat} ({count})
+                                                            </button>
+                                                            <div className="o-list-categories__move">Move</div>
+                                                        </li>
+                                                    )}
+                                                </Draggable>
+                                            );
+                                        })}
+                                        {provided.placeholder}
+                                    </ul>
+                                )}
+                            </Droppable>
+                        </DragDropContext>
                     ) : (
                         <p>
                             <button onClick={() => {
@@ -172,198 +243,174 @@ function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categor
 
                     {filterCategory !== null && (
                         <>
-                            <hr/>
+                            <hr />
 
                             {(filteredFlashcards.length > 0 || selectedCards.length > 0) &&
                                 <ul className="o-list-buttons-3-cols">
-                                {filteredFlashcards.length > 0 && (
-                                    <li>
-                                        <button onClick={selectAll}>
-                                            <i className="icon-ok-circled"></i> Zaznacz wszystkie
-                                        </button>
-                                    </li>
-                                )}
-                                {selectedCards.length > 0 && (
-                                    <>
+                                    {filteredFlashcards.length > 0 && (
                                         <li>
-                                            <button onClick={deselectAll}>
-                                                <i className="icon-ok-circled2"></i> Odznacz wszystkie
+                                            <button onClick={selectAll}>
+                                                <i className="icon-ok-circled"></i> Zaznacz wszystkie
                                             </button>
                                         </li>
-                                        <li>
-                                            <button className="btn--red" onClick={removeSelectedCards}><i
-                                                className="icon-trash-empty"></i> Usuń wybrane
-                                            </button>
-                                        </li>
-                                        <li>
-                                            <button onClick={copySelectedCards}>
-                                                <i className="icon-docs"></i> Kopiuj wybrane
-                                            </button>
-                                        </li>
-                                        <li>
-                                            <button onClick={handleExport}>
-                                                <i className="icon-export"></i> Export wybranych
-                                            </button>
-                                        </li>
-                                    </>
-                                )}
+                                    )}
+                                    {selectedCards.length > 0 && (
+                                        <>
+                                            <li>
+                                                <button onClick={deselectAll}>
+                                                    <i className="icon-ok-circled2"></i> Odznacz wszystkie
+                                                </button>
+                                            </li>
+                                            <li>
+                                                <button className="btn--red" onClick={removeSelectedCards}>
+                                                    <i className="icon-trash-empty"></i> Usuń wybrane
+                                                </button>
+                                            </li>
+                                            <li>
+                                                <button onClick={copySelectedCards}>
+                                                    <i className="icon-docs"></i> Kopiuj wybrane
+                                                </button>
+                                            </li>
+                                            <li>
+                                                <button onClick={handleExport}>
+                                                    <i className="icon-export"></i> Export wybranych
+                                                </button>
+                                            </li>
+                                        </>
+                                    )}
                                 </ul>
                             }
 
-                            {(filteredFlashcards.length > 0) && <ul className="o-list-edit-flashcards">
-                                {filteredFlashcards.map(card => (
-                                    <li key={card.id}>
-                                        <ul className="o-list-buttons">
-                                            {(editMode === card.id) ? <>
-                                                <li>
-                                                    <button onClick={() => submitEdit(card.id)}><i
-                                                        className="icon-floppy-1"></i> Save
-                                                    </button>
-                                                </li>
-                                                <li>
-                                                    <button onClick={cancelEditing}><i
-                                                        className="icon-cancel-circled"></i> Cancel
-                                                    </button>
-                                                </li>
-                                            </> : <>
-                                                <li>
-                                                    <button onClick={() => startEditing(card)}>
-                                                        <i className="icon-pencil"></i> Edit
-                                                    </button>
-                                                </li>
-                                                <li>
-                                                    <button className="btn--red"
-                                                            onClick={() => removeFlashcard(card.id)}>
-                                                        <i className="icon-trash-empty"></i> Remove
-                                                    </button>
-                                                </li>
-                                            </>}
-                                            <li className="ml-auto">
-                                                <input
-                                                    type="checkbox"
-                                                    checked={selectedCards.includes(card.id)}
-                                                    onChange={() => toggleSelectCard(card.id)}
-                                                />
-                                            </li>
-                                        </ul>
-                                        {editMode === card.id ? (
-                                            <div className="o-list-edit-flashcards__content">
-                                                <p>
-                                                    <label htmlFor={`o-edit-front-${card.id}`}>Front:</label>
-                                                    <textarea
-                                                        value={editFront}
-                                                        className="o-default-box"
-                                                        onChange={(e) => setEditFront(e.target.value)}
-                                                        rows="2" cols="30"
-                                                        id={`o-edit-front-${card.id}`}
-                                                    />
-
-                                                    <label htmlFor={`o-edit-front-lang-${card.id}`}>Kod języka:</label>
-
-                                                    <SelectCodeLanguages availableLanguages={availableLanguages} value={editFrontLang} id={`o-edit-front-lang-${card.id}`} setFunction={setEditFrontLang} />
-                                                    {/*<select*/}
-                                                    {/*    id={`o-edit-front-lang-${card.id}`}*/}
-                                                    {/*    value={editFrontLang}*/}
-                                                    {/*    onChange={(e) => setEditFrontLang(e.target.value)}*/}
-                                                    {/*    required*/}
-                                                    {/*>*/}
-                                                    {/*    {availableLanguages.length === 0 &&*/}
-                                                    {/*        <option value="">Loading...</option>}*/}
-                                                    {/*    {availableLanguages.map((lang, index) => (*/}
-                                                    {/*        <option key={index} value={lang}>{lang}</option>*/}
-                                                    {/*    ))}*/}
-                                                    {/*</select>*/}
-
-                                                    {/*<input*/}
-                                                    {/*    type="text"*/}
-                                                    {/*    value={editFrontLang}*/}
-                                                    {/*    onChange={(e) => setEditFrontLang(e.target.value)}*/}
-                                                    {/*    id={`o-edit-front-lang-${card.id}`}*/}
-                                                    {/*/>*/}
-                                                </p>
-                                                <hr/>
-                                                <p>
-                                                    <label htmlFor={`o-edit-back-${card.id}`}>Back:</label>
-                                                    <textarea
-                                                        className="o-default-box"
-                                                        value={editBack}
-                                                        onChange={(e) => setEditBack(e.target.value)}
-                                                        rows="2" cols="30"
-                                                        id={`o-edit-back-${card.id}`}
-                                                    />
-
-                                                    <label htmlFor={`o-edit-back-lang-${card.id}`}>Kod języka:</label>
-
-                                                    <SelectCodeLanguages availableLanguages={availableLanguages} value={editBackLang} id={`o-edit-back-lang-${card.id}`} setFunction={setEditBackLang} />
-                                                    {/*<select*/}
-                                                    {/*    id={`o-edit-back-lang-${card.id}`}*/}
-                                                    {/*    value={editBackLang}*/}
-                                                    {/*    onChange={(e) => setEditBackLang(e.target.value)}*/}
-                                                    {/*    required*/}
-                                                    {/*>*/}
-                                                    {/*    {availableLanguages.length === 0 &&*/}
-                                                    {/*        <option value="">Loading...</option>}*/}
-                                                    {/*    {availableLanguages.map((lang, index) => (*/}
-                                                    {/*        <option key={index} value={lang}>{lang}</option>*/}
-                                                    {/*    ))}*/}
-                                                    {/*</select>*/}
-
-                                                    {/*<input*/}
-                                                    {/*    type="text"*/}
-                                                    {/*    value={editBackLang}*/}
-                                                    {/*    onChange={(e) => setEditBackLang(e.target.value)}*/}
-                                                    {/*    id={`o-edit-back-lang-${card.id}`}*/}
-                                                    {/*/>*/}
-                                                </p>
-                                                <hr/>
-                                                <p>
-                                                    <label htmlFor={`o-edit-category-${card.id}`}>Category:</label>
+                            {(filteredFlashcards.length > 0) && (
+                                <ul className="o-list-edit-flashcards">
+                                    {filteredFlashcards.map(card => (
+                                        <li key={card.id}>
+                                            <ul className="o-list-buttons">
+                                                {(editMode === card.id) ? (
+                                                    <>
+                                                        <li>
+                                                            <button onClick={() => submitEdit(card.id)}>
+                                                                <i className="icon-floppy-1"></i> Save
+                                                            </button>
+                                                        </li>
+                                                        <li>
+                                                            <button onClick={cancelEditing}>
+                                                                <i className="icon-cancel-circled"></i> Cancel
+                                                            </button>
+                                                        </li>
+                                                    </>
+                                                ) : (
+                                                    <>
+                                                        <li>
+                                                            <button onClick={() => startEditing(card)}>
+                                                                <i className="icon-pencil"></i> Edit
+                                                            </button>
+                                                        </li>
+                                                        <li>
+                                                            <button className="btn--red" onClick={() => removeFlashcard(card.id)}>
+                                                                <i className="icon-trash-empty"></i> Remove
+                                                            </button>
+                                                        </li>
+                                                    </>
+                                                )}
+                                                <li className="ml-auto">
                                                     <input
-                                                        type="text"
-                                                        value={editCategory}
-                                                        onChange={(e) => setEditCategory(e.target.value)}
-                                                        id={`o-edit-category-${card.id}`}
-                                                    />
-                                                </p>
-                                                <hr />
-                                                <p>
-                                                    <label htmlFor={`o-edit-know-${card.id}`}>Know:</label> <input
                                                         type="checkbox"
-                                                        checked={editKnow}
-                                                        onChange={(e) => setEditKnow(e.target.checked)}
-                                                        id={`o-edit-know-${card.id}`}
+                                                        checked={selectedCards.includes(card.id)}
+                                                        onChange={() => toggleSelectCard(card.id)}
                                                     />
-                                                </p>
-                                            </div>
-                                        ) : (
-                                            <div className="o-list-edit-flashcards__content">
-                                                <p><strong>Front:</strong><br/>{card.front}</p>
-                                                <p>
-                                                    <strong>Kod
-                                                        języka:</strong> {card.langFront !== '' ? card.langFront : 'Brak danych'}
-                                                </p>
-                                                <hr/>
-                                                <p><strong>Back:</strong><br/>{card.back}</p>
-                                                <p>
-                                                    <strong>Kod
-                                                        języka:</strong> {card.langBack !== '' ? card.langBack : 'Brak danych'}
-                                                </p>
-                                                <hr/>
-                                                <p>
-                                                    <strong>Category:</strong> {card.category && card.category.trim() !== '' ? card.category : 'Without category'}
-                                                </p>
-                                                <hr/>
-                                                <p>
-                                                    <p>{card.know ?
-                                                        <strong className="color-green">Już to znam</strong> :
-                                                        <strong className="color-red">Ucze się</strong>}</p>
-                                                </p>
-                                            </div>
-                                        )}
-                                    </li>
-                                ))}
-                            </ul>}
+                                                </li>
+                                            </ul>
+                                            {editMode === card.id ? (
+                                                <div className="o-list-edit-flashcards__content">
+                                                    <p>
+                                                        <label htmlFor={`o-edit-front-${card.id}`}>Front:</label>
+                                                        <textarea
+                                                            value={editFront}
+                                                            className="o-default-box"
+                                                            onChange={(e) => setEditFront(e.target.value)}
+                                                            rows="2" cols="30"
+                                                            id={`o-edit-front-${card.id}`}
+                                                        />
 
+                                                        <label htmlFor={`o-edit-front-lang-${card.id}`}>Kod języka:</label>
+
+                                                        <SelectCodeLanguages
+                                                            availableLanguages={availableLanguages}
+                                                            value={editFrontLang}
+                                                            id={`o-edit-front-lang-${card.id}`}
+                                                            setFunction={setEditFrontLang}
+                                                        />
+                                                    </p>
+                                                    <hr/>
+                                                    <p>
+                                                        <label htmlFor={`o-edit-back-${card.id}`}>Back:</label>
+                                                        <textarea
+                                                            className="o-default-box"
+                                                            value={editBack}
+                                                            onChange={(e) => setEditBack(e.target.value)}
+                                                            rows="2" cols="30"
+                                                            id={`o-edit-back-${card.id}`}
+                                                        />
+
+                                                        <label htmlFor={`o-edit-back-lang-${card.id}`}>Kod języka:</label>
+
+                                                        <SelectCodeLanguages
+                                                            availableLanguages={availableLanguages}
+                                                            value={editBackLang}
+                                                            id={`o-edit-back-lang-${card.id}`}
+                                                            setFunction={setEditBackLang}
+                                                        />
+                                                    </p>
+                                                    <hr/>
+                                                    <p>
+                                                        <label htmlFor={`o-edit-category-${card.id}`}>Category:</label>
+                                                        <input
+                                                            type="text"
+                                                            value={editCategory}
+                                                            onChange={(e) => setEditCategory(e.target.value)}
+                                                            id={`o-edit-category-${card.id}`}
+                                                        />
+                                                    </p>
+                                                    <hr />
+                                                    <p>
+                                                        <label htmlFor={`o-edit-know-${card.id}`}>Know:</label>
+                                                        <input
+                                                            type="checkbox"
+                                                            checked={editKnow}
+                                                            onChange={(e) => setEditKnow(e.target.checked)}
+                                                            id={`o-edit-know-${card.id}`}
+                                                        />
+                                                    </p>
+                                                </div>
+                                            ) : (
+                                                <div className="o-list-edit-flashcards__content">
+                                                    <p><strong>Front:</strong><br/>{card.front}</p>
+                                                    <p>
+                                                        <strong>Kod języka:</strong> {card.langFront !== '' ? card.langFront : 'Brak danych'}
+                                                    </p>
+                                                    <hr/>
+                                                    <p><strong>Back:</strong><br/>{card.back}</p>
+                                                    <p>
+                                                        <strong>Kod języka:</strong> {card.langBack !== '' ? card.langBack : 'Brak danych'}
+                                                    </p>
+                                                    <hr/>
+                                                    <p>
+                                                        <strong>Category:</strong> {card.category && card.category.trim() !== '' ? card.category : 'Without category'}
+                                                    </p>
+                                                    <hr/>
+                                                    <p>
+                                                        {card.know ?
+                                                            <strong className="color-green">Już to znam</strong> :
+                                                            <strong className="color-red">Uczę się</strong>
+                                                        }
+                                                    </p>
+                                                </div>
+                                            )}
+                                        </li>
+                                    ))}
+                                </ul>
+                            )}
                         </>
                     )}
                 </>

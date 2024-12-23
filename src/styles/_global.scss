@@ -65,6 +65,19 @@ hr {
   color: var(--color-brow);
 }
 
+.bg-color-red {
+  background-color: var(--color-red);
+}
+
+.bg-color-green {
+  background-color: var(--color-green);
+}
+
+.bg-color-brow {
+  background-color: var(--color-brow);
+}
+
+
 #root {
   display: flex;
   flex-direction: column;
@@ -88,6 +101,10 @@ hr {
   gap: vars.$padding-smaller;
   flex-wrap: wrap;
   align-items: center;
+
+  & &__single-icon {
+    flex: none;
+  }
 
   &--nowrap {
     flex-wrap: nowrap;
@@ -145,6 +162,49 @@ hr {
 
   button {
     width: 100%;
+    text-align: left;
+  }
+
+  > li {
+    position: relative;
+  }
+
+  &--edit {
+    > li {
+      button {
+        padding-right: 70px;
+      }
+    }
+  }
+
+  &__move {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    right: 24px;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    text-indent: -1000px;
+
+    &::before,
+    &::after {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: var(--color-white);
+      content: '';
+      display: block;
+    }
+
+    &::before {
+      top: 15px;
+    }
+
+    &::after {
+      bottom: 15px;
+    }
   }
 }
 
@@ -201,20 +261,20 @@ hr {
       box-shadow: 0 0 6px var(--color-black-opacity-50), inset 0 0 15px var(--color-black-opacity-80);
     }
 
-    .o-list-flashcards__text,
-    .o-list-flashcards__swipe-info-know-or-learn,
-    hr {
-      opacity: 0;
-      transition: opacity 250ms ease-in-out;
-    }
-
-    &:last-child {
-      .o-list-flashcards__text,
-      .o-list-flashcards__swipe-info-know-or-learn,
-      hr {
-        opacity: 1;
-      }
-    }
+    //.o-list-flashcards__text,
+    //.o-list-flashcards__swipe-info-know-or-learn,
+    //hr {
+    //  opacity: 0;
+    //  transition: opacity 250ms ease-in-out;
+    //}
+    //
+    //&:last-child {
+    //  .o-list-flashcards__text,
+    //  .o-list-flashcards__swipe-info-know-or-learn,
+    //  hr {
+    //    opacity: 1;
+    //  }
+    //}
   }
 
   &__know {
@@ -239,7 +299,7 @@ hr {
       font-size: 18px;
     }
 
-    &:first-child {
+    &:nth-child(2) {
       p {
         font-size: 22px;
       }
@@ -284,8 +344,15 @@ hr {
 
   &__swipe-info-know-or-learn {
     opacity: 0.3;
-    font-size: 14px;
-    font-weight: 700;
+    margin: -#{vars.$padding-default} -#{vars.$padding-default} #{vars.$padding-default};
+    border-bottom: 1px solid var(--color-black-opacity-60);
+    //position: absolute;
+    //top: 0;
+    //left: 0;
+    //right: 0;
+    height: 12px;
+    //font-size: 14px;
+    //font-weight: 700;
   }
 }
 
@@ -308,6 +375,10 @@ hr {
     overflow: hidden;
     text-overflow: ellipsis;
     width: 100%;
+    &-categories{
+      text-decoration: underline;
+      cursor: pointer;
+    }
   }
 
   &__tools {
@@ -320,13 +391,4 @@ hr {
 .o-fade-hidden {
   opacity: 0;
   transition: opacity 0.3s ease;
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
 }

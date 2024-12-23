@@ -7,6 +7,7 @@ import ViewFlashcards from './components/ViewFlashcards';
 import ImportExport from './components/ImportExport';
 import { getAllFlashcards, addFlashcardToDB, removeFlashcardFromDB, editFlashcardInDB } from './db';
 import { useTranslation } from 'react-i18next';
+import { setLocalStorage, getLocalStorage } from './utils/storage';
 
 function App() {
     const { t, i18n } = useTranslation();
@@ -16,6 +17,15 @@ function App() {
     const closeMenuRef = useRef(null);
     const closeMenuBtnRef = useRef(null);
     const location = useLocation();
+
+    const [syntAudio, setSyntAudio] = useState(() => {
+        const storedAudio = getLocalStorage('syntAudio');
+        return storedAudio !== null ? storedAudio : true;
+    });
+
+    useEffect(() => {
+        setLocalStorage('syntAudio', syntAudio);
+    }, [syntAudio]);
 
     useEffect(() => {
         const handleClick = (event) => {
@@ -117,16 +127,32 @@ function App() {
         loadData();
     };
 
-    return (
-        <div className="o">
-            <header className="o-main-header">
-                <h1><Link to="/">Flasho</Link> - {t('simple_flashcard_creator')}</h1>
-                <button ref={closeMenuBtnRef} onClick={showMainMenu} className={`o-main-header__btn-menu ${mainMenuVisible ? 'o-main-header__btn-menu--active' : ''}`} aria-label="Open and close menu"><span>Menu</span></button>
+    const audioOnOff = () => {
+        setSyntAudio(prev => !prev);
+    };
 
-                <div ref={closeMenuRef} className={`o-main-header__menu ${mainMenuVisible ? 'o-main-header__menu--active' : ''}`}>
-                    <div>
+    return (
+        <div className={`o ${mainMenuVisible ? 'o-menu-visible' : ''}`}>
+            <header className="o-main-header">
+                <h1><Link to="/"><i
+                    className="icon-logo-f"></i><span>Flasho</span></Link> - {t('simple_flashcard_creator')}</h1>
+                <button
+                    aria-label="Audio on / off"
+                    className={`o-main-header__btn-audio ${syntAudio ? 'o-main-header__btn-audio--active' : ''}`}
+                    onClick={audioOnOff}
+                >
+                    <i className="icon-volume"></i>
+                </button>
+                <button ref={closeMenuBtnRef} onClick={showMainMenu}
+                        className={`o-main-header__btn-menu ${mainMenuVisible ? 'o-main-header__btn-menu--active' : ''}`}
+                        aria-label="Open and close menu"><span>Menu</span></button>
+
+                <div ref={closeMenuRef}
+                     className={`o-main-header__menu ${mainMenuVisible ? 'o-main-header__menu--active' : ''}`}>
+                    <div className="o-main-header__menu-langs">
                         <label htmlFor="o-lang">{i18n.language}</label>
-                        <select id="o-lang" onChange={(e) => changeLanguage(e.target.value)} value={getLanguageCode(i18n.language)}>
+                        <select id="o-lang" onChange={(e) => changeLanguage(e.target.value)}
+                                value={getLanguageCode(i18n.language)}>
                             <option value="en">English</option>
                             <option value="pl">Polski</option>
                         </select>
@@ -136,7 +162,8 @@ function App() {
                             <li><Link to="/"><i className="icon-play"></i> {t('view_flashcards')}</Link></li>
                             <li><Link to="/create"><i className="icon-plus"></i> {t('create_flashcard')}</Link></li>
                             <li><Link to="/list-edit"><i className="icon-wrench"></i> {t('edit_flashcards')}</Link></li>
-                            <li><Link to="/import-export"><i className="icon-export"></i> {t('import_export')}</Link></li>
+                            <li><Link to="/import-export"><i className="icon-export"></i> {t('import_export')}</Link>
+                            </li>
                         </ul>
                     </nav>
                     <div>
@@ -146,11 +173,12 @@ function App() {
             </header>
             <main className="o-main-content">
                 {location.pathname !== "/" && (
-                    <p><Link className="o-main-start btn btn--green" to="/"><i className="icon-play"></i> {t('view_flashcards')}</Link></p>
+                    <p><Link className="o-main-start btn btn--green" to="/"><i
+                        className="icon-play"></i> {t('view_flashcards')}</Link></p>
                 )}
 
                 <Routes>
-                    <Route path="/" element={<ViewFlashcards flashcards={flashcards} categories={categories}
+                    <Route path="/" element={<ViewFlashcards syntAudio={syntAudio} flashcards={flashcards} categories={categories}
                                                              setFlashcardKnow={setFlashcardKnow}/>}/>
                     <Route path="/create"
                            element={<CreateFlashcard addFlashcard={addFlashcard} categories={categories}/>}/>

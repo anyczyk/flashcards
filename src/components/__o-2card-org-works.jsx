@@ -6,10 +6,9 @@ import { motion, AnimatePresence, useAnimation } from 'framer-motion';
 import { speak, stopSpeaking } from "../utils/speak";
 import { setLocalStorage, getLocalStorage } from '../utils/storage';
 
-function ViewFlashcards({ flashcards, categories, setFlashcardKnow, syntAudio }) {
+function ViewFlashcards({ flashcards, categories, setFlashcardKnow }) {
     const { t } = useTranslation();
 
-    const newOrders = getLocalStorage('categoryOrder');
     // Kategoria i filtr
     const [selectedCategory, setSelectedCategory] = useState(null);
     const [learningFilter, setLearningFilter] = useState(null);
@@ -32,10 +31,10 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow, syntAudio })
     const [reversFrontBack, setReversFrontBack] = useState(false);
 
     // Audio on/off
-    // const [syntAudio, setSyntAudio] = useState(() => {
-    //     const storedAudio = getLocalStorage('syntAudio');
-    //     return storedAudio !== null ? storedAudio : true;
-    // });
+    const [syntAudio, setSyntAudio] = useState(() => {
+        const storedAudio = getLocalStorage('syntAudio');
+        return storedAudio !== null ? storedAudio : true;
+    });
 
     // Animacje framer-motion
     const controls = useAnimation();
@@ -56,6 +55,7 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow, syntAudio })
         return newArray;
     };
 
+    // [ZM] - Tworzy nową talię i ustawia `twoCards` jako pierwsze 2 (o ile są)
     const applyFilterAndShuffle = () => {
         let filtered = [];
         if (selectedCategory === 'All') {
@@ -92,9 +92,9 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow, syntAudio })
     // -------------------------
     //  useEffect-y
     // -------------------------
-    // useEffect(() => {
-    //     setLocalStorage('syntAudio', syntAudio);
-    // }, [syntAudio]);
+    useEffect(() => {
+        setLocalStorage('syntAudio', syntAudio);
+    }, [syntAudio]);
 
     // Za każdym razem, gdy mamy wybraną kategorię i filtr, wczytujemy karty
     useEffect(() => {
@@ -175,6 +175,9 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow, syntAudio })
     // -------------------------
     //  Usuwanie karty (NOWA LOGIKA)
     // -------------------------
+    // Gdy usuwamy 'bottom' (czyli OSTATNIĄ kartę w <ul>),
+    // wstawiamy nową kartę z decka na początek (jako top),
+    // a dotychczasowy top spada na drugie miejsce (jako bottom).
     const removeBottomCardFromUI = (id) => {
         setTwoCards(prevTwo => {
             // Zapiszmy "top" zanim usuniemy bottom
@@ -184,7 +187,7 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow, syntAudio })
                     // usuwamy oldBottom -> wstawiamy newCard z decka jako nowy top
                     const newDeck = [...deck];
                     if (newDeck.length > 0) {
-                        const newCard = newDeck.shift();
+                        const newCard = newDeck.shift(); // weź pierwszą kartę
                         setDeck(newDeck);
                         // Nowy stan: [newCard, oldTop]
                         return [newCard, oldTop];
@@ -243,7 +246,8 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow, syntAudio })
     //  Obsługa Swipe + Animacje
     // -------------------------
     const handleSwipe = (id, direction) => {
-        // Z lewej / prawej - w tej logice usuwamy bottom
+        // Obojętnie lewo/prawo – w tej logice usuwamy bottom
+        // i wstawiamy nową kartę na górę.
         if (direction === 'lewo') {
             setAnimatingCards(prev => ({ ...prev, [id]: 'animateLeft' }));
         } else if (direction === 'prawo') {
@@ -264,33 +268,24 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow, syntAudio })
 
     // Framer-motion varianty
     const variants = {
-        // default: {
-        //     x: 0,
-        //     rotate: 0,
-        // },
+        default: {
+            x: 0,
+            rotate: 0,
+        },
         animateLeft: {
-            x: -550,
+            x: -500,
             rotate: -5,
             transition: {
                 type: "tween",
-                duration: 0.3,
-                ease: "easeInOut"
+                duration: 0.5
             }
         },
         animateRight: {
-            x: 550,
+            x: 500,
             rotate: 5,
             transition: {
                 type: "tween",
-                duration: 0.3,
-                ease: "easeInOut"
-            }
-        },
-        exit: {
-            opacity: 0.999,
-            transition: {
-                duration: 0.2,
-                ease: "easeInOut",
+                duration: 0.5
             }
         },
     };
@@ -310,28 +305,29 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow, syntAudio })
         },
     };
 
-    // ========================================
-    //  USUNIĘCIE / ZAKOMENTOWANIE TEGO EFEKTU
-    //  (bo podwójnie usuwał kartę w trakcie animacji)
-    // ========================================
-    // useEffect(() => {
-    //     Object.keys(animatingCards).forEach((cardId) => {
-    //         const motionState = animatingCards[cardId];
-    //         if (motionState === 'animateLeft' || motionState === 'animateRight') {
-    //             removeBottomCardFromUI(cardId);
-    //             setAnimatingCards(prev => {
-    //                 const newObj = { ...prev };
-    //                 delete newObj[cardId];
-    //                 return newObj;
-    //             });
-    //         }
-    //     });
-    // }, [animatingCards]);
+    // Gdy animacja się zakończy -> usuwamy kartę z UI
+    useEffect(() => {
+        // Po zakończeniu animacji jednej z kart:
+        // sprawdzamy animatingCards
+        Object.keys(animatingCards).forEach((cardId) => {
+            const motionState = animatingCards[cardId];
+            if (motionState === 'animateLeft' || motionState === 'animateRight') {
+                // remove bottom
+                removeBottomCardFromUI(cardId);
+                setAnimatingCards(prev => {
+                    const newObj = { ...prev };
+                    delete newObj[cardId];
+                    return newObj;
+                });
+            }
+        });
+    }, [animatingCards]);
 
     // -------------------------
     //  Komunikat - koniec fiszek
     // -------------------------
     useEffect(() => {
+        // Warunek "showCompleteMessage" -> jeśli filtr 'all', a talia jest pusta i twoCards też puste
         if (
             learningFilter === 'all' &&
             deck.length === 0 &&
@@ -351,9 +347,9 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow, syntAudio })
         setReversFrontBack(prev => !prev);
     };
 
-    // const audioOnOff = () => {
-    //     setSyntAudio(prev => !prev);
-    // };
+    const audioOnOff = () => {
+        setSyntAudio(prev => !prev);
+    };
 
     const CardFrontOrBack = ({ card, cardLang }) => {
         return (
@@ -378,41 +374,10 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow, syntAudio })
     return (
         <div className="o-page-view-flashcards">
             <div className="o-page-view-flashcards__header">
-                {/*{selectedCategory !== null && (*/}
-                {/*    <ul className="o-list-buttons-clear o-list-buttons-clear--nowrap o-default-box">*/}
-                {/*        <li>*/}
-                {/*            <button*/}
-                {/*                onClick={() => {*/}
-                {/*                    setSelectedCategory(null);*/}
-                {/*                    setLearningFilter(null);*/}
-                {/*                    setCheckedCards(new Set());*/}
-                {/*                    setReviewedSet(new Set());*/}
-                {/*                    setReversFrontBack(false);*/}
-                {/*                    // czyścimy deck i twoCards*/}
-                {/*                    setDeck([]);*/}
-                {/*                    setTwoCards([]);*/}
-                {/*                }}*/}
-                {/*            >*/}
-                {/*                Kategorie*/}
-                {/*            </button>*/}
-                {/*        </li>*/}
-                {/*        <li>*/}
-                {/*            <button*/}
-                {/*                className={syntAudio ? 'btn--active' : ''}*/}
-                {/*                onClick={audioOnOff}*/}
-                {/*            >*/}
-                {/*                <i className="icon-volume"></i> Audio <sup>{syntAudio ? 'On' : 'Off'}</sup>*/}
-                {/*            </button>*/}
-                {/*        </li>*/}
-                {/*    </ul>*/}
-                {/*)}*/}
-
-                {selectedCategory !== null && getFilteredFlashcardCount('all') > 0 ? (
-                    <>
-                    <h2 className="o-page-view-flashcards__title">
-                            <span
-                                type="button"
-                                className="o-page-view-flashcards__title-categories"
+                {selectedCategory !== null && (
+                    <ul className="o-list-buttons-clear o-list-buttons-clear--nowrap o-default-box">
+                        <li>
+                            <button
                                 onClick={() => {
                                     setSelectedCategory(null);
                                     setLearningFilter(null);
@@ -422,36 +387,63 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow, syntAudio })
                                     // czyścimy deck i twoCards
                                     setDeck([]);
                                     setTwoCards([]);
-                                }}>Kategorie</span> / {selectedCategory === 'All'
-                        ? t('all')
-                        : (selectedCategory === 'Without category'
-                            ? t('without_category')
-                            : selectedCategory)
-                    }
-                        {' ('}
-                        {selectedCategory === 'All'
-                            ? flashcards.length
-                            : selectedCategory === 'Without category'
-                                ? flashcards.filter(fc => !fc.category || fc.category.trim() === '').length
-                                : flashcards.filter(fc => fc.category === selectedCategory).length
-                        }
-                        {')'}
-                    </h2>
-                    <hr/>
-                    <ul className="o-page-view-flashcards__tools o-list-buttons-clear o-list-buttons-clear--nowrap o-default-box">
-                        {getFilteredFlashcardCount('learningOnly') < getFilteredFlashcardCount('all') && (
-                            <li>
-                                <button
-                                    className={`btn ${learningFilter === 'all' ? 'btn--active' : ''}`}
-                                    onClick={() => {
-                                        setLearningFilter('all');
-                                        setCheckedCards(new Set());
-                                        setReviewedSet(new Set());
-                                        applyFilterAndShuffle();
-                                    }}
-                                >
-                                    Powtórz <sup>
-                                {learningFilter === 'all'
+                                }}
+                            >
+                                Kategorie
+                            </button>
+                        </li>
+                        <li>
+                            <button
+                                className={reversFrontBack ? 'btn--active' : ''}
+                                onClick={reversCards}
+                            >
+                                <i className="icon-switch"></i> Revers <sup>{reversFrontBack ? 'On' : 'Off'}</sup>
+                            </button>
+                        </li>
+                        <li>
+                            <button
+                                className={syntAudio ? 'btn--active' : ''}
+                                onClick={audioOnOff}
+                            >
+                                <i className="icon-volume"></i> Audio <sup>{syntAudio ? 'On' : 'Off'}</sup>
+                            </button>
+                        </li>
+                    </ul>
+                )}
+
+                {selectedCategory !== null && getFilteredFlashcardCount('all') > 0 ? (
+                    <>
+                        <h2 className="o-page-view-flashcards__title">
+                            {selectedCategory === 'All'
+                                ? t('all')
+                                : (selectedCategory === 'Without category'
+                                    ? t('without_category')
+                                    : selectedCategory)
+                            }
+                            {' ('}
+                            {selectedCategory === 'All'
+                                ? flashcards.length
+                                : selectedCategory === 'Without category'
+                                    ? flashcards.filter(fc => !fc.category || fc.category.trim() === '').length
+                                    : flashcards.filter(fc => fc.category === selectedCategory).length
+                            }
+                            {')'}
+                        </h2>
+                        <hr />
+                        <ul className="o-page-view-flashcards__tools o-list-buttons-clear o-list-buttons-clear--nowrap o-default-box">
+                            {getFilteredFlashcardCount('learningOnly') < getFilteredFlashcardCount('all') && (
+                                <li>
+                                    <button
+                                        className={`btn ${learningFilter === 'all' ? 'btn--active' : ''}`}
+                                        onClick={() => {
+                                            setLearningFilter('all');
+                                            setCheckedCards(new Set());
+                                            setReviewedSet(new Set());
+                                            applyFilterAndShuffle();
+                                        }}
+                                    >
+                                        Powtórz <sup>
+                                        {learningFilter === 'all'
                                             ? (deck.length + twoCards.length)
                                             : getFilteredFlashcardCount('all')}
                                     </sup>
@@ -479,23 +471,11 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow, syntAudio })
                                 </li>
                             )}
                             {!(learningFilter && twoCards.length === 0 && deck.length === 0) && (
-                                <>
-                                    <li className="o-list-buttons-clear__single-icon">
-                                        <button aria-label="Restart / Tasowanie" onClick={handleShuffle} disabled={isShuffling}>
-                                            <i className="icon-spin4"></i>
-                                            {/*{isShuffling ? 'Resetuje...' : 'Resetuj'}*/}
-                                        </button>
-                                    </li>
-                                    <li className="o-list-buttons-clear__single-icon">
-                                        <button
-                                            aria-label="Revers"
-                                            className={`btn-revers ${reversFrontBack ? 'btn-revers--active btn--active' : ''}`}
-                                            onClick={reversCards}
-                                        >
-                                            <i className="icon-switch"></i><sup>{reversFrontBack ? 'On' : 'Off'}</sup>
-                                        </button>
-                                    </li>
-                                </>
+                                <li>
+                                    <button onClick={handleShuffle} disabled={isShuffling}>
+                                        <i className="icon-spin4"></i> {isShuffling ? 'Resetuje...' : 'Resetuj'}
+                                    </button>
+                                </li>
                             )}
                         </ul>
                     </>
@@ -562,6 +542,9 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow, syntAudio })
                             <p>Gratulacje, udało ci się zapamiętać wszystkie fiszki w kategorii!</p>
                         ))
                     ) : (
+                        // ========================
+                        //   ZAWSZE MAX 2 karty -> twoCards
+                        // ========================
                         <div className="o-page-view-flashcards__content">
                             <motion.ul
                                 className="o-list-flashcards"
@@ -576,13 +559,8 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow, syntAudio })
                                             className="o-list-flashcards__single-card"
                                             key={card.id}
                                             drag="x"
-                                            dragConstraints={{left: 0, right: 0}}
+                                            dragConstraints={{ left: 0, right: 0 }}
                                             dragElastic={0.8}
-                                            dragTransition={{
-                                                type: "tween",
-                                                duration: 0.5,
-                                                ease: "easeInOut"
-                                            }}
                                             whileDrag={{
                                                 rotate:
                                                     draggingDirection[card.id] === 'prawo'
@@ -592,7 +570,7 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow, syntAudio })
                                                             : 0
                                             }}
                                             onDrag={(event, info) => {
-                                                const {offset} = info;
+                                                const { offset } = info;
                                                 const threshold = 20;
                                                 if (Math.abs(offset.x) > threshold) {
                                                     const direction = offset.x > 0 ? 'prawo' : 'lewo';
@@ -603,7 +581,7 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow, syntAudio })
                                             }}
                                             onDragEnd={(event, info) => {
                                                 const threshold = 100;
-                                                const {offset} = info;
+                                                const { offset } = info;
                                                 const absX = Math.abs(offset.x);
 
                                                 if (absX > threshold) {
@@ -612,66 +590,18 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow, syntAudio })
                                                 }
 
                                                 setDraggingDirection(prev => {
-                                                    const newDrag = {...prev};
+                                                    const newDrag = { ...prev };
                                                     delete newDrag[card.id];
                                                     return newDrag;
                                                 });
                                             }}
-
-                                            // onDragEnd={(event, info) => {
-                                            //     const { offset } = info;
-                                            //     const direction = offset.x > 0 ? 'prawo' : 'lewo';
-                                            //     handleSwipe(card.id, direction);
-                                            //
-                                            //     setDraggingDirection(prev => {
-                                            //         const newDrag = { ...prev };
-                                            //         delete newDrag[card.id];
-                                            //         return newDrag;
-                                            //     });
-                                            // }}
                                             variants={variants}
-                                            animate={animatingCards[card.id]}
-                                            exit="exit"
-                                            onAnimationComplete={() => {
-                                                // Tutaj ostatecznie usuwamy kartę z UI
-                                                if (animatingCards[card.id] === 'animateLeft') {
-                                                    // Uczę się (lewo)
-                                                    // setDraggingDirection(prev => ({
-                                                    //     ...prev,
-                                                    //     [card.id]: 'lewo'
-                                                    // }));
-                                                    // setAnimatingCards(prev => ({
-                                                    //     ...prev,
-                                                    //     [card.id]: 'animateLeft'
-                                                    // }));
-
-                                                    learnIt(card.id);
-                                                } else if (animatingCards[card.id] === 'animateRight') {
-                                                    // Już to znam (prawo)
-                                                    knowIt(card.id);
-                                                }
-
-                                                // Sprzątanie po skończonej animacji
-                                                setAnimatingCards(prev => {
-                                                    const newAnim = {...prev};
-                                                    delete newAnim[card.id];
-                                                    return newAnim;
-                                                });
-                                                setDraggingDirection(prev => {
-                                                    const newDrag = {...prev};
-                                                    delete newDrag[card.id];
-                                                    return newDrag;
-                                                });
-                                            }}
+                                            animate={animatingCards[card.id] || 'default'}
                                             style={{
                                                 cursor: 'grab',
-                                                listStyle: 'none',
-                                                zIndex: animatingCards[card.id] ? 2 : 1, // Dynamiczny z-index
+                                                listStyle: 'none'
                                             }}
                                         >
-                                            <div
-                                                className={`o-list-flashcards__swipe-info-know-or-learn ${card.know ? 'bg-color-green' : 'bg-color-red'}`}>
-                                            </div>
                                             {reversFrontBack ? (
                                                 <CardFrontOrBack
                                                     card={card.back}
@@ -683,7 +613,7 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow, syntAudio })
                                                     cardLang={card.langFront}
                                                 />
                                             )}
-                                            <hr/>
+                                            <hr />
                                             {checkedCards.has(card.id) && (
                                                 !reversFrontBack ? (
                                                     <CardFrontOrBack
@@ -698,6 +628,13 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow, syntAudio })
                                                 )
                                             )}
                                             <div className="o-list-flashcards__know">
+                                                <p className="o-list-flashcards__swipe-info-know-or-learn">
+                                                    {card.know ? (
+                                                        <span className="color-green">Już to znam?</span>
+                                                    ) : (
+                                                        <span className="color-red">Uczę się?</span>
+                                                    )}
+                                                </p>
                                                 <div
                                                     className={`o-list-flashcards__swipe-info-know ${
                                                         draggingDirection[card.id] === 'prawo'
@@ -738,7 +675,6 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow, syntAudio })
                                                             <button
                                                                 className="btn--red"
                                                                 onClick={() => {
-                                                                    // wyrzucamy kartę w lewo
                                                                     setDraggingDirection(prev => ({
                                                                         ...prev,
                                                                         [card.id]: 'lewo'
@@ -756,7 +692,6 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow, syntAudio })
                                                             <button
                                                                 className="btn--green"
                                                                 onClick={() => {
-                                                                    // wyrzucamy kartę w prawo
                                                                     setDraggingDirection(prev => ({
                                                                         ...prev,
                                                                         [card.id]: 'prawo'
@@ -786,7 +721,7 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow, syntAudio })
                 <>
                     {flashcards.length > 0 ? (
                         <ul className="o-list-categories">
-                            <li style={{ order: 0 }}>
+                            <li>
                                 <button
                                     className={`btn ${
                                         selectedCategory === 'All' && learningFilter === 'all'
@@ -803,7 +738,7 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow, syntAudio })
                                         applyFilterAndShuffle();
                                     }}
                                 >
-                                    <i className="icon-play-outline"></i> {t('all')} ({flashcards.length})
+                                    {t('all')} ({flashcards.length})
                                 </button>
                             </li>
                             {categories.map(cat => {
@@ -815,7 +750,7 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow, syntAudio })
                                 }
 
                                 return (
-                                    <li key={cat} style={{order: newOrders?.indexOf(cat)+1}}>
+                                    <li key={cat}>
                                         <button
                                             className={`btn ${
                                                 selectedCategory === cat && learningFilter === 'all'
@@ -832,7 +767,7 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow, syntAudio })
                                                 applyFilterAndShuffle();
                                             }}
                                         >
-                                            <i className="icon-play-outline"></i> {cat === 'Without category' ? t('without_category') : cat} ({count})
+                                            {cat === 'Without category' ? t('without_category') : cat} ({count})
                                         </button>
                                     </li>
                                 );

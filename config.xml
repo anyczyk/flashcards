@@ -35,5 +35,11 @@
             <!-- Jeśli potrzebujesz MANAGE_EXTERNAL_STORAGE, odkomentuj poniższe -->
             <!-- <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" /> -->
         </config-file>
+
+        <icon density="mdpi" src="www/icons/android/icon-48x48.png" />
+        <icon density="hdpi" src="www/icons/android/icon-72x72.png" />
+        <icon density="xhdpi" src="www/icons/android/icon-96x96.png" />
+        <icon density="xxhdpi" src="www/icons/android/icon-144x144.png" />
+        <icon density="xxxhdpi" src="www/icons/android/icon-192x192.png" />
     </platform>
 </widget>

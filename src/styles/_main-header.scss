@@ -16,18 +16,67 @@
   z-index: 999;
 
   h1 {
-    font-size: 18px;
     font-weight: 400;
+    font-size: 18px;
 
     a {
       font-weight: 700;
       color: var(--color-white);
       text-decoration: none;
+      display: inline-flex;
+
+      span {
+        margin-left: -6px;
+
+        &:first-letter {
+          color: transparent;
+        }
+      }
+
+      i::before {
+        scale: 1.6;
+        color: #e9a400;
+      }
+    }
+  }
+
+  &__btn-audio {
+    margin-left: auto;
+    background-color: transparent;
+    box-shadow: none;
+    padding: calc(#{vars.$padding-default} / 2);
+    position: relative;
+
+    &:not(&--active) {
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        background-color: transparent;
+        border: 2px solid var(--color-red);
+        border-radius: 50%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+        width: 24px;
+        height: 2px;
+        background-color: var(--color-red);
+      }
     }
   }
 
   &__btn-menu {
-    margin-left: auto;
+    //margin-left: auto;
     position: relative;
     right: -8px;
     width: 32px;
@@ -101,6 +150,14 @@
     border-bottom-left-radius: 6px;
     width: 240px;
     box-shadow: -1px 3px 6px var(--color-black-opacity-50);
+    overflow-y: auto;
+    max-height: calc(100vh - 50px);
+
+    &-langs {
+      label {
+        white-space: nowrap;
+      }
+    }
 
     li, p, label {
       font-size: 16px;
@@ -145,5 +202,29 @@
     > div {
       border-top: 1px solid var(--color-green-strong-dark);
     }
+  }
+}
+
+.o {
+  &::before {
+    content: '';
+    display: block;
+    z-index: 997;
+    background-color: var(--color-black-opacity-50);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 250ms ease-in-out;
+  }
+}
+
+.o-menu-visible {
+  &::before {
+    opacity: 1;
+    pointer-events: visible;
   }
 }
