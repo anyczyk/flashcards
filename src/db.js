@@ -3,7 +3,15 @@ import { openDB } from 'idb';
 
 const DB_NAME = 'flashcardsDB';
 const STORE_NAME = 'flashcards';
-const DB_VERSION = 13; // Zwiększona wersja dla migracji
+const DB_VERSION = 18; // Zwiększona wersja dla migracji
+
+let uniqueCounter = 0; // Globalny licznik dla ID
+
+function generateSequentialID() {
+    const now = Date.now();
+    uniqueCounter++;
+    return `${now}-${uniqueCounter}`; // Unikalny identyfikator na podstawie czasu i licznika
+}
 
 export async function initDB() {
     const db = await openDB(DB_NAME, DB_VERSION, {
@@ -24,21 +32,28 @@ export async function getAllFlashcards() {
     return await db.getAll(STORE_NAME);
 }
 
-export async function addFlashcardToDB({ front, back, category, know = undefined, langFront = 'en-US', langBack = 'en-US' }) {
+export async function addFlashcardToDB({ front, back, category, know = undefined, langFront = 'en-US', langBack = 'en-US', superCategory }) {
     const db = await initDB();
-    const id = crypto.randomUUID(); // Generowanie unikalnego ID
-    const flashcard = { id, front, back, category, know, langFront, langBack };
-    // console.log("Adding flashcard to DB:", flashcard); // Logowanie
-    await db.put(STORE_NAME, flashcard);
+    const id = generateSequentialID();
+    const flashcard = { id, front, back, category, know, langFront, langBack, superCategory };
+    try {
+        await db.put(STORE_NAME, flashcard);
+    } catch (error) {
+        console.error(`Error adding flashcard: ${id}`, error);
+    }
     return flashcard;
 }
 
 export async function removeFlashcardFromDB(id) {
     const db = await initDB();
-    await db.delete(STORE_NAME, id);
+    try {
+        await db.delete(STORE_NAME, id);
+    } catch (error) {
+        console.error(`Error removing flashcard: ${id}`, error);
+    }
 }
 
-export async function editFlashcardInDB(id, updatedFront, updatedBack, updatedCategory, updatedKnow = undefined, updatedLangFront = 'en-US', updatedLangBack = 'en-US') {
+export async function editFlashcardInDB(id, updatedFront, updatedBack, updatedCategory, updatedKnow = undefined, updatedLangFront = 'en-US', updatedLangBack = 'en-US', updateSuperCategory) {
     const db = await initDB();
     const flashcard = {
         id,
@@ -47,33 +62,54 @@ export async function editFlashcardInDB(id, updatedFront, updatedBack, updatedCa
         category: updatedCategory,
         know: updatedKnow,
         langFront: updatedLangFront,
-        langBack: updatedLangBack
+        langBack: updatedLangBack,
+        superCategory: updateSuperCategory
     };
-    // console.log("Editing flashcard in DB:", flashcard); // Logowanie
-    await db.put(STORE_NAME, flashcard);
+    try {
+        await db.put(STORE_NAME, flashcard);
+    } catch (error) {
+        console.error(`Error editing flashcard: ${id}`, error);
+    }
 }
 
 export async function clearAllFlashcards() {
     const db = await initDB();
     const tx = db.transaction(STORE_NAME, 'readwrite');
-    await tx.store.clear();
-    await tx.done;
+    try {
+        await tx.store.clear();
+        await tx.done;
+    } catch (error) {
+        console.error('Error clearing flashcards:', error);
+    }
 }
 
 export async function addMultipleFlashcardsToDB(flashcards) {
     const db = await initDB();
     const tx = db.transaction(STORE_NAME, 'readwrite');
+    const store = tx.store;
+
+    let localCounter = 0; // Lokalny licznik dla ID
     for (const fc of flashcards) {
-        const id = crypto.randomUUID();
-        await tx.store.put({
-            id,
-            front: fc.front || '',
-            back: fc.back || '',
-            category: fc.category || '',
-            know: fc.know,
-            langFront: fc.langFront || 'en-US',
-            langBack: fc.langBack || 'en-US'
-        });
+        localCounter++;
+        const id = `${Date.now()}-${localCounter}`;
+        try {
+            await store.put({
+                id,
+                front: fc.front || '',
+                back: fc.back || '',
+                category: fc.category || '',
+                know: fc.know,
+                langFront: fc.langFront || 'en-US',
+                langBack: fc.langBack || 'en-US',
+                superCategory: fc.superCategory || ''
+            });
+        } catch (error) {
+            console.error(`Error adding flashcard: ${id}`, error);
+        }
     }
-    await tx.done;
+    try {
+        await tx.done; // Zamknij transakcję po zakończeniu
+    } catch (error) {
+        console.error('Error completing transaction:', error);
+    }
 }

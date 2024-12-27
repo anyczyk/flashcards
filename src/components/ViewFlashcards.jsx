@@ -1,23 +1,28 @@
 // ViewFlashcards.jsx
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { addMultipleFlashcardsToDB, getAllFlashcards } from '../db';
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence, useAnimation } from 'framer-motion';
 import { speak, stopSpeaking } from "../utils/speak";
 import { setLocalStorage, getLocalStorage } from '../utils/storage';
+import sampleData from '../data/sample-data.json';
 
-function ViewFlashcards({ flashcards, categories, setFlashcardKnow, syntAudio }) {
+function ViewFlashcards({ loadData, flashcards, categories, setFlashcardKnow, syntAudio }) {
     const { t } = useTranslation();
 
     const newOrders = getLocalStorage('categoryOrder');
-    // Kategoria i filtr
+    // Stan wybranej kategorii i superkategorii
     const [selectedCategory, setSelectedCategory] = useState(null);
+    const [selectedSuperCategory, setSelectedSuperCategory] = useState(null);
     const [learningFilter, setLearningFilter] = useState(null);
 
-    // [NOWE] - Cała przefiltrowana i przetasowana talia
+    const [activeSuperCategory, setActiveSuperCategory] = useState(null);
+
+    // - Cała przefiltrowana i przetasowana talia
     const [deck, setDeck] = useState([]);
 
-    // [NOWE] - Dokładnie 2 karty wyświetlane (lub 1, jeśli nie ma drugiej)
+    // - Dokładnie 2 karty wyświetlane (lub 1, jeśli nie ma drugiej)
     // Format: [topCard, bottomCard]
     const [twoCards, setTwoCards] = useState([]);
 
@@ -31,18 +36,33 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow, syntAudio })
     const [isShuffling, setIsShuffling] = useState(false);
     const [reversFrontBack, setReversFrontBack] = useState(false);
 
-    // Audio on/off
-    // const [syntAudio, setSyntAudio] = useState(() => {
-    //     const storedAudio = getLocalStorage('syntAudio');
-    //     return storedAudio !== null ? storedAudio : true;
-    // });
-
     // Animacje framer-motion
     const controls = useAnimation();
 
     // Inne
     const [reviewedSet, setReviewedSet] = useState(new Set());
     const [showCompleteMessage, setShowCompleteMessage] = useState(false);
+
+    const handleActiveSuperCategory = (index) => {
+        setActiveSuperCategory(activeSuperCategory === index ? null : index);
+    };
+
+    const handleGenerateSampleFlashcards = async () => {
+        try {
+            const existingFlashcards = await getAllFlashcards();
+            if (existingFlashcards.length === 0) {
+                await addMultipleFlashcardsToDB(sampleData);
+                if (loadData) {
+                    await loadData(); // Odśwież fiszki poprzez callback
+                }
+            } else {
+                alert("Baza danych nie jest pusta. Import przykładowych fiszek nie został wykonany.");
+            }
+        } catch (error) {
+            console.error("Błąd podczas importowania przykładowych fiszek:", error);
+            alert("Wystąpił błąd podczas importowania przykładowych fiszek.");
+        }
+    };
 
     // -------------------------
     //  Shuffling i filtry
@@ -58,12 +78,35 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow, syntAudio })
 
     const applyFilterAndShuffle = () => {
         let filtered = [];
-        if (selectedCategory === 'All') {
+
+        if (selectedCategory && selectedSuperCategory) {
+            // Jeśli wybrano zarówno kategorię, jak i superCategory, filtrujemy po obu
+            filtered = flashcards.filter(fc =>
+                fc.superCategory === selectedSuperCategory && fc.category === selectedCategory
+            );
+        } else if (selectedSuperCategory) {
+            // Jeśli wybrano tylko superCategory, filtrujemy po superCategory
+            filtered = flashcards.filter(fc => fc.superCategory === selectedSuperCategory);
+        } else if (selectedCategory === 'All') {
             filtered = [...flashcards];
         } else if (selectedCategory === 'Without category') {
-            filtered = flashcards.filter(fc => !fc.category || fc.category.trim() === '');
+            // Poprawka: Wyświetlamy TYLKO fiszki bez category i bez superCategory
+            filtered = flashcards.filter(fc =>
+                (!fc.category || fc.category.trim() === '') && !fc.superCategory
+            );
         } else if (selectedCategory) {
-            filtered = flashcards.filter(fc => fc.category === selectedCategory);
+            // Sprawdzenie, czy wybrana kategoria jest superCategory
+            // (czy istnieją fiszki z fc.superCategory === selectedCategory?)
+            const isSuperCategory = flashcards.some(fc => fc.superCategory === selectedCategory);
+
+            if (isSuperCategory) {
+                // Jeśli wybrana "kategoria" jest w rzeczywistości superCategory
+                filtered = flashcards.filter(fc => fc.superCategory === selectedCategory);
+            } else {
+                // Jeśli wybrana kategoria nie jest superCategory, filtrujemy po category
+                // i jednocześnie upewniamy się, że superCategory jest puste
+                filtered = flashcards.filter(fc => fc.category === selectedCategory && !fc.superCategory);
+            }
         }
 
         if (learningFilter === 'learningOnly') {
@@ -89,31 +132,25 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow, syntAudio })
         }
     };
 
-    // -------------------------
-    //  useEffect-y
-    // -------------------------
-    // useEffect(() => {
-    //     setLocalStorage('syntAudio', syntAudio);
-    // }, [syntAudio]);
-
-    // Za każdym razem, gdy mamy wybraną kategorię i filtr, wczytujemy karty
+    // Za każdym razem, gdy mamy wybraną kategorię, superkategorię lub filtr, wczytujemy karty
     useEffect(() => {
-        if (selectedCategory !== null && learningFilter !== null) {
+        if (selectedCategory !== null || selectedSuperCategory !== null) {
             applyFilterAndShuffle();
         }
-    }, [selectedCategory, learningFilter]);
+    }, [selectedCategory, selectedSuperCategory, learningFilter]);
 
     // Reset, gdy zmieniamy filtr/kategorię
     useEffect(() => {
         setCheckedCards(new Set());
         setReviewedSet(new Set());
-    }, [learningFilter, selectedCategory]);
+    }, [learningFilter, selectedCategory, selectedSuperCategory]);
 
     // Stop speaking przy zmianach
     useEffect(() => {
         stopSpeaking();
     }, [
         selectedCategory,
+        selectedSuperCategory,
         learningFilter,
         isShuffling,
         animatingCards,
@@ -128,39 +165,72 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow, syntAudio })
         };
     }, []);
 
-    // -------------------------
-    //  Funkcje pomocnicze
-    // -------------------------
     const handleSpeak = (text, lang) => {
         stopSpeaking();
         speak(text, lang);
     };
 
     const getFilteredFlashcardCount = (filter) => {
-        if (selectedCategory === null) return 0;
         let filtered = [];
-        if (selectedCategory === 'All') {
+
+        if (selectedCategory && selectedSuperCategory) {
+            filtered = flashcards.filter(fc =>
+                fc.superCategory === selectedSuperCategory && fc.category === selectedCategory
+            );
+        } else if (selectedSuperCategory) {
+            filtered = flashcards.filter(fc => fc.superCategory === selectedSuperCategory);
+        } else if (selectedCategory === 'All') {
             filtered = [...flashcards];
         } else if (selectedCategory === 'Without category') {
-            filtered = flashcards.filter(fc => !fc.category || fc.category.trim() === '');
-        } else {
-            filtered = flashcards.filter(fc => fc.category === selectedCategory);
+            // Poprawka: liczymy TYLKO fiszki bez category i bez superCategory
+            filtered = flashcards.filter(fc =>
+                (!fc.category || fc.category.trim() === '') && !fc.superCategory
+            );
+        } else if (selectedCategory) {
+            const isSuperCategory = flashcards.some(fc => fc.superCategory === selectedCategory);
+
+            if (isSuperCategory) {
+                filtered = flashcards.filter(fc => fc.superCategory === selectedCategory);
+            } else {
+                filtered = flashcards.filter(fc => fc.category === selectedCategory && !fc.superCategory);
+            }
         }
+
         if (filter === 'learningOnly') {
             filtered = filtered.filter(fc => fc.know !== true);
         }
+
         return filtered.length;
     };
 
     const hasLearningCards = flashcards.some(fc => {
-        if (selectedCategory === null) return false;
+        // do sprawdzenia, czy w ogóle są fiszki do nauki w danym widoku
+        if (selectedCategory && selectedSuperCategory) {
+            return fc.superCategory === selectedSuperCategory && fc.category === selectedCategory && fc.know !== true;
+        }
+
+        if (selectedSuperCategory) {
+            return fc.superCategory === selectedSuperCategory && fc.know !== true;
+        }
+
         if (selectedCategory === 'All') {
             return fc.know !== true;
-        } else if (selectedCategory === 'Without category') {
-            return (!fc.category || fc.category.trim() === '') && fc.know !== true;
-        } else {
-            return fc.category === selectedCategory && fc.know !== true;
         }
+
+        if (selectedCategory === 'Without category') {
+            return ((!fc.category || fc.category.trim() === '') && !fc.superCategory && fc.know !== true);
+        }
+
+        if (selectedCategory) {
+            const isSuperCategory = flashcards.some(f => f.superCategory === selectedCategory);
+            if (isSuperCategory) {
+                return fc.superCategory === selectedCategory && fc.know !== true;
+            } else {
+                return fc.category === selectedCategory && !fc.superCategory && fc.know !== true;
+            }
+        }
+
+        return false;
     });
 
     const handleShuffle = async () => {
@@ -172,16 +242,13 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow, syntAudio })
         setReviewedSet(new Set());
     };
 
-    // -------------------------
-    //  Usuwanie karty (NOWA LOGIKA)
-    // -------------------------
     const removeBottomCardFromUI = (id) => {
         setTwoCards(prevTwo => {
             // Zapiszmy "top" zanim usuniemy bottom
             if (prevTwo.length === 2) {
                 const [oldTop, oldBottom] = prevTwo;
                 if (oldBottom.id === id) {
-                    // usuwamy oldBottom -> wstawiamy newCard z decka jako nowy top
+                    // Usuwamy oldBottom -> wstawiamy newCard z decka jako nowy top
                     const newDeck = [...deck];
                     if (newDeck.length > 0) {
                         const newCard = newDeck.shift();
@@ -193,7 +260,7 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow, syntAudio })
                         return [oldTop];
                     }
                 } else {
-                    // usuwamy jakąś inną kartę, np. top? (ale w tej logice raczej nie robimy)
+                    // Usuwamy inną kartę, np. top (ale w tej logice raczej nie robimy)
                     return prevTwo.filter(c => c.id !== id);
                 }
             } else if (prevTwo.length === 1) {
@@ -211,7 +278,7 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow, syntAudio })
                     return prevTwo;
                 }
             } else {
-                // pusta tablica
+                // Pusta tablica
                 return [];
             }
         });
@@ -249,8 +316,7 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow, syntAudio })
         } else if (direction === 'prawo') {
             setAnimatingCards(prev => ({ ...prev, [id]: 'animateRight' }));
         }
-        // Po wstępnej animacji i tak ostatecznie w onAnimationComplete
-        // wywołamy removeBottomCardFromUI
+        // Po wstępnej animacji i tak ostatecznie w onAnimationComplete wywołamy removeBottomCardFromUI
         setCheckedCards(prev => {
             const newSet = new Set(prev);
             newSet.delete(id);
@@ -264,12 +330,8 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow, syntAudio })
 
     // Framer-motion varianty
     const variants = {
-        // default: {
-        //     x: 0,
-        //     rotate: 0,
-        // },
         animateLeft: {
-            x: -550,
+            x: -650,
             rotate: -5,
             transition: {
                 type: "tween",
@@ -278,7 +340,7 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow, syntAudio })
             }
         },
         animateRight: {
-            x: 550,
+            x: 650,
             rotate: 5,
             transition: {
                 type: "tween",
@@ -310,50 +372,23 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow, syntAudio })
         },
     };
 
-    // ========================================
-    //  USUNIĘCIE / ZAKOMENTOWANIE TEGO EFEKTU
-    //  (bo podwójnie usuwał kartę w trakcie animacji)
-    // ========================================
-    // useEffect(() => {
-    //     Object.keys(animatingCards).forEach((cardId) => {
-    //         const motionState = animatingCards[cardId];
-    //         if (motionState === 'animateLeft' || motionState === 'animateRight') {
-    //             removeBottomCardFromUI(cardId);
-    //             setAnimatingCards(prev => {
-    //                 const newObj = { ...prev };
-    //                 delete newObj[cardId];
-    //                 return newObj;
-    //             });
-    //         }
-    //     });
-    // }, [animatingCards]);
-
-    // -------------------------
     //  Komunikat - koniec fiszek
-    // -------------------------
     useEffect(() => {
         if (
             learningFilter === 'all' &&
             deck.length === 0 &&
             twoCards.length === 0 &&
-            selectedCategory !== null
+            (selectedCategory !== null || selectedSuperCategory !== null)
         ) {
             setShowCompleteMessage(true);
         } else {
             setShowCompleteMessage(false);
         }
-    }, [learningFilter, deck, twoCards, selectedCategory]);
+    }, [learningFilter, deck, twoCards, selectedCategory, selectedSuperCategory]);
 
-    // -------------------------
-    //  Drobne akcje (przyciski)
-    // -------------------------
     const reversCards = () => {
         setReversFrontBack(prev => !prev);
     };
-
-    // const audioOnOff = () => {
-    //     setSyntAudio(prev => !prev);
-    // };
 
     const CardFrontOrBack = ({ card, cardLang }) => {
         return (
@@ -366,92 +401,67 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow, syntAudio })
                         <span className="o-list-flashcards__lang-code">{cardLang}</span>
                         <i className="icon-volume"></i>
                     </span>
-                    {` ${card}`}
+                    {card}
                 </p>
             </div>
         );
     };
 
     // -------------------------
-    //  Render
+    //  Renderowanie
     // -------------------------
     return (
         <div className="o-page-view-flashcards">
             <div className="o-page-view-flashcards__header">
-                {/*{selectedCategory !== null && (*/}
-                {/*    <ul className="o-list-buttons-clear o-list-buttons-clear--nowrap o-default-box">*/}
-                {/*        <li>*/}
-                {/*            <button*/}
-                {/*                onClick={() => {*/}
-                {/*                    setSelectedCategory(null);*/}
-                {/*                    setLearningFilter(null);*/}
-                {/*                    setCheckedCards(new Set());*/}
-                {/*                    setReviewedSet(new Set());*/}
-                {/*                    setReversFrontBack(false);*/}
-                {/*                    // czyścimy deck i twoCards*/}
-                {/*                    setDeck([]);*/}
-                {/*                    setTwoCards([]);*/}
-                {/*                }}*/}
-                {/*            >*/}
-                {/*                Kategorie*/}
-                {/*            </button>*/}
-                {/*        </li>*/}
-                {/*        <li>*/}
-                {/*            <button*/}
-                {/*                className={syntAudio ? 'btn--active' : ''}*/}
-                {/*                onClick={audioOnOff}*/}
-                {/*            >*/}
-                {/*                <i className="icon-volume"></i> Audio <sup>{syntAudio ? 'On' : 'Off'}</sup>*/}
-                {/*            </button>*/}
-                {/*        </li>*/}
-                {/*    </ul>*/}
-                {/*)}*/}
-
-                {selectedCategory !== null && getFilteredFlashcardCount('all') > 0 ? (
+                {(selectedCategory !== null || selectedSuperCategory !== null) && getFilteredFlashcardCount('all') > 0 ? (
                     <>
-                    <h2 className="o-page-view-flashcards__title">
+                        <h2 className="o-page-view-flashcards__title">
                             <span
                                 type="button"
                                 className="o-page-view-flashcards__title-categories"
                                 onClick={() => {
                                     setSelectedCategory(null);
+                                    setSelectedSuperCategory(null);
                                     setLearningFilter(null);
                                     setCheckedCards(new Set());
                                     setReviewedSet(new Set());
                                     setReversFrontBack(false);
-                                    // czyścimy deck i twoCards
                                     setDeck([]);
                                     setTwoCards([]);
-                                }}>Kategorie</span> / {selectedCategory === 'All'
-                        ? t('all')
-                        : (selectedCategory === 'Without category'
-                            ? t('without_category')
-                            : selectedCategory)
-                    }
-                        {' ('}
-                        {selectedCategory === 'All'
-                            ? flashcards.length
-                            : selectedCategory === 'Without category'
-                                ? flashcards.filter(fc => !fc.category || fc.category.trim() === '').length
-                                : flashcards.filter(fc => fc.category === selectedCategory).length
+                                }}>{t('categories')}</span> / {selectedSuperCategory ? `${selectedSuperCategory} / ` : ''} {selectedCategory === 'All'
+                            ? t('all')
+                            : (selectedCategory === 'Without category'
+                                ? t('without_category')
+                                : selectedCategory)
                         }
-                        {')'}
-                    </h2>
-                    <hr/>
-                    <ul className="o-page-view-flashcards__tools o-list-buttons-clear o-list-buttons-clear--nowrap o-default-box">
-                        {getFilteredFlashcardCount('learningOnly') < getFilteredFlashcardCount('all') && (
-                            <li>
-                                <button
-                                    className={`btn ${learningFilter === 'all' ? 'btn--active' : ''}`}
-                                    onClick={() => {
-                                        setLearningFilter('all');
-                                        setCheckedCards(new Set());
-                                        setReviewedSet(new Set());
-                                        applyFilterAndShuffle();
-                                    }}
-                                >
-                                    Powtórz <sup>
-                                {learningFilter === 'all'
+                            {' ('}
+                            {selectedSuperCategory !== null
+                                ? flashcards.filter(fc => fc.superCategory === selectedSuperCategory && fc.category === selectedCategory).length
+                                : selectedCategory === 'All'
+                                    ? flashcards.length
+                                    : selectedCategory === 'Without category'
+                                        ? flashcards.filter(fc =>
+                                            (!fc.category || fc.category.trim() === '') && !fc.superCategory
+                                        ).length
+                                        : flashcards.filter(fc => fc.category === selectedCategory && !fc.superCategory).length
+                            }
+                            {')'}
+                        </h2>
+                        <hr />
+                        <ul className="o-page-view-flashcards__tools o-list-buttons-clear o-list-buttons-clear--nowrap o-default-box">
+                            {getFilteredFlashcardCount('learningOnly') < getFilteredFlashcardCount('all') && (
+                                <li>
+                                    <button
+                                        className={`btn ${learningFilter === 'all' ? 'btn--active' : ''}`}
+                                        onClick={() => {
+                                            setLearningFilter('all');
+                                            setCheckedCards(new Set());
+                                            setReviewedSet(new Set());
+                                            applyFilterAndShuffle();
+                                        }}
+                                    >
+                                        {t('review')} <sup>
+                                        {learningFilter === 'all'
                                             ? (deck.length + twoCards.length)
                                             : getFilteredFlashcardCount('all')}
                                     </sup>
@@ -469,11 +479,9 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow, syntAudio })
                                             applyFilterAndShuffle();
                                         }}
                                     >
-                                        Do nauki <sub>{getFilteredFlashcardCount('learningOnly')}</sub>
+                                        {t('study')} <sub>{getFilteredFlashcardCount('learningOnly')}</sub>
                                         <sup>
-                                            {learningFilter === 'learningOnly'
-                                                ? (deck.length + twoCards.length)
-                                                : getFilteredFlashcardCount('learningOnly')}
+                                            {Math.ceil(((getFilteredFlashcardCount('all') - getFilteredFlashcardCount('learningOnly') )* 100) / getFilteredFlashcardCount('all') )}%
                                         </sup>
                                     </button>
                                 </li>
@@ -483,7 +491,6 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow, syntAudio })
                                     <li className="o-list-buttons-clear__single-icon">
                                         <button aria-label="Restart / Tasowanie" onClick={handleShuffle} disabled={isShuffling}>
                                             <i className="icon-spin4"></i>
-                                            {/*{isShuffling ? 'Resetuje...' : 'Resetuj'}*/}
                                         </button>
                                     </li>
                                     <li className="o-list-buttons-clear__single-icon">
@@ -504,7 +511,7 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow, syntAudio })
 
             {showCompleteMessage && (
                 <div className="o-complete-message">
-                    <p>Przeglądnołeś wszystkie fiszki w tej kategorii.</p>
+                    <p>{t('viewed_all_flashcards')}</p>
                     <ul className="o-list-buttons-clear">
                         <li>
                             <button
@@ -514,7 +521,7 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow, syntAudio })
                                     applyFilterAndShuffle();
                                 }}
                             >
-                                Przeglądaj od nowa
+                                {t('review_again')}
                             </button>
                         </li>
                         {getFilteredFlashcardCount('learningOnly') > 0 && (
@@ -527,7 +534,7 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow, syntAudio })
                                         applyFilterAndShuffle();
                                     }}
                                 >
-                                    Przeglądaj tylko te których nie wiedziałeś
+                                    {t('review_only_the_ones_you_didnt_know')}
                                 </button>
                             </li>
                         )}
@@ -535,14 +542,12 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow, syntAudio })
                 </div>
             )}
 
-            {selectedCategory === null ? (
-                flashcards.length > 0 && <p>Wybierz kategorię, aby załadować fiszki.</p>
-            ) : (
+            {(selectedCategory !== null || selectedSuperCategory !== null) ? (
                 learningFilter && (
                     (twoCards.length === 0 && deck.length === 0 && learningFilter === "learningOnly") ? (
                         (getFilteredFlashcardCount('learningOnly') > 0 ? (
                             <>
-                                <p>W tej kategorii ciągle posiadasz fiszki do nauki ({getFilteredFlashcardCount('learningOnly')})</p>
+                                <p>{t('in_this_category_you_still_have_flashcards_to_learn')} ({getFilteredFlashcardCount('learningOnly')})</p>
                                 <ul className="o-list-buttons-clear">
                                     <li>
                                         <button
@@ -553,13 +558,19 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow, syntAudio })
                                                 applyFilterAndShuffle();
                                             }}
                                         >
-                                            Powtórz raz jeszcze naukę
+                                            {t('repeat_the_lesson_once_again')}
                                         </button>
+                                    </li>
+                                    <li>
+                                        <button>Next lesson</button>
                                     </li>
                                 </ul>
                             </>
                         ) : (
-                            <p>Gratulacje, udało ci się zapamiętać wszystkie fiszki w kategorii!</p>
+                            <>
+                                <p>{t('congratulations_text')}</p>
+                                <p><button>Next lesson</button></p>
+                            </>
                         ))
                     ) : (
                         <div className="o-page-view-flashcards__content">
@@ -576,7 +587,7 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow, syntAudio })
                                             className="o-list-flashcards__single-card"
                                             key={card.id}
                                             drag="x"
-                                            dragConstraints={{left: 0, right: 0}}
+                                            dragConstraints={{ left: 0, right: 0 }}
                                             dragElastic={0.8}
                                             dragTransition={{
                                                 type: "tween",
@@ -592,7 +603,7 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow, syntAudio })
                                                             : 0
                                             }}
                                             onDrag={(event, info) => {
-                                                const {offset} = info;
+                                                const { offset } = info;
                                                 const threshold = 20;
                                                 if (Math.abs(offset.x) > threshold) {
                                                     const direction = offset.x > 0 ? 'prawo' : 'lewo';
@@ -603,7 +614,7 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow, syntAudio })
                                             }}
                                             onDragEnd={(event, info) => {
                                                 const threshold = 100;
-                                                const {offset} = info;
+                                                const { offset } = info;
                                                 const absX = Math.abs(offset.x);
 
                                                 if (absX > threshold) {
@@ -612,23 +623,12 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow, syntAudio })
                                                 }
 
                                                 setDraggingDirection(prev => {
-                                                    const newDrag = {...prev};
+                                                    const newDrag = { ...prev };
                                                     delete newDrag[card.id];
                                                     return newDrag;
                                                 });
                                             }}
 
-                                            // onDragEnd={(event, info) => {
-                                            //     const { offset } = info;
-                                            //     const direction = offset.x > 0 ? 'prawo' : 'lewo';
-                                            //     handleSwipe(card.id, direction);
-                                            //
-                                            //     setDraggingDirection(prev => {
-                                            //         const newDrag = { ...prev };
-                                            //         delete newDrag[card.id];
-                                            //         return newDrag;
-                                            //     });
-                                            // }}
                                             variants={variants}
                                             animate={animatingCards[card.id]}
                                             exit="exit"
@@ -636,15 +636,6 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow, syntAudio })
                                                 // Tutaj ostatecznie usuwamy kartę z UI
                                                 if (animatingCards[card.id] === 'animateLeft') {
                                                     // Uczę się (lewo)
-                                                    // setDraggingDirection(prev => ({
-                                                    //     ...prev,
-                                                    //     [card.id]: 'lewo'
-                                                    // }));
-                                                    // setAnimatingCards(prev => ({
-                                                    //     ...prev,
-                                                    //     [card.id]: 'animateLeft'
-                                                    // }));
-
                                                     learnIt(card.id);
                                                 } else if (animatingCards[card.id] === 'animateRight') {
                                                     // Już to znam (prawo)
@@ -653,12 +644,12 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow, syntAudio })
 
                                                 // Sprzątanie po skończonej animacji
                                                 setAnimatingCards(prev => {
-                                                    const newAnim = {...prev};
+                                                    const newAnim = { ...prev };
                                                     delete newAnim[card.id];
                                                     return newAnim;
                                                 });
                                                 setDraggingDirection(prev => {
-                                                    const newDrag = {...prev};
+                                                    const newDrag = { ...prev };
                                                     delete newDrag[card.id];
                                                     return newDrag;
                                                 });
@@ -683,7 +674,7 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow, syntAudio })
                                                     cardLang={card.langFront}
                                                 />
                                             )}
-                                            <hr/>
+                                            <hr />
                                             {checkedCards.has(card.id) && (
                                                 !reversFrontBack ? (
                                                     <CardFrontOrBack
@@ -730,7 +721,7 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow, syntAudio })
                                                             }
                                                         }}
                                                     >
-                                                        Sprawdź
+                                                        {t('check')}
                                                     </button>
                                                 ) : (
                                                     <ul className="o-list-buttons-clear">
@@ -749,7 +740,7 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow, syntAudio })
                                                                     }));
                                                                 }}
                                                             >
-                                                                Uczę się
+                                                                {t('still_learning')}
                                                             </button>
                                                         </li>
                                                         <li>
@@ -767,7 +758,7 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow, syntAudio })
                                                                     }));
                                                                 }}
                                                             >
-                                                                Już to znam
+                                                                {t('got_it')}
                                                             </button>
                                                         </li>
                                                     </ul>
@@ -780,9 +771,9 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow, syntAudio })
                         </div>
                     )
                 )
-            )}
+            ) : null}
 
-            {selectedCategory === null ? (
+            {(selectedCategory === null && selectedSuperCategory === null) ? (
                 <>
                     {flashcards.length > 0 ? (
                         <ul className="o-list-categories">
@@ -795,6 +786,7 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow, syntAudio })
                                     }`}
                                     onClick={() => {
                                         setSelectedCategory('All');
+                                        setSelectedSuperCategory(null);
                                         setLearningFilter('all');
                                         setCheckedCards(new Set());
                                         setReviewedSet(new Set());
@@ -806,34 +798,120 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow, syntAudio })
                                     <i className="icon-play-outline"></i> {t('all')} ({flashcards.length})
                                 </button>
                             </li>
-                            {categories.map(cat => {
+                            {categories.map((cat, index) => {
                                 let count;
+                                let knowCount;
                                 if (cat === 'Without category') {
-                                    count = flashcards.filter(fc => !fc.category || fc.category.trim() === '').length;
+                                    // Poprawka: Fiszki bez category i bez superCategory
+                                    count = flashcards.filter(fc =>
+                                        (!fc.category || fc.category.trim() === '') && !fc.superCategory
+                                    ).length;
+
+                                    knowCount = flashcards.filter(fc =>
+                                        (!fc.category || fc.category.trim() === '') &&
+                                        !fc.superCategory &&
+                                        fc.know
+                                    ).length;
                                 } else {
-                                    count = flashcards.filter(fc => fc.category === cat).length;
+                                    // Liczymy tylko fiszki, które mają category === cat i nie mają superCategory
+                                    count = flashcards.filter(fc => fc.category === cat && !fc.superCategory).length;
+                                    knowCount = flashcards.filter(fc => fc.category === cat && fc.know && !fc.superCategory).length;
                                 }
 
+                                const hasSubcategories = flashcards.some(fc => fc.superCategory === cat);
+
                                 return (
-                                    <li key={cat} style={{order: newOrders?.indexOf(cat)+1}}>
-                                        <button
-                                            className={`btn ${
-                                                selectedCategory === cat && learningFilter === 'all'
-                                                    ? 'btn--active'
-                                                    : ''
-                                            }`}
-                                            onClick={() => {
-                                                setSelectedCategory(cat);
-                                                setLearningFilter('all');
-                                                setCheckedCards(new Set());
-                                                setReviewedSet(new Set());
-                                                setDeck([]);
-                                                setTwoCards([]);
-                                                applyFilterAndShuffle();
-                                            }}
-                                        >
-                                            <i className="icon-play-outline"></i> {cat === 'Without category' ? t('without_category') : cat} ({count})
-                                        </button>
+                                    <li key={cat} style={{ order: newOrders?.indexOf(cat) + 1 }}>
+                                        {hasSubcategories ? (
+                                            <>
+                                                <button
+                                                    onClick={() => {
+                                                        // Toggle wyświetlania subkategorii
+                                                        handleActiveSuperCategory(index);
+                                                    }}
+                                                    className={`bg-color-brow btn-super-category ${activeSuperCategory === index ? 'btn-super-category--active' : ''}`}
+                                                >
+                                                    <i className={activeSuperCategory === index ? 'icon-folder-open-empty' : 'icon-folder-empty'}></i> {cat}
+                                                </button>
+                                                {activeSuperCategory === index && (
+                                                    <ul className="o-list-categories">
+                                                        {flashcards
+                                                            .filter(fc => fc.superCategory === cat)
+                                                            .map(fc => fc.category)
+                                                            .filter((value, i, self) => self.indexOf(value) === i)
+                                                            .map(subcat => {
+                                                                // Liczymy tylko fiszki, które mają category === subcat i superCategory === cat
+                                                                const subcatCount = flashcards.filter(fc => fc.category === subcat && fc.superCategory === cat).length;
+                                                                const knowSubcatCount = flashcards.filter(fc => fc.category === subcat && fc.superCategory === cat && fc.know).length;
+                                                                return (
+                                                                    <li key={subcat}>
+                                                                        <button
+                                                                            className={`btn bg-color-cream color-green-strong-dark ${selectedCategory === subcat && learningFilter === 'all' ? 'btn--active' : ''}`}
+                                                                            onClick={() => {
+                                                                                setSelectedCategory(subcat);
+                                                                                setSelectedSuperCategory(cat); // Ustawiamy rodzicielską superCategory
+                                                                                setLearningFilter('all');
+                                                                                setCheckedCards(new Set());
+                                                                                setReviewedSet(new Set());
+                                                                                setDeck([]);
+                                                                                setTwoCards([]);
+                                                                                applyFilterAndShuffle();
+                                                                            }}
+                                                                        >
+                                                                            <i className="icon-play-outline"></i> {(subcat === 'Without category' || subcat === '') ? t('without_category') : subcat} ({subcatCount}/<strong
+                                                                            className="color-green-dark text-shadow-white">{knowSubcatCount}</strong>)
+
+                                                                            {(subcatCount - knowSubcatCount > 0) ?
+                                                                                <>
+                                                                                    <sub
+                                                                                        className="bg-color-green">{Math.ceil((knowSubcatCount * 100) / subcatCount)}%</sub>
+                                                                                    <sup
+                                                                                        className="bg-color-red">{subcatCount - knowSubcatCount}</sup>
+                                                                                </>
+                                                                                : <sub className="o-category-complited bg-color-green vertical-center-count"><i
+                                                                                    className="icon-ok"></i></sub>
+                                                                            }
+                                                                        </button>
+                                                                    </li>
+                                                                );
+                                                            })}
+                                                    </ul>
+                                                )}
+                                            </>
+                                        ) : (
+                                            (count > 0) && (
+                                                <button
+                                                    className={`btn ${
+                                                        selectedCategory === cat && learningFilter === 'all'
+                                                            ? 'btn--active'
+                                                            : ''
+                                                    }`}
+                                                    onClick={() => {
+                                                        setSelectedCategory(cat);
+                                                        setSelectedSuperCategory(null);
+                                                        setLearningFilter('all');
+                                                        setCheckedCards(new Set());
+                                                        setReviewedSet(new Set());
+                                                        setDeck([]);
+                                                        setTwoCards([]);
+                                                        applyFilterAndShuffle();
+                                                    }}
+                                                >
+                                                    <i className="icon-play-outline"></i> {cat === 'Without category' ? t('without_category') : cat} ({count}/<strong
+                                                    className="color-green-dark text-shadow-white">{knowCount}</strong>)
+                                                    {(count - knowCount > 0) ?
+                                                        <>
+                                                            <sub
+                                                                className={`bg-color-green`}>{Math.ceil((knowCount * 100) / count)}%</sub>
+                                                            <sup className="bg-color-red">{count - knowCount}</sup>
+                                                        </>
+                                                        :
+                                                        <sub className="o-category-complited bg-color-green vertical-center-count"><i
+                                                            className="icon-ok"></i></sub>
+                                                    }
+                                                </button>
+                                            )
+                                        )}
                                     </li>
                                 );
                             })}
@@ -842,6 +920,11 @@ function ViewFlashcards({ flashcards, categories, setFlashcardKnow, syntAudio })
                         <div className="o-no-flashcards">
                             <p>{t('no_flashcards')}</p>
                             <ul className="o-list-buttons-clear">
+                                <li>
+                                    <button onClick={() => {
+                                        handleGenerateSampleFlashcards();
+                                    }}>{t('generate_sample_flashcards')}</button>
+                                </li>
                                 <li>
                                     <Link className="btn" to="/create">
                                         <i className="icon-plus"></i> {t('create_flashcard')}

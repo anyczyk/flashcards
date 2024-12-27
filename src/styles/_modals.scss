@@ -1,0 +1,30 @@
+@use "varibles" as vars;
+
+.o-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background-color: var(--color-black-opacity-50);
+  display: flex;
+  justify-content: center;
+  padding: calc(#{vars.$padding-default} * 2);
+
+  &__container {
+    background-color: var(--color-green-less-dark);
+    border-radius: 6px;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding: vars.$padding-default;
+    box-shadow: 0 0 6px var(--color-black);;
+    max-width: 320px;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__bg-cancel {
+    z-index: 0;
+    background-color: transparent;
+    position: absolute;
+    inset: 0;
+  }
+}

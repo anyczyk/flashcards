@@ -4,15 +4,20 @@ import PropTypes from 'prop-types';
 import { getCordovaLanguage } from '../utils/getLanguage';
 import { loadLanguages } from '../utils/loadLanguages';
 import SelectCodeLanguages from './sub-components/SelectCodeLanguages';
+import { useTranslation } from 'react-i18next';
 
-function CreateFlashcard({ addFlashcard, categories }) {
+function CreateFlashcard({ addFlashcard, categories, superCategoriesArray }) {
+    const { t, i18n } = useTranslation(); // Hook translation
     const [front, setFront] = useState('');
     const [back, setBack] = useState('');
     const [category, setCategory] = useState('');
+    const [superCategory, setSuperCategory] = useState('');
     const [langFront, setLangFront] = useState('');
     const [langBack, setLangBack] = useState('');
     const [flashcardCreated, setFlashcardCreated] = useState(false);
     const [availableLanguages, setAvailableLanguages] = useState([]);
+
+    console.log("superCategoriesArray", superCategoriesArray);
 
     useEffect(() => {
         const fetchLanguages = async () => {
@@ -76,6 +81,7 @@ function CreateFlashcard({ addFlashcard, categories }) {
             // Ustaw domyślny język na 'en-US', jeśli nie wybrano żadnego
             const finalLangFront = langFront || 'en-US';
             const finalLangBack = langBack || 'en-US';
+            const finalSuperCategory = superCategory || '';
 
             console.log("Submitting flashcard with languages:", finalLangFront, finalLangBack);
 
@@ -86,7 +92,8 @@ function CreateFlashcard({ addFlashcard, categories }) {
                     back,
                     category: finalCategory,
                     langFront: finalLangFront,
-                    langBack: finalLangBack
+                    langBack: finalLangBack,
+                    superCategory: finalSuperCategory
                 });
 
                 // Wyświetlenie komunikatu o utworzeniu fiszki
@@ -98,6 +105,15 @@ function CreateFlashcard({ addFlashcard, categories }) {
             } catch (error) {
                 console.error("Error adding flashcard:", error);
             }
+        }
+    };
+
+    const handleSuperCategorySelect = (e) => {
+        const selected = e.target.value;
+        if (selected) {
+            setSuperCategory(selected);
+        } else {
+            setSuperCategory('');
         }
     };
 
@@ -128,7 +144,6 @@ function CreateFlashcard({ addFlashcard, categories }) {
         <div className="o-page-create-flashcard">
             <h2>Create a new Flashcard</h2>
             <hr />
-            {flashcardCreated && <p className="color-green">Fiszka utworzona!</p>}
             <form onSubmit={handleSubmit}>
                 <p>
                     <label htmlFor="o-front">Front:</label>
@@ -143,18 +158,8 @@ function CreateFlashcard({ addFlashcard, categories }) {
                 </p>
                 <p>
                     <label htmlFor="lang-front">Kod języka dla syntezatora mowy (Front):</label><br/>
-                    <SelectCodeLanguages availableLanguages={availableLanguages} value={langFront} id={'lang-front'} setFunction={setLangFront} />
-                    {/*<select*/}
-                    {/*    id="lang-front"*/}
-                    {/*    value={langFront}*/}
-                    {/*    onChange={(e) => setLangFront(e.target.value)}*/}
-                    {/*    required*/}
-                    {/*>*/}
-                    {/*    {availableLanguages.length === 0 && <option value="">Loading...</option>}*/}
-                    {/*    {availableLanguages.map((lang, index) => (*/}
-                    {/*        <option key={index} value={lang}>{lang}</option>*/}
-                    {/*    ))}*/}
-                    {/*</select>*/}
+                    <SelectCodeLanguages availableLanguages={availableLanguages} value={langFront} id={'lang-front'}
+                                         setFunction={setLangFront}/>
                 </p>
                 <hr/>
                 <p>
@@ -170,27 +175,21 @@ function CreateFlashcard({ addFlashcard, categories }) {
                 </p>
                 <p>
                     <label htmlFor="lang-back">Kod języka dla syntezatora mowy (Back):</label><br/>
-                    <SelectCodeLanguages availableLanguages={availableLanguages} value={langBack} id={'lang-back'} setFunction={setLangBack} />
-                    {/*<select*/}
-                    {/*    id="lang-back"*/}
-                    {/*    value={langBack}*/}
-                    {/*    onChange={(e) => setLangBack(e.target.value)}*/}
-                    {/*    required*/}
-                    {/*>*/}
-                    {/*    {availableLanguages.length === 0 && <option value="">Loading...</option>}*/}
-                    {/*    {availableLanguages.map((lang, index) => (*/}
-                    {/*        <option key={index} value={lang}>{lang}</option>*/}
-                    {/*    ))}*/}
-                    {/*</select>*/}
+                    <SelectCodeLanguages availableLanguages={availableLanguages} value={langBack} id={'lang-back'}
+                                         setFunction={setLangBack}/>
                 </p>
                 <hr/>
                 <p>
                     <label htmlFor="o-category">Category (choose existing or type new):</label><br/>
                     <select id="o-category" onChange={handleCategorySelect} value={category}>
                         <option value="">-- Select existing category --</option>
-                        {filteredCategories.map((cat, index) => (
-                            <option key={index} value={cat}>{cat}</option>
-                        ))}
+                        {filteredCategories
+                            .filter((cat) => !superCategoriesArray.includes(cat))
+                            .map((cat, index) => (
+                                <option key={index} value={cat}>
+                                    {cat}
+                                </option>
+                            ))}
                     </select>
                 </p>
                 <p>
@@ -202,9 +201,29 @@ function CreateFlashcard({ addFlashcard, categories }) {
                     />
                 </p>
                 <hr/>
-                <button type="submit" disabled={!front.trim() || !back.trim()}>
-                    Add Flashcard
-                </button>
+                <p>
+                    <label htmlFor="o-super-category">Super Category (choose existing or type new):</label><br/>
+                    <select id="o-super-category" onChange={handleSuperCategorySelect} value={superCategory}>
+                        <option value="">-- Select existing super category --</option>
+                        {superCategoriesArray.map((cat, index) => (
+                            <option key={index} value={cat}>{cat}</option>
+                        ))}
+                    </select>
+                </p>
+                <p>
+                    <input
+                        type="text"
+                        placeholder="Type a new super category or edit selected one"
+                        value={superCategory}
+                        onChange={(e) => setSuperCategory(e.target.value)}
+                    />
+                </p>
+                <hr/>
+                <p>
+                    <button type="submit" disabled={!front.trim() || !back.trim()}>
+                        Add Flashcard
+                    </button> {flashcardCreated && <strong className="color-green">{t('flashcard_added')}</strong>}
+                </p>
             </form>
         </div>
     );
@@ -212,7 +231,8 @@ function CreateFlashcard({ addFlashcard, categories }) {
 
 CreateFlashcard.propTypes = {
     addFlashcard: PropTypes.func.isRequired,
-    categories: PropTypes.arrayOf(PropTypes.string).isRequired
+    categories: PropTypes.arrayOf(PropTypes.string).isRequired,
+    // superCategories: PropTypes.arrayOf(PropTypes.string).isRequired
 };
 
 export default CreateFlashcard;

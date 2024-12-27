@@ -59,7 +59,7 @@ button,
   sub,
   sup {
     position: absolute;
-    right: -3px;
+    right: -6px;
     font-size: 10px;
     display: flex;
     border-radius: 50%;
@@ -99,6 +99,27 @@ button,
         background-color: var(--color-red) !important;
       }
     }
+    .icon-switch::before {
+      rotate: 90deg;
+    }
   }
 
+  &-super-category {
+
+    &::after {
+      font-family: "fontello", serif;
+      content: '\e818';
+      position: absolute;
+      top: 50%;
+      right: vars.$padding-button;
+      translate: 0 -50%;
+      transition: rotate 250ms ease-in-out;
+    }
+
+    &--active {
+      &::after {
+        rotate: 180deg;
+      }
+    }
+  }
 }

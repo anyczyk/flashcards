@@ -3,8 +3,10 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { clearAllFlashcards, addMultipleFlashcardsToDB, getAllFlashcards } from '../db';
 import cardsExport from '../utils/cardsExport';
+import { useTranslation } from 'react-i18next';
 
 function ImportExport({ flashcards, onImport }) {
+    const { t } = useTranslation();
     const fileInputRef = useRef(null);
     const [selectedFile, setSelectedFile] = useState(null);
     const [importSuccessMessage, setImportSuccessMessage] = useState('');
