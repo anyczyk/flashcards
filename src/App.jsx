@@ -8,11 +8,13 @@ import ImportExport from './components/ImportExport';
 import { getAllFlashcards, addFlashcardToDB, removeFlashcardFromDB, editFlashcardInDB } from './db';
 import { useTranslation } from 'react-i18next';
 import { setLocalStorage, getLocalStorage } from './utils/storage';
+import { topScroll } from "./utils/topScroll";
 
 function App() {
     const { t, i18n } = useTranslation();
     const [flashcards, setFlashcards] = useState([]);
     const [categories, setCategories] = useState([]);
+    const [allCategories, setAllCategories] = useState([]);
     const [superCategoriesArray, setSuperCategoriesArray] = useState([]);
     const [mainMenuVisible, setMainMenuVisible] = useState(false);
     const closeMenuRef = useRef(null);
@@ -50,6 +52,11 @@ function App() {
         const data = await getAllFlashcards();
         setFlashcards(data);
 
+        const allCat = new Set(
+            data.filter(fc => fc.category && fc.category.trim() !== '')
+                .map(fc => fc.category)
+        );
+
         const superCategories = new Set(
             data
                 .filter(fc => fc.superCategory && fc.superCategory.trim() !== '')
@@ -75,6 +82,7 @@ function App() {
 
         setSuperCategoriesArray([...superCategories]);
         setCategories(cats);
+        setAllCategories([...allCat]);
     }, []);
 
     useEffect(() => {
@@ -159,6 +167,12 @@ function App() {
         setSyntAudio(prev => !prev);
     };
 
+    const clearInsomnia = useCallback(() => {
+        if (window.plugins && window.plugins.insomnia) {
+            window.plugins.insomnia.allowSleepAgain();
+        }
+    }, []);
+
     return (
         <div className={`o ${mainMenuVisible ? 'o-menu-visible' : ''}`}>
             <header className="o-main-header">
@@ -188,9 +202,9 @@ function App() {
                     <nav>
                         <ul>
                             <li><Link to="/"><i className="icon-play"></i> {t('view_flashcards')}</Link></li>
-                            <li><Link to="/create"><i className="icon-plus"></i> {t('create_flashcard')}</Link></li>
-                            <li><Link to="/list-edit"><i className="icon-wrench"></i> {t('edit_flashcards')}</Link></li>
-                            <li><Link to="/import-export"><i className="icon-export"></i> {t('import_export')}</Link>
+                            <li><Link onClick={clearInsomnia} to="/create"><i className="icon-plus"></i> {t('create_flashcard')}</Link></li>
+                            <li><Link onClick={clearInsomnia} to="/list-edit"><i className="icon-wrench"></i> {t('edit_flashcards')}</Link></li>
+                            <li><Link onClick={clearInsomnia} to="/import-export"><i className="icon-export"></i> {t('import_export')}</Link>
                             </li>
                         </ul>
                     </nav>
@@ -206,10 +220,10 @@ function App() {
                 )}
 
                 <Routes>
-                    <Route path="/" element={<ViewFlashcards loadData={loadData} syntAudio={syntAudio} flashcards={flashcards} categories={categories}
+                    <Route path="/" element={<ViewFlashcards clearInsomnia={clearInsomnia} loadData={loadData} syntAudio={syntAudio} flashcards={flashcards} categories={categories}
                                                              setFlashcardKnow={setFlashcardKnow} />} />
                     <Route path="/create"
-                           element={<CreateFlashcard addFlashcard={addFlashcard} categories={categories} superCategoriesArray={superCategoriesArray} />} />
+                           element={<CreateFlashcard allCategories={allCategories} addFlashcard={addFlashcard} categories={categories} superCategoriesArray={superCategoriesArray} />} />
                     <Route path="/list-edit"
                            element={<EditFlashcardList flashcards={flashcards} removeFlashcard={removeFlashcard}
                                                        editFlashcard={editFlashcard} categories={categories} />} />
@@ -220,10 +234,14 @@ function App() {
             </main>
             <footer className="o-main-footer">
                 <ul>
-                    <li><Link aria-label={t('view_flashcards')} to="/"><i className="icon-play"></i></Link></li>
-                    <li><Link aria-label={t('create_flashcard')} to="/create"><i className="icon-plus"></i></Link></li>
-                    <li><Link aria-label={t('edit_flashcards')} to="/list-edit"><i className="icon-wrench"></i></Link></li>
-                    <li><Link aria-label={t('import_export')} to="/import-export"><i className="icon-export"></i></Link></li>
+                    <li><Link aria-label={t('view_flashcards')} to="/"><i className="icon-logo-f"></i></Link></li>
+                    <li><Link aria-label={t('create_flashcard')} onClick={clearInsomnia} to="/create"><i className="icon-plus"></i></Link></li>
+                    <li><Link aria-label={t('edit_flashcards')} onClick={clearInsomnia} to="/list-edit"><i className="icon-wrench"></i></Link>
+                    </li>
+                    <li><Link aria-label={t('import_export')} onClick={clearInsomnia} to="/import-export"><i className="icon-export"></i></Link>
+                    </li>
+                    <li><Link aria-label={t('up')} onClick={topScroll} to="#"><i className="icon-up-open"></i></Link>
+                    </li>
                 </ul>
             </footer>
         </div>

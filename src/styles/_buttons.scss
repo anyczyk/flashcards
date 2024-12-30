@@ -122,4 +122,21 @@ button,
       }
     }
   }
+
+  &--single-edit {
+    //background-color: #e9a400;
+    background-color: transparent;
+    box-shadow: unset;
+    color: var(--color-green-strong-dark);
+    opacity: .5;
+    font-size: 20px;
+
+    &:active {
+      background-color: transparent !important;
+    }
+
+    span {
+      font-size: 10px;
+    }
+  }
 }

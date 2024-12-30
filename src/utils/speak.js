@@ -1,37 +1,60 @@
-// speak.js
-const speak = (text, lang) => {
-    if (window.TTS) {
+// utils/speak.js
+export const speak = (text, lang, onEndCallback) => {
+    if (window.TTS) { // Sprawdź dokładną nazwę obiektu według dokumentacji wtyczki
+        // console.log(`Using Cordova TTS Advanced plugin to speak: "${text}" (${lang})`);
+
         window.TTS.speak({
-            text,
-            locale: lang,
-            rate: 1.0
-        }, () => {
-            console.log('Sukces: Mowa zakończona');
-        }, (error) => {
-            console.error('Błąd TTS: ', error);
+                text: text,
+                locale: lang || 'en-US',
+                rate: 1.2,
+                pitch: 1.2,
+                cancel: true
+            }).then(function () {
+            // console.log('success');
+            if (onEndCallback) onEndCallback();
+        }, function (reason) {
+            // console.log(`TTS Error: ${JSON.stringify(reason)}`);
+            if (onEndCallback) onEndCallback(reason);
         });
+
     } else if (window.speechSynthesis) {
+        console.log(`Using Web Speech API to speak: "${text}" (${lang})`);
         const synth = window.speechSynthesis;
         const utterance = new SpeechSynthesisUtterance(text);
-        utterance.lang = lang;
+        utterance.lang = lang || 'en-US';
+
+        // Callback po zakończeniu mowy
+        utterance.onend = () => {
+            // console.log('Success: Speech ended');
+            if (onEndCallback) onEndCallback();
+        };
+
+        // Obsługa błędów
+        utterance.onerror = (event) => {
+            // console.log(`Speech Error: ${event.error}`);
+            if (onEndCallback) onEndCallback(event.error);
+        };
+
         synth.speak(utterance);
+    } else {
+        // console.log('No available TTS methods');
+        if (onEndCallback) onEndCallback('No available TTS methods');
     }
 };
 
-// stopSpeaking.js
-const stopSpeaking = () => {
+export const stopSpeaking = () => {
     if (window.TTS && typeof window.TTS.stop === 'function') {
+        // console.log('Attempting to stop Cordova TTS Advanced');
         window.TTS.stop(() => {
-            console.log('Sukces: Mowa zatrzymana');
+            // console.log('Success: Speech stopped');
         }, (error) => {
-            console.error('Błąd podczas zatrzymywania TTS: ', error);
+            console.log(`Error stopping TTS: ${JSON.stringify(error)}`);
         });
     } else if (window.speechSynthesis) {
+        // console.log('Attempting to stop Web Speech API');
         window.speechSynthesis.cancel();
-        // console.log('Sukces: Mowa zatrzymana za pomocą speechSynthesis');
+        // console.log('Success: Speech stopped using speechSynthesis');
     } else {
-        console.warn('Brak dostępnych metod TTS do zatrzymania mowy.');
+        console.log('No available TTS methods to stop speech.');
     }
 };
-
-export { speak, stopSpeaking };

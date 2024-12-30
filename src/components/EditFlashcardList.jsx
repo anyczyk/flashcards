@@ -10,7 +10,8 @@ import {
     Droppable,
     Draggable,
 } from '@hello-pangea/dnd';
-import BrowserSearch from "./sub-components/BrowserSearch";
+import { topScroll } from "../utils/topScroll";
+import BrowserSearchAndTools from "./sub-components/BrowserSearchAndTools";
 
 function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categories }) {
     const { t, i18n } = useTranslation(); // Hook translation
@@ -190,12 +191,12 @@ function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categor
 
     const hasSelectedCards = selectedCards.length > 0;
 
-    const topScroll = () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth', // Opcjonalnie: 'auto' dla natychmiastowego przewinięcia
-        });
-    };
+    // const topScroll = () => {
+    //     window.scrollTo({
+    //         top: 0,
+    //         behavior: 'smooth', // Opcjonalnie: 'auto' dla natychmiastowego przewinięcia
+    //     });
+    // };
 
     return (
         <div className="o-page-edit-flashcard-list">
@@ -214,6 +215,27 @@ function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categor
                 )}
             </h2>
             <hr />
+
+            {(!(selectedCategory === null) && !(flashcards.length < 1)) &&
+                <>
+                    <p>
+                        <button
+                            onClick={() => {
+                                setSelectedCategory(null);
+                                setSelectedSuperCategory(null);
+                                setSelectedCards([]);
+                                cancelEditing();
+                                topScroll();
+                            }}
+                        >
+                            {t('choose_another_category')}
+                        </button>
+                    </p>
+                    <hr/>
+                </>
+            }
+
+
             {(flashcards.length < 1) ? (
                 <div className="o-no-flashcards">
                     <p>{t('no_flashcards')}</p>
@@ -385,101 +407,39 @@ function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categor
                         </DragDropContext>
                     ) : (
                         <>
-                            <BrowserSearch />
-                            <hr />
-                            <p>
-                                <button
-                                    onClick={() => {
-                                        setSelectedCategory(null);
-                                        setSelectedSuperCategory(null);
-                                        setSelectedCards([]);
-                                        cancelEditing();
-                                        topScroll();
-                                    }}
-                                >
-                                    {t('choose_another_category')}
-                                </button>
-                            </p>
+                            {/*<BrowserSearch/>*/}
+                            {/*<p>*/}
+                            {/*    <button*/}
+                            {/*        onClick={() => {*/}
+                            {/*            setSelectedCategory(null);*/}
+                            {/*            setSelectedSuperCategory(null);*/}
+                            {/*            setSelectedCards([]);*/}
+                            {/*            cancelEditing();*/}
+                            {/*            topScroll();*/}
+                            {/*        }}*/}
+                            {/*    >*/}
+                            {/*        {t('choose_another_category')}*/}
+                            {/*    </button>*/}
+                            {/*</p>*/}
                         </>
                     )}
 
                     {selectedCategory !== null && (
                         <>
-                            <hr />
                             {(filteredFlashcards.length > 0 || selectedCards.length > 0) && (
-                                <ul className="o-list-buttons-3-cols">
-                                    {filteredFlashcards.length > 0 && (
-                                        <li>
-                                            <button onClick={selectAll}>
-                                                <i className="icon-ok-circled"></i> {t('select_all')}
-                                            </button>
-                                        </li>
-                                    )}
-                                    {selectedCards.length > 0 && (
-                                        <>
-                                            <li>
-                                                <button onClick={deselectAll}>
-                                                    <i className="icon-ok-circled2"></i> {t('deselect_all')}
-                                                </button>
-                                            </li>
-                                            <li>
-                                                <button
-                                                    className="btn--red"
-                                                    onClick={() => setVisibleModalAll(true)}
-                                                >
-                                                    <i className="icon-trash-empty"></i> {t('remove_selected')}
-                                                </button>
-                                                {visibleModalAll && (
-                                                    <div className="o-modal">
-                                                        <div
-                                                            className="o-modal__bg-cancel"
-                                                            type="button"
-                                                            aria-label={t('cancel')}
-                                                            onClick={() => setVisibleModalAll(false)}
-                                                        ></div>
-                                                        <div className="o-modal__container">
-                                                            <p>{t('are_you_sure_delete_flashcards')}</p>
-                                                            <ul className="o-list-buttons-clear">
-                                                                <li>
-                                                                    <button
-                                                                        className="btn--red"
-                                                                        onClick={() => {
-                                                                            removeSelectedCards();
-                                                                            setVisibleModalAll(false);
-                                                                        }}
-                                                                    >
-                                                                        <i className="icon-trash-empty"></i>{' '}
-                                                                        {t('i_confirm_remove')}
-                                                                    </button>
-                                                                </li>
-                                                                <li>
-                                                                    <button
-                                                                        onClick={() => setVisibleModalAll(false)}
-                                                                    >
-                                                                        <i className="icon-cancel-circled"></i>{' '}
-                                                                        {t('cancel')}
-                                                                    </button>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                )}
-                                            </li>
-                                            <li>
-                                                <button onClick={copySelectedCards}>
-                                                    <i className="icon-docs"></i> {t('copy_selected')}
-                                                </button>
-                                            </li>
-                                            <li>
-                                                <button onClick={handleExport}>
-                                                    <i className="icon-export"></i> {t('export_selected')}
-                                                </button>
-                                            </li>
-                                        </>
-                                    )}
-                                </ul>
+                                <BrowserSearchAndTools
+                                    selectAll={selectAll}
+                                    deselectAll={deselectAll}
+                                    removeSelectedCards={removeSelectedCards}
+                                    copySelectedCards={copySelectedCards}
+                                    handleExport={handleExport}
+                                    setVisibleModalAll={setVisibleModalAll}
+                                    filteredFlashcards={filteredFlashcards}
+                                    selectedCards={selectedCards}
+                                    visibleModalAll={visibleModalAll}
+                                />
                             )}
-
+                            <hr/>
                             {filteredFlashcards.length > 0 && (
                                 <ul className="o-list-edit-flashcards">
                                     {filteredFlashcards.map((card, index) => (

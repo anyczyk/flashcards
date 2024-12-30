@@ -1,12 +1,13 @@
 // CreateFlashcard.jsx
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect, useCallback} from 'react';
 import PropTypes from 'prop-types';
 import { getCordovaLanguage } from '../utils/getLanguage';
 import { loadLanguages } from '../utils/loadLanguages';
 import SelectCodeLanguages from './sub-components/SelectCodeLanguages';
 import { useTranslation } from 'react-i18next';
+import {getAllFlashcards} from "../db";
 
-function CreateFlashcard({ addFlashcard, categories, superCategoriesArray }) {
+function CreateFlashcard({ allCategories, addFlashcard, categories, superCategoriesArray }) {
     const { t, i18n } = useTranslation(); // Hook translation
     const [front, setFront] = useState('');
     const [back, setBack] = useState('');
@@ -16,8 +17,21 @@ function CreateFlashcard({ addFlashcard, categories, superCategoriesArray }) {
     const [langBack, setLangBack] = useState('');
     const [flashcardCreated, setFlashcardCreated] = useState(false);
     const [availableLanguages, setAvailableLanguages] = useState([]);
+    const [categoriesDependentOnSuperCategory, setCategoriesDependentOnSuperCategory] = useState([]);
+    const [currentSelectSuperCategory,setCurrentSelectSuperCategory] = useState('');
 
-    console.log("superCategoriesArray", superCategoriesArray);
+    const loadData = useCallback( async () => {
+        const data = await getAllFlashcards();
+        const catDependSuperCategory = new Set(
+            data.filter(fc => fc.category && fc.category.trim() !== '' && fc.superCategory === currentSelectSuperCategory).map(fc => fc.category)
+        );
+        setCategoriesDependentOnSuperCategory([...catDependSuperCategory]);
+    });
+
+    useEffect(() => {
+        loadData();
+    }, [loadData]);
+
 
     useEffect(() => {
         const fetchLanguages = async () => {
@@ -112,8 +126,10 @@ function CreateFlashcard({ addFlashcard, categories, superCategoriesArray }) {
         const selected = e.target.value;
         if (selected) {
             setSuperCategory(selected);
+            setCurrentSelectSuperCategory(selected);
         } else {
             setSuperCategory('');
+            setCurrentSelectSuperCategory('');
         }
     };
 
@@ -146,7 +162,7 @@ function CreateFlashcard({ addFlashcard, categories, superCategoriesArray }) {
             <hr />
             <form onSubmit={handleSubmit}>
                 <p>
-                    <label htmlFor="o-front">Front:</label>
+                    <label htmlFor="o-front"><span className="color-red">*</span> Front:</label>
                     <textarea
                         value={front}
                         onChange={(e) => setFront(e.target.value)}
@@ -163,7 +179,7 @@ function CreateFlashcard({ addFlashcard, categories, superCategoriesArray }) {
                 </p>
                 <hr/>
                 <p>
-                    <label htmlFor="o-back">Back:</label>
+                    <label htmlFor="o-back"><span className="color-red">*</span>  Back:</label>
                     <textarea
                         value={back}
                         onChange={(e) => setBack(e.target.value)}
@@ -180,29 +196,7 @@ function CreateFlashcard({ addFlashcard, categories, superCategoriesArray }) {
                 </p>
                 <hr/>
                 <p>
-                    <label htmlFor="o-category">Category (choose existing or type new):</label><br/>
-                    <select id="o-category" onChange={handleCategorySelect} value={category}>
-                        <option value="">-- Select existing category --</option>
-                        {filteredCategories
-                            .filter((cat) => !superCategoriesArray.includes(cat))
-                            .map((cat, index) => (
-                                <option key={index} value={cat}>
-                                    {cat}
-                                </option>
-                            ))}
-                    </select>
-                </p>
-                <p>
-                    <input
-                        type="text"
-                        placeholder="Type a new category or edit selected one"
-                        value={category}
-                        onChange={(e) => setCategory(e.target.value)}
-                    />
-                </p>
-                <hr/>
-                <p>
-                    <label htmlFor="o-super-category">Super Category (choose existing or type new):</label><br/>
+                    <label htmlFor="o-super-category">Optional Super Category (choose existing or type new):</label><br/>
                     <select id="o-super-category" onChange={handleSuperCategorySelect} value={superCategory}>
                         <option value="">-- Select existing super category --</option>
                         {superCategoriesArray.map((cat, index) => (
@@ -220,9 +214,31 @@ function CreateFlashcard({ addFlashcard, categories, superCategoriesArray }) {
                 </p>
                 <hr/>
                 <p>
+                    <label htmlFor="o-category"><span className="color-red">*</span>  Category (choose existing or type
+                        new):</label><br/>
+                    <select id="o-category" onChange={handleCategorySelect} value={category}>
+                        <option value="">-- Select existing category --</option>
+                        {categoriesDependentOnSuperCategory.map((cat, index) => (
+                                <option key={index} value={cat}>
+                                    {cat}
+                                </option>
+                            ))}
+                    </select>
+                </p>
+                <p>
+                    <input
+                        type="text"
+                        placeholder="Type a new category or edit selected one"
+                        value={category}
+                        onChange={(e) => setCategory(e.target.value)}
+                    />
+                </p>
+                <hr/>
+                <p>
                     <button type="submit" disabled={!front.trim() || !back.trim()}>
                         Add Flashcard
-                    </button> {flashcardCreated && <strong className="color-green">{t('flashcard_added')}</strong>}
+                    </button>
+                    {flashcardCreated && <strong className="color-green">{t('flashcard_added')}</strong>}
                 </p>
             </form>
         </div>

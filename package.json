@@ -50,6 +50,7 @@
     "cordova-plugin-filechooser": "^1.2.0",
     "cordova-plugin-filepath": "^1.6.0",
     "cordova-plugin-globalization": "^1.11.0",
+    "cordova-plugin-insomnia": "^4.3.0",
     "cordova-plugin-simple-file-chooser": "^3.0.2",
     "cordova-plugin-tts-advanced": "^0.5.3",
     "cordova-plugin-x-socialsharing": "^6.0.4",
@@ -79,7 +80,8 @@
       "cordova-plugin-file": {},
       "cordova-plugin-filepath": {},
       "cordova-plugin-globalization": {},
-      "cordova-plugin-tts-advanced": {}
+      "cordova-plugin-tts-advanced": {},
+      "cordova-plugin-insomnia": {}
     }
   }
 }

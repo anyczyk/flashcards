@@ -53,7 +53,16 @@ export async function removeFlashcardFromDB(id) {
     }
 }
 
-export async function editFlashcardInDB(id, updatedFront, updatedBack, updatedCategory, updatedKnow = undefined, updatedLangFront = 'en-US', updatedLangBack = 'en-US', updateSuperCategory) {
+export async function editFlashcardInDB(
+    id,
+    updatedFront,
+    updatedBack,
+    updatedCategory,
+    updatedKnow = undefined,
+    updatedLangFront = 'en-US',
+    updatedLangBack = 'en-US',
+    updateSuperCategory
+) {
     const db = await initDB();
     const flashcard = {
         id,

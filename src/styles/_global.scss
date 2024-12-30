@@ -53,6 +53,34 @@ hr {
   width: 100%;
 }
 
+.white-space-nowrap {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.pointer-events-none {
+  pointer-events: none;
+}
+
+.order-0 {
+  order: 0;
+}
+
+.order-1 {
+  order: 1;
+}
+
+.order-2 {
+  order: 2;
+}
+
+.order-3 {
+  order: 3;
+}
+
+.position-relative {
+  position: relative;
+}
 
 .vertical-center-count {
   //border: 1px solid lime;
@@ -63,6 +91,10 @@ hr {
 
 .text-shadow-white {
   text-shadow: 0 0 2px var(--color-white);
+}
+
+.color-white:not(:active) {
+  color: var(--color-white) !important;
 }
 
 .color-green-strong-dark:not(:active) {
@@ -154,6 +186,19 @@ hr {
       }
     }
   }
+
+  //&__single-icon--restart {
+  //  position: absolute;
+  //  bottom: -80px;
+  //  left: 10px;
+  //  button {
+  //    background-color: transparent;
+  //    box-shadow: none;
+  //    color: var(--color-black);
+  //    opacity: .3;
+  //    font-size: 20px;
+  //  }
+  //}
 }
 
 .ml-auto {
@@ -314,9 +359,23 @@ hr {
 
     .o-list-buttons-clear li {
       flex: 0 0 calc(50% - ($padding-temp / 2));
+      align-self: stretch;
 
       button {
         width: 100%;
+        height: 100%;
+      }
+
+      &.o-button-single-edit {
+        position: absolute;
+        top: -60px;
+        left: 0;
+        z-index: 9;
+      }
+
+      &.o-button-single-check {
+        width: 100%;
+        flex: unset;
       }
     }
   }
@@ -348,6 +407,7 @@ hr {
     opacity: 0;
     translate: -50% -50%;
     transition: opacity 200ms ease-in-out;
+    text-align: center;
 
     &--visible {
       opacity: .3;
@@ -399,10 +459,10 @@ hr {
   }
 
   &__title {
-    white-space: nowrap;
+    // white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
     width: 100%;
+
     &-categories{
       text-decoration: underline;
       cursor: pointer;
@@ -410,6 +470,8 @@ hr {
   }
 
   &__tools {
+    //overflow-x: auto;
+    position: relative;
     button sup {
       background-color: var(--color-green);
     }
@@ -448,5 +510,29 @@ hr {
     max-width: 600px;
     width: 100%;
     box-shadow: 0 0 6px var(--color-black);
+
+    .o-list-buttons-3-cols {
+      display: flex;
+      // justify-content: space-evenly;
+      button span {
+        display: none;
+      }
+    }
+  }
+
+  &-wrap {
+    min-height: 108px;
+    padding-bottom: vars.$padding-smaller;
+  }
+}
+
+.o-card-lock {
+  i {
+    position: relative;
+    top: -#{vars.$padding-smaller};
+    left: #{vars.$padding-smaller};
+    opacity: .3;
+    display: inline-block;
+    scale: 1.5;
   }
 }

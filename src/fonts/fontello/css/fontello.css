@@ -86,10 +86,14 @@
 .icon-folder:before { content: '\e81d'; } /* '' */
 .icon-folder-1:before { content: '\e81e'; } /* '' */
 .icon-folder-open:before { content: '\e81f'; } /* '' */
+.icon-pause-outline:before { content: '\e820'; } /* '' */
+.icon-play-circle2:before { content: '\e821'; } /* '' */
+.icon-pause:before { content: '\e822'; } /* '' */
+.icon-lock-open:before { content: '\e823'; } /* '' */
+.icon-lock-2:before { content: '\e825'; } /* '' */
 .icon-spin4:before { content: '\ec06'; } /* '' */
 .icon-export:before { content: '\f081'; } /* '' */
 .icon-docs:before { content: '\f0c5'; } /* '' */
 .icon-folder-empty:before { content: '\f114'; } /* '' */
 .icon-folder-open-empty:before { content: '\f115'; } /* '' */
 .icon-language:before { content: '\f1ab'; } /* '' */
-
