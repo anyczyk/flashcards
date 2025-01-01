@@ -53,6 +53,22 @@ hr {
   width: 100%;
 }
 
+.d-flex {
+  display: flex;
+}
+
+.gap-1 {
+  gap: vars.$padding-default;
+}
+
+.w-100 {
+  width: 100% !important;
+}
+
+.w-auto {
+  width: auto !important;
+}
+
 .white-space-nowrap {
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -484,8 +500,11 @@ hr {
 }
 
 .o-page-edit-flashcard-list {
-  .o-list-categories--edit > li > button.btn-super-category {
+  .o-list-categories--edit > li .btn-super-category {
     cursor: default;
+    text-align: left;
+    margin-bottom: 0;
+    padding-right: 80px;
 
     &:active {
       background-color: var(--color-brow);
@@ -536,3 +555,4 @@ hr {
     scale: 1.5;
   }
 }
+

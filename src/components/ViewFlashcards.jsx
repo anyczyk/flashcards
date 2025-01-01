@@ -12,16 +12,13 @@ import { speak, stopSpeaking } from "../utils/speak";
 import { setLocalStorage, getLocalStorage } from '../utils/storage';
 import sampleData from '../data/sample-data.json';
 
-function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFlashcardKnow, syntAudio }) {
+function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFlashcardKnow, syntAudio, playFlashcards, setPlayFlashcards }) {
     const { t } = useTranslation();
 
     const newOrders = getLocalStorage('categoryOrder');
     const [openCardId, setOpenCardId] = useState(false);
     const [openCard, setOpenCard] = useState(false);
     const [whiteSpaceNowrap, setWhiteSpaceNowrap] = useState(false);
-
-    // Flaga sterująca auto-play (play/pause)
-    const [playFlashcards, setPlayFlashcards] = useState(false);
 
     // Stan wybranej kategorii i superkategorii
     const [selectedCategory, setSelectedCategory] = useState(null);
@@ -786,8 +783,10 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
 
                 // 8) Kontynuujemy auto-play po krótkim opóźnieniu, aby pozwolić React na aktualizację stanu
                 setTimeout(() => {
-                    processNext();
-                    console.log("Przechodzenie do następnej karty...");
+                    // if(playFlashcards) {
+                        processNext();
+                        console.log("Przechodzenie do następnej karty...");
+                    // }
                 }, 600);
             } catch (error) {
                 console.error('Błąd w auto-play:', error);
@@ -901,7 +900,7 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
                                         disabled={playFlashcards ? 'disabled' : '' }
                                     >
                                         {t('study')}{' '}
-                                        <sub>{getFilteredFlashcardCount('learningOnly')}</sub>
+                                        <sub>{getFilteredFlashcardCount('learningOnly')}{!(learningFilter === 'all') ? `/${deck.length + twoCards.length}` : ''}</sub>
                                         <sup>
                                             {Math.ceil(
                                                 ((getFilteredFlashcardCount('all') -

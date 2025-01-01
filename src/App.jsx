@@ -21,6 +21,9 @@ function App() {
     const closeMenuBtnRef = useRef(null);
     const location = useLocation();
 
+    // Flaga sterująca auto-play (play/pause)
+    const [playFlashcards, setPlayFlashcards] = useState(false);
+
     const [syntAudio, setSyntAudio] = useState(() => {
         const storedAudio = getLocalStorage('syntAudio');
         return storedAudio !== null ? storedAudio : true;
@@ -173,6 +176,11 @@ function App() {
         }
     }, []);
 
+    const clearOptions = () => {
+        setPlayFlashcards(false);
+        clearInsomnia();
+    };
+
     return (
         <div className={`o ${mainMenuVisible ? 'o-menu-visible' : ''}`}>
             <header className="o-main-header">
@@ -181,7 +189,12 @@ function App() {
                 <button
                     aria-label="Audio on / off"
                     className={`o-main-header__btn-audio ${syntAudio ? 'o-main-header__btn-audio--active' : ''}`}
-                    onClick={audioOnOff}
+                    onClick={()=> {
+                            audioOnOff();
+                            // setPlayFlashcards(false);
+                        }
+                    }
+                    disabled={playFlashcards ? 'disabled' : '' }
                 >
                     <i className="icon-volume"></i>
                 </button>
@@ -202,9 +215,9 @@ function App() {
                     <nav>
                         <ul>
                             <li><Link to="/"><i className="icon-play"></i> {t('view_flashcards')}</Link></li>
-                            <li><Link onClick={clearInsomnia} to="/create"><i className="icon-plus"></i> {t('create_flashcard')}</Link></li>
-                            <li><Link onClick={clearInsomnia} to="/list-edit"><i className="icon-wrench"></i> {t('edit_flashcards')}</Link></li>
-                            <li><Link onClick={clearInsomnia} to="/import-export"><i className="icon-export"></i> {t('import_export')}</Link>
+                            <li><Link onClick={clearOptions} to="/create"><i className="icon-plus"></i> {t('create_flashcard')}</Link></li>
+                            <li><Link onClick={clearOptions} to="/list-edit"><i className="icon-wrench"></i> {t('edit_flashcards')}</Link></li>
+                            <li><Link onClick={clearOptions} to="/import-export"><i className="icon-export"></i> {t('import_export')}</Link>
                             </li>
                         </ul>
                     </nav>
@@ -221,7 +234,7 @@ function App() {
 
                 <Routes>
                     <Route path="/" element={<ViewFlashcards clearInsomnia={clearInsomnia} loadData={loadData} syntAudio={syntAudio} flashcards={flashcards} categories={categories}
-                                                             setFlashcardKnow={setFlashcardKnow} />} />
+                                                             setFlashcardKnow={setFlashcardKnow} playFlashcards={playFlashcards} setPlayFlashcards={setPlayFlashcards}  />} />
                     <Route path="/create"
                            element={<CreateFlashcard allCategories={allCategories} addFlashcard={addFlashcard} categories={categories} superCategoriesArray={superCategoriesArray} />} />
                     <Route path="/list-edit"
@@ -235,10 +248,10 @@ function App() {
             <footer className="o-main-footer">
                 <ul>
                     <li><Link aria-label={t('view_flashcards')} to="/"><i className="icon-logo-f"></i></Link></li>
-                    <li><Link aria-label={t('create_flashcard')} onClick={clearInsomnia} to="/create"><i className="icon-plus"></i></Link></li>
-                    <li><Link aria-label={t('edit_flashcards')} onClick={clearInsomnia} to="/list-edit"><i className="icon-wrench"></i></Link>
+                    <li><Link aria-label={t('create_flashcard')} onClick={clearOptions} to="/create"><i className="icon-plus"></i></Link></li>
+                    <li><Link aria-label={t('edit_flashcards')} onClick={clearOptions} to="/list-edit"><i className="icon-wrench"></i></Link>
                     </li>
-                    <li><Link aria-label={t('import_export')} onClick={clearInsomnia} to="/import-export"><i className="icon-export"></i></Link>
+                    <li><Link aria-label={t('import_export')} onClick={clearOptions} to="/import-export"><i className="icon-export"></i></Link>
                     </li>
                     <li><Link aria-label={t('up')} onClick={topScroll} to="#"><i className="icon-up-open"></i></Link>
                     </li>

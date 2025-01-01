@@ -16,6 +16,10 @@ button,
   box-shadow: inset 0 0 10px var(--color-black-opacity-60);
   position: relative;
 
+  &-simple-icon {
+    padding-right: vars.$padding-button !important;
+  }
+
   &:active:not([disabled]) {
     background-color: #fff;
     color: var(--color-brow);
@@ -139,4 +143,8 @@ button,
       font-size: 10px;
     }
   }
+}
+
+[type="button"] {
+  cursor: pointer;
 }
