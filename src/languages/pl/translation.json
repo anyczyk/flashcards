@@ -31,6 +31,7 @@
   "generate_sample_flashcards": "Generuj przykładowe fiszki",
   "i_confirm_remove": "Potwierdzam, usuń",
   "are_you_sure_delete_flashcards": "Czy jeteś pewny że chcesz usunąć wybrane fiszki?",
+  "are_you_sure_delete": "Czy jesteś pewny, że chcesz to usunąć?",
   "flashcard_added": "Fiszka dodana!",
   "review": "Powtórz",
   "study": "Do nauki",
@@ -44,5 +45,9 @@
   "review_only_the_ones_you_didnt_know": "Przeglądaj tylko te których nie wiedziałeś",
   "in_this_category_you_still_have_flashcards_to_learn": "W tej kategorii ciągle posiadasz fiszki do nauki",
   "next_lesson": "Następna lekcja",
-  "up": "Do góry"
+  "up": "Do góry",
+  "category_without_super_category": "Kategoria bez nadkategorii",
+  "category_inside_super_category": "Kategoria w nadkategorii",
+  "title": "Tytuł",
+  "progress_reset": "Resetuj progress"
 }

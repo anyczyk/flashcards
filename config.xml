@@ -18,6 +18,12 @@
     <preference name="AndroidNavigationBarColor" value="#1a291a" />
     <preference name="Orientation" value="portrait" /> <!-- Dodana preferencja orientacji -->
 
+    <preference name="SplashScreen" value="screen" />
+    <preference name="AutoHideSplashScreen" value="true" />
+    <preference name="SplashScreenDelay" value="3000" />
+    <preference name="FadeSplashScreen" value="false" />
+    <preference name="ShowSplashScreenSpinner" value="false" />
+
     <!-- Wtyczki -->
     <plugin name="cordova-plugin-file" spec="^6.0.2" />
     <plugin name="cordova-plugin-android-permissions" spec="^1.0.0" />
@@ -35,11 +41,21 @@
             <!-- Jeśli potrzebujesz MANAGE_EXTERNAL_STORAGE, odkomentuj poniższe -->
             <!-- <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" /> -->
         </config-file>
+        <resource-file src="resources/android/values/themes.xml" target="app/src/main/res/values/themes.xml" overwrite="true" />
+        <resource-file src="resources/android/values/colors.xml" target="app/src/main/res/values/colors.xml" overwrite="true" />
+        <icon src="resources/android/icon/mipmap-ldpi/ic_launcher.png" density="ldpi" />
+        <icon src="resources/android/icon/mipmap-mdpi/ic_launcher.png" density="mdpi" />
+        <icon src="resources/android/icon/mipmap-hdpi/ic_launcher.png" density="hdpi" />
+        <icon src="resources/android/icon/mipmap-xhdpi/ic_launcher.png" density="xhdpi" />
+        <icon src="resources/android/icon/mipmap-xxhdpi/ic_launcher.png" density="xxhdpi" />
+        <icon src="resources/android/icon/mipmap-xxxhdpi/ic_launcher.png" density="xxxhdpi" />
 
-        <icon density="mdpi" src="www/icons/android/icon-48x48.png" />
-        <icon density="hdpi" src="www/icons/android/icon-72x72.png" />
-        <icon density="xhdpi" src="www/icons/android/icon-96x96.png" />
-        <icon density="xxhdpi" src="www/icons/android/icon-144x144.png" />
-        <icon density="xxxhdpi" src="www/icons/android/icon-192x192.png" />
+        <!-- Splash Screens -->
+        <splash src="resources/android/splash/drawable-port-ldpi-screen.png" density="port-ldpi" />
+        <splash src="resources/android/splash/drawable-port-mdpi-screen.png" density="port-mdpi" />
+        <splash src="resources/android/splash/drawable-port-hdpi-screen.png" density="port-hdpi" />
+        <splash src="resources/android/splash/drawable-port-xhdpi-screen.png" density="port-xhdpi" />
+        <splash src="resources/android/splash/drawable-port-xxhdpi-screen.png" density="port-xxhdpi" />
+        <splash src="resources/android/splash/drawable-port-xxxhdpi-screen.png" density="port-xxxhdpi" />
     </platform>
 </widget>

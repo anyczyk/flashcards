@@ -1428,13 +1428,12 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
                                                                         subcat === ''
                                                                             ? t('without_category')
                                                                             : subcat}{' '}
-                                                                        ({subcatCount}/
-                                                                        <strong className="color-green-dark">
-                                                                            {knowSubcatCount}
-                                                                        </strong>)
+                                                                        (<strong className="color-green-dark">
+                                                                        {knowSubcatCount}
+                                                                    </strong>/{subcatCount})
                                                                         {subcatCount - knowSubcatCount > 0 ? (
                                                                             <>
-                                                                                <sub className="bg-color-green">
+                                                                            <sub className="bg-color-green">
                                                                                     {Math.ceil(
                                                                                         (knowSubcatCount * 100) /
                                                                                         subcatCount
@@ -1483,13 +1482,12 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
                                                         {cat === 'Without category'
                                                             ? t('without_category')
                                                             : cat}{' '}
-                                                        ({count}/
-                                                        <strong className="color-green-dark">
-                                                            {knowCount}
-                                                        </strong>)
+                                                        (<strong className="color-green-dark">
+                                                        {knowCount}
+                                                    </strong>/{count})
                                                         {count - knowCount > 0 ? (
                                                             <>
-                                                                <sub className="bg-color-green">
+                                                            <sub className="bg-color-green">
                                                                     {Math.ceil((knowCount * 100) / count)}%
                                                                 </sub>
                                                                 <sup className="bg-color-red">

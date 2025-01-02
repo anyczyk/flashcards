@@ -11,6 +11,14 @@ import { setLocalStorage, getLocalStorage } from './utils/storage';
 import { topScroll } from "./utils/topScroll";
 
 function App() {
+    useEffect(() => {
+        document.addEventListener('deviceready', () => {
+            if (window.navigator && window.navigator.splashscreen) {
+                window.navigator.splashscreen.hide();
+            }
+        }, false);
+    }, []);
+
     const { t, i18n } = useTranslation();
     const [flashcards, setFlashcards] = useState([]);
     const [categories, setCategories] = useState([]);

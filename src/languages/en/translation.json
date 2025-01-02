@@ -27,10 +27,11 @@
   "category": "Category",
   "super_category": "Super category",
   "know": "Know",
-  "save": "Zapisz",
+  "save": "Save",
   "generate_sample_flashcards": "Generate sample flashcards",
   "i_confirm_remove": "I confirm, remove",
   "are_you_sure_delete_flashcards": "Are you sure you want to delete the selected flashcards?",
+  "are_you_sure_delete": "Are you sure you want to delete?",
   "flashcard_added": "Flashcard added!",
   "review": "Review",
   "study": "Study",
@@ -44,5 +45,9 @@
   "review_only_the_ones_you_didnt_know": "Review only the ones you didn't know",
   "in_this_category_you_still_have_flashcards_to_learn": "In this category you still have flashcards to learn",
   "next_lesson": "Next lesson",
-  "up": "Up"
+  "up": "Up",
+  "category_without_super_category": "Category without Super Category",
+  "category_inside_super_category": "Category inside super category",
+  "title": "Title",
+  "progress_reset": "Progress reset"
 }

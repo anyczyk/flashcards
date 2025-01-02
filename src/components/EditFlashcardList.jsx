@@ -30,8 +30,18 @@ function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categor
     /* edit categories */
     const [openModalEdit, setOpenModalEdit] = useState(false);
 
-    const [nameSuperCategoryOld, setNameSuperCategoryOld] = useState('');
-    const [nameSuperCategoryNew, setNameSuperCategoryNew] = useState('');
+    const [nameOld, setNameOld] = useState('');
+    const [nameNew, setNameNew] = useState('');
+
+    const [nameSuperCategory, setNameSuperCategory] = useState('');
+
+    const[nameNewSuperCategory, setNameNewSuperCategory] = useState('');
+
+    const [nameType, setNameType] = useState('');
+
+    const [confirmRemove, setConfirmRemove] = useState(false);
+
+    const [toolsItemActive, setToolsItemActive] = useState(null);
 
     /* end edit */
 
@@ -198,32 +208,89 @@ function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categor
     }, [filteredFlashcards]);
 
 
-    const handleQuickEditSuperCategory = (oldName, newName) => {
-        setNameSuperCategoryNew(newName);
-        console.log(`${oldName} -> ${newName}`);
+    const handleQuickEdit = (newName) => {
+        setNameNew(newName);
     };
 
-    const handleQuickEditSuperCategorySave = () => {
+    const handleQuickEditForSuperCategory = (newName) => {
+          setNameNewSuperCategory(newName);
+    };
+
+    const cancelModal = () => {
+        // reset states
+        setNameNew('');
+        setNameOld('');
+        setNameType('');
+        setNameSuperCategory('');
+        setNameNewSuperCategory('');
+        setConfirmRemove(false);
+        setToolsItemActive(null);
+
+        // close modal
+        setOpenModalEdit(false);
+    };
+
+    const handleQuickEditSave = (type,action) => {
         // Iterujemy przez wszystkie fiszki i aktualizujemy superCategory tam, gdzie to konieczne
         flashcards.forEach(card => {
-            if (card.superCategory === nameSuperCategoryOld) {
-                editFlashcard(
-                    card.id,
-                    card.front,
-                    card.back,
-                    card.category,
-                    card.know,
-                    card.langFront,
-                    card.langBack,
-                    nameSuperCategoryNew
-                );
+            if(type === 'super-category') {
+                if (card.superCategory === nameOld) {
+                    if(action === 'remove') {
+                        removeFlashcard(card.id);
+                    } else {
+                        editFlashcard(
+                            card.id,
+                            card.front,
+                            card.back,
+                            card.category,
+                            (action === 'reset') ? '' : card.know,
+                            card.langFront,
+                            card.langBack,
+                            (action === 'reset') ? card.superCategory : nameNew
+                        );
+                    }
+                }
+            } else if(type === 'category-without-super-category') {
+                if (card.category === nameOld && card.superCategory === '') {
+                    if(action === 'remove') {
+                        removeFlashcard(card.id);
+                    } else {
+                        editFlashcard(
+                            card.id,
+                            card.front,
+                            card.back,
+                            (action === 'reset') ? card.category : nameNew,
+                            (action === 'reset') ? '' : card.know,
+                            card.langFront,
+                            card.langBack,
+                            nameNewSuperCategory
+                        );
+                    }
+                }
+            } else if(type === 'category-inside-super-category') {
+                if (card.category === nameOld && card.superCategory === nameSuperCategory) {
+                    if(action === 'remove') {
+                        removeFlashcard(card.id);
+                    } else {
+                        editFlashcard(
+                            card.id,
+                            card.front,
+                            card.back,
+                            (action === 'reset') ? card.category : nameNew,
+                            (action === 'reset') ? '' : card.know,
+                            card.langFront,
+                            card.langBack,
+                            nameNewSuperCategory
+                        );
+                    }
+                }
             }
         });
 
         // Aktualizujemy orderedCategories, jeśli to konieczne
         setOrderedCategories(prevCategories =>
             prevCategories.map(cat =>
-                cat === nameSuperCategoryOld ? nameSuperCategoryNew : cat
+                cat === nameOld ? nameNew : cat
             )
         );
 
@@ -231,13 +298,13 @@ function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categor
         const savedOrder = localStorage.getItem('categoryOrder');
         if (savedOrder) {
             const orderIds = JSON.parse(savedOrder).map(cat =>
-                cat === nameSuperCategoryOld ? nameSuperCategoryNew : cat
+                cat === nameOld ? nameNew : cat
             );
             localStorage.setItem('categoryOrder', JSON.stringify(orderIds));
         }
 
-        // Zamykamy modal
-        setOpenModalEdit(false);
+        // Clear states and close modal
+        cancelModal();
     };
 
     return (
@@ -362,6 +429,7 @@ function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categor
                                                 <Draggable key={cat} draggableId={cat} index={index}>
                                                     {(provided) => (
                                                         <li
+                                                            key={index}
                                                             ref={provided.innerRef}
                                                             {...provided.draggableProps}
                                                             {...provided.dragHandleProps}
@@ -370,11 +438,14 @@ function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categor
                                                             {hasSubcategories ? (
                                                                 <>
                                                                     <div className="d-flex gap-1">
-                                                                        <button className="w-auto btn-simple-icon"
+                                                                        <button className={`w-auto btn-simple-icon ${index === toolsItemActive ? 'btn--active' : '' }`}
                                                                                 onClick={() => {
                                                                                     setOpenModalEdit(true);
-                                                                                    setNameSuperCategoryNew(cat);
-                                                                                    setNameSuperCategoryOld(cat);
+                                                                                    setNameNew(cat);
+                                                                                    setNameOld(cat);
+                                                                                    setNameSuperCategory('');
+                                                                                    setToolsItemActive(index);
+                                                                                    setNameType('super-category'); // category-without-super-category
                                                                                 }}>
                                                                             <i className="icon-pencil"></i>
                                                                         </button>
@@ -386,7 +457,7 @@ function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categor
                                                                     </div>
                                                                     <ul className="o-list-categories">
                                                                         {flashcards
-                                                                            .filter(fc => fc.superCategory === cat)
+                                                                            .filter((fc, index) => fc.superCategory === cat)
                                                                             .map(fc => fc.category)
                                                                             .filter((value, i, self) => self.indexOf(value) === i)
                                                                             .map(subcat => {
@@ -396,10 +467,24 @@ function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categor
                                                                                     fc.superCategory === cat
                                                                                 ).length;
 
+                                                                                const knowSubcatCount = flashcards.filter(fc =>
+                                                                                    fc.category === subcat && fc.superCategory === cat && fc.know
+                                                                                ).length;
+
                                                                                 return (
-                                                                                    <li className="d-flex gap-1" key={subcat}>
+                                                                                    <li className="d-flex gap-1"
+                                                                                        key={subcat}>
                                                                                         <button
-                                                                                            className="w-auto btn-simple-icon">
+                                                                                            className={`w-auto btn-simple-icon ${subcat === toolsItemActive ? 'btn--active' : ''}`}
+                                                                                            onClick={() => {
+                                                                                                setOpenModalEdit(true);
+                                                                                                setNameNew(subcat);
+                                                                                                setNameOld(subcat);
+                                                                                                setNameSuperCategory(cat);
+                                                                                                setNameNewSuperCategory(cat);
+                                                                                                setToolsItemActive(subcat);
+                                                                                                setNameType('category-inside-super-category');
+                                                                                            }}>
                                                                                             <i className="icon-pencil"></i>
                                                                                         </button>
                                                                                         <button
@@ -420,7 +505,27 @@ function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categor
                                                                                             {subcat === 'Without category'
                                                                                                 ? t('without_category')
                                                                                                 : subcat
-                                                                                            } ({subcatCount})
+                                                                                            } (<strong className="color-green-dark">{knowSubcatCount}</strong>/{subcatCount})
+
+                                                                                            {subcatCount - knowSubcatCount > 0 ? (
+                                                                                                <>
+                                                                                                    <sub className="bg-color-green">
+                                                                                                        {Math.ceil(
+                                                                                                            (knowSubcatCount * 100) /
+                                                                                                            subcatCount
+                                                                                                        )}
+                                                                                                        %
+                                                                                                    </sub>
+                                                                                                    <sup className="bg-color-red">
+                                                                                                        {subcatCount - knowSubcatCount}
+                                                                                                    </sup>
+                                                                                                </>
+                                                                                            ) : (
+                                                                                                <sub
+                                                                                                    className="o-category-complited bg-color-green vertical-center-count">
+                                                                                                    <i className="icon-ok"></i>
+                                                                                                </sub>
+                                                                                            )}
                                                                                         </button>
                                                                                     </li>
                                                                                 );
@@ -430,8 +535,16 @@ function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categor
                                                             ) : (
                                                                 count > 0 && (
                                                                     <>
-                                                                        <button
-                                                                            className="w-auto btn-simple-icon">
+                                                                        <button className={`w-auto btn-simple-icon ${index === toolsItemActive ? 'btn--active' : ''}`}
+                                                                                onClick={() => {
+                                                                                    setOpenModalEdit(true);
+                                                                                    setNameNew(cat);
+                                                                                    setNameOld(cat);
+                                                                                    setNameSuperCategory('');
+                                                                                    setNameNewSuperCategory('');
+                                                                                    setNameType('category-without-super-category');
+                                                                                    setToolsItemActive(index);
+                                                                                }}>
                                                                             <i className="icon-pencil"></i>
                                                                         </button>
                                                                         <button
@@ -452,7 +565,25 @@ function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categor
                                                                             {cat === 'Without category'
                                                                                 ? t('without_category')
                                                                                 : cat
-                                                                            } ({count})
+                                                                            } (<strong className="color-green-dark">{knowCount}</strong>/{count})
+
+
+                                                                            {count - knowCount > 0 ? (
+                                                                                <>
+                                                                                    <sub className="bg-color-green">
+                                                                                        {Math.ceil((knowCount * 100) / count)}%
+                                                                                    </sub>
+                                                                                    <sup className="bg-color-red">
+                                                                                        {count - knowCount}
+                                                                                    </sup>
+                                                                                </>
+                                                                            ) : (
+                                                                                <sub
+                                                                                    className="o-category-complited bg-color-green vertical-center-count">
+                                                                                    <i className="icon-ok"></i>
+                                                                                </sub>
+                                                                            )}
+
                                                                         </button>
                                                                     </>
                                                                 )
@@ -468,62 +599,79 @@ function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categor
                                 )}
                             </Droppable>
                         </DragDropContext>
-                    ) : (
-                        <>
-                            {/*<BrowserSearch/>*/}
-                            {/*<p>*/}
-                            {/*    <button*/}
-                            {/*        onClick={() => {*/}
-                            {/*            setSelectedCategory(null);*/}
-                            {/*            setSelectedSuperCategory(null);*/}
-                            {/*            setSelectedCards([]);*/}
-                            {/*            cancelEditing();*/}
-                            {/*            topScroll();*/}
-                            {/*        }}*/}
-                            {/*    >*/}
-                            {/*        {t('choose_another_category')}*/}
-                            {/*    </button>*/}
-                            {/*</p>*/}
-                        </>
-                    )}
+                    ) : ''}
 
                     {openModalEdit ?
                         <div className="o-modal">
                             <div
                                 className="o-modal__bg-cancel"
-                                onClick={() => setOpenModalEdit(false) }
+                                onClick={cancelModal}
                                 type="button"
                                 aria-label={t('cancel')}
                             />
                             <div className="o-modal__container">
+                                <h2 title={nameType === 'super-category' && t('super_category') ||
+                                    nameType === 'category-without-super-category' && t('category_without_super_category') ||
+                                    nameType === 'category-inside-super-category' && t('category_inside_super_category')}>{t('edit')}
+                                </h2>
+                                {(nameType === 'category-without-super-category' || nameType === 'category-inside-super-category') &&
+                                    <p>
+                                        <label
+                                            className="color-white"
+                                            htmlFor="edit-in-modal-super-category"
+                                        >
+                                            {t('super_category')}
+                                        </label>
+                                        <input
+                                            id="edit-in-modal-super-category"
+                                            type="text"
+                                            value={nameNewSuperCategory}
+                                            onChange={(e) =>
+                                                handleQuickEditForSuperCategory(e.target.value)
+                                            }
+                                        />
+                                    </p>
+                                }
                                 <p>
                                     <label
                                         className="color-white"
-                                        htmlFor="super-category"
+                                        htmlFor="edit-in-modal-2"
                                     >
-                                        {t('super_category')}:
+                                        {nameType === 'super-category' ? t('super_category') : t('category')}
                                     </label>
                                     <input
-                                        id="super-category"
+                                        id="edit-in-modal-2"
                                         type="text"
-                                        value={nameSuperCategoryNew}
+                                        value={nameNew}
                                         onChange={(e) =>
-                                            handleQuickEditSuperCategory(nameSuperCategoryOld, e.target.value)
+                                            handleQuickEdit(e.target.value)
                                         }
                                     />
                                 </p>
-                                <ul className="o-list-buttons-clear o-list-buttons-clear--nowrap order-3">
+                                <ul className="o-list-buttons-clear o-default-box">
                                     <li>
-                                        <button onClick={handleQuickEditSuperCategorySave}>
-                                            <i className="icon-floppy-1"></i> {t('edit')}
+                                        <button onClick={() => handleQuickEditSave(nameType)}>
+                                            <i className="icon-floppy-1"></i> {t('save')}
                                         </button>
                                     </li>
                                     <li>
-                                        <button onClick={() => setOpenModalEdit(false) }>
-                                            <i className="icon-cancel-circled"></i> {t('cancel')}
+                                        <button onClick={() => handleQuickEditSave(nameType, 'reset')}>
+                                            <i className="icon-arrows-cw"></i> {t('progress_reset')}
                                         </button>
+                                    </li>
+                                    <li>
+                                        {confirmRemove ? <><p>{t('are_you_sure_delete')}</p><button className="btn--red"
+                                                                 onClick={() => handleQuickEditSave(nameType, 'remove')}>
+                                            <i className="icon-trash-empty"></i> {t('i_confirm_remove')}
+                                        </button></> :
+                                            <button onClick={() => setConfirmRemove(true)} className="btn--red"><i
+                                                className="icon-trash-empty"></i> {t('remove')}</button>}
                                     </li>
                                 </ul>
+                                <hr/>
+                                <button onClick={cancelModal}>
+                                    <i className="icon-cancel-circled"></i> {t('cancel')}
+                                </button>
                             </div>
                         </div>
                         : ''}

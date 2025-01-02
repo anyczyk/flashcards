@@ -1,7 +1,7 @@
 <?xml version="1.0" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg xmlns="http://www.w3.org/2000/svg">
-<metadata>Copyright (C) 2024 by original authors @ fontello.com</metadata>
+<metadata>Copyright (C) 2025 by original authors @ fontello.com</metadata>
 <defs>
 <font id="fontello" horiz-adv-x="1000" >
 <font-face font-family="fontello" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
@@ -77,6 +77,8 @@
 <glyph glyph-name="pause" unicode="&#xe822;" d="M18-97l0 894 223 0 0-894-223 0z m446 0l0 894 224 0 0-894-224 0z" horiz-adv-x="705" />
 
 <glyph glyph-name="lock-open" unicode="&#xe823;" d="M0-150l0 559 152 0 0 138q2 127 88 215 41 39 96 64t119 24q123-2 211-88 86-88 90-209l-178 0q-2 47-37 82-37 35-86 37-53-2-88-37-37-39-37-88l0-138 553 0 0-559-883 0z" horiz-adv-x="883" />
+
+<glyph glyph-name="arrows-cw" unicode="&#xe824;" d="M843 261q0-3 0-4-36-150-150-243t-267-93q-81 0-157 31t-136 88l-72-72q-11-11-25-11t-25 11-11 25v250q0 14 11 25t25 11h250q14 0 25-11t10-25-10-25l-77-77q40-36 90-57t105-20q74 0 139 37t104 99q6 10 30 66 4 13 16 13h107q8 0 13-6t5-12z m14 446v-250q0-14-10-25t-26-11h-250q-14 0-25 11t-10 25 10 25l77 77q-82 77-194 77-75 0-140-37t-104-99q-6-10-29-66-5-13-17-13h-111q-7 0-13 6t-5 12v4q36 150 151 243t268 93q81 0 158-31t137-88l72 72q11 11 25 11t26-11 10-25z" horiz-adv-x="857.1" />
 
 <glyph glyph-name="lock-2" unicode="&#xe825;" d="M0-150l0 578 139 0q-2 166 25 231 39 88 116 139t169 52q94 0 172-54t115-137q26-59 26-121l0-110 150 0 0-578-912 0z m322 578l256 0 0 112q-2 52-38 88t-91 38q-52 2-87-34t-40-94l0-110z" horiz-adv-x="912" />
 
