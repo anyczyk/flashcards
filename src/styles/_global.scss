@@ -7,7 +7,7 @@ $padding-temp: vars.$padding-smaller;
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: Arial, sans-serif; // -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";  // Arial, sans-serif;
   margin: 0;
   padding: 0;
   background-color: var(--color-black);
@@ -180,8 +180,12 @@ hr {
   gap: vars.$padding-smaller;
   flex-wrap: wrap;
   padding: vars.$padding-smaller;
-  background-color: var(--color-black-opacity-30);
+  background-color: var(--color-black-opacity-40);
   align-items: center;
+}
+
+.flex-none {
+  flex: none !important;
 }
 
 .o-list-buttons-clear {
@@ -192,6 +196,20 @@ hr {
 
   & &__single-icon {
     flex: none;
+    flex-direction: column;
+    justify-content: center;
+    width: 56px;
+    padding-left: 4px;
+    padding-right: 4px;
+
+    i {
+      margin-right: 0;
+    }
+
+    span {
+      display: block;
+      font-size: 9px;
+    }
   }
 
   &--nowrap {
@@ -203,6 +221,19 @@ hr {
 
       button {
         width: 100%;
+      }
+    }
+  }
+
+  &--nowrap-columns {
+    flex-wrap: nowrap;
+    li {
+      flex: 1;
+      align-self: stretch;
+
+      button {
+        width: 100%;
+        height: 100%;
       }
     }
   }
@@ -240,20 +271,62 @@ hr {
   }
 }
 
-.o-list-edit-flashcards {
+.o-card {
+  background-color: var(--color-card); // var(--color-white-opacity-20);
+  color: var(--color-green-strong-dark);
   display: flex;
   flex-direction: column;
-  gap: vars.$padding-default;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 0 6px var(--color-black-opacity-50), inset 0 0 15px var(--color-black-opacity-80);
 
-  > li {
-    background-color: var(--color-white-opacity-20);
-    display: flex;
-    flex-direction: column;
+  hr {
+    border-top: 1px solid var(--color-black-opacity-20);
+  }
+
+  input[type=text] {
+    width: 100%;
+  }
+
+  input[type=text], select, textarea {
+    background-color: var(--color-white-opacity-60);
   }
 
   &__content {
     padding: vars.$padding-smaller;
   }
+}
+
+.o-list-edit-flashcards {
+  display: flex;
+  flex-direction: column;
+  gap: vars.$padding-default;
+
+  //> li {
+  //  background-color: var(--color-card); // var(--color-white-opacity-20);
+  //  color: var(--color-green-strong-dark);
+  //  display: flex;
+  //  flex-direction: column;
+  //  overflow: hidden;
+  //  border-radius: 12px;
+  //  box-shadow: 0 0 6px var(--color-black-opacity-50), inset 0 0 15px var(--color-black-opacity-80);
+  //
+  //  hr {
+  //    border-top: 1px solid var(--color-black-opacity-20);
+  //  }
+  //
+  //  input[type=text] {
+  //    width: 100%;
+  //  }
+  //
+  //  input[type=text], select, textarea {
+  //    background-color: var(--color-white-opacity-60);
+  //  }
+  //}
+  //
+  //&__content {
+  //  padding: vars.$padding-smaller;
+  //}
 }
 
 .o-list-categories {
@@ -264,6 +337,7 @@ hr {
   button {
     width: 100%;
     text-align: left;
+    justify-content: left;
   }
 
   > li {
@@ -509,6 +583,7 @@ hr {
     text-align: left;
     margin-bottom: 0;
     padding-right: 80px;
+    justify-content: left;
 
     &:active {
       background-color: var(--color-brow);
@@ -560,3 +635,57 @@ hr {
   }
 }
 
+.o-preloader {
+  background-color: black;
+  position: fixed;
+  inset: 0;
+  z-index: 9999999;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: vars.$padding-smaller;
+
+  p {
+    padding-bottom: vars.$padding-smaller;
+    text-align: center;
+    font-size: 18px;
+
+    i {
+      font-size: 60px;
+      display: block;
+    }
+  }
+
+  &__progress-bar {
+    width: 220px;
+    max-width: 100%;
+    height: 8px;
+    background-color: var(--color-white-opacity-60);
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+  }
+
+  &__progress-bar::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    background-color: var(--color-blue);
+    animation: loading 2s linear infinite;
+  }
+}
+
+@keyframes loading {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}

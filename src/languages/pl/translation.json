@@ -49,5 +49,9 @@
   "category_without_super_category": "Kategoria bez nadkategorii",
   "category_inside_super_category": "Kategoria w nadkategorii",
   "title": "Tytuł",
-  "progress_reset": "Resetuj progress"
+  "progress_reset": "Resetuj progress",
+  "remove_all_flashcards": "Usuń wszystkie fiszki",
+  "reset_all_flashcard_progress": "Zresetuj wszystkie postępy",
+  "the_update_is_in_progress": "Trwa aktualizacja...",
+  "missing_next_lesson_in_sequence": "Brak kolejnej lekcji w kolejności"
 }

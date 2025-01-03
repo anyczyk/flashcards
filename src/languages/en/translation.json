@@ -49,5 +49,9 @@
   "category_without_super_category": "Category without Super Category",
   "category_inside_super_category": "Category inside super category",
   "title": "Title",
-  "progress_reset": "Progress reset"
+  "progress_reset": "Progress reset",
+  "remove_all_flashcards": "Remove all flashcards",
+  "reset_all_flashcard_progress": "Reset all progress",
+  "the_update_is_in_progress": "The update is in progress...",
+  "missing_next_lesson_in_sequence": "Missing next lesson in sequence"
 }

@@ -1,9 +1,11 @@
 @use "varibles" as vars;
 
+$padding-temp: vars.$padding-default;
+
 .o-main-footer {
   background-color: var(--color-green-less-dark);
   padding: 0 vars.$padding-default;
-  height: 50px;
+  height: 56px;
   display: flex;
   align-items: center;
   position: fixed;
@@ -14,6 +16,13 @@
   width: 100%;
   box-shadow: 0 0 6px var(--color-black);
   z-index: 998;
+  overflow-x: auto;
+
+  &::-webkit-scrollbar {
+    width: 0;       /* szerokość pionowego suwaka */
+    height: 0;      /* wysokość poziomego suwaka */
+    background-color: lime; /* kolor tła */
+  }
 
   li, p {
     font-size: 16px;
@@ -24,17 +33,27 @@
     display: block;
     padding: .5rem;
     border-radius: 6px;
+    text-decoration: none;
 
     &:active {
       background-color: var(--color-white-opacity-10);
+    }
+
+    span {
+      font-size: 9px;
+      display: block;
+      font-weight: 300;
+      white-space: nowrap;
     }
   }
 
   ul {
     display: flex;
-    gap: vars.$padding-default;
+    gap: calc(#{$padding-temp} / 2);
     justify-content: space-around;
     margin: 0 auto;
     width: 100%;
+    text-align: center;
+    align-items: center;
   }
 }

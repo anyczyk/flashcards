@@ -577,6 +577,89 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
         return finalList;
     };
 
+    // const handleNextLesson = () => {
+    //     const lessonsList = buildLessonsList();
+    //
+    //     let currentIndex = lessonsList.findIndex(
+    //         (lesson) =>
+    //             lesson.superCategory === selectedSuperCategory &&
+    //             lesson.category === selectedCategory
+    //     );
+    //
+    //     if (currentIndex < 0) {
+    //         currentIndex = -1;
+    //     }
+    //
+    //     const nextIndex = currentIndex + 1;
+    //     if ((nextIndex < lessonsList.length)) {
+    //         const nextLesson = lessonsList[nextIndex];
+    //         console.log('nextLesson:', nextLesson);
+    //         setSelectedCategory(nextLesson.category);
+    //         setSelectedSuperCategory(nextLesson.superCategory);
+    //         setLearningFilter('all');
+    //         setCheckedCards(new Set());
+    //         setReviewedSet(new Set());
+    //         setDeck([]);
+    //         setTwoCards([]);
+    //         // Since twoCardsRef is synced with twoCards by useEffect, we don't need to do anything else
+    //     } else {
+    //         alert(`${t('missing_next_lesson_in_sequence')}: ${lessonsList.length} - ${nextIndex}`);
+    //     }
+    // };
+
+    // const handleNextLesson = () => {
+    //     const lessonsList = buildLessonsList();
+    //
+    //     let currentIndex = lessonsList.findIndex(
+    //         (lesson) =>
+    //             lesson.superCategory === selectedSuperCategory &&
+    //             lesson.category === selectedCategory
+    //     );
+    //
+    //     if (currentIndex < 0) {
+    //         currentIndex = -1;
+    //     }
+    //
+    //     const nextIndex = currentIndex + 1;
+    //
+    //     if (nextIndex < lessonsList.length) {
+    //         const nextLesson = lessonsList[nextIndex];
+    //         console.log('nextLesson:', nextLesson);
+    //
+    //         // --- ZAMIAST polegać na nextLesson.superCategory,
+    //         //     sprawdzamy wprost w bazie, czy nextLesson.category
+    //         //     występuje jako superCategory którejkolwiek fiszki.
+    //         const isSubcategoryInDB = flashcards.some(
+    //             (fc) => fc.superCategory === nextLesson.category
+    //         );
+    //
+    //         // Jeżeli tak, to znaczy, że "rzeczywista" lekcja jest subkategorią.
+    //         if (isSubcategoryInDB) {
+    //             alert('Następna lekcja jest w superCategory – rezygnuję z przejścia do niej.');
+    //             return; // Kończymy funkcję, NIE przechodząc do lekcji
+    //         }
+    //
+    //         // --- W przeciwnym wypadku, traktujemy to normalnie.
+    //         setSelectedCategory(nextLesson.category);
+    //         // nextLesson.superCategory MOŻE być źle w lessonsList, więc ostrożnie:
+    //         // gdyby w lessonsList było coś wpisane, to bierzemy, w przeciwnym razie null
+    //         setSelectedSuperCategory(
+    //             nextLesson.superCategory && nextLesson.superCategory.trim() !== ''
+    //                 ? nextLesson.superCategory
+    //                 : null
+    //         );
+    //
+    //         setLearningFilter('all');
+    //         setCheckedCards(new Set());
+    //         setReviewedSet(new Set());
+    //         setDeck([]);
+    //         setTwoCards([]);
+    //         // twoCardsRef jest synchronizowane w useEffect, więc to wystarcza
+    //     } else {
+    //         alert(`${t('missing_next_lesson_in_sequence')}: ${lessonsList.length} - ${nextIndex}`);
+    //     }
+    // };
+
     const handleNextLesson = () => {
         const lessonsList = buildLessonsList();
 
@@ -590,20 +673,43 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
             currentIndex = -1;
         }
 
-        const nextIndex = currentIndex + 1;
-        if (nextIndex < lessonsList.length) {
+        // Zaczynamy od "następnej" lekcji
+        let nextIndex = currentIndex + 1;
+
+        // Dopóki mamy lekcje w lessonsList...
+        while (nextIndex < lessonsList.length) {
             const nextLesson = lessonsList[nextIndex];
+            console.log('nextLesson:', nextLesson);
+
+            // Sprawdzamy w bazie, czy nextLesson.category występuje jako superCategory
+            const isSubcategoryInDB = flashcards.some(
+                (fc) => fc.superCategory === nextLesson.category
+            );
+
+            // Jeżeli tak, to znaczy, że w rzeczywistości jest to subkategoria
+            // - pomijamy tę lekcję i idziemy do kolejnej
+            if (isSubcategoryInDB) {
+                nextIndex++;
+                continue;
+            }
+
+            // Jeśli nie jest subkategorią, ustawiamy stan i wychodzimy z funkcji
             setSelectedCategory(nextLesson.category);
-            setSelectedSuperCategory(nextLesson.superCategory);
+            setSelectedSuperCategory(
+                nextLesson.superCategory && nextLesson.superCategory.trim() !== ''
+                    ? nextLesson.superCategory
+                    : null
+            );
             setLearningFilter('all');
             setCheckedCards(new Set());
             setReviewedSet(new Set());
             setDeck([]);
             setTwoCards([]);
-            // Ponieważ twoCardsRef jest synchronizowany z twoCards przez useEffect, nie musimy nic więcej robić
-        } else {
-            alert("Brak kolejnej lekcji w kolejności.");
+            return; // Wracamy, bo znaleźliśmy właściwą "następną" lekcję
         }
+
+        // Jeśli pętla się skończyła, znaczy, że nie znaleźliśmy lekcji bez superCategory
+        alert(t('missing_next_lesson_in_sequence'));
     };
 
     // -----------------------------------------------------
@@ -915,19 +1021,19 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
                             )}
                             {!(learningFilter && twoCards.length === 0 && deck.length === 0) && (
                                 <>
-                                    <li className="o-list-buttons-clear__single-icon">
+                                    <li className="flex-none">
                                         <button
-                                            className={playFlashcards ? 'btn--active' : ''}
+                                            className={`o-list-buttons-clear__single-icon ${playFlashcards ? 'btn--active' : ''}`}
                                             aria-label="Play/Pause"
                                             onClick={handlePlayFlashcards}
                                         >
                                             <i className={playFlashcards ? 'icon-pause' : 'icon-play'}></i>
                                         </button>
                                     </li>
-                                    <li className="o-list-buttons-clear__single-icon">
+                                    <li className="flex-none">
                                         <button
                                             aria-label="Revers"
-                                            className={`btn-revers ${
+                                            className={`btn-revers o-list-buttons-clear__single-icon ${
                                                 reversFrontBack ? 'btn-revers--active btn--active' : ''
                                             }`}
                                             onClick={reversCards}
@@ -1255,13 +1361,10 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
                                             >
                                                 {t('front')}:
                                             </label>
-                                            <input
+                                            <textarea
                                                 id={`front-${openCardId}`}
-                                                type="text"
                                                 value={quickEdit[openCardId].front}
-                                                onChange={(e) =>
-                                                    handleQuickEditChange(openCardId, 'front', e.target.value)
-                                                }
+                                                onChange={(e) => handleQuickEditChange(openCardId, 'front', e.target.value)}
                                             />
                                         </p>
                                         <p className={reversFrontBack ? 'order-1' : 'order-2'}>
@@ -1271,9 +1374,8 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
                                             >
                                                 {t('back')}:
                                             </label>
-                                            <input
+                                            <textarea
                                                 id={`back-${openCardId}`}
-                                                type="text"
                                                 value={quickEdit[openCardId].back}
                                                 onChange={(e) =>
                                                     handleQuickEditChange(openCardId, 'back', e.target.value)
@@ -1330,8 +1432,35 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
                                         applyFilterAndShuffle();
                                     }}
                                 >
-                                    <i className="icon-play-outline"></i> {t('all')} (
-                                    {flashcards.length})
+                                    <span>
+                                        {(() => {
+                                            const knowCount = flashcards.filter(fc => fc.know).length;
+                                            const count = flashcards.length;
+                                            const unknownCount = count - knowCount;
+                                            const knowPercentage = count > 0 ? Math.ceil((knowCount * 100) / count) : 0;
+                                            return (
+                                                <>
+                                                    <i className="icon-play-outline"></i> {t('all')} (<strong className="color-green-dark">{knowCount}</strong>/{count})
+
+                                                    {unknownCount > 0 ? (
+                                                        <>
+                                                            <sub className="bg-color-green">
+                                                                {knowPercentage}%
+                                                            </sub>
+                                                            <sup className="bg-color-red">
+                                                                {unknownCount}
+                                                            </sup>
+                                                        </>
+                                                    ) : (
+                                                        <sub
+                                                            className="o-category-complited bg-color-green vertical-center-count">
+                                                            <i className="icon-ok"></i>
+                                                        </sub>
+                                                    )}
+                                                </>
+                                            );
+                                        })()}
+                                    </span>
                                 </button>
                             </li>
                             {categories.map((cat, index) => {
@@ -1423,33 +1552,33 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
                                                                             applyFilterAndShuffle();
                                                                         }}
                                                                     >
-                                                                        <i className="icon-play-outline"></i>{' '}
-                                                                        {subcat === 'Without category' ||
-                                                                        subcat === ''
-                                                                            ? t('without_category')
-                                                                            : subcat}{' '}
-                                                                        (<strong className="color-green-dark">
-                                                                        {knowSubcatCount}
-                                                                    </strong>/{subcatCount})
-                                                                        {subcatCount - knowSubcatCount > 0 ? (
-                                                                            <>
-                                                                            <sub className="bg-color-green">
-                                                                                    {Math.ceil(
-                                                                                        (knowSubcatCount * 100) /
-                                                                                        subcatCount
-                                                                                    )}
-                                                                                    %
+                                                                        <span>
+                                                                            <i className="icon-play-outline"></i>{' '}
+                                                                            {subcat === 'Without category' ||
+                                                                            subcat === ''
+                                                                                ? t('without_category')
+                                                                                : subcat}{' '}
+                                                                            (<strong className="color-green-dark">{knowSubcatCount}</strong>/{subcatCount})
+                                                                            {subcatCount - knowSubcatCount > 0 ? (
+                                                                                <>
+                                                                                    <sub className="bg-color-green">
+                                                                                        {Math.ceil(
+                                                                                            (knowSubcatCount * 100) /
+                                                                                            subcatCount
+                                                                                        )}
+                                                                                        %
+                                                                                    </sub>
+                                                                                    <sup className="bg-color-red">
+                                                                                        {subcatCount - knowSubcatCount}
+                                                                                    </sup>
+                                                                                </>
+                                                                            ) : (
+                                                                                <sub
+                                                                                    className="o-category-complited bg-color-green vertical-center-count">
+                                                                                    <i className="icon-ok"></i>
                                                                                 </sub>
-                                                                                <sup className="bg-color-red">
-                                                                                    {subcatCount - knowSubcatCount}
-                                                                                </sup>
-                                                                            </>
-                                                                        ) : (
-                                                                            <sub
-                                                                                className="o-category-complited bg-color-green vertical-center-count">
-                                                                                <i className="icon-ok"></i>
-                                                                            </sub>
-                                                                        )}
+                                                                            )}
+                                                                        </span>
                                                                     </button>
                                                                 </li>
                                                             );
@@ -1478,28 +1607,28 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
                                                             applyFilterAndShuffle();
                                                         }}
                                                     >
-                                                        <i className="icon-play-outline"></i>
-                                                        {cat === 'Without category'
-                                                            ? t('without_category')
-                                                            : cat}{' '}
-                                                        (<strong className="color-green-dark">
-                                                        {knowCount}
-                                                    </strong>/{count})
-                                                        {count - knowCount > 0 ? (
-                                                            <>
-                                                            <sub className="bg-color-green">
-                                                                    {Math.ceil((knowCount * 100) / count)}%
+                                                        <span>
+                                                            <i className="icon-play-outline"></i>
+                                                            {cat === 'Without category'
+                                                                ? t('without_category')
+                                                                : cat}{' '}
+                                                            (<strong className="color-green-dark">{knowCount}</strong>/{count})
+                                                            {count - knowCount > 0 ? (
+                                                                <>
+                                                                    <sub className="bg-color-green">
+                                                                        {Math.ceil((knowCount * 100) / count)}%
+                                                                    </sub>
+                                                                    <sup className="bg-color-red">
+                                                                        {count - knowCount}
+                                                                    </sup>
+                                                                </>
+                                                            ) : (
+                                                                <sub
+                                                                    className="o-category-complited bg-color-green vertical-center-count">
+                                                                    <i className="icon-ok"></i>
                                                                 </sub>
-                                                                <sup className="bg-color-red">
-                                                                    {count - knowCount}
-                                                                </sup>
-                                                            </>
-                                                        ) : (
-                                                            <sub
-                                                                className="o-category-complited bg-color-green vertical-center-count">
-                                                                <i className="icon-ok"></i>
-                                                            </sub>
-                                                        )}
+                                                            )}
+                                                        </span>
                                                     </button>
                                                 </>
                                             )

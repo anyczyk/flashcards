@@ -25,6 +25,7 @@ function App() {
     const [allCategories, setAllCategories] = useState([]);
     const [superCategoriesArray, setSuperCategoriesArray] = useState([]);
     const [mainMenuVisible, setMainMenuVisible] = useState(false);
+    const [preloader, setPreloader] = useState(false);
     const closeMenuRef = useRef(null);
     const closeMenuBtnRef = useRef(null);
     const location = useLocation();
@@ -230,7 +231,7 @@ function App() {
                         </ul>
                     </nav>
                     <div>
-                        <p>Version: v1.0.1 {window.cordova ? 'App' : 'Browser'}</p>
+                        <p>Version: v1.0.2 {window.cordova ? 'App' : 'Browser'}</p>
                     </div>
                 </div>
             </header>
@@ -247,7 +248,7 @@ function App() {
                            element={<CreateFlashcard allCategories={allCategories} addFlashcard={addFlashcard} categories={categories} superCategoriesArray={superCategoriesArray} />} />
                     <Route path="/list-edit"
                            element={<EditFlashcardList flashcards={flashcards} removeFlashcard={removeFlashcard}
-                                                       editFlashcard={editFlashcard} categories={categories} />} />
+                                                       editFlashcard={editFlashcard} categories={categories} loadData={loadData} setPreloader={setPreloader} />} />
                     <Route path="/import-export" element={<ImportExport flashcards={flashcards} onImport={handleImport} />} />
                     {/* Trasa domyślna */}
                     <Route path="*" element={<Navigate to="/" replace />} />
@@ -255,16 +256,20 @@ function App() {
             </main>
             <footer className="o-main-footer">
                 <ul>
-                    <li><Link aria-label={t('view_flashcards')} to="/"><i className="icon-logo-f"></i></Link></li>
-                    <li><Link aria-label={t('create_flashcard')} onClick={clearOptions} to="/create"><i className="icon-plus"></i></Link></li>
-                    <li><Link aria-label={t('edit_flashcards')} onClick={clearOptions} to="/list-edit"><i className="icon-wrench"></i></Link>
+                    <li><Link aria-label={t('view_flashcards')} to="/"><i className="icon-logo-f"></i><span>Flashcards</span></Link></li>
+                    <li><Link aria-label={t('create_flashcard')} onClick={clearOptions} to="/create"><i className="icon-plus"></i><span>Add flashcard</span></Link></li>
+                    <li><Link aria-label={t('edit_flashcards')} onClick={clearOptions} to="/list-edit"><i className="icon-wrench"></i><span>Settings</span></Link>
                     </li>
-                    <li><Link aria-label={t('import_export')} onClick={clearOptions} to="/import-export"><i className="icon-export"></i></Link>
+                    <li><Link aria-label={t('import_export')} onClick={clearOptions} to="/import-export"><i className="icon-export"></i><span>Import / Export</span></Link>
                     </li>
-                    <li><Link aria-label={t('up')} onClick={topScroll} to="#"><i className="icon-up-open"></i></Link>
+                    <li><Link aria-label={t('up')} onClick={topScroll} to="#"><i className="icon-up-open"></i><span>Up to top</span></Link>
                     </li>
                 </ul>
             </footer>
+            {preloader ? <div className="o-preloader">
+                <p><i className="icon-logo-f"></i>{t('the_update_is_in_progress')}</p>
+                <div className="o-preloader__progress-bar"></div>
+            </div> : ''}
         </div>
     );
 }

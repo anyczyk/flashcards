@@ -89,10 +89,10 @@ const BrowserSearchAndTools = ({selectAll, deselectAll, removeSelectedCards, cop
                         </button>
                     </li>
                 </ul>
-                <ul className="o-list-buttons-3-cols">
+                <ul className="o-list-buttons-clear">
                     {filteredFlashcards.length > 0 && (
                         <li>
-                            <button onClick={selectAll}>
+                            <button className="o-list-buttons-clear__single-icon" onClick={selectAll}>
                                 <i className="icon-ok-circled"></i> <span>{t('select_all')}</span>
                             </button>
                         </li>
@@ -100,23 +100,23 @@ const BrowserSearchAndTools = ({selectAll, deselectAll, removeSelectedCards, cop
                     {selectedCards.length > 0 && (
                         <>
                             <li>
-                                <button onClick={deselectAll}>
+                                <button className="o-list-buttons-clear__single-icon" onClick={deselectAll}>
                                     <i className="icon-ok-circled2"></i> <span>{t('deselect_all')}</span>
                                 </button>
                             </li>
                             <li>
-                                <button onClick={copySelectedCards}>
+                                <button className="o-list-buttons-clear__single-icon" onClick={copySelectedCards}>
                                     <i className="icon-docs"></i> <span>{t('copy_selected')}</span>
                                 </button>
                             </li>
                             <li>
-                                <button onClick={handleExport}>
+                                <button className="o-list-buttons-clear__single-icon" onClick={handleExport}>
                                     <i className="icon-export"></i> <span>{t('export_selected')}</span>
                                 </button>
                             </li>
                             <li>
                                 <button
-                                    className="btn--red"
+                                    className="btn--red o-list-buttons-clear__single-icon"
                                     onClick={() => setVisibleModalAll(true)}
                                 >
                                     <i className="icon-trash-empty"></i> <span>{t('remove_selected')}</span>
