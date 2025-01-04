@@ -746,8 +746,7 @@ function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categor
                                                     <li>
                                                         <button onClick={() => {
                                                             handleQuickEditSave('reset-all-flashcards');
-                                                        }} className="btn--blue"><i class="icon-arrows-cw"></i> Yes,
-                                                            restart
+                                                        }} className="btn--blue"><i class="icon-arrows-cw"></i> {t('yes_reset')}
                                                         </button>
                                                     </li>
                                                     <li>
@@ -763,8 +762,7 @@ function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categor
                                                 <p>Are yous sure remove all fleshcards?</p>
                                                 <ul className="o-list-buttons-clear">
                                                     <li>
-                                                        <button onClick={removeDatabase} className="btn--red"><i class="icon-trash-empty"></i> Yes,
-                                                            remove
+                                                        <button onClick={removeDatabase} className="btn--red"><i class="icon-trash-empty"></i> {t('yes_remove')}
                                                         </button>
                                                     </li>
                                                     <li>

@@ -152,8 +152,8 @@ function ImportExport({ flashcards, onImport }) {
             const cardsToExport = await getAllFlashcards();
             await cardsExport(cardsToExport);
         } catch (error) {
-            console.error("Błąd podczas eksportu fiszek:", error);
-            alert("Wystąpił błąd podczas eksportu fiszek.");
+            console.error("Error while exporting flashcards:", error);
+            alert("Error while exporting flashcards");
         }
     };
 
@@ -163,34 +163,33 @@ function ImportExport({ flashcards, onImport }) {
             <hr />
             <div className="o-default-box">
                 <p>
-                    <label htmlFor="o-choose-file">Import fiszek z pliku:</label>
+                    <label htmlFor="o-choose-file">{t('importing_flashcards_from_a_file')}:</label>
                     <input
                         id="o-choose-file"
                         type="file"
                         ref={fileInputRef}
                         accept=".json"
                         onChange={handleFileChange}
-                        aria-label="Choose File to import"
+                        aria-label={t('choose_file_to_import')}
                     />
                 </p>
 
                 {selectedFile && (
                     <ul className="o-list-buttons-clear">
                         <li>
-                            <button onClick={handleImportAll}>Import All (Replace)</button>
+                            <button onClick={handleImportAll}>{t('import_replace')}</button>
                         </li>
                         <li>
-                            <button onClick={handleImportPart}>Import Part (Append)</button>
+                            <button onClick={handleImportPart}>{t('import_append')}</button>
                         </li>
                     </ul>
                 )}
             </div>
 
-            {/* Eksport dostępny tylko, gdy mamy jakieś fiszki w bazie */}
             {flashcards.length > 0 && (
                 <p>
                     <button onClick={handleExport}>
-                        <i className="icon-export"></i> Export do pliku
+                        <i className="icon-export"></i> {t('export_to_file')}
                     </button>
                 </p>
             )}

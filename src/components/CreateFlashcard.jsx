@@ -185,13 +185,13 @@ function CreateFlashcard({ allCategories, addFlashcard, categories, superCategor
 
     return (
         <div className="o-page-create-flashcard">
-            <h2>Create a new Flashcard</h2>
+            <h2>{t('add_flashcard')}</h2>
             <hr />
             <form className="o-card" onSubmit={handleSubmit}>
                 <div className="o-card__content">
                     <p>
                         <label htmlFor="o-front">
-                            <span className="color-red">*</span> Front:
+                            <span className="color-red">*</span> {t('front')}:
                         </label>
                         <textarea
                             value={front}
@@ -204,7 +204,7 @@ function CreateFlashcard({ allCategories, addFlashcard, categories, superCategor
                     </p>
 
                     <p>
-                        <label htmlFor="lang-front">Kod języka dla syntezatora mowy (Front):</label>
+                        <label htmlFor="lang-front">{t('language_code_for_speech_synthesizer')} ({t('front')}):</label>
                         <br />
                         <SelectCodeLanguages
                             availableLanguages={availableLanguages}
@@ -218,7 +218,7 @@ function CreateFlashcard({ allCategories, addFlashcard, categories, superCategor
 
                     <p>
                         <label htmlFor="o-back">
-                            <span className="color-red">*</span> Back:
+                            <span className="color-red">*</span> {t('back')}:
                         </label>
                         <textarea
                             value={back}
@@ -231,7 +231,7 @@ function CreateFlashcard({ allCategories, addFlashcard, categories, superCategor
                     </p>
 
                     <p>
-                        <label htmlFor="lang-back">Kod języka dla syntezatora mowy (Back):</label>
+                        <label htmlFor="lang-back">{t('language_code_for_speech_synthesizer')} ({t('back')}):</label>
                         <br />
                         <SelectCodeLanguages
                             availableLanguages={availableLanguages}
@@ -245,7 +245,7 @@ function CreateFlashcard({ allCategories, addFlashcard, categories, superCategor
 
                     <p>
                         <label htmlFor="o-super-category">
-                            Optional Super Category (choose existing or type new):
+                            {t('super_category_choose_existing_or_type_new')}:
                         </label>
                         <br />
                         <select
@@ -253,7 +253,7 @@ function CreateFlashcard({ allCategories, addFlashcard, categories, superCategor
                             onChange={handleSuperCategorySelect}
                             value={superCategory}
                         >
-                            <option value="">-- Select existing super category --</option>
+                            <option value="">-- {t('select_existing_super_category')} --</option>
                             {superCategoriesArray.map((cat, index) => (
                                 <option key={index} value={cat}>
                                     {cat}
@@ -265,7 +265,7 @@ function CreateFlashcard({ allCategories, addFlashcard, categories, superCategor
                     <p>
                         <input
                             type="text"
-                            placeholder="Type a new super category or edit selected one"
+                            placeholder={t('type_a_new_super_category_or_edit_selected_one')}
                             value={superCategory}
                             onChange={(e) => setSuperCategory(e.target.value)}
                         />
@@ -275,11 +275,11 @@ function CreateFlashcard({ allCategories, addFlashcard, categories, superCategor
 
                     <p>
                         <label htmlFor="o-category">
-                            Category (choose existing or type new):
+                            {t('category_choose_existing_or_type_new')}:
                         </label>
                         <br />
                         <select id="o-category" onChange={handleCategorySelect} value={category}>
-                            <option value="">-- Select existing category --</option>
+                            <option value="">-- {t('select_existing_category')} --</option>
                             {categoriesDependentOnSuperCategory.map((cat, index) => (
                                 <option key={index} value={cat}>
                                     {cat}
@@ -291,7 +291,7 @@ function CreateFlashcard({ allCategories, addFlashcard, categories, superCategor
                     <p>
                         <input
                             type="text"
-                            placeholder="Type a new category or edit selected one"
+                            placeholder={t('type_a_new_category_or_edit_selected_one')}
                             value={category}
                             onChange={(e) => setCategory(e.target.value)}
                         />
@@ -301,7 +301,7 @@ function CreateFlashcard({ allCategories, addFlashcard, categories, superCategor
 
                     <p>
                         <button type="submit" disabled={!front.trim() || !back.trim()}>
-                            Add Flashcard
+                            {t('add_flashcard')}
                         </button>
                         {flashcardCreated && (
                             <strong className="color-green"> {t('flashcard_added')}</strong>

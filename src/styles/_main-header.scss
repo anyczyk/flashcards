@@ -18,6 +18,18 @@
   h1 {
     font-weight: 400;
     font-size: 18px;
+    white-space: nowrap;
+    display: flex;
+    gap: 4px;
+    overflow: hidden;
+    padding: 4px 0 4px 4px;
+
+    span {
+      display: block;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
 
     a {
       font-weight: 700;
@@ -25,7 +37,7 @@
       text-decoration: none;
       display: inline-flex;
 
-      span {
+      strong {
         margin-left: -6px;
 
         &:first-letter {

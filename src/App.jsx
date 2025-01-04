@@ -195,16 +195,17 @@ function App() {
         <div className={`o ${mainMenuVisible ? 'o-menu-visible' : ''}`}>
             <header className="o-main-header">
                 <h1><Link onClick={() => setMainHomePageLoad(true)} to="/"><i
-                    className="icon-logo-f"></i><span>Flasho</span></Link> - {t('simple_flashcard_creator')}</h1>
+                    className="icon-logo-f"></i><strong>Flasho</strong></Link> - <span>{t('simple_flashcard_creator')}</span>
+                </h1>
                 <button
                     aria-label="Audio on / off"
                     className={`o-main-header__btn-audio ${syntAudio ? 'o-main-header__btn-audio--active' : ''}`}
-                    onClick={()=> {
-                            audioOnOff();
-                            // setPlayFlashcards(false);
-                        }
+                    onClick={() => {
+                        audioOnOff();
+                        // setPlayFlashcards(false);
                     }
-                    disabled={playFlashcards ? 'disabled' : '' }
+                    }
+                    disabled={playFlashcards ? 'disabled' : ''}
                 >
                     <i className="icon-volume"></i>
                 </button>
@@ -215,24 +216,35 @@ function App() {
                 <div ref={closeMenuRef}
                      className={`o-main-header__menu ${mainMenuVisible ? 'o-main-header__menu--active' : ''}`}>
                     <div className="o-main-header__menu-langs">
-                        <label htmlFor="o-lang">{i18n.language}</label>
+                        <label htmlFor="o-lang"><i className="icon-language"></i> Lnag:</label>
                         <select id="o-lang" onChange={(e) => changeLanguage(e.target.value)}
                                 value={getLanguageCode(i18n.language)}>
                             <option value="en">English</option>
+                            <option value="de">Deutsch</option>
+                            <option value="es">Español</option>
+                            <option value="fr">Français</option>
+                            <option value="id">Bahasa Indonesia</option>
+                            <option value="it">Italiano</option>
+                            <option value="ja">日本語</option>
                             <option value="pl">Polski</option>
+                            <option value="pt">Português</option>
                         </select>
                     </div>
                     <nav>
                         <ul>
-                            <li><Link to="/"><i className="icon-play"></i> {t('view_flashcards')}</Link></li>
-                            <li><Link onClick={clearOptions} to="/create"><i className="icon-plus"></i> {t('create_flashcard')}</Link></li>
-                            <li><Link onClick={clearOptions} to="/list-edit"><i className="icon-wrench"></i> {t('edit_flashcards')}</Link></li>
-                            <li><Link onClick={clearOptions} to="/import-export"><i className="icon-export"></i> {t('import_export')}</Link>
+                            <li><Link onClick={() => setMainHomePageLoad(true)} to="/"><i
+                                className="icon-play"></i> {t('view_flashcards')}</Link></li>
+                            <li><Link onClick={clearOptions} to="/create"><i
+                                className="icon-plus"></i> {t('add_flashcard')}</Link></li>
+                            <li><Link onClick={clearOptions} to="/list-edit"><i
+                                className="icon-wrench"></i> {t('settings')}</Link></li>
+                            <li><Link onClick={clearOptions} to="/import-export"><i
+                                className="icon-export"></i> {t('import_export')}</Link>
                             </li>
                         </ul>
                     </nav>
                     <div>
-                        <p>Version: v1.0.2 {window.cordova ? 'App' : 'Browser'}</p>
+                        <p>Flasho v1.0.2 {window.cordova ? 'App' : 'Browser'} / <span className="uppercase">{i18n.language}</span></p>
                     </div>
                 </div>
             </header>
@@ -243,30 +255,48 @@ function App() {
                 )}
 
                 <Routes>
-                    <Route path="/" element={<ViewFlashcards clearInsomnia={clearInsomnia} loadData={loadData} syntAudio={syntAudio} flashcards={flashcards} categories={categories}
-                                                             setFlashcardKnow={setFlashcardKnow} playFlashcards={playFlashcards} setPlayFlashcards={setPlayFlashcards} setMainHomePageLoad={setMainHomePageLoad} mainHomePageLoad={mainHomePageLoad}  />} />
+                    <Route path="/" element={<ViewFlashcards clearInsomnia={clearInsomnia} loadData={loadData}
+                                                             syntAudio={syntAudio} flashcards={flashcards}
+                                                             categories={categories}
+                                                             setFlashcardKnow={setFlashcardKnow}
+                                                             playFlashcards={playFlashcards}
+                                                             setPlayFlashcards={setPlayFlashcards}
+                                                             setMainHomePageLoad={setMainHomePageLoad}
+                                                             mainHomePageLoad={mainHomePageLoad}/>}/>
                     <Route path="/create"
-                           element={<CreateFlashcard allCategories={allCategories} addFlashcard={addFlashcard} categories={categories} superCategoriesArray={superCategoriesArray} />} />
+                           element={<CreateFlashcard allCategories={allCategories} addFlashcard={addFlashcard}
+                                                     categories={categories}
+                                                     superCategoriesArray={superCategoriesArray}/>}/>
                     <Route path="/list-edit"
                            element={<EditFlashcardList flashcards={flashcards} removeFlashcard={removeFlashcard}
-                                                       editFlashcard={editFlashcard} categories={categories} loadData={loadData} setPreloader={setPreloader} preloader={preloader} />} />
-                    <Route path="/import-export" element={<ImportExport flashcards={flashcards} onImport={handleImport} />} />
+                                                       editFlashcard={editFlashcard} categories={categories}
+                                                       loadData={loadData} setPreloader={setPreloader}
+                                                       preloader={preloader}/>}/>
+                    <Route path="/import-export"
+                           element={<ImportExport flashcards={flashcards} onImport={handleImport}/>}/>
                     {/* Trasa domyślna */}
-                    <Route path="*" element={<Navigate to="/" replace />} />
+                    <Route path="*" element={<Navigate to="/" replace/>}/>
                 </Routes>
             </main>
             <footer className="o-main-footer">
                 <ul>
-                    <li><Link aria-label={t('view_flashcards')} onClick={() => setMainHomePageLoad(true)} to="/"><i className="icon-logo-f"></i><span>Flashcards</span></Link></li>
-                    <li><Link aria-label={t('create_flashcard')} onClick={clearOptions} to="/create"><i className="icon-plus"></i><span>Add flashcard</span></Link></li>
-                    <li><Link aria-label={t('edit_flashcards')} onClick={clearOptions} to="/list-edit"><i className="icon-wrench"></i><span>Settings</span></Link>
+                    <li><Link aria-label={t('view_flashcards')} onClick={() => setMainHomePageLoad(true)} to="/"><i
+                        className="icon-logo-f"></i><span>{t('flashcards')}</span></Link></li>
+                    <li><Link aria-label={t('create_flashcard')} onClick={clearOptions} to="/create"><i
+                        className="icon-plus"></i><span>{t('add_flashcard')}</span></Link></li>
+                    <li><Link aria-label={t('edit_flashcards')} onClick={clearOptions} to="/list-edit"><i
+                        className="icon-wrench"></i><span>{t('settings')}</span></Link>
                     </li>
-                    <li><Link aria-label={t('import_export')} onClick={clearOptions} to="/import-export"><i className="icon-export"></i><span>Import / Export</span></Link>
+                    <li><Link aria-label={t('import_export')} onClick={clearOptions} to="/import-export"><i
+                        className="icon-export"></i><span>{t('import_export')}</span></Link>
                     </li>
-                    <li><Link aria-label={t('up')} onClick={topScroll} to="#"><i className="icon-up-open"></i><span>Up to top</span></Link>
+                    <li><Link aria-label={t('up')} onClick={topScroll} to="#"><i
+                        className="icon-up-open"></i><span>{t('up_to_top')}</span></Link>
                     </li>
                 </ul>
             </footer>
+            <div className="o-main-footer-cover-scroll-right"/>
+            <div className="o-main-footer-cover-scroll-left"/>
             {preloader ? <div className="o-preloader">
                 <p><i className="icon-logo-f"></i>{t('the_update_is_in_progress')}</p>
                 <div className="o-preloader__progress-bar"></div>

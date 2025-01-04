@@ -424,11 +424,11 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
         } else if (direction === 'prawo') {
             setAnimatingCards((prev) => ({ ...prev, [id]: 'animateRight' }));
         }
-        setCheckedCards((prev) => {
-            const newSet = new Set(prev);
-            newSet.delete(id);
-            return newSet;
-        });
+        // setCheckedCards((prev) => {
+        //     const newSet = new Set(prev);
+        //     newSet.delete(id);
+        //     return newSet;
+        // });
     };
 
     const handleCheck = (id) => {
@@ -468,6 +468,7 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
         exit: {
             opacity: 0.999,
             transition: {
+                type: "tween",
                 duration: 0.4,
                 ease: "easeInOut",
             },
@@ -911,11 +912,10 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
                         </h2>
                         <hr />
                         <ul className="o-page-view-flashcards__tools o-list-buttons-clear o-list-buttons-clear--nowrap o-default-box">
-                            {getFilteredFlashcardCount('learningOnly') <
-                                getFilteredFlashcardCount('all') && (
+                            {/*{getFilteredFlashcardCount('learningOnly') < getFilteredFlashcardCount('all') && (*/}
                                     <li>
                                         <button
-                                            className={`btn ${
+                                            className={`btn--icon w-100 ${
                                                 learningFilter === 'all' ? 'btn--active' : ''
                                             }`}
                                             onClick={() => {
@@ -926,7 +926,8 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
                                             }}
                                             disabled={playFlashcards ? 'disabled' : '' }
                                         >
-                                            {t('review')}{' '}
+                                            <i className="icon-single-card"></i>
+                                            <span>{t('review')}</span>
                                             <sup>
                                                 {learningFilter === 'all'
                                                     ? deck.length + twoCards.length
@@ -934,11 +935,11 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
                                             </sup>
                                         </button>
                                     </li>
-                                )}
+                            {/*)}*/}
                             {hasLearningCards && (
                                 <li>
                                     <button
-                                        className={`btn ${
+                                        className={`btn--icon w-100 ${
                                             learningFilter === 'learningOnly' ? 'btn--active' : ''
                                         }`}
                                         onClick={() => {
@@ -949,7 +950,7 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
                                         }}
                                         disabled={playFlashcards ? 'disabled' : '' }
                                     >
-                                        {t('study')}{' '}
+                                        <i className="icon-graduation-cap"></i> <span>{t('study')}</span>
                                         <sub>{getFilteredFlashcardCount('learningOnly')}{!(learningFilter === 'all') ? `/${deck.length + twoCards.length}` : ''}</sub>
                                         <sup>
                                             {Math.ceil(
@@ -965,19 +966,19 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
                             )}
                             {!(learningFilter && twoCards.length === 0 && deck.length === 0) && (
                                 <>
-                                    <li className="flex-none">
+                                    <li>
                                         <button
-                                            className={`o-list-buttons-clear__single-icon ${playFlashcards ? 'btn--active' : ''}`}
+                                            className={`btn--icon w-100 ${playFlashcards ? 'btn--active' : ''}`}
                                             aria-label="Play/Pause"
                                             onClick={handlePlayFlashcards}
                                         >
                                             <i className={playFlashcards ? 'icon-pause' : 'icon-play'}></i>
                                         </button>
                                     </li>
-                                    <li className="flex-none">
+                                    <li>
                                         <button
                                             aria-label="Revers"
-                                            className={`btn-revers o-list-buttons-clear__single-icon ${
+                                            className={`btn-revers btn--icon w-100 ${
                                                 reversFrontBack ? 'btn-revers--active btn--active' : ''
                                             }`}
                                             onClick={reversCards}
@@ -987,15 +988,16 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
                                             <sup>{reversFrontBack ? 'On' : 'Off'}</sup>
                                         </button>
                                     </li>
-                                    {/*<li className="o-list-buttons-clear__single-icon o-list-buttons-clear__single-icon--restart">*/}
-                                    {/*    <button*/}
-                                    {/*        aria-label="Restart / Tasowanie"*/}
-                                    {/*        onClick={handleShuffle}*/}
-                                    {/*        disabled={isShuffling || playFlashcards}*/}
-                                    {/*    >*/}
-                                    {/*        <i className="icon-spin4"></i>*/}
-                                    {/*    </button>*/}
-                                    {/*</li>*/}
+                                    <li>
+                                        <button
+                                            className="btn--icon w-100"
+                                            aria-label="Restart / Tasowanie"
+                                            onClick={handleShuffle}
+                                            disabled={isShuffling || playFlashcards}
+                                        >
+                                            <i className="icon-arrows-cw"></i>
+                                        </button>
+                                    </li>
                                 </>
                             )}
                         </ul>
@@ -1102,7 +1104,7 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
                                             }}
                                             onDrag={(event, info) => {
                                                 const { offset } = info;
-                                                const threshold = 20;
+                                                const threshold = 0;
                                                 if (Math.abs(offset.x) > threshold) {
                                                     const direction = offset.x > 0 ? 'prawo' : 'lewo';
                                                     setDraggingDirection((prev) => ({
@@ -1112,7 +1114,7 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
                                                 }
                                             }}
                                             onDragEnd={(event, info) => {
-                                                const threshold = 100;
+                                                const threshold = 0; // 100 here delayed
                                                 const { offset } = info;
                                                 const absX = Math.abs(offset.x);
 

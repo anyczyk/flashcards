@@ -5,6 +5,13 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 
 import translationEN from './languages/en/translation.json';
 import translationPL from './languages/pl/translation.json';
+import translationId from './languages/id/translation.json';
+import translationEs from './languages/es/translation.json';
+import translationFr from './languages/fr/translation.json';
+import translationPt from './languages/pt/translation.json';
+import translationDe from './languages/de/translation.json';
+import translationIt from './languages/it/translation.json';
+import translationJa from './languages/ja/translation.json';
 
 const resources = {
     en: {
@@ -12,6 +19,27 @@ const resources = {
     },
     pl: {
         translation: translationPL
+    },
+    id: {
+        translation: translationId
+    },
+    es: {
+        translation: translationEs
+    },
+    fr: {
+        translation: translationFr
+    },
+    pt: {
+        translation: translationPt
+    },
+    de: {
+        translation: translationDe
+    },
+    it: {
+        translation: translationIt
+    },
+    ja: {
+        translation: translationJa
     }
 };
 
@@ -21,8 +49,8 @@ i18n
     .init({
         resources,
         fallbackLng: 'en',
-        supportedLngs: ['en', 'pl'], // Dodaj wsparcie dla konkretnych języków
-        load: 'languageOnly', // Użyj tylko kodów językowych bez regionów
+        supportedLngs: ['en', 'pl', 'id', 'es', 'fr', 'pt', 'de', 'it', 'ja'],
+        load: 'languageOnly',
         detection: {
             order: ['localStorage', 'cookie', 'navigator'],
             caches: ['localStorage', 'cookie']

@@ -18,10 +18,32 @@ $padding-temp: vars.$padding-default;
   z-index: 998;
   overflow-x: auto;
 
+  &-cover-scroll-right,
+  &-cover-scroll-left {
+    content: '';
+    display: block;
+    position: fixed;
+    width: 1.2rem;
+    height: 56px;
+    bottom: 0;
+    z-index: 999;
+    pointer-events: none;
+  }
+
+  &-cover-scroll-right {
+    background: linear-gradient(to right, transparent, var(--color-green-less-dark));
+    right: 0;
+  }
+
+  &-cover-scroll-left {
+    background: linear-gradient(to right, var(--color-green-less-dark), transparent);
+    left: 0;
+  }
+
   &::-webkit-scrollbar {
     width: 0;       /* szerokość pionowego suwaka */
     height: 0;      /* wysokość poziomego suwaka */
-    background-color: lime; /* kolor tła */
+    background-color: var(--color-black); /* kolor tła */
   }
 
   li, p {
