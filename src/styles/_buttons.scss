@@ -10,11 +10,11 @@ button,
   cursor: pointer;
   text-decoration: none;
   text-align: center;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
   box-shadow: inset 0 0 10px var(--color-black-opacity-60);
   position: relative;
-  min-height: 48px;
+  min-height: 52px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -42,6 +42,15 @@ button,
       color: var(--color-red);
     }
 
+  }
+
+  &--dark-black-opacity {
+    background-color: var(--color-black-opacity-60);
+
+    &:active:not([disabled]) {
+      background-color: #fff;
+      color: var(--color-green-strong-dark);
+    }
   }
 
   &--green {
@@ -148,6 +157,24 @@ button,
     }
 
     span {
+      font-size: 10px;
+    }
+  }
+
+  &--icon {
+    flex: none !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    width: 56px !important;
+    padding-left: 4px !important;
+    padding-right: 4px !important;
+
+    i {
+      margin-right: 0;
+    }
+
+    span {
+      display: block;
       font-size: 10px;
     }
   }

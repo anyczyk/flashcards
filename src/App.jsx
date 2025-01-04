@@ -26,6 +26,7 @@ function App() {
     const [superCategoriesArray, setSuperCategoriesArray] = useState([]);
     const [mainMenuVisible, setMainMenuVisible] = useState(false);
     const [preloader, setPreloader] = useState(false);
+    const [mainHomePageLoad,setMainHomePageLoad] = useState(false);
     const closeMenuRef = useRef(null);
     const closeMenuBtnRef = useRef(null);
     const location = useLocation();
@@ -193,7 +194,7 @@ function App() {
     return (
         <div className={`o ${mainMenuVisible ? 'o-menu-visible' : ''}`}>
             <header className="o-main-header">
-                <h1><Link to="/"><i
+                <h1><Link onClick={() => setMainHomePageLoad(true)} to="/"><i
                     className="icon-logo-f"></i><span>Flasho</span></Link> - {t('simple_flashcard_creator')}</h1>
                 <button
                     aria-label="Audio on / off"
@@ -243,12 +244,12 @@ function App() {
 
                 <Routes>
                     <Route path="/" element={<ViewFlashcards clearInsomnia={clearInsomnia} loadData={loadData} syntAudio={syntAudio} flashcards={flashcards} categories={categories}
-                                                             setFlashcardKnow={setFlashcardKnow} playFlashcards={playFlashcards} setPlayFlashcards={setPlayFlashcards}  />} />
+                                                             setFlashcardKnow={setFlashcardKnow} playFlashcards={playFlashcards} setPlayFlashcards={setPlayFlashcards} setMainHomePageLoad={setMainHomePageLoad} mainHomePageLoad={mainHomePageLoad}  />} />
                     <Route path="/create"
                            element={<CreateFlashcard allCategories={allCategories} addFlashcard={addFlashcard} categories={categories} superCategoriesArray={superCategoriesArray} />} />
                     <Route path="/list-edit"
                            element={<EditFlashcardList flashcards={flashcards} removeFlashcard={removeFlashcard}
-                                                       editFlashcard={editFlashcard} categories={categories} loadData={loadData} setPreloader={setPreloader} />} />
+                                                       editFlashcard={editFlashcard} categories={categories} loadData={loadData} setPreloader={setPreloader} preloader={preloader} />} />
                     <Route path="/import-export" element={<ImportExport flashcards={flashcards} onImport={handleImport} />} />
                     {/* Trasa domyślna */}
                     <Route path="*" element={<Navigate to="/" replace />} />
@@ -256,7 +257,7 @@ function App() {
             </main>
             <footer className="o-main-footer">
                 <ul>
-                    <li><Link aria-label={t('view_flashcards')} to="/"><i className="icon-logo-f"></i><span>Flashcards</span></Link></li>
+                    <li><Link aria-label={t('view_flashcards')} onClick={() => setMainHomePageLoad(true)} to="/"><i className="icon-logo-f"></i><span>Flashcards</span></Link></li>
                     <li><Link aria-label={t('create_flashcard')} onClick={clearOptions} to="/create"><i className="icon-plus"></i><span>Add flashcard</span></Link></li>
                     <li><Link aria-label={t('edit_flashcards')} onClick={clearOptions} to="/list-edit"><i className="icon-wrench"></i><span>Settings</span></Link>
                     </li>

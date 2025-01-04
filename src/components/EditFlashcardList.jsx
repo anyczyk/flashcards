@@ -13,7 +13,7 @@ import {
 import { topScroll } from "../utils/topScroll";
 import BrowserSearchAndTools from "./sub-components/BrowserSearchAndTools";
 
-function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categories, loadData, setPreloader }) {
+function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categories, loadData, setPreloader, preloader }) {
     const { t, i18n } = useTranslation(); // Hook translation
     const [editMode, setEditMode] = useState(null);
     const [editFront, setEditFront] = useState('');
@@ -362,6 +362,7 @@ function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categor
         const request = indexedDB.deleteDatabase("flashcardsDB");
 
         request.onsuccess = () => {
+            localStorage.removeItem("categoryOrder");
             setPreloader(false);
             cancelModal();
             loadData();
@@ -452,31 +453,33 @@ function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categor
                                     }} className="btn--blue"><i class="icon-arrows-cw"></i> {t('reset_all_flashcard_progress')}</button>
                                 </li>
                             </ul>
-                            <DragDropContext onDragEnd={handleOnDragEnd}>
-                                <Droppable droppableId="categories">
-                                    {(provided) => (
-                                        <ul
-                                            className="o-list-categories o-list-categories--edit"
-                                            {...provided.droppableProps}
-                                            ref={provided.innerRef}
-                                        >
-                                            {/* Przenieś 'All' poza listę Draggable */}
-                                            <li>
 
-                                                <button
-                                                    className={`btn ${
-                                                        selectedCategory === 'All' &&
-                                                        selectedSuperCategory === null
-                                                            ? 'btn--active'
-                                                            : ''
-                                                    }`}
-                                                    onClick={() => {
-                                                        setSelectedCategory('All');
-                                                        setSelectedSuperCategory(null);
-                                                        setSelectedCards([]);
-                                                        topScroll();
-                                                    }}
-                                                >
+                            {!preloader &&
+                                <DragDropContext onDragEnd={handleOnDragEnd}>
+                                    <Droppable droppableId="categories">
+                                        {(provided) => (
+                                            <ul
+                                                className="o-list-categories o-list-categories--edit"
+                                                {...provided.droppableProps}
+                                                ref={provided.innerRef}
+                                            >
+                                                {/* Przenieś 'All' poza listę Draggable */}
+                                                <li>
+
+                                                    <button
+                                                        className={`btn ${
+                                                            selectedCategory === 'All' &&
+                                                            selectedSuperCategory === null
+                                                                ? 'btn--active'
+                                                                : ''
+                                                        }`}
+                                                        onClick={() => {
+                                                            setSelectedCategory('All');
+                                                            setSelectedSuperCategory(null);
+                                                            setSelectedCards([]);
+                                                            topScroll();
+                                                        }}
+                                                    >
                                                     <span>
                                                         {(() => {
                                                             const knowCount = flashcards.filter(fc => fc.know).length;
@@ -506,121 +509,121 @@ function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categor
                                                             );
                                                         })()}
                                                     </span>
-                                                </button>
+                                                    </button>
 
-                                            </li>
-                                            {orderedCategories.map((cat, index) => {
-                                                // [Zmiana] Poprawiamy liczenie fiszek tak,
-                                                // aby 'Without category' brało pod uwagę brak category + brak superCategory.
-                                                let count;
-                                                let knowCount;
+                                                </li>
+                                                {orderedCategories.map((cat, index) => {
+                                                    // [Zmiana] Poprawiamy liczenie fiszek tak,
+                                                    // aby 'Without category' brało pod uwagę brak category + brak superCategory.
+                                                    let count;
+                                                    let knowCount;
 
-                                                if (cat === 'Without category') {
-                                                    count = flashcards.filter(fc =>
-                                                        (!fc.category || fc.category.trim() === '') &&
-                                                        !fc.superCategory
-                                                    ).length;
+                                                    if (cat === 'Without category') {
+                                                        count = flashcards.filter(fc =>
+                                                            (!fc.category || fc.category.trim() === '') &&
+                                                            !fc.superCategory
+                                                        ).length;
 
-                                                    knowCount = flashcards.filter(fc =>
-                                                        (!fc.category || fc.category.trim() === '') &&
-                                                        !fc.superCategory &&
-                                                        fc.know
-                                                    ).length;
-                                                } else {
-                                                    // Liczymy tylko fiszki, które mają category === cat i nie mają superCategory
-                                                    // (czyli takie, które nie są tak naprawdę subkategorią)
-                                                    count = flashcards.filter(fc =>
-                                                        fc.category === cat &&
-                                                        !fc.superCategory
-                                                    ).length;
-                                                    knowCount = flashcards.filter(fc =>
-                                                        fc.category === cat &&
-                                                        fc.know &&
-                                                        !fc.superCategory
-                                                    ).length;
-                                                }
+                                                        knowCount = flashcards.filter(fc =>
+                                                            (!fc.category || fc.category.trim() === '') &&
+                                                            !fc.superCategory &&
+                                                            fc.know
+                                                        ).length;
+                                                    } else {
+                                                        // Liczymy tylko fiszki, które mają category === cat i nie mają superCategory
+                                                        // (czyli takie, które nie są tak naprawdę subkategorią)
+                                                        count = flashcards.filter(fc =>
+                                                            fc.category === cat &&
+                                                            !fc.superCategory
+                                                        ).length;
+                                                        knowCount = flashcards.filter(fc =>
+                                                            fc.category === cat &&
+                                                            fc.know &&
+                                                            !fc.superCategory
+                                                        ).length;
+                                                    }
 
-                                                // Sprawdzamy, czy cat występuje jako superCategory
-                                                const hasSubcategories = flashcards.some(fc => fc.superCategory === cat);
+                                                    // Sprawdzamy, czy cat występuje jako superCategory
+                                                    const hasSubcategories = flashcards.some(fc => fc.superCategory === cat);
 
-                                                return (
-                                                    <Draggable key={cat} draggableId={cat} index={index}>
-                                                        {(provided) => (
-                                                            <li
-                                                                key={index}
-                                                                ref={provided.innerRef}
-                                                                {...provided.draggableProps}
-                                                                {...provided.dragHandleProps}
-                                                                className={!hasSubcategories ? 'd-flex gap-1' : ''}
-                                                            >
-                                                                {hasSubcategories ? (
-                                                                    <>
-                                                                        <div className="d-flex gap-1">
-                                                                            <button className={`w-auto btn-simple-icon ${index === toolsItemActive ? 'btn--active' : '' }`}
-                                                                                    onClick={() => {
-                                                                                        setOpenModalEdit(true);
-                                                                                        setNameNew(cat);
-                                                                                        setNameOld(cat);
-                                                                                        setNameSuperCategory('');
-                                                                                        setToolsItemActive(index);
-                                                                                        setNameType('super-category'); // category-without-super-category
-                                                                                    }}>
-                                                                                <i className="icon-pencil"></i>
-                                                                            </button>
-                                                                            <h3
-                                                                                className="btn bg-color-brow btn-super-category btn-super-category--edit w-100"
-                                                                            >
+                                                    return (
+                                                        <Draggable key={cat} draggableId={cat} index={index}>
+                                                            {(provided) => (
+                                                                <li
+                                                                    key={index}
+                                                                    ref={provided.innerRef}
+                                                                    {...provided.draggableProps}
+                                                                    {...provided.dragHandleProps}
+                                                                    className={!hasSubcategories ? 'd-flex gap-1' : ''}
+                                                                >
+                                                                    {hasSubcategories ? (
+                                                                        <>
+                                                                            <div className="d-flex gap-1">
+                                                                                <button className={`btn--icon ${index === toolsItemActive ? 'btn--active' : '' }`}
+                                                                                        onClick={() => {
+                                                                                            setOpenModalEdit(true);
+                                                                                            setNameNew(cat);
+                                                                                            setNameOld(cat);
+                                                                                            setNameSuperCategory('');
+                                                                                            setToolsItemActive(index);
+                                                                                            setNameType('super-category'); // category-without-super-category
+                                                                                        }}>
+                                                                                    <i className="icon-pencil"></i>
+                                                                                </button>
+                                                                                <h3
+                                                                                    className="btn bg-color-brow btn-super-category btn-super-category--edit w-100"
+                                                                                >
                                                                                 <span>
                                                                                     <i className="icon-folder-open-empty"></i> {cat}
                                                                                 </span>
-                                                                            </h3>
-                                                                        </div>
-                                                                        <ul className="o-list-categories">
-                                                                            {flashcards
-                                                                                .filter((fc, index) => fc.superCategory === cat)
-                                                                                .map(fc => fc.category)
-                                                                                .filter((value, i, self) => self.indexOf(value) === i)
-                                                                                .map(subcat => {
-                                                                                    // Liczymy fiszki, które mają category === subcat i superCategory === cat
-                                                                                    const subcatCount = flashcards.filter(fc =>
-                                                                                        fc.category === subcat &&
-                                                                                        fc.superCategory === cat
-                                                                                    ).length;
+                                                                                </h3>
+                                                                            </div>
+                                                                            <ul className="o-list-categories">
+                                                                                {flashcards
+                                                                                    .filter((fc, index) => fc.superCategory === cat)
+                                                                                    .map(fc => fc.category)
+                                                                                    .filter((value, i, self) => self.indexOf(value) === i)
+                                                                                    .map(subcat => {
+                                                                                        // Liczymy fiszki, które mają category === subcat i superCategory === cat
+                                                                                        const subcatCount = flashcards.filter(fc =>
+                                                                                            fc.category === subcat &&
+                                                                                            fc.superCategory === cat
+                                                                                        ).length;
 
-                                                                                    const knowSubcatCount = flashcards.filter(fc =>
-                                                                                        fc.category === subcat && fc.superCategory === cat && fc.know
-                                                                                    ).length;
+                                                                                        const knowSubcatCount = flashcards.filter(fc =>
+                                                                                            fc.category === subcat && fc.superCategory === cat && fc.know
+                                                                                        ).length;
 
-                                                                                    return (
-                                                                                        <li className="d-flex gap-1"
-                                                                                            key={subcat}>
-                                                                                            <button
-                                                                                                className={`w-auto btn-simple-icon ${subcat === toolsItemActive ? 'btn--active' : ''}`}
-                                                                                                onClick={() => {
-                                                                                                    setOpenModalEdit(true);
-                                                                                                    setNameNew(subcat);
-                                                                                                    setNameOld(subcat);
-                                                                                                    setNameSuperCategory(cat);
-                                                                                                    setNameNewSuperCategory(cat);
-                                                                                                    setToolsItemActive(subcat);
-                                                                                                    setNameType('category-inside-super-category');
-                                                                                                }}>
-                                                                                                <i className="icon-pencil"></i>
-                                                                                            </button>
-                                                                                            <button
-                                                                                                className={`btn bg-color-cream color-green-strong-dark ${
-                                                                                                    selectedCategory === subcat &&
-                                                                                                    selectedSuperCategory === cat
-                                                                                                        ? 'btn--active'
-                                                                                                        : ''
-                                                                                                }`}
-                                                                                                onClick={() => {
-                                                                                                    setSelectedCategory(subcat);
-                                                                                                    setSelectedSuperCategory(cat);
-                                                                                                    setSelectedCards([]);
-                                                                                                    topScroll();
-                                                                                                }}
-                                                                                            >
+                                                                                        return (
+                                                                                            <li className="d-flex gap-1"
+                                                                                                key={subcat}>
+                                                                                                <button
+                                                                                                    className={`btn--icon ${subcat === toolsItemActive ? 'btn--active' : ''}`}
+                                                                                                    onClick={() => {
+                                                                                                        setOpenModalEdit(true);
+                                                                                                        setNameNew(subcat);
+                                                                                                        setNameOld(subcat);
+                                                                                                        setNameSuperCategory(cat);
+                                                                                                        setNameNewSuperCategory(cat);
+                                                                                                        setToolsItemActive(subcat);
+                                                                                                        setNameType('category-inside-super-category');
+                                                                                                    }}>
+                                                                                                    <i className="icon-pencil"></i>
+                                                                                                </button>
+                                                                                                <button
+                                                                                                    className={`btn bg-color-cream color-green-strong-dark ${
+                                                                                                        selectedCategory === subcat &&
+                                                                                                        selectedSuperCategory === cat
+                                                                                                            ? 'btn--active'
+                                                                                                            : ''
+                                                                                                    }`}
+                                                                                                    onClick={() => {
+                                                                                                        setSelectedCategory(subcat);
+                                                                                                        setSelectedSuperCategory(cat);
+                                                                                                        setSelectedCards([]);
+                                                                                                        topScroll();
+                                                                                                    }}
+                                                                                                >
                                                                                                 <span>
                                                                                                     <i className="icon-wrench"></i>{' '}
                                                                                                     {subcat === 'Without category'
@@ -648,41 +651,41 @@ function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categor
                                                                                                         </sub>
                                                                                                     )}
                                                                                                 </span>
-                                                                                            </button>
-                                                                                        </li>
-                                                                                    );
-                                                                                })}
-                                                                        </ul>
-                                                                    </>
-                                                                ) : (
-                                                                    count > 0 && (
-                                                                        <>
-                                                                            <button className={`w-auto btn-simple-icon ${index === toolsItemActive ? 'btn--active' : ''}`}
+                                                                                                </button>
+                                                                                            </li>
+                                                                                        );
+                                                                                    })}
+                                                                            </ul>
+                                                                        </>
+                                                                    ) : (
+                                                                        count > 0 && (
+                                                                            <>
+                                                                                <button className={`btn--icon ${index === toolsItemActive ? 'btn--active' : ''}`}
+                                                                                        onClick={() => {
+                                                                                            setOpenModalEdit(true);
+                                                                                            setNameNew(cat);
+                                                                                            setNameOld(cat);
+                                                                                            setNameSuperCategory('');
+                                                                                            setNameNewSuperCategory('');
+                                                                                            setNameType('category-without-super-category');
+                                                                                            setToolsItemActive(index);
+                                                                                        }}>
+                                                                                    <i className="icon-pencil"></i>
+                                                                                </button>
+                                                                                <button
+                                                                                    className={`btn ${
+                                                                                        selectedCategory === cat &&
+                                                                                        selectedSuperCategory === null
+                                                                                            ? 'btn--active'
+                                                                                            : ''
+                                                                                    }`}
                                                                                     onClick={() => {
-                                                                                        setOpenModalEdit(true);
-                                                                                        setNameNew(cat);
-                                                                                        setNameOld(cat);
-                                                                                        setNameSuperCategory('');
-                                                                                        setNameNewSuperCategory('');
-                                                                                        setNameType('category-without-super-category');
-                                                                                        setToolsItemActive(index);
-                                                                                    }}>
-                                                                                <i className="icon-pencil"></i>
-                                                                            </button>
-                                                                            <button
-                                                                                className={`btn ${
-                                                                                    selectedCategory === cat &&
-                                                                                    selectedSuperCategory === null
-                                                                                        ? 'btn--active'
-                                                                                        : ''
-                                                                                }`}
-                                                                                onClick={() => {
-                                                                                    setSelectedCategory(cat);
-                                                                                    setSelectedSuperCategory(null);
-                                                                                    setSelectedCards([]);
-                                                                                    topScroll();
-                                                                                }}
-                                                                            >
+                                                                                        setSelectedCategory(cat);
+                                                                                        setSelectedSuperCategory(null);
+                                                                                        setSelectedCards([]);
+                                                                                        topScroll();
+                                                                                    }}
+                                                                                >
                                                                                 <span>
                                                                                     <i className="icon-wrench"></i>{' '}
                                                                                     {cat === 'Without category'
@@ -705,21 +708,23 @@ function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categor
                                                                                         </sub>
                                                                                     )}
                                                                                 </span>
-                                                                            </button>
-                                                                        </>
-                                                                    )
-                                                                )}
-                                                                <span className="o-list-categories__move">Move</span>
-                                                            </li>
-                                                        )}
-                                                    </Draggable>
-                                                );
-                                            })}
-                                            {provided.placeholder}
-                                        </ul>
-                                    )}
-                                </Droppable>
-                            </DragDropContext>
+                                                                                </button>
+                                                                            </>
+                                                                        )
+                                                                    )}
+                                                                    <span className="o-list-categories__move">Move</span>
+                                                                </li>
+                                                            )}
+                                                        </Draggable>
+                                                    );
+                                                })}
+                                                {provided.placeholder}
+                                            </ul>
+                                        )}
+                                    </Droppable>
+                                </DragDropContext>
+                            }
+
                         </>
                     ) : ''}
 

@@ -120,9 +120,17 @@ function CreateFlashcard({ allCategories, addFlashcard, categories, superCategor
                 const savedOrder = localStorage.getItem('categoryOrder');
                 let savedOrderArray = savedOrder ? JSON.parse(savedOrder) : [];
 
-                // Dodajemy kategorię (o ile istnieje i nie ma jej jeszcze w savedOrderArray)
-                if (categoryToStore && !savedOrderArray.includes(categoryToStore)) {
-                    savedOrderArray.push(categoryToStore);
+                // Dodajemy kategorię na POCZĄTEK tablicy
+                // usuwając wcześniej duplikat (jeśli istnieje),
+                // aby uniknąć dwukrotnego występowania tej samej wartości
+                if (categoryToStore) {
+                    const index = savedOrderArray.indexOf(categoryToStore);
+                    if (index !== -1) {
+                        // Usuwamy istniejącą pozycję
+                        savedOrderArray.splice(index, 1);
+                    }
+                    // Wstawiamy na początek
+                    savedOrderArray.unshift(categoryToStore);
                 }
 
                 // Nadpisujemy localStorage

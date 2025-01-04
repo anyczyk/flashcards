@@ -12,7 +12,7 @@ import { speak, stopSpeaking } from "../utils/speak";
 import { setLocalStorage, getLocalStorage } from '../utils/storage';
 import sampleData from '../data/sample-data.json';
 
-function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFlashcardKnow, syntAudio, playFlashcards, setPlayFlashcards }) {
+function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFlashcardKnow, syntAudio, playFlashcards, setPlayFlashcards, setMainHomePageLoad, mainHomePageLoad }) {
     const { t } = useTranslation();
 
     const newOrders = getLocalStorage('categoryOrder');
@@ -104,11 +104,38 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
         setActiveSuperCategory(activeSuperCategory === index ? null : index);
     };
 
+    /**
+     * Funkcja importująca przykładowe fiszki i zapisująca
+     * w localStorage (klucz: "categoryOrder") tablicę unikalnych:
+     *   - `category` (tylko jeśli brak superCategory),
+     *   - `superCategory` (bez powtórzeń).
+     */
     const handleGenerateSampleFlashcards = async () => {
         try {
             const existingFlashcards = await getAllFlashcards();
             if (existingFlashcards.length === 0) {
+                // Dodajemy fiszki z sampleData do bazy
                 await addMultipleFlashcardsToDB(sampleData);
+
+                // NOWY KOD: Zapisz "categoryOrder" do localStorage (bez powtórzeń)
+                const categoryOrderSet = new Set();
+
+                sampleData.forEach((item) => {
+                    // Jeśli fiszka ma superCategory (i nie jest puste) => dodajemy do zbioru superCategory
+                    if (item.superCategory && item.superCategory.trim() !== "") {
+                        categoryOrderSet.add(item.superCategory);
+                    }
+                    // Jeśli fiszka NIE ma superCategory => dodajemy do zbioru "category" (lub 'Without category')
+                    else {
+                        const catValue = item.category && item.category.trim() !== ''
+                            ? item.category
+                            : 'Without category';
+                        categoryOrderSet.add(catValue);
+                    }
+                });
+
+                setLocalStorage('categoryOrder', Array.from(categoryOrderSet));
+
                 if (loadData) {
                     await loadData();
                 }
@@ -369,9 +396,6 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
             }
         });
 
-        // Usuń poniższą linię, ponieważ deck jest już aktualizowany wewnątrz setTwoCards
-        // setDeck((prev) => prev.filter((card) => card.id !== id));
-
         setReviewedSet((prev) => new Set(prev).add(id));
         setCheckedCards((prev) => {
             const newSet = new Set(prev);
@@ -410,7 +434,7 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
     const handleCheck = (id) => {
         setCheckedCards((prev) => new Set(prev).add(id));
         // Jeżeli auto-play jest wyłączony, to normalnie odczytujemy drugą stronę (jeśli syntAudio = true)
-        if (syntAudioRef.current && !playFlashcards) { // Używamy syntAudioRef.current
+        if (syntAudioRef.current && !playFlashcards) {
             const card = twoCards.find((c) => c.id === id);
             if (card) {
                 if (reversFrontBack) {
@@ -558,10 +582,10 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
         if (newOrders && newOrders.length > 0) {
             finalList.sort((a, b) => {
                 let nameA = a.superCategory
-                    ? `${a.superCategory}__${a.category}`
+                    ? a.superCategory
                     : a.category;
                 let nameB = b.superCategory
-                    ? `${b.superCategory}__${b.category}`
+                    ? b.superCategory
                     : b.category;
 
                 let indexA = newOrders.indexOf(nameA);
@@ -576,89 +600,6 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
 
         return finalList;
     };
-
-    // const handleNextLesson = () => {
-    //     const lessonsList = buildLessonsList();
-    //
-    //     let currentIndex = lessonsList.findIndex(
-    //         (lesson) =>
-    //             lesson.superCategory === selectedSuperCategory &&
-    //             lesson.category === selectedCategory
-    //     );
-    //
-    //     if (currentIndex < 0) {
-    //         currentIndex = -1;
-    //     }
-    //
-    //     const nextIndex = currentIndex + 1;
-    //     if ((nextIndex < lessonsList.length)) {
-    //         const nextLesson = lessonsList[nextIndex];
-    //         console.log('nextLesson:', nextLesson);
-    //         setSelectedCategory(nextLesson.category);
-    //         setSelectedSuperCategory(nextLesson.superCategory);
-    //         setLearningFilter('all');
-    //         setCheckedCards(new Set());
-    //         setReviewedSet(new Set());
-    //         setDeck([]);
-    //         setTwoCards([]);
-    //         // Since twoCardsRef is synced with twoCards by useEffect, we don't need to do anything else
-    //     } else {
-    //         alert(`${t('missing_next_lesson_in_sequence')}: ${lessonsList.length} - ${nextIndex}`);
-    //     }
-    // };
-
-    // const handleNextLesson = () => {
-    //     const lessonsList = buildLessonsList();
-    //
-    //     let currentIndex = lessonsList.findIndex(
-    //         (lesson) =>
-    //             lesson.superCategory === selectedSuperCategory &&
-    //             lesson.category === selectedCategory
-    //     );
-    //
-    //     if (currentIndex < 0) {
-    //         currentIndex = -1;
-    //     }
-    //
-    //     const nextIndex = currentIndex + 1;
-    //
-    //     if (nextIndex < lessonsList.length) {
-    //         const nextLesson = lessonsList[nextIndex];
-    //         console.log('nextLesson:', nextLesson);
-    //
-    //         // --- ZAMIAST polegać na nextLesson.superCategory,
-    //         //     sprawdzamy wprost w bazie, czy nextLesson.category
-    //         //     występuje jako superCategory którejkolwiek fiszki.
-    //         const isSubcategoryInDB = flashcards.some(
-    //             (fc) => fc.superCategory === nextLesson.category
-    //         );
-    //
-    //         // Jeżeli tak, to znaczy, że "rzeczywista" lekcja jest subkategorią.
-    //         if (isSubcategoryInDB) {
-    //             alert('Następna lekcja jest w superCategory – rezygnuję z przejścia do niej.');
-    //             return; // Kończymy funkcję, NIE przechodząc do lekcji
-    //         }
-    //
-    //         // --- W przeciwnym wypadku, traktujemy to normalnie.
-    //         setSelectedCategory(nextLesson.category);
-    //         // nextLesson.superCategory MOŻE być źle w lessonsList, więc ostrożnie:
-    //         // gdyby w lessonsList było coś wpisane, to bierzemy, w przeciwnym razie null
-    //         setSelectedSuperCategory(
-    //             nextLesson.superCategory && nextLesson.superCategory.trim() !== ''
-    //                 ? nextLesson.superCategory
-    //                 : null
-    //         );
-    //
-    //         setLearningFilter('all');
-    //         setCheckedCards(new Set());
-    //         setReviewedSet(new Set());
-    //         setDeck([]);
-    //         setTwoCards([]);
-    //         // twoCardsRef jest synchronizowane w useEffect, więc to wystarcza
-    //     } else {
-    //         alert(`${t('missing_next_lesson_in_sequence')}: ${lessonsList.length} - ${nextIndex}`);
-    //     }
-    // };
 
     const handleNextLesson = () => {
         const lessonsList = buildLessonsList();
@@ -829,7 +770,7 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
                 const firstSideText = reversFrontBack ? currentCard.back : currentCard.front;
                 const firstSideLang = reversFrontBack ? currentCard.langBack : currentCard.langFront;
 
-                if (syntAudioRef.current) { // Używamy syntAudioRef.current
+                if (syntAudioRef.current) {
                     console.log(`Odczyt pierwszej strony karty: ${currentCard.id}`);
                     await speakText(firstSideText, firstSideLang);
                     if (isAutoPlayCancelledRef.current) return;
@@ -847,7 +788,7 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
                 console.log(`Sprawdzenie karty: ${currentCard.id}`);
 
                 // 3) Odczyt drugiej strony
-                if (syntAudioRef.current) { // Używamy syntAudioRef.current
+                if (syntAudioRef.current) {
                     const secondSideText = reversFrontBack ? currentCard.front : currentCard.back;
                     const secondSideLang = reversFrontBack ? currentCard.langFront : currentCard.langBack;
                     console.log(`Odczyt drugiej strony karty: ${currentCard.id}`);
@@ -889,20 +830,34 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
 
                 // 8) Kontynuujemy auto-play po krótkim opóźnieniu, aby pozwolić React na aktualizację stanu
                 setTimeout(() => {
-                    // if(playFlashcards) {
-                        processNext();
-                        console.log("Przechodzenie do następnej karty...");
-                    // }
+                    processNext();
+                    console.log("Przechodzenie do następnej karty...");
                 }, 600);
             } catch (error) {
                 console.error('Błąd w auto-play:', error);
-                // Nie zatrzymujemy auto-play, aby uniknąć przerwania pętli przy błędach związanych z wyciszaniem
-                // setPlayFlashcards(false); // Usunięte, aby auto-play kontynuował
             }
         };
 
         processNext();
     };
+
+    const handleMainHomePageLoad = () => {
+        setSelectedCategory(null);
+        setSelectedSuperCategory(null);
+        setLearningFilter(null);
+        setCheckedCards(new Set());
+        setReviewedSet(new Set());
+        setReversFrontBack(false);
+        setPlayFlashcards(false);
+        setDeck([]);
+        setTwoCards([]);
+        clearInsomnia();
+        setMainHomePageLoad(false);
+    };
+
+    useEffect(() => {
+        handleMainHomePageLoad();
+    }, [mainHomePageLoad]);
 
     return (
         <div className="o-page-view-flashcards">
@@ -918,18 +873,7 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
                             <span
                                 type="button"
                                 className="o-page-view-flashcards__title-categories"
-                                onClick={() => {
-                                    setSelectedCategory(null);
-                                    setSelectedSuperCategory(null);
-                                    setLearningFilter(null);
-                                    setCheckedCards(new Set());
-                                    setReviewedSet(new Set());
-                                    setReversFrontBack(false);
-                                    setPlayFlashcards(false);
-                                    setDeck([]);
-                                    setTwoCards([]);
-                                    clearInsomnia();
-                                }}
+                                onClick={handleMainHomePageLoad}
                             >
                                 {t('categories')}
                             </span>
@@ -1148,11 +1092,6 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
                                             drag="x"
                                             dragConstraints={{ left: 0, right: 0 }}
                                             dragElastic={0.8}
-                                            // dragTransition={{
-                                            //     type: "tween",
-                                            //     duration: 0.5,
-                                            //     ease: "easeInOut",
-                                            // }}
                                             whileDrag={{
                                                 rotate:
                                                     draggingDirection[card.id] === 'prawo'
@@ -1198,7 +1137,6 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
                                                     knowIt(card.id);
                                                 }
 
-                                                // Po skończonej animacji (nauka/wiem) usuwamy kartę ze stanu
                                                 setAnimatingCards((prev) => {
                                                     const newAnim = { ...prev };
                                                     delete newAnim[card.id];
@@ -1291,8 +1229,6 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
                                                                     className="o-list-flashcards__know-check btn--blue"
                                                                     onClick={() => {
                                                                         handleCheck(card.id);
-                                                                        // Gdy auto-play jest wyłączony i syntAudio włączone,
-                                                                        // handleCheck wywołuje TTS (druga strona).
                                                                     }}
                                                                 >
                                                                     {t('check')}
@@ -1416,7 +1352,7 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
                         <ul className="o-list-categories">
                             <li className="order-0">
                                 <button
-                                    className={`btn ${
+                                    className={`btn btn--dark-black-opacity ${
                                         selectedCategory === 'All' && learningFilter === 'all'
                                             ? 'btn--active'
                                             : ''
@@ -1440,7 +1376,7 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
                                             const knowPercentage = count > 0 ? Math.ceil((knowCount * 100) / count) : 0;
                                             return (
                                                 <>
-                                                    <i className="icon-play-outline"></i> {t('all')} (<strong className="color-green-dark">{knowCount}</strong>/{count})
+                                                    <i className="icon-play-outline"></i> {t('all')} (<strong>{knowCount}</strong>/{count})
 
                                                     {unknownCount > 0 ? (
                                                         <>
@@ -1643,6 +1579,7 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
                             <ul className="o-list-buttons-clear">
                                 <li>
                                     <button
+                                        className="btn--green"
                                         onClick={handleGenerateSampleFlashcards}
                                     >
                                         {t('generate_sample_flashcards')}
@@ -1665,7 +1602,6 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
             ) : null}
         </div>
     );
-
 }
 
 export default ViewFlashcards;

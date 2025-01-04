@@ -28,6 +28,48 @@ function ImportExport({ flashcards, onImport }) {
         setSelectedFile(file || null);
     };
 
+    /**
+     * Funkcja pomocnicza do przetwarzania tablicy categoryOrder w oparciu o dane flashcardów.
+     * @param {Array} flashcardsData - tablica flashcardów z wczytanego pliku
+     * @param {Boolean} replace - jeżeli true, całkowicie nadpisuje categoryOrder;
+     *                            jeżeli false, tylko dokłada nowe wartości.
+     */
+    const updateCategoryOrder = (flashcardsData, replace = false) => {
+        let currentCategoryOrder = [];
+
+        // Jeśli replace = false, wczytujemy obecną tablicę z localStorage
+        if (!replace) {
+            const savedOrder = localStorage.getItem('categoryOrder');
+            currentCategoryOrder = savedOrder ? JSON.parse(savedOrder) : [];
+        }
+
+        // Jeśli replace = true, zaczynamy z pustą tablicą (ignorujemy starą zawartość)
+        // bo chcemy całkowicie nadpisać categoryOrder
+        if (replace) {
+            currentCategoryOrder = [];
+        }
+
+        // Dla każdej fiszki wybieramy: superCategory (jeśli istnieje), w przeciwnym razie category
+        flashcardsData.forEach((fc) => {
+            const categoryToStore = fc.superCategory?.trim()
+                ? fc.superCategory.trim()
+                : fc.category?.trim() || '';
+
+            if (categoryToStore) {
+                // Usuwamy duplikat, jeśli kategoria już istnieje w tablicy
+                const index = currentCategoryOrder.indexOf(categoryToStore);
+                if (index !== -1) {
+                    currentCategoryOrder.splice(index, 1);
+                }
+                // Wstawiamy na początek
+                currentCategoryOrder.unshift(categoryToStore);
+            }
+        });
+
+        // Nadpisujemy localStorage zaktualizowaną tablicą
+        localStorage.setItem('categoryOrder', JSON.stringify(currentCategoryOrder));
+    };
+
     const handleImportAll = async () => {
         const file = selectedFile;
         if (!file) {
@@ -47,6 +89,9 @@ function ImportExport({ flashcards, onImport }) {
         // Czyszczenie całej bazy i import nowych danych
         await clearAllFlashcards();
         await addMultipleFlashcardsToDB(data);
+
+        // Całkowite nadpisanie categoryOrder
+        updateCategoryOrder(data, true);
 
         // Komunikat o sukcesie
         setImportSuccessMessage("Data imported successfully (All replaced)");
@@ -83,7 +128,11 @@ function ImportExport({ flashcards, onImport }) {
             return rest;
         });
 
+        // Dodajemy do bazy (bez czyszczenia)
         await addMultipleFlashcardsToDB(dataWithoutId);
+
+        // Uaktualnienie categoryOrder bez nadpisywania istniejącej listy
+        updateCategoryOrder(dataWithoutId, false);
 
         // Komunikat o sukcesie
         setImportSuccessMessage("Data imported successfully (Appended)");
@@ -114,7 +163,8 @@ function ImportExport({ flashcards, onImport }) {
             <hr />
             <div className="o-default-box">
                 <p>
-                    <label htmlFor="o-choose-file">Import fiszek z pliku:</label> <input
+                    <label htmlFor="o-choose-file">Import fiszek z pliku:</label>
+                    <input
                         id="o-choose-file"
                         type="file"
                         ref={fileInputRef}
@@ -136,7 +186,14 @@ function ImportExport({ flashcards, onImport }) {
                 )}
             </div>
 
-            {(flashcards.length > 0) && <p><button onClick={handleExport}><i className="icon-export"></i> Export do pliku</button></p>}
+            {/* Eksport dostępny tylko, gdy mamy jakieś fiszki w bazie */}
+            {flashcards.length > 0 && (
+                <p>
+                    <button onClick={handleExport}>
+                        <i className="icon-export"></i> Export do pliku
+                    </button>
+                </p>
+            )}
 
             {importSuccessMessage && (
                 <p className="color-green">
