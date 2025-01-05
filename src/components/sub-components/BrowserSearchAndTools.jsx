@@ -1,7 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import useWcagModal from '../../hooks/useWcagModal';
 
-const BrowserSearchAndTools = ({selectAll, deselectAll, removeSelectedCards, copySelectedCards, handleExport, setVisibleModalAll, filteredFlashcards, selectedCards, visibleModalAll}) => {
+const BrowserSearchAndTools = ({selectAll, deselectAll, removeSelectedCards, copySelectedCards, handleExport, filteredFlashcards, selectedCards}) => {
     const { t, i18n } = useTranslation(); // Hook translation
     const [searchTerm, setSearchTerm] = useState('');
     const refSearch = useRef(null);
@@ -9,6 +10,8 @@ const BrowserSearchAndTools = ({selectAll, deselectAll, removeSelectedCards, cop
     const prevScrollY = useRef(window.scrollY);
     const positionY = useRef(0);
     const isTicking = useRef(false); // Dla throttlingu
+    const modalRef = useRef(null);
+    const [visibleModalAll, setVisibleModalAll] = useState(null);
 
     // Oblicz pozycję Y elementu tylko raz po zamontowaniu komponentu
     useEffect(() => {
@@ -68,6 +71,8 @@ const BrowserSearchAndTools = ({selectAll, deselectAll, removeSelectedCards, cop
             handleSearch();
         }
     };
+
+    useWcagModal(visibleModalAll, setVisibleModalAll, modalRef);
 
     return (
         <div className="o-search-wrap">
@@ -129,7 +134,12 @@ const BrowserSearchAndTools = ({selectAll, deselectAll, removeSelectedCards, cop
                                             aria-label={t('cancel')}
                                             onClick={() => setVisibleModalAll(false)}
                                         ></div>
-                                        <div className="o-modal__container">
+                                        <div className="o-modal__container"
+                                             ref={modalRef}
+                                             role="dialog"
+                                             aria-modal="true"
+                                             aria-labelledby="modal-title"
+                                        >
                                             <p>{t('are_you_sure_delete_flashcards')}</p>
                                             <ul className="o-list-buttons-clear">
                                                 <li>

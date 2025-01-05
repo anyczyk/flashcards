@@ -11,6 +11,7 @@ import { motion, AnimatePresence, useAnimation } from 'framer-motion';
 import { speak, stopSpeaking } from "../utils/speak";
 import { setLocalStorage, getLocalStorage } from '../utils/storage';
 import sampleData from '../data/sample-data.json';
+import useWcagModal from '../hooks/useWcagModal';
 
 function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFlashcardKnow, syntAudio, playFlashcards, setPlayFlashcards, setMainHomePageLoad, mainHomePageLoad }) {
     const { t } = useTranslation();
@@ -27,6 +28,9 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
 
     // Stany do szybkiej edycji
     const [quickEdit, setQuickEdit] = useState({});
+    const modalRef = useRef(null);
+
+    useWcagModal(quickEdit, setQuickEdit, modalRef);
 
     // Superkategorie rozwijalne
     const [activeSuperCategory, setActiveSuperCategory] = useState(null);
@@ -353,14 +357,14 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
         return false;
     });
 
-    const handleShuffle = async () => {
-        if (isShuffling) return;
-        setIsShuffling(true);
-        await controls.start("shuffling");
-        applyFilterAndShuffle();
-        setIsShuffling(false);
-        setReviewedSet(new Set());
-    };
+    // const handleShuffle = async () => {
+    //     if (isShuffling) return;
+    //     setIsShuffling(true);
+    //     await controls.start("shuffling");
+    //     applyFilterAndShuffle();
+    //     setIsShuffling(false);
+    //     setReviewedSet(new Set());
+    // };
 
     const removeBottomCardFromUI = (id) => {
         setTwoCards((prevTwo) => {
@@ -988,16 +992,16 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
                                             <sup>{reversFrontBack ? 'On' : 'Off'}</sup>
                                         </button>
                                     </li>
-                                    <li>
-                                        <button
-                                            className="btn--icon w-100"
-                                            aria-label="Restart / Tasowanie"
-                                            onClick={handleShuffle}
-                                            disabled={isShuffling || playFlashcards}
-                                        >
-                                            <i className="icon-arrows-cw"></i>
-                                        </button>
-                                    </li>
+                                    {/*<li>*/}
+                                    {/*    <button*/}
+                                    {/*        className="btn--icon w-100"*/}
+                                    {/*        aria-label="Restart / Tasowanie"*/}
+                                    {/*        onClick={handleShuffle}*/}
+                                    {/*        disabled={isShuffling || playFlashcards}*/}
+                                    {/*    >*/}
+                                    {/*        <i className="icon-arrows-cw"></i>*/}
+                                    {/*    </button>*/}
+                                    {/*</li>*/}
                                 </>
                             )}
                         </ul>
@@ -1291,7 +1295,12 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
                                         type="button"
                                         aria-label={t('cancel')}
                                     />
-                                    <div className="o-modal__container">
+                                    <div className="o-modal__container"
+                                        ref={modalRef}
+                                         role="dialog"
+                                         aria-modal="true"
+                                         aria-labelledby="modal-title"
+                                    >
                                         <p className={reversFrontBack ? 'order-2' : 'order-1'}>
                                             <label
                                                 className="color-white"
@@ -1443,14 +1452,16 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
                                                             : ''
                                                     }`}
                                                 >
-                                                    <i
-                                                        className={
-                                                            activeSuperCategory === index
-                                                                ? 'icon-folder-open-empty'
-                                                                : 'icon-folder-empty'
-                                                        }
-                                                    ></i>{' '}
-                                                    {cat}
+                                                    <span>
+                                                        <i
+                                                            className={
+                                                                activeSuperCategory === index
+                                                                    ? 'icon-folder-open-empty'
+                                                                    : 'icon-folder-empty'
+                                                            }
+                                                        ></i>{' '}
+                                                        {cat}
+                                                    </span>
                                                 </button>
                                                 {activeSuperCategory === index && (
                                                     <ul className="o-list-categories">

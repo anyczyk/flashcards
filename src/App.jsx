@@ -214,7 +214,9 @@ function App() {
                         aria-label="Open and close menu"><span>Menu</span></button>
 
                 <div ref={closeMenuRef}
-                     className={`o-main-header__menu ${mainMenuVisible ? 'o-main-header__menu--active' : ''}`}>
+                     className={`o-main-header__menu ${mainMenuVisible ? 'o-main-header__menu--active' : ''}`}
+                    tabIndex="-1"
+                >
                     <div className="o-main-header__menu-langs">
                         <label htmlFor="o-lang"><i className="icon-language"></i> Lnag:</label>
                         <select id="o-lang" onChange={(e) => changeLanguage(e.target.value)}
@@ -295,8 +297,7 @@ function App() {
                     </li>
                 </ul>
             </footer>
-            <div className="o-main-footer-cover-scroll-right"/>
-            <div className="o-main-footer-cover-scroll-left"/>
+            <div className="o-main-footer-cover-scroll"/>
             {preloader ? <div className="o-preloader">
                 <p><i className="icon-logo-f"></i>{t('the_update_is_in_progress')}</p>
                 <div className="o-preloader__progress-bar"></div>

@@ -1,5 +1,5 @@
 // EditFlashcardList.jsx
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import cardsExport from '../utils/cardsExport';
 import { Link } from "react-router-dom";
@@ -12,6 +12,7 @@ import {
 } from '@hello-pangea/dnd';
 import { topScroll } from "../utils/topScroll";
 import BrowserSearchAndTools from "./sub-components/BrowserSearchAndTools";
+import useWcagModal from '../hooks/useWcagModal';
 
 function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categories, loadData, setPreloader, preloader }) {
     const { t, i18n } = useTranslation(); // Hook translation
@@ -26,6 +27,11 @@ function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categor
     const [selectedCards, setSelectedCards] = useState([]);
     const [editFrontLang, setEditFrontLang] = useState('');
     const [editBackLang, setEditBackLang] = useState('');
+
+    const modalRef = useRef(null);
+
+    // superCategory dropdown
+    const [activeSuperCategory, setActiveSuperCategory] = useState(null);
 
     /* edit categories */
     const [openModalEdit, setOpenModalEdit] = useState(false);
@@ -52,7 +58,6 @@ function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categor
     const [orderedCategories, setOrderedCategories] = useState([]);
 
     const [visibleModalSingle, setVisibleModalSingle] = useState({});
-    const [visibleModalAll, setVisibleModalAll] = useState(null);
 
     const showModalConfirmRemove = (id) => {
         setVisibleModalSingle((prevState) => ({
@@ -237,6 +242,8 @@ function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categor
         setOpenModalEdit(false);
     };
 
+    useWcagModal(openModalEdit, cancelModal, modalRef);
+
     const handleQuickEditSave = async (type, action) => {
         setPreloader(true);
         const promises = flashcards.map(card => {
@@ -379,6 +386,10 @@ function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categor
             // wciąż korzysta z danej bazy i blokuje jej usunięcie.
             console.warn("Database deletion blocked. Close other tabs using the database.");
         };
+    };
+
+    const handleActiveSuperCategory = (index) => {
+        setActiveSuperCategory(activeSuperCategory === index ? null : index);
     };
 
     return (
@@ -570,14 +581,31 @@ function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categor
                                                                                         }}>
                                                                                     <i className="icon-pencil"></i>
                                                                                 </button>
-                                                                                <h3
-                                                                                    className="btn bg-color-brow btn-super-category btn-super-category--edit w-100"
+                                                                                <button
+                                                                                    // className="btn bg-color-brow btn-super-category btn-super-category--edit w-100"
+
+                                                                                    className={`bg-color-brow btn-super-category ${
+                                                                                        activeSuperCategory === index
+                                                                                            ? 'btn-super-category--active'
+                                                                                            : ''
+                                                                                    }`}
+
+                                                                                    onClick={() => {
+                                                                                        handleActiveSuperCategory(index);
+                                                                                    }}
                                                                                 >
-                                                                                <span>
-                                                                                    <i className="icon-folder-open-empty"></i> {cat}
-                                                                                </span>
-                                                                                </h3>
+                                                                                    <span>
+                                                                                       <i
+                                                                                           className={
+                                                                                               activeSuperCategory === index
+                                                                                                   ? 'icon-folder-open-empty'
+                                                                                                   : 'icon-folder-empty'
+                                                                                           }
+                                                                                       ></i>{' '} {cat}
+                                                                                    </span>
+                                                                                </button>
                                                                             </div>
+                                                                            {activeSuperCategory === index && (
                                                                             <ul className="o-list-categories">
                                                                                 {flashcards
                                                                                     .filter((fc, index) => fc.superCategory === cat)
@@ -656,6 +684,7 @@ function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categor
                                                                                         );
                                                                                     })}
                                                                             </ul>
+                                                                            )}
                                                                         </>
                                                                     ) : (
                                                                         count > 0 && (
@@ -736,7 +765,13 @@ function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categor
                                 type="button"
                                 aria-label={t('cancel')}
                             />
-                            <div className="o-modal__container">
+                            <div
+                                className="o-modal__container"
+                                ref={modalRef}
+                                role="dialog"
+                                aria-modal="true"
+                                aria-labelledby="modal-title"
+                            >
                                 {globalRestart || globalRemove ?
                                     <>
                                         {globalRestart &&
@@ -862,10 +897,8 @@ function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categor
                                     removeSelectedCards={removeSelectedCards}
                                     copySelectedCards={copySelectedCards}
                                     handleExport={handleExport}
-                                    setVisibleModalAll={setVisibleModalAll}
                                     filteredFlashcards={filteredFlashcards}
                                     selectedCards={selectedCards}
-                                    visibleModalAll={visibleModalAll}
                                 />
                             )}
                             <hr/>

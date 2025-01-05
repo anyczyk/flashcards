@@ -153,7 +153,7 @@
   &__menu {
     position: absolute;
     right: 0;
-    top: 50px;
+    top: 56px;
     translate: 100% 0;
     transition: translate 200ms ease-in-out, opacity 200ms ease-in-out;
     background-color: var(--color-green-less-dark);
@@ -165,6 +165,7 @@
     box-shadow: -1px 3px 6px var(--color-black-opacity-50);
     overflow-y: auto;
     max-height: calc(100vh - 50px);
+    visibility: hidden;
 
     &-langs {
       label {
@@ -185,6 +186,7 @@
       translate: 0;
       opacity: 1;
       pointer-events: visible;
+      visibility: visible;
     }
     > div {
       display: flex;
