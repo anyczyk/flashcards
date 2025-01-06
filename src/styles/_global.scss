@@ -57,6 +57,10 @@ hr {
   width: 100%;
 }
 
+.mt-1 {
+  margin-top: vars.$padding-default !important;
+}
+
 .uppercase {
   text-transform: uppercase;
 }
@@ -123,6 +127,10 @@ hr {
 
 .color-green-strong-dark:not(:active) {
   color: var(--color-green-strong-dark) !important;
+}
+
+.color-black:not(:active) {
+  color: var(--color-black) !important;
 }
 
 .color-red:not(:active) {
@@ -222,6 +230,11 @@ hr {
 
     li {
       flex: 1;
+      white-space: normal;
+
+      .btn--icon {
+        height: 52px;
+      }
 
       button {
         width: 100%;
@@ -475,6 +488,8 @@ hr {
         width: 100%;
         flex: unset;
       }
+
+
     }
   }
 
@@ -564,6 +579,13 @@ hr {
     &-categories{
       text-decoration: underline;
       cursor: pointer;
+      padding: 0;
+      min-height: unset;
+      box-shadow: unset;
+      border-radius: unset;
+      background-color: unset;
+      font-weight: 700;
+      font-size: 18px;
     }
   }
 
@@ -603,7 +625,7 @@ hr {
   &--fixed {
     position: fixed;
     z-index: 996;
-    top: 50px;
+    top: 56px;
     background-color: var(--color-green-less-dark);
     padding: vars.$padding-smaller;
     left: 50%;
@@ -622,7 +644,7 @@ hr {
   }
 
   &-wrap {
-    min-height: 108px;
+    min-height: 52px;
     padding-bottom: vars.$padding-smaller;
   }
 }

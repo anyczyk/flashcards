@@ -30,6 +30,7 @@ function App() {
     const closeMenuRef = useRef(null);
     const closeMenuBtnRef = useRef(null);
     const location = useLocation();
+    const [orderedCategories, setOrderedCategories] = useState([]);
 
     // Flaga sterująca auto-play (play/pause)
     const [playFlashcards, setPlayFlashcards] = useState(false);
@@ -236,10 +237,13 @@ function App() {
                         <ul>
                             <li><Link onClick={() => setMainHomePageLoad(true)} to="/"><i
                                 className="icon-play"></i> {t('view_flashcards')}</Link></li>
-                            <li><Link onClick={clearOptions} to="/create"><i
-                                className="icon-plus"></i> {t('add_flashcard')}</Link></li>
+
                             <li><Link onClick={clearOptions} to="/list-edit"><i
                                 className="icon-wrench"></i> {t('settings')}</Link></li>
+
+                            <li><Link onClick={clearOptions} to="/create"><i
+                                className="icon-plus"></i> {t('add_flashcard')}</Link></li>
+
                             <li><Link onClick={clearOptions} to="/import-export"><i
                                 className="icon-export"></i> {t('import_export')}</Link>
                             </li>
@@ -252,31 +256,50 @@ function App() {
             </header>
             <main className="o-main-content">
                 {location.pathname !== "/" && (
-                    <p><Link className="o-main-start btn btn--green" to="/"><i
+                    <p><Link className="o-main-start w-100 btn btn--green" to="/"><i
                         className="icon-play"></i> {t('view_flashcards')}</Link></p>
                 )}
 
                 <Routes>
-                    <Route path="/" element={<ViewFlashcards clearInsomnia={clearInsomnia} loadData={loadData}
-                                                             syntAudio={syntAudio} flashcards={flashcards}
-                                                             categories={categories}
-                                                             setFlashcardKnow={setFlashcardKnow}
-                                                             playFlashcards={playFlashcards}
-                                                             setPlayFlashcards={setPlayFlashcards}
-                                                             setMainHomePageLoad={setMainHomePageLoad}
-                                                             mainHomePageLoad={mainHomePageLoad}/>}/>
-                    <Route path="/create"
-                           element={<CreateFlashcard allCategories={allCategories} addFlashcard={addFlashcard}
-                                                     categories={categories}
-                                                     superCategoriesArray={superCategoriesArray}/>}/>
-                    <Route path="/list-edit"
-                           element={<EditFlashcardList flashcards={flashcards} removeFlashcard={removeFlashcard}
-                                                       editFlashcard={editFlashcard} categories={categories}
-                                                       loadData={loadData} setPreloader={setPreloader}
-                                                       preloader={preloader}/>}/>
-                    <Route path="/import-export"
-                           element={<ImportExport flashcards={flashcards} onImport={handleImport}/>}/>
-                    {/* Trasa domyślna */}
+                    <Route path="/" element={<ViewFlashcards
+                        loadData={loadData}
+                        flashcards={flashcards}
+                        setOrderedCategories={setOrderedCategories}
+                        orderedCategories={orderedCategories}
+                        categories={categories}
+
+                        clearInsomnia={clearInsomnia}
+                        syntAudio={syntAudio}
+                        setFlashcardKnow={setFlashcardKnow}
+                        playFlashcards={playFlashcards}
+                        setPlayFlashcards={setPlayFlashcards}
+                        setMainHomePageLoad={setMainHomePageLoad}
+                        mainHomePageLoad={mainHomePageLoad}
+                    />}/>
+                    <Route path="/list-edit" element={<EditFlashcardList
+                        loadData={loadData}
+                        flashcards={flashcards}
+                        setOrderedCategories={setOrderedCategories}
+                        orderedCategories={orderedCategories}
+                        categories={categories}
+
+                        removeFlashcard={removeFlashcard}
+                        editFlashcard={editFlashcard}
+                        setPreloader={setPreloader}
+                        preloader={preloader}
+                    />}/>
+                    <Route path="/create" element={<CreateFlashcard
+                        categories={categories}
+
+                        allCategories={allCategories}
+                        addFlashcard={addFlashcard}
+                        superCategoriesArray={superCategoriesArray}
+                           />}/>
+                    <Route path="/import-export" element={<ImportExport
+                        flashcards={flashcards}
+
+                        onImport={handleImport}
+                    />}/>
                     <Route path="*" element={<Navigate to="/" replace/>}/>
                 </Routes>
             </main>
@@ -284,11 +307,17 @@ function App() {
                 <ul>
                     <li><Link aria-label={t('view_flashcards')} onClick={() => setMainHomePageLoad(true)} to="/"><i
                         className="icon-logo-f"></i><span>{t('flashcards')}</span></Link></li>
-                    <li><Link aria-label={t('create_flashcard')} onClick={clearOptions} to="/create"><i
-                        className="icon-plus"></i><span>{t('add_flashcard')}</span></Link></li>
+
                     <li><Link aria-label={t('edit_flashcards')} onClick={clearOptions} to="/list-edit"><i
                         className="icon-wrench"></i><span>{t('settings')}</span></Link>
                     </li>
+
+                    <li><Link className="o-main-footer__add-circle bg-color-green" aria-label={t('create_flashcard')}
+                              onClick={clearOptions} to="/create"><i
+                        className="icon-plus"></i>
+                        {/*<span>{t('add_flashcard')}</span>*/}
+                    </Link></li>
+
                     <li><Link aria-label={t('import_export')} onClick={clearOptions} to="/import-export"><i
                         className="icon-export"></i><span>{t('import_export')}</span></Link>
                     </li>

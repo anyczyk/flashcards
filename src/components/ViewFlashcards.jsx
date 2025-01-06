@@ -12,8 +12,9 @@ import { speak, stopSpeaking } from "../utils/speak";
 import { setLocalStorage, getLocalStorage } from '../utils/storage';
 import sampleData from '../data/sample-data.json';
 import useWcagModal from '../hooks/useWcagModal';
+import useOrderedCategories from "../hooks/useOrderedCategories";
 
-function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFlashcardKnow, syntAudio, playFlashcards, setPlayFlashcards, setMainHomePageLoad, mainHomePageLoad }) {
+function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFlashcardKnow, syntAudio, playFlashcards, setPlayFlashcards, setMainHomePageLoad, mainHomePageLoad, orderedCategories, setOrderedCategories }) {
     const { t } = useTranslation();
 
     const newOrders = getLocalStorage('categoryOrder');
@@ -103,6 +104,8 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
             clearTimeout(autoPlayTimeoutRef.current);
         };
     }, []);
+
+    useOrderedCategories(categories, setOrderedCategories);
 
     const handleActiveSuperCategory = (index) => {
         setActiveSuperCategory(activeSuperCategory === index ? null : index);
@@ -875,13 +878,13 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
                                 whiteSpaceNowrap ? 'white-space-nowrap' : ''
                             }`}
                         >
-                            <span
+                            <button
                                 type="button"
                                 className="o-page-view-flashcards__title-categories"
                                 onClick={handleMainHomePageLoad}
                             >
                                 {t('categories')}
-                            </span>
+                            </button>
                             {' / '}
                             <span
                                 onClick={() => setWhiteSpaceNowrap((prev) => !prev)}
@@ -977,6 +980,7 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
                                             onClick={handlePlayFlashcards}
                                         >
                                             <i className={playFlashcards ? 'icon-pause' : 'icon-play'}></i>
+                                            {/*<span>{playFlashcards ? t('pause') : t('play')}</span>*/}
                                         </button>
                                     </li>
                                     <li>
@@ -989,6 +993,7 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
                                             disabled={playFlashcards ? 'disabled' : ''}
                                         >
                                             <i className="icon-switch"></i>
+                                            <span>{t('revers')}</span>
                                             <sup>{reversFrontBack ? 'On' : 'Off'}</sup>
                                         </button>
                                     </li>
@@ -1013,8 +1018,9 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
                 <div className="o-complete-message">
                     <p>{t('viewed_all_flashcards')}</p>
                     <ul className="o-list-buttons-clear">
-                        <li>
+                        <li className="w-100">
                             <button
+                                className="btn--blue w-100"
                                 onClick={() => {
                                     setShowCompleteMessage(false);
                                     setReviewedSet(new Set());
@@ -1025,8 +1031,8 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
                             </button>
                         </li>
                         {getFilteredFlashcardCount('learningOnly') > 0 && (
-                            <li>
-                                <button
+                            <li className="w-100">
+                                <button className="btn--red w-100"
                                     onClick={() => {
                                         setLearningFilter('learningOnly');
                                         setCheckedCards(new Set());
@@ -1038,8 +1044,8 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
                                 </button>
                             </li>
                         )}
-                        <li>
-                            <button onClick={handleNextLesson}>{t('next_lesson')}</button>
+                        <li className="w-100">
+                            <button className="btn--green w-100" onClick={handleNextLesson}>{t('next_lesson')}</button>
                         </li>
                     </ul>
                 </div>
@@ -1056,8 +1062,9 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
                                         {getFilteredFlashcardCount('learningOnly')})
                                     </p>
                                     <ul className="o-list-buttons-clear">
-                                        <li>
+                                        <li className="w-100">
                                             <button
+                                                className="btn--red w-100"
                                                 onClick={() => {
                                                     setLearningFilter('learningOnly');
                                                     setCheckedCards(new Set());
@@ -1076,7 +1083,7 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
                                 </>
                             )}
                             <p>
-                                <button onClick={handleNextLesson}>{t('next_lesson')}</button>
+                                <button className="btn--green w-100" onClick={handleNextLesson}>{t('next_lesson')}</button>
                             </p>
                         </>
                     ) : (
@@ -1224,6 +1231,7 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
                                                                     setOpenCard(card);
                                                                 }}
                                                                 className="btn--single-edit"
+                                                                tabIndex={card.id === twoCards[twoCards.length - 1]?.id ? "0" : "-1"}
                                                             >
                                                                 <i className="icon-pencil"></i>
                                                                 <span>{t('edit')}</span>
@@ -1236,6 +1244,7 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
                                                                     onClick={() => {
                                                                         handleCheck(card.id);
                                                                     }}
+                                                                    tabIndex={card.id === twoCards[twoCards.length - 1]?.id ? "0" : "-1"}
                                                                 >
                                                                     {t('check')}
                                                                 </button>
@@ -1410,7 +1419,7 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
                                     </span>
                                 </button>
                             </li>
-                            {categories.map((cat, index) => {
+                            {orderedCategories.map((cat, index) => {
                                 let count;
                                 let knowCount;
                                 if (cat === 'Without category') {
@@ -1439,30 +1448,58 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
                                 );
 
                                 return (
-                                    <li key={cat} style={{order: (newOrders?.indexOf(cat) ?? 0) + 1}}>
+                                    <li key={cat}
+                                        // style={{order: (newOrders?.indexOf(cat) ?? 0) + 1}}
+                                    >
                                         {hasSubcategories ? (
                                             <>
-                                                <button
-                                                    onClick={() => {
-                                                        handleActiveSuperCategory(index);
-                                                    }}
-                                                    className={`bg-color-brow btn-super-category ${
-                                                        activeSuperCategory === index
-                                                            ? 'btn-super-category--active'
-                                                            : ''
-                                                    }`}
-                                                >
-                                                    <span>
-                                                        <i
-                                                            className={
+                                                {(() => {
+                                                    const knowCount = flashcards.filter(fc => (fc.know && fc.superCategory === cat)).length;
+                                                    const count = flashcards.filter(fc => fc.superCategory === cat).length;
+                                                    const unknownCount = count - knowCount;
+                                                    const knowPercentage = count > 0 ? Math.ceil((knowCount * 100) / count) : 0;
+                                                    return (
+                                                        <button
+                                                            onClick={() => {
+                                                                handleActiveSuperCategory(index);
+                                                            }}
+                                                            className={`bg-color-brow btn-super-category ${
                                                                 activeSuperCategory === index
-                                                                    ? 'icon-folder-open-empty'
-                                                                    : 'icon-folder-empty'
-                                                            }
-                                                        ></i>{' '}
-                                                        {cat}
-                                                    </span>
-                                                </button>
+                                                                    ? 'btn-super-category--active'
+                                                                    : ''
+                                                            }`}
+                                                        >
+                                                            <span>
+                                                                <i
+                                                                    className={
+                                                                        activeSuperCategory === index
+                                                                            ? 'icon-folder-open-empty'
+                                                                            : 'icon-folder-empty'
+                                                                    }
+                                                                ></i>{' '}
+                                                                {cat}{' '}
+                                                                (<strong className="color-black">{knowCount}</strong>/{count})
+                                                                {count - knowCount > 0 ? (
+                                                                    <>
+                                                                        <sub className="bg-color-green">
+                                                                            {knowPercentage}%
+                                                                        </sub>
+                                                                        <sup className="bg-color-red">
+                                                                            {unknownCount}
+                                                                        </sup>
+                                                                    </>
+                                                                ) : (
+                                                                    <sub
+                                                                        className="o-category-complited bg-color-green vertical-center-count">
+                                                                        <i className="icon-ok"></i>
+                                                                    </sub>
+                                                                )}
+                                                            </span>
+                                                        </button>
+                                                    );
+                                                })()}
+
+
                                                 {activeSuperCategory === index && (
                                                     <ul className="o-list-categories">
                                                         {[...new Set(

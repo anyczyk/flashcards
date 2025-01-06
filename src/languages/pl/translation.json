@@ -71,5 +71,13 @@
   "importing_flashcards_from_a_file": "Import fiszek z pliku",
   "language_code_for_speech_synthesizer": "Kod języka dla syntezatora mowy",
   "yes_reset": "Tak, zresetuj",
-  "yes_remove": "Tak, usuń"
+  "yes_remove": "Tak, usuń",
+
+  "show_still_learning": "Pokaż \"jeszcze do nauki\"",
+  "play": "Play",
+  "pause": "Pause",
+  "revers": "Odwróć",
+  "copied_selected_flashcards_to_clipboard": "Skopiowano wybrane fiszki do schowka",
+  "an_error_occurred_while_exporting_the_flashcards": "Wystąpił błąd podczas eksportu fiszek",
+  "error_deleting_database": "Błąd podczas usuwania bazy danych"
 }

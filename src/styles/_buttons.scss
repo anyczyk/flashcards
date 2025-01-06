@@ -174,8 +174,16 @@ button,
     }
 
     span {
-      display: block;
       font-size: 10px;
+
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: normal;
+      overflow-wrap: break-word;
+      max-width: 95%;
     }
   }
 }

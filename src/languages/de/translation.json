@@ -71,5 +71,13 @@
   "importing_flashcards_from_a_file": "Flashcards aus einer Datei importieren",
   "language_code_for_speech_synthesizer": "Sprachcode für Sprachsynthesizer",
   "yes_reset": "Ja, zurücksetzen",
-  "yes_remove": "Ja, entfernen"
+  "yes_remove": "Ja, entfernen",
+
+  "show_still_learning": "Zeige noch in Bearbeitung",
+  "play": "Abspielen",
+  "pause": "Pause",
+  "revers": "Umkehren",
+  "copied_selected_flashcards_to_clipboard": "Ausgewählte Karteikarten in die Zwischenablage kopiert",
+  "an_error_occurred_while_exporting_the_flashcards": "Beim Exportieren der Karteikarten ist ein Fehler aufgetreten",
+  "error_deleting_database": "Fehler beim Löschen der Datenbank"
 }

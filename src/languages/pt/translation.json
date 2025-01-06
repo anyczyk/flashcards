@@ -57,7 +57,7 @@
   "flashcards": "Flashcards",
   "add_flashcard": "Adicionar flashcard",
   "settings": "Configurações",
-  "up_to_top": "Ir para o topo",
+  "up_to_top": "Topo",
   "type_a_new_category_or_edit_selected_one": "Digite uma nova categoria ou edite a selecionada",
   "category_choose_existing_or_type_new": "Categoria (escolha existente ou digite nova)",
   "type_a_new_super_category_or_edit_selected_one": "Digite uma nova super categoria ou edite a selecionada",
@@ -71,6 +71,13 @@
   "importing_flashcards_from_a_file": "Importando flashcards de um arquivo",
   "language_code_for_speech_synthesizer": "Código de idioma para o sintetizador de fala",
   "yes_reset": "Oui, réinitialiser",
-  "yes_remove": "Oui, supprimer"
+  "yes_remove": "Oui, supprimer",
 
+  "show_still_learning": "Mostrar ainda aprendendo",
+  "play": "Reproduzir",
+  "pause": "Pausa",
+  "revers": "Reverter",
+  "copied_selected_flashcards_to_clipboard": "Cartões selecionados copiados para a área de transferência",
+  "an_error_occurred_while_exporting_the_flashcards": "Ocorreu um erro ao exportar os cartões",
+  "error_deleting_database": "Erro ao excluir o banco de dados"
 }

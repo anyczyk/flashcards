@@ -71,5 +71,13 @@
   "importing_flashcards_from_a_file": "Importazione di flashcard da un file",
   "language_code_for_speech_synthesizer": "Codice lingua per il sintetizzatore vocale",
   "yes_reset": "Sì, reimposta",
-  "yes_remove": "Sì, rimuovi"
+  "yes_remove": "Sì, rimuovi",
+
+  "show_still_learning": "Mostra ancora in apprendimento",
+  "play": "Riproduci",
+  "pause": "Pausa",
+  "revers": "Inverti",
+  "copied_selected_flashcards_to_clipboard": "Schede selezionate copiate negli appunti",
+  "an_error_occurred_while_exporting_the_flashcards": "Si è verificato un errore durante l'esportazione delle schede",
+  "error_deleting_database": "Errore durante l'eliminazione del database"
 }

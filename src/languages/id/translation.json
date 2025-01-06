@@ -57,7 +57,7 @@
   "flashcards": "Flashcard",
   "add_flashcard": "Tambahkan flashcard",
   "settings": "Pengaturan",
-  "up_to_top": "Kembali ke atas",
+  "up_to_top": "Ke atas",
   "type_a_new_category_or_edit_selected_one": "Ketik kategori baru atau sunting yang dipilih",
   "category_choose_existing_or_type_new": "Kategori (pilih yang sudah ada atau ketik baru)",
   "type_a_new_super_category_or_edit_selected_one": "Ketik super kategori baru atau sunting yang dipilih",
@@ -71,5 +71,13 @@
   "importing_flashcards_from_a_file": "Mengimpor flashcard dari berkas",
   "language_code_for_speech_synthesizer": "Kode bahasa untuk sintetis suara",
   "yes_reset": "Ya, setel ulang",
-  "yes_remove": "Ya, hapus"
+  "yes_remove": "Ya, hapus",
+
+  "show_still_learning": "Tampilkan masih belajar",
+  "play": "Putar",
+  "pause": "Jeda",
+  "revers": "Membalik",
+  "copied_selected_flashcards_to_clipboard": "Kartu flash yang dipilih disalin ke papan klip",
+  "an_error_occurred_while_exporting_the_flashcards": "Terjadi kesalahan saat mengekspor kartu flash",
+  "error_deleting_database": "Kesalahan saat menghapus database"
 }

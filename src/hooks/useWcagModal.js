@@ -2,8 +2,25 @@ import { useEffect } from 'react';
 
 const useWcagModal = (visibleModalAll, setVisibleModalAll, modalRef) => {
 
+    // const focusFirstElement = (modalElement) => {
+    //     if (!modalElement) return;
+    //
+    //     const focusableElements = modalElement.querySelectorAll(
+    //         'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    //     );
+    //
+    //     if (focusableElements.length > 0) {
+    //         focusableElements[0].focus(); // Ustaw focus na pierwszym elemencie
+    //     }
+    // };
+
     const focusFirstElement = (modalElement) => {
         if (!modalElement) return;
+
+        // Sprawdź, czy element już ma fokus
+        if (document.activeElement && modalElement.contains(document.activeElement)) {
+            return; // Nie ustawiaj fokus, jeśli aktualny element już jest aktywny
+        }
 
         const focusableElements = modalElement.querySelectorAll(
             'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'

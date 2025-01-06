@@ -13,8 +13,9 @@ import {
 import { topScroll } from "../utils/topScroll";
 import BrowserSearchAndTools from "./sub-components/BrowserSearchAndTools";
 import useWcagModal from '../hooks/useWcagModal';
+import useOrderedCategories from "../hooks/useOrderedCategories";
 
-function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categories, loadData, setPreloader, preloader }) {
+function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categories, loadData, setPreloader, preloader, orderedCategories, setOrderedCategories }) {
     const { t, i18n } = useTranslation(); // Hook translation
     const [editMode, setEditMode] = useState(null);
     const [editFront, setEditFront] = useState('');
@@ -27,6 +28,7 @@ function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categor
     const [selectedCards, setSelectedCards] = useState([]);
     const [editFrontLang, setEditFrontLang] = useState('');
     const [editBackLang, setEditBackLang] = useState('');
+    const [showStillLearning, setShowStillLearning] = useState(false);
 
     const modalRef = useRef(null);
 
@@ -55,8 +57,6 @@ function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categor
     /* end edit */
 
     const [availableLanguages, setAvailableLanguages] = useState([]);
-    const [orderedCategories, setOrderedCategories] = useState([]);
-
     const [visibleModalSingle, setVisibleModalSingle] = useState({});
 
     const showModalConfirmRemove = (id) => {
@@ -80,24 +80,26 @@ function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categor
         fetchLanguages();
     }, []);
 
-    useEffect(() => {
-        // Inicjalizacja orderedCategories na podstawie props.categories i zapisanej kolejności
-        const loadCategoryOrder = () => {
-            const savedOrder = localStorage.getItem('categoryOrder');
-            if (savedOrder) {
-                const orderIds = JSON.parse(savedOrder);
-                // Zakładając, że kategorie są unikalnymi nazwami lub identyfikatorami
-                const ordered = orderIds
-                    .map(id => categories.find(cat => cat === id))
-                    .filter(cat => cat !== undefined);
-                // Dodaj kategorie, które mogły zostać dodane później
-                const remaining = categories.filter(cat => !orderIds.includes(cat));
-                return [...ordered, ...remaining];
-            }
-            return categories;
-        };
-        setOrderedCategories(loadCategoryOrder());
-    }, [categories]);
+    useOrderedCategories(categories, setOrderedCategories);
+
+    // useEffect(() => {
+    //     // Inicjalizacja orderedCategories na podstawie props.categories i zapisanej kolejności
+    //     const loadCategoryOrder = () => {
+    //         const savedOrder = localStorage.getItem('categoryOrder');
+    //         if (savedOrder) {
+    //             const orderIds = JSON.parse(savedOrder);
+    //             // Zakładając, że kategorie są unikalnymi nazwami lub identyfikatorami
+    //             const ordered = orderIds
+    //                 .map(id => categories.find(cat => cat === id))
+    //                 .filter(cat => cat !== undefined);
+    //             // Dodaj kategorie, które mogły zostać dodane później
+    //             const remaining = categories.filter(cat => !orderIds.includes(cat));
+    //             return [...ordered, ...remaining];
+    //         }
+    //         return categories;
+    //     };
+    //     setOrderedCategories(loadCategoryOrder());
+    // }, [categories]);
 
     const handleOnDragEnd = (result) => {
         if (!result.destination) return;
@@ -144,31 +146,58 @@ function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categor
     // ----------------------
     //  Filtrowanie fiszek
     // ----------------------
+    // const filteredFlashcards = useMemo(() => {
+    //     let filtered = [];
+    //
+    //     if (selectedSuperCategory !== null && selectedCategory !== null) {
+    //         // Jeśli wybrano superCategory i subcategory, filtrujemy fiszki z oboma warunkami
+    //         filtered = flashcards.filter(fc =>
+    //             fc.superCategory === selectedSuperCategory && fc.category === selectedCategory
+    //         );
+    //     } else if (selectedSuperCategory !== null) {
+    //         // Jeśli wybrano tylko superCategory, filtrujemy fiszki z tą superCategory
+    //         filtered = flashcards.filter(fc => fc.superCategory === selectedSuperCategory);
+    //     } else if (selectedCategory === 'All') {
+    //         filtered = [...flashcards];
+    //     } else if (selectedCategory === 'Without category') {
+    //         // [Zmiana] Tylko fiszki, które nie mają category i nie mają superCategory
+    //         filtered = flashcards.filter(fc =>
+    //             (!fc.category || fc.category.trim() === '') && !fc.superCategory
+    //         );
+    //     } else {
+    //         // Jeśli wybrano kategorię bez superCategory, filtrujemy fiszki z tą kategorią i bez superCategory
+    //         filtered = flashcards.filter(fc => fc.category === selectedCategory && !fc.superCategory);
+    //     }
+    //
+    //     return filtered;
+    // }, [selectedCategory, selectedSuperCategory, flashcards]);
+
     const filteredFlashcards = useMemo(() => {
         let filtered = [];
 
         if (selectedSuperCategory !== null && selectedCategory !== null) {
-            // Jeśli wybrano superCategory i subcategory, filtrujemy fiszki z oboma warunkami
             filtered = flashcards.filter(fc =>
                 fc.superCategory === selectedSuperCategory && fc.category === selectedCategory
             );
         } else if (selectedSuperCategory !== null) {
-            // Jeśli wybrano tylko superCategory, filtrujemy fiszki z tą superCategory
             filtered = flashcards.filter(fc => fc.superCategory === selectedSuperCategory);
         } else if (selectedCategory === 'All') {
             filtered = [...flashcards];
         } else if (selectedCategory === 'Without category') {
-            // [Zmiana] Tylko fiszki, które nie mają category i nie mają superCategory
             filtered = flashcards.filter(fc =>
                 (!fc.category || fc.category.trim() === '') && !fc.superCategory
             );
         } else {
-            // Jeśli wybrano kategorię bez superCategory, filtrujemy fiszki z tą kategorią i bez superCategory
             filtered = flashcards.filter(fc => fc.category === selectedCategory && !fc.superCategory);
         }
 
+        // Filtruj na podstawie showStillLearning
+        if (showStillLearning) {
+            filtered = filtered.filter(fc => !fc.know);
+        }
+
         return filtered;
-    }, [selectedCategory, selectedSuperCategory, flashcards]);
+    }, [selectedCategory, selectedSuperCategory, flashcards, showStillLearning]);
 
     const toggleSelectCard = (cardId) => {
         setSelectedCards(prev => {
@@ -180,26 +209,53 @@ function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categor
         });
     };
 
+    // const removeSelectedCards = () => {
+    //     selectedCards.forEach(id => removeFlashcard(id));
+    //     setSelectedCards([]);
+    // };
+
     const removeSelectedCards = () => {
-        selectedCards.forEach(id => removeFlashcard(id));
-        setSelectedCards([]);
+        selectedCards.forEach(id => {
+            if (filteredFlashcards.some(fc => fc.id === id)) {
+                removeFlashcard(id);
+            }
+        });
+        setSelectedCards([]); // Opróżniamy selekcję
     };
 
+    // const copySelectedCards = () => {
+    //     const cardsToCopy = flashcards.filter(fc => selectedCards.includes(fc.id));
+    //     const jsonData = JSON.stringify(cardsToCopy, null, 2);
+    //     navigator.clipboard.writeText(jsonData).then(() => {
+    //         alert("Skopiowano wybrane fiszki do schowka!");
+    //     });
+    // };
+
     const copySelectedCards = () => {
-        const cardsToCopy = flashcards.filter(fc => selectedCards.includes(fc.id));
+        const cardsToCopy = filteredFlashcards.filter(fc => selectedCards.includes(fc.id));
         const jsonData = JSON.stringify(cardsToCopy, null, 2);
         navigator.clipboard.writeText(jsonData).then(() => {
-            alert("Skopiowano wybrane fiszki do schowka!");
+            alert(t('copied_selected_flashcards_to_clipboard'));
         });
     };
 
+    // const handleExport = async () => {
+    //     try {
+    //         const cardsToExport = flashcards.filter(fc => selectedCards.includes(fc.id));
+    //         await cardsExport(cardsToExport);
+    //     } catch (error) {
+    //         console.error("Błąd podczas eksportu fiszek:", error);
+    //         alert("Wystąpił błąd podczas eksportu fiszek.");
+    //     }
+    // };
+
     const handleExport = async () => {
         try {
-            const cardsToExport = flashcards.filter(fc => selectedCards.includes(fc.id));
+            const cardsToExport = filteredFlashcards.filter(fc => selectedCards.includes(fc.id));
             await cardsExport(cardsToExport);
         } catch (error) {
-            console.error("Błąd podczas eksportu fiszek:", error);
-            alert("Wystąpił błąd podczas eksportu fiszek.");
+            console.error(t('an_error_occurred_while_exporting_the_flashcards'), error);
+            alert(t('an_error_occurred_while_exporting_the_flashcards'));
         }
     };
 
@@ -246,7 +302,7 @@ function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categor
 
     const handleQuickEditSave = async (type, action) => {
         setPreloader(true);
-        const promises = flashcards.map(card => {
+        const promises = flashcards.map(card => { // filteredFlashcards or flashcards
             if (type === 'super-category') {
                 if (card.superCategory === nameOld) {
                     if (action === 'remove') {
@@ -377,8 +433,8 @@ function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categor
 
         request.onerror = (event) => {
             setPreloader(false);
-            alert(`Error deleting database: ${event.target.error}`);
-            console.error("Error deleting database:", event.target.error);
+            alert(`${t('error_deleting_database')} ${event.target.error}`);
+            console.error(t('error_deleting_database'), event.target.error);
         };
 
         request.onblocked = () => {
@@ -414,10 +470,12 @@ function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categor
                 <>
                     <p>
                         <button
+                            className="w-100"
                             onClick={() => {
                                 setSelectedCategory(null);
                                 setSelectedSuperCategory(null);
                                 setSelectedCards([]);
+                                setShowStillLearning(false);
                                 cancelEditing();
                                 topScroll();
                             }}
@@ -461,7 +519,7 @@ function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categor
                                     <button onClick={() => {
                                         setOpenModalEdit(true);
                                         setGlobalRestart(true);
-                                    }} className="btn--blue"><i class="icon-arrows-cw"></i> {t('reset_all_flashcard_progress')}</button>
+                                    }} className="btn--blue"><i className="icon-arrows-cw"></i> {t('reset_all_flashcard_progress')}</button>
                                 </li>
                             </ul>
 
@@ -581,29 +639,78 @@ function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categor
                                                                                         }}>
                                                                                     <i className="icon-pencil"></i>
                                                                                 </button>
-                                                                                <button
-                                                                                    // className="btn bg-color-brow btn-super-category btn-super-category--edit w-100"
 
-                                                                                    className={`bg-color-brow btn-super-category ${
-                                                                                        activeSuperCategory === index
-                                                                                            ? 'btn-super-category--active'
-                                                                                            : ''
-                                                                                    }`}
+                                                                                {(() => {
+                                                                                    const knowCount = flashcards.filter(fc => (fc.know && fc.superCategory === cat)).length;
+                                                                                    const count = flashcards.filter(fc => fc.superCategory === cat).length;
+                                                                                    const unknownCount = count - knowCount;
+                                                                                    const knowPercentage = count > 0 ? Math.ceil((knowCount * 100) / count) : 0;
+                                                                                    return (
+                                                                                        <button
+                                                                                            className={`bg-color-brow btn-super-category ${
+                                                                                                activeSuperCategory === index
+                                                                                                    ? 'btn-super-category--active'
+                                                                                                    : ''
+                                                                                            }`}
 
-                                                                                    onClick={() => {
-                                                                                        handleActiveSuperCategory(index);
-                                                                                    }}
-                                                                                >
-                                                                                    <span>
-                                                                                       <i
-                                                                                           className={
-                                                                                               activeSuperCategory === index
-                                                                                                   ? 'icon-folder-open-empty'
-                                                                                                   : 'icon-folder-empty'
-                                                                                           }
-                                                                                       ></i>{' '} {cat}
-                                                                                    </span>
-                                                                                </button>
+                                                                                            onClick={() => {
+                                                                                                handleActiveSuperCategory(index);
+                                                                                            }}
+                                                                                        >
+                                                                                            <span>
+                                                                                                <i
+                                                                                                    className={
+                                                                                                        activeSuperCategory === index
+                                                                                                            ? 'icon-folder-open-empty'
+                                                                                                            : 'icon-folder-empty'
+                                                                                                    }
+                                                                                                ></i>{' '}
+                                                                                                {cat}{' '}
+                                                                                                (<strong
+                                                                                                className="color-black">{knowCount}</strong>/{count})
+                                                                                                {count - knowCount > 0 ? (
+                                                                                                    <>
+                                                                                                        <sub
+                                                                                                            className="bg-color-green">
+                                                                                                            {knowPercentage}%
+                                                                                                        </sub>
+                                                                                                        <sup
+                                                                                                            className="bg-color-red">
+                                                                                                            {unknownCount}
+                                                                                                        </sup>
+                                                                                                    </>
+                                                                                                ) : (
+                                                                                                    <sub
+                                                                                                        className="o-category-complited bg-color-green vertical-center-count">
+                                                                                                        <i className="icon-ok"></i>
+                                                                                                    </sub>
+                                                                                                )}
+                                                                                            </span>
+                                                                                        </button>
+                                                                                    );
+                                                                                })()}
+
+                                                                                {/*<button*/}
+                                                                                {/*    className={`bg-color-brow btn-super-category ${*/}
+                                                                                {/*        activeSuperCategory === index*/}
+                                                                                {/*            ? 'btn-super-category--active'*/}
+                                                                                {/*            : ''*/}
+                                                                                {/*    }`}*/}
+
+                                                                                {/*    onClick={() => {*/}
+                                                                                {/*        handleActiveSuperCategory(index);*/}
+                                                                                {/*    }}*/}
+                                                                                {/*>*/}
+                                                                                {/*    <span>*/}
+                                                                                {/*       <i*/}
+                                                                                {/*           className={*/}
+                                                                                {/*               activeSuperCategory === index*/}
+                                                                                {/*                   ? 'icon-folder-open-empty'*/}
+                                                                                {/*                   : 'icon-folder-empty'*/}
+                                                                                {/*           }*/}
+                                                                                {/*       ></i>{' '} {cat}*/}
+                                                                                {/*    </span>*/}
+                                                                                {/*</button>*/}
                                                                             </div>
                                                                             {activeSuperCategory === index && (
                                                                             <ul className="o-list-categories">
@@ -781,7 +888,7 @@ function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categor
                                                     <li>
                                                         <button onClick={() => {
                                                             handleQuickEditSave('reset-all-flashcards');
-                                                        }} className="btn--blue"><i class="icon-arrows-cw"></i> {t('yes_reset')}
+                                                        }} className="btn--blue"><i className="icon-arrows-cw"></i> {t('yes_reset')}
                                                         </button>
                                                     </li>
                                                     <li>
@@ -797,7 +904,7 @@ function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categor
                                                 <p>Are yous sure remove all fleshcards?</p>
                                                 <ul className="o-list-buttons-clear">
                                                     <li>
-                                                        <button onClick={removeDatabase} className="btn--red"><i class="icon-trash-empty"></i> {t('yes_remove')}
+                                                        <button onClick={removeDatabase} className="btn--red"><i className="icon-trash-empty"></i> {t('yes_remove')}
                                                         </button>
                                                     </li>
                                                     <li>
@@ -863,14 +970,14 @@ function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categor
                                                 </li>
                                             }
                                             <li>
-                                                <button onClick={() => handleQuickEditSave(nameType, 'reset')}>
+                                                <button onClick={() => handleQuickEditSave(nameType,'reset')}>
                                                     <i className="icon-arrows-cw"></i> {t('progress_reset')}
                                                 </button>
                                             </li>
                                             <li>
                                                 {confirmRemove ? <><p>{t('are_you_sure_delete')}</p>
                                                         <button className="btn--red"
-                                                                onClick={() => handleQuickEditSave(nameType, 'remove')}>
+                                                                onClick={() => handleQuickEditSave(nameType,'remove')}>
                                                             <i className="icon-trash-empty"></i> {t('i_confirm_remove')}
                                                         </button>
                                                     </> :
@@ -890,7 +997,7 @@ function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categor
 
                     {selectedCategory !== null && (
                         <>
-                            {(filteredFlashcards.length > 0 || selectedCards.length > 0) && (
+                            {(filteredFlashcards.length > 0 || selectedCards.length > 0 || flashcards.length > 0) && (
                                 <BrowserSearchAndTools
                                     selectAll={selectAll}
                                     deselectAll={deselectAll}
@@ -899,12 +1006,14 @@ function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categor
                                     handleExport={handleExport}
                                     filteredFlashcards={filteredFlashcards}
                                     selectedCards={selectedCards}
+                                    setShowStillLearning={setShowStillLearning}
+                                    showStillLearning={showStillLearning}
                                 />
                             )}
                             <hr/>
                             {filteredFlashcards.length > 0 && (
                                 <ul className="o-list-edit-flashcards">
-                                    {filteredFlashcards.map((card, index) => (
+                                    {filteredFlashcards.filter(fc => showStillLearning ? !fc.know : fc.id).map((card, index) => (
                                         <li className="o-card" key={card.id}>
                                             <ul className="o-list-buttons">
                                                 {editMode === card.id ? (

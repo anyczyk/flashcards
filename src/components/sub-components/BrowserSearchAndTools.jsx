@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import useWcagModal from '../../hooks/useWcagModal';
 
-const BrowserSearchAndTools = ({selectAll, deselectAll, removeSelectedCards, copySelectedCards, handleExport, filteredFlashcards, selectedCards}) => {
+const BrowserSearchAndTools = ({selectAll, deselectAll, removeSelectedCards, copySelectedCards, handleExport, filteredFlashcards, selectedCards, showStillLearning, setShowStillLearning}) => {
     const { t, i18n } = useTranslation(); // Hook translation
     const [searchTerm, setSearchTerm] = useState('');
     const refSearch = useRef(null);
@@ -88,22 +88,29 @@ const BrowserSearchAndTools = ({selectAll, deselectAll, removeSelectedCards, cop
                             style={{width: '100%'}}
                         />
                     </li>
-                    <li className="btn--icon">
-                        <button aria-label="Search" onClick={handleSearch}>
+                    <li className="flex-none">
+                        <button className="btn--icon" aria-label="Search" onClick={handleSearch}>
                             <i className="icon-search"></i>
                         </button>
                     </li>
-                </ul>
-                <ul className="o-list-buttons-clear">
+                    <li className="flex-none">
+                        <button onClick={() => setShowStillLearning(prevState => !prevState)}
+                                className={`btn--icon ${showStillLearning ? 'btn--active' : ''}`}>
+                            <i className="icon-graduation-cap"></i> <span>{t('show_still_learning')}</span>
+                        </button>
+                    </li>
                     {filteredFlashcards.length > 0 && (
-                        <li>
+                        <li className="flex-none">
                             <button className="btn--icon" onClick={selectAll}>
                                 <i className="icon-ok-circled"></i> <span>{t('select_all')}</span>
                             </button>
                         </li>
                     )}
-                    {selectedCards.length > 0 && (
-                        <>
+                </ul>
+                {(selectedCards.length > 0 && filteredFlashcards.length > 0) && (
+                    <>
+                        <hr className="mt-1" />
+                        <ul className="o-list-buttons-clear">
                             <li>
                                 <button className="btn--icon" onClick={deselectAll}>
                                     <i className="icon-ok-circled2"></i> <span>{t('deselect_all')}</span>
@@ -167,10 +174,9 @@ const BrowserSearchAndTools = ({selectAll, deselectAll, removeSelectedCards, cop
                                     </div>
                                 )}
                             </li>
-                        </>
-                    )}
-                </ul>
-
+                        </ul>
+                    </>
+                )}
             </div>
         </div>
     );

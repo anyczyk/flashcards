@@ -57,7 +57,7 @@
   "flashcards": "Flashcards",
   "add_flashcard": "Ajouter une flashcard",
   "settings": "Paramètres",
-  "up_to_top": "Haut de la page",
+  "up_to_top": "Haut page",
   "type_a_new_category_or_edit_selected_one": "Tapez une nouvelle catégorie ou modifiez celle sélectionnée",
   "category_choose_existing_or_type_new": "Catégorie (choisissez une existante ou tapez-en une nouvelle)",
   "type_a_new_super_category_or_edit_selected_one": "Tapez une nouvelle super catégorie ou modifiez celle sélectionnée",
@@ -69,5 +69,13 @@
   "import_append": "Importer (ajouter)",
   "choose_file_to_import": "Choisissez le fichier à importer",
   "importing_flashcards_from_a_file": "Importation de flashcards à partir d'un fichier",
-  "language_code_for_speech_synthesizer": "Code de langue pour le synthétiseur vocal"
+  "language_code_for_speech_synthesizer": "Code de langue pour le synthétiseur vocal",
+
+  "show_still_learning": "Afficher encore en apprentissage",
+  "play": "Lire",
+  "pause": "Pause",
+  "revers": "Inverser",
+  "copied_selected_flashcards_to_clipboard": "Cartes sélectionnées copiées dans le presse-papiers",
+  "an_error_occurred_while_exporting_the_flashcards": "Une erreur est survenue lors de l'exportation des cartes",
+  "error_deleting_database": "Erreur lors de la suppression de la base de données"
 }

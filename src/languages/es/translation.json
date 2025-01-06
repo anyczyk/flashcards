@@ -71,5 +71,13 @@
   "importing_flashcards_from_a_file": "Importando tarjetas desde un archivo",
   "language_code_for_speech_synthesizer": "Código de idioma para el sintetizador de voz",
   "yes_reset": "Sí, reiniciar",
-  "yes_remove": "Sí, eliminar"
+  "yes_remove": "Sí, eliminar",
+
+  "show_still_learning": "Mostrar aún aprendiendo",
+  "play": "Reproducir",
+  "pause": "Pausa",
+  "revers": "Invertir",
+  "copied_selected_flashcards_to_clipboard": "Tarjetas seleccionadas copiadas al portapapeles",
+  "an_error_occurred_while_exporting_the_flashcards": "Ocurrió un error al exportar las tarjetas",
+  "error_deleting_database": "Error al eliminar la base de datos"
 }

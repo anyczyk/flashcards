@@ -71,5 +71,13 @@
   "importing_flashcards_from_a_file": "Importing flashcards from a file",
   "language_code_for_speech_synthesizer": "Language code for speech synthesizer",
   "yes_reset": "Yes, reset",
-  "yes_remove": "Yes, remove"
+  "yes_remove": "Yes, remove",
+
+  "show_still_learning": "Show still learning",
+  "play": "Play",
+  "pause": "Pause",
+  "revers": "Revers",
+  "copied_selected_flashcards_to_clipboard": "Copied selected flashcards to clipboard",
+  "an_error_occurred_while_exporting_the_flashcards": "An error occurred while exporting the flashcards",
+  "error_deleting_database": "Error deleting database"
 }

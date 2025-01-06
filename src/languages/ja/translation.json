@@ -4,7 +4,7 @@
   "view_flashcards": "学習を始める",
   "create_flashcard": "フラッシュカードを作成",
   "edit_flashcards": "フラッシュカードを編集",
-  "import_export": "インポート / エクスポート",
+  "import_export": "輸入/輸出",
   "without_category": "カテゴリーなし",
   "all": "すべて",
   "no_flashcards": "現在フラッシュカードがありません",
@@ -55,9 +55,9 @@
   "the_update_is_in_progress": "アップデートが進行中です...",
   "missing_next_lesson_in_sequence": "次のレッスンがシーケンスにありません",
   "flashcards": "フラッシュカード",
-  "add_flashcard": "フラッシュカードを追加",
+  "add_flashcard": "カード追加",
   "settings": "設定",
-  "up_to_top": "トップへ戻る",
+  "up_to_top": "トップへ",
   "type_a_new_category_or_edit_selected_one": "新しいカテゴリーを入力、または選択中のものを編集してください",
   "category_choose_existing_or_type_new": "カテゴリー（既存のものを選択または新規入力）",
   "type_a_new_super_category_or_edit_selected_one": "新しいスーパーカテゴリーを入力、または選択中のものを編集してください",
@@ -71,5 +71,13 @@
   "importing_flashcards_from_a_file": "ファイルからフラッシュカードをインポートしています",
   "language_code_for_speech_synthesizer": "音声合成用言語コード",
   "yes_reset": "はい、リセットします",
-  "yes_remove": "はい、削除します"
+  "yes_remove": "はい、削除します",
+
+  "show_still_learning": "まだ学習中を表示",
+  "play": "再生",
+  "pause": "一時停止",
+  "revers": "逆転",
+  "copied_selected_flashcards_to_clipboard": "選択したフラッシュカードをクリップボードにコピーしました",
+  "an_error_occurred_while_exporting_the_flashcards": "フラッシュカードのエクスポート中にエラーが発生しました",
+  "error_deleting_database": "データベース削除中のエラー"
 }
