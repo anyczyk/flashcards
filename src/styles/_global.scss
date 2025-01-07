@@ -36,7 +36,7 @@ label {
 }
 
 p, textarea, input {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 h2, h3, h4, h5, h6 {
@@ -157,12 +157,20 @@ hr {
   background-color: var(--color-red) !important;
 }
 
+.bg-color-red-opacity-03:not(:active) {
+  background-color: var(--color-red-opacity-03) !important;
+}
+
 .bg-color-green:not(:active) {
   background-color: var(--color-green) !important;
 }
 
 .bg-color-green-dark:not(:active) {
   background-color: var(--color-green-dark) !important;
+}
+
+.bg-color-green-dark-opacity-03:not(:active) {
+  background-color: var(--color-green-dark-opacity-03) !important;
 }
 
 .bg-color-brow:not(:active) {
@@ -185,6 +193,28 @@ hr {
   max-width: vars.$max-content;
   margin: 0 auto;
   overflow-x: hidden;
+}
+
+.o-checkbox {
+  width: 24px;
+  height: 24px;
+  background-color: var(--color-white);
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+
+  &__icon {
+    display: none;
+  }
+
+  input[type="checkbox"] {
+    display: none;
+    &:checked + .o-checkbox__icon {
+      display: inline-block;
+    }
+  }
 }
 
 .o-list-buttons {
@@ -451,14 +481,34 @@ hr {
     }
 
     &:first-child,
-    &:nth-last-child(-n+3) {
+    &:nth-last-child(-n+2) {
       display: flex;
     }
 
-    &:nth-last-child(-n+3) {
+    &:nth-last-child(-n+2) {
       display: flex;
-      box-shadow: 0 0 6px var(--color-black-opacity-50), inset 0 0 15px var(--color-black-opacity-80);
+      // box-shadow: 0 0 6px var(--color-black-opacity-50), inset 0 0 15px var(--color-black-opacity-80);
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0.2) 90%, rgba(0, 0, 0, 0.5) 100%);
+        pointer-events: none;
+      }
     }
+
+    //&--active {
+    //  &:last-child {
+    //    display: flex;
+    //    box-shadow: none;
+    //    border: 1px solid var(--color-black-opacity-10);
+    //  }
+    //
+    //}
   }
 
   &__know {

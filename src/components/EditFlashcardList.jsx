@@ -1015,7 +1015,7 @@ function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categor
                                 <ul className="o-list-edit-flashcards">
                                     {filteredFlashcards.filter(fc => showStillLearning ? !fc.know : fc.id).map((card, index) => (
                                         <li className="o-card" key={card.id}>
-                                            <ul className="o-list-buttons">
+                                            <ul className={`o-list-buttons ${card.know ? 'bg-color-green-dark-opacity-03' : 'bg-color-red-opacity-03'}`}>
                                                 {editMode === card.id ? (
                                                     <>
                                                         <li>
@@ -1066,11 +1066,14 @@ function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categor
                                                     </>
                                                 )}
                                                 <li className="ml-auto">
-                                                    <input
-                                                        type="checkbox"
-                                                        checked={selectedCards.includes(card.id)}
-                                                        onChange={() => toggleSelectCard(card.id)}
-                                                    />
+                                                    <label className="o-checkbox">
+                                                        <input
+                                                            type="checkbox"
+                                                            checked={selectedCards.includes(card.id)}
+                                                            onChange={() => toggleSelectCard(card.id)}
+                                                        />
+                                                        <i className="o-checkbox__icon icon-ok"></i>
+                                                    </label>
                                                 </li>
                                             </ul>
 
@@ -1155,12 +1158,16 @@ function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categor
                                                             {t('know')}:
                                                         </label>
                                                         &nbsp;
-                                                        <input
-                                                            type="checkbox"
-                                                            checked={editKnow}
-                                                            onChange={(e) => setEditKnow(e.target.checked)}
-                                                            id={`o-edit-know-${card.id}`}
-                                                        />
+
+                                                        <label className="o-checkbox">
+                                                            <input
+                                                                type="checkbox"
+                                                                checked={editKnow}
+                                                                onChange={(e) => setEditKnow(e.target.checked)}
+                                                                id={`o-edit-know-${card.id}`}
+                                                            />
+                                                            <i className="o-checkbox__icon icon-ok"></i>
+                                                        </label>
                                                     </p>
                                                     <hr/>
                                                     <p>
@@ -1171,7 +1178,7 @@ function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categor
                                                 </div>
                                             ) : (
                                                 <div className="o-card__content">
-                                                    <p><strong>ID:</strong> {card.id}</p>
+                                                <p><strong>ID:</strong> {card.id}</p>
                                                     <hr/>
                                                     <p>
                                                         <strong>{t('front')}:</strong>
@@ -1211,18 +1218,18 @@ function EditFlashcardList({ flashcards, removeFlashcard, editFlashcard, categor
                                                             ? card.superCategory
                                                             : t('without_super_category')}
                                                     </p>
-                                                    <hr/>
-                                                    <p>
-                                                        {card.know ? (
-                                                            <strong className="color-green">
-                                                                {t('already_known')}
-                                                            </strong>
-                                                        ) : (
-                                                            <strong className="color-red">
-                                                                {t('learning')}
-                                                            </strong>
-                                                        )}
-                                                    </p>
+                                                    {/*<hr/>*/}
+                                                    {/*<p>*/}
+                                                    {/*    {card.know ? (*/}
+                                                    {/*        <strong className="color-green">*/}
+                                                    {/*            {t('already_known')}*/}
+                                                    {/*        </strong>*/}
+                                                    {/*    ) : (*/}
+                                                    {/*        <strong className="color-red">*/}
+                                                    {/*            {t('learning')}*/}
+                                                    {/*        </strong>*/}
+                                                    {/*    )}*/}
+                                                    {/*</p>*/}
                                                     <hr/>
                                                     <p>
                                                         <button onClick={() => startEditing(card)}>

@@ -1,5 +1,5 @@
 // ViewFlashcards.jsx
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
     addMultipleFlashcardsToDB,
@@ -7,7 +7,7 @@ import {
     editFlashcardInDB
 } from '../db';
 import { Link } from "react-router-dom";
-import { motion, AnimatePresence, useAnimation } from 'framer-motion';
+import { motion, AnimatePresence, useAnimation} from 'framer-motion';
 import { speak, stopSpeaking } from "../utils/speak";
 import { setLocalStorage, getLocalStorage } from '../utils/storage';
 import sampleData from '../data/sample-data.json';
@@ -57,14 +57,12 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
     const [draggingDirection, setDraggingDirection] = useState({});
 
     // Flagi jednorazowe
-    const [isShuffling, setIsShuffling] = useState(false);
     const [reversFrontBack, setReversFrontBack] = useState(false);
 
     // Animacje
     const controls = useAnimation();
 
     // Inne
-    const [reviewedSet, setReviewedSet] = useState(new Set());
     const [showCompleteMessage, setShowCompleteMessage] = useState(false);
 
     // --- REFS i timery do auto-play ---
@@ -224,7 +222,6 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
     // Reset, gdy zmieniamy filtr/kategorię
     useEffect(() => {
         setCheckedCards(new Set());
-        setReviewedSet(new Set());
     }, [learningFilter, selectedCategory, selectedSuperCategory]);
 
     // Stop speaking przy większych zmianach
@@ -234,7 +231,6 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
         selectedCategory,
         selectedSuperCategory,
         learningFilter,
-        isShuffling,
         reversFrontBack,
         syntAudio
     ]);
@@ -360,15 +356,6 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
         return false;
     });
 
-    // const handleShuffle = async () => {
-    //     if (isShuffling) return;
-    //     setIsShuffling(true);
-    //     await controls.start("shuffling");
-    //     applyFilterAndShuffle();
-    //     setIsShuffling(false);
-    //     setReviewedSet(new Set());
-    // };
-
     const removeBottomCardFromUI = (id) => {
         setTwoCards((prevTwo) => {
             if (prevTwo.length === 2) {
@@ -403,7 +390,6 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
             }
         });
 
-        setReviewedSet((prev) => new Set(prev).add(id));
         setCheckedCards((prev) => {
             const newSet = new Set(prev);
             newSet.delete(id);
@@ -431,11 +417,6 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
         } else if (direction === 'prawo') {
             setAnimatingCards((prev) => ({ ...prev, [id]: 'animateRight' }));
         }
-        // setCheckedCards((prev) => {
-        //     const newSet = new Set(prev);
-        //     newSet.delete(id);
-        //     return newSet;
-        // });
     };
 
     const handleCheck = (id) => {
@@ -482,21 +463,6 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
         },
     };
 
-    const containerVariants = {
-        // initial: {
-        //     x: 0,
-        //     rotate: 0,
-        // },
-        // shuffling: {
-        //     x: [-10, 10, -10, 10, -5, 5, 0],
-        //     rotate: [-5, 5, -5, 5, -2.5, 2.5, 0],
-        //     transition: {
-        //         duration: 0.3,
-        //         ease: "easeInOut",
-        //     },
-        // },
-    };
-
     // Komunikat - koniec fiszek
     useEffect(() => {
         if (
@@ -515,19 +481,33 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
         setReversFrontBack((prev) => !prev);
     };
 
-    const CardFrontOrBack = ({ card, cardLang }) => {
+    // const CardFrontOrBack = ({ card, cardLang }) => {
+    //     return (
+    //         <div className="o-list-flashcards__text o-list-flashcards__front o-default-box">
+    //             <p role="button" onClick={() => handleSpeak(card, cardLang)}>
+    //                 <span className="o-list-flashcards__lang">
+    //                     <span className="o-list-flashcards__lang-code">{cardLang}</span>
+    //                     <i className="icon-volume"></i>
+    //                 </span>
+    //                 {card}
+    //             </p>
+    //         </div>
+    //     );
+    // };
+
+    const CardFrontOrBack = React.memo(({ card, cardLang }) => {
         return (
             <div className="o-list-flashcards__text o-list-flashcards__front o-default-box">
                 <p role="button" onClick={() => handleSpeak(card, cardLang)}>
-                    <span className="o-list-flashcards__lang">
-                        <span className="o-list-flashcards__lang-code">{cardLang}</span>
-                        <i className="icon-volume"></i>
-                    </span>
+                <span className="o-list-flashcards__lang">
+                    <span className="o-list-flashcards__lang-code">{cardLang}</span>
+                    <i className="icon-volume"></i>
+                </span>
                     {card}
                 </p>
             </div>
         );
-    };
+    });
 
     // -----------------------------------------------------
     // Funkcje do budowania listy lekcji (Next Lesson)
@@ -651,7 +631,6 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
             );
             setLearningFilter('all');
             setCheckedCards(new Set());
-            setReviewedSet(new Set());
             setDeck([]);
             setTwoCards([]);
             return; // Wracamy, bo znaleźliśmy właściwą "następną" lekcję
@@ -854,7 +833,6 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
         setSelectedSuperCategory(null);
         setLearningFilter(null);
         setCheckedCards(new Set());
-        setReviewedSet(new Set());
         setReversFrontBack(false);
         setPlayFlashcards(false);
         setDeck([]);
@@ -866,6 +844,16 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
     useEffect(() => {
         handleMainHomePageLoad();
     }, [mainHomePageLoad]);
+
+    const handleRunFlashCards = (category, superCategory) => {
+        setSelectedCategory(category); // Deselects the selected category
+        setSelectedSuperCategory(superCategory); // Sets the selected superCategory
+        setLearningFilter('all'); // Sets the learning filter to 'all'
+        setCheckedCards(new Set()); // Clears the checked cards
+        setDeck([]); // Clears the deck
+        setTwoCards([]); // Clears the top two cards
+        // applyFilterAndShuffle(); // Applies the filter and shuffles the flashcards
+    };
 
     return (
         <div className="o-page-view-flashcards">
@@ -890,59 +878,62 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
                                 onClick={() => setWhiteSpaceNowrap((prev) => !prev)}
                             >
                                 {selectedSuperCategory ? `${selectedSuperCategory} / ` : ''}
-                                {selectedCategory === 'All'
+
+                                {selectedSuperCategory && !selectedCategory
                                     ? t('all')
-                                    : selectedCategory === 'Without category'
-                                        ? t('without_category')
-                                        : selectedCategory}
+                                    : (selectedCategory === 'All')
+                                        ? t('all')
+                                        : selectedCategory === 'Without category'
+                                            ? t('without_category')
+                                            : selectedCategory}
 
                                 {' ('}
-                                {selectedSuperCategory !== null
-                                    ? flashcards.filter(
-                                        (fc) =>
-                                            fc.superCategory === selectedSuperCategory &&
-                                            fc.category === selectedCategory
-                                    ).length
-                                    : selectedCategory === 'All'
-                                        ? flashcards.length
-                                        : selectedCategory === 'Without category'
-                                            ? flashcards.filter(
-                                                (fc) =>
-                                                    (!fc.category || fc.category.trim() === '') &&
-                                                    !fc.superCategory
-                                            ).length
-                                            : flashcards.filter(
-                                                (fc) => fc.category === selectedCategory && !fc.superCategory
-                                            ).length}
+                                {
+                                    selectedSuperCategory !== null
+                                        ? (selectedCategory === null || selectedCategory === 'All'
+                                            ? flashcards.filter(fc => fc.superCategory === selectedSuperCategory).length
+                                            : flashcards.filter(fc =>
+                                                fc.superCategory === selectedSuperCategory &&
+                                                fc.category === selectedCategory
+                                            ).length)
+                                        : selectedCategory === 'All'
+                                            ? flashcards.length
+                                            : selectedCategory === 'Without category'
+                                                ? flashcards.filter(
+                                                    (fc) =>
+                                                        (!fc.category || fc.category.trim() === '') &&
+                                                        !fc.superCategory
+                                                ).length
+                                                : flashcards.filter(
+                                                    (fc) => fc.category === selectedCategory && !fc.superCategory
+                                                ).length
+                                }
                                 {')'}
                             </span>
                         </h2>
-                        <hr />
+                        <hr/>
                         <ul className="o-page-view-flashcards__tools o-list-buttons-clear o-list-buttons-clear--nowrap o-default-box">
-                            {/*{getFilteredFlashcardCount('learningOnly') < getFilteredFlashcardCount('all') && (*/}
-                                    <li>
-                                        <button
-                                            className={`btn--icon w-100 ${
-                                                learningFilter === 'all' ? 'btn--active' : ''
-                                            }`}
-                                            onClick={() => {
-                                                setLearningFilter('all');
-                                                setCheckedCards(new Set());
-                                                setReviewedSet(new Set());
-                                                applyFilterAndShuffle();
-                                            }}
-                                            disabled={playFlashcards ? 'disabled' : '' }
-                                        >
-                                            <i className="icon-single-card"></i>
-                                            <span>{t('review')}</span>
-                                            <sup>
-                                                {learningFilter === 'all'
-                                                    ? deck.length + twoCards.length
-                                                    : getFilteredFlashcardCount('all')}
-                                            </sup>
-                                        </button>
-                                    </li>
-                            {/*)}*/}
+                            <li>
+                                <button
+                                    className={`btn--icon w-100 ${
+                                        learningFilter === 'all' ? 'btn--active' : ''
+                                    }`}
+                                    onClick={() => {
+                                        setLearningFilter('all');
+                                        setCheckedCards(new Set());
+                                        applyFilterAndShuffle();
+                                    }}
+                                    disabled={playFlashcards ? 'disabled' : ''}
+                                >
+                                    <i className="icon-single-card"></i>
+                                    <span>{t('review')}</span>
+                                    <sup>
+                                        {learningFilter === 'all'
+                                            ? deck.length + twoCards.length
+                                            : getFilteredFlashcardCount('all')}
+                                    </sup>
+                                </button>
+                            </li>
                             {hasLearningCards && (
                                 <li>
                                     <button
@@ -952,7 +943,6 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
                                         onClick={() => {
                                             setLearningFilter('learningOnly');
                                             setCheckedCards(new Set());
-                                            setReviewedSet(new Set());
                                             applyFilterAndShuffle();
                                         }}
                                         disabled={playFlashcards ? 'disabled' : '' }
@@ -997,16 +987,6 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
                                             <sup>{reversFrontBack ? 'On' : 'Off'}</sup>
                                         </button>
                                     </li>
-                                    {/*<li>*/}
-                                    {/*    <button*/}
-                                    {/*        className="btn--icon w-100"*/}
-                                    {/*        aria-label="Restart / Tasowanie"*/}
-                                    {/*        onClick={handleShuffle}*/}
-                                    {/*        disabled={isShuffling || playFlashcards}*/}
-                                    {/*    >*/}
-                                    {/*        <i className="icon-arrows-cw"></i>*/}
-                                    {/*    </button>*/}
-                                    {/*</li>*/}
                                 </>
                             )}
                         </ul>
@@ -1023,7 +1003,6 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
                                 className="btn--blue w-100"
                                 onClick={() => {
                                     setShowCompleteMessage(false);
-                                    setReviewedSet(new Set());
                                     applyFilterAndShuffle();
                                 }}
                             >
@@ -1036,7 +1015,6 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
                                     onClick={() => {
                                         setLearningFilter('learningOnly');
                                         setCheckedCards(new Set());
-                                        setReviewedSet(new Set());
                                         applyFilterAndShuffle();
                                     }}
                                 >
@@ -1068,7 +1046,6 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
                                                 onClick={() => {
                                                     setLearningFilter('learningOnly');
                                                     setCheckedCards(new Set());
-                                                    setReviewedSet(new Set());
                                                     applyFilterAndShuffle();
                                                 }}
                                             >
@@ -1092,20 +1069,20 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
                         }} className={`o-page-view-flashcards__content ${playFlashcards ? 'pointer-events-none' : ''}`}>
                             <motion.ul
                                 className="o-list-flashcards"
-                                variants={containerVariants}
                                 initial="initial"
                                 animate={controls}
                             >
                                 <AnimatePresence>
                                     {twoCards.map((card) => (
                                         <motion.li
-                                            layoutId={card.id}
-                                            className="o-list-flashcards__single-card"
+                                            // layoutId={card.id}
+                                            className={`o-list-flashcards__single-card`}
                                             key={card.id}
                                             drag="x"
                                             dragConstraints={{ left: 0, right: 0 }}
-                                            dragElastic={0.8}
+                                            dragElastic={1}
                                             whileDrag={{
+                                                scale: 1.03,
                                                 rotate:
                                                     draggingDirection[card.id] === 'prawo'
                                                         ? 5
@@ -1125,7 +1102,7 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
                                                 }
                                             }}
                                             onDragEnd={(event, info) => {
-                                                const threshold = 0; // 100 here delayed
+                                                const threshold = 50; // 100 here delayed
                                                 const { offset } = info;
                                                 const absX = Math.abs(offset.x);
 
@@ -1369,7 +1346,7 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
             {selectedCategory === null && selectedSuperCategory === null ? (
                 <>
                     {flashcards.length > 0 ? (
-                        <ul className="o-list-categories">
+                        <ul className="o-list-categories o-list-categories--main">
                             <li className="order-0">
                                 <button
                                     className={`btn btn--dark-black-opacity ${
@@ -1377,16 +1354,7 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
                                             ? 'btn--active'
                                             : ''
                                     }`}
-                                    onClick={() => {
-                                        setSelectedCategory('All');
-                                        setSelectedSuperCategory(null);
-                                        setLearningFilter('all');
-                                        setCheckedCards(new Set());
-                                        setReviewedSet(new Set());
-                                        setDeck([]);
-                                        setTwoCards([]);
-                                        applyFilterAndShuffle();
-                                    }}
+                                    onClick={() => handleRunFlashCards('All',null)}
                                 >
                                     <span>
                                         {(() => {
@@ -1456,13 +1424,9 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
                                                 {(() => {
                                                     const knowCount = flashcards.filter(fc => (fc.know && fc.superCategory === cat)).length;
                                                     const count = flashcards.filter(fc => fc.superCategory === cat).length;
-                                                    const unknownCount = count - knowCount;
-                                                    const knowPercentage = count > 0 ? Math.ceil((knowCount * 100) / count) : 0;
                                                     return (
                                                         <button
-                                                            onClick={() => {
-                                                                handleActiveSuperCategory(index);
-                                                            }}
+                                                            onClick={() => handleActiveSuperCategory(index)}
                                                             className={`bg-color-brow btn-super-category ${
                                                                 activeSuperCategory === index
                                                                     ? 'btn-super-category--active'
@@ -1479,21 +1443,6 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
                                                                 ></i>{' '}
                                                                 {cat}{' '}
                                                                 (<strong className="color-black">{knowCount}</strong>/{count})
-                                                                {count - knowCount > 0 ? (
-                                                                    <>
-                                                                        <sub className="bg-color-green">
-                                                                            {knowPercentage}%
-                                                                        </sub>
-                                                                        <sup className="bg-color-red">
-                                                                            {unknownCount}
-                                                                        </sup>
-                                                                    </>
-                                                                ) : (
-                                                                    <sub
-                                                                        className="o-category-complited bg-color-green vertical-center-count">
-                                                                        <i className="icon-ok"></i>
-                                                                    </sub>
-                                                                )}
                                                             </span>
                                                         </button>
                                                     );
@@ -1501,7 +1450,7 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
 
 
                                                 {activeSuperCategory === index && (
-                                                    <ul className="o-list-categories">
+                                                    <ul className="o-list-categories o-list-categories--sub">
                                                         {[...new Set(
                                                             flashcards
                                                                 .filter((fc) => fc.superCategory === cat)
@@ -1527,16 +1476,7 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
                                                                                 ? 'btn--active'
                                                                                 : ''
                                                                         }`}
-                                                                        onClick={() => {
-                                                                            setSelectedCategory(subcat);
-                                                                            setSelectedSuperCategory(cat);
-                                                                            setLearningFilter('all');
-                                                                            setCheckedCards(new Set());
-                                                                            setReviewedSet(new Set());
-                                                                            setDeck([]);
-                                                                            setTwoCards([]);
-                                                                            applyFilterAndShuffle();
-                                                                        }}
+                                                                        onClick={() => handleRunFlashCards(subcat, cat)}
                                                                     >
                                                                         <span>
                                                                             <i className="icon-play-outline"></i>{' '}
@@ -1544,7 +1484,8 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
                                                                             subcat === ''
                                                                                 ? t('without_category')
                                                                                 : subcat}{' '}
-                                                                            (<strong className="color-green-dark">{knowSubcatCount}</strong>/{subcatCount})
+                                                                            (<strong
+                                                                            className="color-green-dark">{knowSubcatCount}</strong>/{subcatCount})
                                                                             {subcatCount - knowSubcatCount > 0 ? (
                                                                                 <>
                                                                                     <sub className="bg-color-green">
@@ -1569,6 +1510,41 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
                                                                 </li>
                                                             );
                                                         })}
+                                                        <li>
+                                                            {(() => {
+                                                                const knowCount = flashcards.filter(fc => (fc.know && fc.superCategory === cat)).length;
+                                                                const count = flashcards.filter(fc => fc.superCategory === cat).length;
+                                                                const unknownCount = count - knowCount;
+                                                                const knowPercentage = count > 0 ? Math.ceil((knowCount * 100) / count) : 0;
+                                                                return (
+                                                                    <button
+                                                                        className={`bg-color-cream color-green-strong-dark`}
+                                                                        onClick={() => handleRunFlashCards(null, cat)}
+                                                                    >
+                                                                    <span>
+                                                                        <i className="icon-play-outline"></i>{' '}{t('all')}{' '}
+                                                                        (<strong
+                                                                        className="color-green-dark">{knowCount}</strong>/{count})
+                                                                        {count - knowCount > 0 ? (
+                                                                            <>
+                                                                                <sub className="bg-color-green">
+                                                                                    {knowPercentage}%
+                                                                                </sub>
+                                                                                <sup className="bg-color-red">
+                                                                                    {unknownCount}
+                                                                                </sup>
+                                                                            </>
+                                                                        ) : (
+                                                                            <sub
+                                                                                className="o-category-complited bg-color-green vertical-center-count">
+                                                                                <i className="icon-ok"></i>
+                                                                            </sub>
+                                                                        )}
+                                                                    </span>
+                                                                    </button>
+                                                                );
+                                                            })()}
+                                                        </li>
                                                     </ul>
                                                 )}
                                             </>
@@ -1582,23 +1558,15 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
                                                                 ? 'btn--active'
                                                                 : ''
                                                         }`}
-                                                        onClick={() => {
-                                                            setSelectedCategory(cat);
-                                                            setSelectedSuperCategory(null);
-                                                            setLearningFilter('all');
-                                                            setCheckedCards(new Set());
-                                                            setReviewedSet(new Set());
-                                                            setDeck([]);
-                                                            setTwoCards([]);
-                                                            applyFilterAndShuffle();
-                                                        }}
+                                                        onClick={() => handleRunFlashCards(cat, null)}
                                                     >
                                                         <span>
                                                             <i className="icon-play-outline"></i>
                                                             {cat === 'Without category'
                                                                 ? t('without_category')
                                                                 : cat}{' '}
-                                                            (<strong className="color-green-dark">{knowCount}</strong>/{count})
+                                                            (<strong
+                                                            className="color-green-dark">{knowCount}</strong>/{count})
                                                             {count - knowCount > 0 ? (
                                                                 <>
                                                                     <sub className="bg-color-green">
