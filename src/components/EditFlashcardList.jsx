@@ -4,14 +4,14 @@ import { useTranslation } from 'react-i18next';
 import cardsExport from '../utils/cardsExport';
 import { Link } from "react-router-dom";
 import { loadLanguages } from '../utils/loadLanguages';
-import SelectCodeLanguages from './sub-components/SelectCodeLanguages';
+import SelectCodeLanguages from './sub-components/common/SelectCodeLanguages';
 import {
     DragDropContext,
     Droppable,
     Draggable,
 } from '@hello-pangea/dnd';
 import { topScroll } from "../utils/topScroll";
-import BrowserSearchAndTools from "./sub-components/BrowserSearchAndTools";
+import BrowserSearchAndTools from "./sub-components/EditFlashcardList/BrowserSearchAndTools";
 import useWcagModal from '../hooks/useWcagModal';
 import useOrderedCategories from "../hooks/useOrderedCategories";
 

@@ -1,5 +1,5 @@
 // ViewFlashcards.jsx
-import React, { useState, useEffect, useRef, useMemo } from 'react';
+import React, { useState, useEffect, useRef, useMemo, useCallback  } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
     addMultipleFlashcardsToDB,
@@ -13,6 +13,8 @@ import { setLocalStorage, getLocalStorage } from '../utils/storage';
 import sampleData from '../data/sample-data.json';
 import useWcagModal from '../hooks/useWcagModal';
 import useOrderedCategories from "../hooks/useOrderedCategories";
+import SubNavigation from "./sub-components/ViewFlashcards/SubNavigation";
+import SuggestionsAfterLesson from "./sub-components/ViewFlashcards/SuggestionsAfterLesson";
 
 function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFlashcardKnow, syntAudio, playFlashcards, setPlayFlashcards, setMainHomePageLoad, mainHomePageLoad, orderedCategories, setOrderedCategories }) {
     const { t } = useTranslation();
@@ -20,7 +22,7 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
     const newOrders = getLocalStorage('categoryOrder');
     const [openCardId, setOpenCardId] = useState(false);
     const [openCard, setOpenCard] = useState(false);
-    const [whiteSpaceNowrap, setWhiteSpaceNowrap] = useState(false);
+    // const [whiteSpaceNowrap, setWhiteSpaceNowrap] = useState(false);
 
     // Stan wybranej kategorii i superkategorii
     const [selectedCategory, setSelectedCategory] = useState(null);
@@ -165,7 +167,7 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
         return newArray;
     };
 
-    const applyFilterAndShuffle = () => {
+    const filteredAndShuffled = useMemo(() => {
         let filtered = [];
 
         if (selectedCategory && selectedSuperCategory) {
@@ -196,21 +198,24 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
         }
 
         const shuffled = shuffleArray(filtered);
-        setDeck(shuffled);
+        return shuffled;
+    }, [flashcards, selectedCategory, selectedSuperCategory, learningFilter]);
 
-        // Wyciągamy z potasowanej talii do twoCards
-        if (shuffled.length >= 2) {
-            const [first, second, ...rest] = shuffled;
+    const applyFilterAndShuffle = useCallback(() => {
+        if (filteredAndShuffled.length >= 2) {
+            const [first, second, ...rest] = filteredAndShuffled;
             setTwoCards([first, second]);
             setDeck(rest);
-        } else if (shuffled.length === 1) {
-            setTwoCards([shuffled[0]]);
+        } else if (filteredAndShuffled.length === 1) {
+            setTwoCards([filteredAndShuffled[0]]);
             setDeck([]);
         } else {
             setTwoCards([]);
             setDeck([]);
         }
-    };
+
+        setCheckedCards(new Set());
+    }, [filteredAndShuffled]);
 
     useEffect(() => {
         if (selectedCategory !== null || selectedSuperCategory !== null) {
@@ -324,37 +329,37 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
         return filtered.length;
     };
 
-    const hasLearningCards = flashcards.some((fc) => {
-        if (selectedCategory && selectedSuperCategory) {
-            return (
-                fc.superCategory === selectedSuperCategory &&
-                fc.category === selectedCategory &&
-                fc.know !== true
-            );
-        }
-        if (selectedSuperCategory) {
-            return fc.superCategory === selectedSuperCategory && fc.know !== true;
-        }
-        if (selectedCategory === 'All') {
-            return fc.know !== true;
-        }
-        if (selectedCategory === 'Without category') {
-            return (
-                (!fc.category || fc.category.trim() === '') &&
-                !fc.superCategory &&
-                fc.know !== true
-            );
-        }
-        if (selectedCategory) {
-            const isSuperCategory = flashcards.some((f) => f.superCategory === selectedCategory);
-            if (isSuperCategory) {
-                return fc.superCategory === selectedCategory && fc.know !== true;
-            } else {
-                return fc.category === selectedCategory && !fc.superCategory && fc.know !== true;
-            }
-        }
-        return false;
-    });
+    // const hasLearningCards = flashcards.some((fc) => {
+    //     if (selectedCategory && selectedSuperCategory) {
+    //         return (
+    //             fc.superCategory === selectedSuperCategory &&
+    //             fc.category === selectedCategory &&
+    //             fc.know !== true
+    //         );
+    //     }
+    //     if (selectedSuperCategory) {
+    //         return fc.superCategory === selectedSuperCategory && fc.know !== true;
+    //     }
+    //     if (selectedCategory === 'All') {
+    //         return fc.know !== true;
+    //     }
+    //     if (selectedCategory === 'Without category') {
+    //         return (
+    //             (!fc.category || fc.category.trim() === '') &&
+    //             !fc.superCategory &&
+    //             fc.know !== true
+    //         );
+    //     }
+    //     if (selectedCategory) {
+    //         const isSuperCategory = flashcards.some((f) => f.superCategory === selectedCategory);
+    //         if (isSuperCategory) {
+    //             return fc.superCategory === selectedCategory && fc.know !== true;
+    //         } else {
+    //             return fc.category === selectedCategory && !fc.superCategory && fc.know !== true;
+    //         }
+    //     }
+    //     return false;
+    // });
 
     const removeBottomCardFromUI = (id) => {
         setTwoCards((prevTwo) => {
@@ -481,20 +486,6 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
         setReversFrontBack((prev) => !prev);
     };
 
-    // const CardFrontOrBack = ({ card, cardLang }) => {
-    //     return (
-    //         <div className="o-list-flashcards__text o-list-flashcards__front o-default-box">
-    //             <p role="button" onClick={() => handleSpeak(card, cardLang)}>
-    //                 <span className="o-list-flashcards__lang">
-    //                     <span className="o-list-flashcards__lang-code">{cardLang}</span>
-    //                     <i className="icon-volume"></i>
-    //                 </span>
-    //                 {card}
-    //             </p>
-    //         </div>
-    //     );
-    // };
-
     const CardFrontOrBack = React.memo(({ card, cardLang }) => {
         return (
             <div className="o-list-flashcards__text o-list-flashcards__front o-default-box">
@@ -608,7 +599,7 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
         // Dopóki mamy lekcje w lessonsList...
         while (nextIndex < lessonsList.length) {
             const nextLesson = lessonsList[nextIndex];
-            console.log('nextLesson:', nextLesson);
+            // console.log('nextLesson:', nextLesson);
 
             // Sprawdzamy w bazie, czy nextLesson.category występuje jako superCategory
             const isSubcategoryInDB = flashcards.some(
@@ -657,7 +648,7 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
 
     const handleCloseQuickEdit = (cardId) => {
         setQuickEdit((prev) => {
-            const newState = { ...prev };
+            const newState = {...prev};
             delete newState[cardId];
             return newState;
         });
@@ -665,9 +656,9 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
 
     const handleQuickEditChange = (cardId, field, value) => {
         setQuickEdit((prev) => {
-            const newState = { ...prev };
+            const newState = {...prev};
             if (!newState[cardId]) {
-                newState[cardId] = { isEditing: true, front: '', back: '' };
+                newState[cardId] = {isEditing: true, front: '', back: ''};
             }
             newState[cardId][field] = value;
             return newState;
@@ -675,7 +666,7 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
     };
 
     const handleSaveQuickEdit = async (card) => {
-        const { front, back } = quickEdit[card.id];
+        const {front, back} = quickEdit[card.id];
         try {
             await editFlashcardInDB(
                 card.id,
@@ -693,10 +684,10 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
             }
 
             setTwoCards((prevTwoCards) =>
-                prevTwoCards.map((c) => (c.id === card.id ? { ...c, front, back } : c))
+                prevTwoCards.map((c) => (c.id === card.id ? {...c, front, back} : c))
             );
             setDeck((prevDeck) =>
-                prevDeck.map((c) => (c.id === card.id ? { ...c, front, back } : c))
+                prevDeck.map((c) => (c.id === card.id ? {...c, front, back} : c))
             );
 
             handleCloseQuickEdit(card.id);
@@ -736,21 +727,21 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
 
         const processNext = async () => {
             if (isAutoPlayCancelledRef.current || !autoPlayRunningRef.current) {
-                console.log('Auto-play zatrzymany.');
+                // console.log('Auto-play zatrzymany.');
                 return;
             }
 
             if (twoCardsRef.current.length === 0) {
-                console.log('Brak kart do przetworzenia.');
+                // console.log('Brak kart do przetworzenia.');
                 setPlayFlashcards(false);
                 return;
             }
 
             const currentCard = twoCardsRef.current[twoCardsRef.current.length - 1];
 
-            console.log("Przetwarzanie karty:", currentCard);
+            // console.log("Przetwarzanie karty:", currentCard);
             currentCardRef.current = currentCard.id;
-            console.log(`Przetwarzanie karty: ${currentCard.id}`);
+            // console.log(`Przetwarzanie karty: ${currentCard.id}`);
 
             try {
                 // 1) Odczyt pierwszej strony (front/back - zależy od rewers)
@@ -758,13 +749,13 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
                 const firstSideLang = reversFrontBack ? currentCard.langBack : currentCard.langFront;
 
                 if (syntAudioRef.current) {
-                    console.log(`Odczyt pierwszej strony karty: ${currentCard.id}`);
+                    // console.log(`Odczyt pierwszej strony karty: ${currentCard.id}`);
                     await speakText(firstSideText, firstSideLang);
                     if (isAutoPlayCancelledRef.current) return;
                 }
 
                 // **Dodanie opóźnienia 1 sekundy przed odsłonięciem drugiej strony**
-                console.log(`Czekanie 1 sekundy przed odsłonięciem drugiej strony karty: ${currentCard.id}`);
+                // console.log(`Czekanie 1 sekundy przed odsłonięciem drugiej strony karty: ${currentCard.id}`);
                 await new Promise((resolve) => {
                     autoPlayTimeoutRef.current = setTimeout(resolve, 1000);
                 });
@@ -772,19 +763,19 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
 
                 // 2) Symulujemy kliknięcie "Check" -> pokazuje drugą stronę
                 setCheckedCards((prev) => new Set(prev).add(currentCard.id));
-                console.log(`Sprawdzenie karty: ${currentCard.id}`);
+                // console.log(`Sprawdzenie karty: ${currentCard.id}`);
 
                 // 3) Odczyt drugiej strony
                 if (syntAudioRef.current) {
                     const secondSideText = reversFrontBack ? currentCard.front : currentCard.back;
                     const secondSideLang = reversFrontBack ? currentCard.langFront : currentCard.langBack;
-                    console.log(`Odczyt drugiej strony karty: ${currentCard.id}`);
+                    // console.log(`Odczyt drugiej strony karty: ${currentCard.id}`);
                     await speakText(secondSideText, secondSideLang);
                     if (isAutoPlayCancelledRef.current) return;
                 }
 
                 // 4) Czekamy 1 sekundę (możesz dostosować czas jeśli potrzebujesz)
-                console.log(`Czekanie 1 sekundy na kartę: ${currentCard.id}`);
+                // console.log(`Czekanie 1 sekundy na kartę: ${currentCard.id}`);
                 await new Promise((resolve) => {
                     autoPlayTimeoutRef.current = setTimeout(resolve, 1000);
                     console.log("Waiting 1 second");
@@ -793,22 +784,22 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
 
                 // 5) Automatyczny "still learning" lub "got it" – zależy czy card.know jest true
                 if (currentCard.know === true) {
-                    console.log(`Automatyczne oznaczenie "Got it" dla karty: ${currentCard.id}`);
-                    setAnimatingCards((prev) => ({ ...prev, [currentCard.id]: 'animateRight' }));  // "Got it"
+                    // console.log(`Automatyczne oznaczenie "Got it" dla karty: ${currentCard.id}`);
+                    setAnimatingCards((prev) => ({...prev, [currentCard.id]: 'animateRight'}));  // "Got it"
                 } else {
-                    console.log(`Automatyczne oznaczenie "Still learning" dla karty: ${currentCard.id}`);
-                    setAnimatingCards((prev) => ({ ...prev, [currentCard.id]: 'animateLeft' }));   // "Still learning"
+                    // console.log(`Automatyczne oznaczenie "Still learning" dla karty: ${currentCard.id}`);
+                    setAnimatingCards((prev) => ({...prev, [currentCard.id]: 'animateLeft'}));   // "Still learning"
                 }
 
                 // 6) Czekamy na zakończenie animacji
-                console.log(`Czekanie na zakończenie animacji dla karty: ${currentCard.id}`);
+                // console.log(`Czekanie na zakończenie animacji dla karty: ${currentCard.id}`);
                 await new Promise((resolve) => {
                     autoPlayTimeoutRef.current = setTimeout(resolve, 900);
                 });
                 if (isAutoPlayCancelledRef.current) return;
 
                 // 7) Usuwamy kartę i przechodzimy do następnej
-                console.log(`Usuwanie karty: ${currentCard.id}`);
+                // console.log(`Usuwanie karty: ${currentCard.id}`);
                 if (currentCard.know === true) {
                     knowIt(currentCard.id);
                 } else {
@@ -818,7 +809,7 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
                 // 8) Kontynuujemy auto-play po krótkim opóźnieniu, aby pozwolić React na aktualizację stanu
                 setTimeout(() => {
                     processNext();
-                    console.log("Przechodzenie do następnej karty...");
+                    // console.log("Przechodzenie do następnej karty...");
                 }, 600);
             } catch (error) {
                 console.error('Błąd w auto-play:', error);
@@ -857,177 +848,33 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
 
     return (
         <div className="o-page-view-flashcards">
-            <div className="o-page-view-flashcards__header">
-                {(selectedCategory !== null || selectedSuperCategory !== null) &&
-                getFilteredFlashcardCount('all') > 0 ? (
-                    <>
-                        <h2
-                            className={`o-page-view-flashcards__title ${
-                                whiteSpaceNowrap ? 'white-space-nowrap' : ''
-                            }`}
-                        >
-                            <button
-                                type="button"
-                                className="o-page-view-flashcards__title-categories"
-                                onClick={handleMainHomePageLoad}
-                            >
-                                {t('categories')}
-                            </button>
-                            {' / '}
-                            <span
-                                onClick={() => setWhiteSpaceNowrap((prev) => !prev)}
-                            >
-                                {selectedSuperCategory ? `${selectedSuperCategory} / ` : ''}
+            <SubNavigation
+                selectedCategory={selectedCategory}
+                selectedSuperCategory={selectedSuperCategory}
+                getFilteredFlashcardCount={getFilteredFlashcardCount}
+                handleMainHomePageLoad={handleMainHomePageLoad}
+                flashcards={flashcards}
+                learningFilter={learningFilter}
+                setLearningFilter={setLearningFilter}
+                setCheckedCards={setCheckedCards}
+                applyFilterAndShuffle={applyFilterAndShuffle}
+                playFlashcards={playFlashcards}
+                deck={deck}
+                twoCards={twoCards}
+                handlePlayFlashcards={handlePlayFlashcards}
+                reversFrontBack={reversFrontBack}
+                reversCards={reversCards}
+            />
 
-                                {selectedSuperCategory && !selectedCategory
-                                    ? t('all')
-                                    : (selectedCategory === 'All')
-                                        ? t('all')
-                                        : selectedCategory === 'Without category'
-                                            ? t('without_category')
-                                            : selectedCategory}
-
-                                {' ('}
-                                {
-                                    selectedSuperCategory !== null
-                                        ? (selectedCategory === null || selectedCategory === 'All'
-                                            ? flashcards.filter(fc => fc.superCategory === selectedSuperCategory).length
-                                            : flashcards.filter(fc =>
-                                                fc.superCategory === selectedSuperCategory &&
-                                                fc.category === selectedCategory
-                                            ).length)
-                                        : selectedCategory === 'All'
-                                            ? flashcards.length
-                                            : selectedCategory === 'Without category'
-                                                ? flashcards.filter(
-                                                    (fc) =>
-                                                        (!fc.category || fc.category.trim() === '') &&
-                                                        !fc.superCategory
-                                                ).length
-                                                : flashcards.filter(
-                                                    (fc) => fc.category === selectedCategory && !fc.superCategory
-                                                ).length
-                                }
-                                {')'}
-                            </span>
-                        </h2>
-                        <hr/>
-                        <ul className="o-page-view-flashcards__tools o-list-buttons-clear o-list-buttons-clear--nowrap o-default-box">
-                            <li>
-                                <button
-                                    className={`btn--icon w-100 ${
-                                        learningFilter === 'all' ? 'btn--active' : ''
-                                    }`}
-                                    onClick={() => {
-                                        setLearningFilter('all');
-                                        setCheckedCards(new Set());
-                                        applyFilterAndShuffle();
-                                    }}
-                                    disabled={playFlashcards ? 'disabled' : ''}
-                                >
-                                    <i className="icon-single-card"></i>
-                                    <span>{t('review')}</span>
-                                    <sup>
-                                        {learningFilter === 'all'
-                                            ? deck.length + twoCards.length
-                                            : getFilteredFlashcardCount('all')}
-                                    </sup>
-                                </button>
-                            </li>
-                            {hasLearningCards && (
-                                <li>
-                                    <button
-                                        className={`btn--icon w-100 ${
-                                            learningFilter === 'learningOnly' ? 'btn--active' : ''
-                                        }`}
-                                        onClick={() => {
-                                            setLearningFilter('learningOnly');
-                                            setCheckedCards(new Set());
-                                            applyFilterAndShuffle();
-                                        }}
-                                        disabled={playFlashcards ? 'disabled' : '' }
-                                    >
-                                        <i className="icon-graduation-cap"></i> <span>{t('study')}</span>
-                                        <sub>{getFilteredFlashcardCount('learningOnly')}{!(learningFilter === 'all') ? `/${deck.length + twoCards.length}` : ''}</sub>
-                                        <sup>
-                                            {Math.ceil(
-                                                ((getFilteredFlashcardCount('all') -
-                                                        getFilteredFlashcardCount('learningOnly')) *
-                                                    100) /
-                                                getFilteredFlashcardCount('all')
-                                            )}
-                                            %
-                                        </sup>
-                                    </button>
-                                </li>
-                            )}
-                            {!(learningFilter && twoCards.length === 0 && deck.length === 0) && (
-                                <>
-                                    <li>
-                                        <button
-                                            className={`btn--icon w-100 ${playFlashcards ? 'btn--active' : ''}`}
-                                            aria-label="Play/Pause"
-                                            onClick={handlePlayFlashcards}
-                                        >
-                                            <i className={playFlashcards ? 'icon-pause' : 'icon-play'}></i>
-                                            {/*<span>{playFlashcards ? t('pause') : t('play')}</span>*/}
-                                        </button>
-                                    </li>
-                                    <li>
-                                        <button
-                                            aria-label="Revers"
-                                            className={`btn-revers btn--icon w-100 ${
-                                                reversFrontBack ? 'btn-revers--active btn--active' : ''
-                                            }`}
-                                            onClick={reversCards}
-                                            disabled={playFlashcards ? 'disabled' : ''}
-                                        >
-                                            <i className="icon-switch"></i>
-                                            <span>{t('revers')}</span>
-                                            <sup>{reversFrontBack ? 'On' : 'Off'}</sup>
-                                        </button>
-                                    </li>
-                                </>
-                            )}
-                        </ul>
-                    </>
-                ) : null}
-            </div>
-
-            {showCompleteMessage && (
-                <div className="o-complete-message">
-                    <p>{t('viewed_all_flashcards')}</p>
-                    <ul className="o-list-buttons-clear">
-                        <li className="w-100">
-                            <button
-                                className="btn--blue w-100"
-                                onClick={() => {
-                                    setShowCompleteMessage(false);
-                                    applyFilterAndShuffle();
-                                }}
-                            >
-                                {t('review_again')}
-                            </button>
-                        </li>
-                        {getFilteredFlashcardCount('learningOnly') > 0 && (
-                            <li className="w-100">
-                                <button className="btn--red w-100"
-                                    onClick={() => {
-                                        setLearningFilter('learningOnly');
-                                        setCheckedCards(new Set());
-                                        applyFilterAndShuffle();
-                                    }}
-                                >
-                                    {t('review_only_the_ones_you_didnt_know')}
-                                </button>
-                            </li>
-                        )}
-                        <li className="w-100">
-                            <button className="btn--green w-100" onClick={handleNextLesson}>{t('next_lesson')}</button>
-                        </li>
-                    </ul>
-                </div>
-            )}
+            <SuggestionsAfterLesson
+                showCompleteMessage={showCompleteMessage}
+                setShowCompleteMessage={setShowCompleteMessage}
+                applyFilterAndShuffle={applyFilterAndShuffle}
+                getFilteredFlashcardCount={getFilteredFlashcardCount}
+                setLearningFilter={setLearningFilter}
+                setCheckedCards={setCheckedCards}
+                handleNextLesson={handleNextLesson}
+            />
 
             {selectedCategory !== null || selectedSuperCategory !== null ? (
                 learningFilter && (
@@ -1075,7 +922,6 @@ function ViewFlashcards({ clearInsomnia, loadData, flashcards, categories, setFl
                                 <AnimatePresence>
                                     {twoCards.map((card) => (
                                         <motion.li
-                                            // layoutId={card.id}
                                             className={`o-list-flashcards__single-card`}
                                             key={card.id}
                                             drag="x"

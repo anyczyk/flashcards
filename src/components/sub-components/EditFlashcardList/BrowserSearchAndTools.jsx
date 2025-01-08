@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import useWcagModal from '../../hooks/useWcagModal';
+import useWcagModal from '../../../hooks/useWcagModal';
 
 const BrowserSearchAndTools = ({selectAll, deselectAll, removeSelectedCards, copySelectedCards, handleExport, filteredFlashcards, selectedCards, showStillLearning, setShowStillLearning}) => {
     const { t, i18n } = useTranslation(); // Hook translation

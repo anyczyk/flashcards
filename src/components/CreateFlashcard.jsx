@@ -3,7 +3,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { getCordovaLanguage } from '../utils/getLanguage';
 import { loadLanguages } from '../utils/loadLanguages';
-import SelectCodeLanguages from './sub-components/SelectCodeLanguages';
+import SelectCodeLanguages from './sub-components/common/SelectCodeLanguages';
 import { useTranslation } from 'react-i18next';
 import { getAllFlashcards } from '../db';
 
