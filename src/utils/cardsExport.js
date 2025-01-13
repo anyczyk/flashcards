@@ -17,45 +17,45 @@ const cardsExport = async (dataToExport) => {
 
                     fileWriter.onwriteend = async () => {
                         const filePath = fileEntry.nativeURL;
-                        console.log("Plik zapisany w:", filePath);
+                        console.log("File saved at:", filePath);
 
                         if (window.plugins && window.plugins.socialsharing) {
                             window.plugins.socialsharing.share(
-                                'Eksportowane dane',
-                                'Eksportowane dane',
+                                'Exported data',
+                                'Exported data',
                                 filePath,
                                 null,
                                 () => {
-                                    alert("Plik został pomyślnie wyeksportowany i udostępniony.");
+                                    alert("The file has been successfully exported and shared.");
                                 },
                                 (error) => {
-                                    console.error("Udostępnianie nie powiodło się:", error);
-                                    alert("Nie udało się udostępnić pliku: " + error);
+                                    console.error("Sharing failed:", error);
+                                    alert("Could not share file: " + error);
                                 }
                             );
                         } else {
-                            alert("Brak wtyczki SocialSharing.");
+                            alert("Missing SocialSharing plugin.");
                         }
                     };
 
                     fileWriter.onerror = (e) => {
-                        console.error("Zapis pliku nie powiódł się:", e);
-                        alert("Nie udało się zapisać pliku: " + e.toString());
+                        console.error("File save failed:", e);
+                        alert("Could not save file: " + e.toString());
                     };
 
                     fileWriter.write(blob);
                 } catch (error) {
-                    console.error("Błąd podczas operacji na plikach:", error);
-                    alert("Wystąpił błąd podczas eksportu pliku.");
+                    console.error("Error during file operations:", error);
+                    alert("An error occurred while exporting the file.");
                 }
             }, (error) => {
-                console.error("Błąd podczas rozwiązywania systemu plików:", error);
-                alert("Błąd podczas rozwiązywania systemu plików: " + error.toString());
+                console.error("Error resolving file system:", error);
+                alert("An error occurred while resolving the file system: " + error.toString());
             });
 
         } catch (error) {
-            console.error("Eksport nie powiódł się: ", error);
-            alert("Wystąpił błąd podczas eksportu.");
+            console.error("Export failed: ", error);
+            alert("An error occurred during export.");
         }
     } else { // Browser
         try {
@@ -72,8 +72,8 @@ const cardsExport = async (dataToExport) => {
 
             URL.revokeObjectURL(url);
         } catch (error) {
-            console.error("Eksport w przeglądarce nie powiódł się:", error);
-            alert("Wystąpił błąd podczas eksportu w przeglądarce.");
+            console.error("Browser export failed:", error);
+            alert("An error occurred during browser export.");
         }
     }
 };

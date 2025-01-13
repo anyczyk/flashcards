@@ -77,8 +77,6 @@ const CategoryList = ({
                 </span>
                             </button>
                         </li>
-
-                        {/* Przycisk do dodawania fiszek (brak superCategory) */}
                         <li className="o-button-add-flashcard">
                             <button
                                 onClick={() => navigate('/create?superCategory=')}
@@ -89,9 +87,7 @@ const CategoryList = ({
                             </button>
                         </li>
 
-                        {/* Lista kategorii głównych (bez superCategory) */}
                         {orderedCategories.map((cat, index) => {
-                            // Obliczamy liczbę fiszek i tych, które już są 'znane':
                             let count;
                             let knowCount;
                             if (cat === 'Without category') {
@@ -113,10 +109,8 @@ const CategoryList = ({
                                 ).length;
                             }
 
-                            // Sprawdzamy, czy istnieją fiszki, które mają superCategory == cat
                             const hasSubcategories = flashcards.some(fc => fc.superCategory === cat);
 
-                            // Jeżeli to nie jest superkategoria i kategoria jest pusta (count === 0), pomijamy renderowanie:
                             if (!hasSubcategories && count === 0) {
                                 return null;
                             }
@@ -125,7 +119,6 @@ const CategoryList = ({
                                 <li key={cat}>
                                     {hasSubcategories ? (
                                         <>
-                                            {/* Superkategoria (folder) */}
                                             {(() => {
                                                 const knowCountSuper = flashcards.filter(
                                                     fc => fc.know && fc.superCategory === cat
@@ -159,7 +152,6 @@ const CategoryList = ({
                                                 );
                                             })()}
 
-                                            {/* Jeśli folder otwarty, wyświetlamy subkategorie */}
                                             {activeSuperCategory === index && (
                                                 <ul className="o-list-categories o-list-categories--sub">
                                                     {[...new Set(
@@ -214,7 +206,6 @@ const CategoryList = ({
                                                         );
                                                     })}
 
-                                                    {/* Przycisk do uruchomienia wszystkich fiszek w superkategorii */}
                                                     <li>
                                                         {(() => {
                                                             const knowCountSuper = flashcards.filter(
@@ -259,7 +250,6 @@ const CategoryList = ({
                                             )}
                                         </>
                                     ) : (
-                                        // Kategoria zwykła (bez subkategorii) – renderuj tylko, jeśli count > 0
                                         count > 0 && (
                                             <>
                                                 <button

@@ -59,10 +59,7 @@ function EditFlashcardList({preloader, setPreloader}) {
         fetchLanguages();
     }, []);
 
-    // Ustawiamy kolejność kategorii (hooks)
     useOrderedCategories(categories, setOrderedCategories);
-
-    // Anulowanie edycji konkretnej fiszki
     const cancelEditing = () => {
         setEditMode(null);
         setEditFront('');
@@ -74,49 +71,37 @@ function EditFlashcardList({preloader, setPreloader}) {
         setEditSuperCategory('');
     };
 
-    // ***** Poprawiona logika filtrowania fiszek *****
     const filteredFlashcards = useMemo(() => {
         let filtered = [];
-
-        // 1. Mamy superCategory i wybraliśmy 'Without category'
-        //    => wyświetlamy fiszki, które mają superCategory
-        //       ORAZ nie mają category (lub jest pusta).
         if (selectedSuperCategory !== null && selectedCategory === 'Without category') {
             filtered = flashcards.filter(fc =>
                 fc.superCategory === selectedSuperCategory &&
                 (!fc.category || fc.category.trim() === '')
             );
         }
-        // 2. Mamy superCategory i mamy jakąś normalną category:
         else if (selectedSuperCategory !== null && selectedCategory !== null) {
             filtered = flashcards.filter(fc =>
                 fc.superCategory === selectedSuperCategory &&
                 fc.category === selectedCategory
             );
         }
-        // 3. Mamy tylko superCategory (bez wybranego category):
         else if (selectedSuperCategory !== null) {
             filtered = flashcards.filter(fc => fc.superCategory === selectedSuperCategory);
         }
-        // 4. Wybraliśmy "All"
         else if (selectedCategory === 'All') {
             filtered = [...flashcards];
         }
-        // 5. Wybraliśmy "Without category" (ale bez superCategory)
         else if (selectedCategory === 'Without category') {
             filtered = flashcards.filter(fc =>
                 (!fc.category || fc.category.trim() === '') && !fc.superCategory
             );
         }
-        // 6. Normalne zachowanie (bez superCategory) + normalna category
         else if (selectedCategory) {
             filtered = flashcards.filter(fc =>
                 fc.category === selectedCategory && !fc.superCategory
             );
         }
 
-        // Jeżeli jest włączony tryb "showStillLearning", to odfiltrowujemy
-        // (pozostawiamy tylko te, które NIE są jeszcze znane).
         if (showStillLearning) {
             filtered = filtered.filter(fc => !fc.know);
         }
@@ -124,10 +109,8 @@ function EditFlashcardList({preloader, setPreloader}) {
         return filtered;
     }, [selectedCategory, selectedSuperCategory, flashcards, showStillLearning]);
 
-    // Licznik przefiltrowanych fiszek
     const getFilteredFlashcardCount = filteredFlashcards.length;
 
-    // Anulowanie modala
     const cancelModal = () => {
         setNameNew('');
         setNameOld('');
@@ -141,7 +124,6 @@ function EditFlashcardList({preloader, setPreloader}) {
         setOpenModalEdit(false);
     };
 
-    // Powrót do listy kategorii głównych
     const backToEditlist = () => {
         setSelectedCategory(null);
         setSelectedSuperCategory(null);
@@ -169,7 +151,6 @@ function EditFlashcardList({preloader, setPreloader}) {
             </h2>
             <hr />
 
-            {/* Jeśli wybrano jakąś kategorię (czyli selectedCategory !== null) oraz w bazie są fiszki */}
             {(!(selectedCategory === null) && !(flashcards.length < 1)) && (
                 <>
                     <p>
@@ -184,7 +165,6 @@ function EditFlashcardList({preloader, setPreloader}) {
                 </>
             )}
 
-            {/* Jeśli nie ma żadnych fiszek */}
             {(flashcards.length < 1) ? (
                 <div className="o-no-flashcards">
                     <p>{t('no_flashcards')}</p>
@@ -203,7 +183,6 @@ function EditFlashcardList({preloader, setPreloader}) {
                 </div>
             ) : (
                 <>
-                    {/* Jeśli nie wybrano kategorii, wyświetlamy listę kategorii (CategoryListDragDrop) */}
                     {(selectedCategory === null) ? (
                         <>
                             <ul className="o-list-buttons-clear o-list-buttons-clear--nowrap-columns o-default-box">
@@ -251,7 +230,6 @@ function EditFlashcardList({preloader, setPreloader}) {
                         </>
                     ) : ''}
 
-                    {/* Modal do edycji globalnej (np. zmiana nazwy kategorii, usuwanie wielu fiszek itp.) */}
                     {openModalEdit && (
                         <ModalEdit
                             setNameNew={setNameNew}
@@ -272,11 +250,8 @@ function EditFlashcardList({preloader, setPreloader}) {
                             setEditSuperCategory={setEditSuperCategory}
                         />
                     )}
-
-                    {/* Jeśli wybraliśmy konkretną kategorię, pokazujemy narzędzia + listę fiszek do edycji */}
                     {selectedCategory !== null && (
                         <>
-                            {/* Panel z wyszukiwarką i narzędziami: */}
                             {(filteredFlashcards.length > 0 || selectedCards.length > 0) && (
                                 <BrowserSearchAndTools
                                     setSelectedCards={setSelectedCards}
@@ -290,7 +265,6 @@ function EditFlashcardList({preloader, setPreloader}) {
                             )}
                             <hr />
 
-                            {/* Lista fiszek do edycji (jeśli po odfiltrowaniu mamy jakiekolwiek fiszki) */}
                             {filteredFlashcards.length > 0 && (
                                 <FlashCardListEdit
                                     setSelectedCards={setSelectedCards}

@@ -5,7 +5,6 @@ import { getAllFlashcards } from '../db';
 import cardsExport from '../utils/cardsExport';
 import { useTranslation } from 'react-i18next';
 import { FlashcardContext } from '../context/FlashcardContext';
-import {getLocalStorage} from "../utils/storage";
 import {importAdd, importReplace} from "../utils/import";
 import FilesListImportFree from "./sub-components/common/FilesListImportFree";
 
@@ -70,13 +69,11 @@ function ImportExport({ handleImport }) {
                 {selectedFile && (
                     <ul className="o-list-buttons-clear">
                         <li>
-                            {/* Tutaj wprost przekazujemy selectedFile do funkcji */}
                             <button onClick={() => importReplace(loadData, selectedFile, setCurrentLocalStorageCategoryOrder, setImportSuccessMessage, fileInputRef.current, setSelectedFile)}>
                                 {t('import_replace')}
                             </button>
                         </li>
                         <li>
-                            {/* Tutaj wprost przekazujemy selectedFile do funkcji */}
                             <button onClick={() => importAdd(loadData, selectedFile, setCurrentLocalStorageCategoryOrder, setImportSuccessMessage, fileInputRef.current, setSelectedFile)}>
                                 {t('import_append')}
                             </button>

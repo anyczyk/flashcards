@@ -30,8 +30,6 @@ const FlashCards = ({
                         setDeck
                     }) => {
     const { t } = useTranslation();
-
-    // Stan dla kierunku przeciągania i animacji kart
     const [draggingDirection, setDraggingDirection] = useState({});
     const [openCardId, setOpenCardId] = useState(null);
     const [openCard, setOpenCard] = useState(null);
@@ -41,7 +39,6 @@ const FlashCards = ({
 
     useWcagModal(quickEdit, setQuickEdit, modalRef);
 
-    // Obsługa pauzy odtwarzania fiszek
     useEffect(() => {
         const handlePause = () => {
             if (playFlashcards) {
@@ -58,7 +55,6 @@ const FlashCards = ({
         };
     }, [playFlashcards, handlePlayFlashcards]);
 
-    // Funkcje związane z QuickEdit
     const handleOpenQuickEdit = useCallback((card) => {
         setCheckedCards(prev => new Set(prev).add(card.id));
         setQuickEdit(prev => ({
@@ -120,7 +116,7 @@ const FlashCards = ({
 
             handleCloseQuickEdit(card.id);
         } catch (error) {
-            console.error('Błąd przy zapisie karty:', error);
+            console.error('Error:', error);
         }
     }, [quickEdit, loadData, setTwoCards, setDeck, handleCloseQuickEdit]);
 
@@ -146,7 +142,6 @@ const FlashCards = ({
         }
     }, [setAnimatingCards]);
 
-    // Memoizacja wariantów animacji
     const variants = useMemo(() => ({
         animateLeft: {
             x: -650,
@@ -176,10 +171,8 @@ const FlashCards = ({
         },
     }), []);
 
-    // Memoizacja liczby filtrowanych fiszek
     const filteredFlashcardCount = useMemo(() => getFilteredFlashcardCount('learningOnly'), [getFilteredFlashcardCount]);
 
-    // Komponent do wyświetlania frontu lub tyłu karty
     const CardFrontOrBack = useCallback(({ card, cardLang }) => (
         <div className="o-list-flashcards__text o-list-flashcards__front o-default-box">
             <p role="button" onClick={() => handleSpeak(card, cardLang)}>

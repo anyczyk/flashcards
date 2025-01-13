@@ -8,7 +8,6 @@ const Footer = ({setMainHomePageLoad, clearOptions}) => {
 
     const [showScrollTop, setShowScrollTop] = useState(false);
 
-    // Funkcja obsługująca event scroll
     const handleScroll = () => {
         if (window.pageYOffset > 100) {
             setShowScrollTop(true);
@@ -17,7 +16,6 @@ const Footer = ({setMainHomePageLoad, clearOptions}) => {
         }
     };
 
-    // Dodanie i usunięcie nasłuchiwania na scroll
     useEffect(() => {
         window.addEventListener("scroll", handleScroll);
         return () => {

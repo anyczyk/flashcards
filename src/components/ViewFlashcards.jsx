@@ -30,19 +30,17 @@ function ViewFlashcards({clearInsomnia, mainHomePageLoad, setMainHomePageLoad}) 
 
     const isAutoPlayCancelledRef = useRef(false);
     const autoPlayTimeoutRef = useRef(null);
-    const autoPlayRunningRef = useRef(false); // Nowy ref do śledzenia, czy auto-play jest aktywny
+    const autoPlayRunningRef = useRef(false);
 
-    // Stan wybranej kategorii i superkategorii
     const [selectedCategory, setSelectedCategory] = useState(null);
     const [selectedSuperCategory, setSelectedSuperCategory] = useState(null);
     const [learningFilter, setLearningFilter] = useState(null);
 
-    // Talia kart i dwie karty na wierzchu
     const [deck, setDeck] = useState([]);
     const [twoCards, setTwoCards] = useState([]);
     const twoCardsRef = useRef([]);
 
-    const currentCardRef = useRef(null); // Ref do śledzenia aktualnej karty
+    const currentCardRef = useRef(null);
 
     useEffect(() => {
         if (!playFlashcards) {
@@ -50,7 +48,6 @@ function ViewFlashcards({clearInsomnia, mainHomePageLoad, setMainHomePageLoad}) 
         }
     }, [playFlashcards, clearInsomnia]);
 
-    // Synchronizacja twoCardsRef z twoCards
     useEffect(() => {
         twoCardsRef.current = twoCards;
     }, [twoCards]);
@@ -156,7 +153,6 @@ function ViewFlashcards({clearInsomnia, mainHomePageLoad, setMainHomePageLoad}) 
             currentCardRef.current = currentCard.id;
 
             try {
-                // 1) Odczyt pierwszej strony (front/back - zależy od rewers)
                 const firstSideText = reversFrontBack ? currentCard.back : currentCard.front;
                 const firstSideLang = reversFrontBack ? currentCard.langBack : currentCard.langFront;
 
@@ -255,12 +251,10 @@ function ViewFlashcards({clearInsomnia, mainHomePageLoad, setMainHomePageLoad}) 
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [selectedCategory, selectedSuperCategory, learningFilter]);
 
-    // Reset, gdy zmieniamy filtr/kategorię
     useEffect(() => {
         setCheckedCards(new Set());
     }, [learningFilter, selectedCategory, selectedSuperCategory]);
 
-    // Stop speaking przy większych zmianach
     useEffect(() => {
         stopSpeaking();
     }, [
@@ -285,7 +279,7 @@ function ViewFlashcards({clearInsomnia, mainHomePageLoad, setMainHomePageLoad}) 
     const lastSpokenCardIdRef = useRef(null);
     useEffect(() => {
         if (!syntAudio) return;
-        if (playFlashcards) return; // nie dublujemy odczytu w trybie auto-play
+        if (playFlashcards) return;
 
         if (twoCards.length > 0) {
             const topCard = twoCards[twoCards.length - 1];

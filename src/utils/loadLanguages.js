@@ -23,7 +23,6 @@ export const loadLanguages = () => {
                 }
             };
 
-            // Sprawdzenie, czy głosy są już załadowane
             if (window.speechSynthesis.getVoices().length !== 0) {
                 loadVoices();
             } else {

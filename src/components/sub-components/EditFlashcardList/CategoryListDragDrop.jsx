@@ -24,7 +24,7 @@ const CategoryListDragDrop = ({
                                   setToolsItemActive
                               }) => {
 
-    const { t } = useTranslation(); // Hook do tłumaczeń
+    const { t } = useTranslation();
     const {
         flashcards,
         orderedCategories,
@@ -33,16 +33,11 @@ const CategoryListDragDrop = ({
 
     const navigate = useNavigate();
 
-    // Stan określający indeks aktualnie otwartej superkategorii (folderu).
     const [activeSuperCategory, setActiveSuperCategory] = useState(null);
 
-    // PRZY PIERWSZYM RENDERZE wczytujemy z localStorage, jaka superkategoria była otwarta
-    // i ustawiamy activeSuperCategory, aby została automatycznie otwarta.
     useEffect(() => {
         const savedSuperCategoryName = localStorage.getItem('openDropdownSuperCategory');
         if (savedSuperCategoryName) {
-            // Sprawdzamy, czy w orderedCategories istnieje taki "cat"
-            // i pobieramy jego index:
             const foundIndex = orderedCategories.findIndex(cat => cat === savedSuperCategoryName);
             if (foundIndex !== -1) {
                 setActiveSuperCategory(foundIndex);
@@ -50,7 +45,6 @@ const CategoryListDragDrop = ({
         }
     }, [orderedCategories]);
 
-    // Funkcja wywoływana po zakończeniu "Drag & Drop"
     const handleOnDragEnd = (result) => {
         if (!result.destination) return;
 
@@ -62,23 +56,15 @@ const CategoryListDragDrop = ({
         localStorage.setItem('categoryOrder', JSON.stringify(reorderedCategories));
     };
 
-    // Funkcja otwierająca/zamykająca superkategorię (folder).
     const handleActiveSuperCategory = (index) => {
-        // Jeżeli klikamy już otwartą superkategorię, to ją zamykamy (ustawiamy null),
-        // w przeciwnym razie otwieramy tę nową:
         setActiveSuperCategory(activeSuperCategory === index ? null : index);
-
-        // Zapisanie do localStorage nazwy superkategorii (lub pustej, jeśli zamykamy):
         const catName = orderedCategories[index];
         if (activeSuperCategory === index) {
-            // Była już otwarta, więc ją zamykamy:
             localStorage.setItem('openDropdownSuperCategory', '');
         } else {
             localStorage.setItem('openDropdownSuperCategory', catName);
         }
     };
-
-    // Przycisk do otwierania modala z edycją
     const ButtonOpenModalMainList = ({
                                          classes,
                                          aNameType,
@@ -116,7 +102,6 @@ const CategoryListDragDrop = ({
                         {...provided.droppableProps}
                         ref={provided.innerRef}
                     >
-                        {/* Przyciski dodawania fiszek (globalnie, na górze listy) */}
                         <li className="o-button-add-flashcard">
                             <button
                                 onClick={() => navigate('/create?superCategory=')}
@@ -127,17 +112,13 @@ const CategoryListDragDrop = ({
                             </button>
                         </li>
 
-                        {/* Renderowanie poszczególnych kategorii z orderedCategories */}
                         {orderedCategories.map((cat, index) => {
-                            // Czy jest to "super-kategoria" (czyli czy istnieją fiszki z superCategory == cat)?
                             const hasSubCategories = flashcards.some(fc => fc.superCategory === cat);
 
-                            // Liczba fiszek w danej kategorii (bez superCategory):
                             let count;
                             let knowCount;
 
                             if (cat === 'Without category') {
-                                // Fiszki całkowicie bez kategorii i bez superCategory:
                                 count = flashcards.filter(fc =>
                                     (!fc.category || fc.category.trim() === '') && !fc.superCategory
                                 ).length;
@@ -147,7 +128,6 @@ const CategoryListDragDrop = ({
                                     fc.know
                                 ).length;
                             } else {
-                                // Fiszki z category == cat, ale bez superCategory:
                                 count = flashcards.filter(fc =>
                                     fc.category === cat && !fc.superCategory
                                 ).length;
@@ -158,11 +138,6 @@ const CategoryListDragDrop = ({
                                 ).length;
                             }
 
-                            // *** POPRAWKA ***
-                            // Jeśli dana kategoria:
-                            //  - nie jest superkategorią (hasSubCategories === false)
-                            //  - i nie ma żadnych fiszek (count === 0)
-                            // => pomijamy renderowanie tej pozycji (zwracamy null).
                             if (!hasSubCategories && count === 0) {
                                 return null;
                             }
@@ -175,7 +150,6 @@ const CategoryListDragDrop = ({
                                             ref={provided.innerRef}
                                             {...provided.draggableProps}
                                             {...provided.dragHandleProps}
-                                            // Jeśli brak podkategorii, to wyświetlamy przyciski w jednej linii:
                                             className={!hasSubCategories ? 'd-flex gap-1' : ''}
                                         >
                                             {hasSubCategories ? (
@@ -193,7 +167,6 @@ const CategoryListDragDrop = ({
                                                             index={index}
                                                         />
 
-                                                        {/* Wyliczenie stanu wiedzy dla wszystkich fiszek w superkategorii */}
                                                         {(() => {
                                                             const knowCountSuper = flashcards.filter(
                                                                 fc => fc.know && fc.superCategory === cat
@@ -246,7 +219,6 @@ const CategoryListDragDrop = ({
                                                         })()}
                                                     </div>
 
-                                                    {/* Podlista kategorii wewnątrz superkategorii (jeśli folder otwarty) */}
                                                     {activeSuperCategory === index && (
                                                         <ul className="o-list-categories">
                                                             {flashcards
@@ -356,7 +328,6 @@ const CategoryListDragDrop = ({
                                                     )}
                                                 </>
                                             ) : (
-                                                // Jeśli NIE ma subkategorii, to wyświetlamy kategorię w głównej liście (tylko gdy count > 0).
                                                 <>
                                                     <ButtonOpenModalMainList
                                                         classes={''}

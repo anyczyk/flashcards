@@ -3,14 +3,14 @@ import { openDB } from 'idb';
 
 const DB_NAME = 'flashcardsDB';
 const STORE_NAME = 'flashcards';
-const DB_VERSION = 18; // Zwiększona wersja dla migracji
+const DB_VERSION = 18;
 
-let uniqueCounter = 0; // Globalny licznik dla ID
+let uniqueCounter = 0;
 
 function generateSequentialID() {
     const now = Date.now();
     uniqueCounter++;
-    return `${now}-${uniqueCounter}`; // Unikalny identyfikator na podstawie czasu i licznika
+    return `${now}-${uniqueCounter}`;
 }
 
 export async function initDB() {
@@ -97,7 +97,7 @@ export async function addMultipleFlashcardsToDB(flashcards) {
     const tx = db.transaction(STORE_NAME, 'readwrite');
     const store = tx.store;
 
-    let localCounter = 0; // Lokalny licznik dla ID
+    let localCounter = 0;
     for (const fc of flashcards) {
         localCounter++;
         const id = `${Date.now()}-${localCounter}`;

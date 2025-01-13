@@ -38,7 +38,6 @@ const FlashCardListEdit = ({
     const [currentSelectSuperCategory, setCurrentSelectSuperCategory] = useState('');
     const [categoriesDependentOnSuperCategory, setCategoriesDependentOnSuperCategory] = useState([]);
 
-    // Ładowanie listy kategorii zależnych od aktualnie wybranej superkategorii:
     const loadDataSelectors = useCallback(async () => {
         const data = await getAllFlashcards();
 
@@ -63,7 +62,6 @@ const FlashCardListEdit = ({
         loadDataSelectors();
     }, [loadDataSelectors]);
 
-    // Zaznaczanie/odznaczanie pojedynczej fiszki:
     const toggleSelectCard = (cardId) => {
         setSelectedCards(prev => {
             if (prev.includes(cardId)) {
@@ -74,7 +72,6 @@ const FlashCardListEdit = ({
         });
     };
 
-    // Pokazywanie/zamykanie modala potwierdzającego usunięcie konkretnej fiszki:
     const showModalConfirmRemove = (id) => {
         setVisibleModalSingle((prevState) => ({
             ...prevState,
@@ -82,7 +79,6 @@ const FlashCardListEdit = ({
         }));
     };
 
-    // Zatwierdzenie edycji pojedynczej fiszki:
     const submitEdit = (id) => {
         if (editFront.trim() && editBack.trim()) {
             const finalKnow = editKnow ? true : undefined;
@@ -100,7 +96,6 @@ const FlashCardListEdit = ({
         }
     };
 
-    // Rozpoczęcie edycji - ustawiamy stany na dane wybranej fiszki:
     const startEditing = (card) => {
         setEditMode(card.id);
         setEditFront(card.front);
@@ -116,7 +111,6 @@ const FlashCardListEdit = ({
     return (
         <ul
             onClick={(e) => {
-                // Jeżeli mamy włączone edytowanie (editMode) i klikniemy poza aktywną kartą:
                 if (editMode && !e.target.closest('.o-card--active')) {
                     cancelEditing();
                 }
@@ -149,13 +143,8 @@ const FlashCardListEdit = ({
                                                     <button
                                                         className="btn--red"
                                                         onClick={() => {
-                                                            // 1) usuwamy fiszkę z bazy:
                                                             removeFlashcard(card.id);
-
-                                                            // 2) usuwamy ID tej fiszki z `selectedCards`, jeśli było zaznaczone:
                                                             setSelectedCards(prev => prev.filter(selId => selId !== card.id));
-
-                                                            // 3) chowamy modal potwierdzenia:
                                                             showModalConfirmRemove(index);
                                                         }}
                                                     >

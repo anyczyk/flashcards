@@ -36,17 +36,9 @@ const ModalEdit = ({
     } = useContext(FlashcardContext);
 
     const modalRef = useRef(null);
-
-    // Stan do kontrolowania aktualnie wybranej superkategorii (do SelectSuperCategory).
     const [currentSelectSuperCategory, setCurrentSelectSuperCategory] = useState('');
-
-    // Kategorie zależne od aktualnie wybranej superkategorii.
     const [categoriesDependentOnSuperCategory, setCategoriesDependentOnSuperCategory] = useState([]);
 
-    /**
-     * Ładujemy dane z bazy, aby ustalić listę kategorii pasujących do
-     * aktualnie wybranej superkategorii (nameNewSuperCategory lub currentSelectSuperCategory).
-     */
     const loadDataSelectors = useCallback(async () => {
         const data = await getAllFlashcards();
         let relevantData;
@@ -56,7 +48,6 @@ const ModalEdit = ({
                 fc.category && fc.category.trim() !== '' && fc.superCategory === nameNewSuperCategory
             );
         } else {
-            // Jeżeli wciąż nie mamy nameNewSuperCategory, bierzemy backupowo currentSelectSuperCategory.
             relevantData = data.filter(fc =>
                 fc.category && fc.category.trim() !== '' && fc.superCategory === currentSelectSuperCategory
             );
@@ -70,32 +61,6 @@ const ModalEdit = ({
         loadDataSelectors();
     }, [loadDataSelectors]);
 
-    /**
-     * WAŻNE: usuwamy (lub mocno ograniczamy) poprzedni efekt,
-     * który zawsze pobierał superCategory z localStorage,
-     * jeżeli nameNewSuperCategory było puste.
-     * Dzięki temu możemy teraz swobodnie wymazać całkowicie superCategory w inpucie.
-     *
-     * Jeśli potrzebujesz wczytywać localStorage tylko raz, np. wyłącznie przy
-     * pierwszym otwarciu modala, możesz warunkowo dodać go tutaj, ale TYLKO w momencie
-     * gdy user jeszcze nic ręcznie nie wpisał. W najprostszym wariancie – całkiem usuwamy.
-     */
-    // useEffect(() => {
-    //     if (openModalEdit) {
-    //         const savedSuperCategory = localStorage.getItem('openDropdownSuperCategory');
-    //         if (savedSuperCategory && nameNewSuperCategory.trim() === '') {
-    //             setNameNewSuperCategory(savedSuperCategory);
-    //             setCurrentSelectSuperCategory(savedSuperCategory);
-    //         }
-    //     }
-    // }, [openModalEdit, nameNewSuperCategory, setNameNewSuperCategory]);
-
-    /**
-     * Gdy user wpisze nową superCategory (niepustą), zapisujemy ją w localStorage,
-     * żeby np. po zamknięciu i ponownym otwarciu listy pamiętać, jaki folder był aktywny.
-     * Ale jeżeli ją skasuje (będzie pusta), to nie nadpisujemy localStorage,
-     * przez co user może mieć wreszcie pole całkowicie wyczyszczone.
-     */
     useEffect(() => {
         if (nameNewSuperCategory.trim() !== '') {
             localStorage.setItem('openDropdownSuperCategory', nameNewSuperCategory);
@@ -266,7 +231,6 @@ const ModalEdit = ({
         }
     };
 
-    // Obsługa dostępności (ESC, FocusTrap, itp.)
     useWcagModal(openModalEdit, cancelModal, modalRef);
 
     return (

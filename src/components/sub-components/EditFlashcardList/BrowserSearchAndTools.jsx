@@ -28,15 +28,10 @@ const BrowserSearchAndTools = ({
     const modalRef = useRef(null);
     const [visibleModalAll, setVisibleModalAll] = useState(null);
 
-    // --- START: Obliczanie, czy wszystkie widoczne fiszki są zaznaczone ---
-    // Jeśli liczba zaznaczonych kart jest równa liczbie wszystkich kart (i nie jest 0),
-    // to przycisk "Select All" ma otrzymać klasę .btn--active
     const areAllSelected =
         selectedCards.length > 0 &&
         selectedCards.length === filteredFlashcards.length;
-    // --- END: Obliczanie, czy wszystkie widoczne fiszki są zaznaczone ---
 
-    // Oblicz pozycję Y elementu tylko raz po zamontowaniu komponentu
     useEffect(() => {
         if (refSearch.current) {
             const rect = refSearch.current.getBoundingClientRect();
@@ -75,7 +70,7 @@ const BrowserSearchAndTools = ({
             window.removeEventListener("scroll", handleScroll);
         };
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [oSearch]); // Upewnij się, że handleScroll ma dostęp do aktualnego oSearch
+    }, [oSearch]);
 
     const handleSearch = () => {
         if (searchTerm.trim() === '') return;

@@ -8,17 +8,10 @@ import { FlashcardProvider } from './context/FlashcardContext';
 import App from './App';
 import './i18n';
 
-// Funkcja do sprawdzenia, czy aplikacja działa w Cordova
 const isCordova = !!window.cordova;
-
-// Opcjonalnie: Logowanie do konsoli dla celów debugowania
-// console.log('Czy aplikacja działa w Cordova?', isCordova);
-
-// Pobranie elementu DOM, do którego będzie renderowana aplikacja
 const container = document.getElementById('root');
 const root = createRoot(container);
 
-// Renderowanie aplikacji z odpowiednim Routerem
 root.render(
     <FlashcardProvider>
         {isCordova ? (

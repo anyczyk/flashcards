@@ -13,13 +13,11 @@ const SelectSuperCategory = ({
     const queryParams = new URLSearchParams(location.search);
     const getSuperCategory = queryParams.get("superCategory");
 
-    // Jeżeli w URL mamy superCategory, możemy jednorazowo ustawić go w stanie
     useEffect(() => {
         if (getSuperCategory) {
             setSuperCategory(getSuperCategory);
             setCurrentSelectSuperCategory(getSuperCategory);
         }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [getSuperCategory]);
 
     const handleSuperCategorySelect = (e) => {

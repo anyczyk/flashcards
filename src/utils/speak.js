@@ -1,7 +1,6 @@
 // utils/speak.js
 export const speak = (text, lang, onEndCallback) => {
-    if (window.TTS) { // Sprawdź dokładną nazwę obiektu według dokumentacji wtyczki
-        // console.log(`Using Cordova TTS Advanced plugin to speak: "${text}" (${lang})`);
+    if (window.TTS) {
 
         window.TTS.speak({
                 text: text,
@@ -23,13 +22,11 @@ export const speak = (text, lang, onEndCallback) => {
         const utterance = new SpeechSynthesisUtterance(text);
         utterance.lang = lang || 'en-US';
 
-        // Callback po zakończeniu mowy
         utterance.onend = () => {
             // console.log('Success: Speech ended');
             if (onEndCallback) onEndCallback();
         };
 
-        // Obsługa błędów
         utterance.onerror = (event) => {
             // console.log(`Speech Error: ${event.error}`);
             if (onEndCallback) onEndCallback(event.error);
