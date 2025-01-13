@@ -4,6 +4,7 @@ import './styles/styles.scss';
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, HashRouter } from 'react-router-dom';
+import { FlashcardProvider } from './context/FlashcardContext';
 import App from './App';
 import './i18n';
 
@@ -19,13 +20,15 @@ const root = createRoot(container);
 
 // Renderowanie aplikacji z odpowiednim Routerem
 root.render(
-    isCordova ? (
-        <HashRouter>
-            <App />
-        </HashRouter>
-    ) : (
-        <BrowserRouter>
-            <App />
-        </BrowserRouter>
-    )
+    <FlashcardProvider>
+        {isCordova ? (
+            <HashRouter>
+                <App />
+            </HashRouter>
+        ) : (
+            <BrowserRouter>
+                <App />
+            </BrowserRouter>
+        )}
+    </FlashcardProvider>
 );

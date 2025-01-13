@@ -33,3 +33,14 @@ function isLocalStorageAvailable() {
         return false;
     }
 }
+
+export const removeItemFromLocalStorage = (key, valueToRemove) => {
+    const storedData = JSON.parse(localStorage.getItem(key));
+
+    if (storedData && Array.isArray(storedData)) {
+        const updatedData = storedData.filter(item => item !== valueToRemove);
+        localStorage.setItem(key, JSON.stringify(updatedData));
+    } else {
+        console.error("Key does not exist or stored data is not an array.");
+    }
+};

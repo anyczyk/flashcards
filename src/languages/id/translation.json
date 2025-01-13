@@ -39,7 +39,7 @@
   "congratulations_text": "Selamat, Anda telah menghafal semua flashcard dalam kategori ini!",
   "still_learning": "Masih belajar",
   "got_it": "Mengerti",
-  "check": "Periksa",
+  "check": "Cek",
   "viewed_all_flashcards": "Anda telah melihat semua flashcard di kategori ini.",
   "review_again": "Tinjau lagi",
   "review_only_the_ones_you_didnt_know": "Tinjau hanya yang belum Anda ketahui",
@@ -73,7 +73,7 @@
   "yes_reset": "Ya, setel ulang",
   "yes_remove": "Ya, hapus",
 
-  "show_still_learning": "Tampilkan masih belajar",
+  "show_still_learning": "Masih belajar",
   "play": "Putar",
   "pause": "Jeda",
   "revers": "Membalik",

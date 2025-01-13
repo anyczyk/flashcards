@@ -1,0 +1,442 @@
+[
+  {
+    "id": "1735989068650-1001",
+    "front": "Jaki jest najwyższy szczyt w Afryce?",
+    "back": "Najwyższy szczyt w Afryce to Kilimandżaro (5895 m n.p.m.).",
+    "category": "Geografia",
+    "know": "",
+    "langFront": "pl-PL",
+    "langBack": "pl-PL",
+    "superCategory": ""
+  },
+  {
+    "id": "1735989068650-1002",
+    "front": "Jak nazywa się stolica Francji?",
+    "back": "Stolicą Francji jest Paryż.",
+    "category": "Geografia",
+    "know": "",
+    "langFront": "pl-PL",
+    "langBack": "pl-PL",
+    "superCategory": ""
+  },
+  {
+    "id": "1735989068650-998",
+    "front": "master",
+    "back": "mistrz",
+    "category": "1000 popularnych słów - część 50",
+    "know": "",
+    "langFront": "en-US",
+    "langBack": "pl-PL",
+    "superCategory": "Fiszki Angielsko-Polskie / English-Polish"
+  },
+  {
+    "id": "1735989068650-999",
+    "front": "arrive",
+    "back": "przybywać",
+    "category": "1000 popularnych słów - część 50",
+    "know": "",
+    "langFront": "en-US",
+    "langBack": "pl-PL",
+    "superCategory": "Fiszki Angielsko-Polskie / English-Polish"
+  },
+  {
+    "id": "1735989068651-1003",
+    "front": "Który kraj ma największą liczbę ludności na świecie?",
+    "back": "Najludniejszym krajem świata są Chiny.",
+    "category": "Geografia",
+    "know": "",
+    "langFront": "pl-PL",
+    "langBack": "pl-PL",
+    "superCategory": ""
+  },
+  {
+    "id": "1735989068651-1004",
+    "front": "Gdzie znajduje się Wielka Rafa Koralowa?",
+    "back": "Wielka Rafa Koralowa położona jest u wschodnich wybrzeży Australii.",
+    "category": "Geografia",
+    "know": "",
+    "langFront": "pl-PL",
+    "langBack": "pl-PL",
+    "superCategory": ""
+  },
+  {
+    "id": "1735989068651-1005",
+    "front": "Jak nazywa się największa wyspa na świecie?",
+    "back": "Największą wyspą na świecie jest Grenlandia.",
+    "category": "Geografia",
+    "know": "",
+    "langFront": "pl-PL",
+    "langBack": "pl-PL",
+    "superCategory": ""
+  },
+  {
+    "id": "1735989068651-1006",
+    "front": "W jakim kraju leży historyczne miasto Machu Picchu?",
+    "back": "Machu Picchu znajduje się w Peru.",
+    "category": "Geografia",
+    "know": "",
+    "langFront": "pl-PL",
+    "langBack": "pl-PL",
+    "superCategory": ""
+  },
+  {
+    "id": "1735989068652-1007",
+    "front": "Która rzeka uznawana jest za najdłuższą na świecie?",
+    "back": "Za najdłuższą rzekę na świecie uznaje się Nil.",
+    "category": "Geografia",
+    "know": "",
+    "langFront": "pl-PL",
+    "langBack": "pl-PL",
+    "superCategory": ""
+  },
+  {
+    "id": "1735989068652-1008",
+    "front": "Jak nazywa się najwyższy aktywny wulkan w Europie?",
+    "back": "Najwyższym aktywnym wulkanem w Europie jest Etna (na Sycylii).",
+    "category": "Geografia",
+    "know": "",
+    "langFront": "pl-PL",
+    "langBack": "pl-PL",
+    "superCategory": ""
+  },
+  {
+    "id": "1735989068652-1009",
+    "front": "Która pustynia jest największa na świecie?",
+    "back": "Największą pustynią na świecie jest Sahara.",
+    "category": "Geografia",
+    "know": "",
+    "langFront": "pl-PL",
+    "langBack": "pl-PL",
+    "superCategory": ""
+  },
+  {
+    "id": "1735989068652-1010",
+    "front": "W którym kraju leży jezioro Bajkał?",
+    "back": "Jezioro Bajkał położone jest w Rosji.",
+    "category": "Geografia",
+    "know": "",
+    "langFront": "pl-PL",
+    "langBack": "pl-PL",
+    "superCategory": ""
+  },
+  {
+    "id": "1735989068652-1011",
+    "front": "Co opisuje druga zasada dynamiki Newtona?",
+    "back": "Siła działająca na ciało jest równa iloczynowi masy ciała i przyspieszenia (F = m·a).\n\n",
+    "category": "Fizyka",
+    "know": "",
+    "langFront": "pl-PL",
+    "langBack": "pl-PL",
+    "superCategory": ""
+  },
+  {
+    "id": "1735989068653-1012",
+    "front": "ak definiujemy prędkość?",
+    "back": "Prędkość to wielkość wektorowa określająca, jak szybko i w jakim kierunku przemieszcza się ciało.",
+    "category": "Fizyka",
+    "know": "",
+    "langFront": "pl-PL",
+    "langBack": "pl-PL",
+    "superCategory": ""
+  },
+  {
+    "id": "1735989068653-1013",
+    "front": "Jak nazywa się zjawisko rozdzielenia światła białego na barwy składowe w pryzmacie?",
+    "back": "To zjawisko nazywamy rozszczepieniem światła (dyspersją).",
+    "category": "Fizyka",
+    "know": "",
+    "langFront": "pl-PL",
+    "langBack": "pl-PL",
+    "superCategory": ""
+  },
+  {
+    "id": "1735989068653-1014",
+    "front": "Jak brzmi prawo Archimedesa?",
+    "back": "Na ciało zanurzone w cieczy działa siła wyporu równa ciężarowi wypartej cieczy.",
+    "category": "Fizyka",
+    "know": "",
+    "langFront": "pl-PL",
+    "langBack": "pl-PL",
+    "superCategory": ""
+  },
+  {
+    "id": "1735989068653-1015",
+    "front": "Co to jest fala elektromagnetyczna?",
+    "back": "To fala, która powstaje w wyniku wzajemnego oddziaływania pól elektrycznego i magnetycznego i może rozchodzić się w próżni.",
+    "category": "Fizyka",
+    "know": "",
+    "langFront": "pl-PL",
+    "langBack": "pl-PL",
+    "superCategory": ""
+  },
+  {
+    "id": "1735989068654-1016",
+    "front": "Jaką zależność opisuje prawo Ohma?",
+    "back": "Natężenie prądu w obwodzie jest wprost proporcjonalne do przyłożonego napięcia (I = U / R).",
+    "category": "Fizyka",
+    "know": "",
+    "langFront": "pl-PL",
+    "langBack": "pl-PL",
+    "superCategory": ""
+  },
+  {
+    "id": "1735989068654-1017",
+    "front": "Jak nazywa się zjawisko polegające na zamianie energii mechanicznej w cieplną na skutek tarcia?",
+    "back": "To zjawisko to dissypacja energii lub prościej — tarcie powoduje wydzielanie ciepła.",
+    "category": "Fizyka",
+    "know": "",
+    "langFront": "pl-PL",
+    "langBack": "pl-PL",
+    "superCategory": ""
+  },
+  {
+    "id": "1735989068654-1018",
+    "front": "Co to jest częstotliwość fali?",
+    "back": "Częstotliwość to liczba drgań (lub okresów fali) w jednostce czasu, wyrażana w hercach (Hz).",
+    "category": "Fizyka",
+    "know": "",
+    "langFront": "pl-PL",
+    "langBack": "pl-PL",
+    "superCategory": ""
+  },
+  {
+    "id": "1735989068654-1019",
+    "front": "Jak nazywa się jednostka ładunku elektrycznego w układzie SI?",
+    "back": "Jednostką ładunku elektrycznego jest kolumb (C).",
+    "category": "Fizyka",
+    "know": "",
+    "langFront": "pl-PL",
+    "langBack": "pl-PL",
+    "superCategory": ""
+  },
+  {
+    "id": "1735989068655-1020",
+    "front": "Jak brzmi zasada zachowania energii?",
+    "back": "Całkowita energia układu izolowanego pozostaje stała, czyli nie może powstać z niczego ani zniknąć.",
+    "category": "Fizyka",
+    "know": "",
+    "langFront": "pl-PL",
+    "langBack": "pl-PL",
+    "superCategory": ""
+  },
+  {
+    "id": "1735989068655-1021",
+    "front": "Co to jest komórka?",
+    "back": "Komórka to podstawowa jednostka strukturalna i funkcjonalna organizmu żywego.",
+    "category": "Biologia",
+    "know": "",
+    "langFront": "pl-PL",
+    "langBack": "pl-PL",
+    "superCategory": ""
+  },
+  {
+    "id": "1735989068655-1022",
+    "front": "Jaką funkcję pełnią mitochondria?",
+    "back": "Mitochondria są odpowiedzialne za produkcję ATP (energii) w procesie oddychania komórkowego.",
+    "category": "Biologia",
+    "know": "",
+    "langFront": "pl-PL",
+    "langBack": "pl-PL",
+    "superCategory": ""
+  },
+  {
+    "id": "1735989068655-1023",
+    "front": "Co to jest fotosynteza?",
+    "back": "Fotosynteza to proces, w którym organizmy autotroficzne (np. rośliny) przekształcają energię słoneczną w energię chemiczną (glukozę), zużywając wodę i dwutlenek węgla i uwalniając przy tym tlen.",
+    "category": "Biologia",
+    "know": "",
+    "langFront": "pl-PL",
+    "langBack": "pl-PL",
+    "superCategory": ""
+  },
+  {
+    "id": "1735989068656-1024",
+    "front": "Co to jest replikacja DNA?",
+    "back": "Replikacja DNA to proces tworzenia kopii DNA w komórce, odbywający się przed jej podziałem.",
+    "category": "Biologia",
+    "know": "",
+    "langFront": "pl-PL",
+    "langBack": "pl-PL",
+    "superCategory": ""
+  },
+  {
+    "id": "1735989068656-1025",
+    "front": "Co to są geny?",
+    "back": "Geny to fragmenty DNA, które zawierają informacje potrzebne do dziedziczenia cech oraz syntezy białek.",
+    "category": "Biologia",
+    "know": "",
+    "langFront": "pl-PL",
+    "langBack": "pl-PL",
+    "superCategory": ""
+  },
+  {
+    "id": "1735989068656-1026",
+    "front": "Na czym polega homeostaza?",
+    "back": "Homeostaza polega na utrzymywaniu stałych warunków wewnętrznych w organizmie, np. temperatury czy pH.",
+    "category": "Biologia",
+    "know": "",
+    "langFront": "pl-PL",
+    "langBack": "pl-PL",
+    "superCategory": ""
+  },
+  {
+    "id": "1735989068656-1027",
+    "front": "Czym zajmuje się ekologia?",
+    "back": "Ekologia bada zależności między organizmami a ich środowiskiem, a także wzajemne relacje w populacjach i ekosystemach.",
+    "category": "Biologia",
+    "know": "",
+    "langFront": "pl-PL",
+    "langBack": "pl-PL",
+    "superCategory": ""
+  },
+  {
+    "id": "1735989068656-1028",
+    "front": "Czym różnią się organizmy autotroficzne od heterotroficznych?",
+    "back": "Autotrofy (np. rośliny) same wytwarzają związki organiczne z nieorganicznych (np. podczas fotosyntezy), natomiast heterotrofy (np. zwierzęta) muszą pozyskiwać gotowe substancje organiczne ze środowiska.",
+    "category": "Biologia",
+    "know": "",
+    "langFront": "pl-PL",
+    "langBack": "pl-PL",
+    "superCategory": ""
+  },
+  {
+    "id": "1735989068657-1029",
+    "front": "Co to jest mutacja?",
+    "back": "Mutacja to zmiana w sekwencji DNA, która może prowadzić do zmian w organizmie (korzystnych, szkodliwych lub obojętnych).",
+    "category": "Biologia",
+    "know": "",
+    "langFront": "pl-PL",
+    "langBack": "pl-PL",
+    "superCategory": ""
+  },
+  {
+    "id": "1735989068657-1030",
+    "front": "Jakie tkanki wyróżniamy u człowieka?",
+    "back": "W organizmie człowieka wyróżnia się tkankę nabłonkową, mięśniową, nerwową i łączną.",
+    "category": "Biologia",
+    "know": "",
+    "langFront": "pl-PL",
+    "langBack": "pl-PL",
+    "superCategory": ""
+  },
+  {
+    "id": "1735989068657-1031",
+    "front": "Nad którą rzeką rozwinęła się cywilizacja starożytnego Egiptu?",
+    "back": "Nad rzeką Nil.",
+    "category": "Starożytność",
+    "know": "",
+    "langFront": "pl-PL",
+    "langBack": "pl-PL",
+    "superCategory": "Historia"
+  },
+  {
+    "id": "1735989068657-1032",
+    "front": "Jaki rodzaj pisma opracowali starożytni Sumerowie?",
+    "back": "Wynaleźli pismo klinowe.",
+    "category": "Starożytność",
+    "know": "",
+    "langFront": "pl-PL",
+    "langBack": "pl-PL",
+    "superCategory": "Historia"
+  },
+  {
+    "id": "1735989068658-1033",
+    "front": "Kto zjednoczył Grecję i podbił imperium perskie w IV wieku p.n.e.?",
+    "back": "Aleksander Wielki, król Macedonii.",
+    "category": "Starożytność",
+    "know": "",
+    "langFront": "pl-PL",
+    "langBack": "pl-PL",
+    "superCategory": "Historia"
+  },
+  {
+    "id": "1735989068658-1034",
+    "front": "W którym roku upadło Cesarstwo Zachodniorzymskie?",
+    "back": "W 476 r. n.e..",
+    "category": "Starożytność",
+    "know": "",
+    "langFront": "pl-PL",
+    "langBack": "pl-PL",
+    "superCategory": "Historia"
+  },
+  {
+    "id": "1735989068658-1035",
+    "front": "Jak nazywał się rzymski cesarz, który wprowadził reformy administracyjne i przeszedł do historii m.in. poprzez nadanie miastu nowej nazwy „Konstantynopol”?",
+    "back": "Był to cesarz Konstantyn Wielki (zarządził budowę Konstantynopola).",
+    "category": "Starożytność",
+    "know": "",
+    "langFront": "pl-PL",
+    "langBack": "pl-PL",
+    "superCategory": "Historia"
+  },
+  {
+    "id": "1735989068658-1036",
+    "front": "W którym roku i za czyjego panowania nastąpił chrzest Polski?",
+    "back": "W 966 r., za panowania Mieszka I.",
+    "category": "Średniowiecze",
+    "know": "",
+    "langFront": "pl-PL",
+    "langBack": "pl-PL",
+    "superCategory": "Historia"
+  },
+  {
+    "id": "1735989068658-1037",
+    "front": "Jak nazywa się ustrój społeczno-polityczny, który dominował w Europie w średniowieczu?",
+    "back": "To feudalizm.",
+    "category": "Średniowiecze",
+    "know": "",
+    "langFront": "pl-PL",
+    "langBack": "pl-PL",
+    "superCategory": "Historia"
+  },
+  {
+    "id": "1735989068659-1038",
+    "front": "Kto i w którym roku zwołał pierwszą krucjatę?",
+    "back": "Papież Urban II w 1095 r.",
+    "category": "Średniowiecze",
+    "know": "",
+    "langFront": "pl-PL",
+    "langBack": "pl-PL",
+    "superCategory": "Historia"
+  },
+  {
+    "id": "1735989068659-1039",
+    "front": "Jak nazywał się zakon rycerski założony ok. 1119 roku, którego członkowie słynęli z walki w obronie Ziemi Świętej?",
+    "back": "Byli to Templariusze (Zakon Ubogich Rycerzy Chrystusa i Świątyni Salomona).",
+    "category": "Średniowiecze",
+    "know": "",
+    "langFront": "pl-PL",
+    "langBack": "pl-PL",
+    "superCategory": "Historia"
+  },
+  {
+    "id": "1735989068659-1040",
+    "front": "W którym kraju i mniej więcej w którym wieku narodziła się epoka Odrodzenia (Renesansu)?",
+    "back": "We Włoszech, w XIV wieku (trwała do XVI w.).",
+    "category": "Odrodzenie",
+    "know": "",
+    "langFront": "pl-PL",
+    "langBack": "pl-PL",
+    "superCategory": "Historia"
+  },
+  {
+    "id": "1735989068659-1041",
+    "front": "Które włoskie miasto uznaje się za kolebkę Renesansu?",
+    "back": "Florencję.",
+    "category": "Odrodzenie",
+    "know": "",
+    "langFront": "pl-PL",
+    "langBack": "pl-PL",
+    "superCategory": "Historia"
+  },
+  {
+    "id": "1735989068660-1042",
+    "front": "Kto jest autorem słynnego dzieła pt. Książę (wł. „Il Principe”)?",
+    "back": "Niccolò Machiavelli.",
+    "category": "Odrodzenie",
+    "know": "",
+    "langFront": "pl-PL",
+    "langBack": "pl-PL",
+    "superCategory": "Historia"
+  }
+]

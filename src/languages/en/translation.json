@@ -73,11 +73,17 @@
   "yes_reset": "Yes, reset",
   "yes_remove": "Yes, remove",
 
-  "show_still_learning": "Show still learning",
+  "show_still_learning": "Still learning",
   "play": "Play",
   "pause": "Pause",
   "revers": "Revers",
   "copied_selected_flashcards_to_clipboard": "Copied selected flashcards to clipboard",
   "an_error_occurred_while_exporting_the_flashcards": "An error occurred while exporting the flashcards",
-  "error_deleting_database": "Error deleting database"
+  "error_deleting_database": "Error deleting database",
+
+  "are_you_sure_restart_all_flashcards": "Are you sure restart all flashcards?",
+  "are_you_sure_remove_all_flashcards": "Are you sure remove all flashcards?",
+  "close": "Close",
+  "confirm": "Confirm",
+  "library": "Library"
 }

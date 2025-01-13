@@ -19,7 +19,7 @@ const SubNavigation = ({
                            reversCards
 }) => {
     const { t } = useTranslation();
-    const [whiteSpaceNowrap, setWhiteSpaceNowrap] = useState(false);
+    const [whiteSpaceNowrap, setWhiteSpaceNowrap] = useState(true);
 
     const hasLearningCards = flashcards.some((fc) => {
         if (selectedCategory && selectedSuperCategory) {

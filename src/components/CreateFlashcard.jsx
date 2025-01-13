@@ -1,14 +1,23 @@
 // CreateFlashcard.jsx
-import React, { useState, useEffect, useCallback } from 'react';
+import React, {useState, useEffect, useCallback, useContext} from 'react';
 import PropTypes from 'prop-types';
 import { getCordovaLanguage } from '../utils/getLanguage';
 import { loadLanguages } from '../utils/loadLanguages';
 import SelectCodeLanguages from './sub-components/common/SelectCodeLanguages';
 import { useTranslation } from 'react-i18next';
 import { getAllFlashcards } from '../db';
+import SelectSuperCategory from "./sub-components/common/SelectSuperCategory";
+import SelectCategory from "./sub-components/common/SelectCategory";
+import {useLocation, useNavigate} from "react-router-dom";
 
-function CreateFlashcard({ allCategories, addFlashcard, categories, superCategoriesArray }) {
+function CreateFlashcard({addFlashcard, categories, superCategoriesArray}) {
     const { t } = useTranslation();
+
+    const location = useLocation();
+    const queryParams = new URLSearchParams(location.search);
+    const getSuperCategory = queryParams.get("superCategory");
+    const navigate = useNavigate();
+
     const [front, setFront] = useState('');
     const [back, setBack] = useState('');
     const [category, setCategory] = useState('');
@@ -20,7 +29,6 @@ function CreateFlashcard({ allCategories, addFlashcard, categories, superCategor
     const [categoriesDependentOnSuperCategory, setCategoriesDependentOnSuperCategory] = useState([]);
     const [currentSelectSuperCategory, setCurrentSelectSuperCategory] = useState('');
 
-    // Wczytujemy z bazy wszystkie fiszki i tworzymy z nich listę kategorii zależną od superkategorii.
     const loadData = useCallback(async () => {
         const data = await getAllFlashcards();
         const catDependSuperCategory = new Set(
@@ -35,7 +43,6 @@ function CreateFlashcard({ allCategories, addFlashcard, categories, superCategor
         loadData();
     }, [loadData]);
 
-    // Wczytujemy dostępne języki
     useEffect(() => {
         const fetchLanguages = async () => {
             try {
@@ -49,7 +56,6 @@ function CreateFlashcard({ allCategories, addFlashcard, categories, superCategor
         fetchLanguages();
     }, []);
 
-    // Ustawienie języków po załadowaniu availableLanguages
     useEffect(() => {
         if (availableLanguages.length > 0) {
             const setLanguages = async () => {
@@ -69,7 +75,6 @@ function CreateFlashcard({ allCategories, addFlashcard, categories, superCategor
                     }
                 } catch (error) {
                     console.error('Error setting languages:', error);
-                    // Ustawienie domyślnych języków w przypadku błędu
                     if (availableLanguages.includes('en-US')) {
                         setLangFront('en-US');
                         setLangBack('en-US');
@@ -86,13 +91,11 @@ function CreateFlashcard({ allCategories, addFlashcard, categories, superCategor
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (front.trim() && back.trim()) {
-            // Usunięcie białych znaków
             let finalCategory = category.trim();
             if (finalCategory.toLowerCase() === 'without category') {
                 finalCategory = '';
             }
 
-            // Ustaw domyślny język na 'en-US', jeśli nie wybrano żadnego
             const finalLangFront = langFront || 'en-US';
             const finalLangBack = langBack || 'en-US';
             const finalSuperCategory = superCategory.trim();
@@ -100,7 +103,6 @@ function CreateFlashcard({ allCategories, addFlashcard, categories, superCategor
             console.log('Submitting flashcard with languages:', finalLangFront, finalLangBack);
 
             try {
-                // Dodajemy fiszkę (logika w rodzicu/metodzie addFlashcard)
                 await addFlashcard({
                     front,
                     back,
@@ -110,66 +112,29 @@ function CreateFlashcard({ allCategories, addFlashcard, categories, superCategor
                     superCategory: finalSuperCategory
                 });
 
-                // LOGIKA ZAPISU DO LOCAL STORAGE
-                // ------------------------------
-                // Jeżeli superCategory jest niepuste, to zapisujemy superCategory.
-                // W przeciwnym razie, jeśli category jest niepuste, zapisujemy category.
                 let categoryToStore = finalSuperCategory || finalCategory;
-
-                // Czytamy localStorage
                 const savedOrder = localStorage.getItem('categoryOrder');
                 let savedOrderArray = savedOrder ? JSON.parse(savedOrder) : [];
-
-                // Dodajemy kategorię na POCZĄTEK tablicy
-                // usuwając wcześniej duplikat (jeśli istnieje),
-                // aby uniknąć dwukrotnego występowania tej samej wartości
                 if (categoryToStore) {
                     const index = savedOrderArray.indexOf(categoryToStore);
                     if (index !== -1) {
-                        // Usuwamy istniejącą pozycję
                         savedOrderArray.splice(index, 1);
                     }
-                    // Wstawiamy na początek
                     savedOrderArray.unshift(categoryToStore);
                 }
-
-                // Nadpisujemy localStorage
                 localStorage.setItem('categoryOrder', JSON.stringify(savedOrderArray));
-                // ------------------------------
-
-                // Komunikat o utworzeniu fiszki
                 setFlashcardCreated(true);
-
-                // Resetujemy front/back
                 setFront('');
                 setBack('');
+                if(getSuperCategory || getSuperCategory==='') {
+                    navigate('/list-edit');
+                }
             } catch (error) {
                 console.error('Error adding flashcard:', error);
             }
         }
     };
 
-    const handleSuperCategorySelect = (e) => {
-        const selected = e.target.value;
-        if (selected) {
-            setSuperCategory(selected);
-            setCurrentSelectSuperCategory(selected);
-        } else {
-            setSuperCategory('');
-            setCurrentSelectSuperCategory('');
-        }
-    };
-
-    const handleCategorySelect = (e) => {
-        const selected = e.target.value;
-        if (selected) {
-            setCategory(selected);
-        } else {
-            setCategory('');
-        }
-    };
-
-    // Automatyczne ukrycie komunikatu po 3 sekundach
     useEffect(() => {
         let timer;
         if (flashcardCreated) {
@@ -180,7 +145,6 @@ function CreateFlashcard({ allCategories, addFlashcard, categories, superCategor
         return () => clearTimeout(timer);
     }, [flashcardCreated]);
 
-    // Filtrowanie kategorii, aby nie pokazywać "Without category"
     const filteredCategories = categories.filter(cat => cat.toLowerCase() !== 'without category');
 
     return (
@@ -243,59 +207,20 @@ function CreateFlashcard({ allCategories, addFlashcard, categories, superCategor
 
                     <hr />
 
-                    <p>
-                        <label htmlFor="o-super-category">
-                            {t('super_category_choose_existing_or_type_new')}:
-                        </label>
-                        <br />
-                        <select
-                            id="o-super-category"
-                            onChange={handleSuperCategorySelect}
-                            value={superCategory}
-                        >
-                            <option value="">-- {t('select_existing_super_category')} --</option>
-                            {superCategoriesArray.map((cat, index) => (
-                                <option key={index} value={cat}>
-                                    {cat}
-                                </option>
-                            ))}
-                        </select>
-                    </p>
-
-                    <p>
-                        <input
-                            type="text"
-                            placeholder={t('type_a_new_super_category_or_edit_selected_one')}
-                            value={superCategory}
-                            onChange={(e) => setSuperCategory(e.target.value)}
-                        />
-                    </p>
+                    <SelectSuperCategory
+                        superCategory={superCategory}
+                        setSuperCategory={setSuperCategory}
+                        superCategoriesArray={superCategoriesArray}
+                        setCurrentSelectSuperCategory={setCurrentSelectSuperCategory}
+                    />
 
                     <hr />
 
-                    <p>
-                        <label htmlFor="o-category">
-                            {t('category_choose_existing_or_type_new')}:
-                        </label>
-                        <br />
-                        <select id="o-category" onChange={handleCategorySelect} value={category}>
-                            <option value="">-- {t('select_existing_category')} --</option>
-                            {categoriesDependentOnSuperCategory.map((cat, index) => (
-                                <option key={index} value={cat}>
-                                    {cat}
-                                </option>
-                            ))}
-                        </select>
-                    </p>
-
-                    <p>
-                        <input
-                            type="text"
-                            placeholder={t('type_a_new_category_or_edit_selected_one')}
-                            value={category}
-                            onChange={(e) => setCategory(e.target.value)}
-                        />
-                    </p>
+                    <SelectCategory
+                        category={category}
+                        setCategory={setCategory}
+                        categoriesDependentOnSuperCategory={categoriesDependentOnSuperCategory}
+                    />
 
                     <hr />
 

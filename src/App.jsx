@@ -1,16 +1,33 @@
 // App.jsx
-import React, { useState, useEffect, useCallback, useRef } from 'react';
+import React, {useEffect, useContext, useCallback, useState} from 'react';
 import { Routes, Route, Link, Navigate, useLocation } from 'react-router-dom';
 import CreateFlashcard from './components/CreateFlashcard';
 import EditFlashcardList from './components/EditFlashcardList';
 import ViewFlashcards from './components/ViewFlashcards';
 import ImportExport from './components/ImportExport';
-import { getAllFlashcards, addFlashcardToDB, removeFlashcardFromDB, editFlashcardInDB } from './db';
+import Library from './components/Library';
+import Header from './components/Header';
 import { useTranslation } from 'react-i18next';
-import { setLocalStorage, getLocalStorage } from './utils/storage';
-import { topScroll } from "./utils/topScroll";
+import { setLocalStorage } from './utils/storage';
+import Footer from "./components/Footer";
+import { FlashcardContext } from './context/FlashcardContext';
 
 function App() {
+    const { t, i18n } = useTranslation();
+    const location = useLocation();
+    const {
+        syntAudio,
+        loadData,
+        addFlashcard,
+        categories,
+        superCategoriesArray,
+        setPlayFlashcards
+    } = useContext(FlashcardContext);
+    const [mainMenuVisible, setMainMenuVisible] = useState(false);
+    const [mainHomePageLoad,setMainHomePageLoad] = useState(false);
+    const [preloader, setPreloader] = useState(false);
+
+
     useEffect(() => {
         document.addEventListener('deviceready', () => {
             if (window.navigator && window.navigator.splashscreen) {
@@ -19,167 +36,13 @@ function App() {
         }, false);
     }, []);
 
-    const { t, i18n } = useTranslation();
-    const [flashcards, setFlashcards] = useState([]);
-    const [categories, setCategories] = useState([]);
-    const [allCategories, setAllCategories] = useState([]);
-    const [superCategoriesArray, setSuperCategoriesArray] = useState([]);
-    const [mainMenuVisible, setMainMenuVisible] = useState(false);
-    const [preloader, setPreloader] = useState(false);
-    const [mainHomePageLoad,setMainHomePageLoad] = useState(false);
-    const closeMenuRef = useRef(null);
-    const closeMenuBtnRef = useRef(null);
-    const location = useLocation();
-    const [orderedCategories, setOrderedCategories] = useState([]);
-
-    // Flaga sterująca auto-play (play/pause)
-    const [playFlashcards, setPlayFlashcards] = useState(false);
-
-    const [syntAudio, setSyntAudio] = useState(() => {
-        const storedAudio = getLocalStorage('syntAudio');
-        return storedAudio !== null ? storedAudio : true;
-    });
-
     useEffect(() => {
         setLocalStorage('syntAudio', syntAudio);
     }, [syntAudio]);
 
     useEffect(() => {
-        const handleClick = (event) => {
-            const checkAllOutise = closeMenuRef.current && !closeMenuRef.current.contains(event.target);
-            const checkBtnMenu = closeMenuBtnRef.current && !closeMenuBtnRef.current.contains(event.target);
-            if (checkAllOutise && checkBtnMenu) {
-                setMainMenuVisible(false);
-            }
-        };
-        document.addEventListener('click', handleClick);
-        return () => {
-            document.removeEventListener('click', handleClick);
-        };
-    }, []);
-
-    const showMainMenu = () => {
-        setMainMenuVisible(prevState => !prevState);
-    };
-
-    const loadData = useCallback(async () => {
-        const data = await getAllFlashcards();
-        setFlashcards(data);
-
-        const allCat = new Set(
-            data.filter(fc => fc.category && fc.category.trim() !== '')
-                .map(fc => fc.category)
-        );
-
-        const superCategories = new Set(
-            data
-                .filter(fc => fc.superCategory && fc.superCategory.trim() !== '')
-                .map(fc => fc.superCategory)
-        );
-
-        const categoriesWithoutSuper = data
-            .filter(fc =>
-                fc.category &&
-                fc.category.trim() !== '' &&
-                (!fc.superCategory || fc.superCategory.trim() === '') &&
-                !superCategories.has(fc.category)
-            )
-            .map(fc => fc.category);
-
-        const catSet = new Set([...superCategories, ...categoriesWithoutSuper]);
-
-        const anyWithoutCategory = data.some(fc => !fc.category || fc.category.trim() === '');
-        const cats = [...catSet];
-        if (anyWithoutCategory) {
-            cats.push('Without category');
-        }
-
-        setSuperCategoriesArray([...superCategories]);
-        setCategories(cats);
-        setAllCategories([...allCat]);
-    }, []);
-
-    useEffect(() => {
         loadData();
     }, [loadData]);
-
-    const addFlashcard = async (front, back, category, know, langFront, langBack, superCategory) => {
-        const newFc = await addFlashcardToDB(front, back, category, know, langFront, langBack, superCategory);
-        setFlashcards((prev) => {
-            const updated = [...prev, newFc];
-            updateCategories(updated);
-            return updated;
-        });
-    };
-
-    const removeFlashcard = async (id) => {
-        await removeFlashcardFromDB(id);
-        setFlashcards((prev) => {
-            const updated = prev.filter(fc => fc.id !== id);
-            updateCategories(updated);
-            return updated;
-        });
-    };
-
-    const editFlashcard = async (id, updatedFront, updatedBack, updatedCategory, updatedKnow, updatedFrontLang, updatedBackLang, updateSuperCategory) => {
-        await editFlashcardInDB(id, updatedFront, updatedBack, updatedCategory, updatedKnow, updatedFrontLang, updatedBackLang, updateSuperCategory);
-        setFlashcards((prev) => {
-            const updated = prev.map(fc => fc.id === id ? { ...fc, front: updatedFront, back: updatedBack, category: updatedCategory, know: updatedKnow, langFront: updatedFrontLang, langBack: updatedBackLang, superCategory: updateSuperCategory } : fc);
-            updateCategories(updated);
-            return updated;
-        });
-    };
-
-    const setFlashcardKnow = async (id, knowValue) => {
-        const card = flashcards.find(fc => fc.id === id);
-        if (!card) return;
-        await editFlashcardInDB(id, card.front, card.back, card.category, knowValue, card.langFront, card.langBack, card.superCategory);
-        setFlashcards((prev) => {
-            return prev.map(fc => fc.id === id ? { ...fc, know: knowValue } : fc);
-        });
-    };
-
-    const updateCategories = (flashcardsData) => {
-        const superCategories = new Set(
-            flashcardsData
-                .filter(fc => fc.superCategory && fc.superCategory.trim() !== '')
-                .map(fc => fc.superCategory)
-        );
-
-        const categoriesWithoutSuper = flashcardsData
-            .filter(fc =>
-                fc.category &&
-                fc.category.trim() !== '' &&
-                (!fc.superCategory || fc.superCategory.trim() === '') &&
-                !superCategories.has(fc.category)
-            )
-            .map(fc => fc.category);
-
-        const catSet = new Set([...superCategories, ...categoriesWithoutSuper]);
-
-        const anyWithoutCategory = flashcardsData.some(fc => !fc.category || fc.category.trim() === '');
-        const cats = [...catSet];
-        if (anyWithoutCategory) {
-            cats.push('Without category');
-        }
-
-        setSuperCategoriesArray([...superCategories]);
-        setCategories(cats);
-    };
-
-    const changeLanguage = (lng) => {
-        i18n.changeLanguage(lng);
-    };
-
-    const getLanguageCode = (lng) => lng.split('-')[0];
-
-    const handleImport = () => {
-        loadData();
-    };
-
-    const audioOnOff = () => {
-        setSyntAudio(prev => !prev);
-    };
 
     const clearInsomnia = useCallback(() => {
         if (window.plugins && window.plugins.insomnia) {
@@ -194,143 +57,30 @@ function App() {
 
     return (
         <div className={`o ${mainMenuVisible ? 'o-menu-visible' : ''}`}>
-            <header className="o-main-header">
-                <h1><Link onClick={() => setMainHomePageLoad(true)} to="/"><i
-                    className="icon-logo-f"></i><strong>Flasho</strong></Link> - <span>{t('simple_flashcard_creator')}</span>
-                </h1>
-                <button
-                    aria-label="Audio on / off"
-                    className={`o-main-header__btn-audio ${syntAudio ? 'o-main-header__btn-audio--active' : ''}`}
-                    onClick={() => {
-                        audioOnOff();
-                        // setPlayFlashcards(false);
-                    }
-                    }
-                    disabled={playFlashcards ? 'disabled' : ''}
-                >
-                    <i className="icon-volume"></i>
-                </button>
-                <button ref={closeMenuBtnRef} onClick={showMainMenu}
-                        className={`o-main-header__btn-menu ${mainMenuVisible ? 'o-main-header__btn-menu--active' : ''}`}
-                        aria-label="Open and close menu"><span>Menu</span></button>
-
-                <div ref={closeMenuRef}
-                     className={`o-main-header__menu ${mainMenuVisible ? 'o-main-header__menu--active' : ''}`}
-                    tabIndex="-1"
-                >
-                    <div className="o-main-header__menu-langs">
-                        <label htmlFor="o-lang"><i className="icon-language"></i> Lnag:</label>
-                        <select id="o-lang" onChange={(e) => changeLanguage(e.target.value)}
-                                value={getLanguageCode(i18n.language)}>
-                            <option value="en">English</option>
-                            <option value="de">Deutsch</option>
-                            <option value="es">Español</option>
-                            <option value="fr">Français</option>
-                            <option value="id">Bahasa Indonesia</option>
-                            <option value="it">Italiano</option>
-                            <option value="ja">日本語</option>
-                            <option value="pl">Polski</option>
-                            <option value="pt">Português</option>
-                        </select>
-                    </div>
-                    <nav>
-                        <ul>
-                            <li><Link onClick={() => setMainHomePageLoad(true)} to="/"><i
-                                className="icon-play"></i> {t('view_flashcards')}</Link></li>
-
-                            <li><Link onClick={clearOptions} to="/list-edit"><i
-                                className="icon-wrench"></i> {t('settings')}</Link></li>
-
-                            <li><Link onClick={clearOptions} to="/create"><i
-                                className="icon-plus"></i> {t('add_flashcard')}</Link></li>
-
-                            <li><Link onClick={clearOptions} to="/import-export"><i
-                                className="icon-export"></i> {t('import_export')}</Link>
-                            </li>
-                        </ul>
-                    </nav>
-                    <div>
-                        <p>Flasho v1.0.2 {window.cordova ? 'App' : 'Browser'} / <span className="uppercase">{i18n.language}</span></p>
-                    </div>
-                </div>
-            </header>
+            <Header clearOptions={clearOptions} setMainHomePageLoad={setMainHomePageLoad} mainMenuVisible={mainMenuVisible} setMainMenuVisible={setMainMenuVisible} />
             <main className="o-main-content">
                 {location.pathname !== "/" && (
                     <p><Link className="o-main-start w-100 btn btn--green" to="/"><i
                         className="icon-play"></i> {t('view_flashcards')}</Link></p>
                 )}
-
                 <Routes>
-                    <Route path="/" element={<ViewFlashcards
-                        loadData={loadData}
-                        flashcards={flashcards}
-                        setOrderedCategories={setOrderedCategories}
-                        orderedCategories={orderedCategories}
-                        categories={categories}
-
-                        clearInsomnia={clearInsomnia}
-                        syntAudio={syntAudio}
-                        setFlashcardKnow={setFlashcardKnow}
-                        playFlashcards={playFlashcards}
-                        setPlayFlashcards={setPlayFlashcards}
-                        setMainHomePageLoad={setMainHomePageLoad}
-                        mainHomePageLoad={mainHomePageLoad}
-                    />}/>
-                    <Route path="/list-edit" element={<EditFlashcardList
-                        loadData={loadData}
-                        flashcards={flashcards}
-                        setOrderedCategories={setOrderedCategories}
-                        orderedCategories={orderedCategories}
-                        categories={categories}
-
-                        removeFlashcard={removeFlashcard}
-                        editFlashcard={editFlashcard}
-                        setPreloader={setPreloader}
-                        preloader={preloader}
-                    />}/>
-                    <Route path="/create" element={<CreateFlashcard
-                        categories={categories}
-
-                        allCategories={allCategories}
-                        addFlashcard={addFlashcard}
-                        superCategoriesArray={superCategoriesArray}
-                           />}/>
-                    <Route path="/import-export" element={<ImportExport
-                        flashcards={flashcards}
-
-                        onImport={handleImport}
-                    />}/>
+                    <Route path="/" element={<ViewFlashcards clearInsomnia={clearInsomnia} mainHomePageLoad={mainHomePageLoad} setMainHomePageLoad={setMainHomePageLoad} />}/>
+                    <Route path="/list-edit" element={<EditFlashcardList preloader={preloader} setPreloader={setPreloader} />}/>
+                    <Route path="/create" element={<CreateFlashcard addFlashcard={addFlashcard} categories={categories} superCategoriesArray={superCategoriesArray} />} />
+                    <Route path="/import-export" element={<ImportExport />} />
+                    <Route path="/library" element={<Library />} />
                     <Route path="*" element={<Navigate to="/" replace/>}/>
                 </Routes>
             </main>
-            <footer className="o-main-footer">
-                <ul>
-                    <li><Link aria-label={t('view_flashcards')} onClick={() => setMainHomePageLoad(true)} to="/"><i
-                        className="icon-logo-f"></i><span>{t('flashcards')}</span></Link></li>
-
-                    <li><Link aria-label={t('edit_flashcards')} onClick={clearOptions} to="/list-edit"><i
-                        className="icon-wrench"></i><span>{t('settings')}</span></Link>
-                    </li>
-
-                    <li><Link className="o-main-footer__add-circle bg-color-green" aria-label={t('create_flashcard')}
-                              onClick={clearOptions} to="/create"><i
-                        className="icon-plus"></i>
-                        {/*<span>{t('add_flashcard')}</span>*/}
-                    </Link></li>
-
-                    <li><Link aria-label={t('import_export')} onClick={clearOptions} to="/import-export"><i
-                        className="icon-export"></i><span>{t('import_export')}</span></Link>
-                    </li>
-                    <li><Link aria-label={t('up')} onClick={topScroll} to="#"><i
-                        className="icon-up-open"></i><span>{t('up_to_top')}</span></Link>
-                    </li>
-                </ul>
-            </footer>
+            <Footer setMainHomePageLoad={setMainHomePageLoad} clearOptions={clearOptions}  />
             <div className="o-main-footer-cover-scroll"/>
-            {preloader ? <div className="o-preloader">
-                <p><i className="icon-logo-f"></i>{t('the_update_is_in_progress')}</p>
-                <div className="o-preloader__progress-bar"></div>
-            </div> : ''}
+            {preloader ?
+                <div className="o-preloader">
+                    <p><i className="icon-logo-f"></i>{t('the_update_is_in_progress')}</p>
+                    <div className="o-preloader__progress-bar"></div>
+                </div>
+                :
+                ''}
         </div>
     );
 }

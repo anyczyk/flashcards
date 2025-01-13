@@ -19,6 +19,8 @@ button,
   align-items: center;
   justify-content: center;
   column-gap: 4px;
+  height: auto; // 100%;
+  line-height: 1.2;
 
   &-simple-icon {
     padding-right: vars.$padding-button !important;
@@ -60,7 +62,6 @@ button,
       background-color: #fff;
       color: var(--color-green);
     }
-
   }
 
   &--blue {
@@ -70,7 +71,24 @@ button,
       background-color: #fff;
       color: var(--color-blue);
     }
+  }
 
+  &--cream {
+    background-color: var(--color-cream);
+
+    &:active:not([disabled]) {
+      background-color: #fff;
+      color: var(--color-black);
+    }
+  }
+
+  &--yellow {
+    background-color: #e9a400;
+
+    &:active:not([disabled]) {
+      background-color: #fff;
+      color: #e9a400;
+    }
   }
 
   sub,
@@ -126,6 +144,7 @@ button,
   }
 
   &-super-category {
+    padding-right: 40px;
 
     &::after {
       font-family: "fontello", serif;
