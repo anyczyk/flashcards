@@ -23,16 +23,9 @@ const CategoryListDragDrop = ({
                                   toolsItemActive,
                                   setToolsItemActive
                               }) => {
-
     const { t } = useTranslation();
-    const {
-        flashcards,
-        orderedCategories,
-        setOrderedCategories
-    } = useContext(FlashcardContext);
-
+    const { flashcards, orderedCategories, setOrderedCategories } = useContext(FlashcardContext);
     const navigate = useNavigate();
-
     const [activeSuperCategory, setActiveSuperCategory] = useState(null);
 
     useEffect(() => {
@@ -65,6 +58,7 @@ const CategoryListDragDrop = ({
             localStorage.setItem('openDropdownSuperCategory', catName);
         }
     };
+
     const ButtonOpenModalMainList = ({
                                          classes,
                                          aNameType,
@@ -74,24 +68,22 @@ const CategoryListDragDrop = ({
                                          aNameSuperCategory,
                                          aNameNewSuperCategory,
                                          index
-                                     }) => {
-        return (
-            <button
-                className={`btn--icon ${classes} ${index === toolsItemActive ? 'btn--active' : ''}`}
-                onClick={() => {
-                    setNameType(aNameType);
-                    setOpenModalEdit(true);
-                    setNameNew(aNameNew);
-                    setNameOld(aNameOld);
-                    setToolsItemActive(aToolsItemActive);
-                    setNameSuperCategory(aNameSuperCategory);
-                    setNameNewSuperCategory(aNameNewSuperCategory);
-                }}
-            >
-                <i className="icon-pencil"></i>
-            </button>
-        );
-    };
+                                     }) => (
+        <button
+            className={`btn--icon ${classes} ${(index === toolsItemActive) ? 'btn--active' : ''}`}
+            onClick={() => {
+                setNameType(aNameType);
+                setOpenModalEdit(true);
+                setNameNew(aNameNew);
+                setNameOld(aNameOld);
+                setToolsItemActive(aToolsItemActive);
+                setNameSuperCategory(aNameSuperCategory);
+                setNameNewSuperCategory(aNameNewSuperCategory);
+            }}
+        >
+            <i className="icon-pencil"></i>
+        </button>
+    );
 
     return (
         <DragDropContext onDragEnd={handleOnDragEnd}>
@@ -119,23 +111,11 @@ const CategoryListDragDrop = ({
                             let knowCount;
 
                             if (cat === 'Without category') {
-                                count = flashcards.filter(fc =>
-                                    (!fc.category || fc.category.trim() === '') && !fc.superCategory
-                                ).length;
-                                knowCount = flashcards.filter(fc =>
-                                    (!fc.category || fc.category.trim() === '') &&
-                                    !fc.superCategory &&
-                                    fc.know
-                                ).length;
+                                count = flashcards.filter(fc => (!fc.category || fc.category.trim() === '') && !fc.superCategory).length;
+                                knowCount = flashcards.filter(fc => (!fc.category || fc.category.trim() === '') && !fc.superCategory && fc.know).length;
                             } else {
-                                count = flashcards.filter(fc =>
-                                    fc.category === cat && !fc.superCategory
-                                ).length;
-                                knowCount = flashcards.filter(fc =>
-                                    fc.category === cat &&
-                                    fc.know &&
-                                    !fc.superCategory
-                                ).length;
+                                count = flashcards.filter(fc => fc.category === cat && !fc.superCategory).length;
+                                knowCount = flashcards.filter(fc => fc.category === cat && fc.know && !fc.superCategory).length;
                             }
 
                             if (!hasSubCategories && count === 0) {
@@ -146,7 +126,6 @@ const CategoryListDragDrop = ({
                                 <Draggable key={cat} draggableId={cat} index={index}>
                                     {(provided) => (
                                         <li
-                                            key={index}
                                             ref={provided.innerRef}
                                             {...provided.draggableProps}
                                             {...provided.dragHandleProps}
@@ -154,7 +133,6 @@ const CategoryListDragDrop = ({
                                         >
                                             {hasSubCategories ? (
                                                 <>
-                                                    {/* Edycja superkategorii */}
                                                     <div className="d-flex gap-1">
                                                         <ButtonOpenModalMainList
                                                             classes={'bg-color-brow'}
@@ -168,12 +146,8 @@ const CategoryListDragDrop = ({
                                                         />
 
                                                         {(() => {
-                                                            const knowCountSuper = flashcards.filter(
-                                                                fc => fc.know && fc.superCategory === cat
-                                                            ).length;
-                                                            const countSuper = flashcards.filter(
-                                                                fc => fc.superCategory === cat
-                                                            ).length;
+                                                            const knowCountSuper = flashcards.filter(fc => fc.know && fc.superCategory === cat).length;
+                                                            const countSuper = flashcards.filter(fc => fc.superCategory === cat).length;
                                                             const unknownCountSuper = countSuper - knowCountSuper;
                                                             const knowPercentageSuper = countSuper > 0
                                                                 ? Math.ceil((knowCountSuper * 100) / countSuper)
@@ -183,37 +157,35 @@ const CategoryListDragDrop = ({
                                                                 <button
                                                                     className={
                                                                         "bg-color-brow btn-super-category " +
-                                                                        (activeSuperCategory === index
-                                                                            ? 'btn-super-category--active'
-                                                                            : '')
+                                                                        (activeSuperCategory === index ? 'btn-super-category--active' : '')
                                                                     }
                                                                     onClick={() => handleActiveSuperCategory(index)}
                                                                 >
-                                  <span>
-                                    <i
-                                        className={
-                                            activeSuperCategory === index
-                                                ? 'icon-folder-open-empty'
-                                                : 'icon-folder-empty'
-                                        }
-                                    ></i>{' '}
-                                      {cat}{' '}
-                                      (<strong className="color-black">{knowCountSuper}</strong>/{countSuper})
-                                      {unknownCountSuper > 0 ? (
-                                          <>
-                                              <sub className="bg-color-green">
-                                                  {knowPercentageSuper}%
-                                              </sub>
-                                              <sup className="bg-color-red">
-                                                  {unknownCountSuper}
-                                              </sup>
-                                          </>
-                                      ) : (
-                                          <sub className="o-category-complited bg-color-green vertical-center-count">
-                                              <i className="icon-ok"></i>
-                                          </sub>
-                                      )}
-                                  </span>
+                                                                    <span>
+                                                                        <i
+                                                                            className={
+                                                                                activeSuperCategory === index
+                                                                                    ? 'icon-folder-open-empty'
+                                                                                    : 'icon-folder-empty'
+                                                                            }
+                                                                        ></i>{' '}
+                                                                        {cat}{' '}
+                                                                        (<strong className="color-black">{knowCountSuper}</strong>/{countSuper})
+                                                                        {unknownCountSuper > 0 ? (
+                                                                            <>
+                                                                                <sub className="bg-color-green">
+                                                                                    {knowPercentageSuper}%
+                                                                                </sub>
+                                                                                <sup className="bg-color-red">
+                                                                                    {unknownCountSuper}
+                                                                                </sup>
+                                                                            </>
+                                                                        ) : (
+                                                                            <sub className="o-category-complited bg-color-green vertical-center-count">
+                                                                                <i className="icon-ok"></i>
+                                                                            </sub>
+                                                                        )}
+                                                                    </span>
                                                                 </button>
                                                             );
                                                         })()}
@@ -229,11 +201,8 @@ const CategoryListDragDrop = ({
                                                                         : 'Without category';
                                                                     return realCategory;
                                                                 })
-                                                                // Usunięcie duplikatów
                                                                 .filter((value, i, self) => self.indexOf(value) === i)
                                                                 .map(subCat => {
-                                                                    // Zliczanie fiszek, które mają superCategory == cat
-                                                                    // i category == subCat (lub 'Without category'):
                                                                     const subCatCount = flashcards.filter(fc => {
                                                                         const realCategory = (fc.category && fc.category.trim() !== "")
                                                                             ? fc.category
@@ -285,32 +254,32 @@ const CategoryListDragDrop = ({
                                                                                     topScroll();
                                                                                 }}
                                                                             >
-                                        <span>
-                                          <i className="icon-wrench"></i>{' '}
-                                            {subCat === 'Without category'
-                                                ? t('without_category')
-                                                : subCat} (
-                                          <strong className="color-green-dark">
-                                            {knowSubCatCount}
-                                          </strong>
-                                          /{subCatCount})
-                                            {subCatCount - knowSubCatCount > 0 ? (
-                                                <>
-                                                    <sub className="bg-color-green">
-                                                        {Math.ceil((knowSubCatCount * 100) / subCatCount)}%
-                                                    </sub>
-                                                    <sup className="bg-color-red">
-                                                        {subCatCount - knowSubCatCount}
-                                                    </sup>
-                                                </>
-                                            ) : (
-                                                <sub
-                                                    className="o-category-complited bg-color-green vertical-center-count"
-                                                >
-                                                    <i className="icon-ok"></i>
-                                                </sub>
-                                            )}
-                                        </span>
+                                                                                <span>
+                                                                                    <i className="icon-wrench"></i>{' '}
+                                                                                    {subCat === 'Without category'
+                                                                                        ? t('without_category')
+                                                                                        : subCat} (
+                                                                                    <strong className="color-green-dark">
+                                                                                        {knowSubCatCount}
+                                                                                    </strong>
+                                                                                    /{subCatCount})
+                                                                                    {subCatCount - knowSubCatCount > 0 ? (
+                                                                                        <>
+                                                                                            <sub className="bg-color-green">
+                                                                                                {Math.ceil((knowSubCatCount * 100) / subCatCount)}%
+                                                                                            </sub>
+                                                                                            <sup className="bg-color-red">
+                                                                                                {subCatCount - knowSubCatCount}
+                                                                                            </sup>
+                                                                                        </>
+                                                                                    ) : (
+                                                                                        <sub
+                                                                                            className="o-category-complited bg-color-green vertical-center-count"
+                                                                                        >
+                                                                                            <i className="icon-ok"></i>
+                                                                                        </sub>
+                                                                                    )}
+                                                                                </span>
                                                                             </button>
                                                                         </li>
                                                                     );
@@ -356,29 +325,29 @@ const CategoryListDragDrop = ({
                                                             topScroll();
                                                         }}
                                                     >
-                            <span>
-                              <i className="icon-wrench"></i>{' '}
-                                {cat === 'Without category'
-                                    ? t('without_category')
-                                    : cat} (
-                              <strong className="color-green-dark">
-                                {knowCount}
-                              </strong>/{count})
-                                {count - knowCount > 0 ? (
-                                    <>
-                                        <sub className="bg-color-green">
-                                            {Math.ceil((knowCount * 100) / count)}%
-                                        </sub>
-                                        <sup className="bg-color-red">
-                                            {count - knowCount}
-                                        </sup>
-                                    </>
-                                ) : (
-                                    <sub className="o-category-complited bg-color-green vertical-center-count">
-                                        <i className="icon-ok"></i>
-                                    </sub>
-                                )}
-                            </span>
+                                                        <span>
+                                                            <i className="icon-wrench"></i>{' '}
+                                                            {cat === 'Without category'
+                                                                ? t('without_category')
+                                                                : cat} (
+                                                            <strong className="color-green-dark">
+                                                                {knowCount}
+                                                            </strong>/{count})
+                                                            {count - knowCount > 0 ? (
+                                                                <>
+                                                                    <sub className="bg-color-green">
+                                                                        {Math.ceil((knowCount * 100) / count)}%
+                                                                    </sub>
+                                                                    <sup className="bg-color-red">
+                                                                        {count - knowCount}
+                                                                    </sup>
+                                                                </>
+                                                            ) : (
+                                                                <sub className="o-category-complited bg-color-green vertical-center-count">
+                                                                    <i className="icon-ok"></i>
+                                                                </sub>
+                                                            )}
+                                                        </span>
                                                     </button>
                                                 </>
                                             )}
