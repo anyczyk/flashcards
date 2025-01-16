@@ -79,5 +79,24 @@
   "revers": "Reverter",
   "copied_selected_flashcards_to_clipboard": "Cartões selecionados copiados para a área de transferência",
   "an_error_occurred_while_exporting_the_flashcards": "Ocorreu um erro ao exportar os cartões",
-  "error_deleting_database": "Erro ao excluir o banco de dados"
+  "error_deleting_database": "Erro ao excluir o banco de dados",
+
+  "are_you_sure_restart_all_flashcards": "Tem certeza de que deseja reiniciar todos os cartões?",
+  "are_you_sure_remove_all_flashcards": "Tem certeza de que deseja remover todos os cartões?",
+  "close": "Fechar",
+  "confirm": "Confirmar",
+  "library": "Biblioteca",
+  "installed": "Instalado",
+  "search": "Pesquisar",
+  "move": "Mover",
+  "edit_category": "Editar categoria",
+  "choose_set_from_library": "Escolher conjunto da biblioteca",
+  "import": "Importar",
+  "export": "Exportar",
+  "free_flashcards": "Cartões gratuitos",
+  "search_the_database": "Pesquisar no banco de dados",
+
+  "no_results": "Sem resultados",
+  "number_of_flashcards_found": "Número de flashcards encontrados",
+  "number_of_flashcards": "Número de flashcards"
 }

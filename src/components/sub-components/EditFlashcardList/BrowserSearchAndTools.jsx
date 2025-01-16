@@ -1,9 +1,11 @@
+// BrowserSearchAndTools.jsx
+
 import React, { useState, useRef, useEffect, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import useWcagModal from '../../../hooks/useWcagModal';
 import { FlashcardContext } from "../../../context/FlashcardContext";
 import cardsExport from "../../../utils/cardsExport";
-import {removeItemFromLocalStorage} from "../../../utils/storage";
+import { removeItemFromLocalStorage } from "../../../utils/storage";
 
 const BrowserSearchAndTools = ({
                                    setSelectedCards,
@@ -46,17 +48,14 @@ const BrowserSearchAndTools = ({
                 const directionDown = currentScrollY > prevScrollY.current;
 
                 if (directionDown) {
-                    // Przewijanie w dół
                     if (currentScrollY > positionY.current && !oSearch) {
                         setOSearch(true);
                     }
                 } else {
-                    // Przewijanie w górę
                     if (currentScrollY < positionY.current && oSearch) {
                         setOSearch(false);
                     }
                 }
-
                 prevScrollY.current = currentScrollY;
                 isTicking.current = false;
             });
@@ -92,14 +91,41 @@ const BrowserSearchAndTools = ({
     };
 
     useWcagModal(visibleModalAll, setVisibleModalAll, modalRef);
+    function getSubCategoriesObject() {
+        const subCatStr = localStorage.getItem('subCategoriesOrderStorage');
+        return subCatStr ? JSON.parse(subCatStr) : {};
+    }
+
+    function encodeSuperCategoryKey(superCategory) {
+        return 'subCategoryOrder_' + btoa(unescape(encodeURIComponent(superCategory)));
+    }
+
+    function saveSubCategoriesObject(obj) {
+        localStorage.setItem('subCategoriesOrderStorage', JSON.stringify(obj));
+    }
+
+    function removeCategoryFromSuperCategory(superCat, categoryName) {
+        const subObj = getSubCategoriesObject();
+        const subKey = encodeSuperCategoryKey(superCat);
+        if (subObj[subKey]) {
+            const idx = subObj[subKey].indexOf(categoryName);
+            if (idx !== -1) {
+                console.log("ccc");
+                subObj[subKey].splice(idx, 1);
+                saveSubCategoriesObject(subObj);
+            }
+        }
+    }
 
     const removeSelectedCards = () => {
         const categoriesInSuperCatCount = flashcards.filter(fc => fc.superCategory === filteredFlashcards[0].superCategory).length;
-        if(areAllSelected && filteredFlashcards.length === categoriesInSuperCatCount && filteredFlashcards[0].superCategory) {
-            removeItemFromLocalStorage("categoryOrder",filteredFlashcards[0].superCategory);
-        } else if(areAllSelected && filteredFlashcards[0].superCategory === '') {
-            removeItemFromLocalStorage("categoryOrder",filteredFlashcards[0].category);
+
+        if (areAllSelected && filteredFlashcards.length === categoriesInSuperCatCount && filteredFlashcards[0].superCategory) {
+            removeItemFromLocalStorage("categoryOrder", filteredFlashcards[0].superCategory);
+        } else if (areAllSelected && filteredFlashcards[0].superCategory === '') {
+            removeItemFromLocalStorage("categoryOrder", filteredFlashcards[0].category);
         }
+
         let backToList = areAllSelected;
         selectedCards.forEach(id => {
             if (filteredFlashcards.some(fc => fc.id === id)) {
@@ -107,7 +133,8 @@ const BrowserSearchAndTools = ({
             }
         });
         setSelectedCards([]);
-        if(backToList) {
+        if (backToList) {
+            removeCategoryFromSuperCategory(filteredFlashcards[0].superCategory, filteredFlashcards[0].category);
             backToEditlist();
         }
     };
@@ -147,7 +174,7 @@ const BrowserSearchAndTools = ({
                     <li className="d-flex align-items-center w-100">
                         <input
                             type="search"
-                            placeholder="Szukaj..."
+                            placeholder={t('search')}
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
                             onKeyDown={handleKeyDown}

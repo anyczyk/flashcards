@@ -6,11 +6,13 @@ import EditFlashcardList from './components/EditFlashcardList';
 import ViewFlashcards from './components/ViewFlashcards';
 import ImportExport from './components/ImportExport';
 import Library from './components/Library';
+import Search from './components/Search';
 import Header from './components/Header';
 import { useTranslation } from 'react-i18next';
 import { setLocalStorage } from './utils/storage';
 import Footer from "./components/Footer";
 import { FlashcardContext } from './context/FlashcardContext';
+import {EditSearchProvider} from "./context/EditSearchContext";
 
 function App() {
     const { t, i18n } = useTranslation();
@@ -65,10 +67,11 @@ function App() {
                 )}
                 <Routes>
                     <Route path="/" element={<ViewFlashcards clearInsomnia={clearInsomnia} mainHomePageLoad={mainHomePageLoad} setMainHomePageLoad={setMainHomePageLoad} />}/>
-                    <Route path="/list-edit" element={<EditFlashcardList preloader={preloader} setPreloader={setPreloader} />}/>
+                    <Route path="/list-edit" element={<EditSearchProvider><EditFlashcardList preloader={preloader} setPreloader={setPreloader} /></EditSearchProvider>}/>
                     <Route path="/create" element={<CreateFlashcard addFlashcard={addFlashcard} categories={categories} superCategoriesArray={superCategoriesArray} />} />
                     <Route path="/import-export" element={<ImportExport />} />
                     <Route path="/library" element={<Library />} />
+                    <Route path="/Search" element={<EditSearchProvider><Search /></EditSearchProvider>} />
                     <Route path="*" element={<Navigate to="/" replace/>}/>
                 </Routes>
             </main>

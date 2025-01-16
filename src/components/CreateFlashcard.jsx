@@ -1,5 +1,5 @@
 // CreateFlashcard.jsx
-import React, {useState, useEffect, useCallback, useContext} from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { getCordovaLanguage } from '../utils/getLanguage';
 import { loadLanguages } from '../utils/loadLanguages';
@@ -8,11 +8,14 @@ import { useTranslation } from 'react-i18next';
 import { getAllFlashcards } from '../db';
 import SelectSuperCategory from "./sub-components/common/SelectSuperCategory";
 import SelectCategory from "./sub-components/common/SelectCategory";
-import {useLocation, useNavigate} from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
-function CreateFlashcard({addFlashcard, categories, superCategoriesArray}) {
+function encodeSuperCategoryKey(superCategory) {
+    return 'subCategoryOrder_' + btoa(unescape(encodeURIComponent(superCategory)));
+}
+
+function CreateFlashcard({ addFlashcard, categories, superCategoriesArray }) {
     const { t } = useTranslation();
-
     const location = useLocation();
     const queryParams = new URLSearchParams(location.search);
     const getSuperCategory = queryParams.get("superCategory");
@@ -88,6 +91,46 @@ function CreateFlashcard({addFlashcard, categories, superCategoriesArray}) {
         }
     }, [availableLanguages]);
 
+    const saveToLocalStorage = (finalCategory, finalSuperCategory) => {
+        let categoryToStore = finalSuperCategory || finalCategory;
+        const savedOrder = localStorage.getItem('categoryOrder');
+        let savedOrderArray = savedOrder ? JSON.parse(savedOrder) : [];
+
+        if (categoryToStore) {
+            const indexInOrder = savedOrderArray.indexOf(categoryToStore);
+            if (indexInOrder !== -1) {
+                savedOrderArray.splice(indexInOrder, 1);
+            }
+            savedOrderArray.unshift(categoryToStore);
+            localStorage.setItem('categoryOrder', JSON.stringify(savedOrderArray));
+        }
+
+        if (finalSuperCategory) {
+            try {
+                const subCatKey = encodeSuperCategoryKey(finalSuperCategory);
+                const subCatDataStr = localStorage.getItem('subCategoriesOrderStorage');
+                let subCatDataObj = subCatDataStr ? JSON.parse(subCatDataStr) : {};
+
+                if (!subCatDataObj[subCatKey]) {
+                    subCatDataObj[subCatKey] = [];
+                }
+ii
+                if (finalCategory) {
+                    const realSubCat = finalCategory.trim() === '' ? 'Without category' : finalCategory.trim();
+
+                    const indexInSub = subCatDataObj[subCatKey].indexOf(realSubCat);
+                    if (indexInSub !== -1) {
+                        subCatDataObj[subCatKey].splice(indexInSub, 1);
+                    }
+                    subCatDataObj[subCatKey].unshift(realSubCat);
+                }
+                localStorage.setItem('subCategoriesOrderStorage', JSON.stringify(subCatDataObj));
+            } catch (error) {
+                console.error('Error saving to subCategoriesOrderStorage:', error);
+            }
+        }
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (front.trim() && back.trim()) {
@@ -95,12 +138,9 @@ function CreateFlashcard({addFlashcard, categories, superCategoriesArray}) {
             if (finalCategory.toLowerCase() === 'without category') {
                 finalCategory = '';
             }
-
             const finalLangFront = langFront || 'en-US';
             const finalLangBack = langBack || 'en-US';
             const finalSuperCategory = superCategory.trim();
-
-            console.log('Submitting flashcard with languages:', finalLangFront, finalLangBack);
 
             try {
                 await addFlashcard({
@@ -112,21 +152,13 @@ function CreateFlashcard({addFlashcard, categories, superCategoriesArray}) {
                     superCategory: finalSuperCategory
                 });
 
-                let categoryToStore = finalSuperCategory || finalCategory;
-                const savedOrder = localStorage.getItem('categoryOrder');
-                let savedOrderArray = savedOrder ? JSON.parse(savedOrder) : [];
-                if (categoryToStore) {
-                    const index = savedOrderArray.indexOf(categoryToStore);
-                    if (index !== -1) {
-                        savedOrderArray.splice(index, 1);
-                    }
-                    savedOrderArray.unshift(categoryToStore);
-                }
-                localStorage.setItem('categoryOrder', JSON.stringify(savedOrderArray));
+                saveToLocalStorage(finalCategory, finalSuperCategory);
+
                 setFlashcardCreated(true);
                 setFront('');
                 setBack('');
-                if(getSuperCategory || getSuperCategory==='') {
+
+                if (getSuperCategory || getSuperCategory === '') {
                     navigate('/list-edit');
                 }
             } catch (error) {
@@ -166,9 +198,10 @@ function CreateFlashcard({addFlashcard, categories, superCategoriesArray}) {
                             required
                         />
                     </p>
-
                     <p>
-                        <label htmlFor="lang-front">{t('language_code_for_speech_synthesizer')} ({t('front')}):</label>
+                        <label htmlFor="lang-front">
+                            {t('language_code_for_speech_synthesizer')} ({t('front')}):
+                        </label>
                         <br />
                         <SelectCodeLanguages
                             availableLanguages={availableLanguages}
@@ -177,9 +210,7 @@ function CreateFlashcard({addFlashcard, categories, superCategoriesArray}) {
                             setFunction={setLangFront}
                         />
                     </p>
-
                     <hr />
-
                     <p>
                         <label htmlFor="o-back">
                             <span className="color-red">*</span> {t('back')}:
@@ -195,7 +226,9 @@ function CreateFlashcard({addFlashcard, categories, superCategoriesArray}) {
                     </p>
 
                     <p>
-                        <label htmlFor="lang-back">{t('language_code_for_speech_synthesizer')} ({t('back')}):</label>
+                        <label htmlFor="lang-back">
+                            {t('language_code_for_speech_synthesizer')} ({t('back')}):
+                        </label>
                         <br />
                         <SelectCodeLanguages
                             availableLanguages={availableLanguages}
@@ -204,26 +237,20 @@ function CreateFlashcard({addFlashcard, categories, superCategoriesArray}) {
                             setFunction={setLangBack}
                         />
                     </p>
-
                     <hr />
-
                     <SelectSuperCategory
                         superCategory={superCategory}
                         setSuperCategory={setSuperCategory}
                         superCategoriesArray={superCategoriesArray}
                         setCurrentSelectSuperCategory={setCurrentSelectSuperCategory}
                     />
-
                     <hr />
-
                     <SelectCategory
                         category={category}
                         setCategory={setCategory}
                         categoriesDependentOnSuperCategory={categoriesDependentOnSuperCategory}
                     />
-
                     <hr />
-
                     <p>
                         <button type="submit" disabled={!front.trim() || !back.trim()}>
                             {t('add_flashcard')}

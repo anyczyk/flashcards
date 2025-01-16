@@ -1,14 +1,25 @@
-import React from "react";
+// SelectCategory.jsx
+
+import React, {useRef} from "react";
 import {useTranslation} from "react-i18next";
 
 const SelectCategory = ({category, setCategory, categoriesDependentOnSuperCategory}) => {
     const {t} = useTranslation();
+    const refInputTextCategory = useRef();
+    const refSelectTextCategory = useRef();
     const handleCategorySelect = (e) => {
         const selected = e.target.value;
         if (selected) {
             setCategory(selected);
         } else {
             setCategory('');
+        }
+    };
+
+    const handleClear = () => {
+        setCategory('');
+        if (refInputTextCategory.current) {
+            refInputTextCategory.current.focus();
         }
     };
 
@@ -28,7 +39,7 @@ const SelectCategory = ({category, setCategory, categoriesDependentOnSuperCatego
                     ))}
                 </select>
             </p>
-            <p>
+            <p className={`o-text-input-with-clear ${category ? 'o-text-input-with-clear--active' : ''}`}>
                 <input
                     type="text"
                     maxLength="60"
@@ -36,6 +47,15 @@ const SelectCategory = ({category, setCategory, categoriesDependentOnSuperCatego
                     value={category}
                     onChange={(e) => setCategory(e.target.value)}
                 />
+                {category && (
+                    <button
+                        className="o-text-input-with-clear__button-clear"
+                        onClick={handleClear}
+                        aria-label="Clear input"
+                    >
+                        <i className="icon-cancel"/>
+                    </button>
+                )}
             </p>
         </>
     );

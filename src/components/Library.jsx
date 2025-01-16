@@ -9,10 +9,11 @@ function Library() {
 
 
     return (
-        <div className="o-page-import-export">
-            <h2>Library</h2>
-            <hr />
-            <FilesListImportFree />
+        <div className="o-page-library">
+            <h2>{t('library')}</h2>
+            <hr/>
+            <h3>{t('free_flashcards')}</h3>
+            <FilesListImportFree/>
         </div>
     );
 }

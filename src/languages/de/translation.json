@@ -79,5 +79,24 @@
   "revers": "Umkehren",
   "copied_selected_flashcards_to_clipboard": "Ausgewählte Karteikarten in die Zwischenablage kopiert",
   "an_error_occurred_while_exporting_the_flashcards": "Beim Exportieren der Karteikarten ist ein Fehler aufgetreten",
-  "error_deleting_database": "Fehler beim Löschen der Datenbank"
+  "error_deleting_database": "Fehler beim Löschen der Datenbank",
+
+  "are_you_sure_restart_all_flashcards": "Sind Sie sicher, dass Sie alle Karteikarten neu starten möchten?",
+  "are_you_sure_remove_all_flashcards": "Sind Sie sicher, dass Sie alle Karteikarten entfernen möchten?",
+  "close": "Schließen",
+  "confirm": "Bestätigen",
+  "library": "Bibliothek",
+  "installed": "Installiert",
+  "search": "Suchen",
+  "move": "Bewegen",
+  "edit_category": "Kategorie bearbeiten",
+  "choose_set_from_library": "Satz aus der Bibliothek auswählen",
+  "import": "Importieren",
+  "export": "Exportieren",
+  "free_flashcards": "Kostenlose Karteikarten",
+  "search_the_database": "Durchsuche die Datenbank",
+
+  "no_results": "Keine Ergebnisse",
+  "number_of_flashcards_found": "Anzahl der gefundenen Karteikarten",
+  "number_of_flashcards": "Anzahl der Karteikarten"
 }

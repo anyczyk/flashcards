@@ -1,9 +1,24 @@
-import React, { useState } from "react";
+// CategoryList.jsx
+
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
 
+function encodeSuperCategoryKey(superCategory) {
+    return 'subCategoryOrder_' + btoa(unescape(encodeURIComponent(superCategory)));
+}
+
+function getInitialSubcategoriesOrder(superCat, flashcards) {
+    return [
+        ...new Set(
+            flashcards
+                .filter(fc => fc.superCategory === superCat)
+                .map(fc => fc.category && fc.category.trim() !== '' ? fc.category : 'Without category')
+        )
+    ];
+}
+
 const CategoryList = ({
-                          loadData,
                           selectedCategory,
                           selectedSuperCategory,
                           flashcards,
@@ -19,6 +34,22 @@ const CategoryList = ({
     const { t } = useTranslation();
     const navigate = useNavigate();
 
+    // Here we read the saved subcategory orders from localStorage.
+    // Object of the form:
+    // {
+    // "subCategoryOrder_abCdE...": ["Subcat A", "Subcat B", ...],
+    // "subCategoryOrder_xyZ...": ["Other Subcat", ...],
+    // ...
+    // }
+    const [subCategoriesOrder, setSubCategoriesOrder] = useState(() => {
+        try {
+            const stored = localStorage.getItem('subCategoriesOrderStorage');
+            return stored ? JSON.parse(stored) : {};
+        } catch (e) {
+            return {};
+        }
+    });
+
     const [activeSuperCategory, setActiveSuperCategory] = useState(null);
 
     const handleActiveSuperCategory = (index) => {
@@ -26,12 +57,12 @@ const CategoryList = ({
     };
 
     const handleRunFlashCards = (category, superCategory) => {
-        setSelectedCategory(category);    // Deselect the selected category
-        setSelectedSuperCategory(superCategory); // Set the selected superCategory
-        setLearningFilter('all');        // Sets the learning filter to 'all'
-        setCheckedCards(new Set());      // Clears the checked cards
-        setDeck([]);                     // Clears the deck
-        setTwoCards([]);                 // Clears the top two cards
+        setSelectedCategory(category);
+        setSelectedSuperCategory(superCategory);
+        setLearningFilter('all');
+        setCheckedCards(new Set());
+        setDeck([]);
+        setTwoCards([]);
     };
 
     return (
@@ -39,7 +70,6 @@ const CategoryList = ({
             <>
                 {flashcards.length > 0 ? (
                     <ul className="o-list-categories o-list-categories--main">
-                        {/* Przycisk „All” */}
                         <li>
                             <button
                                 className={`btn btn--dark-black-opacity ${
@@ -77,11 +107,13 @@ const CategoryList = ({
                 </span>
                             </button>
                         </li>
+
                         <li className="o-button-add-flashcard">
                             <button
                                 onClick={() => navigate('/create?superCategory=')}
                                 type="button"
                                 className="justify-content-center"
+                                aria-label={t('add_flashcard')}
                             >
                                 <i className="icon-plus"></i>
                             </button>
@@ -90,6 +122,7 @@ const CategoryList = ({
                         {orderedCategories.map((cat, index) => {
                             let count;
                             let knowCount;
+
                             if (cat === 'Without category') {
                                 count = flashcards.filter(fc =>
                                     (!fc.category || fc.category.trim() === '') &&
@@ -144,7 +177,7 @@ const CategoryList = ({
                                   }
                               ></i>{' '}
                                 {cat} (
-                              <strong className="color-black">
+                              <strong>
                                 {knowCountSuper}
                               </strong>/{countSuper})
                             </span>
@@ -154,58 +187,6 @@ const CategoryList = ({
 
                                             {activeSuperCategory === index && (
                                                 <ul className="o-list-categories o-list-categories--sub">
-                                                    {[...new Set(
-                                                        flashcards
-                                                            .filter(fc => fc.superCategory === cat)
-                                                            .map(fc => fc.category)
-                                                    )].map(subcat => {
-                                                        const subcatCount = flashcards.filter(
-                                                            fc => fc.category === subcat && fc.superCategory === cat
-                                                        ).length;
-                                                        const knowSubcatCount = flashcards.filter(
-                                                            fc => fc.category === subcat && fc.superCategory === cat && fc.know
-                                                        ).length;
-
-                                                        return (
-                                                            <li key={subcat}>
-                                                                <button
-                                                                    className={`btn bg-color-cream color-green-strong-dark ${
-                                                                        selectedCategory === subcat && learningFilter === 'all'
-                                                                            ? 'btn--active'
-                                                                            : ''
-                                                                    }`}
-                                                                    onClick={() => handleRunFlashCards(subcat, cat)}
-                                                                >
-                                  <span>
-                                    <i className="icon-play-outline"></i>{' '}
-                                      {subcat === 'Without category' || subcat === ''
-                                          ? t('without_category')
-                                          : subcat}{' '}
-                                      (<strong className="color-green-dark">
-                                      {knowSubcatCount}
-                                    </strong>/{subcatCount})
-                                      {subcatCount - knowSubcatCount > 0 ? (
-                                          <>
-                                              <sub className="bg-color-green">
-                                                  {Math.ceil(
-                                                      (knowSubcatCount * 100) / subcatCount
-                                                  )}%
-                                              </sub>
-                                              <sup className="bg-color-red">
-                                                  {subcatCount - knowSubcatCount}
-                                              </sup>
-                                          </>
-                                      ) : (
-                                          <sub className="o-category-complited bg-color-green vertical-center-count">
-                                              <i className="icon-ok"></i>
-                                          </sub>
-                                      )}
-                                  </span>
-                                                                </button>
-                                                            </li>
-                                                        );
-                                                    })}
-
                                                     <li>
                                                         {(() => {
                                                             const knowCountSuper = flashcards.filter(
@@ -221,12 +202,13 @@ const CategoryList = ({
 
                                                             return (
                                                                 <button
-                                                                    className="bg-color-cream color-green-strong-dark"
+                                                                    className="btn btn--dark-light-opacity "
                                                                     onClick={() => handleRunFlashCards(null, cat)}
                                                                 >
                                   <span>
                                     <i className="icon-play-outline"></i> {t('all')} (
-                                    <strong className="color-green-dark">{knowCountSuper}</strong>/{countSuper})
+                                    <strong>{knowCountSuper}</strong>/
+                                      {countSuper})
                                       {unknownCountSuper > 0 ? (
                                           <>
                                               <sub className="bg-color-green">
@@ -246,43 +228,95 @@ const CategoryList = ({
                                                             );
                                                         })()}
                                                     </li>
+                                                    {(() => {
+                                                        const subCatKey = encodeSuperCategoryKey(cat);
+                                                        const userDefinedOrder =
+                                                            subCategoriesOrder[subCatKey] ||
+                                                            getInitialSubcategoriesOrder(cat, flashcards);
+
+                                                        return userDefinedOrder.map((subcat) => {
+                                                            const subcatCount = flashcards.filter(
+                                                                fc => fc.category === subcat && fc.superCategory === cat
+                                                            ).length;
+                                                            const knowSubcatCount = flashcards.filter(
+                                                                fc => fc.category === subcat && fc.superCategory === cat && fc.know
+                                                            ).length;
+
+                                                            return (
+                                                                <li key={subcat}>
+                                                                    <button
+                                                                        className={`btn bg-color-cream color-green-strong-dark ${
+                                                                            selectedCategory === subcat && learningFilter === 'all'
+                                                                                ? 'btn--active'
+                                                                                : ''
+                                                                        }`}
+                                                                        onClick={() => handleRunFlashCards(subcat, cat)}
+                                                                    >
+                                    <span>
+                                      <i className="icon-play-outline"></i>{' '}
+                                        {subcat === 'Without category' || subcat === ''
+                                            ? t('without_category')
+                                            : subcat}{' '}
+                                        (<strong>
+                                        {knowSubcatCount}
+                                      </strong>/{subcatCount})
+                                        {subcatCount - knowSubcatCount > 0 ? (
+                                            <>
+                                                <sub className="bg-color-green">
+                                                    {Math.ceil(
+                                                        (knowSubcatCount * 100) / subcatCount
+                                                    )}%
+                                                </sub>
+                                                <sup className="bg-color-red">
+                                                    {subcatCount - knowSubcatCount}
+                                                </sup>
+                                            </>
+                                        ) : (
+                                            <sub className="o-category-complited bg-color-green vertical-center-count">
+                                                <i className="icon-ok"></i>
+                                            </sub>
+                                        )}
+                                    </span>
+                                                                    </button>
+                                                                </li>
+                                                            );
+                                                        });
+                                                    })()}
                                                 </ul>
                                             )}
                                         </>
                                     ) : (
                                         count > 0 && (
-                                            <>
-                                                <button
-                                                    className={`btn ${
-                                                        selectedCategory === cat && learningFilter === 'all'
-                                                            ? 'btn--active'
-                                                            : ''
-                                                    }`}
-                                                    onClick={() => handleRunFlashCards(cat, null)}
-                                                >
-                          <span>
-                            <i className="icon-play-outline"></i>
-                              {cat === 'Without category'
-                                  ? t('without_category')
-                                  : cat}{' '}
-                              (<strong className="color-green-dark">{knowCount}</strong>/{count})
-                              {count - knowCount > 0 ? (
-                                  <>
-                                      <sub className="bg-color-green">
-                                          {Math.ceil((knowCount * 100) / count)}%
-                                      </sub>
-                                      <sup className="bg-color-red">
-                                          {count - knowCount}
-                                      </sup>
-                                  </>
-                              ) : (
-                                  <sub className="o-category-complited bg-color-green vertical-center-count">
-                                      <i className="icon-ok"></i>
-                                  </sub>
-                              )}
-                          </span>
-                                                </button>
-                                            </>
+                                            <button
+                                                className={`btn ${
+                                                    selectedCategory === cat && learningFilter === 'all'
+                                                        ? 'btn--active'
+                                                        : ''
+                                                }`}
+                                                onClick={() => handleRunFlashCards(cat, null)}
+                                            >
+                        <span>
+                          <i className="icon-play-outline"></i>
+                            {cat === 'Without category'
+                                ? t('without_category')
+                                : cat}{' '}
+                            (<strong>{knowCount}</strong>/{count})
+                            {count - knowCount > 0 ? (
+                                <>
+                                    <sub className="bg-color-green">
+                                        {Math.ceil((knowCount * 100) / count)}%
+                                    </sub>
+                                    <sup className="bg-color-red">
+                                        {count - knowCount}
+                                    </sup>
+                                </>
+                            ) : (
+                                <sub className="o-category-complited bg-color-green vertical-center-count">
+                                    <i className="icon-ok"></i>
+                                </sub>
+                            )}
+                        </span>
+                                            </button>
                                         )
                                     )}
                                 </li>
@@ -304,9 +338,10 @@ const CategoryList = ({
                                 </Link>
                             </li>
                         </ul>
+                        <p>{t('choose_set_from_library')}</p>
                         <p>Lub wybierz zestaw z naszej biblioteki fiszek:</p>
                         <Link className="btn w-100 btn--blue" to="/library">
-                            <i className="icon-book"></i> Library
+                            <i className="icon-book"></i> {t('library')}
                         </Link>
                     </div>
                 )}

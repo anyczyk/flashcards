@@ -1,3 +1,5 @@
+// ModalEdit.jsx
+
 import React, { useCallback, useContext, useEffect, useRef, useState } from "react";
 import { useTranslation } from 'react-i18next';
 import useWcagModal from "../../../hooks/useWcagModal";
@@ -7,6 +9,94 @@ import SelectCategory from "../common/SelectCategory";
 import { getAllFlashcards } from "../../../db";
 import cardsExport from "../../../utils/cardsExport";
 import { removeItemFromLocalStorage } from "../../../utils/storage";
+
+function encodeSuperCategoryKey(superCategory) {
+    return 'subCategoryOrder_' + btoa(unescape(encodeURIComponent(superCategory)));
+}
+function getSubCategoriesObject() {
+    const subCatStr = localStorage.getItem('subCategoriesOrderStorage');
+    return subCatStr ? JSON.parse(subCatStr) : {};
+}
+function saveSubCategoriesObject(obj) {
+    localStorage.setItem('subCategoriesOrderStorage', JSON.stringify(obj));
+}
+
+function removeSuperCategoryKeyFromLocalStorage(superCat) {
+    const subObj = getSubCategoriesObject();
+    const oldKey = encodeSuperCategoryKey(superCat);
+    if (subObj[oldKey]) {
+        delete subObj[oldKey];
+        saveSubCategoriesObject(subObj);
+    }
+}
+
+function removeCategoryFromSuperCategory(superCat, categoryName) {
+    const subObj = getSubCategoriesObject();
+    const subKey = encodeSuperCategoryKey(superCat);
+    if (subObj[subKey]) {
+        const idx = subObj[subKey].indexOf(categoryName);
+        if (idx !== -1) {
+            subObj[subKey].splice(idx, 1);
+            saveSubCategoriesObject(subObj);
+        }
+    }
+}
+
+function addCategoryToSuperCategory(superCat, newCat) {
+    const subObj = getSubCategoriesObject();
+    const newKey = encodeSuperCategoryKey(superCat);
+    if (!subObj[newKey]) {
+        subObj[newKey] = [];
+    }
+    // usuwamy ewentualny duplikat
+    const index = subObj[newKey].indexOf(newCat);
+    if (index !== -1) {
+        subObj[newKey].splice(index, 1);
+    }
+    // Dodajemy nową nazwę "od góry"
+    subObj[newKey].unshift(newCat);
+
+    saveSubCategoriesObject(subObj);
+}
+
+function renameCategoryInSuperCategory(superCat, oldCat, newCat, isNewCatSelected) {
+    const subObj = getSubCategoriesObject();
+    const subKey = encodeSuperCategoryKey(superCat);
+    if (!subObj[subKey]) return;
+
+    const idx = subObj[subKey].indexOf(oldCat);
+    if (idx !== -1) {
+        subObj[subKey].splice(idx, 1);
+    }
+    subObj[subKey].unshift(newCat);
+
+    saveSubCategoriesObject(subObj);
+    if (isNewCatSelected) {
+        removeCategoryFromSuperCategory(superCat,newCat);
+    }
+}
+
+function renameSuperCategoryKeyInLocalStorage(oldSuperCat, newSuperCat) {
+    const subObj = getSubCategoriesObject();
+    const oldKey = encodeSuperCategoryKey(oldSuperCat);
+    const newKey = encodeSuperCategoryKey(newSuperCat);
+
+    if (subObj[oldKey] && !subObj[newKey]) {
+        subObj[newKey] = subObj[oldKey];
+        delete subObj[oldKey];
+        saveSubCategoriesObject(subObj);
+    } else if (subObj[oldKey] && subObj[newKey]) {
+        const merged = [...subObj[newKey], ...subObj[oldKey]];
+        const unique = [...new Set(merged)];
+        subObj[newKey] = unique;
+        delete subObj[oldKey];
+        saveSubCategoriesObject(subObj);
+    }
+}
+function moveSubCategoryBetweenSuperCategories(oldSuperCat, newSuperCat, oldCat, newCat) {
+    removeCategoryFromSuperCategory(oldSuperCat, oldCat);
+    addCategoryToSuperCategory(newSuperCat, newCat);
+}
 
 const ModalEdit = ({
                        setNameNew,
@@ -24,14 +114,12 @@ const ModalEdit = ({
                        nameNewSuperCategory,
                        nameSuperCategory
                    }) => {
-
     const { t } = useTranslation();
     const {
         flashcards,
         removeFlashcard,
         editFlashcard,
         setOrderedCategories,
-        loadData,
         superCategoriesArray
     } = useContext(FlashcardContext);
 
@@ -52,7 +140,6 @@ const ModalEdit = ({
                 fc.category && fc.category.trim() !== '' && fc.superCategory === currentSelectSuperCategory
             );
         }
-
         const catDependSuperCategory = [...new Set(relevantData.map(fc => fc.category))];
         setCategoriesDependentOnSuperCategory(catDependSuperCategory);
     }, [nameNewSuperCategory, currentSelectSuperCategory]);
@@ -79,38 +166,41 @@ const ModalEdit = ({
     const handleQuickEditSave = async (type, action) => {
         setPreloader(true);
         const exportToFile = [];
-        let isRemovedFromLocalStorage = false; // Flaga dla jednorazowego usunięcia
+        let isRemovedFromLocalStorage = false;
+
         const promises = flashcards.map((card) => {
+            // console.log("c1");
             if (type === 'super-category') {
                 if (card.superCategory === nameOld) {
                     if (action === 'remove') {
                         if (!isRemovedFromLocalStorage) {
-                            console.log("remove:", nameOld);
                             removeItemFromLocalStorage("categoryOrder", nameOld);
+                            removeSuperCategoryKeyFromLocalStorage(nameOld);
                             isRemovedFromLocalStorage = true;
                         }
                         return removeFlashcard(card.id);
                     } else if (action === 'export-to-file') {
                         exportToFile.push(card);
                     } else {
+                        // rename / reset
                         return editFlashcard(
                             card.id,
                             card.front,
                             card.back,
                             card.category,
-                            (action === 'reset') ? '' : card.know,
+                            action === 'reset' ? '' : card.know,
                             card.langFront,
                             card.langBack,
-                            (action === 'reset') ? '' : nameNew
+                            action === 'reset' ? card.superCategory : nameNew
                         );
                     }
                 }
             }
             else if (type === 'category-without-super-category') {
+                // console.log("c2");
                 if (card.category === nameOld && card.superCategory === '') {
                     if (action === 'remove') {
                         if (!isRemovedFromLocalStorage) {
-                            console.log("remove:", nameOld);
                             removeItemFromLocalStorage("categoryOrder", nameOld);
                             isRemovedFromLocalStorage = true;
                         }
@@ -122,8 +212,8 @@ const ModalEdit = ({
                             card.id,
                             card.front,
                             card.back,
-                            (action === 'reset') ? card.category : nameNew,
-                            (action === 'reset') ? '' : card.know,
+                            action === 'reset' ? card.category : nameNew,
+                            action === 'reset' ? '' : card.know,
                             card.langFront,
                             card.langBack,
                             nameNewSuperCategory
@@ -131,17 +221,19 @@ const ModalEdit = ({
                     }
                 }
                 else if (card.category === '' && card.superCategory === '' && nameOld === 'Without category') {
+                    // console.log("c3");
                     if (action === 'remove') {
                         return removeFlashcard(card.id);
                     } else if (action === 'export-to-file') {
                         exportToFile.push(card);
                     } else {
+                        // rename / reset
                         return editFlashcard(
                             card.id,
                             card.front,
                             card.back,
                             card.category,
-                            (action === 'reset') ? '' : card.know,
+                            action === 'reset' ? '' : card.know,
                             card.langFront,
                             card.langBack,
                             card.superCategory
@@ -150,6 +242,7 @@ const ModalEdit = ({
                 }
             }
             else if (type === 'category-inside-super-category') {
+                // console.log("c4");
                 if (card.category === nameOld && card.superCategory === nameSuperCategory) {
                     if (action === 'remove') {
                         const categoriesInSuperCatCount = flashcards
@@ -160,6 +253,9 @@ const ModalEdit = ({
                             .length;
                         if (categoriesInSuperCatCount === 1) {
                             removeItemFromLocalStorage("categoryOrder", nameSuperCategory);
+                            removeSuperCategoryKeyFromLocalStorage(nameSuperCategory);
+                        } else {
+                            removeCategoryFromSuperCategory(nameSuperCategory, nameOld);
                         }
                         return removeFlashcard(card.id);
                     } else if (action === 'export-to-file') {
@@ -169,8 +265,8 @@ const ModalEdit = ({
                             card.id,
                             card.front,
                             card.back,
-                            (action === 'reset') ? card.category : nameNew,
-                            (action === 'reset') ? '' : card.know,
+                            action === 'reset' ? card.category : nameNew,
+                            action === 'reset' ? '' : card.know,
                             card.langFront,
                             card.langBack,
                             nameNewSuperCategory
@@ -179,6 +275,7 @@ const ModalEdit = ({
                 }
             }
             else if (type === 'reset-all-flashcards') {
+                // console.log("c5");
                 return editFlashcard(
                     card.id,
                     card.front,
@@ -189,11 +286,13 @@ const ModalEdit = ({
                     card.langBack,
                     card.superCategory
                 );
-            } else if (type === 'remove-all-flashcards') {
+            }
+            else if (type === 'remove-all-flashcards') {
                 localStorage.removeItem("categoryOrder");
+                localStorage.removeItem("subCategoriesOrderStorage");
+                localStorage.removeItem("openDropdownSuperCategory");
                 return removeFlashcard(card.id);
             }
-
             return null;
         });
 
@@ -202,27 +301,63 @@ const ModalEdit = ({
         }
 
         const filteredPromises = promises.filter(Boolean);
-
         try {
             await Promise.all(filteredPromises);
+            if (!['remove','reset','export-to-file'].includes(action)) {
+                // a) SUPER-KATEGORIA
+                if (type === 'super-category') {
+                    removeItemFromLocalStorage("categoryOrder", nameOld);
+                    renameSuperCategoryKeyInLocalStorage(nameOld, nameNew);
+                    const savedOrder = localStorage.getItem('categoryOrder');
+                    let arr = savedOrder ? JSON.parse(savedOrder) : [];
+                    arr = arr.filter((x) => x !== nameNew);
+                    arr.unshift(nameNew);
+                    localStorage.setItem('categoryOrder', JSON.stringify(arr));
+                }
+                else if (type === 'category-inside-super-category') {
+                    if (nameSuperCategory === nameNewSuperCategory) {
+                        if (nameOld !== nameNew) {
+                            const isNewCatSelected = categoriesDependentOnSuperCategory.includes(nameNew);
+                            renameCategoryInSuperCategory(nameSuperCategory, nameOld, nameNew, isNewCatSelected);
+                        }
+                    } else {
+                        moveSubCategoryBetweenSuperCategories(
+                            nameSuperCategory,
+                            nameNewSuperCategory,
+                            nameOld,
+                            nameNew
+                        );
+                    }
+                }
+                else if (type === 'category-without-super-category') {
+                    removeItemFromLocalStorage("categoryOrder", nameOld);
+                    if (nameNewSuperCategory.trim()) {
+                        moveSubCategoryBetweenSuperCategories(
+                            '',
+                            nameNewSuperCategory,
+                            nameOld,
+                            nameNew
+                        );
+                    }
 
-            setOrderedCategories(prevCategories => {
-                const updated = prevCategories.map(cat =>
-                    cat === nameOld ? nameNew : cat
-                );
+                    if (!nameNewSuperCategory.trim()) {
+                        const savedOrder = localStorage.getItem('categoryOrder');
+                        let arr = savedOrder ? JSON.parse(savedOrder) : [];
+                        arr = arr.filter((x) => x !== nameNew);
+                        // "from top" - unshift
+                        arr.unshift(nameNew);
+                        localStorage.setItem('categoryOrder', JSON.stringify(arr));
+                    }
+                }
+            }
+
+            setOrderedCategories(prev => {
+                const updated = prev.map(cat => (cat === nameOld ? nameNew : cat));
                 return [...new Set(updated)];
             });
 
-            const savedOrder = localStorage.getItem('categoryOrder');
-            if (savedOrder) {
-                const orderIds = JSON.parse(savedOrder).map(cat =>
-                    cat === nameOld ? nameNew : cat
-                );
-                const uniqueOrderIds = [...new Set(orderIds)];
-                localStorage.setItem('categoryOrder', JSON.stringify(uniqueOrderIds));
-            }
-
             cancelModal();
+
         } catch (error) {
             console.error("Error saving changes:", error);
             alert(t('error_saving_changes'));
@@ -294,6 +429,7 @@ const ModalEdit = ({
                 ) : (
                     <>
                         <h2
+                            className="mb-0"
                             title={
                                 nameType === 'super-category'
                                     ? t('super_category')
@@ -306,6 +442,7 @@ const ModalEdit = ({
                         >
                             {t('edit')}
                         </h2>
+                        <hr />
 
                         {nameOld !== 'Without category' && !confirmRemove && (
                             <>
@@ -374,7 +511,7 @@ const ModalEdit = ({
                                         onClick={() => handleQuickEditSave(nameType, 'reset')}
                                     >
                                         <i className="icon-arrows-cw"></i>{" "}
-                                        <span>{t('progress_reset')}</span>
+                                        <span>x {t('progress_reset')}</span>
                                     </button>
                                 </li>
                                 <li>

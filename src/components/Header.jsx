@@ -58,6 +58,10 @@ const Header = ({setMainHomePageLoad, clearOptions, mainMenuVisible, setMainMenu
             >
                 <i className="icon-volume"></i>
             </button>
+            <Link onClick={() => {
+                clearOptions();
+            }} to="/Search" className="btn o-main-header__btn-search"><i
+                className="icon-search"></i></Link>
             <button ref={closeMenuBtnRef} onClick={showMainMenu}
                     className={`o-main-header__btn-menu ${mainMenuVisible ? 'o-main-header__btn-menu--active' : ''}`}
                     aria-label="Open and close menu"><span>Menu</span></button>
@@ -83,22 +87,44 @@ const Header = ({setMainHomePageLoad, clearOptions, mainMenuVisible, setMainMenu
                 </div>
                 <nav>
                     <ul>
-                        <li><Link onClick={() => setMainHomePageLoad(true)} to="/"><i
+                        <li><Link onClick={() => {
+                            setMainHomePageLoad(true);
+                            showMainMenu();
+                        }} to="/"><i
                             className="icon-play"></i> {t('view_flashcards')}</Link></li>
 
-                        <li><Link onClick={clearOptions} to="/list-edit"><i
+                        <li><Link onClick={() => {
+                            clearOptions();
+                            showMainMenu();
+                        }} to="/list-edit"><i
                             className="icon-wrench"></i> {t('settings')}</Link></li>
 
-                        <li><Link onClick={clearOptions} to="/create"><i
+                        <li><Link onClick={() => {
+                            clearOptions();
+                            showMainMenu();
+                        }} to="/create"><i
                             className="icon-plus"></i> {t('add_flashcard')}</Link></li>
 
-                        <li><Link onClick={clearOptions} to="/import-export"><i
+                        <li><Link onClick={() => {
+                            clearOptions();
+                            showMainMenu();
+                        }} to="/import-export"><i
                             className="icon-export"></i> {t('import_export')}</Link>
                         </li>
 
-                        <li><Link onClick={clearOptions} to="/library"><i
+                        <li><Link onClick={() => {
+                            clearOptions();
+                            showMainMenu();
+                        }} to="/library"><i
                             className="icon-book"></i> {t('library')}</Link>
                         </li>
+
+                        {/*<li><Link onClick={() => {*/}
+                        {/*    clearOptions();*/}
+                        {/*    showMainMenu();*/}
+                        {/*}} to="/Search"><i*/}
+                        {/*    className="icon-search"></i> {t('Search')}</Link>*/}
+                        {/*</li>*/}
                     </ul>
                 </nav>
                 <div>

@@ -182,7 +182,6 @@ function ViewFlashcards({clearInsomnia, mainHomePageLoad, setMainHomePageLoad}) 
                 }
                 await new Promise((resolve) => {
                     autoPlayTimeoutRef.current = setTimeout(resolve, waiting2);
-                    console.log("without sound? Waiting 1 second");
                 });
                 if (isAutoPlayCancelledRef.current) return;
 
@@ -218,7 +217,6 @@ function ViewFlashcards({clearInsomnia, mainHomePageLoad, setMainHomePageLoad}) 
         setPlayFlashcards((prevValue) => {
             const nextValue = !prevValue;
             if (nextValue) {
-                // Uruchamiamy autoplay
                 isAutoPlayCancelledRef.current = false;
                 autoPlayRunningRef.current = true;
                 startAutoPlay();
@@ -226,7 +224,6 @@ function ViewFlashcards({clearInsomnia, mainHomePageLoad, setMainHomePageLoad}) 
                     window.plugins.insomnia.keepAwake();
                 }
             } else {
-                // Pauzujemy autoplay
                 isAutoPlayCancelledRef.current = true;
                 autoPlayRunningRef.current = false;
                 clearTimeout(autoPlayTimeoutRef.current);

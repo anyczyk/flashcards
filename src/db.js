@@ -3,7 +3,7 @@ import { openDB } from 'idb';
 
 const DB_NAME = 'flashcardsDB';
 const STORE_NAME = 'flashcards';
-const DB_VERSION = 18;
+const DB_VERSION = 22;
 
 let uniqueCounter = 0;
 
@@ -117,7 +117,7 @@ export async function addMultipleFlashcardsToDB(flashcards) {
         }
     }
     try {
-        await tx.done; // Zamknij transakcję po zakończeniu
+        await tx.done;
     } catch (error) {
         console.error('Error completing transaction:', error);
     }

@@ -85,5 +85,18 @@
   "are_you_sure_remove_all_flashcards": "Are you sure remove all flashcards?",
   "close": "Close",
   "confirm": "Confirm",
-  "library": "Library"
+  "library": "Library",
+  "installed": "installed",
+  "search": "Search",
+  "move": "Move",
+  "edit_category": "Edit category",
+  "choose_set_from_library": "Choose set from library",
+  "import": "Import",
+  "export": "Export",
+  "free_flashcards": "Free flashcards",
+  "search_the_database": "Search the database",
+
+  "no_results": "No results",
+  "number_of_flashcards_found": "Number of flashcards found",
+  "number_of_flashcards": "Number of flashcards"
 }

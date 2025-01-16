@@ -79,5 +79,24 @@
   "revers": "Membalik",
   "copied_selected_flashcards_to_clipboard": "Kartu flash yang dipilih disalin ke papan klip",
   "an_error_occurred_while_exporting_the_flashcards": "Terjadi kesalahan saat mengekspor kartu flash",
-  "error_deleting_database": "Kesalahan saat menghapus database"
+  "error_deleting_database": "Kesalahan saat menghapus database",
+
+  "are_you_sure_restart_all_flashcards": "Apakah Anda yakin ingin memulai ulang semua kartu flash?",
+  "are_you_sure_remove_all_flashcards": "Apakah Anda yakin ingin menghapus semua kartu flash?",
+  "close": "Tutup",
+  "confirm": "Konfirmasi",
+  "library": "Perpustakaan",
+  "installed": "Terinstal",
+  "search": "Cari",
+  "move": "Pindah",
+  "edit_category": "Edit kategori",
+  "choose_set_from_library": "Pilih set dari perpustakaan",
+  "import": "Impor",
+  "export": "Ekspor",
+  "free_flashcards": "Kartu flash gratis",
+  "search_the_database": "Cari di basis data",
+
+  "no_results": "Tidak ada hasil",
+  "number_of_flashcards_found": "Jumlah kartu flash yang ditemukan",
+  "number_of_flashcards": "Jumlah kartu flash"
 }

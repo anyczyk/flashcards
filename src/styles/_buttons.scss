@@ -55,6 +55,15 @@ button,
     }
   }
 
+  &--dark-light-opacity {
+    background-color: rgb(217 205 182 / 35%);
+
+    &:active:not([disabled]) {
+      background-color: #fff;
+      color: var(--color-green-strong-dark);
+    }
+  }
+
   &--green {
     background-color: var(--color-green);
 

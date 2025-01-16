@@ -79,5 +79,24 @@
   "revers": "Odwróć",
   "copied_selected_flashcards_to_clipboard": "Skopiowano wybrane fiszki do schowka",
   "an_error_occurred_while_exporting_the_flashcards": "Wystąpił błąd podczas eksportu fiszek",
-  "error_deleting_database": "Błąd podczas usuwania bazy danych"
+  "error_deleting_database": "Błąd podczas usuwania bazy danych",
+
+  "are_you_sure_restart_all_flashcards": "Czy na pewno chcesz zrestartować wszystkie fiszki?",
+  "are_you_sure_remove_all_flashcards": "Czy na pewno chcesz usunąć wszystkie fiszki?",
+  "close": "Zamknij",
+  "confirm": "Potwierdź",
+  "library": "Biblioteka",
+  "installed": "Zainstalowany",
+  "search": "Szukaj",
+  "move": "Przenieś",
+  "edit_category": "Edytuj kategorię",
+  "choose_set_from_library": "Wybierz zestaw z biblioteki",
+  "import": "Importuj",
+  "export": "Eksportuj",
+  "free_flashcards": "Darmowe fiszki",
+  "search_the_database": "Szukaj w bazie danych",
+
+  "no_results": "Brak wyników",
+  "number_of_flashcards_found": "Liczba znalezionych fiszek",
+  "number_of_flashcards": "Liczba fiszek"
 }

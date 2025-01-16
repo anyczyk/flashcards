@@ -79,5 +79,24 @@
   "revers": "逆転",
   "copied_selected_flashcards_to_clipboard": "選択したフラッシュカードをクリップボードにコピーしました",
   "an_error_occurred_while_exporting_the_flashcards": "フラッシュカードのエクスポート中にエラーが発生しました",
-  "error_deleting_database": "データベース削除中のエラー"
+  "error_deleting_database": "データベース削除中のエラー",
+
+  "are_you_sure_restart_all_flashcards": "すべてのフラッシュカードを再起動してもよろしいですか？",
+  "are_you_sure_remove_all_flashcards": "すべてのフラッシュカードを削除してもよろしいですか？",
+  "close": "閉じる",
+  "confirm": "確認",
+  "library": "ライブラリ",
+  "installed": "インストール済み",
+  "search": "検索",
+  "move": "移動",
+  "edit_category": "カテゴリを編集",
+  "choose_set_from_library": "ライブラリからセットを選択",
+  "import": "インポート",
+  "export": "エクスポート",
+  "free_flashcards": "無料のフラッシュカード",
+  "search_the_database": "データベースを検索",
+
+  "no_results": "結果がありません",
+  "number_of_flashcards_found": "見つかったフラッシュカードの数",
+  "number_of_flashcards": "フラッシュカードの数"
 }

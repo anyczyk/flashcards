@@ -79,5 +79,24 @@
   "revers": "Invertir",
   "copied_selected_flashcards_to_clipboard": "Tarjetas seleccionadas copiadas al portapapeles",
   "an_error_occurred_while_exporting_the_flashcards": "Ocurrió un error al exportar las tarjetas",
-  "error_deleting_database": "Error al eliminar la base de datos"
+  "error_deleting_database": "Error al eliminar la base de datos",
+
+  "are_you_sure_restart_all_flashcards": "¿Estás seguro de reiniciar todas las tarjetas?",
+  "are_you_sure_remove_all_flashcards": "¿Estás seguro de eliminar todas las tarjetas?",
+  "close": "Cerrar",
+  "confirm": "Confirmar",
+  "library": "Biblioteca",
+  "installed": "Instalado",
+  "search": "Buscar",
+  "move": "Mover",
+  "edit_category": "Editar categoría",
+  "choose_set_from_library": "Elegir conjunto de la biblioteca",
+  "import": "Importar",
+  "export": "Exportar",
+  "free_flashcards": "Tarjetas gratuitas",
+  "search_the_database": "Buscar en la base de datos",
+
+  "no_results": "Sin resultados",
+  "number_of_flashcards_found": "Número de tarjetas encontradas",
+  "number_of_flashcards": "Número de tarjetas"
 }

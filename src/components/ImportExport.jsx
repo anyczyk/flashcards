@@ -1,16 +1,22 @@
 // ImportExport.jsx
 
-import React, {useRef, useState, useEffect, useContext} from 'react';
+import React, { useRef, useState, useEffect, useContext } from 'react';
 import { getAllFlashcards } from '../db';
 import cardsExport from '../utils/cardsExport';
 import { useTranslation } from 'react-i18next';
 import { FlashcardContext } from '../context/FlashcardContext';
-import {importAdd, importReplace} from "../utils/import";
+import { importAdd, importReplace } from "../utils/import";  // <-- Twoje pliki importujące
 import FilesListImportFree from "./sub-components/common/FilesListImportFree";
 
-function ImportExport({ handleImport }) {
+function ImportExport() {
     const { t } = useTranslation();
-    const { flashcards, loadData, setCurrentLocalStorageCategoryOrder, importSuccessMessage, setImportSuccessMessage } = useContext(FlashcardContext);
+    const {
+        flashcards,
+        loadData,
+        setCurrentLocalStorageCategoryOrder,
+        importSuccessMessage,
+        setImportSuccessMessage
+    } = useContext(FlashcardContext);
 
     const fileInputRef = useRef(null);
     const [selectedFile, setSelectedFile] = useState(null);
@@ -25,7 +31,7 @@ function ImportExport({ handleImport }) {
         return () => {
             if (timer) clearTimeout(timer);
         };
-    }, [importSuccessMessage]);
+    }, [importSuccessMessage, setImportSuccessMessage]);
 
     const handleFileChange = () => {
         const file = fileInputRef.current.files && fileInputRef.current.files[0];
@@ -44,18 +50,18 @@ function ImportExport({ handleImport }) {
 
     return (
         <div className="o-page-import-export">
-            <h2>Import / Export</h2>
+            <h2>{`${t('import')} / ${t('export')}`}</h2>
             <hr/>
 
             {importSuccessMessage && (
-                <p className="color-green">
-                    {importSuccessMessage}
-                </p>
+                <p className="color-green">{importSuccessMessage}</p>
             )}
 
             <div className="o-default-box">
                 <p>
-                    <label htmlFor="o-choose-file">{t('importing_flashcards_from_a_file')}:</label>
+                    <label htmlFor="o-choose-file">
+                        {t('importing_flashcards_from_a_file')}:
+                    </label>
                     <input
                         id="o-choose-file"
                         type="file"
@@ -69,12 +75,30 @@ function ImportExport({ handleImport }) {
                 {selectedFile && (
                     <ul className="o-list-buttons-clear">
                         <li>
-                            <button onClick={() => importReplace(loadData, selectedFile, setCurrentLocalStorageCategoryOrder, setImportSuccessMessage, fileInputRef.current, setSelectedFile)}>
+                            <button
+                                onClick={() => importReplace(
+                                    loadData,
+                                    selectedFile,
+                                    setCurrentLocalStorageCategoryOrder,
+                                    setImportSuccessMessage,
+                                    fileInputRef.current,
+                                    setSelectedFile
+                                )}
+                            >
                                 {t('import_replace')}
                             </button>
                         </li>
                         <li>
-                            <button onClick={() => importAdd(loadData, selectedFile, setCurrentLocalStorageCategoryOrder, setImportSuccessMessage, fileInputRef.current, setSelectedFile)}>
+                            <button
+                                onClick={() => importAdd(
+                                    loadData,
+                                    selectedFile,
+                                    setCurrentLocalStorageCategoryOrder,
+                                    setImportSuccessMessage,
+                                    fileInputRef.current,
+                                    setSelectedFile
+                                )}
+                            >
                                 {t('import_append')}
                             </button>
                         </li>
@@ -91,12 +115,10 @@ function ImportExport({ handleImport }) {
             )}
 
             <hr/>
-
-            <h3>Free flashcards</h3>
-            <FilesListImportFree />
+            <h3>{t('free_flashcards')}</h3>
+            <FilesListImportFree/>
         </div>
-    )
-        ;
+    );
 }
 
 export default ImportExport;

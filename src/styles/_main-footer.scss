@@ -105,7 +105,9 @@ $padding-temp: vars.$padding-default;
 .o-up-to-top {
   position: fixed;
   bottom: 72px;
-  right: 1.5rem;
+  right: max(1.5rem, calc(50% - 300px + 1.5rem));
   background-color: var(--color-green-less-dark-opacity-09);
   box-shadow: 0 0 4px var(--color-black);
+  max-width: 600px;
+  width: 100%;
 }

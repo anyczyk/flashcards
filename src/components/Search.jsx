@@ -1,0 +1,119 @@
+// Search.jsx
+
+import React, { useCallback, useContext, useState, useRef, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+import { FlashcardContext } from "../context/FlashcardContext";
+import { EditSearchContext } from "../context/EditSearchContext";
+import { debounce } from "../utils/debounce";
+import FlashCardListEdit from "./sub-components/common/FlashCardListEdit";
+
+function Search() {
+    const { t } = useTranslation();
+    const { flashcards } = useContext(FlashcardContext);
+
+    const {
+        editMode, setEditMode,
+        editFront, setEditFront,
+        editBack, setEditBack,
+        editCategory, setEditCategory,
+        editSuperCategory, setEditSuperCategory,
+        editKnow, setEditKnow,
+        selectedCards, setSelectedCards,
+        editFrontLang, setEditFrontLang,
+        editBackLang, setEditBackLang,
+        showStillLearning,
+        availableLanguages,
+        visibleModalSingle, setVisibleModalSingle,
+        cancelEditing,
+        backToEditlist
+    } = useContext(EditSearchContext);
+
+    const refInputSearch = useRef();
+    const [searchTerm, setSearchTerm] = useState('');
+    const [results, setResults] = useState([]);
+    const [searchRestart, setSearchRestart] = useState(false);
+
+    const performSearch = useCallback(
+        debounce((term) => {
+            const trimmedTerm = term.trim();
+
+            if (trimmedTerm.length < 2) {
+                setResults([]);
+                return;
+            }
+
+            const lowerTerm = trimmedTerm.toLowerCase();
+            const filtered = flashcards.filter(
+                (card) =>
+                    (card.front && card.front.toLowerCase().includes(lowerTerm)) ||
+                    (card.back && card.back.toLowerCase().includes(lowerTerm))
+            );
+            setResults(filtered);
+        }, 500),
+        [flashcards]
+    );
+
+    const handleChange = (e) => {
+        const term = e.target.value;
+        setSearchTerm(term);
+        performSearch(term);
+    };
+
+    useEffect(() => {
+        if (searchRestart) {
+            performSearch(searchTerm);
+            setSearchRestart(false);
+        }
+    }, [searchRestart, performSearch, searchTerm]);
+
+    return (
+        <div className="o-page-search">
+            <h2>{t('search')}</h2>
+            <hr />
+            <div className="o-default-box">
+                <p>{t('search_the_database')}</p>
+                <div className="o-default-box">
+                    <input
+                        className="w-100"
+                        type="text"
+                        value={searchTerm}
+                        onChange={handleChange}
+                        placeholder={`${t('search')}...`}
+                        ref={refInputSearch}
+                    />
+                </div>
+                <FlashCardListEdit
+                    backToEditlist={backToEditlist}
+                    setEditMode={setEditMode}
+                    setSelectedCards={setSelectedCards}
+                    availableLanguages={availableLanguages}
+                    filteredFlashcards={results} // Użycie wyników wyszukiwania
+                    showStillLearning={showStillLearning}
+                    editMode={editMode}
+                    cancelEditing={cancelEditing}
+                    visibleModalSingle={visibleModalSingle}
+                    setVisibleModalSingle={setVisibleModalSingle}
+                    editFront={editFront}
+                    setEditFront={setEditFront}
+                    editFrontLang={editFrontLang}
+                    setEditFrontLang={setEditFrontLang}
+                    editBack={editBack}
+                    setEditBack={setEditBack}
+                    editBackLang={editBackLang}
+                    setEditBackLang={setEditBackLang}
+                    editCategory={editCategory}
+                    setEditCategory={setEditCategory}
+                    editSuperCategory={editSuperCategory}
+                    setEditSuperCategory={setEditSuperCategory}
+                    editKnow={editKnow}
+                    setEditKnow={setEditKnow}
+                    selectedCards={selectedCards}
+                    typePage={'search'}
+                    setSearchRestart={setSearchRestart}
+                />
+            </div>
+        </div>
+    );
+}
+
+export default Search;

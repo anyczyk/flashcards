@@ -79,5 +79,24 @@
   "revers": "Inverti",
   "copied_selected_flashcards_to_clipboard": "Schede selezionate copiate negli appunti",
   "an_error_occurred_while_exporting_the_flashcards": "Si è verificato un errore durante l'esportazione delle schede",
-  "error_deleting_database": "Errore durante l'eliminazione del database"
+  "error_deleting_database": "Errore durante l'eliminazione del database",
+
+  "are_you_sure_restart_all_flashcards": "Sei sicuro di riavviare tutte le flashcard?",
+  "are_you_sure_remove_all_flashcards": "Sei sicuro di rimuovere tutte le flashcard?",
+  "close": "Chiudi",
+  "confirm": "Conferma",
+  "library": "Libreria",
+  "installed": "Installato",
+  "search": "Cerca",
+  "move": "Sposta",
+  "edit_category": "Modifica categoria",
+  "choose_set_from_library": "Scegli un set dalla libreria",
+  "import": "Importa",
+  "export": "Esporta",
+  "free_flashcards": "Flashcard gratuite",
+  "search_the_database": "Cerca nel database",
+
+  "no_results": "Nessun risultato",
+  "number_of_flashcards_found": "Numero di flashcard trovate",
+  "number_of_flashcards": "Numero di flashcard"
 }

@@ -1,21 +1,26 @@
-// FilesListImport.jsx
+// FilesListImportFree.jsx
 
-import React, {useContext, useEffect} from "react";
+import React, { useContext, useEffect } from "react";
 import enPl from "../../../data/en-pl.json";
 import enId from "../../../data/en-id.json";
-import {useTranslation} from "react-i18next";
-import {importAdd} from "../../../utils/import";
-import {FlashcardContext} from "../../../context/FlashcardContext";
+import { useTranslation } from "react-i18next";
+import { importAdd } from "../../../utils/import";
+import { FlashcardContext } from "../../../context/FlashcardContext";
 import { getLocalStorage } from "../../../utils/storage";
-const dataFiles = [
-    {file: enPl, name: "Fiszki Angielsko-Polskie (English-Polish)"},
-    {file: enId, name: "Flashcard Bahasa Inggris-Indonesia (English-Indonesian)"}
-];
 
+const dataFiles = [
+    { file: enPl, name: "Fiszki Angielsko-Polskie (English-Polish)" },
+    { file: enId, name: "Flashcard Bahasa Inggris-Indonesia (English-Indonesian)" }
+];
 
 const FilesListImportFree = () => {
     const { t } = useTranslation();
-    const { loadData, currentLocalStorageCategoryOrder, setCurrentLocalStorageCategoryOrder, setImportSuccessMessage} = useContext(FlashcardContext);
+    const {
+        loadData,
+        currentLocalStorageCategoryOrder,
+        setCurrentLocalStorageCategoryOrder,
+        setImportSuccessMessage
+    } = useContext(FlashcardContext);
 
     useEffect(() => {
         const updatedFromStorage = getLocalStorage("categoryOrder") || [];
@@ -29,16 +34,26 @@ const FilesListImportFree = () => {
                     <button
                         className="btn--blue w-100"
                         onClick={() => {
-                            importAdd(loadData, item.file, setCurrentLocalStorageCategoryOrder);
+                            importAdd(
+                                loadData,
+                                item.file,
+                                setCurrentLocalStorageCategoryOrder
+                            );
                         }}
                         disabled={currentLocalStorageCategoryOrder.includes(item.name)}
                     >
-                        {item.name} {currentLocalStorageCategoryOrder.includes(item.name) && <> - <i
-                        className="icon-ok"></i> installed</>}
+                        {item.name}{" "}
+                        {currentLocalStorageCategoryOrder.includes(item.name) && (
+                            <>
+                                {" "}
+                                - <i className="icon-ok"></i> {t('installed')}
+                            </>
+                        )}
                     </button>
                 </li>
             ))}
         </ul>
     );
 };
+
 export default FilesListImportFree;

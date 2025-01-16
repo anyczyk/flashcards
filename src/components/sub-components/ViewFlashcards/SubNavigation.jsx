@@ -163,7 +163,7 @@ const SubNavigation = ({
                                 <li>
                                     <button
                                         className={`btn--icon w-100 ${playFlashcards ? 'btn--active' : ''}`}
-                                        aria-label="Play/Pause"
+                                        aria-label={`${t('play')}/${t('pause')}`}
                                         onClick={handlePlayFlashcards}
                                     >
                                         <i className={playFlashcards ? 'icon-pause' : 'icon-play'}></i>
@@ -172,7 +172,7 @@ const SubNavigation = ({
                                 </li>
                                 <li>
                                     <button
-                                        aria-label="Revers"
+                                        aria-label={t('revers')}
                                         className={`btn-revers btn--icon w-100 ${
                                             reversFrontBack ? 'btn-revers--active btn--active' : ''
                                         }`}

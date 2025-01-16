@@ -52,13 +52,21 @@
     }
   }
 
+  &__btn-search,
   &__btn-audio {
-    margin-left: auto;
+    padding: calc(#{vars.$padding-default} / 2);
     background-color: transparent;
     box-shadow: none;
-    padding: calc(#{vars.$padding-default} / 2);
-    position: relative;
+    min-height: 40px;
+  }
 
+  &__btn-search {
+    margin-right: -8px;
+  }
+
+  &__btn-audio {
+    position: relative;
+    margin-left: auto;
     &:not(&--active) {
       &::before {
         content: '';
