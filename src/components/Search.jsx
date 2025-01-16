@@ -71,9 +71,10 @@ function Search() {
             <h2>{t('search')}</h2>
             <hr />
             <div className="o-default-box">
-                <p>{t('search_the_database')}</p>
+                <label htmlFor="o-input-search">{t('search_the_database')}</label>
                 <div className="o-default-box">
                     <input
+                        id="o-input-search"
                         className="w-100"
                         type="text"
                         value={searchTerm}
