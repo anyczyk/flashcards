@@ -14,7 +14,7 @@ export const speak = (text, lang, onEndCallback) => {
         });
 
     } else if (window.speechSynthesis) {
-        console.log(`Using Web Speech API to speak: "${text}" (${lang})`);
+        // console.log(`Using Web Speech API to speak: "${text}" (${lang})`);
         const synth = window.speechSynthesis;
         const utterance = new SpeechSynthesisUtterance(text);
         utterance.lang = lang || 'en-US';

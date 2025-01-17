@@ -144,6 +144,10 @@ hr {
   translate: 0 -50%;
 }
 
+.no-text-shadow {
+  text-shadow: none !important;
+}
+
 .text-shadow-white {
   text-shadow: 0 0 2px var(--color-white);
 }
@@ -849,6 +853,10 @@ html[dir=rtl] {
     right: auto;
   }
 }
+
+//.icon-volume-off {
+//  opacity: .4;
+//}
 
 @keyframes loading {
   0% {

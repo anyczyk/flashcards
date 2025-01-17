@@ -55,8 +55,13 @@ button,
     }
   }
 
+  &--gradient-all {
+    background: linear-gradient(180deg, var(--color-brow), var(--color-cream));
+    text-shadow: 0 0 1px var(--color-black);
+  }
+
   &--dark-light-opacity {
-    background-color: rgb(217 205 182 / 35%);
+    background-color: #754b00a1;
 
     &:active:not([disabled]) {
       background-color: #fff;

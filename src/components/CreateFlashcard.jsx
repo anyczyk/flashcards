@@ -24,6 +24,7 @@ function CreateFlashcard({ addFlashcard, categories, superCategoriesArray }) {
     const location = useLocation();
     const queryParams = new URLSearchParams(location.search);
     const getSuperCategory = queryParams.get("superCategory");
+    const getAddFirstOrLast = queryParams.get("addFirstOrLast");
     const navigate = useNavigate();
 
     const [front, setFront] = useState('');
@@ -97,6 +98,53 @@ function CreateFlashcard({ addFlashcard, categories, superCategoriesArray }) {
         }
     }, [availableLanguages]);
 
+    // const saveToLocalStorage = (finalCategory, finalSuperCategory) => {
+    //     let categoryToStore = finalSuperCategory || finalCategory;
+    //     const savedOrder = localStorage.getItem('categoryOrder');
+    //     let savedOrderArray = savedOrder ? JSON.parse(savedOrder) : [];
+    //
+    //     if (categoryToStore) {
+    //         const indexInOrder = savedOrderArray.indexOf(categoryToStore);
+    //         if (indexInOrder !== -1) {
+    //             savedOrderArray.splice(indexInOrder, 1);
+    //         }
+    //
+    //         if(getAddCategoryInSuperCategory === 'last' || getAddSuperCategoryOrCategory === 'last') {
+    //             console.log("last");
+    //             savedOrderArray.push(categoryToStore);
+    //         } else {
+    //             console.log("first");
+    //             savedOrderArray.unshift(categoryToStore);
+    //         }
+    //
+    //         localStorage.setItem('categoryOrder', JSON.stringify(savedOrderArray));
+    //     }
+    //
+    //     if (finalSuperCategory) {
+    //         try {
+    //             const subCatKey = encodeSuperCategoryKey(finalSuperCategory);
+    //             const subCatDataStr = localStorage.getItem('subCategoriesOrderStorage');
+    //             let subCatDataObj = subCatDataStr ? JSON.parse(subCatDataStr) : {};
+    //
+    //             if (!subCatDataObj[subCatKey]) {
+    //                 subCatDataObj[subCatKey] = [];
+    //             }
+    //             if (finalCategory) {
+    //                 const realSubCat = finalCategory.trim() === '' ? 'Without category' : finalCategory.trim();
+    //
+    //                 const indexInSub = subCatDataObj[subCatKey].indexOf(realSubCat);
+    //                 if (indexInSub !== -1) {
+    //                     subCatDataObj[subCatKey].splice(indexInSub, 1);
+    //                 }
+    //                 subCatDataObj[subCatKey].unshift(realSubCat);
+    //             }
+    //             localStorage.setItem('subCategoriesOrderStorage', JSON.stringify(subCatDataObj));
+    //         } catch (error) {
+    //             console.error('Error saving to subCategoriesOrderStorage:', error);
+    //         }
+    //     }
+    // };
+
     const saveToLocalStorage = (finalCategory, finalSuperCategory) => {
         let categoryToStore = finalSuperCategory || finalCategory;
         const savedOrder = localStorage.getItem('categoryOrder');
@@ -107,7 +155,15 @@ function CreateFlashcard({ addFlashcard, categories, superCategoriesArray }) {
             if (indexInOrder !== -1) {
                 savedOrderArray.splice(indexInOrder, 1);
             }
-            savedOrderArray.unshift(categoryToStore);
+
+            if(getAddFirstOrLast === 'last') {
+                console.log("last");
+                savedOrderArray.push(categoryToStore);
+            } else {
+                console.log("first");
+                savedOrderArray.unshift(categoryToStore);
+            }
+
             localStorage.setItem('categoryOrder', JSON.stringify(savedOrderArray));
         }
 
@@ -127,7 +183,12 @@ function CreateFlashcard({ addFlashcard, categories, superCategoriesArray }) {
                     if (indexInSub !== -1) {
                         subCatDataObj[subCatKey].splice(indexInSub, 1);
                     }
-                    subCatDataObj[subCatKey].unshift(realSubCat);
+
+                    if(getAddFirstOrLast === 'last') {
+                        subCatDataObj[subCatKey].push(realSubCat);
+                    } else {
+                        subCatDataObj[subCatKey].unshift(realSubCat);
+                    }
                 }
                 localStorage.setItem('subCategoriesOrderStorage', JSON.stringify(subCatDataObj));
             } catch (error) {

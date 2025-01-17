@@ -108,16 +108,16 @@ const CategoryList = ({
                             </button>
                         </li>
 
-                        <li className="o-button-add-flashcard">
-                            <button
-                                onClick={() => navigate('/create?superCategory=')}
-                                type="button"
-                                className="justify-content-center"
-                                aria-label={t('add_flashcard')}
-                            >
-                                <i className="icon-plus"></i>
-                            </button>
-                        </li>
+                        {/*<li className="o-button-add-flashcard">*/}
+                        {/*    <button*/}
+                        {/*        onClick={() => navigate('/create?superCategory=')}*/}
+                        {/*        type="button"*/}
+                        {/*        className="justify-content-center"*/}
+                        {/*        aria-label={t('add_flashcard')}*/}
+                        {/*    >*/}
+                        {/*        <i className="icon-plus"></i>*/}
+                        {/*    </button>*/}
+                        {/*</li>*/}
 
                         {orderedCategories.map((cat, index) => {
                             let count;
@@ -202,11 +202,11 @@ const CategoryList = ({
 
                                                             return (
                                                                 <button
-                                                                    className="btn btn--dark-light-opacity "
+                                                                    className="btn btn--gradient-all "
                                                                     onClick={() => handleRunFlashCards(null, cat)}
                                                                 >
                                   <span>
-                                    <i className="icon-play-outline"></i> {t('all')} (
+                                    <i className="icon-play-outline color-green-strong-dark no-text-shadow"></i> {t('all')} (
                                     <strong>{knowCountSuper}</strong>/
                                       {countSuper})
                                       {unknownCountSuper > 0 ? (

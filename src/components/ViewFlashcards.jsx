@@ -1,5 +1,5 @@
 // ViewFlashcards.jsx
-import React, {useState, useEffect, useRef, useMemo, useCallback, useContext} from 'react';
+import React, { useState, useEffect, useRef, useMemo, useCallback, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import { speak, stopSpeaking } from "../utils/speak";
 import { getLocalStorage } from '../utils/storage';
@@ -11,7 +11,7 @@ import CategoryList from "./sub-components/ViewFlashcards/CategoryList";
 import { calculateReadingTimeInMs } from '../utils/calculateReadingTimeInMs';
 import { FlashcardContext } from '../context/FlashcardContext';
 
-function ViewFlashcards({clearInsomnia, mainHomePageLoad, setMainHomePageLoad}) {
+function ViewFlashcards({ clearInsomnia, mainHomePageLoad, setMainHomePageLoad }) {
     const { t } = useTranslation();
     const {
         flashcards,
@@ -25,6 +25,36 @@ function ViewFlashcards({clearInsomnia, mainHomePageLoad, setMainHomePageLoad}) 
         setPlayFlashcards
     } = useContext(FlashcardContext);
 
+    const [supportedLanguages, setSupportedLanguages] = useState(new Set());
+
+    useEffect(() => {
+        const getSupportedLanguages = () => {
+            if (window.TTS) {
+                const uniqueLangs = new Set();
+                flashcards.forEach(fc => {
+                    if (fc.langFront) uniqueLangs.add(fc.langFront);
+                    if (fc.langBack) uniqueLangs.add(fc.langBack);
+                });
+                setSupportedLanguages(uniqueLangs);
+            } else if (window.speechSynthesis) {
+                let voices = window.speechSynthesis.getVoices();
+                if (voices.length > 0) {
+                    const supportedLangs = new Set(voices.map(voice => voice.lang));
+                    setSupportedLanguages(supportedLangs);
+                } else {
+                    window.speechSynthesis.onvoiceschanged = () => {
+                        voices = window.speechSynthesis.getVoices();
+                        const supportedLangs = new Set(voices.map(voice => voice.lang));
+                        setSupportedLanguages(supportedLangs);
+                    };
+                }
+            } else {
+                setSupportedLanguages(new Set());
+            }
+        };
+
+        getSupportedLanguages();
+    }, [flashcards]);
 
     const newOrders = getLocalStorage('categoryOrder');
 
@@ -206,7 +236,7 @@ function ViewFlashcards({clearInsomnia, mainHomePageLoad, setMainHomePageLoad}) 
                     processNext();
                 }, 600);
             } catch (error) {
-                console.error('Błąd w auto-play:', error);
+                console.error('Error in autoplay', error);
             }
         };
 
@@ -585,6 +615,7 @@ function ViewFlashcards({clearInsomnia, mainHomePageLoad, setMainHomePageLoad}) 
                 knowIt={knowIt}
                 setTwoCards={setTwoCards}
                 setDeck={setDeck}
+                supportedLanguages={supportedLanguages}
             />
 
             <CategoryList

@@ -1,3 +1,4 @@
+// FlashCards.jsx
 import React, { useEffect, useRef, useState, useCallback, useMemo } from "react";
 import { AnimatePresence, motion, useAnimation } from "framer-motion";
 import { useTranslation } from 'react-i18next';
@@ -27,7 +28,8 @@ const FlashCards = ({
                         checkedCards,
                         loadData,
                         setTwoCards,
-                        setDeck
+                        setDeck,
+                        supportedLanguages, // Nowa właściwość
                     }) => {
     const { t } = useTranslation();
     const [draggingDirection, setDraggingDirection] = useState({});
@@ -173,12 +175,17 @@ const FlashCards = ({
 
     const filteredFlashcardCount = useMemo(() => getFilteredFlashcardCount('learningOnly'), [getFilteredFlashcardCount]);
 
-    const CardFrontOrBack = useCallback(({ card, cardLang }) => (
+
+    const CardFrontOrBack = useCallback(({ card, cardLang, isSupported }) => (
         <div className="o-list-flashcards__text o-list-flashcards__front o-default-box">
-            <p role="button" onClick={() => handleSpeak(card, cardLang)}>
+            <p
+                role={isSupported ? "button" : undefined}
+                onClick={isSupported ? () => handleSpeak(card, cardLang) : undefined}
+                style={{ cursor: isSupported ? 'pointer' : 'default' }}
+            >
                 <span className="o-list-flashcards__lang">
                     <span className="o-list-flashcards__lang-code">{cardLang}</span>
-                    <i className="icon-volume"></i>
+                    <i className={isSupported ? 'icon-volume' : 'icon-volume-off'} />
                 </span>
                 {card}
             </p>
@@ -229,189 +236,191 @@ const FlashCards = ({
                         animate={controls}
                     >
                         <AnimatePresence>
-                            {twoCards.map(card => (
-                                <motion.li
-                                    className="o-list-flashcards__single-card"
-                                    key={card.id}
-                                    drag="x"
-                                    dragConstraints={{ left: 0, right: 0 }}
-                                    dragElastic={1}
-                                    whileDrag={{
-                                        scale: 1.03,
-                                        rotate:
-                                            draggingDirection[card.id] === 'prawo'
-                                                ? 5
-                                                : draggingDirection[card.id] === 'lewo'
-                                                    ? -5
-                                                    : 0,
-                                    }}
-                                    onDrag={(event, info) => {
-                                        const { offset } = info;
-                                        const threshold = 0;
-                                        if (Math.abs(offset.x) > threshold) {
-                                            const direction = offset.x > 0 ? 'prawo' : 'lewo';
-                                            setDraggingDirection(prev => ({
-                                                ...prev,
-                                                [card.id]: direction,
-                                            }));
-                                        }
-                                    }}
-                                    onDragEnd={(event, info) => {
-                                        const threshold = 50;
-                                        const { offset } = info;
-                                        const absX = Math.abs(offset.x);
+                            {twoCards.map(card => {
+                                const cardText = reversFrontBack ? card.back : card.front;
+                                const cardLang = reversFrontBack ? card.langBack : card.langFront;
+                                const isSupported = supportedLanguages.has(cardLang);
 
-                                        if (absX > threshold) {
-                                            const direction = offset.x > 0 ? 'prawo' : 'lewo';
-                                            handleSwipe(card.id, direction);
-                                        }
-
-                                        setDraggingDirection(prev => {
-                                            const newDrag = { ...prev };
-                                            delete newDrag[card.id];
-                                            return newDrag;
-                                        });
-                                    }}
-                                    variants={variants}
-                                    animate={animatingCards[card.id]}
-                                    exit="exit"
-                                    onAnimationComplete={() => {
-                                        if (animatingCards[card.id] === 'animateLeft') {
-                                            learnIt(card.id);
-                                        } else if (animatingCards[card.id] === 'animateRight') {
-                                            knowIt(card.id);
-                                        }
-
-                                        setAnimatingCards(prev => {
-                                            const newAnim = { ...prev };
-                                            delete newAnim[card.id];
-                                            return newAnim;
-                                        });
-                                        setDraggingDirection(prev => {
-                                            const newDrag = { ...prev };
-                                            delete newDrag[card.id];
-                                            return newDrag;
-                                        });
-                                    }}
-                                    style={{
-                                        cursor: 'grab',
-                                        listStyle: 'none',
-                                        zIndex: animatingCards[card.id] ? 2 : 1,
-                                    }}
-                                >
-                                    <div
-                                        className={`o-list-flashcards__swipe-info-know-or-learn ${
-                                            card.know ? 'bg-color-green' : 'bg-color-red'
-                                        }`}
-                                    ></div>
-
-                                    {reversFrontBack ? (
-                                        <CardFrontOrBack
-                                            card={card.back}
-                                            cardLang={card.langBack}
-                                        />
-                                    ) : (
-                                        <CardFrontOrBack
-                                            card={card.front}
-                                            cardLang={card.langFront}
-                                        />
-                                    )}
-                                    <hr />
-                                    {checkedCards.has(card.id) ? (
-                                        reversFrontBack ? (
-                                            <CardFrontOrBack
-                                                card={card.front}
-                                                cardLang={card.langFront}
-                                            />
-                                        ) : (
-                                            <CardFrontOrBack
-                                                card={card.back}
-                                                cardLang={card.langBack}
-                                            />
-                                        )
-                                    ) :<p className="o-list-flashcards__lang o-list-flashcards__lang-code text-center">
-                                        {reversFrontBack ? card.langFront : card.langBack}
-                                    </p>
-                                    }
-
-
-                                    <div className="o-list-flashcards__know">
-                                        <div
-                                            className={`o-list-flashcards__swipe-info-know ${
+                                return (
+                                    <motion.li
+                                        className="o-list-flashcards__single-card"
+                                        key={card.id}
+                                        drag="x"
+                                        dragConstraints={{ left: 0, right: 0 }}
+                                        dragElastic={1}
+                                        whileDrag={{
+                                            scale: 1.03,
+                                            rotate:
                                                 draggingDirection[card.id] === 'prawo'
-                                                    ? 'o-list-flashcards__swipe-info-know--visible'
-                                                    : ''
-                                            }`}
-                                        >
-                                            <p>
-                                                <i className="icon-ok"></i> {t('got_it')}
-                                            </p>
-                                        </div>
-                                        <div
-                                            className={`o-list-flashcards__swipe-info-learn ${
-                                                draggingDirection[card.id] === 'lewo'
-                                                    ? 'o-list-flashcards__swipe-info-learn--visible'
-                                                    : ''
-                                            }`}
-                                        >
-                                            <p>
-                                                <i className="icon-graduation-cap"></i> {t('still_learning')}
-                                            </p>
-                                        </div>
+                                                    ? 5
+                                                    : draggingDirection[card.id] === 'lewo'
+                                                        ? -5
+                                                        : 0,
+                                        }}
+                                        onDrag={(event, info) => {
+                                            const { offset } = info;
+                                            const threshold = 0;
+                                            if (Math.abs(offset.x) > threshold) {
+                                                const direction = offset.x > 0 ? 'prawo' : 'lewo';
+                                                setDraggingDirection(prev => ({
+                                                    ...prev,
+                                                    [card.id]: direction,
+                                                }));
+                                            }
+                                        }}
+                                        onDragEnd={(event, info) => {
+                                            const threshold = 50;
+                                            const { offset } = info;
+                                            const absX = Math.abs(offset.x);
 
-                                        {!playFlashcards ? (
-                                            <ul className="o-list-buttons-clear position-relative">
-                                                <li className="o-button-single-edit">
-                                                    <button
-                                                        onClick={() => handleOpenQuickEdit(card)}
-                                                        className="btn--single-edit"
-                                                        tabIndex={card.id === twoCards[twoCards.length - 1]?.id ? "0" : "-1"}
-                                                    >
-                                                        <i className="icon-pencil"></i>
-                                                        <span>{t('edit')}</span>
-                                                    </button>
-                                                </li>
-                                                {!checkedCards.has(card.id) ? (
-                                                    <li className="o-button-single-check">
+                                            if (absX > threshold) {
+                                                const direction = offset.x > 0 ? 'prawo' : 'lewo';
+                                                handleSwipe(card.id, direction);
+                                            }
+
+                                            setDraggingDirection(prev => {
+                                                const newDrag = { ...prev };
+                                                delete newDrag[card.id];
+                                                return newDrag;
+                                            });
+                                        }}
+                                        variants={variants}
+                                        animate={animatingCards[card.id]}
+                                        exit="exit"
+                                        onAnimationComplete={() => {
+                                            if (animatingCards[card.id] === 'animateLeft') {
+                                                learnIt(card.id);
+                                            } else if (animatingCards[card.id] === 'animateRight') {
+                                                knowIt(card.id);
+                                            }
+
+                                            setAnimatingCards(prev => {
+                                                const newAnim = { ...prev };
+                                                delete newAnim[card.id];
+                                                return newAnim;
+                                            });
+                                            setDraggingDirection(prev => {
+                                                const newDrag = { ...prev };
+                                                delete newDrag[card.id];
+                                                return newDrag;
+                                            });
+                                        }}
+                                        style={{
+                                            cursor: 'grab',
+                                            listStyle: 'none',
+                                            zIndex: animatingCards[card.id] ? 2 : 1,
+                                        }}
+                                    >
+                                        <div
+                                            className={`o-list-flashcards__swipe-info-know-or-learn ${
+                                                card.know ? 'bg-color-green' : 'bg-color-red'
+                                            }`}
+                                        ></div>
+
+                                        <CardFrontOrBack
+                                            card={cardText}
+                                            cardLang={cardLang}
+                                            isSupported={isSupported}
+                                        />
+                                        <hr />
+                                        {checkedCards.has(card.id) ? (
+                                            reversFrontBack ? (
+                                                <CardFrontOrBack
+                                                    card={card.front}
+                                                    cardLang={card.langFront}
+                                                    isSupported={supportedLanguages.has(card.langFront)}
+                                                />
+                                            ) : (
+                                                <CardFrontOrBack
+                                                    card={card.back}
+                                                    cardLang={card.langBack}
+                                                    isSupported={supportedLanguages.has(card.langBack)}
+                                                />
+                                            )
+                                        ) : <p className="o-list-flashcards__lang o-list-flashcards__lang-code text-center">
+                                            {reversFrontBack ? card.langFront : card.langBack}
+                                        </p>
+                                        }
+
+
+                                        <div className="o-list-flashcards__know">
+                                            <div
+                                                className={`o-list-flashcards__swipe-info-know ${
+                                                    draggingDirection[card.id] === 'prawo'
+                                                        ? 'o-list-flashcards__swipe-info-know--visible'
+                                                        : ''
+                                                }`}
+                                            >
+                                                <p>
+                                                    <i className="icon-ok"></i> {t('got_it')}
+                                                </p>
+                                            </div>
+                                            <div
+                                                className={`o-list-flashcards__swipe-info-learn ${
+                                                    draggingDirection[card.id] === 'lewo'
+                                                        ? 'o-list-flashcards__swipe-info-learn--visible'
+                                                        : ''
+                                                }`}
+                                            >
+                                                <p>
+                                                    <i className="icon-graduation-cap"></i> {t('still_learning')}
+                                                </p>
+                                            </div>
+
+                                            {!playFlashcards ? (
+                                                <ul className="o-list-buttons-clear position-relative">
+                                                    <li className="o-button-single-edit">
                                                         <button
-                                                            className="o-list-flashcards__know-check btn--blue"
-                                                            onClick={() => handleCheck(card.id)}
+                                                            onClick={() => handleOpenQuickEdit(card)}
+                                                            className="btn--single-edit"
                                                             tabIndex={card.id === twoCards[twoCards.length - 1]?.id ? "0" : "-1"}
                                                         >
-                                                            {t('check')}
+                                                            <i className="icon-pencil"></i>
+                                                            <span>{t('edit')}</span>
                                                         </button>
                                                     </li>
-                                                ) : (
-                                                    <>
-                                                        <li>
+                                                    {!checkedCards.has(card.id) ? (
+                                                        <li className="o-button-single-check">
                                                             <button
-                                                                className="btn--red"
-                                                                onClick={() => {
-                                                                    handleSwipe(card.id, 'lewo');
-                                                                }}
+                                                                className="o-list-flashcards__know-check btn--blue"
+                                                                onClick={() => handleCheck(card.id)}
+                                                                tabIndex={card.id === twoCards[twoCards.length - 1]?.id ? "0" : "-1"}
                                                             >
-                                                                {t('still_learning')}
+                                                                {t('check')}
                                                             </button>
                                                         </li>
-                                                        <li>
-                                                            <button
-                                                                className="btn--green"
-                                                                onClick={() => {
-                                                                    handleSwipe(card.id, 'prawo');
-                                                                }}
-                                                            >
-                                                                {t('got_it')}
-                                                            </button>
-                                                        </li>
-                                                    </>
-                                                )}
-                                            </ul>
-                                        ) : (
-                                            <div className="o-card-lock"><i className="icon-lock-2"></i></div>
-                                        )}
-                                    </div>
-                                </motion.li>
-                            ))}
+                                                    ) : (
+                                                        <>
+                                                            <li>
+                                                                <button
+                                                                    className="btn--red"
+                                                                    onClick={() => {
+                                                                        handleSwipe(card.id, 'lewo');
+                                                                    }}
+                                                                >
+                                                                    {t('still_learning')}
+                                                                </button>
+                                                            </li>
+                                                            <li>
+                                                                <button
+                                                                    className="btn--green"
+                                                                    onClick={() => {
+                                                                        handleSwipe(card.id, 'prawo');
+                                                                    }}
+                                                                >
+                                                                    {t('got_it')}
+                                                                </button>
+                                                            </li>
+                                                        </>
+                                                    )}
+                                                </ul>
+                                            ) : (
+                                                <div className="o-card-lock"><i className="icon-lock-2"></i></div>
+                                            )}
+                                        </div>
+                                    </motion.li>
+                                );
+                            })}
                         </AnimatePresence>
                     </motion.ul>
 

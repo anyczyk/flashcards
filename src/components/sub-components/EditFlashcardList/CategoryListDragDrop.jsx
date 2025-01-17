@@ -154,7 +154,7 @@ const CategoryListDragDrop = ({
                     >
                         <li className="o-button-add-flashcard">
                             <button
-                                onClick={() => navigate('/create?superCategory=')}
+                                onClick={() => navigate('/create?addFirstOrLast=first&superCategory=')}
                                 type="button"
                                 className="justify-content-center"
                                 aria-label={t('add_flashcard')}
@@ -281,7 +281,7 @@ const CategoryListDragDrop = ({
                                                                         <li className="o-button-add-flashcard">
                                                                             <button
                                                                                 onClick={() =>
-                                                                                    navigate(`/create?superCategory=${cat}`)
+                                                                                    navigate(`/create?addFirstOrLast=first&superCategory=${cat}`)
                                                                                 }
                                                                                 type="button"
                                                                                 className="justify-content-center color-green-strong-dark btn--cream"
@@ -380,12 +380,24 @@ const CategoryListDragDrop = ({
                                                     )}
                                                 </span>
                                                                                             </button>
-                                                                                            <span className="o-list-categories__move">{t('move')}</span>
+                                                                                            <span
+                                                                                                className="o-list-categories__move">{t('move')}</span>
                                                                                         </li>
                                                                                     )}
                                                                                 </Draggable>
                                                                             );
                                                                         })}
+                                                                        <li className="o-button-add-flashcard">
+                                                                            <button
+                                                                                onClick={() =>
+                                                                                    navigate(`/create?addFirstOrLast=last&superCategory=${cat}`)
+                                                                                }
+                                                                                type="button"
+                                                                                className="justify-content-center color-green-strong-dark btn--cream"
+                                                                            >
+                                                                                <i className="icon-plus"></i>
+                                                                            </button>
+                                                                        </li>
                                                                         {subProvided.placeholder}
                                                                     </ul>
                                                                 );
@@ -455,6 +467,16 @@ const CategoryListDragDrop = ({
                                 </Draggable>
                             );
                         })}
+                        <li className="o-button-add-flashcard">
+                            <button
+                                onClick={() => navigate('/create?addFirstOrLast=last&superCategory=')}
+                                type="button"
+                                className="justify-content-center"
+                                aria-label={t('add_flashcard')}
+                            >
+                                <i className="icon-plus"></i>
+                            </button>
+                        </li>
                         {provided.placeholder}
                     </ul>
                 )}
