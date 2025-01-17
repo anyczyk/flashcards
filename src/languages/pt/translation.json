@@ -72,7 +72,6 @@
   "language_code_for_speech_synthesizer": "Código de idioma para o sintetizador de fala",
   "yes_reset": "Oui, réinitialiser",
   "yes_remove": "Oui, supprimer",
-
   "show_still_learning": "Ainda aprendendo",
   "play": "Reproduzir",
   "pause": "Pausa",
@@ -80,7 +79,6 @@
   "copied_selected_flashcards_to_clipboard": "Cartões selecionados copiados para a área de transferência",
   "an_error_occurred_while_exporting_the_flashcards": "Ocorreu um erro ao exportar os cartões",
   "error_deleting_database": "Erro ao excluir o banco de dados",
-
   "are_you_sure_restart_all_flashcards": "Tem certeza de que deseja reiniciar todos os cartões?",
   "are_you_sure_remove_all_flashcards": "Tem certeza de que deseja remover todos os cartões?",
   "close": "Fechar",
@@ -95,8 +93,8 @@
   "export": "Exportar",
   "free_flashcards": "Cartões gratuitos",
   "search_the_database": "Pesquisar no banco de dados",
-
   "no_results": "Sem resultados",
   "number_of_flashcards_found": "Número de flashcards encontrados",
-  "number_of_flashcards": "Número de flashcards"
+  "number_of_flashcards": "Número de flashcards",
+  "add_flashcard_continue": "Adicionar e continuar"
 }

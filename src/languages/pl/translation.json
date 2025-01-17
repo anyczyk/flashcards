@@ -1,6 +1,6 @@
 {
   "categories": "Kategorie",
-  "simple_flashcard_creator" : "Kreator fiszek",
+  "simple_flashcard_creator": "Kreator fiszek",
   "view_flashcards": "Zacznij swoją naukę",
   "create_flashcard": "Stwórz fiszke",
   "edit_flashcards": "Edytuj fiszki",
@@ -72,7 +72,6 @@
   "language_code_for_speech_synthesizer": "Kod języka dla syntezatora mowy",
   "yes_reset": "Tak, zresetuj",
   "yes_remove": "Tak, usuń",
-
   "show_still_learning": "Jeszcze do nauki",
   "play": "Play",
   "pause": "Pause",
@@ -80,7 +79,6 @@
   "copied_selected_flashcards_to_clipboard": "Skopiowano wybrane fiszki do schowka",
   "an_error_occurred_while_exporting_the_flashcards": "Wystąpił błąd podczas eksportu fiszek",
   "error_deleting_database": "Błąd podczas usuwania bazy danych",
-
   "are_you_sure_restart_all_flashcards": "Czy na pewno chcesz zrestartować wszystkie fiszki?",
   "are_you_sure_remove_all_flashcards": "Czy na pewno chcesz usunąć wszystkie fiszki?",
   "close": "Zamknij",
@@ -95,8 +93,8 @@
   "export": "Eksportuj",
   "free_flashcards": "Darmowe fiszki",
   "search_the_database": "Szukaj w bazie danych",
-
   "no_results": "Brak wyników",
   "number_of_flashcards_found": "Liczba znalezionych fiszek",
-  "number_of_flashcards": "Liczba fiszek"
+  "number_of_flashcards": "Liczba fiszek",
+  "add_flashcard_continue": "Dodaj i kontynuuj"
 }

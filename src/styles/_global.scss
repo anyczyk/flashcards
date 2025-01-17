@@ -80,6 +80,10 @@ hr {
   justify-content: center !important;
 }
 
+.justify-content-right {
+  justify-content: end !important;
+}
+
 .gap-1 {
   gap: vars.$padding-default;
 }
@@ -836,6 +840,13 @@ hr {
     input[type=text] {
       width: calc(100% - (#{$padding-temp} + 54px)) !important;
     }
+  }
+}
+
+html[dir=rtl] {
+  .o-text-input-with-clear__button-clear {
+    left: 0;
+    right: auto;
   }
 }
 

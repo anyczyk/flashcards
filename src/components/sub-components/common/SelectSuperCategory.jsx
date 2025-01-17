@@ -1,8 +1,9 @@
 // SelectSuperCategory.jsx
 
-import React, { useEffect, useRef } from "react";
+import React, {useContext, useEffect, useRef} from "react";
 import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
+import {FlashcardContext} from "../../../context/FlashcardContext";
 
 const SelectSuperCategory = ({
                                  superCategory,
@@ -11,6 +12,9 @@ const SelectSuperCategory = ({
                                  setCurrentSelectSuperCategory
                              }) => {
     const { t } = useTranslation();
+    const {
+        dirAttribute
+    } = useContext(FlashcardContext);
     const location = useLocation();
     const queryParams = new URLSearchParams(location.search);
     const getSuperCategory = queryParams.get("superCategory");
@@ -48,7 +52,6 @@ const SelectSuperCategory = ({
         <>
             <p>
                 <label htmlFor="o-super-category">{t("super_category")}:</label>
-                <br />
                 <select
                     ref={refSelectTextSuperCategory}
                     id="o-super-category"

@@ -1,6 +1,6 @@
 {
   "categories": "Categories",
-  "simple_flashcard_creator" : "Flashcard creator",
+  "simple_flashcard_creator": "Flashcard creator",
   "view_flashcards": "Start your learning",
   "create_flashcard": "Create flashcard",
   "edit_flashcards": "Edit flashcards",
@@ -72,7 +72,6 @@
   "language_code_for_speech_synthesizer": "Language code for speech synthesizer",
   "yes_reset": "Yes, reset",
   "yes_remove": "Yes, remove",
-
   "show_still_learning": "Still learning",
   "play": "Play",
   "pause": "Pause",
@@ -80,7 +79,6 @@
   "copied_selected_flashcards_to_clipboard": "Copied selected flashcards to clipboard",
   "an_error_occurred_while_exporting_the_flashcards": "An error occurred while exporting the flashcards",
   "error_deleting_database": "Error deleting database",
-
   "are_you_sure_restart_all_flashcards": "Are you sure restart all flashcards?",
   "are_you_sure_remove_all_flashcards": "Are you sure remove all flashcards?",
   "close": "Close",
@@ -95,8 +93,8 @@
   "export": "Export",
   "free_flashcards": "Free flashcards",
   "search_the_database": "Search the database",
-
   "no_results": "No results",
   "number_of_flashcards_found": "Number of flashcards found",
-  "number_of_flashcards": "Number of flashcards"
+  "number_of_flashcards": "Number of flashcards",
+  "add_flashcard_continue": "Add and continue"
 }

@@ -72,7 +72,6 @@
   "language_code_for_speech_synthesizer": "Sprachcode für Sprachsynthesizer",
   "yes_reset": "Ja, zurücksetzen",
   "yes_remove": "Ja, entfernen",
-
   "show_still_learning": "Noch in Bearbeitung",
   "play": "Abspielen",
   "pause": "Pause",
@@ -80,7 +79,6 @@
   "copied_selected_flashcards_to_clipboard": "Ausgewählte Karteikarten in die Zwischenablage kopiert",
   "an_error_occurred_while_exporting_the_flashcards": "Beim Exportieren der Karteikarten ist ein Fehler aufgetreten",
   "error_deleting_database": "Fehler beim Löschen der Datenbank",
-
   "are_you_sure_restart_all_flashcards": "Sind Sie sicher, dass Sie alle Karteikarten neu starten möchten?",
   "are_you_sure_remove_all_flashcards": "Sind Sie sicher, dass Sie alle Karteikarten entfernen möchten?",
   "close": "Schließen",
@@ -95,8 +93,8 @@
   "export": "Exportieren",
   "free_flashcards": "Kostenlose Karteikarten",
   "search_the_database": "Durchsuche die Datenbank",
-
   "no_results": "Keine Ergebnisse",
   "number_of_flashcards_found": "Anzahl der gefundenen Karteikarten",
-  "number_of_flashcards": "Anzahl der Karteikarten"
+  "number_of_flashcards": "Anzahl der Karteikarten",
+  "add_flashcard_continue": "Hinzufügen und fortfahren"
 }

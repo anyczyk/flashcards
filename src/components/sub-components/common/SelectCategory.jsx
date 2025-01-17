@@ -1,10 +1,14 @@
 // SelectCategory.jsx
 
-import React, {useRef} from "react";
+import React, {useContext, useRef} from "react";
 import {useTranslation} from "react-i18next";
+import {FlashcardContext} from "../../../context/FlashcardContext";
 
 const SelectCategory = ({category, setCategory, categoriesDependentOnSuperCategory}) => {
     const {t} = useTranslation();
+    const {
+        dirAttribute
+    } = useContext(FlashcardContext);
     const refInputTextCategory = useRef();
     const refSelectTextCategory = useRef();
     const handleCategorySelect = (e) => {
@@ -29,7 +33,6 @@ const SelectCategory = ({category, setCategory, categoriesDependentOnSuperCatego
                 <label htmlFor="o-category">
                     {t('category')}:
                 </label>
-                <br/>
                 <select id="o-category" onChange={handleCategorySelect} value={category}>
                     <option value="">-- {t('select_existing_category')} --</option>
                     {categoriesDependentOnSuperCategory.map((cat, index) => (

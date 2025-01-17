@@ -45,7 +45,7 @@ const FlashCardListEdit = ({
                                selectedCards
                            }) => {
     const { t } = useTranslation();
-    const { removeFlashcard, editFlashcard, superCategoriesArray, setOrderedCategories, flashcards } = useContext(FlashcardContext);
+    const { removeFlashcard, editFlashcard, superCategoriesArray, setOrderedCategories, flashcards, rtlCodeLangs } = useContext(FlashcardContext);
 
     const [oldCategory, setOldCategory] = useState('');
     const [oldSuperCategory, setOldSuperCategory] = useState('');
@@ -359,6 +359,8 @@ const FlashCardListEdit = ({
                                             rows="2"
                                             cols="30"
                                             id={`o-edit-front-${card.id}`}
+                                            dir={rtlCodeLangs.includes(editFrontLang) ? 'rtl' : 'ltr'}
+                                            required
                                         />
                                         <label htmlFor={`o-edit-front-lang-${card.id}`}>
                                             {t('language_code')}:
@@ -380,6 +382,8 @@ const FlashCardListEdit = ({
                                             rows="2"
                                             cols="30"
                                             id={`o-edit-back-${card.id}`}
+                                            dir={rtlCodeLangs.includes(editBackLang) ? 'rtl' : 'ltr'}
+                                            required
                                         />
                                         <label htmlFor={`o-edit-back-lang-${card.id}`}>
                                             {t('language_code')}:
@@ -421,7 +425,7 @@ const FlashCardListEdit = ({
                                     <hr/>
                                     <ul className="o-list-buttons-clear o-list-buttons-clear--nowrap">
                                         <li>
-                                            <button className="btn--green" onClick={() => submitEdit(card.id)}>
+                                            <button disabled={!editFront.trim() || !editBack.trim()} className="btn--green" onClick={() => submitEdit(card.id)}>
                                                 <i className="icon-floppy-1"></i> {t('save')}
                                             </button>
                                         </li>

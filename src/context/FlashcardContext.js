@@ -3,8 +3,11 @@ import { getAllFlashcards, addFlashcardToDB, removeFlashcardFromDB, editFlashcar
 import { setLocalStorage, getLocalStorage } from '../utils/storage';
 
 export const FlashcardContext = createContext();
+const rtlLangs = ["ug", "syr", "ks", "ar", "fa", "he", "ur", "ckb", "arc", "sd", "ps"];
+const rtlCodeLangs = ["ug-CN", "syr-SY", "ks-IN", "ar-SA", "fa-IR", "he-IL", "ur-PK", "ckb-IQ", "arc-IQ", "sd-PK", "ps-AF"];
 
 export const FlashcardProvider = ({ children }) => {
+    const [dirAttribute, setDirAttribute] = useState('ltr');
     const [orderedCategories, setOrderedCategories] = useState([]);
     const [playFlashcards, setPlayFlashcards] = useState(false);
     const [currentLocalStorageCategoryOrder, setCurrentLocalStorageCategoryOrder] = useState(getLocalStorage("categoryOrder") || []);
@@ -156,6 +159,8 @@ export const FlashcardProvider = ({ children }) => {
     return (
         <FlashcardContext.Provider
             value={{
+                rtlLangs, rtlCodeLangs,
+                dirAttribute, setDirAttribute,
                 importSuccessMessage,
                 setImportSuccessMessage,
                 currentLocalStorageCategoryOrder,

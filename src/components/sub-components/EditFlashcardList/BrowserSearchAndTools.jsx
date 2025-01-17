@@ -209,7 +209,7 @@ const BrowserSearchAndTools = ({
                 {(selectedCards.length > 0 && filteredFlashcards.length > 0) && (
                     <>
                         <hr className="mt-1" />
-                        <ul className="o-list-buttons-clear">
+                        <ul className="o-list-buttons-clear justify-content-right">
                             <li>
                                 <button className="btn--icon" onClick={deselectAll}>
                                     <i className="icon-ok-circled2"></i> <span>{t('deselect_all')}</span>

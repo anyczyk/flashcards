@@ -150,6 +150,7 @@ const CategoryListDragDrop = ({
                         className="o-list-categories o-list-categories--edit"
                         {...provided.droppableProps}
                         ref={provided.innerRef}
+                        dir="ltr"
                     >
                         <li className="o-button-add-flashcard">
                             <button

@@ -1,5 +1,5 @@
 // CreateFlashcard.jsx
-import React, { useState, useEffect, useCallback } from 'react';
+import React, {useState, useEffect, useCallback, useContext} from 'react';
 import PropTypes from 'prop-types';
 import { getCordovaLanguage } from '../utils/getLanguage';
 import { loadLanguages } from '../utils/loadLanguages';
@@ -9,6 +9,7 @@ import { getAllFlashcards } from '../db';
 import SelectSuperCategory from "./sub-components/common/SelectSuperCategory";
 import SelectCategory from "./sub-components/common/SelectCategory";
 import { useLocation, useNavigate } from "react-router-dom";
+import {FlashcardContext} from "../context/FlashcardContext";
 
 function encodeSuperCategoryKey(superCategory) {
     return 'subCategoryOrder_' + btoa(unescape(encodeURIComponent(superCategory)));
@@ -16,6 +17,10 @@ function encodeSuperCategoryKey(superCategory) {
 
 function CreateFlashcard({ addFlashcard, categories, superCategoriesArray }) {
     const { t } = useTranslation();
+    const {
+        rtlCodeLangs,
+        dirAttribute
+    } = useContext(FlashcardContext);
     const location = useLocation();
     const queryParams = new URLSearchParams(location.search);
     const getSuperCategory = queryParams.get("superCategory");
@@ -31,6 +36,7 @@ function CreateFlashcard({ addFlashcard, categories, superCategoriesArray }) {
     const [availableLanguages, setAvailableLanguages] = useState([]);
     const [categoriesDependentOnSuperCategory, setCategoriesDependentOnSuperCategory] = useState([]);
     const [currentSelectSuperCategory, setCurrentSelectSuperCategory] = useState('');
+    const [continueAdd, setContinueAdd] = useState(false);
 
     const loadData = useCallback(async () => {
         const data = await getAllFlashcards();
@@ -114,7 +120,6 @@ function CreateFlashcard({ addFlashcard, categories, superCategoriesArray }) {
                 if (!subCatDataObj[subCatKey]) {
                     subCatDataObj[subCatKey] = [];
                 }
-ii
                 if (finalCategory) {
                     const realSubCat = finalCategory.trim() === '' ? 'Without category' : finalCategory.trim();
 
@@ -158,7 +163,7 @@ ii
                 setFront('');
                 setBack('');
 
-                if (getSuperCategory || getSuperCategory === '') {
+                if ((getSuperCategory || getSuperCategory === '') && !continueAdd) {
                     navigate('/list-edit');
                 }
             } catch (error) {
@@ -195,6 +200,7 @@ ii
                             rows="3"
                             cols="30"
                             id="o-front"
+                            dir={rtlCodeLangs.includes(langFront) ? 'rtl' : 'ltr'}
                             required
                         />
                     </p>
@@ -202,7 +208,6 @@ ii
                         <label htmlFor="lang-front">
                             {t('language_code_for_speech_synthesizer')} ({t('front')}):
                         </label>
-                        <br />
                         <SelectCodeLanguages
                             availableLanguages={availableLanguages}
                             value={langFront}
@@ -221,6 +226,7 @@ ii
                             rows="3"
                             cols="30"
                             id="o-back"
+                            dir={rtlCodeLangs.includes(langBack) ? 'rtl' : 'ltr'}
                             required
                         />
                     </p>
@@ -251,14 +257,21 @@ ii
                         categoriesDependentOnSuperCategory={categoriesDependentOnSuperCategory}
                     />
                     <hr />
-                    <p>
-                        <button type="submit" disabled={!front.trim() || !back.trim()}>
-                            {t('add_flashcard')}
-                        </button>
-                        {flashcardCreated && (
-                            <strong className="color-green"> {t('flashcard_added')}</strong>
-                        )}
-                    </p>
+                    {flashcardCreated && (
+                        <p><strong className="color-green"> {t('flashcard_added')}</strong></p>
+                    )}
+                    <ul className="o-list-buttons-clear o-list-buttons-clear--nowrap-columns o-default-box">
+                        <li>
+                            <button type="submit" onClick={() => setContinueAdd(false)}
+                                    disabled={!front.trim() || !back.trim()}>
+                                {t('add_flashcard')}
+                            </button>
+                        </li>
+                        {(getSuperCategory || getSuperCategory === '') ?
+                            <li><button type="submit" onClick={() => setContinueAdd(true)} disabled={!front.trim() || !back.trim()}>
+                                {t('add_flashcard_continue')}
+                            </button></li> : ''}
+                    </ul>
                 </div>
             </form>
         </div>

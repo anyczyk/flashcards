@@ -9,7 +9,7 @@ import Library from './components/Library';
 import Search from './components/Search';
 import Header from './components/Header';
 import { useTranslation } from 'react-i18next';
-import { setLocalStorage } from './utils/storage';
+import { setLocalStorage, getLocalStorage } from './utils/storage';
 import Footer from "./components/Footer";
 import { FlashcardContext } from './context/FlashcardContext';
 import {EditSearchProvider} from "./context/EditSearchContext";

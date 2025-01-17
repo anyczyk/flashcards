@@ -111,3 +111,10 @@ $padding-temp: vars.$padding-default;
   max-width: 600px;
   width: 100%;
 }
+
+html[dir=rtl] {
+  .o-up-to-top {
+    left: max(1.5rem, calc(50% - 300px + 1.5rem));
+    right: auto;
+  }
+}

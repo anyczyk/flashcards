@@ -70,7 +70,6 @@
   "choose_file_to_import": "Choisissez le fichier à importer",
   "importing_flashcards_from_a_file": "Importation de flashcards à partir d'un fichier",
   "language_code_for_speech_synthesizer": "Code de langue pour le synthétiseur vocal",
-
   "show_still_learning": "Encore en apprentissage",
   "play": "Lire",
   "pause": "Pause",
@@ -78,7 +77,6 @@
   "copied_selected_flashcards_to_clipboard": "Cartes sélectionnées copiées dans le presse-papiers",
   "an_error_occurred_while_exporting_the_flashcards": "Une erreur est survenue lors de l'exportation des cartes",
   "error_deleting_database": "Erreur lors de la suppression de la base de données",
-
   "are_you_sure_restart_all_flashcards": "Êtes-vous sûr de redémarrer toutes les cartes?",
   "are_you_sure_remove_all_flashcards": "Êtes-vous sûr de supprimer toutes les cartes?",
   "close": "Fermer",
@@ -93,8 +91,8 @@
   "export": "Exporter",
   "free_flashcards": "Cartes gratuites",
   "search_the_database": "Rechercher dans la base de données",
-
   "no_results": "Aucun résultat",
   "number_of_flashcards_found": "Nombre de flashcards trouvées",
-  "number_of_flashcards": "Nombre de flashcards"
+  "number_of_flashcards": "Nombre de flashcards",
+  "add_flashcard_continue": "Ajouter et continuer"
 }
