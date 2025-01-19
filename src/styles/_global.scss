@@ -810,11 +810,13 @@ hr {
     animation: loading 2s linear infinite;
   }
 }
-
+.o-list-edit-flashcards .o-button-add-flashcard,
 .o-list-categories .o-button-add-flashcard {
+  position: relative;
   button {
     padding-right: vars.$padding-default;
     position: relative;
+    width: 100%;
   }
 
   &::before {

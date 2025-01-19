@@ -110,7 +110,6 @@ const BrowserSearchAndTools = ({
         if (subObj[subKey]) {
             const idx = subObj[subKey].indexOf(categoryName);
             if (idx !== -1) {
-                console.log("ccc");
                 subObj[subKey].splice(idx, 1);
                 saveSubCategoriesObject(subObj);
             }
@@ -211,21 +210,6 @@ const BrowserSearchAndTools = ({
                         <hr className="mt-1" />
                         <ul className="o-list-buttons-clear justify-content-right">
                             <li>
-                                <button className="btn--icon" onClick={deselectAll}>
-                                    <i className="icon-ok-circled2"></i> <span>{t('deselect_all')}</span>
-                                </button>
-                            </li>
-                            <li>
-                                <button className="btn--icon btn--green" onClick={copySelectedCards}>
-                                    <i className="icon-docs"></i> <span>{t('copy_selected')}</span>
-                                </button>
-                            </li>
-                            <li>
-                                <button className="btn--icon btn--yellow" onClick={handleExport}>
-                                    <i className="icon-export"></i> <span>{t('export_selected')}</span>
-                                </button>
-                            </li>
-                            <li>
                                 <button
                                     className="btn--red btn--icon"
                                     onClick={() => setVisibleModalAll(true)}
@@ -271,6 +255,21 @@ const BrowserSearchAndTools = ({
                                         </div>
                                     </div>
                                 )}
+                            </li>
+                            <li>
+                                <button className="btn--icon btn--green" onClick={copySelectedCards}>
+                                    <i className="icon-docs"></i> <span>{t('copy_selected')}</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button className="btn--icon btn--yellow" onClick={handleExport}>
+                                    <i className="icon-export"></i> <span>{t('export_selected')}</span>
+                                </button>
+                            </li>
+                            <li>
+                                <button className="btn--icon" onClick={deselectAll}>
+                                    <i className="icon-ok-circled2"></i> <span>{t('deselect_all')}</span>
+                                </button>
                             </li>
                         </ul>
                     </>

@@ -24,8 +24,6 @@ const Header = ({setMainHomePageLoad, clearOptions, mainMenuVisible, setMainMenu
     const getLanguageCode = (lng) => lng.split('-')[0];
 
     useEffect(() => {
-        console.log("x:");
-        console.log(getLanguageCode(i18n.language));
         const lang = getLanguageCode(i18n.language);
         const htmlTag = document.querySelector("html");
         htmlTag.setAttribute("lang",lang);

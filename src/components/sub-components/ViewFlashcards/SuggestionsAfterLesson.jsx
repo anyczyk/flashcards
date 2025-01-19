@@ -1,5 +1,6 @@
 import React, {} from "react";
 import { useTranslation } from 'react-i18next';
+import { showInterstitial } from '../../../services/admobService';
 
 const SuggestionsAfterLesson = ({showCompleteMessage, setShowCompleteMessage, applyFilterAndShuffle, getFilteredFlashcardCount, setLearningFilter, setCheckedCards, handleNextLesson}) => {
     const { t } = useTranslation();
@@ -14,6 +15,7 @@ const SuggestionsAfterLesson = ({showCompleteMessage, setShowCompleteMessage, ap
                             onClick={() => {
                                 setShowCompleteMessage(false);
                                 applyFilterAndShuffle();
+                                showInterstitial();
                             }}
                         >
                             {t('review_again')}
@@ -26,6 +28,7 @@ const SuggestionsAfterLesson = ({showCompleteMessage, setShowCompleteMessage, ap
                                         setLearningFilter('learningOnly');
                                         setCheckedCards(new Set());
                                         applyFilterAndShuffle();
+                                        showInterstitial();
                                     }}
                             >
                                 {t('review_only_the_ones_you_didnt_know')}
@@ -33,7 +36,10 @@ const SuggestionsAfterLesson = ({showCompleteMessage, setShowCompleteMessage, ap
                         </li>
                     )}
                     <li className="w-100">
-                        <button className="btn--green w-100" onClick={handleNextLesson}>{t('next_lesson')}</button>
+                        <button className="btn--green w-100" onClick={()=>{
+                            handleNextLesson();
+                            showInterstitial();
+                        }}>{t('next_lesson')}</button>
                     </li>
                 </ul>
             </div>

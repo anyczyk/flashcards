@@ -1,9 +1,10 @@
 // FlashCards.jsx
-import React, { useEffect, useRef, useState, useCallback, useMemo } from "react";
+import React, {useEffect, useRef, useState, useCallback, useMemo} from "react";
 import { AnimatePresence, motion, useAnimation } from "framer-motion";
 import { useTranslation } from 'react-i18next';
 import { editFlashcardInDB } from "../../../db";
 import useWcagModal from "../../../hooks/useWcagModal";
+import { showInterstitial } from '../../../services/admobService';
 
 const FlashCards = ({
                         syntAudioRef,
@@ -28,8 +29,7 @@ const FlashCards = ({
                         checkedCards,
                         loadData,
                         setTwoCards,
-                        setDeck,
-                        supportedLanguages, // Nowa właściwość
+                        setDeck
                     }) => {
     const { t } = useTranslation();
     const [draggingDirection, setDraggingDirection] = useState({});
@@ -176,21 +176,22 @@ const FlashCards = ({
     const filteredFlashcardCount = useMemo(() => getFilteredFlashcardCount('learningOnly'), [getFilteredFlashcardCount]);
 
 
-    const CardFrontOrBack = useCallback(({ card, cardLang, isSupported }) => (
-        <div className="o-list-flashcards__text o-list-flashcards__front o-default-box">
-            <p
-                role={isSupported ? "button" : undefined}
-                onClick={isSupported ? () => handleSpeak(card, cardLang) : undefined}
-                style={{ cursor: isSupported ? 'pointer' : 'default' }}
-            >
+    const CardFrontOrBack = useCallback(({ card, cardLang }) => {
+        return (
+            <div className="o-list-flashcards__text o-list-flashcards__front o-default-box">
+                <p
+                    role="button"
+                    onClick={() => handleSpeak(card, cardLang)}
+                >
                 <span className="o-list-flashcards__lang">
                     <span className="o-list-flashcards__lang-code">{cardLang}</span>
-                    <i className={isSupported ? 'icon-volume' : 'icon-volume-off'} />
+                    <i className="icon-volume" />
                 </span>
-                {card}
-            </p>
-        </div>
-    ), [handleSpeak]);
+                    {card}
+                </p>
+            </div>
+        );
+    }, [handleSpeak]);
 
     return ((selectedCategory !== null || selectedSuperCategory !== null) && learningFilter ? (
             twoCards.length === 0 && deck.length === 0 && learningFilter === "learningOnly" ?
@@ -209,6 +210,7 @@ const FlashCards = ({
                                             setLearningFilter('learningOnly');
                                             setCheckedCards(new Set());
                                             applyFilterAndShuffle();
+                                            showInterstitial();
                                         }}
                                     >
                                         {t('repeat_the_lesson_once_again')}
@@ -220,7 +222,10 @@ const FlashCards = ({
                         <p>{t('congratulations_text')}</p>
                     )}
                     <p>
-                        <button className="btn--green w-100" onClick={handleNextLesson}>{t('next_lesson')}</button>
+                        <button className="btn--green w-100" onClick={()=>{
+                            showInterstitial();
+                            handleNextLesson();
+                        }}>{t('next_lesson')}</button>
                     </p>
                 </> : <div
                     onClick={() => {
@@ -239,7 +244,6 @@ const FlashCards = ({
                             {twoCards.map(card => {
                                 const cardText = reversFrontBack ? card.back : card.front;
                                 const cardLang = reversFrontBack ? card.langBack : card.langFront;
-                                const isSupported = supportedLanguages.has(cardLang);
 
                                 return (
                                     <motion.li
@@ -320,7 +324,6 @@ const FlashCards = ({
                                         <CardFrontOrBack
                                             card={cardText}
                                             cardLang={cardLang}
-                                            isSupported={isSupported}
                                         />
                                         <hr />
                                         {checkedCards.has(card.id) ? (
@@ -328,13 +331,11 @@ const FlashCards = ({
                                                 <CardFrontOrBack
                                                     card={card.front}
                                                     cardLang={card.langFront}
-                                                    isSupported={supportedLanguages.has(card.langFront)}
                                                 />
                                             ) : (
                                                 <CardFrontOrBack
                                                     card={card.back}
                                                     cardLang={card.langBack}
-                                                    isSupported={supportedLanguages.has(card.langBack)}
                                                 />
                                             )
                                         ) : <p className="o-list-flashcards__lang o-list-flashcards__lang-code text-center">
@@ -368,7 +369,7 @@ const FlashCards = ({
                                             </div>
 
                                             {!playFlashcards ? (
-                                                <ul className="o-list-buttons-clear position-relative">
+                                                <ul dir="ltr" className="o-list-buttons-clear position-relative">
                                                     <li className="o-button-single-edit">
                                                         <button
                                                             onClick={() => handleOpenQuickEdit(card)}

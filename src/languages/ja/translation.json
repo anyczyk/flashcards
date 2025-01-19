@@ -96,5 +96,6 @@
   "no_results": "結果がありません",
   "number_of_flashcards_found": "見つかったフラッシュカードの数",
   "number_of_flashcards": "フラッシュカードの数",
-  "add_flashcard_continue": "追加して続行"
+  "add_flashcard_continue": "追加して続行",
+  "add_and_back_to_list": "追加してリストに戻る"
 }

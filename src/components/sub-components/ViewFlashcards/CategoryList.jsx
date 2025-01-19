@@ -1,8 +1,10 @@
 // CategoryList.jsx
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
+// import AdTestComponent from "../../AdTestComponent";
+// import { showInterstitial } from '../../../services/admobService';
 
 function encodeSuperCategoryKey(superCategory) {
     return 'subCategoryOrder_' + btoa(unescape(encodeURIComponent(superCategory)));
@@ -65,9 +67,12 @@ const CategoryList = ({
         setTwoCards([]);
     };
 
+
     return (
         selectedCategory === null && selectedSuperCategory === null ? (
             <>
+                {/*{window.cordova && <AdTestComponent />}*/}
+                {/*<button onClick={showInterstitial}>Show Ad</button>*/}
                 {flashcards.length > 0 ? (
                     <ul className="o-list-categories o-list-categories--main">
                         <li>

@@ -25,7 +25,7 @@ const Footer = ({setMainHomePageLoad, clearOptions}) => {
 
     return (
         <>
-            <footer className="o-main-footer">
+            <footer dir="ltr" className="o-main-footer">
                 <ul>
                     <li><Link aria-label={t('view_flashcards')} onClick={() => setMainHomePageLoad(true)} to="/"><i
                         className="icon-logo-f"></i><span>{t('flashcards')}</span></Link></li>

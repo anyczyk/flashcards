@@ -1,5 +1,4 @@
-// CreateFlashcard.jsx
-import React, {useState, useEffect, useCallback, useContext} from 'react';
+import React, { useState, useEffect, useCallback, useContext } from 'react';
 import PropTypes from 'prop-types';
 import { getCordovaLanguage } from '../utils/getLanguage';
 import { loadLanguages } from '../utils/loadLanguages';
@@ -9,7 +8,7 @@ import { getAllFlashcards } from '../db';
 import SelectSuperCategory from "./sub-components/common/SelectSuperCategory";
 import SelectCategory from "./sub-components/common/SelectCategory";
 import { useLocation, useNavigate } from "react-router-dom";
-import {FlashcardContext} from "../context/FlashcardContext";
+import { FlashcardContext } from "../context/FlashcardContext";
 
 function encodeSuperCategoryKey(superCategory) {
     return 'subCategoryOrder_' + btoa(unescape(encodeURIComponent(superCategory)));
@@ -17,19 +16,19 @@ function encodeSuperCategoryKey(superCategory) {
 
 function CreateFlashcard({ addFlashcard, categories, superCategoriesArray }) {
     const { t } = useTranslation();
-    const {
-        rtlCodeLangs,
-        dirAttribute
-    } = useContext(FlashcardContext);
+    const { rtlCodeLangs, dirAttribute } = useContext(FlashcardContext);
+
     const location = useLocation();
     const queryParams = new URLSearchParams(location.search);
     const getSuperCategory = queryParams.get("superCategory");
+    const getCategory = queryParams.get("category");
     const getAddFirstOrLast = queryParams.get("addFirstOrLast");
     const navigate = useNavigate();
 
+    // STANY
     const [front, setFront] = useState('');
     const [back, setBack] = useState('');
-    const [category, setCategory] = useState('');
+    const [category, setCategory] = useState('');        // <--- kluczowy stan w rodzicu
     const [superCategory, setSuperCategory] = useState('');
     const [langFront, setLangFront] = useState('');
     const [langBack, setLangBack] = useState('');
@@ -38,6 +37,20 @@ function CreateFlashcard({ addFlashcard, categories, superCategoriesArray }) {
     const [categoriesDependentOnSuperCategory, setCategoriesDependentOnSuperCategory] = useState([]);
     const [currentSelectSuperCategory, setCurrentSelectSuperCategory] = useState('');
     const [continueAdd, setContinueAdd] = useState(false);
+
+    // useEffect "przechwytujący" getSuperCategory
+    useEffect(() => {
+        if (getSuperCategory !== null && getSuperCategory !== undefined) {
+            setSuperCategory(getSuperCategory);
+        }
+    }, [getSuperCategory]);
+
+    // useEffect "przechwytujący" getCategory
+    useEffect(() => {
+        if (getCategory !== null && getCategory !== undefined) {
+            setCategory(getCategory);
+        }
+    }, [getCategory]);
 
     const loadData = useCallback(async () => {
         const data = await getAllFlashcards();
@@ -66,13 +79,12 @@ function CreateFlashcard({ addFlashcard, categories, superCategoriesArray }) {
         fetchLanguages();
     }, []);
 
+    // Ustalanie języków
     useEffect(() => {
         if (availableLanguages.length > 0) {
             const setLanguages = async () => {
                 try {
                     const detectedLanguage = await getCordovaLanguage();
-                    console.log('Detected language:', detectedLanguage);
-
                     if (availableLanguages.includes(detectedLanguage)) {
                         setLangFront(detectedLanguage);
                         setLangBack(detectedLanguage);
@@ -98,53 +110,6 @@ function CreateFlashcard({ addFlashcard, categories, superCategoriesArray }) {
         }
     }, [availableLanguages]);
 
-    // const saveToLocalStorage = (finalCategory, finalSuperCategory) => {
-    //     let categoryToStore = finalSuperCategory || finalCategory;
-    //     const savedOrder = localStorage.getItem('categoryOrder');
-    //     let savedOrderArray = savedOrder ? JSON.parse(savedOrder) : [];
-    //
-    //     if (categoryToStore) {
-    //         const indexInOrder = savedOrderArray.indexOf(categoryToStore);
-    //         if (indexInOrder !== -1) {
-    //             savedOrderArray.splice(indexInOrder, 1);
-    //         }
-    //
-    //         if(getAddCategoryInSuperCategory === 'last' || getAddSuperCategoryOrCategory === 'last') {
-    //             console.log("last");
-    //             savedOrderArray.push(categoryToStore);
-    //         } else {
-    //             console.log("first");
-    //             savedOrderArray.unshift(categoryToStore);
-    //         }
-    //
-    //         localStorage.setItem('categoryOrder', JSON.stringify(savedOrderArray));
-    //     }
-    //
-    //     if (finalSuperCategory) {
-    //         try {
-    //             const subCatKey = encodeSuperCategoryKey(finalSuperCategory);
-    //             const subCatDataStr = localStorage.getItem('subCategoriesOrderStorage');
-    //             let subCatDataObj = subCatDataStr ? JSON.parse(subCatDataStr) : {};
-    //
-    //             if (!subCatDataObj[subCatKey]) {
-    //                 subCatDataObj[subCatKey] = [];
-    //             }
-    //             if (finalCategory) {
-    //                 const realSubCat = finalCategory.trim() === '' ? 'Without category' : finalCategory.trim();
-    //
-    //                 const indexInSub = subCatDataObj[subCatKey].indexOf(realSubCat);
-    //                 if (indexInSub !== -1) {
-    //                     subCatDataObj[subCatKey].splice(indexInSub, 1);
-    //                 }
-    //                 subCatDataObj[subCatKey].unshift(realSubCat);
-    //             }
-    //             localStorage.setItem('subCategoriesOrderStorage', JSON.stringify(subCatDataObj));
-    //         } catch (error) {
-    //             console.error('Error saving to subCategoriesOrderStorage:', error);
-    //         }
-    //     }
-    // };
-
     const saveToLocalStorage = (finalCategory, finalSuperCategory) => {
         let categoryToStore = finalSuperCategory || finalCategory;
         const savedOrder = localStorage.getItem('categoryOrder');
@@ -155,15 +120,13 @@ function CreateFlashcard({ addFlashcard, categories, superCategoriesArray }) {
             if (indexInOrder !== -1) {
                 savedOrderArray.splice(indexInOrder, 1);
             }
-
-            if(getAddFirstOrLast === 'last') {
-                console.log("last");
+            if (getAddFirstOrLast === 'last') {
+                // console.log("last");
                 savedOrderArray.push(categoryToStore);
             } else {
-                console.log("first");
+                // console.log("first");
                 savedOrderArray.unshift(categoryToStore);
             }
-
             localStorage.setItem('categoryOrder', JSON.stringify(savedOrderArray));
         }
 
@@ -178,13 +141,11 @@ function CreateFlashcard({ addFlashcard, categories, superCategoriesArray }) {
                 }
                 if (finalCategory) {
                     const realSubCat = finalCategory.trim() === '' ? 'Without category' : finalCategory.trim();
-
                     const indexInSub = subCatDataObj[subCatKey].indexOf(realSubCat);
                     if (indexInSub !== -1) {
                         subCatDataObj[subCatKey].splice(indexInSub, 1);
                     }
-
-                    if(getAddFirstOrLast === 'last') {
+                    if (getAddFirstOrLast === 'last') {
                         subCatDataObj[subCatKey].push(realSubCat);
                     } else {
                         subCatDataObj[subCatKey].unshift(realSubCat);
@@ -218,12 +179,14 @@ function CreateFlashcard({ addFlashcard, categories, superCategoriesArray }) {
                     superCategory: finalSuperCategory
                 });
 
+                // Zapisz localStorage
                 saveToLocalStorage(finalCategory, finalSuperCategory);
 
                 setFlashcardCreated(true);
                 setFront('');
                 setBack('');
 
+                // jeśli mamy superCategory w URL i user nie chce continueAdd, wracamy do listy
                 if ((getSuperCategory || getSuperCategory === '') && !continueAdd) {
                     navigate('/list-edit');
                 }
@@ -305,6 +268,8 @@ function CreateFlashcard({ addFlashcard, categories, superCategoriesArray }) {
                         />
                     </p>
                     <hr />
+
+                    {/* Super Category */}
                     <SelectSuperCategory
                         superCategory={superCategory}
                         setSuperCategory={setSuperCategory}
@@ -312,26 +277,41 @@ function CreateFlashcard({ addFlashcard, categories, superCategoriesArray }) {
                         setCurrentSelectSuperCategory={setCurrentSelectSuperCategory}
                     />
                     <hr />
+
+                    {/* Category */}
                     <SelectCategory
+                        getCategory={getCategory}
                         category={category}
                         setCategory={setCategory}
                         categoriesDependentOnSuperCategory={categoriesDependentOnSuperCategory}
                     />
                     <hr />
+
                     {flashcardCreated && (
                         <p><strong className="color-green"> {t('flashcard_added')}</strong></p>
                     )}
+
                     <ul className="o-list-buttons-clear o-list-buttons-clear--nowrap-columns o-default-box">
                         <li>
-                            <button type="submit" onClick={() => setContinueAdd(false)}
-                                    disabled={!front.trim() || !back.trim()}>
-                                {t('add_flashcard')}
+                            <button
+                                type="submit"
+                                onClick={() => setContinueAdd(false)}
+                                disabled={!front.trim() || !back.trim()}
+                            >
+                                {(getSuperCategory || getSuperCategory === '') ? t('add_and_back_to_list') : t('add_flashcard') }
                             </button>
                         </li>
-                        {(getSuperCategory || getSuperCategory === '') ?
-                            <li><button type="submit" onClick={() => setContinueAdd(true)} disabled={!front.trim() || !back.trim()}>
-                                {t('add_flashcard_continue')}
-                            </button></li> : ''}
+                        {(getSuperCategory || getSuperCategory === '') && (
+                            <li>
+                                <button
+                                    type="submit"
+                                    onClick={() => setContinueAdd(true)}
+                                    disabled={!front.trim() || !back.trim()}
+                                >
+                                    {t('add_flashcard_continue')}
+                                </button>
+                            </li>
+                        )}
                     </ul>
                 </div>
             </form>

@@ -7,6 +7,7 @@ import { FlashcardContext } from "../../../context/FlashcardContext";
 import SelectSuperCategory from "./SelectSuperCategory";
 import { getAllFlashcards } from "../../../db";
 import SelectCategory from "./SelectCategory";
+import { useNavigate } from 'react-router-dom';
 function encodeSuperCategoryKey(superCategory) {
     return 'subCategoryOrder_' + btoa(unescape(encodeURIComponent(superCategory)));
 }
@@ -46,6 +47,7 @@ const FlashCardListEdit = ({
                            }) => {
     const { t } = useTranslation();
     const { removeFlashcard, editFlashcard, superCategoriesArray, setOrderedCategories, flashcards, rtlCodeLangs } = useContext(FlashcardContext);
+    const navigate = useNavigate();
 
     const [oldCategory, setOldCategory] = useState('');
     const [oldSuperCategory, setOldSuperCategory] = useState('');
@@ -243,7 +245,7 @@ const FlashCardListEdit = ({
 
     const filteredObj = filteredFlashcards.filter(fc => (showStillLearning ? !fc.know : true));
 
-    console.log("filteredObj", filteredObj);
+    // console.log("filteredObj", filteredObj);
 
     return (filteredObj.length > 0 ?
             <>
@@ -256,6 +258,18 @@ const FlashCardListEdit = ({
                     }}
                     className={`o-list-edit-flashcards ${editMode ? 'o-list-edit-flashcards--edit-state' : ''}`}
                 >
+                    {typePage === 'main-edit' &&
+                        <li className="o-button-add-flashcard">
+                            <button
+                                onClick={() => navigate(`/create?addFirstOrLast=first&superCategory=${filteredObj[0].superCategory}&category=${filteredObj[0].category}`)}
+                                type="button"
+                                className="justify-content-center color-green-strong-dark btn--cream"
+                                aria-label={t('add_flashcard')}
+                            >
+                                <i className="icon-plus"></i>
+                            </button>
+                        </li>
+                    }
                     {filteredObj.map((card, index) => (
                         <li ref={setCardRef(card.id)}
                             className={`o-card ${editMode === card.id ? 'o-card--active' : ''}`} key={card.id}>
@@ -300,7 +314,7 @@ const FlashCardListEdit = ({
                                                                     }
 
                                                                 } else {
-                                                                    console.log("Nie znaleziono fiszki o podanym id.");
+                                                                    console.log("Can't find flashcard from this id.");
                                                                 }
                                                                 if (typePage === 'search') {
                                                                     setTimeout(function () {
