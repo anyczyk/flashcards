@@ -97,5 +97,9 @@
   "number_of_flashcards_found": "Табылған флешкардтар саны",
   "number_of_flashcards": "Флешкардтар саны",
   "add_flashcard_continue": "Қосу және жалғастыру",
-  "add_and_back_to_list": "Қосу және тізімге оралу"
+  "add_and_back_to_list": "Қосу және тізімге оралу",
+  "description": "Сипаттама",
+  "front_description": "Алдыңғы сипаттама",
+  "back_description": "Артқы сипаттама",
+  "go_back": "Артқа"
 }

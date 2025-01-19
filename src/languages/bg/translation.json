@@ -97,5 +97,9 @@
   "number_of_flashcards_found": "Брой намерени флашкарди",
   "number_of_flashcards": "Брой флашкарди",
   "add_flashcard_continue": "Добави и продължи",
-  "add_and_back_to_list": "Добави и се върни към списъка"
+  "add_and_back_to_list": "Добави и се върни към списъка",
+  "description": "Описание",
+  "front_description": "Описание отпред",
+  "back_description": "Описание отзад",
+  "go_back": "Назад"
 }

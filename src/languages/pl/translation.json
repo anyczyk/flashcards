@@ -73,7 +73,7 @@
   "yes_reset": "Tak, zresetuj",
   "yes_remove": "Tak, usuń",
   "show_still_learning": "Jeszcze do nauki",
-  "play": "Play",
+  "play": "Odtwórz",
   "pause": "Pause",
   "revers": "Odwróć",
   "copied_selected_flashcards_to_clipboard": "Skopiowano wybrane fiszki do schowka",
@@ -97,5 +97,9 @@
   "number_of_flashcards_found": "Liczba znalezionych fiszek",
   "number_of_flashcards": "Liczba fiszek",
   "add_flashcard_continue": "Dodaj i kontynuuj",
-  "add_and_back_to_list": "Dodaj i wróć do listy"
+  "add_and_back_to_list": "Dodaj i wróć do listy",
+  "description": "Opis",
+  "front_description": "Opis z przodu",
+  "back_description": "Opis z tyłu",
+  "go_back": "Cofnij"
 }

@@ -97,5 +97,9 @@
   "number_of_flashcards_found": "Število najdenih kartic",
   "number_of_flashcards": "Število kartic",
   "add_flashcard_continue": "Dodaj in nadaljuj",
-  "add_and_back_to_list": "Dodaj in nazaj na seznam"
+  "add_and_back_to_list": "Dodaj in nazaj na seznam",
+  "description": "Opis",
+  "front_description": "Sprednji opis",
+  "back_description": "Zadnji opis",
+  "go_back": "Nazaj"
 }

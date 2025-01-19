@@ -97,5 +97,9 @@
   "number_of_flashcards_found": "Кількість знайдених карток",
   "number_of_flashcards": "Кількість карток",
   "add_flashcard_continue": "Додати та продовжити",
-  "add_and_back_to_list": "Додати та повернутися до списку"
+  "add_and_back_to_list": "Додати та повернутися до списку",
+  "description": "Опис",
+  "front_description": "Опис передньої сторони",
+  "back_description": "Опис задньої сторони",
+  "go_back": "Назад"
 }

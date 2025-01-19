@@ -97,5 +97,9 @@
   "number_of_flashcards_found": "ចំនួនកាតប្លាសដែលបានរកឃើញ",
   "number_of_flashcards": "ចំនួនកាតប្លាស",
   "add_flashcard_continue": "បន្ថែម និងបន្ត",
-  "add_and_back_to_list": "បន្ថែម និងត្រឡប់ទៅបញ្ជី"
+  "add_and_back_to_list": "បន្ថែម និងត្រឡប់ទៅបញ្ជី",
+  "description": "ការ​ពិពណ៌នា",
+  "front_description": "ការពិពណ៌នាផ្នែកមុខ",
+  "back_description": "ការពិពណ៌នាផ្នែកខាងក្រោយ",
+  "go_back": "ត្រលប់"
 }

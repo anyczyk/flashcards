@@ -97,5 +97,9 @@
   "number_of_flashcards_found": "مليل فليش ڪارڊز جو تعداد",
   "number_of_flashcards": "فليش ڪارڊز جو تعداد",
   "add_flashcard_continue": "وڌارو ۽ جاري رکو",
-  "add_and_back_to_list": "شامل کریں اور فہرست پر واپس جائیں"
+  "add_and_back_to_list": "شامل کریں اور فہرست پر واپس جائیں",
+  "description": "تفصیل",
+  "front_description": "اگلی تفصیل",
+  "back_description": "پچھلی تفصیل",
+  "go_back": "واپس"
 }

@@ -133,6 +133,10 @@ hr {
   order: 3;
 }
 
+.order-4 {
+  order: 4;
+}
+
 .position-relative {
   position: relative;
 }
@@ -498,6 +502,22 @@ hr {
 .o-list-flashcards {
   position: relative;
   flex: 1;
+  
+  [role=button], a, button {
+    cursor: pointer;
+  }
+
+  &__desc {
+    background-color: var(--color-white-opacity-40);
+    color: var(--color-brow);
+    padding: vars.$padding-default;
+    margin-top: vars.$padding-default;
+    border-radius: 6px;
+
+    p:not(.o-list-flashcards__lang) {
+      font-size: 14px;
+    }
+  }
 
   &__lang {
     white-space: nowrap;
@@ -682,7 +702,7 @@ hr {
     width: 100%;
 
     &-categories{
-      text-decoration: underline;
+      // text-decoration: underline;
       cursor: pointer;
       padding: 0;
       min-height: unset;
@@ -691,6 +711,7 @@ hr {
       background-color: unset;
       font-weight: 700;
       font-size: 18px;
+      color: #e9a400;
     }
   }
 

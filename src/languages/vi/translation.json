@@ -97,5 +97,9 @@
   "number_of_flashcards_found": "Số lượng thẻ flash được tìm thấy",
   "number_of_flashcards": "Số lượng thẻ flash",
   "add_flashcard_continue": "Thêm và tiếp tục",
-  "add_and_back_to_list": "Thêm và trở lại danh sách"
+  "add_and_back_to_list": "Thêm và trở lại danh sách",
+  "description": "Mô tả",
+  "front_description": "Mô tả mặt trước",
+  "back_description": "Mô tả mặt sau",
+  "go_back": "Quay lại"
 }

@@ -97,5 +97,9 @@
   "number_of_flashcards_found": "Talált kártyák száma",
   "number_of_flashcards": "Kártyák száma",
   "add_flashcard_continue": "Hozzáadás és folytatás",
-  "add_and_back_to_list": "Hozzáadás és vissza a listához"
+  "add_and_back_to_list": "Hozzáadás és vissza a listához",
+  "description": "Leírás",
+  "front_description": "Elülső leírás",
+  "back_description": "Hátsó leírás",
+  "go_back": "Vissza"
 }

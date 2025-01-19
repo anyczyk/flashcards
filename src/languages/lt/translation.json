@@ -97,5 +97,9 @@
   "number_of_flashcards_found": "Surastų flashkardų skaičius",
   "number_of_flashcards": "Flashkardų skaičius",
   "add_flashcard_continue": "Pridėti ir tęsti",
-  "add_and_back_to_list": "Pridėti ir grįžti į sąrašą"
+  "add_and_back_to_list": "Pridėti ir grįžti į sąrašą",
+  "description": "Aprašymas",
+  "front_description": "Priekinis aprašymas",
+  "back_description": "Galinis aprašymas",
+  "go_back": "Atgal"
 }

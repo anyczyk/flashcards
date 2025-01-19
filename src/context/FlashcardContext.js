@@ -70,8 +70,8 @@ export const FlashcardProvider = ({ children }) => {
         loadData();
     }, [loadData]);
 
-    const addFlashcard = async (front, back, category, know, langFront, langBack, superCategory) => {
-        const newFc = await addFlashcardToDB(front, back, category, know, langFront, langBack, superCategory);
+    const addFlashcard = async (front, back, category, know, langFront, langBack, superCategory, frontDesc) => {
+        const newFc = await addFlashcardToDB(front, back, category, know, langFront, langBack, superCategory, frontDesc);
         setFlashcards((prev) => {
             const updated = [...prev, newFc];
             updateCategories(updated);
@@ -88,8 +88,8 @@ export const FlashcardProvider = ({ children }) => {
         });
     };
 
-    const editFlashcard = async (id, updatedFront, updatedBack, updatedCategory, updatedKnow, updatedFrontLang, updatedBackLang, updateSuperCategory) => {
-        await editFlashcardInDB(id, updatedFront, updatedBack, updatedCategory, updatedKnow, updatedFrontLang, updatedBackLang, updateSuperCategory);
+    const editFlashcard = async (id, updatedFront, updatedBack, updatedCategory, updatedKnow, updatedFrontLang, updatedBackLang, updateSuperCategory, updatedFrontDesc, updatedBackDesc) => {
+        await editFlashcardInDB(id, updatedFront, updatedBack, updatedCategory, updatedKnow, updatedFrontLang, updatedBackLang, updateSuperCategory, updatedFrontDesc, updatedBackDesc);
         setFlashcards((prev) => {
             const updated = prev.map(fc =>
                 fc.id === id
@@ -101,7 +101,9 @@ export const FlashcardProvider = ({ children }) => {
                         know: updatedKnow,
                         langFront: updatedFrontLang,
                         langBack: updatedBackLang,
-                        superCategory: updateSuperCategory
+                        superCategory: updateSuperCategory,
+                        frontDesc: updatedFrontDesc,
+                        backDesc: updatedBackDesc
                     }
                     : fc
             );
@@ -121,7 +123,9 @@ export const FlashcardProvider = ({ children }) => {
             knowValue,
             card.langFront,
             card.langBack,
-            card.superCategory
+            card.superCategory,
+            card.frontDesc,
+            card.backDesc
         );
         setFlashcards((prev) =>
             prev.map(fc => (fc.id === id ? { ...fc, know: knowValue } : fc))

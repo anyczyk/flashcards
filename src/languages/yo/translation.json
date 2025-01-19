@@ -97,5 +97,9 @@
   "number_of_flashcards_found": "Ìye Flashcards ti a rí",
   "number_of_flashcards": "Ìye Flashcards",
   "add_flashcard_continue": "Fi kun ati tẹsiwaju",
-  "add_and_back_to_list": "Fikun-un àti pada sí àtòjọ"
+  "add_and_back_to_list": "Fikun-un àti pada sí àtòjọ",
+  "description": "Apejuwe",
+  "front_description": "Apejuwe iwaju",
+  "back_description": "Apejuwe ẹhin",
+  "go_back": "Pada sẹhin"
 }

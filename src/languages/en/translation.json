@@ -97,5 +97,9 @@
   "number_of_flashcards_found": "Number of flashcards found",
   "number_of_flashcards": "Number of flashcards",
   "add_flashcard_continue": "Add and continue",
-  "add_and_back_to_list": "Add and back to list"
+  "add_and_back_to_list": "Add and back to list",
+  "description": "Description",
+  "front_description": "Front description",
+  "back_description": "Back description",
+  "go_back": "Go back"
 }

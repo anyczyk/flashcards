@@ -97,5 +97,9 @@
   "number_of_flashcards_found": "Anzahl der gefundenen Karteikarten",
   "number_of_flashcards": "Anzahl der Karteikarten",
   "add_flashcard_continue": "Hinzufügen und fortfahren",
-  "add_and_back_to_list": "Hinzufügen und zurück zur Liste"
+  "add_and_back_to_list": "Hinzufügen und zurück zur Liste",
+  "description": "Beschreibung",
+  "front_description": "Vorderseite Beschreibung",
+  "back_description": "Rückseite Beschreibung",
+  "go_back": "Zurück"
 }

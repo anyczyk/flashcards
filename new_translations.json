@@ -1,0 +1,236 @@
+{
+  "am": {
+    "go_back": "ተመለስ"
+  },
+  "ar": {
+    "go_back": "رجوع"
+  },
+  "arc": {
+    "go_back": "ܬܘܒ"
+  },
+  "az": {
+    "go_back": "Geri"
+  },
+  "be": {
+    "go_back": "Вярнуцца"
+  },
+  "bg": {
+    "go_back": "Назад"
+  },
+  "ckb": {
+    "go_back": "بگەڕێوە"
+  },
+  "crs": {
+    "go_back": "Alé"
+  },
+  "cs": {
+    "go_back": "Zpět"
+  },
+  "da": {
+    "go_back": "Tilbage"
+  },
+  "de": {
+    "go_back": "Zurück"
+  },
+  "el": {
+    "go_back": "Πίσω"
+  },
+  "en": {
+    "go_back": "Go back"
+  },
+  "es": {
+    "go_back": "Atrás"
+  },
+  "et": {
+    "go_back": "Tagasi"
+  },
+  "fa": {
+    "go_back": "بازگشت"
+  },
+  "fi": {
+    "go_back": "Takaisin"
+  },
+  "fr": {
+    "go_back": "Retour"
+  },
+  "ha": {
+    "go_back": "Komawa"
+  },
+  "haw": {
+    "go_back": "Hoʻi"
+  },
+  "he": {
+    "go_back": "חזור"
+  },
+  "hi": {
+    "go_back": "वापस जाएं"
+  },
+  "hr": {
+    "go_back": "Nazad"
+  },
+  "ht": {
+    "go_back": "Tounen"
+  },
+  "hu": {
+    "go_back": "Vissza"
+  },
+  "hy": {
+    "go_back": "Վերադառնալ"
+  },
+  "id": {
+    "go_back": "Kembali"
+  },
+  "ig": {
+    "go_back": "Laghachi"
+  },
+  "it": {
+    "go_back": "Indietro"
+  },
+  "ja": {
+    "go_back": "戻る"
+  },
+  "ka": {
+    "go_back": "დაბრუნება"
+  },
+  "kk": {
+    "go_back": "Артқа"
+  },
+  "kl": {
+    "go_back": "Utertui"
+  },
+  "km": {
+    "go_back": "ត្រលប់"
+  },
+  "ko": {
+    "go_back": "뒤로"
+  },
+  "ks": {
+    "go_back": "واپس"
+  },
+  "ky": {
+    "go_back": "Артка"
+  },
+  "ln": {
+    "go_back": "Zonga"
+  },
+  "lo": {
+    "go_back": "ກັບ"
+  },
+  "lt": {
+    "go_back": "Atgal"
+  },
+  "lv": {
+    "go_back": "Atpakaļ"
+  },
+  "mi": {
+    "go_back": "Hoki atu"
+  },
+  "mn": {
+    "go_back": "Буцах"
+  },
+  "mnd": {
+    "go_back": "Go back (przykładowa forma)"
+  },
+  "ms": {
+    "go_back": "Kembali"
+  },
+  "ne": {
+    "go_back": "फिर्ता"
+  },
+  "nl": {
+    "go_back": "Terug"
+  },
+  "no": {
+    "go_back": "Tilbake"
+  },
+  "pl": {
+    "go_back": "Cofnij"
+  },
+  "ps": {
+    "go_back": "بېرته"
+  },
+  "pt": {
+    "go_back": "Voltar"
+  },
+  "ro": {
+    "go_back": "Înapoi"
+  },
+  "ru": {
+    "go_back": "Назад"
+  },
+  "sd": {
+    "go_back": "پوئتي"
+  },
+  "sk": {
+    "go_back": "Späť"
+  },
+  "sl": {
+    "go_back": "Nazaj"
+  },
+  "so": {
+    "go_back": "Ku noqo"
+  },
+  "sq": {
+    "go_back": "Mbrapa"
+  },
+  "sr": {
+    "go_back": "Назад"
+  },
+  "sv": {
+    "go_back": "Tillbaka"
+  },
+  "sw": {
+    "go_back": "Rudi"
+  },
+  "syr": {
+    "go_back": "ܬܘܒ"
+  },
+  "tg": {
+    "go_back": "Бозгашт"
+  },
+  "th": {
+    "go_back": "กลับ"
+  },
+  "tk": {
+    "go_back": "Yza"
+  },
+  "tl": {
+    "go_back": "Bumalik"
+  },
+  "tpi": {
+    "go_back": "Go bek"
+  },
+  "tr": {
+    "go_back": "Geri"
+  },
+  "ug": {
+    "go_back": "قايتىش"
+  },
+  "uk": {
+    "go_back": "Назад"
+  },
+  "ur": {
+    "go_back": "واپس"
+  },
+  "uz": {
+    "go_back": "Orqaga"
+  },
+  "vi": {
+    "go_back": "Quay lại"
+  },
+  "wo": {
+    "go_back": "Dell naat"
+  },
+  "xh": {
+    "go_back": "Buyela"
+  },
+  "yo": {
+    "go_back": "Pada sẹhin"
+  },
+  "zh": {
+    "go_back": "返回"
+  },
+  "zu": {
+    "go_back": "Buyela"
+  }
+}

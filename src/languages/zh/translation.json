@@ -97,5 +97,9 @@
   "number_of_flashcards_found": "找到的卡片数量",
   "number_of_flashcards": "卡片数量",
   "add_flashcard_continue": "添加并继续",
-  "add_and_back_to_list": "添加并返回列表"
+  "add_and_back_to_list": "添加并返回列表",
+  "description": "描述",
+  "front_description": "前描述",
+  "back_description": "后描述",
+  "go_back": "返回"
 }

@@ -97,5 +97,9 @@
   "number_of_flashcards_found": "Translation not available",
   "number_of_flashcards": "Translation not available",
   "add_flashcard_continue": "Add and continue",
-  "add_and_back_to_list": ""
+  "add_and_back_to_list": "",
+  "description": "Description (przykładowa forma, brak pewnego tłumaczenia)",
+  "front_description": "Front description (przykładowa forma)",
+  "back_description": "Back description (przykładowa forma)",
+  "go_back": "Go back (przykładowa forma)"
 }

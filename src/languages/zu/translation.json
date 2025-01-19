@@ -97,5 +97,9 @@
   "number_of_flashcards_found": "Inombolo yama-Flashcards atholakele",
   "number_of_flashcards": "Inombolo yama-Flashcards",
   "add_flashcard_continue": "Engeza futhi uqhubeke",
-  "add_and_back_to_list": "Engeza futhi ubuyele ohlwini"
+  "add_and_back_to_list": "Engeza futhi ubuyele ohlwini",
+  "description": "Incazelo",
+  "front_description": "Incazelo yangaphambili",
+  "back_description": "Incazelo yangemuva",
+  "go_back": "Buyela"
 }

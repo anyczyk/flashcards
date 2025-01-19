@@ -16,6 +16,8 @@ export const EditSearchProvider = ({ children }) => {
     const [editMode, setEditMode] = useState(null);
     const [editFront, setEditFront] = useState('');
     const [editBack, setEditBack] = useState('');
+    const [editFrontDesc, setEditFrontDesc] = useState('');
+    const [editBackDesc, setEditBackDesc] = useState('');
     const [editCategory, setEditCategory] = useState('');
     const [editSuperCategory, setEditSuperCategory] = useState('');
     const [editKnow, setEditKnow] = useState(false);
@@ -132,6 +134,8 @@ export const EditSearchProvider = ({ children }) => {
                 editMode, setEditMode,
                 editFront, setEditFront,
                 editBack, setEditBack,
+                editFrontDesc, setEditFrontDesc,
+                editBackDesc, setEditBackDesc,
                 editCategory, setEditCategory,
                 editSuperCategory, setEditSuperCategory,
                 editKnow, setEditKnow,

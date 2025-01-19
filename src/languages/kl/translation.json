@@ -97,5 +97,9 @@
   "number_of_flashcards_found": "Number Flashcards found",
   "number_of_flashcards": "Number Flashcards",
   "add_flashcard_continue": "Adda og fortsætte",
-  "add_and_back_to_list": "Oqaaseq isumagissaavoq aammalu listasunik illoqarfigineq"
+  "add_and_back_to_list": "Oqaaseq isumagissaavoq aammalu listasunik illoqarfigineq",
+  "description": "Allaatigineqarnera",
+  "front_description": "Allaatigineqarnera siusinnerusumut",
+  "back_description": "Allaatigineqarnera tunumisumut",
+  "go_back": "Utertui"
 }

@@ -97,5 +97,9 @@
   "number_of_flashcards_found": "تەپسىلاتتا تاپىلغان فلشكارتىلار سانى",
   "number_of_flashcards": "فلشكارتىلار سانى",
   "add_flashcard_continue": "قوشۇش ۋە داۋام قىل",
-  "add_and_back_to_list": "قوشۇش ۋە تىزىمگە قايتىش"
+  "add_and_back_to_list": "قوشۇش ۋە تىزىمگە قايتىش",
+  "description": "چۈشەندۈرۈش",
+  "front_description": "ئالدى چۈشەندۈرۈش",
+  "back_description": "كېيىنكى چۈشەندۈرۈش",
+  "go_back": "قايتىش"
 }

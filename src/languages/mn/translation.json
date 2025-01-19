@@ -97,5 +97,9 @@
   "number_of_flashcards_found": "Хайсан флешкардын тоо",
   "number_of_flashcards": "Флешкардын тоо",
   "add_flashcard_continue": "Нэмээд үргэлжлүүлэх",
-  "add_and_back_to_list": "Нэмэх ба жагсаалтруу буцах"
+  "add_and_back_to_list": "Нэмэх ба жагсаалтруу буцах",
+  "description": "Тайлбар",
+  "front_description": "Урд талын тайлбар",
+  "back_description": "Ард талын тайлбар",
+  "go_back": "Буцах"
 }

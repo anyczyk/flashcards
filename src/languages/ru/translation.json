@@ -97,5 +97,9 @@
   "number_of_flashcards_found": "Количество найденных флеш-карт",
   "number_of_flashcards": "Количество флеш-карт",
   "add_flashcard_continue": "Добавить и продолжить",
-  "add_and_back_to_list": "Добавить и вернуться к списку"
+  "add_and_back_to_list": "Добавить и вернуться к списку",
+  "description": "Описание",
+  "front_description": "Описание передней части",
+  "back_description": "Описание задней части",
+  "go_back": "Назад"
 }

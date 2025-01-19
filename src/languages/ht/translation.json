@@ -97,5 +97,9 @@
   "number_of_flashcards_found": "Nimewo Flashcards jwenn",
   "number_of_flashcards": "Nimewo Flashcards",
   "add_flashcard_continue": "Ajoute epi kontinye",
-  "add_and_back_to_list": "Ajoute epi retounen nan lis la"
+  "add_and_back_to_list": "Ajoute epi retounen nan lis la",
+  "description": "Deskripsyon",
+  "front_description": "Deskripsyon devan",
+  "back_description": "Deskripsyon dèyè",
+  "go_back": "Tounen"
 }

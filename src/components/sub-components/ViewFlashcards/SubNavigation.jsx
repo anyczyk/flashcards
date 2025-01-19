@@ -68,7 +68,7 @@ const SubNavigation = ({
                             className="o-page-view-flashcards__title-categories"
                             onClick={handleMainHomePageLoad}
                         >
-                            {t('categories')}
+                            <i className="icon-level-up"></i> {t('go_back')}
                         </button>
                         {' / '}
                         <span
@@ -167,7 +167,7 @@ const SubNavigation = ({
                                         onClick={handlePlayFlashcards}
                                     >
                                         <i className={playFlashcards ? 'icon-pause' : 'icon-play'}></i>
-                                        {/*<span>{playFlashcards ? t('pause') : t('play')}</span>*/}
+                                        <span>{playFlashcards ? t('pause') : t('play')}</span>
                                     </button>
                                 </li>
                                 <li>

@@ -97,5 +97,9 @@
   "number_of_flashcards_found": "पाइएको फ्ल्यासकार्डहरूको संख्या",
   "number_of_flashcards": "फ्ल्यासकार्डहरूको संख्या",
   "add_flashcard_continue": "थप्नुहोस् र जारी राख्नुहोस्",
-  "add_and_back_to_list": "थप्नुहोस् र सूचीमा फर्कनुहोस्"
+  "add_and_back_to_list": "थप्नुहोस् र सूचीमा फर्कनुहोस्",
+  "description": "विवरण",
+  "front_description": "अगाडिको विवरण",
+  "back_description": "पछाडिको विवरण",
+  "go_back": "फिर्ता"
 }

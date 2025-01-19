@@ -97,5 +97,9 @@
   "number_of_flashcards_found": "Antal flashcards fundet",
   "number_of_flashcards": "Antal flashcards",
   "add_flashcard_continue": "Tilføj og fortsæt",
-  "add_and_back_to_list": "Tilføj og tilbage til liste"
+  "add_and_back_to_list": "Tilføj og tilbage til liste",
+  "description": "Beskrivelse",
+  "front_description": "Forsidebeskrivelse",
+  "back_description": "Bagsidebeskrivelse",
+  "go_back": "Tilbage"
 }

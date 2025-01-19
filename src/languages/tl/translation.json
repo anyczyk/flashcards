@@ -97,5 +97,9 @@
   "number_of_flashcards_found": "Bilang ng flashcard na natagpuan",
   "number_of_flashcards": "Bilang ng flashcard",
   "add_flashcard_continue": "Idagdag at magpatuloy",
-  "add_and_back_to_list": "Idagdag at bumalik sa listahan"
+  "add_and_back_to_list": "Idagdag at bumalik sa listahan",
+  "description": "Paglalarawan",
+  "front_description": "Paglalarawan sa harap",
+  "back_description": "Paglalarawan sa likod",
+  "go_back": "Bumalik"
 }

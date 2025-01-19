@@ -97,5 +97,9 @@
   "number_of_flashcards_found": "პოვილ ფლეშკარდების რაოდენობა",
   "number_of_flashcards": "ფლეშკардების რაოდენობა",
   "add_flashcard_continue": "დამატება და გაგრძელება",
-  "add_and_back_to_list": "დაამატეთ და დაბრუნდით სიაში"
+  "add_and_back_to_list": "დაამატეთ და დაბრუნდით სიაში",
+  "description": "აღწერა",
+  "front_description": "წინა აღწერა",
+  "back_description": "უკანა აღწერა",
+  "go_back": "დაბრუნება"
 }

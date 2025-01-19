@@ -14,7 +14,9 @@ function Search() {
     const {
         editMode, setEditMode,
         editFront, setEditFront,
+        editFrontDesc, setEditFrontDesc,
         editBack, setEditBack,
+        editBackDesc, setEditBackDesc,
         editCategory, setEditCategory,
         editSuperCategory, setEditSuperCategory,
         editKnow, setEditKnow,
@@ -95,11 +97,15 @@ function Search() {
                     visibleModalSingle={visibleModalSingle}
                     setVisibleModalSingle={setVisibleModalSingle}
                     editFront={editFront}
+                    editFrontDesc={editFrontDesc}
                     setEditFront={setEditFront}
+                    setEditFrontDesc={setEditFrontDesc}
                     editFrontLang={editFrontLang}
                     setEditFrontLang={setEditFrontLang}
                     editBack={editBack}
+                    editBackDesc={editBackDesc}
                     setEditBack={setEditBack}
+                    setEditBackDesc={setEditBackDesc}
                     editBackLang={editBackLang}
                     setEditBackLang={setEditBackLang}
                     editCategory={editCategory}

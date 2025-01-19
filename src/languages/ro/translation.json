@@ -97,5 +97,9 @@
   "number_of_flashcards_found": "Numărul de flashcard-uri găsite",
   "number_of_flashcards": "Numărul de flashcard-uri",
   "add_flashcard_continue": "Adaugă și continuă",
-  "add_and_back_to_list": "Adaugă și întoarce-te la listă"
+  "add_and_back_to_list": "Adaugă și întoarce-te la listă",
+  "description": "Descriere",
+  "front_description": "Descriere frontală",
+  "back_description": "Descriere spate",
+  "go_back": "Înapoi"
 }

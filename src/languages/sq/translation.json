@@ -97,5 +97,9 @@
   "number_of_flashcards_found": "Numri i kartave të gjetura",
   "number_of_flashcards": "Numri i kartave",
   "add_flashcard_continue": "Shto dhe vazhdo",
-  "add_and_back_to_list": "Shto dhe kthehu në listë"
+  "add_and_back_to_list": "Shto dhe kthehu në listë",
+  "description": "Përshkrim",
+  "front_description": "Përshkrim i përparmë",
+  "back_description": "Përshkrim i pasmë",
+  "go_back": "Mbrapa"
 }

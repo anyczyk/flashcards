@@ -204,12 +204,12 @@ const Header = ({setMainHomePageLoad, clearOptions, mainMenuVisible, setMainMenu
                             className="icon-book"></i> {t('library')}</Link>
                         </li>
 
-                        {/*<li><Link onClick={() => {*/}
-                        {/*    clearOptions();*/}
-                        {/*    showMainMenu();*/}
-                        {/*}} to="/Search"><i*/}
-                        {/*    className="icon-search"></i> {t('Search')}</Link>*/}
-                        {/*</li>*/}
+                        <li><Link onClick={() => {
+                            clearOptions();
+                            showMainMenu();
+                        }} to="/Search"><i
+                            className="icon-search"></i> {t('Search')}</Link>
+                        </li>
                     </ul>
                 </nav>
                 <div dir="ltr">

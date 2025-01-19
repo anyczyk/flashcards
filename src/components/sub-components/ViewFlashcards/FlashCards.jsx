@@ -65,6 +65,8 @@ const FlashCards = ({
                 isEditing: true,
                 front: card.front,
                 back: card.back,
+                frontDesc: card.frontDesc,
+                backDesc: card.backDesc,
             },
         }));
         setOpenCardId(card.id);
@@ -92,7 +94,7 @@ const FlashCards = ({
     }, []);
 
     const handleSaveQuickEdit = useCallback(async (card) => {
-        const { front, back } = quickEdit[card.id];
+        const { front, back, frontDesc, backDesc } = quickEdit[card.id];
         try {
             await editFlashcardInDB(
                 card.id,
@@ -102,7 +104,9 @@ const FlashCards = ({
                 card.know,
                 card.langFront,
                 card.langBack,
-                card.superCategory
+                card.superCategory,
+                frontDesc,
+                backDesc
             );
 
             if (loadData) {
@@ -110,10 +114,10 @@ const FlashCards = ({
             }
 
             setTwoCards(prevTwoCards =>
-                prevTwoCards.map(c => (c.id === card.id ? { ...c, front, back } : c))
+                prevTwoCards.map(c => (c.id === card.id ? { ...c, front, back, frontDesc, backDesc } : c))
             );
             setDeck(prevDeck =>
-                prevDeck.map(c => (c.id === card.id ? { ...c, front, back } : c))
+                prevDeck.map(c => (c.id === card.id ? { ...c, front, back, frontDesc, backDesc } : c))
             );
 
             handleCloseQuickEdit(card.id);
@@ -193,13 +197,29 @@ const FlashCards = ({
         );
     }, [handleSpeak]);
 
+    const CardFrontDescOrBackDesc = useCallback(({ card, cardLang }) => {
+        return (
+            card && <p
+                role="button"
+                onClick={() => handleSpeak(card, cardLang)}
+            >
+                <span className="o-list-flashcards__lang">
+                    <span className="o-list-flashcards__lang-code">{cardLang}</span>
+                    <i className="icon-volume"/>
+                </span>
+                {card}
+            </p>
+        );
+    }, [handleSpeak]);
+
+
     return ((selectedCategory !== null || selectedSuperCategory !== null) && learningFilter ? (
             twoCards.length === 0 && deck.length === 0 && learningFilter === "learningOnly" ?
                 <>
                     {filteredFlashcardCount > 0 ? (
                         <>
                             <p>
-                                {t('in_this_category_you_still_have_flashcards_to_learn')} (
+                            {t('in_this_category_you_still_have_flashcards_to_learn')} (
                                 {filteredFlashcardCount})
                             </p>
                             <ul className="o-list-buttons-clear">
@@ -244,6 +264,7 @@ const FlashCards = ({
                             {twoCards.map(card => {
                                 const cardText = reversFrontBack ? card.back : card.front;
                                 const cardLang = reversFrontBack ? card.langBack : card.langFront;
+                                const cardTextDesc = reversFrontBack ? card.backDesc : card.frontDesc;
 
                                 return (
                                     <motion.li
@@ -344,6 +365,27 @@ const FlashCards = ({
                                         }
 
 
+                                        {(card.frontDesc || card.backDesc) && <div className="o-list-flashcards__desc">
+                                            <CardFrontDescOrBackDesc
+                                                card={cardTextDesc}
+                                                cardLang={cardLang}
+                                            />
+
+                                            {checkedCards.has(card.id) ? <><hr/>{(
+                                                reversFrontBack ? (
+                                                    <CardFrontDescOrBackDesc
+                                                        card={card.frontDesc}
+                                                        cardLang={card.langFront}
+                                                    />
+                                                ) : (
+                                                    <CardFrontDescOrBackDesc
+                                                        card={card.backDesc}
+                                                        cardLang={card.langBack}
+                                                    />
+                                                )
+                                            )}</> : ''}
+                                        </div>}
+
                                         <div className="o-list-flashcards__know">
                                             <div
                                                 className={`o-list-flashcards__swipe-info-know ${
@@ -440,7 +482,7 @@ const FlashCards = ({
                                 aria-modal="true"
                                 aria-labelledby="modal-title"
                             >
-                                <p className={reversFrontBack ? 'order-2' : 'order-1'}>
+                                <p className={reversFrontBack ? 'order-3' : 'order-1'}>
                                     <label
                                         className="color-white"
                                         htmlFor={`front-${openCardId}`}
@@ -448,12 +490,25 @@ const FlashCards = ({
                                         {t('front')}:
                                     </label>
                                     <textarea
+                                        className="o-default-box"
                                         id={`front-${openCardId}`}
                                         value={quickEdit[openCardId].front}
                                         onChange={(e) => handleQuickEditChange(openCardId, 'front', e.target.value)}
                                     />
+                                    <label
+                                        className="color-white"
+                                        htmlFor={`front-desc-${openCardId}`}
+                                    >
+                                        {t('description')}:
+                                    </label>
+                                    <textarea
+                                        id={`front-desc-${openCardId}`}
+                                        value={quickEdit[openCardId].frontDesc}
+                                        onChange={(e) => handleQuickEditChange(openCardId, 'frontDesc', e.target.value)}
+                                    />
                                 </p>
-                                <p className={reversFrontBack ? 'order-1' : 'order-2'}>
+                                <hr className="order-2" />
+                                <p className={reversFrontBack ? 'order-1' : 'order-3'}>
                                     <label
                                         className="color-white"
                                         htmlFor={`back-${openCardId}`}
@@ -461,14 +516,28 @@ const FlashCards = ({
                                         {t('back')}:
                                     </label>
                                     <textarea
+                                        className="o-default-box"
                                         id={`back-${openCardId}`}
                                         value={quickEdit[openCardId].back}
                                         onChange={(e) =>
                                             handleQuickEditChange(openCardId, 'back', e.target.value)
                                         }
                                     />
+                                    <label
+                                        className="color-white"
+                                        htmlFor={`back-desc-${openCardId}`}
+                                    >
+                                        {t('description')}:
+                                    </label>
+                                    <textarea
+                                        id={`back-desc-${openCardId}`}
+                                        value={quickEdit[openCardId].backDesc}
+                                        onChange={(e) =>
+                                            handleQuickEditChange(openCardId, 'backDesc', e.target.value)
+                                        }
+                                    />
                                 </p>
-                                <ul className="o-list-buttons-clear o-list-buttons-clear--nowrap order-3">
+                                <ul className="o-list-buttons-clear o-list-buttons-clear--nowrap order-4">
                                     <li>
                                         <button
                                             onClick={() => handleSaveQuickEdit(openCard)}

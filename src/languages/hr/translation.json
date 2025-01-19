@@ -97,5 +97,9 @@
   "number_of_flashcards_found": "Broj pronađenih flashcardova",
   "number_of_flashcards": "Broj flashcardova",
   "add_flashcard_continue": "Dodaj i nastavi",
-  "add_and_back_to_list": "Dodaj i nazad na popis"
+  "add_and_back_to_list": "Dodaj i nazad na popis",
+  "description": "Opis",
+  "front_description": "Prednji opis",
+  "back_description": "Stražnji opis",
+  "go_back": "Nazad"
 }

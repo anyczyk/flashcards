@@ -97,5 +97,9 @@
   "number_of_flashcards_found": "Leitud flashcardide arv",
   "number_of_flashcards": "Flashcardide arv",
   "add_flashcard_continue": "Lisa ja jätka",
-  "add_and_back_to_list": "Lisa ja tagasi nimekirja"
+  "add_and_back_to_list": "Lisa ja tagasi nimekirja",
+  "description": "Kirjeldus",
+  "front_description": "Esiosa kirjeldus",
+  "back_description": "Tagakülje kirjeldus",
+  "go_back": "Tagasi"
 }

@@ -97,5 +97,9 @@
   "number_of_flashcards_found": "د موندل شوو فلش‌کارډونو شمیر",
   "number_of_flashcards": "د فلش‌کارډونو شمیر",
   "add_flashcard_continue": "زیاتول او دوام ورکول",
-  "add_and_back_to_list": "اضافه کړئ او لیست ته بیرته لاړ شئ"
+  "add_and_back_to_list": "اضافه کړئ او لیست ته بیرته لاړ شئ",
+  "description": "توضيح",
+  "front_description": "د مخکينۍ برخې توضیح",
+  "back_description": "د شا برخې توضیح",
+  "go_back": "بېرته"
 }

@@ -97,5 +97,9 @@
   "number_of_flashcards_found": "ژمارەی کارتە فلشێکان بەدۆزرایەوە",
   "number_of_flashcards": "ژمارەی کارتە فلشێکان",
   "add_flashcard_continue": "زیاد بکە و بەردەوام بە",
-  "add_and_back_to_list": "زیادکردن و گەڕانەوە بۆ لیستی"
+  "add_and_back_to_list": "زیادکردن و گەڕانەوە بۆ لیستی",
+  "description": "وەسف",
+  "front_description": "وەسف دەستپێک",
+  "back_description": "وەسفی دوا",
+  "go_back": "بگەڕێوە"
 }

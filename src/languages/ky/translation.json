@@ -97,5 +97,9 @@
   "number_of_flashcards_found": "Тапылган Flashcardтардын саны",
   "number_of_flashcards": "Flashcardтардын саны",
   "add_flashcard_continue": "Кошуу жана улантуу",
-  "add_and_back_to_list": "Кошуу жана тизме карап кайтуу"
+  "add_and_back_to_list": "Кошуу жана тизме карап кайтуу",
+  "description": "Сүрөттөө",
+  "front_description": "Алдыңкы сүрөттөө",
+  "back_description": "Арткы сүрөттөө",
+  "go_back": "Артка"
 }

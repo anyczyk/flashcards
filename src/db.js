@@ -32,10 +32,10 @@ export async function getAllFlashcards() {
     return await db.getAll(STORE_NAME);
 }
 
-export async function addFlashcardToDB({ front, back, category, know = undefined, langFront = 'en-US', langBack = 'en-US', superCategory }) {
+export async function addFlashcardToDB({ front, back, category, know = undefined, langFront = 'en-US', langBack = 'en-US', superCategory, frontDesc, backDesc }) {
     const db = await initDB();
     const id = generateSequentialID();
-    const flashcard = { id, front, back, category, know, langFront, langBack, superCategory };
+    const flashcard = { id, front, back, category, know, langFront, langBack, superCategory, frontDesc, backDesc };
     try {
         await db.put(STORE_NAME, flashcard);
     } catch (error) {
@@ -61,7 +61,9 @@ export async function editFlashcardInDB(
     updatedKnow = undefined,
     updatedLangFront = 'en-US',
     updatedLangBack = 'en-US',
-    updateSuperCategory
+    updateSuperCategory,
+    updatedFrontDesc,
+    updatedBackDesc
 ) {
     const db = await initDB();
     const flashcard = {
@@ -72,7 +74,9 @@ export async function editFlashcardInDB(
         know: updatedKnow,
         langFront: updatedLangFront,
         langBack: updatedLangBack,
-        superCategory: updateSuperCategory
+        superCategory: updateSuperCategory,
+        frontDesc: updatedFrontDesc,
+        backDesc: updatedBackDesc
     };
     try {
         await db.put(STORE_NAME, flashcard);
@@ -110,7 +114,9 @@ export async function addMultipleFlashcardsToDB(flashcards) {
                 know: fc.know,
                 langFront: fc.langFront || 'en-US',
                 langBack: fc.langBack || 'en-US',
-                superCategory: fc.superCategory || ''
+                superCategory: fc.superCategory || '',
+                frontDesc: fc.frontDesc || '',
+                backDesc: fc.backDesc || ''
             });
         } catch (error) {
             console.error(`Error adding flashcard: ${id}`, error);

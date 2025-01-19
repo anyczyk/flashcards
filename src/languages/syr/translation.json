@@ -97,5 +97,9 @@
   "number_of_flashcards_found": "ܕܝܢܐ ܕܦܠܫܟܪܕ̈ܐ ܡܫܟܠܬ",
   "number_of_flashcards": "ܕܝܢܐ ܕܦܠܫܟܪܕ̈ܐ",
   "add_flashcard_continue": "ܚܙܝܬܐ ܘܬܐܣܘܬ",
-  "add_and_back_to_list": "ܫܠܘܬܐ ܘܥܕܢܐ ܠܛܘܥܐ"
+  "add_and_back_to_list": "ܫܠܘܬܐ ܘܥܕܢܐ ܠܛܘܥܐ",
+  "description": "ܦܘܫܛܢܐ",
+  "front_description": "ܦܘܫܛܢܐ ܕܩܕܡܐ",
+  "back_description": "ܦܘܫܛܢܐ ܕܒܬܐ",
+  "go_back": "ܬܘܒ"
 }

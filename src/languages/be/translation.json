@@ -97,5 +97,9 @@
   "number_of_flashcards_found": "Колькасць знойдзеных флешкард",
   "number_of_flashcards": "Колькасць флешкард",
   "add_flashcard_continue": "Дадаць і працягваць",
-  "add_and_back_to_list": "Дадаць і вярнуцца да спісу"
+  "add_and_back_to_list": "Дадаць і вярнуцца да спісу",
+  "description": "Апісанне",
+  "front_description": "Апісанне пярэдняй часткі",
+  "back_description": "Апісанне задняй часткі",
+  "go_back": "Вярнуцца"
 }

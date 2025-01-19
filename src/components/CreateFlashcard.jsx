@@ -28,6 +28,8 @@ function CreateFlashcard({ addFlashcard, categories, superCategoriesArray }) {
     // STANY
     const [front, setFront] = useState('');
     const [back, setBack] = useState('');
+    const [frontDesc, setFrontDesc] = useState('');
+    const [backDesc, setBackDesc] = useState('');
     const [category, setCategory] = useState('');        // <--- kluczowy stan w rodzicu
     const [superCategory, setSuperCategory] = useState('');
     const [langFront, setLangFront] = useState('');
@@ -168,6 +170,8 @@ function CreateFlashcard({ addFlashcard, categories, superCategoriesArray }) {
             const finalLangFront = langFront || 'en-US';
             const finalLangBack = langBack || 'en-US';
             const finalSuperCategory = superCategory.trim();
+            const finalFrontDesc = frontDesc.trim();
+            const finalBackDesc = backDesc.trim();
 
             try {
                 await addFlashcard({
@@ -176,15 +180,19 @@ function CreateFlashcard({ addFlashcard, categories, superCategoriesArray }) {
                     category: finalCategory,
                     langFront: finalLangFront,
                     langBack: finalLangBack,
-                    superCategory: finalSuperCategory
+                    superCategory: finalSuperCategory,
+                    frontDesc: finalFrontDesc,
+                    backDesc: finalBackDesc
                 });
 
-                // Zapisz localStorage
+                // Save localStorage
                 saveToLocalStorage(finalCategory, finalSuperCategory);
 
                 setFlashcardCreated(true);
                 setFront('');
                 setBack('');
+                setFrontDesc('');
+                setBackDesc('');
 
                 // jeśli mamy superCategory w URL i user nie chce continueAdd, wracamy do listy
                 if ((getSuperCategory || getSuperCategory === '') && !continueAdd) {
@@ -229,6 +237,19 @@ function CreateFlashcard({ addFlashcard, categories, superCategoriesArray }) {
                         />
                     </p>
                     <p>
+                        <label htmlFor="o-front-desc">
+                            {t('description')}:
+                        </label>
+                        <textarea
+                            value={frontDesc}
+                            onChange={(e) => setFrontDesc(e.target.value)}
+                            rows="3"
+                            cols="30"
+                            id="o-front-desc"
+                            dir={rtlCodeLangs.includes(langFront) ? 'rtl' : 'ltr'}
+                        />
+                    </p>
+                    <p>
                         <label htmlFor="lang-front">
                             {t('language_code_for_speech_synthesizer')} ({t('front')}):
                         </label>
@@ -239,7 +260,7 @@ function CreateFlashcard({ addFlashcard, categories, superCategoriesArray }) {
                             setFunction={setLangFront}
                         />
                     </p>
-                    <hr />
+                    <hr/>
                     <p>
                         <label htmlFor="o-back">
                             <span className="color-red">*</span> {t('back')}:
@@ -254,12 +275,24 @@ function CreateFlashcard({ addFlashcard, categories, superCategoriesArray }) {
                             required
                         />
                     </p>
-
+                    <p>
+                        <label htmlFor="o-back-desc">
+                            {t('description')}:
+                        </label>
+                        <textarea
+                            value={backDesc}
+                            onChange={(e) => setBackDesc(e.target.value)}
+                            rows="3"
+                            cols="30"
+                            id="o-back-desc"
+                            dir={rtlCodeLangs.includes(langFront) ? 'rtl' : 'ltr'}
+                        />
+                    </p>
                     <p>
                         <label htmlFor="lang-back">
                             {t('language_code_for_speech_synthesizer')} ({t('back')}):
                         </label>
-                        <br />
+                        <br/>
                         <SelectCodeLanguages
                             availableLanguages={availableLanguages}
                             value={langBack}
@@ -267,7 +300,7 @@ function CreateFlashcard({ addFlashcard, categories, superCategoriesArray }) {
                             setFunction={setLangBack}
                         />
                     </p>
-                    <hr />
+                    <hr/>
 
                     {/* Super Category */}
                     <SelectSuperCategory
@@ -276,7 +309,7 @@ function CreateFlashcard({ addFlashcard, categories, superCategoriesArray }) {
                         superCategoriesArray={superCategoriesArray}
                         setCurrentSelectSuperCategory={setCurrentSelectSuperCategory}
                     />
-                    <hr />
+                    <hr/>
 
                     {/* Category */}
                     <SelectCategory
@@ -285,7 +318,7 @@ function CreateFlashcard({ addFlashcard, categories, superCategoriesArray }) {
                         setCategory={setCategory}
                         categoriesDependentOnSuperCategory={categoriesDependentOnSuperCategory}
                     />
-                    <hr />
+                    <hr/>
 
                     {flashcardCreated && (
                         <p><strong className="color-green"> {t('flashcard_added')}</strong></p>
@@ -298,7 +331,7 @@ function CreateFlashcard({ addFlashcard, categories, superCategoriesArray }) {
                                 onClick={() => setContinueAdd(false)}
                                 disabled={!front.trim() || !back.trim()}
                             >
-                                {(getSuperCategory || getSuperCategory === '') ? t('add_and_back_to_list') : t('add_flashcard') }
+                                {(getSuperCategory || getSuperCategory === '') ? t('add_and_back_to_list') : t('add_flashcard')}
                             </button>
                         </li>
                         {(getSuperCategory || getSuperCategory === '') && (

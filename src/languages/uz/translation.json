@@ -97,5 +97,9 @@
   "number_of_flashcards_found": "Topilgan flashcardlar soni",
   "number_of_flashcards": "Flashcardlar soni",
   "add_flashcard_continue": "Qo'shish va davom etish",
-  "add_and_back_to_list": "Qo'shish va ro'yxatga qaytish"
+  "add_and_back_to_list": "Qo'shish va ro'yxatga qaytish",
+  "description": "Tavsif",
+  "front_description": "Old tavsif",
+  "back_description": "Orqa tavsif",
+  "go_back": "Orqaga"
 }

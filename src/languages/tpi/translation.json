@@ -97,5 +97,9 @@
   "number_of_flashcards_found": "Number bilong Flashcards i faind",
   "number_of_flashcards": "Number bilong Flashcards",
   "add_flashcard_continue": "Addim na gohet",
-  "add_and_back_to_list": "Addim na bek long list"
+  "add_and_back_to_list": "Addim na bek long list",
+  "description": "Diskripsen",
+  "front_description": "Diskripsen long fran",
+  "back_description": "Diskripsen long baksait",
+  "go_back": "Go bek"
 }

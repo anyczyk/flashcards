@@ -97,5 +97,9 @@
   "number_of_flashcards_found": "عدد بطاقات الفلاش التي تم العثور عليها",
   "number_of_flashcards": "عدد بطاقات الفلاش",
   "add_flashcard_continue": "أضف واستمر",
-  "add_and_back_to_list": "أضف وارجع إلى القائمة"
+  "add_and_back_to_list": "أضف وارجع إلى القائمة",
+  "description": "وصف",
+  "front_description": "وصف أمامي",
+  "back_description": "وصف خلفي",
+  "go_back": "رجوع"
 }

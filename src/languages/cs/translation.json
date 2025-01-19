@@ -97,5 +97,9 @@
   "number_of_flashcards_found": "Počet nalezených flashcardů",
   "number_of_flashcards": "Počet flashcardů",
   "add_flashcard_continue": "Přidat a pokračovat",
-  "add_and_back_to_list": "Přidat a zpět do seznamu"
+  "add_and_back_to_list": "Přidat a zpět do seznamu",
+  "description": "Popis",
+  "front_description": "Přední popis",
+  "back_description": "Zadní popis",
+  "go_back": "Zpět"
 }

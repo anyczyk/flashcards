@@ -97,5 +97,9 @@
   "number_of_flashcards_found": "Tapılan flaşka sayı",
   "number_of_flashcards": "Flaşka sayı",
   "add_flashcard_continue": "Əlavə et və davam et",
-  "add_and_back_to_list": "Əlavə et və siyahıya qayıt"
+  "add_and_back_to_list": "Əlavə et və siyahıya qayıt",
+  "description": "Təsvir",
+  "front_description": "Ön təsvir",
+  "back_description": "Arxa təsvir",
+  "go_back": "Geri"
 }

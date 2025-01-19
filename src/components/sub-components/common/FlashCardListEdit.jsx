@@ -31,10 +31,14 @@ const FlashCardListEdit = ({
                                setVisibleModalSingle,
                                editFront,
                                setEditFront,
+                               editFrontDesc,
+                               setEditFrontDesc,
                                editFrontLang,
                                setEditFrontLang,
                                editBack,
                                setEditBack,
+                               editBackDesc,
+                               setEditBackDesc,
                                editBackLang,
                                setEditBackLang,
                                editCategory,
@@ -166,7 +170,9 @@ const FlashCardListEdit = ({
                 finalKnow,
                 editFrontLang.trim(),
                 editBackLang.trim(),
-                editSuperCategory.trim()
+                editSuperCategory.trim(),
+                editFrontDesc,
+                editBackDesc
             );
 
             const allFlashcards = await getAllFlashcards();
@@ -376,6 +382,16 @@ const FlashCardListEdit = ({
                                             dir={rtlCodeLangs.includes(editFrontLang) ? 'rtl' : 'ltr'}
                                             required
                                         />
+                                        <label htmlFor={`o-edit-front-desc-${card.id}`}>{t('description')}:</label>
+                                        <textarea
+                                            value={editFrontDesc}
+                                            className="o-default-box"
+                                            onChange={(e) => setEditFrontDesc(e.target.value)}
+                                            rows="2"
+                                            cols="30"
+                                            id={`o-edit-front-desc-${card.id}`}
+                                            dir={rtlCodeLangs.includes(editFrontLang) ? 'rtl' : 'ltr'}
+                                        />
                                         <label htmlFor={`o-edit-front-lang-${card.id}`}>
                                             {t('language_code')}:
                                         </label>
@@ -398,6 +414,16 @@ const FlashCardListEdit = ({
                                             id={`o-edit-back-${card.id}`}
                                             dir={rtlCodeLangs.includes(editBackLang) ? 'rtl' : 'ltr'}
                                             required
+                                        />
+                                        <label htmlFor={`o-edit-back-desc-${card.id}`}>{t('description')}:</label>
+                                        <textarea
+                                            className="o-default-box"
+                                            value={editBackDesc}
+                                            onChange={(e) => setEditBackDesc(e.target.value)}
+                                            rows="2"
+                                            cols="30"
+                                            id={`o-edit-back-desc-${card.id}`}
+                                            dir={rtlCodeLangs.includes(editBackLang) ? 'rtl' : 'ltr'}
                                         />
                                         <label htmlFor={`o-edit-back-lang-${card.id}`}>
                                             {t('language_code')}:
@@ -461,6 +487,10 @@ const FlashCardListEdit = ({
                                         {card.front}
                                     </p>
                                     <p>
+                                        <strong>{t('description')}:</strong>{' '}
+                                        {card.frontDesc ? card.frontDesc : t('no_data')}
+                                    </p>
+                                    <p>
                                         <strong>{t('language_code')}:</strong>{' '}
                                         {card.langFront !== '' ? card.langFront : t('no_data')}
                                     </p>
@@ -468,6 +498,10 @@ const FlashCardListEdit = ({
                                     <h3>{t('back')}:</h3>
                                     <p className="o-card__content-edit o-card__content-edit--back">
                                         {card.back}
+                                    </p>
+                                    <p>
+                                        <strong>{t('description')}:</strong>{' '}
+                                        {card.backDesc ? card.backDesc : t('no_data')}
                                     </p>
                                     <p>
                                         <strong>{t('language_code')}:</strong>{' '}

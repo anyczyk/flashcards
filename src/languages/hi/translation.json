@@ -97,5 +97,9 @@
   "number_of_flashcards_found": "पाई गई फ्लैशकार्ड की संख्या",
   "number_of_flashcards": "फ्लैशकार्ड की संख्या",
   "add_flashcard_continue": "जोड़ें और जारी रखें",
-  "add_and_back_to_list": "जोड़ें और सूची में वापस जाएं"
+  "add_and_back_to_list": "जोड़ें और सूची में वापस जाएं",
+  "description": "विवरण",
+  "front_description": "सामने का विवरण",
+  "back_description": "पीछे का विवरण",
+  "go_back": "वापस जाएं"
 }

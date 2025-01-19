@@ -97,5 +97,9 @@
   "number_of_flashcards_found": "Αριθμός βρεθέντων flashcards",
   "number_of_flashcards": "Αριθμός flashcards",
   "add_flashcard_continue": "Προσθήκη και συνέχεια",
-  "add_and_back_to_list": "Προσθήκη και επιστροφή στη λίστα"
+  "add_and_back_to_list": "Προσθήκη και επιστροφή στη λίστα",
+  "description": "Περιγραφή",
+  "front_description": "Μπροστινή περιγραφή",
+  "back_description": "Πίσω περιγραφή",
+  "go_back": "Πίσω"
 }

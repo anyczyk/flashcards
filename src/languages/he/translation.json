@@ -97,5 +97,9 @@
   "number_of_flashcards_found": "מספר כרטיסיות הזיכרון שנמצאו",
   "number_of_flashcards": "מספר כרטיסיות הזיכרון",
   "add_flashcard_continue": "הוסף והמשך",
-  "add_and_back_to_list": "הוסף וחזור לרשימה"
+  "add_and_back_to_list": "הוסף וחזור לרשימה",
+  "description": "תיאור",
+  "front_description": "תיאור קדמי",
+  "back_description": "תיאור אחורי",
+  "go_back": "חזור"
 }

@@ -97,5 +97,9 @@
   "number_of_flashcards_found": "見つかったフラッシュカードの数",
   "number_of_flashcards": "フラッシュカードの数",
   "add_flashcard_continue": "追加して続行",
-  "add_and_back_to_list": "追加してリストに戻る"
+  "add_and_back_to_list": "追加してリストに戻る",
+  "description": "説明",
+  "front_description": "前面の説明",
+  "back_description": "背面の説明",
+  "go_back": "戻る"
 }

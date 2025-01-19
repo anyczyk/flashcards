@@ -97,5 +97,9 @@
   "number_of_flashcards_found": "Number Flashcards found",
   "number_of_flashcards": "Number Flashcards",
   "add_flashcard_continue": "Add and continue",
-  "add_and_back_to_list": "Ajoute é retounen lis"
+  "add_and_back_to_list": "Ajoute é retounen lis",
+  "description": "Dekrir",
+  "front_description": "Dekrir divan",
+  "back_description": "Dekrir deryer",
+  "go_back": "Alé"
 }

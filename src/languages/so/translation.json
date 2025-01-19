@@ -97,5 +97,9 @@
   "number_of_flashcards_found": "Tirada Flashcards la helay",
   "number_of_flashcards": "Tirada Flashcards",
   "add_flashcard_continue": "Ku dar oo sii wad",
-  "add_and_back_to_list": "Ku dar oo ku laabo liiska"
+  "add_and_back_to_list": "Ku dar oo ku laabo liiska",
+  "description": "Sharaxaad",
+  "front_description": "Sharaxaad hore",
+  "back_description": "Sharaxaad dambe",
+  "go_back": "Ku noqo"
 }

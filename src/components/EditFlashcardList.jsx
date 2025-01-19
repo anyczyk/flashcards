@@ -19,6 +19,8 @@ function EditFlashcardList({preloader, setPreloader}) {
         editMode, setEditMode,
         editFront, setEditFront,
         editBack, setEditBack,
+        editFrontDesc, setEditFrontDesc,
+        editBackDesc, setEditBackDesc,
         editCategory, setEditCategory,
         editSuperCategory, setEditSuperCategory,
         editKnow, setEditKnow,
@@ -195,10 +197,14 @@ function EditFlashcardList({preloader, setPreloader}) {
                                     setVisibleModalSingle={setVisibleModalSingle}
                                     editFront={editFront}
                                     setEditFront={setEditFront}
+                                    editFrontDesc={editFrontDesc}
+                                    setEditFrontDesc={setEditFrontDesc}
                                     editFrontLang={editFrontLang}
                                     setEditFrontLang={setEditFrontLang}
                                     editBack={editBack}
                                     setEditBack={setEditBack}
+                                    editBackDesc={editBackDesc}
+                                    setEditBackDesc={setEditBackDesc}
                                     editBackLang={editBackLang}
                                     setEditBackLang={setEditBackLang}
                                     editCategory={editCategory}

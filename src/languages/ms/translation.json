@@ -97,5 +97,9 @@
   "number_of_flashcards_found": "Jumlah flashcard yang dijumpai",
   "number_of_flashcards": "Jumlah flashcard",
   "add_flashcard_continue": "Tambah dan teruskan",
-  "add_and_back_to_list": "Tambah dan kembali ke senarai"
+  "add_and_back_to_list": "Tambah dan kembali ke senarai",
+  "description": "Huraian",
+  "front_description": "Huraian depan",
+  "back_description": "Huraian belakang",
+  "go_back": "Kembali"
 }

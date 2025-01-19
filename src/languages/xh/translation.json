@@ -97,5 +97,9 @@
   "number_of_flashcards_found": "Inani lama-Flashcards atholiwe",
   "number_of_flashcards": "Inani lama-Flashcards",
   "add_flashcard_continue": "Yongeza kwaye uqhubeke",
-  "add_and_back_to_list": "Yongeza kwaye ubuyisele kwinkcazelo"
+  "add_and_back_to_list": "Yongeza kwaye ubuyisele kwinkcazelo",
+  "description": "Inkcazo",
+  "front_description": "Inkcazo yangaphambili",
+  "back_description": "Inkcazo yangasemva",
+  "go_back": "Buyela"
 }

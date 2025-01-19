@@ -97,5 +97,9 @@
   "number_of_flashcards_found": "Tapylan flashcardlaryň sany",
   "number_of_flashcards": "Flashcardlaryň sany",
   "add_flashcard_continue": "Goşma we dowam et",
-  "add_and_back_to_list": "Goşmak we sanawga gaýdmak"
+  "add_and_back_to_list": "Goşmak we sanawga gaýdmak",
+  "description": "Düşündiriş",
+  "front_description": "Öň düşündirişi",
+  "back_description": "Yzy düşündirişi",
+  "go_back": "Yza"
 }

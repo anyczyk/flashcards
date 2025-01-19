@@ -97,5 +97,9 @@
   "number_of_flashcards_found": "Löydettyjen flashcardien määrä",
   "number_of_flashcards": "Flashcardien määrä",
   "add_flashcard_continue": "Lisää ja jatka",
-  "add_and_back_to_list": "Lisää ja takaisin listaan"
+  "add_and_back_to_list": "Lisää ja takaisin listaan",
+  "description": "Kuvaus",
+  "front_description": "Etupuolen kuvaus",
+  "back_description": "Takapuolen kuvaus",
+  "go_back": "Takaisin"
 }
