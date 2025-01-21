@@ -28,9 +28,7 @@ function updateSubCategoriesOrder(flashcardsData, replace = false) {
                 subObj[key] = [];
             }
 
-            let subCat = fc.category && fc.category.trim() !== ""
-                ? fc.category.trim()
-                : "Without category";
+            let subCat = fc.category.trim();
 
             const idx = subObj[key].indexOf(subCat);
             if (idx !== -1) {

@@ -1,3 +1,4 @@
+// CreateFlashcard.jsx
 import React, { useState, useEffect, useCallback, useContext } from 'react';
 import PropTypes from 'prop-types';
 import { getCordovaLanguage } from '../utils/getLanguage';
@@ -25,12 +26,11 @@ function CreateFlashcard({ addFlashcard, categories, superCategoriesArray }) {
     const getAddFirstOrLast = queryParams.get("addFirstOrLast");
     const navigate = useNavigate();
 
-    // STANY
     const [front, setFront] = useState('');
     const [back, setBack] = useState('');
     const [frontDesc, setFrontDesc] = useState('');
     const [backDesc, setBackDesc] = useState('');
-    const [category, setCategory] = useState('');        // <--- kluczowy stan w rodzicu
+    const [category, setCategory] = useState('');
     const [superCategory, setSuperCategory] = useState('');
     const [langFront, setLangFront] = useState('');
     const [langBack, setLangBack] = useState('');
@@ -40,14 +40,12 @@ function CreateFlashcard({ addFlashcard, categories, superCategoriesArray }) {
     const [currentSelectSuperCategory, setCurrentSelectSuperCategory] = useState('');
     const [continueAdd, setContinueAdd] = useState(false);
 
-    // useEffect "przechwytujący" getSuperCategory
     useEffect(() => {
         if (getSuperCategory !== null && getSuperCategory !== undefined) {
             setSuperCategory(getSuperCategory);
         }
     }, [getSuperCategory]);
 
-    // useEffect "przechwytujący" getCategory
     useEffect(() => {
         if (getCategory !== null && getCategory !== undefined) {
             setCategory(getCategory);
@@ -81,7 +79,6 @@ function CreateFlashcard({ addFlashcard, categories, superCategoriesArray }) {
         fetchLanguages();
     }, []);
 
-    // Ustalanie języków
     useEffect(() => {
         if (availableLanguages.length > 0) {
             const setLanguages = async () => {
@@ -123,10 +120,8 @@ function CreateFlashcard({ addFlashcard, categories, superCategoriesArray }) {
                 savedOrderArray.splice(indexInOrder, 1);
             }
             if (getAddFirstOrLast === 'last') {
-                // console.log("last");
                 savedOrderArray.push(categoryToStore);
             } else {
-                // console.log("first");
                 savedOrderArray.unshift(categoryToStore);
             }
             localStorage.setItem('categoryOrder', JSON.stringify(savedOrderArray));
@@ -142,7 +137,7 @@ function CreateFlashcard({ addFlashcard, categories, superCategoriesArray }) {
                     subCatDataObj[subCatKey] = [];
                 }
                 if (finalCategory) {
-                    const realSubCat = finalCategory.trim() === '' ? 'Without category' : finalCategory.trim();
+                    const realSubCat = finalCategory.trim();
                     const indexInSub = subCatDataObj[subCatKey].indexOf(realSubCat);
                     if (indexInSub !== -1) {
                         subCatDataObj[subCatKey].splice(indexInSub, 1);
@@ -162,11 +157,8 @@ function CreateFlashcard({ addFlashcard, categories, superCategoriesArray }) {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (front.trim() && back.trim()) {
+        if (front.trim() && back.trim() && category.trim()) {
             let finalCategory = category.trim();
-            if (finalCategory.toLowerCase() === 'without category') {
-                finalCategory = '';
-            }
             const finalLangFront = langFront || 'en-US';
             const finalLangBack = langBack || 'en-US';
             const finalSuperCategory = superCategory.trim();
@@ -185,7 +177,6 @@ function CreateFlashcard({ addFlashcard, categories, superCategoriesArray }) {
                     backDesc: finalBackDesc
                 });
 
-                // Save localStorage
                 saveToLocalStorage(finalCategory, finalSuperCategory);
 
                 setFlashcardCreated(true);
@@ -194,7 +185,6 @@ function CreateFlashcard({ addFlashcard, categories, superCategoriesArray }) {
                 setFrontDesc('');
                 setBackDesc('');
 
-                // jeśli mamy superCategory w URL i user nie chce continueAdd, wracamy do listy
                 if ((getSuperCategory || getSuperCategory === '') && !continueAdd) {
                     navigate('/list-edit');
                 }
@@ -214,8 +204,6 @@ function CreateFlashcard({ addFlashcard, categories, superCategoriesArray }) {
         return () => clearTimeout(timer);
     }, [flashcardCreated]);
 
-    const filteredCategories = categories.filter(cat => cat.toLowerCase() !== 'without category');
-
     return (
         <div className="o-page-create-flashcard">
             <h2>{t('add_flashcard')}</h2>
@@ -233,6 +221,7 @@ function CreateFlashcard({ addFlashcard, categories, superCategoriesArray }) {
                             cols="30"
                             id="o-front"
                             dir={rtlCodeLangs.includes(langFront) ? 'rtl' : 'ltr'}
+                            maxLength="1200"
                             required
                         />
                     </p>
@@ -246,12 +235,13 @@ function CreateFlashcard({ addFlashcard, categories, superCategoriesArray }) {
                             rows="3"
                             cols="30"
                             id="o-front-desc"
+                            maxLength="1200"
                             dir={rtlCodeLangs.includes(langFront) ? 'rtl' : 'ltr'}
                         />
                     </p>
                     <p>
                         <label htmlFor="lang-front">
-                            {t('language_code_for_speech_synthesizer')} ({t('front')}):
+                            {t('language_code')}:
                         </label>
                         <SelectCodeLanguages
                             availableLanguages={availableLanguages}
@@ -271,6 +261,7 @@ function CreateFlashcard({ addFlashcard, categories, superCategoriesArray }) {
                             rows="3"
                             cols="30"
                             id="o-back"
+                            maxLength="1200"
                             dir={rtlCodeLangs.includes(langBack) ? 'rtl' : 'ltr'}
                             required
                         />
@@ -285,12 +276,13 @@ function CreateFlashcard({ addFlashcard, categories, superCategoriesArray }) {
                             rows="3"
                             cols="30"
                             id="o-back-desc"
+                            maxLength="1200"
                             dir={rtlCodeLangs.includes(langFront) ? 'rtl' : 'ltr'}
                         />
                     </p>
                     <p>
                         <label htmlFor="lang-back">
-                            {t('language_code_for_speech_synthesizer')} ({t('back')}):
+                            {t('language_code')}:
                         </label>
                         <br/>
                         <SelectCodeLanguages
@@ -302,7 +294,6 @@ function CreateFlashcard({ addFlashcard, categories, superCategoriesArray }) {
                     </p>
                     <hr/>
 
-                    {/* Super Category */}
                     <SelectSuperCategory
                         superCategory={superCategory}
                         setSuperCategory={setSuperCategory}
@@ -311,7 +302,6 @@ function CreateFlashcard({ addFlashcard, categories, superCategoriesArray }) {
                     />
                     <hr/>
 
-                    {/* Category */}
                     <SelectCategory
                         getCategory={getCategory}
                         category={category}
@@ -329,7 +319,7 @@ function CreateFlashcard({ addFlashcard, categories, superCategoriesArray }) {
                             <button
                                 type="submit"
                                 onClick={() => setContinueAdd(false)}
-                                disabled={!front.trim() || !back.trim()}
+                                disabled={!front.trim() || !back.trim() || !category.trim()}
                             >
                                 {(getSuperCategory || getSuperCategory === '') ? t('add_and_back_to_list') : t('add_flashcard')}
                             </button>
@@ -339,7 +329,7 @@ function CreateFlashcard({ addFlashcard, categories, superCategoriesArray }) {
                                 <button
                                     type="submit"
                                     onClick={() => setContinueAdd(true)}
-                                    disabled={!front.trim() || !back.trim()}
+                                    disabled={!front.trim() || !back.trim() || !category.trim()}
                                 >
                                     {t('add_flashcard_continue')}
                                 </button>

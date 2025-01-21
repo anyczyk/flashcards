@@ -6,7 +6,7 @@ import cardsExport from '../utils/cardsExport';
 import { useTranslation } from 'react-i18next';
 import { FlashcardContext } from '../context/FlashcardContext';
 import { importAdd, importReplace } from "../utils/import";  // <-- Twoje pliki importujące
-import FilesListImportFree from "./sub-components/common/FilesListImportFree";
+// import FilesListImportFree from "./sub-components/common/FilesListImportFree";
 
 function ImportExport() {
     const { t } = useTranslation();
@@ -114,9 +114,9 @@ function ImportExport() {
                 </p>
             )}
 
-            <hr/>
-            <h3>{t('free_flashcards')}</h3>
-            <FilesListImportFree/>
+            {/*<hr/>*/}
+            {/*<h3>{t('free_flashcards')}</h3>*/}
+            {/*<FilesListImportFree/>*/}
         </div>
     );
 }

@@ -1,236 +1,233 @@
 {
   "am": {
-    "go_back": "ተመለስ"
+    "new_congratulations_text": "ልዩ ምርጫ! በፎልደር ውስጥ ሁሉንም የግምት ካርዶችን ተደምሰስተህ አስተረጉምህ!"
   },
   "ar": {
-    "go_back": "رجوع"
+    "new_congratulations_text": "تهانينا، لقد حفظت جميع بطاقات الذاكرة في مجلد!"
   },
   "arc": {
-    "go_back": "ܬܘܒ"
+    "new_congratulations_text": "ܚܒܝܒܐ ܫܠܡܐ! ܡܢܐ ܕܗܕܐ ܕܟܬܒܐ ܟܠܗܘܢ ܬܠܝܐ ܥܡܠܝܬ."
   },
   "az": {
-    "go_back": "Geri"
+    "new_congratulations_text": "Təbriklər, bir qovluqdakı bütün kartları yaddaşınıza aldınız!"
   },
   "be": {
-    "go_back": "Вярнуцца"
+    "new_congratulations_text": "Віншуем, вы запамяталі ўсе карткі памяці ў тэчцы!"
   },
   "bg": {
-    "go_back": "Назад"
+    "new_congratulations_text": "Поздравления, запомнихте всички картки памет в папката!"
   },
   "ckb": {
-    "go_back": "بگەڕێوە"
+    "new_congratulations_text": "پیرۆزە، هەموو کارتێکانی فلاشکارد لە فۆڵدەرێکدا بیرکردنەوەیەت کردووە!"
   },
   "crs": {
-    "go_back": "Alé"
+    "new_congratulations_text": "Félicitations, vous avez mémorisé toutes les fiches d'étude dans un dossier!"
   },
   "cs": {
-    "go_back": "Zpět"
+    "new_congratulations_text": "Gratulujeme, zapamátili jste si všechny kartičky na učenie v zložke!"
   },
   "da": {
-    "go_back": "Tilbage"
+    "new_congratulations_text": "Tillykke, du har husket alle læringskortene i en mappe!"
   },
   "de": {
-    "go_back": "Zurück"
+    "new_congratulations_text": "Herzlichen Glückwunsch, du hast alle Lernkarten in einem Ordner auswendig gelernt!"
   },
   "el": {
-    "go_back": "Πίσω"
+    "new_congratulations_text": "Συγχαρητήρια, έχεις απομνημονεύσει όλες τις κάρτες μνήμης σε έναν φάκελο!"
   },
   "en": {
-    "go_back": "Go back"
+    "new_congratulations_text": "Congratulations, you've memorized all flashcards in a folder!"
   },
   "es": {
-    "go_back": "Atrás"
+    "new_congratulations_text": "¡Felicidades, has memorizado todas las tarjetas de estudio en una carpeta!"
   },
   "et": {
-    "go_back": "Tagasi"
+    "new_congratulations_text": "Palju õnne, oled meelde jätnud kõik õppekaardid kaustas!"
   },
   "fa": {
-    "go_back": "بازگشت"
+    "new_congratulations_text": "تبریک می‌گوییم، شما تمام کارت‌های درسی را در یک پوشه به خاطر سپردید!"
   },
   "fi": {
-    "go_back": "Takaisin"
+    "new_congratulations_text": "Onnittelut, olet muistanut kaikki oppimiskortit kansiossa!"
   },
   "fr": {
-    "go_back": "Retour"
+    "new_congratulations_text": "Félicitations, vous avez mémorisé toutes les fiches d'étude dans un dossier !"
   },
   "ha": {
-    "go_back": "Komawa"
+    "new_congratulations_text": "Taya murna, ka ƙware duk katunan koyo a cikin babban fayil!"
   },
   "haw": {
-    "go_back": "Hoʻi"
+    "new_congratulations_text": "Hauʻoli mākou, ua hoʻomanaʻo ʻoe i nā kāleka hoʻomaʻamaʻa a pau ma loko o kahi waihona!"
   },
   "he": {
-    "go_back": "חזור"
+    "new_congratulations_text": "מזל טוב, זכרת את כל כרטיסי הלמידה בתיקייה!"
   },
   "hi": {
-    "go_back": "वापस जाएं"
+    "new_congratulations_text": "बधाई हो, आपने एक फ़ोल्डर में सभी शिक्षण कार्ड याद कर लिए हैं!"
   },
   "hr": {
-    "go_back": "Nazad"
+    "new_congratulations_text": "Čestitamo, zapamtili ste sve kartice u mapi!"
   },
   "ht": {
-    "go_back": "Tounen"
+    "new_congratulations_text": "Felisitasyon, ou sonje tout kat aprantisaj yo nan yon katab!"
   },
   "hu": {
-    "go_back": "Vissza"
+    "new_congratulations_text": "Gratulálunk, megtanultad az összes tanulókártyát egy mappában!"
   },
   "hy": {
-    "go_back": "Վերադառնալ"
+    "new_congratulations_text": "Շնորհավորում ենք, դուք հիշեցնեիք բոլոր ուսումնական քարտերը ֆոլդերում!"
   },
   "id": {
-    "go_back": "Kembali"
+    "new_congratulations_text": "Selamat, kamu telah menghafal semua kartu belajar dalam folder!"
   },
   "ig": {
-    "go_back": "Laghachi"
+    "new_congratulations_text": "Ekele, ị mụtara niile kaadị mmụta dị na folda!"
   },
   "it": {
-    "go_back": "Indietro"
+    "new_congratulations_text": "Congratulazioni, hai memorizzato tutte le schede di studio in una cartella!"
   },
   "ja": {
-    "go_back": "戻る"
+    "new_congratulations_text": "おめでとうございます、フォルダー内のすべての学習カードを記憶しました！"
   },
   "ka": {
-    "go_back": "დაბრუნება"
+    "new_congratulations_text": "გილოცავთ, შენ მახსოვს ყველა სწავლის ბარათი საქაღალდეში!"
   },
   "kk": {
-    "go_back": "Артқа"
+    "new_congratulations_text": "Құттықтаймыз, сіз қалтадағы барлық оқу карталарын есте сақтадыңыз!"
   },
   "kl": {
-    "go_back": "Utertui"
+    "new_congratulations_text": "Imalunni, piffissaq aalisissami pitsaanilu allat pissannginneq!"
   },
   "km": {
-    "go_back": "ត្រលប់"
+    "new_congratulations_text": "អបអរសាទរ អ្នកបានចងចាំកាតបង្រៀនទាំងអស់នៅក្នុងថតមួយ!"
   },
   "ko": {
-    "go_back": "뒤로"
+    "new_congratulations_text": "축하합니다, 폴더 내의 모든 학습 카드를 암기했습니다!"
   },
   "ks": {
-    "go_back": "واپس"
+    "new_congratulations_text": "مبارک ہو، آپ نے ایک فولڈر میں تمام تعلیمی کارڈز یاد کر لیے ہیں!"
   },
   "ky": {
-    "go_back": "Артка"
+    "new_congratulations_text": "Куттуктайбыз, сиз папкадагы бардык оқу карталарын есте сақтадыңыз!"
   },
   "ln": {
-    "go_back": "Zonga"
+    "new_congratulations_text": "Bolamu, omememisi mikanda nyonso na yango kitoko oyo na libanda moko!"
   },
   "lo": {
-    "go_back": "ກັບ"
+    "new_congratulations_text": "ຍິນດີຕ້ອນຮັບ, ທ່ານໄດ້ຈຳເຂົ້າການຮຽນການຮຽນທັງໝົດໃນໂຟນເດີ!"
   },
   "lt": {
-    "go_back": "Atgal"
+    "new_congratulations_text": "Sveikiname, įsimenate visus mokymosi korteles aplanke!"
   },
   "lv": {
-    "go_back": "Atpakaļ"
+    "new_congratulations_text": "Apsveicam, jūs esat iegaumējis visas mācību kartiņas mapē!"
   },
   "mi": {
-    "go_back": "Hoki atu"
+    "new_congratulations_text": "Aroha nui, kua maumahara koe ki ngā kaari ako katoa kei roto i tētahi kōpaki!"
   },
   "mn": {
-    "go_back": "Буцах"
-  },
-  "mnd": {
-    "go_back": "Go back (przykładowa forma)"
+    "new_congratulations_text": "Танд баяр хүргэе, та хавтас дахь бүх сургалтын картуудыг дурсаж авсан!"
   },
   "ms": {
-    "go_back": "Kembali"
+    "new_congratulations_text": "Tahniah, anda telah menghafal semua kad belajar dalam folder!"
   },
   "ne": {
-    "go_back": "फिर्ता"
+    "new_congratulations_text": "बधाई छ, तपाईंले एक फोल्डरमा सबै शिक्षण कार्डहरू याद गर्नुभयो!"
   },
   "nl": {
-    "go_back": "Terug"
+    "new_congratulations_text": "Gefeliciteerd, je hebt alle studiekortjes in een map gememoriseerd!"
   },
   "no": {
-    "go_back": "Tilbake"
+    "new_congratulations_text": "Gratulerer, du har husket alle læringskortene i en mappe!"
   },
   "pl": {
-    "go_back": "Cofnij"
+    "new_congratulations_text": "Gratulacje, zapamiętałeś wszystkie karty memoryczne w folderze!"
   },
   "ps": {
-    "go_back": "بېرته"
+    "new_congratulations_text": "مبارک شه، تاسو په یوه فولډر کې ټول تعلیمي کارڈز یاد کر لیے ہیں!"
   },
   "pt": {
-    "go_back": "Voltar"
+    "new_congratulations_text": "Parabéns, você memorizou todas as cartas de estudo em uma pasta!"
   },
   "ro": {
-    "go_back": "Înapoi"
+    "new_congratulations_text": "Felicitări, ai memorat toate cardurile de studiu într-un folder!"
   },
   "ru": {
-    "go_back": "Назад"
+    "new_congratulations_text": "Поздравляем, вы запомнили все учебные карты в папке!"
   },
   "sd": {
-    "go_back": "پوئتي"
+    "new_congratulations_text": "مبارڪون، توهان هڪ فولڊر ۾ سڀني تعليمي ڪارڊن کي ياد ڪيو آهي!"
   },
   "sk": {
-    "go_back": "Späť"
+    "new_congratulations_text": "Gratulujeme, zapamätali ste si všetky kartičky na učenie v zložke!"
   },
   "sl": {
-    "go_back": "Nazaj"
+    "new_congratulations_text": "Čestitamo, si si zapomnil vse učne kartice v mapi!"
   },
   "so": {
-    "go_back": "Ku noqo"
+    "new_congratulations_text": "Hambalyo, waxaad xafiday dhammaan kaararka waxbarashada ee ku jira galka!"
   },
   "sq": {
-    "go_back": "Mbrapa"
+    "new_congratulations_text": "Urime, ju keni memoruar të gjitha kartat e studimit në një dosje!"
   },
   "sr": {
-    "go_back": "Назад"
+    "new_congratulations_text": "Čestitamo, zapamtili ste sve kartice za učenje u fascki!"
   },
   "sv": {
-    "go_back": "Tillbaka"
+    "new_congratulations_text": "Grattis, du har memorerat alla studiekort i en mapp!"
   },
   "sw": {
-    "go_back": "Rudi"
+    "new_congratulations_text": "Hongera, umejifunza katikati zote za masomo kwenye folda!"
   },
   "syr": {
-    "go_back": "ܬܘܒ"
+    "new_congratulations_text": "ܠܒܝܫܐ ܫܠܡܐ، ܐܢܬ ܦܠܐܫܟܐܪܕ ܟܠܗܘܢ ܕܡܢܗܝܢ ܒܥܠܡܐ ܕܟܬܒܐ!"
   },
   "tg": {
-    "go_back": "Бозгашт"
+    "new_congratulations_text": "Tabrik, шумо ҳамаи картҳои омӯзишро дар як папка хотиранда гирифтед!"
   },
   "th": {
-    "go_back": "กลับ"
+    "new_congratulations_text": "ขอแสดงความยินดี คุณจำการ์ดเรียนทั้งหมดในโฟลเดอร์ได้แล้ว!"
   },
   "tk": {
-    "go_back": "Yza"
+    "new_congratulations_text": "Gutlaýarys, siz bukjasynda ähli okuw kartalaryny ýatda sakladyňyz!"
   },
   "tl": {
-    "go_back": "Bumalik"
+    "new_congratulations_text": "Binabati, naaalala mo na ang lahat ng kard ng pag-aaral sa isang folder!"
   },
   "tpi": {
-    "go_back": "Go bek"
+    "new_congratulations_text": "Kongras, yu i mas save blong save olgeta kadi bilong kisim save long wanpela folda!"
   },
   "tr": {
-    "go_back": "Geri"
+    "new_congratulations_text": "Tebrikler, bir klasördeki tüm öğrenme kartlarını ezberlediniz!"
   },
   "ug": {
-    "go_back": "قايتىش"
+    "new_congratulations_text": "تەبرىكلەر، سىز بىر مۇندەرىجىدىكى بارلىق ئوقۇش كارتىلىرىنى ئەستايىدىل ئۆگەندىڭىز!"
   },
   "uk": {
-    "go_back": "Назад"
+    "new_congratulations_text": "Вітаємо, ви запам'ятали всі навчальні картки в папці!"
   },
   "ur": {
-    "go_back": "واپس"
+    "new_congratulations_text": "مبارک ہو، آپ نے ایک فولڈر میں تمام تعلیمی کارڈز یاد کر لیے ہیں!"
   },
   "uz": {
-    "go_back": "Orqaga"
+    "new_congratulations_text": "Tabriklaymiz, siz bir papkadagi barcha o‘quv kartalarini yodga oldingiz!"
   },
   "vi": {
-    "go_back": "Quay lại"
+    "new_congratulations_text": "Chúc mừng, bạn đã ghi nhớ tất cả các thẻ học tập trong một thư mục!"
   },
   "wo": {
-    "go_back": "Dell naat"
+    "new_congratulations_text": "Jamm rekk, nga la ngeen jang ci ay kadi yu am ci njëggalu!"
   },
   "xh": {
-    "go_back": "Buyela"
+    "new_congratulations_text": "Siyakuvuyela, ufundile zonke ikadi zokufunda kwifolda!"
   },
   "yo": {
-    "go_back": "Pada sẹhin"
+    "new_congratulations_text": "Ẹ ku oriire, o ti kọ gbogbo awọn kaadi keko inu folda kan!"
   },
   "zh": {
-    "go_back": "返回"
+    "new_congratulations_text": "恭喜你，你已经记住了文件夹中的所有学习卡片！"
   },
   "zu": {
-    "go_back": "Buyela"
+    "new_congratulations_text": "Siyakuhalalisela, usuzifundile zonke amakadi okufunda kufolda!"
   }
 }

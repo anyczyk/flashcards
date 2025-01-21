@@ -97,11 +97,7 @@ const CategoryListDragDrop = ({
     const getInitialSubcategoriesOrder = (superCat, allFlashcards) => {
         return allFlashcards
             .filter(fc => fc.superCategory === superCat)
-            .map(fc => {
-                const realCategory =
-                    fc.category && fc.category.trim() !== "" ? fc.category : "Without category";
-                return realCategory;
-            })
+            .map(fc => fc.category)
             .filter((value, i, self) => self.indexOf(value) === i);
     };
 
@@ -136,7 +132,7 @@ const CategoryListDragDrop = ({
                 setNameSuperCategory(aNameSuperCategory);
                 setNameNewSuperCategory(aNameNewSuperCategory);
             }}
-            aria-label={t('edit_category')}
+            aria-label={t('edit_deck')}
         >
             <i className="icon-pencil"></i>
         </button>
@@ -168,21 +164,12 @@ const CategoryListDragDrop = ({
 
                             let count;
                             let knowCount;
-                            if (cat === 'Without category') {
-                                count = flashcards.filter(
-                                    fc => (!fc.category || fc.category.trim() === '') && !fc.superCategory
-                                ).length;
-                                knowCount = flashcards.filter(
-                                    fc => (!fc.category || fc.category.trim() === '') && !fc.superCategory && fc.know
-                                ).length;
-                            } else {
-                                count = flashcards.filter(
-                                    fc => fc.category === cat && !fc.superCategory
-                                ).length;
-                                knowCount = flashcards.filter(
-                                    fc => fc.category === cat && fc.know && !fc.superCategory
-                                ).length;
-                            }
+                            count = flashcards.filter(
+                                fc => fc.category === cat && !fc.superCategory
+                            ).length;
+                            knowCount = flashcards.filter(
+                                fc => fc.category === cat && fc.know && !fc.superCategory
+                            ).length;
 
                             if (!hasSubCategories && count === 0) {
                                 return null;
@@ -291,21 +278,14 @@ const CategoryListDragDrop = ({
                                                                         </li>
                                                                         {userDefinedOrder.map((subCat, subIndex) => {
                                                                             const subCatCount = flashcards.filter(fc => {
-                                                                                const realCategory =
-                                                                                    fc.category && fc.category.trim() !== ""
-                                                                                        ? fc.category
-                                                                                        : 'Without category';
+                                                                                const realCategory = fc.category;
                                                                                 return (
-                                                                                    realCategory === subCat &&
-                                                                                    fc.superCategory === cat
+                                                                                    realCategory === subCat && fc.superCategory === cat
                                                                                 );
                                                                             }).length;
 
                                                                             const knowSubCatCount = flashcards.filter(fc => {
-                                                                                const realCategory =
-                                                                                    fc.category && fc.category.trim() !== ""
-                                                                                        ? fc.category
-                                                                                        : 'Without category';
+                                                                                const realCategory = fc.category;
                                                                                 return (
                                                                                     realCategory === subCat &&
                                                                                     fc.superCategory === cat &&
@@ -356,9 +336,7 @@ const CategoryListDragDrop = ({
                                                                                             >
                                                 <span>
                                                   <i className="icon-wrench"></i>{' '}
-                                                    {subCat === 'Without category'
-                                                        ? t('without_category')
-                                                        : subCat}{' '}
+                                                    {subCat}{' '}
                                                     (<strong>
                                                     {knowSubCatCount}
                                                   </strong>/{subCatCount})
@@ -436,9 +414,7 @@ const CategoryListDragDrop = ({
                                                     >
                             <span>
                               <i className="icon-wrench"></i>{' '}
-                                {cat === 'Without category'
-                                    ? t('without_category')
-                                    : cat}{' '}
+                                {cat}{' '}
                                 (<strong>
                                 {knowCount}
                               </strong>/{count})

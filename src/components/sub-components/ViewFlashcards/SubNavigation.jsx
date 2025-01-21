@@ -35,13 +35,6 @@ const SubNavigation = ({
         if (selectedCategory === 'All') {
             return fc.know !== true;
         }
-        if (selectedCategory === 'Without category') {
-            return (
-                (!fc.category || fc.category.trim() === '') &&
-                !fc.superCategory &&
-                fc.know !== true
-            );
-        }
         if (selectedCategory) {
             const isSuperCategory = flashcards.some((f) => f.superCategory === selectedCategory);
             if (isSuperCategory) {
@@ -76,13 +69,7 @@ const SubNavigation = ({
                         >
                                 {selectedSuperCategory ? `${selectedSuperCategory} / ` : ''}
 
-                            {selectedSuperCategory && !selectedCategory
-                                ? t('all')
-                                : (selectedCategory === 'All')
-                                    ? t('all')
-                                    : selectedCategory === 'Without category'
-                                        ? t('without_category')
-                                        : selectedCategory}
+                            {selectedSuperCategory && !selectedCategory ? t('all') : (selectedCategory === 'All') ? t('all') : selectedCategory}
 
                             {' ('}
                             {
@@ -95,15 +82,9 @@ const SubNavigation = ({
                                         ).length)
                                     : selectedCategory === 'All'
                                         ? flashcards.length
-                                        : selectedCategory === 'Without category'
-                                            ? flashcards.filter(
-                                                (fc) =>
-                                                    (!fc.category || fc.category.trim() === '') &&
-                                                    !fc.superCategory
-                                            ).length
-                                            : flashcards.filter(
-                                                (fc) => fc.category === selectedCategory && !fc.superCategory
-                                            ).length
+                                        : flashcards.filter(
+                                            (fc) => fc.category === selectedCategory && !fc.superCategory
+                                        ).length
                             }
                             {')'}
                             </span>

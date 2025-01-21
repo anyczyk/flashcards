@@ -84,10 +84,6 @@ function ViewFlashcards({ clearInsomnia, mainHomePageLoad, setMainHomePageLoad }
             filtered = flashcards.filter((fc) => fc.superCategory === selectedSuperCategory);
         } else if (selectedCategory === 'All') {
             filtered = [...flashcards];
-        } else if (selectedCategory === 'Without category') {
-            filtered = flashcards.filter(
-                (fc) => (!fc.category || fc.category.trim() === '') && !fc.superCategory
-            );
         } else if (selectedCategory) {
             const isSuperCategory = flashcards.some((fc) => fc.superCategory === selectedCategory);
             if (isSuperCategory) {
@@ -305,10 +301,6 @@ function ViewFlashcards({ clearInsomnia, mainHomePageLoad, setMainHomePageLoad }
             filtered = flashcards.filter((fc) => fc.superCategory === selectedSuperCategory);
         } else if (selectedCategory === 'All') {
             filtered = [...flashcards];
-        } else if (selectedCategory === 'Without category') {
-            filtered = flashcards.filter(
-                (fc) => (!fc.category || fc.category.trim() === '') && !fc.superCategory
-            );
         } else if (selectedCategory) {
             const isSuperCategory = flashcards.some((fc) => fc.superCategory === selectedCategory);
             if (isSuperCategory) {
@@ -396,21 +388,12 @@ function ViewFlashcards({ clearInsomnia, mainHomePageLoad, setMainHomePageLoad }
     };
 
     const buildLessonsList = () => {
-        const baseCategories = categories.filter(
-            (cat) => cat !== 'Without category' && cat !== 'All'
-        );
+        const baseCategories = categories.filter((cat) => cat !== 'All');
 
         let mainLessons = baseCategories.map((cat) => ({
             superCategory: null,
             category: cat,
         }));
-
-        if (categories.includes('Without category')) {
-            mainLessons.push({
-                superCategory: null,
-                category: 'Without category',
-            });
-        }
 
         let subLessons = [];
         const uniqueSuperCats = [

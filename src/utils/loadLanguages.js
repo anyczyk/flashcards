@@ -39,24 +39,6 @@ export const loadLanguages = () => {
                     loadVoices();
                 };
             }
-            // const loadVoices = () => {
-            //     const voices = window.speechSynthesis.getVoices();
-            //     const uniqueLangs = Array.from(new Set(voices.map(voice => voice.lang)));
-            //     if (uniqueLangs.length > 0) {
-            //         resolve(uniqueLangs);
-            //     } else {
-            //         console.warn("No voices available, setting default language to 'en-US'.");
-            //         resolve(['en-US']);
-            //     }
-            // };
-            //
-            // if (window.speechSynthesis.getVoices().length !== 0) {
-            //     loadVoices();
-            // } else {
-            //     window.speechSynthesis.onvoiceschanged = () => {
-            //         loadVoices();
-            //     };
-            // }
         } else {
             console.warn("No TTS available.");
             resolve(['en-US']);

@@ -7,7 +7,7 @@ const SuggestionsAfterLesson = ({showCompleteMessage, setShowCompleteMessage, ap
     return (
         showCompleteMessage && (
             <div className="o-complete-message">
-                <p>{t('viewed_all_flashcards')}</p>
+                <p>{t('new_viewed_all_flashcards')}</p>
                 <ul className="o-list-buttons-clear">
                     <li className="w-100">
                         <button

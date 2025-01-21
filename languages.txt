@@ -42,7 +42,6 @@ const resources = {
     lv,
     mi,
     mn,
-    mnd,
     ms,
     ne,
     nl,

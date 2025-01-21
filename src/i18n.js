@@ -46,7 +46,6 @@ import translationLT from './languages/lt/translation.json';
 import translationLV from './languages/lv/translation.json';
 import translationMI from './languages/mi/translation.json';
 import translationMN from './languages/mn/translation.json';
-import translationMND from './languages/mnd/translation.json';
 import translationMS from './languages/ms/translation.json';
 import translationNE from './languages/ne/translation.json';
 import translationNL from './languages/nl/translation.json';
@@ -126,7 +125,6 @@ const resources = {
     lv: { translation: translationLV },
     mi: { translation: translationMI },
     mn: { translation: translationMN },
-    mnd: { translation: translationMND },
     ms: { translation: translationMS },
     ne: { translation: translationNE },
     nl: { translation: translationNL },
@@ -174,7 +172,7 @@ i18n
             'de', 'el', 'en', 'es', 'et', 'fa', 'fi', 'fr', 'ha', 'haw',
             'he', 'hi', 'hr', 'ht', 'hu', 'hy', 'id', 'ig', 'it', 'ja',
             'ka', 'kk', 'kl', 'km', 'ko', 'ks', 'ky', 'ln', 'lo', 'lt',
-            'lv', 'mi', 'mn', 'mnd', 'ms', 'ne', 'nl', 'no', 'pl', 'ps',
+            'lv', 'mi', 'mn', 'ms', 'ne', 'nl', 'no', 'pl', 'ps',
             'pt', 'ro', 'ru', 'sd', 'sk', 'sl', 'so', 'sq', 'sr', 'sv',
             'sw', 'syr', 'tg', 'th', 'tk', 'tl', 'tpi', 'tr', 'ug', 'uk',
             'ur', 'uz', 'vi', 'wo', 'xh', 'yo', 'zh', 'zu'

@@ -51,7 +51,7 @@ const SelectSuperCategory = ({
     return (
         <>
             <p>
-                <label htmlFor="o-super-category">{t("super_category")}:</label>
+                <label htmlFor="o-super-category">{t('folder')}:</label>
                 <select
                     ref={refSelectTextSuperCategory}
                     id="o-super-category"
@@ -59,7 +59,7 @@ const SelectSuperCategory = ({
                     value={superCategory || ""}
                 >
                     <option value="">
-                        -- {t("select_existing_super_category")} --
+                        -- {t('select_existing_folder')} --
                     </option>
                     {superCategoriesArray.map((cat, index) => (
                         <option key={index} value={cat}>
@@ -74,7 +74,7 @@ const SelectSuperCategory = ({
                     ref={refInputTextSuperCategory}
                     type="text"
                     maxLength="60"
-                    placeholder={t("type_a_new_super_category_or_edit_selected_one")}
+                    placeholder={t('type_a_new_folder_or_edit_selected_one')}
                     value={superCategory || ""}
                     onChange={handleInputChange}
                 />

@@ -1,4 +1,6 @@
 // admobService.js
+import { setCookie, getCookie, removeCookie, hasCookie } from '../utils/cookies';
+
 let interstitial = null;
 // const idAd = 'ca-app-pub-4263972941440160/3706529496'; // real
 const idAd = 'ca-app-pub-3940256099942544/1033173712'; // test
@@ -51,8 +53,11 @@ const initializeAdMob = async () => {
 };
 
 // Funkcja do wyświetlania interstitiala
-export const showInterstitial = async () => {
-    if(window.cordova) {
+export const showInterstitial = async (noCookie) => {
+    if((!hasCookie('flasho-cookie-full-screen-ad') || noCookie) && window.cordova) {
+        if(!noCookie) {
+            setCookie('flasho-cookie-full-screen-ad','start', 15);
+        }
         try {
             if (!interstitial) {
                 console.warn('Brak interstitial (jeszcze niezaładowany)');

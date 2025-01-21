@@ -27,6 +27,7 @@ function App() {
     } = useContext(FlashcardContext);
     const [mainMenuVisible, setMainMenuVisible] = useState(false);
     const [mainHomePageLoad,setMainHomePageLoad] = useState(false);
+    const [editPageLoad,setEditPageLoad] = useState(false);
     const [preloader, setPreloader] = useState(false);
 
 
@@ -54,12 +55,20 @@ function App() {
 
     const clearOptions = () => {
         setPlayFlashcards(false);
+        setMainHomePageLoad(!mainHomePageLoad);
+        setEditPageLoad(!editPageLoad);
         clearInsomnia();
     };
 
+    useEffect(() => {
+        clearOptions();
+    }, [location.pathname]);
+
     return (
         <div className={`o ${mainMenuVisible ? 'o-menu-visible' : ''}`}>
+
             <Header clearOptions={clearOptions} setMainHomePageLoad={setMainHomePageLoad} mainMenuVisible={mainMenuVisible} setMainMenuVisible={setMainMenuVisible} />
+
             <main className="o-main-content">
                 {location.pathname !== "/" && (
                     <p><Link className="o-main-start w-100 btn btn--green" to="/"><i
@@ -67,7 +76,7 @@ function App() {
                 )}
                 <Routes>
                     <Route path="/" element={<ViewFlashcards clearInsomnia={clearInsomnia} mainHomePageLoad={mainHomePageLoad} setMainHomePageLoad={setMainHomePageLoad} />}/>
-                    <Route path="/list-edit" element={<EditSearchProvider><EditFlashcardList preloader={preloader} setPreloader={setPreloader} /></EditSearchProvider>}/>
+                    <Route path="/list-edit" element={<EditSearchProvider><EditFlashcardList editPageLoad={editPageLoad} setEditPageLoad={setEditPageLoad} preloader={preloader} setPreloader={setPreloader} /></EditSearchProvider>}/>
                     <Route path="/create" element={<CreateFlashcard addFlashcard={addFlashcard} categories={categories} superCategoriesArray={superCategoriesArray} />} />
                     <Route path="/import-export" element={<ImportExport />} />
                     <Route path="/library" element={<Library />} />
@@ -75,7 +84,7 @@ function App() {
                     <Route path="*" element={<Navigate to="/" replace/>}/>
                 </Routes>
             </main>
-            <Footer setMainHomePageLoad={setMainHomePageLoad} clearOptions={clearOptions}  />
+            <Footer clearOptions={clearOptions} setMainHomePageLoad={setMainHomePageLoad}  />
             <div className="o-main-footer-cover-scroll"/>
             {preloader ?
                 <div className="o-preloader">

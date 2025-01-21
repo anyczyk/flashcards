@@ -68,13 +68,7 @@ export const EditSearchProvider = ({ children }) => {
 
     const filteredFlashcards = useMemo(() => {
         let filtered = [];
-        if (selectedSuperCategory !== null && selectedCategory === 'Without category') {
-            filtered = flashcards.filter(fc =>
-                fc.superCategory === selectedSuperCategory &&
-                (!fc.category || fc.category.trim() === '')
-            );
-        }
-        else if (selectedSuperCategory !== null && selectedCategory !== null) {
+        if (selectedSuperCategory !== null && selectedCategory !== null) {
             filtered = flashcards.filter(fc =>
                 fc.superCategory === selectedSuperCategory &&
                 fc.category === selectedCategory
@@ -85,11 +79,6 @@ export const EditSearchProvider = ({ children }) => {
         }
         else if (selectedCategory === 'All') {
             filtered = [...flashcards];
-        }
-        else if (selectedCategory === 'Without category') {
-            filtered = flashcards.filter(fc =>
-                (!fc.category || fc.category.trim() === '') && !fc.superCategory
-            );
         }
         else if (selectedCategory) {
             filtered = flashcards.filter(fc =>

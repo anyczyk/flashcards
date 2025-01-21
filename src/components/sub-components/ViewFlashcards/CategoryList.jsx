@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
+import NoFlashcards from "../common/NoFlashcards";
 // import AdTestComponent from "../../AdTestComponent";
 // import { showInterstitial } from '../../../services/admobService';
 
@@ -14,8 +15,7 @@ function getInitialSubcategoriesOrder(superCat, flashcards) {
     return [
         ...new Set(
             flashcards
-                .filter(fc => fc.superCategory === superCat)
-                .map(fc => fc.category && fc.category.trim() !== '' ? fc.category : 'Without category')
+                .filter(fc => fc.superCategory === superCat).map(fc => fc.category)
         )
     ];
 }
@@ -128,24 +128,13 @@ const CategoryList = ({
                             let count;
                             let knowCount;
 
-                            if (cat === 'Without category') {
-                                count = flashcards.filter(fc =>
-                                    (!fc.category || fc.category.trim() === '') &&
-                                    !fc.superCategory
-                                ).length;
-                                knowCount = flashcards.filter(fc =>
-                                    (!fc.category || fc.category.trim() === '') &&
-                                    !fc.superCategory &&
-                                    fc.know
-                                ).length;
-                            } else {
-                                count = flashcards.filter(fc =>
-                                    fc.category === cat && !fc.superCategory
-                                ).length;
-                                knowCount = flashcards.filter(fc =>
-                                    fc.category === cat && fc.know && !fc.superCategory
-                                ).length;
-                            }
+                            count = flashcards.filter(fc =>
+                                fc.category === cat && !fc.superCategory
+                            ).length;
+                            knowCount = flashcards.filter(fc =>
+                                fc.category === cat && fc.know && !fc.superCategory
+                            ).length;
+
 
                             const hasSubcategories = flashcards.some(fc => fc.superCategory === cat);
 
@@ -210,25 +199,25 @@ const CategoryList = ({
                                                                     className="btn btn--gradient-all "
                                                                     onClick={() => handleRunFlashCards(null, cat)}
                                                                 >
-                                  <span>
-                                    <i className="icon-play-outline color-green-strong-dark no-text-shadow"></i> {t('all')} (
-                                    <strong>{knowCountSuper}</strong>/
-                                      {countSuper})
-                                      {unknownCountSuper > 0 ? (
-                                          <>
-                                              <sub className="bg-color-green">
-                                                  {knowPercentageSuper}%
-                                              </sub>
-                                              <sup className="bg-color-red">
-                                                  {unknownCountSuper}
-                                              </sup>
-                                          </>
-                                      ) : (
-                                          <sub className="o-category-complited bg-color-green vertical-center-count">
-                                              <i className="icon-ok"></i>
-                                          </sub>
-                                      )}
-                                  </span>
+                                                                  <span>
+                                                                    <i className="icon-play-outline color-green-strong-dark no-text-shadow"></i> {t('all')} (
+                                                                    <strong>{knowCountSuper}</strong>/
+                                                                      {countSuper})
+                                                                      {unknownCountSuper > 0 ? (
+                                                                          <>
+                                                                              <sub className="bg-color-green">
+                                                                                  {knowPercentageSuper}%
+                                                                              </sub>
+                                                                              <sup className="bg-color-red">
+                                                                                  {unknownCountSuper}
+                                                                              </sup>
+                                                                          </>
+                                                                      ) : (
+                                                                          <sub className="o-category-complited bg-color-green vertical-center-count">
+                                                                              <i className="icon-ok"></i>
+                                                                          </sub>
+                                                                      )}
+                                                                  </span>
                                                                 </button>
                                                             );
                                                         })()}
@@ -240,12 +229,9 @@ const CategoryList = ({
                                                             getInitialSubcategoriesOrder(cat, flashcards);
 
                                                         return userDefinedOrder.map((subcat) => {
-                                                            const subcatCount = flashcards.filter(
-                                                                fc => fc.category === subcat && fc.superCategory === cat
-                                                            ).length;
-                                                            const knowSubcatCount = flashcards.filter(
-                                                                fc => fc.category === subcat && fc.superCategory === cat && fc.know
-                                                            ).length;
+                                                            const subcatCount = flashcards.filter(fc => (fc.category === subcat && fc.superCategory === cat)).length;
+
+                                                            const knowSubCatCount = flashcards.filter(fc => (fc.category === subcat && fc.superCategory === cat && fc.know)).length;
 
                                                             return (
                                                                 <li key={subcat}>
@@ -257,36 +243,35 @@ const CategoryList = ({
                                                                         }`}
                                                                         onClick={() => handleRunFlashCards(subcat, cat)}
                                                                     >
-                                    <span>
-                                      <i className="icon-play-outline"></i>{' '}
-                                        {subcat === 'Without category' || subcat === ''
-                                            ? t('without_category')
-                                            : subcat}{' '}
-                                        (<strong>
-                                        {knowSubcatCount}
-                                      </strong>/{subcatCount})
-                                        {subcatCount - knowSubcatCount > 0 ? (
-                                            <>
-                                                <sub className="bg-color-green">
-                                                    {Math.ceil(
-                                                        (knowSubcatCount * 100) / subcatCount
-                                                    )}%
-                                                </sub>
-                                                <sup className="bg-color-red">
-                                                    {subcatCount - knowSubcatCount}
-                                                </sup>
-                                            </>
-                                        ) : (
-                                            <sub className="o-category-complited bg-color-green vertical-center-count">
-                                                <i className="icon-ok"></i>
-                                            </sub>
-                                        )}
-                                    </span>
+                                                                        <span>
+                                                                            <i className="icon-play-outline"></i>{' '}
+                                                                            {subcat}{' '}
+                                                                            (<strong>
+                                                                                {knowSubCatCount}
+                                                                            </strong>/{subcatCount})
+                                                                            {subcatCount - knowSubCatCount > 0 ? (
+                                                                                <>
+                                                                                    <sub className="bg-color-green">
+                                                                                        {Math.ceil(
+                                                                                            (knowSubCatCount * 100) / subcatCount
+                                                                                        )}%
+                                                                                    </sub>
+                                                                                    <sup className="bg-color-red">
+                                                                                        {subcatCount - knowSubCatCount}
+                                                                                    </sup>
+                                                                                </>
+                                                                            ) : (
+                                                                                <sub className="o-category-complited bg-color-green vertical-center-count">
+                                                                                    <i className="icon-ok"></i>
+                                                                                </sub>
+                                                                            )}
+                                                                        </span>
                                                                     </button>
                                                                 </li>
                                                             );
                                                         });
                                                     })()}
+
                                                 </ul>
                                             )}
                                         </>
@@ -302,9 +287,7 @@ const CategoryList = ({
                                             >
                         <span>
                           <i className="icon-play-outline"></i>
-                            {cat === 'Without category'
-                                ? t('without_category')
-                                : cat}{' '}
+                            {cat}{' '}
                             (<strong>{knowCount}</strong>/{count})
                             {count - knowCount > 0 ? (
                                 <>
@@ -328,28 +311,7 @@ const CategoryList = ({
                             );
                         })}
                     </ul>
-                ) : (
-                    <div className="o-no-flashcards">
-                        <p>{t('no_flashcards')}</p>
-                        <ul className="o-list-buttons-clear o-list-buttons-clear--nowrap o-default-box">
-                            <li>
-                                <Link className="btn w-100" to="/create">
-                                    <i className="icon-plus"></i> {t('create_flashcard')}
-                                </Link>
-                            </li>
-                            <li>
-                                <Link className="btn w-100" to="/import-export">
-                                    <i className="icon-export"></i> {t('import_export')}
-                                </Link>
-                            </li>
-                        </ul>
-                        <p>{t('choose_set_from_library')}</p>
-                        <p>Lub wybierz zestaw z naszej biblioteki fiszek:</p>
-                        <Link className="btn w-100 btn--blue" to="/library">
-                            <i className="icon-book"></i> {t('library')}
-                        </Link>
-                    </div>
-                )}
+                ) : <NoFlashcards />}
             </>
         ) : null
     );

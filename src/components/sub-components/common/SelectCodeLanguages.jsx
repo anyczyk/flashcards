@@ -1,6 +1,7 @@
-import React from "react";
-
+import React, {useContext} from "react";
+import {FlashcardContext} from "../../../context/FlashcardContext";
 const SelectCodeLanguages = ({id, value, setFunction, availableLanguages}) => {
+    const { languageMap } = useContext(FlashcardContext);
     return (
         <select
             id={id}
@@ -11,7 +12,7 @@ const SelectCodeLanguages = ({id, value, setFunction, availableLanguages}) => {
             {availableLanguages.length === 0 &&
                 <option value="">Loading...</option>}
             {availableLanguages.map((lang, index) => (
-                <option key={index} value={lang}>{lang}</option>
+                <option key={index} value={lang}>{lang} - {languageMap[lang]}</option>
             ))}
         </select>
     );

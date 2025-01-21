@@ -1,5 +1,5 @@
 // EditFlashcardList.jsx
-import React, {useContext} from 'react';
+import React, {useContext, useEffect} from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from "react-router-dom";
 import BrowserSearchAndTools from "./sub-components/EditFlashcardList/BrowserSearchAndTools";
@@ -8,8 +8,9 @@ import { EditSearchContext } from '../context/EditSearchContext';
 import CategoryListDragDrop from "./sub-components/EditFlashcardList/CategoryListDragDrop";
 import ModalEdit from "./sub-components/EditFlashcardList/ModalEdit";
 import FlashCardListEdit from "./sub-components/common/FlashCardListEdit";
+import NoFlashcards from "./sub-components/common/NoFlashcards";
 
-function EditFlashcardList({preloader, setPreloader}) {
+function EditFlashcardList({preloader, setPreloader, editPageLoad, setEditPageLoad}) {
     const { t } = useTranslation(); // Hook translation
     const {
         flashcards
@@ -50,17 +51,22 @@ function EditFlashcardList({preloader, setPreloader}) {
         backToEditlist
     } = useContext(EditSearchContext);
 
+    const handleEditPageLoad = () => {
+        setSelectedCategory(null);
+        setEditPageLoad(false);
+    };
+
+    useEffect(() => {
+        handleEditPageLoad();
+    }, [editPageLoad]);
+
     return (
         <div className="o-page-edit-flashcard-list">
             <h2>
                 {t('edit_flashcards')}
                 {selectedSuperCategory ? ` / ${selectedSuperCategory}` : ''}
                 {(selectedCategory !== null) && (
-                    <span> / {selectedCategory === 'All'
-                        ? t('all')
-                        : (selectedCategory === 'Without category'
-                            ? t('without_category')
-                            : selectedCategory)
+                    <span> / {selectedCategory === 'All' ? t('all') : selectedCategory
                     } (
                         {getFilteredFlashcardCount})
                     </span>
@@ -75,30 +81,14 @@ function EditFlashcardList({preloader, setPreloader}) {
                             className="w-100"
                             onClick={backToEditlist}
                         >
-                            {t('choose_another_category')}
+                            {t('choose_another_deck')}
                         </button>
                     </p>
                     <hr/>
                 </>
             )}
 
-            {(flashcards.length < 1) ? (
-                <div className="o-no-flashcards">
-                    <p>{t('no_flashcards')}</p>
-                    <ul className="o-list-buttons-clear">
-                        <li>
-                            <Link className="btn" to="/create">
-                                <i className="icon-plus"></i> {t('create_flashcard')}
-                            </Link>
-                        </li>
-                        <li>
-                            <Link className="btn" to="/import-export">
-                                <i className="icon-export"></i> {t('import_export')}
-                            </Link>
-                        </li>
-                    </ul>
-                </div>
-            ) : (
+            {(flashcards.length < 1) ? <NoFlashcards /> : (
                 <>
                     {(selectedCategory === null) ? (
                         <>

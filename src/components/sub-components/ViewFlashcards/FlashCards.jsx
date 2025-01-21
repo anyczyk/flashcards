@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { editFlashcardInDB } from "../../../db";
 import useWcagModal from "../../../hooks/useWcagModal";
 import { showInterstitial } from '../../../services/admobService';
+import {parseCardText, stripBoldTags} from '../../../utils/formatTextes';
 
 const FlashCards = ({
                         syntAudioRef,
@@ -198,16 +199,21 @@ const FlashCards = ({
     }, [handleSpeak]);
 
     const CardFrontDescOrBackDesc = useCallback(({ card, cardLang }) => {
+        if (!card) return null;
+        const handleClick = () => {
+            const cleanCard = stripBoldTags(card);
+            handleSpeak(cleanCard, cardLang);
+        };
         return (
-            card && <p
+            <p
                 role="button"
-                onClick={() => handleSpeak(card, cardLang)}
+                onClick={handleClick}
             >
-                <span className="o-list-flashcards__lang">
-                    <span className="o-list-flashcards__lang-code">{cardLang}</span>
-                    <i className="icon-volume"/>
-                </span>
-                {card}
+            <span className="o-list-flashcards__lang">
+                <span className="o-list-flashcards__lang-code">{cardLang}</span>
+                <i className="icon-volume" />
+            </span>
+                {parseCardText(card)}
             </p>
         );
     }, [handleSpeak]);
@@ -219,7 +225,7 @@ const FlashCards = ({
                     {filteredFlashcardCount > 0 ? (
                         <>
                             <p>
-                            {t('in_this_category_you_still_have_flashcards_to_learn')} (
+                            {t('in_this_deck_you_still_have_flashcards_to_learn')} (
                                 {filteredFlashcardCount})
                             </p>
                             <ul className="o-list-buttons-clear">
@@ -239,7 +245,7 @@ const FlashCards = ({
                             </ul>
                         </>
                     ) : (
-                        <p>{t('congratulations_text')}</p>
+                        <p>{t('new_congratulations_text')}</p>
                     )}
                     <p>
                         <button className="btn--green w-100" onClick={()=>{
@@ -347,22 +353,24 @@ const FlashCards = ({
                                             cardLang={cardLang}
                                         />
                                         <hr />
-                                        {checkedCards.has(card.id) ? (
-                                            reversFrontBack ? (
-                                                <CardFrontOrBack
-                                                    card={card.front}
-                                                    cardLang={card.langFront}
-                                                />
-                                            ) : (
-                                                <CardFrontOrBack
-                                                    card={card.back}
-                                                    cardLang={card.langBack}
-                                                />
-                                            )
-                                        ) : <p className="o-list-flashcards__lang o-list-flashcards__lang-code text-center">
-                                            {reversFrontBack ? card.langFront : card.langBack}
-                                        </p>
-                                        }
+                                        <div className="o-animated-wrap text-center">
+                                            {checkedCards.has(card.id) ? <div className="o-animated-dropdown">
+                                                    {reversFrontBack ? (
+                                                        <CardFrontOrBack
+                                                            card={card.front}
+                                                            cardLang={card.langFront}
+                                                        />
+                                                    ) : (
+                                                        <CardFrontOrBack
+                                                            card={card.back}
+                                                            cardLang={card.langBack}
+                                                        />
+                                                    )}</div>
+                                                : <p className="o-list-flashcards__lang o-list-flashcards__lang-code">
+                                                    {reversFrontBack ? card.langFront : card.langBack}
+                                                </p>
+                                            }
+                                        </div>
 
 
                                         {(card.frontDesc || card.backDesc) && <div className="o-list-flashcards__desc">
@@ -371,7 +379,7 @@ const FlashCards = ({
                                                 cardLang={cardLang}
                                             />
 
-                                            {checkedCards.has(card.id) ? <><hr/>{(
+                                            {checkedCards.has(card.id) ? <div className="o-animated-dropdown"><hr/>{(
                                                 reversFrontBack ? (
                                                     <CardFrontDescOrBackDesc
                                                         card={card.frontDesc}
@@ -383,7 +391,7 @@ const FlashCards = ({
                                                         cardLang={card.langBack}
                                                     />
                                                 )
-                                            )}</> : ''}
+                                            )}</div> : ''}
                                         </div>}
 
                                         <div className="o-list-flashcards__know">
@@ -493,6 +501,7 @@ const FlashCards = ({
                                         className="o-default-box"
                                         id={`front-${openCardId}`}
                                         value={quickEdit[openCardId].front}
+                                        maxLength="1200"
                                         onChange={(e) => handleQuickEditChange(openCardId, 'front', e.target.value)}
                                     />
                                     <label
@@ -503,6 +512,7 @@ const FlashCards = ({
                                     </label>
                                     <textarea
                                         id={`front-desc-${openCardId}`}
+                                        maxLength="1200"
                                         value={quickEdit[openCardId].frontDesc}
                                         onChange={(e) => handleQuickEditChange(openCardId, 'frontDesc', e.target.value)}
                                     />
@@ -517,6 +527,7 @@ const FlashCards = ({
                                     </label>
                                     <textarea
                                         className="o-default-box"
+                                        maxLength="1200"
                                         id={`back-${openCardId}`}
                                         value={quickEdit[openCardId].back}
                                         onChange={(e) =>
@@ -531,6 +542,7 @@ const FlashCards = ({
                                     </label>
                                     <textarea
                                         id={`back-desc-${openCardId}`}
+                                        maxLength="1200"
                                         value={quickEdit[openCardId].backDesc}
                                         onChange={(e) =>
                                             handleQuickEditChange(openCardId, 'backDesc', e.target.value)

@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 import { useTranslation } from 'react-i18next';
 import { FlashcardContext } from '../context/FlashcardContext';
 
-const Header = ({setMainHomePageLoad, clearOptions, mainMenuVisible, setMainMenuVisible}) => {
+const Header = ({clearOptions, setMainHomePageLoad, mainMenuVisible, setMainMenuVisible}) => {
     const { t, i18n } = useTranslation();
     const {
         playFlashcards,
@@ -75,9 +75,7 @@ const Header = ({setMainHomePageLoad, clearOptions, mainMenuVisible, setMainMenu
             >
                 <i className="icon-volume"></i>
             </button>
-            <Link onClick={() => {
-                clearOptions();
-            }} to="/Search" className="btn o-main-header__btn-search"><i
+            <Link to="/Search" className="btn o-main-header__btn-search"><i
                 className="icon-search"></i></Link>
             <button ref={closeMenuBtnRef} onClick={showMainMenu}
                     className={`o-main-header__btn-menu ${mainMenuVisible ? 'o-main-header__btn-menu--active' : ''}`}
@@ -118,7 +116,6 @@ const Header = ({setMainHomePageLoad, clearOptions, mainMenuVisible, setMainMenu
                         <option value="hu">Magyar (Hungarian)</option>
                         <option value="mi">Māori (Māori)</option>
                         <option value="ms">Melayu (Malay)</option>
-                        <option value="mnd">Mende (Mende)</option>
                         <option value="nl">Nederlands (Dutch)</option>
                         <option value="no">Norsk (Norwegian)</option>
                         <option value="uz">O‘zbek (Uzbek)</option>
@@ -173,7 +170,8 @@ const Header = ({setMainHomePageLoad, clearOptions, mainMenuVisible, setMainMenu
                 <nav dir={dirAttribute}>
                     <ul>
                         <li><Link onClick={() => {
-                            setMainHomePageLoad(true);
+                            // setMainHomePageLoad(true);
+                            clearOptions();
                             showMainMenu();
                         }} to="/"><i
                             className="icon-play"></i> {t('view_flashcards')}</Link></li>
@@ -185,30 +183,26 @@ const Header = ({setMainHomePageLoad, clearOptions, mainMenuVisible, setMainMenu
                             className="icon-wrench"></i> {t('settings')}</Link></li>
 
                         <li><Link onClick={() => {
-                            clearOptions();
                             showMainMenu();
                         }} to="/create"><i
                             className="icon-plus"></i> {t('add_flashcard')}</Link></li>
 
                         <li><Link onClick={() => {
-                            clearOptions();
                             showMainMenu();
                         }} to="/import-export"><i
                             className="icon-export"></i> {t('import_export')}</Link>
                         </li>
 
                         <li><Link onClick={() => {
-                            clearOptions();
                             showMainMenu();
                         }} to="/library"><i
                             className="icon-book"></i> {t('library')}</Link>
                         </li>
 
                         <li><Link onClick={() => {
-                            clearOptions();
                             showMainMenu();
                         }} to="/Search"><i
-                            className="icon-search"></i> {t('Search')}</Link>
+                            className="icon-search"></i> {t('search')}</Link>
                         </li>
                     </ul>
                 </nav>

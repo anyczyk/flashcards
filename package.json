@@ -1,7 +1,7 @@
 {
   "name": "com.flasho.flasho",
-  "displayName": "flasho",
-  "version": "1.0.1",
+  "displayName": "Flasho",
+  "version": "1.0.2",
   "description": "A sample Apache Cordova application that responds to the deviceready event.",
   "main": "webpack.config.js",
   "scripts": {

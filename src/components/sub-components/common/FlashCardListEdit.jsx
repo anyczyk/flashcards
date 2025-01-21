@@ -8,6 +8,7 @@ import SelectSuperCategory from "./SelectSuperCategory";
 import { getAllFlashcards } from "../../../db";
 import SelectCategory from "./SelectCategory";
 import { useNavigate } from 'react-router-dom';
+import {parseCardText} from '../../../utils/formatTextes';
 function encodeSuperCategoryKey(superCategory) {
     return 'subCategoryOrder_' + btoa(unescape(encodeURIComponent(superCategory)));
 }
@@ -85,6 +86,9 @@ const FlashCardListEdit = ({
         loadDataSelectors();
     }, [loadDataSelectors]);
 
+    useEffect(() => {
+        cancelEditing();
+    }, []);
 
     useEffect(() => {
         if (editMode && cardRefs.current[editMode]) {
@@ -171,8 +175,8 @@ const FlashCardListEdit = ({
                 editFrontLang.trim(),
                 editBackLang.trim(),
                 editSuperCategory.trim(),
-                editFrontDesc,
-                editBackDesc
+                editFrontDesc.trim(),
+                editBackDesc.trim()
             );
 
             const allFlashcards = await getAllFlashcards();
@@ -184,11 +188,11 @@ const FlashCardListEdit = ({
                         fc.id !== id
                     );
                     if (otherCards.length === 0) {
-                        removeCategoryFromSuperCategory(oldSuperCategory, oldCategory || 'Without category');
+                        removeCategoryFromSuperCategory(oldSuperCategory, oldCategory);
                     }
                 }
                 if (editSuperCategory.trim()) {
-                    const newCat = editCategory.trim() !== '' ? editCategory.trim() : 'Without category';
+                    const newCat = editCategory.trim();
                     addCategoryToSuperCategory(editSuperCategory.trim(), newCat);
                 }
             }
@@ -200,9 +204,9 @@ const FlashCardListEdit = ({
                         fc.id !== id
                     );
                     if (otherCards.length === 0) {
-                        removeCategoryFromSuperCategory(editSuperCategory.trim(), oldCategory || 'Without category');
+                        removeCategoryFromSuperCategory(editSuperCategory.trim(), oldCategory);
                     }
-                    const newCat = editCategory.trim() !== '' ? editCategory.trim() : 'Without category';
+                    const newCat = editCategory.trim();
                     addCategoryToSuperCategory(editSuperCategory.trim(), newCat);
                 }
             }
@@ -234,6 +238,8 @@ const FlashCardListEdit = ({
         setEditMode(card.id);
         setEditFront(card.front);
         setEditBack(card.back);
+        setEditFrontDesc(card.frontDesc);
+        setEditBackDesc(card.backDesc);
         setEditCategory(card.category || '');
         setEditKnow(card.know === true);
         setEditFrontLang(card.langFront);
@@ -375,6 +381,7 @@ const FlashCardListEdit = ({
                                         <textarea
                                             value={editFront}
                                             className="o-default-box"
+                                            maxLength="1200"
                                             onChange={(e) => setEditFront(e.target.value)}
                                             rows="2"
                                             cols="30"
@@ -385,6 +392,7 @@ const FlashCardListEdit = ({
                                         <label htmlFor={`o-edit-front-desc-${card.id}`}>{t('description')}:</label>
                                         <textarea
                                             value={editFrontDesc}
+                                            maxLength="1200"
                                             className="o-default-box"
                                             onChange={(e) => setEditFrontDesc(e.target.value)}
                                             rows="2"
@@ -408,6 +416,7 @@ const FlashCardListEdit = ({
                                         <textarea
                                             className="o-default-box"
                                             value={editBack}
+                                            maxLength="1200"
                                             onChange={(e) => setEditBack(e.target.value)}
                                             rows="2"
                                             cols="30"
@@ -419,6 +428,7 @@ const FlashCardListEdit = ({
                                         <textarea
                                             className="o-default-box"
                                             value={editBackDesc}
+                                            maxLength="1200"
                                             onChange={(e) => setEditBackDesc(e.target.value)}
                                             rows="2"
                                             cols="30"
@@ -465,7 +475,10 @@ const FlashCardListEdit = ({
                                     <hr/>
                                     <ul className="o-list-buttons-clear o-list-buttons-clear--nowrap">
                                         <li>
-                                            <button disabled={!editFront.trim() || !editBack.trim()} className="btn--green" onClick={() => submitEdit(card.id)}>
+                                            <button
+                                                disabled={!editFront.trim() || !editBack.trim() || !editCategory.trim()}
+                                                className="btn--green"
+                                                onClick={() => submitEdit(card.id)}>
                                                 <i className="icon-floppy-1"></i> {t('save')}
                                             </button>
                                         </li>
@@ -488,7 +501,7 @@ const FlashCardListEdit = ({
                                     </p>
                                     <p>
                                         <strong>{t('description')}:</strong>{' '}
-                                        {card.frontDesc ? card.frontDesc : t('no_data')}
+                                        {card.frontDesc ? parseCardText(card.frontDesc) : t('no_data')}
                                     </p>
                                     <p>
                                         <strong>{t('language_code')}:</strong>{' '}
@@ -501,7 +514,7 @@ const FlashCardListEdit = ({
                                     </p>
                                     <p>
                                         <strong>{t('description')}:</strong>{' '}
-                                        {card.backDesc ? card.backDesc : t('no_data')}
+                                        {card.backDesc ? parseCardText(card.backDesc) : t('no_data')}
                                     </p>
                                     <p>
                                         <strong>{t('language_code')}:</strong>{' '}
@@ -509,17 +522,15 @@ const FlashCardListEdit = ({
                                     </p>
                                     <hr/>
                                     <p>
-                                        <strong>{t('category')}:</strong>{' '}
-                                        {card.category && card.category.trim() !== ''
-                                            ? card.category
-                                            : t('without_category')}
+                                        <strong>{t('deck')}:</strong>{' '}
+                                        {card.category}
                                     </p>
                                     <hr/>
                                     <p>
-                                        <strong>{t('super_category')}:</strong>{' '}
+                                        <strong>{t('folder')}:</strong>{' '}
                                         {card.superCategory && card.superCategory.trim() !== ''
                                             ? card.superCategory
-                                            : t('without_super_category')}
+                                            : t('without_folder')}
                                     </p>
                                     <hr/>
                                     <p>

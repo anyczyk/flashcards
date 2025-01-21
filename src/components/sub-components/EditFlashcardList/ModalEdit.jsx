@@ -191,7 +191,9 @@ const ModalEdit = ({
                             action === 'reset' ? '' : card.know,
                             card.langFront,
                             card.langBack,
-                            action === 'reset' ? card.superCategory : nameNew
+                            action === 'reset' ? card.superCategory : nameNew,
+                            card.frontDesc,
+                            card.backDesc
                         );
                     }
                 }
@@ -216,11 +218,13 @@ const ModalEdit = ({
                             action === 'reset' ? '' : card.know,
                             card.langFront,
                             card.langBack,
-                            nameNewSuperCategory
+                            nameNewSuperCategory,
+                            card.frontDesc,
+                            card.backDesc
                         );
                     }
                 }
-                else if (card.category === '' && card.superCategory === '' && nameOld === 'Without category') {
+                else if (card.category === '' && card.superCategory === '') {
                     // console.log("c3");
                     if (action === 'remove') {
                         return removeFlashcard(card.id);
@@ -236,7 +240,9 @@ const ModalEdit = ({
                             action === 'reset' ? '' : card.know,
                             card.langFront,
                             card.langBack,
-                            card.superCategory
+                            card.superCategory,
+                            card.frontDesc,
+                            card.backDesc
                         );
                     }
                 }
@@ -269,7 +275,9 @@ const ModalEdit = ({
                             action === 'reset' ? '' : card.know,
                             card.langFront,
                             card.langBack,
-                            nameNewSuperCategory
+                            nameNewSuperCategory,
+                            card.frontDesc,
+                            card.backDesc
                         );
                     }
                 }
@@ -284,7 +292,9 @@ const ModalEdit = ({
                     '',
                     card.langFront,
                     card.langBack,
-                    card.superCategory
+                    card.superCategory,
+                    card.frontDesc,
+                    card.backDesc
                 );
             }
             else if (type === 'remove-all-flashcards') {
@@ -432,7 +442,7 @@ const ModalEdit = ({
                             className="mb-0"
                             title={
                                 nameType === 'super-category'
-                                    ? t('super_category')
+                                    ? t('folder')
                                     : nameType === 'category-without-super-category'
                                         ? t('category_without_super_category')
                                         : nameType === 'category-inside-super-category'
@@ -444,7 +454,7 @@ const ModalEdit = ({
                         </h2>
                         <hr />
 
-                        {nameOld !== 'Without category' && !confirmRemove && (
+                        {!confirmRemove && (
                             <>
                                 {(nameType === 'category-without-super-category' ||
                                     nameType === 'category-inside-super-category') && (
@@ -523,17 +533,17 @@ const ModalEdit = ({
                                         <span>{t('export_to_file')}</span>
                                     </button>
                                 </li>
-                                {nameOld !== 'Without category' && (
-                                    <li>
-                                        <button
-                                            className="btn--icon btn--green"
-                                            onClick={() => handleQuickEditSave(nameType)}
-                                        >
-                                            <i className="icon-floppy-1"></i>{" "}
-                                            <span>{t('save')}</span>
-                                        </button>
-                                    </li>
-                                )}
+                                <li>
+                                    <button
+                                        className="btn--icon btn--green"
+                                        onClick={() => handleQuickEditSave(nameType)}
+                                        disabled={(nameType!=='super-category') && !nameNew.trim()}
+                                    >
+                                        {(nameType==='super-category')}
+                                        <i className="icon-floppy-1"></i>{" "}
+                                        <span>{t('save')}</span>
+                                    </button>
+                                </li>
                             </ul>
                         )}
 

@@ -1,3 +1,4 @@
+// SelectCategory.jsx
 import React, { useRef, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -47,7 +48,7 @@ const SelectCategory = ({
         <>
             <p>
                 <label htmlFor="o-category">
-                    {t("category")}:
+                    <span className="color-red">*</span> {t('deck')}:
                 </label>
                 <select
                     id="o-category"
@@ -55,7 +56,7 @@ const SelectCategory = ({
                     value={internalCategory}
                 >
                     <option value="">
-                        -- {t("select_existing_category")} --
+                        -- {t('select_existing_deck')} --
                     </option>
                     {categoriesDependentOnSuperCategory.map((cat, index) => (
                         <option key={index} value={cat}>
@@ -70,12 +71,14 @@ const SelectCategory = ({
                     ref={refInputTextCategory}
                     type="text"
                     maxLength="60"
-                    placeholder={t("type_a_new_category_or_edit_selected_one")}
+                    placeholder={t('type_a_new_deck_or_edit_selected_one')}
                     value={internalCategory}
                     onChange={handleInputChange}
+                    required
                 />
                 {internalCategory && (
                     <button
+                        type="button"
                         className="o-text-input-with-clear__button-clear"
                         onClick={handleClear}
                         aria-label="Clear input"
@@ -89,67 +92,3 @@ const SelectCategory = ({
 };
 
 export default SelectCategory;
-
-
-
-// // SelectCategory.jsx
-//
-// import React, {useRef} from "react";
-// import {useTranslation} from "react-i18next";
-//
-// const SelectCategory = ({category, setCategory, categoriesDependentOnSuperCategory}) => {
-//     const {t} = useTranslation();
-//     const refInputTextCategory = useRef();
-//     const handleCategorySelect = (e) => {
-//         const selected = e.target.value;
-//         if (selected) {
-//             setCategory(selected);
-//         } else {
-//             setCategory('');
-//         }
-//     };
-//
-//     const handleClear = () => {
-//         setCategory('');
-//         if (refInputTextCategory.current) {
-//             refInputTextCategory.current.focus();
-//         }
-//     };
-//
-//     return (
-//         <>
-//             <p>
-//                 <label htmlFor="o-category">
-//                     {t('category')}:
-//                 </label>
-//                 <select id="o-category" onChange={handleCategorySelect} value={category}>
-//                     <option value="">-- {t('select_existing_category')} --</option>
-//                     {categoriesDependentOnSuperCategory.map((cat, index) => (
-//                         <option key={index} value={cat}>
-//                             {cat}
-//                         </option>
-//                     ))}
-//                 </select>
-//             </p>
-//             <p className={`o-text-input-with-clear ${category ? 'o-text-input-with-clear--active' : ''}`}>
-//                 <input
-//                     type="text"
-//                     maxLength="60"
-//                     placeholder={t('type_a_new_category_or_edit_selected_one')}
-//                     value={category}
-//                     onChange={(e) => setCategory(e.target.value)}
-//                 />
-//                 {category && (
-//                     <button
-//                         className="o-text-input-with-clear__button-clear"
-//                         onClick={handleClear}
-//                         aria-label="Clear input"
-//                     >
-//                         <i className="icon-cancel"/>
-//                     </button>
-//                 )}
-//             </p>
-//         </>
-//     );
-// };
-// export default SelectCategory;
