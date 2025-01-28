@@ -5,8 +5,7 @@ import { getAllFlashcards } from '../db';
 import cardsExport from '../utils/cardsExport';
 import { useTranslation } from 'react-i18next';
 import { FlashcardContext } from '../context/FlashcardContext';
-import { importAdd, importReplace } from "../utils/import";  // <-- Twoje pliki importujące
-// import FilesListImportFree from "./sub-components/common/FilesListImportFree";
+import { importClassic } from "../utils/importClassic";
 
 function ImportExport() {
     const { t } = useTranslation();
@@ -35,6 +34,18 @@ function ImportExport() {
 
     const handleFileChange = () => {
         const file = fileInputRef.current.files && fileInputRef.current.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                console.log(`File Contents:\n${e.target.result}`);
+            };
+            reader.onerror = (e) => {
+                alert('Error reading file');
+            };
+            reader.readAsText(file);
+        } else {
+            alert('No file selected');
+        }
         setSelectedFile(file || null);
     };
 
@@ -44,7 +55,6 @@ function ImportExport() {
             await cardsExport(cardsToExport);
         } catch (error) {
             console.error("Error while exporting flashcards:", error);
-            alert("Error while exporting flashcards");
         }
     };
 
@@ -76,13 +86,15 @@ function ImportExport() {
                     <ul className="o-list-buttons-clear">
                         <li>
                             <button
-                                onClick={() => importReplace(
+                                onClick={() => importClassic(
+                                    'replace',
                                     loadData,
                                     selectedFile,
                                     setCurrentLocalStorageCategoryOrder,
                                     setImportSuccessMessage,
                                     fileInputRef.current,
-                                    setSelectedFile
+                                    setSelectedFile,
+                                    `${t('data_imported_successfully')} (${t('all_replaced')})`
                                 )}
                             >
                                 {t('import_replace')}
@@ -90,13 +102,15 @@ function ImportExport() {
                         </li>
                         <li>
                             <button
-                                onClick={() => importAdd(
+                                onClick={() => importClassic(
+                                    'add',
                                     loadData,
                                     selectedFile,
                                     setCurrentLocalStorageCategoryOrder,
                                     setImportSuccessMessage,
                                     fileInputRef.current,
-                                    setSelectedFile
+                                    setSelectedFile,
+                                    `${t('data_imported_successfully')} (${t('appended')})`
                                 )}
                             >
                                 {t('import_append')}
@@ -113,10 +127,6 @@ function ImportExport() {
                     </button>
                 </p>
             )}
-
-            {/*<hr/>*/}
-            {/*<h3>{t('free_flashcards')}</h3>*/}
-            {/*<FilesListImportFree/>*/}
         </div>
     );
 }

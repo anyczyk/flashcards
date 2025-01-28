@@ -46,7 +46,7 @@ const SelectCategory = ({
 
     return (
         <>
-            <p>
+            <div className="o-default-box">
                 <label htmlFor="o-category">
                     <span className="color-red">*</span> {t('deck')}:
                 </label>
@@ -64,9 +64,9 @@ const SelectCategory = ({
                         </option>
                     ))}
                 </select>
-            </p>
+            </div>
 
-            <p className={`o-text-input-with-clear ${internalCategory ? "o-text-input-with-clear--active" : ""}`}>
+            <p className={`o-default-box o-text-input-with-clear ${internalCategory ? "o-text-input-with-clear--active" : ""}`}>
                 <input
                     ref={refInputTextCategory}
                     type="text"

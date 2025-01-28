@@ -1,7 +1,7 @@
 import React from "react";
 
 export const parseCardText = (text) => {
-    const regex = /\[b\](.*?)\[\/b\]/g;
+    const regex = /\[(b|i)\](.*?)\[\/\1\]/g;
     const parts = [];
     let lastIndex = 0;
     let match;
@@ -11,7 +11,13 @@ export const parseCardText = (text) => {
         if (match.index > lastIndex) {
             parts.push(text.substring(lastIndex, match.index));
         }
-        parts.push(<strong key={`strong-${key++}`}>{match[1]}</strong>);
+
+        if (match[1] === 'b') {
+            parts.push(<strong key={`strong-${key++}`}>{match[2]}</strong>);
+        } else if (match[1] === 'i') {
+            parts.push(<em key={`italic-${key++}`}>{match[2]}</em>);
+        }
+
         lastIndex = regex.lastIndex;
     }
 
@@ -22,6 +28,6 @@ export const parseCardText = (text) => {
     return parts;
 };
 
-export const stripBoldTags = (text) => {
-    return text.replace(/\[\/?b\]/g, '');
+export const stripFormattingTags = (text) => {
+    return text.replace(/\[\/?(b|i)\]/g, '');
 };

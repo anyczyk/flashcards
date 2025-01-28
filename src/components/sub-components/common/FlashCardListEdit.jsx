@@ -9,6 +9,7 @@ import { getAllFlashcards } from "../../../db";
 import SelectCategory from "./SelectCategory";
 import { useNavigate } from 'react-router-dom';
 import {parseCardText} from '../../../utils/formatTextes';
+import TextAreaAdvanced from "./TextAreaAdvanced";
 function encodeSuperCategoryKey(superCategory) {
     return 'subCategoryOrder_' + btoa(unescape(encodeURIComponent(superCategory)));
 }
@@ -51,7 +52,7 @@ const FlashCardListEdit = ({
                                selectedCards
                            }) => {
     const { t } = useTranslation();
-    const { removeFlashcard, editFlashcard, superCategoriesArray, setOrderedCategories, flashcards, rtlCodeLangs } = useContext(FlashcardContext);
+    const { removeFlashcard, editFlashcard, superCategoriesArray, setOrderedCategories, flashcards, rtlCodeLangs, languageMap } = useContext(FlashcardContext);
     const navigate = useNavigate();
 
     const [oldCategory, setOldCategory] = useState('');
@@ -61,6 +62,11 @@ const FlashCardListEdit = ({
     const [categoriesDependentOnSuperCategory, setCategoriesDependentOnSuperCategory] = useState([]);
 
     const cardRefs = useRef({});
+
+    const editFrontRef = useRef(null);
+    const editBackRef = useRef(null);
+    const editFrontDescRef = useRef(null);
+    const editBackDescRef = useRef(null);
 
     const loadDataSelectors = useCallback(async () => {
         const data = await getAllFlashcards();
@@ -376,30 +382,38 @@ const FlashCardListEdit = ({
                                         <strong>ID:</strong> {card.id}
                                     </p>
                                     <hr/>
-                                    <p>
+                                    <div className="o-default-box">
                                         <label htmlFor={`o-edit-front-${card.id}`}>{t('front')}:</label>
-                                        <textarea
-                                            value={editFront}
-                                            className="o-default-box"
-                                            maxLength="1200"
-                                            onChange={(e) => setEditFront(e.target.value)}
-                                            rows="2"
-                                            cols="30"
-                                            id={`o-edit-front-${card.id}`}
-                                            dir={rtlCodeLangs.includes(editFrontLang) ? 'rtl' : 'ltr'}
-                                            required
-                                        />
+                                        <TextAreaAdvanced id={`o-edit-front-${card.id}`} ref={editFrontRef} set={setEditFront} state={editFront} langForB={editFrontLang} required={true} placeholder={t('enter_text_front')} />
+                                        {/*<textarea*/}
+                                        {/*    ref={editFrontRef}*/}
+                                        {/*    value={editFront}*/}
+                                        {/*    className="o-default-box"*/}
+                                        {/*    maxLength="1200"*/}
+                                        {/*    onChange={(e) => setEditFront(e.target.value)}*/}
+                                        {/*    rows="2"*/}
+                                        {/*    cols="30"*/}
+                                        {/*    id={`o-edit-front-${card.id}`}*/}
+                                        {/*    dir={rtlCodeLangs.includes(editFrontLang) ? 'rtl' : 'ltr'}*/}
+                                        {/*    required*/}
+                                        {/*/>*/}
+                                    </div>
+                                    <div className="o-default-box">
                                         <label htmlFor={`o-edit-front-desc-${card.id}`}>{t('description')}:</label>
-                                        <textarea
-                                            value={editFrontDesc}
-                                            maxLength="1200"
-                                            className="o-default-box"
-                                            onChange={(e) => setEditFrontDesc(e.target.value)}
-                                            rows="2"
-                                            cols="30"
-                                            id={`o-edit-front-desc-${card.id}`}
-                                            dir={rtlCodeLangs.includes(editFrontLang) ? 'rtl' : 'ltr'}
-                                        />
+                                        <TextAreaAdvanced id={`o-edit-front-desc-${card.id}`} ref={editFrontDescRef} set={setEditFrontDesc} state={editFrontDesc} langForB={editFrontLang} required={false} placeholder={t('enter_text_front_desc')} />
+                                        {/*<textarea*/}
+                                        {/*    ref={editFrontDescRef}*/}
+                                        {/*    value={editFrontDesc}*/}
+                                        {/*    maxLength="1200"*/}
+                                        {/*    className="o-default-box"*/}
+                                        {/*    onChange={(e) => setEditFrontDesc(e.target.value)}*/}
+                                        {/*    rows="2"*/}
+                                        {/*    cols="30"*/}
+                                        {/*    id={`o-edit-front-desc-${card.id}`}*/}
+                                        {/*    dir={rtlCodeLangs.includes(editFrontLang) ? 'rtl' : 'ltr'}*/}
+                                        {/*/>*/}
+                                    </div>
+                                    <div className="o-default-box">
                                         <label htmlFor={`o-edit-front-lang-${card.id}`}>
                                             {t('language_code')}:
                                         </label>
@@ -409,32 +423,45 @@ const FlashCardListEdit = ({
                                             id={`o-edit-front-lang-${card.id}`}
                                             setFunction={setEditFrontLang}
                                         />
-                                    </p>
+                                    </div>
                                     <hr/>
-                                    <p>
+                                    <div className="o-default-box">
                                         <label htmlFor={`o-edit-back-${card.id}`}>{t('back')}:</label>
-                                        <textarea
-                                            className="o-default-box"
-                                            value={editBack}
-                                            maxLength="1200"
-                                            onChange={(e) => setEditBack(e.target.value)}
-                                            rows="2"
-                                            cols="30"
-                                            id={`o-edit-back-${card.id}`}
-                                            dir={rtlCodeLangs.includes(editBackLang) ? 'rtl' : 'ltr'}
-                                            required
-                                        />
+                                        <TextAreaAdvanced id={`o-edit-back-${card.id}`} ref={editBackRef}
+                                                          set={setEditBack} state={editBack} langForB={editBackLang}
+                                                          required={true} placeholder={t('enter_text_back')}/>
+                                        {/*<textarea*/}
+                                        {/*    ref={editBackRef}*/}
+                                        {/*    className="o-default-box"*/}
+                                        {/*    value={editBack}*/}
+                                        {/*    maxLength="1200"*/}
+                                        {/*    onChange={(e) => setEditBack(e.target.value)}*/}
+                                        {/*    rows="2"*/}
+                                        {/*    cols="30"*/}
+                                        {/*    id={`o-edit-back-${card.id}`}*/}
+                                        {/*    dir={rtlCodeLangs.includes(editBackLang) ? 'rtl' : 'ltr'}*/}
+                                        {/*    required*/}
+                                        {/*/>*/}
+                                    </div>
+                                    <div className="o-default-box">
                                         <label htmlFor={`o-edit-back-desc-${card.id}`}>{t('description')}:</label>
-                                        <textarea
-                                            className="o-default-box"
-                                            value={editBackDesc}
-                                            maxLength="1200"
-                                            onChange={(e) => setEditBackDesc(e.target.value)}
-                                            rows="2"
-                                            cols="30"
-                                            id={`o-edit-back-desc-${card.id}`}
-                                            dir={rtlCodeLangs.includes(editBackLang) ? 'rtl' : 'ltr'}
-                                        />
+                                        <TextAreaAdvanced id={`o-edit-back-desc-${card.id}`} ref={editBackDescRef}
+                                                          set={setEditBackDesc} state={editBackDesc}
+                                                          langForB={editBackLang} required={false}
+                                                          placeholder={t('enter_text_back_desc')}/>
+                                        {/*<textarea*/}
+                                        {/*    ref={editBackDescRef}*/}
+                                        {/*    className="o-default-box"*/}
+                                        {/*    value={editBackDesc}*/}
+                                        {/*    maxLength="1200"*/}
+                                        {/*    onChange={(e) => setEditBackDesc(e.target.value)}*/}
+                                        {/*    rows="2"*/}
+                                        {/*    cols="30"*/}
+                                        {/*    id={`o-edit-back-desc-${card.id}`}*/}
+                                        {/*    dir={rtlCodeLangs.includes(editBackLang) ? 'rtl' : 'ltr'}*/}
+                                        {/*/>*/}
+                                    </div>
+                                    <div className="o-default-box">
                                         <label htmlFor={`o-edit-back-lang-${card.id}`}>
                                             {t('language_code')}:
                                         </label>
@@ -444,7 +471,7 @@ const FlashCardListEdit = ({
                                             id={`o-edit-back-lang-${card.id}`}
                                             setFunction={setEditBackLang}
                                         />
-                                    </p>
+                                    </div>
                                     <hr/>
                                     <SelectSuperCategory
                                         superCategory={editSuperCategory}
@@ -491,13 +518,18 @@ const FlashCardListEdit = ({
                                 </div>
                             ) : (
                                 <div className="o-card__content">
-                                    <p>
-                                        <strong>ID:</strong> {card.id}
+                                    <p className="text-small">
+                                        <i className="icon-folder-empty" /> {card.superCategory && card.superCategory.trim() !== ''
+                                            ? <><strong>{card.superCategory}</strong> / </>
+                                            : ''}
+                                        {' '}
+                                        {card.category}
                                     </p>
+
                                     <hr/>
                                     <h3>{t('front')}:</h3>
                                     <p className="o-card__content-edit o-card__content-edit--front">
-                                        {card.front}
+                                        {parseCardText(card.front)}
                                     </p>
                                     <p>
                                         <strong>{t('description')}:</strong>{' '}
@@ -505,12 +537,12 @@ const FlashCardListEdit = ({
                                     </p>
                                     <p>
                                         <strong>{t('language_code')}:</strong>{' '}
-                                        {card.langFront !== '' ? card.langFront : t('no_data')}
+                                        {card.langFront !== '' ? `${card.langFront} (${languageMap[card.langFront]})` : t('no_data')}
                                     </p>
                                     <hr/>
                                     <h3>{t('back')}:</h3>
                                     <p className="o-card__content-edit o-card__content-edit--back">
-                                        {card.back}
+                                        {parseCardText(card.back)}
                                     </p>
                                     <p>
                                         <strong>{t('description')}:</strong>{' '}
@@ -518,19 +550,7 @@ const FlashCardListEdit = ({
                                     </p>
                                     <p>
                                         <strong>{t('language_code')}:</strong>{' '}
-                                        {card.langBack !== '' ? card.langBack : t('no_data')}
-                                    </p>
-                                    <hr/>
-                                    <p>
-                                        <strong>{t('deck')}:</strong>{' '}
-                                        {card.category}
-                                    </p>
-                                    <hr/>
-                                    <p>
-                                        <strong>{t('folder')}:</strong>{' '}
-                                        {card.superCategory && card.superCategory.trim() !== ''
-                                            ? card.superCategory
-                                            : t('without_folder')}
+                                        {card.langBack !== '' ? `${card.langBack} (${languageMap[card.langBack]})` : t('no_data')}
                                     </p>
                                     <hr/>
                                     <p>

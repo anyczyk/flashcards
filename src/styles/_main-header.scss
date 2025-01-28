@@ -233,7 +233,7 @@
     content: '';
     display: block;
     z-index: 997;
-    background-color: var(--color-black-opacity-50);
+    //background-color: var(--color-black-opacity-60);
     position: fixed;
     top: 0;
     left: 0;
@@ -242,6 +242,12 @@
     opacity: 0;
     pointer-events: none;
     transition: opacity 250ms ease-in-out;
+    background: linear-gradient(
+                    to bottom,
+                    rgba(0, 0, 0, .6) 0%,
+                    rgba(0, 0, 0, .6) 75%,
+                    rgba(0, 0, 0, .1) 100%
+    );
   }
 }
 

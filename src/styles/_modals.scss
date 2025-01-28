@@ -4,11 +4,19 @@
   position: fixed;
   inset: 0;
   z-index: 999;
-  background-color: var(--color-black-opacity-50);
+  //background-color: var(--color-black-opacity-50);
   display: flex;
   justify-content: center;
   padding: calc(#{vars.$padding-default} * 2);
   min-height: calc(100vh - 100px);
+  background: linear-gradient(
+                  to bottom,
+                  rgba(0, 0, 0, .02) 0%,
+                  rgba(0, 0, 0, .6) 25%,
+                  rgba(0, 0, 0, .6) 75%,
+                  rgba(0, 0, 0, .02) 100%
+  );
+
 
   &__container {
     background-color: var(--color-green-less-dark);

@@ -36,6 +36,17 @@ function App() {
             if (window.navigator && window.navigator.splashscreen) {
                 window.navigator.splashscreen.hide();
             }
+            if (window.StatusBar) {
+                window.StatusBar.backgroundColorByHexString('#1a291a');
+            }
+            if (window.navigationbar) {
+                window.navigationbar.colorByHexString('#1a291a');
+            }
+        }, false);
+        document.addEventListener('admob.ad.dismiss', async () => {
+            if (window.StatusBar) {
+                window.StatusBar.backgroundColorByHexString('#1a291a');
+            }
         }, false);
     }, []);
 

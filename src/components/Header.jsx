@@ -97,6 +97,7 @@ const Header = ({clearOptions, setMainHomePageLoad, mainMenuVisible, setMainMenu
                         <option value="et">Eesti (Estonian)</option>
                         <option value="en">English (English)</option>
                         <option value="el">Ελληνικά (Greek)</option>
+                        <option value="es">Español (Spanish)</option>
                         <option value="yo">Èdè Yorùbá (Yoruba)</option>
                         <option value="fr">Français (French)</option>
                         <option value="ha">Hausa (Hausa)</option>
@@ -207,7 +208,7 @@ const Header = ({clearOptions, setMainHomePageLoad, mainMenuVisible, setMainMenu
                     </ul>
                 </nav>
                 <div dir="ltr">
-                    <p>Flasho v1.0.1 {window.cordova ? 'App' : 'Browser'} / <span
+                    <p>Flasho v1.0.88 test {window.cordova ? 'App' : 'Browser'} / <span
                         className="uppercase">{i18n.language}</span></p>
                 </div>
             </div>

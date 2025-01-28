@@ -1,7 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import { showInterstitial } from '../../../services/admobService';
 import { useTranslation } from "react-i18next";
 import { setCookie, getCookie, removeCookie, hasCookie } from '../../../utils/cookies';
+
 const numberCookieMinutes = 5;
 
 const AdButton = ({ timerAccess, setTimerAccess }) => {

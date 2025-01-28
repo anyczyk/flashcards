@@ -1,5 +1,6 @@
 // db.js
 import { openDB } from 'idb';
+import {assignWith} from "lodash";
 
 const DB_NAME = 'flashcardsDB';
 const STORE_NAME = 'flashcards';
@@ -85,12 +86,16 @@ export async function editFlashcardInDB(
     }
 }
 
-export async function clearAllFlashcards() {
+export async function clearAllFlashcards(setPre, loadD) {
     const db = await initDB();
     const tx = db.transaction(STORE_NAME, 'readwrite');
     try {
         await tx.store.clear();
         await tx.done;
+        if(setPre && loadD) {
+            await setPre(false);
+            await loadD();
+        }
     } catch (error) {
         console.error('Error clearing flashcards:', error);
     }

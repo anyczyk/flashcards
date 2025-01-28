@@ -110,6 +110,7 @@ $padding-temp: vars.$padding-default;
   box-shadow: 0 0 4px var(--color-black);
   max-width: 600px;
   width: 100%;
+  z-index: 6000;
 }
 
 html[dir=rtl] {

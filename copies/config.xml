@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.flasho.flasho" version="1.0.0" android-versionCode="10047" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Flasho</name>
+    <description>Sample Apache Cordova App</description>
+    <author email="dev@cordova.apache.org" href="https://cordova.apache.org">
+        Apache Cordova Team
+    </author>
+    <content src="index.html" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <preference name="AndroidPersistentFileLocation" value="Compatibility" />
+    <preference name="StatusBarBackgroundColor" value="#1a291a" />
+    <preference name="NavigationBarBackgroundColor" value="#1a291a" />
+    <preference name="StatusBarOverlaysWebView" value="false" />
+    <preference name="StatusBarPadding" value="true" />
+    <preference name="Orientation" value="portrait" />
+    <preference name="SplashScreen" value="screen" />
+    <preference name="AutoHideSplashScreen" value="true" />
+    <preference name="SplashScreenDelay" value="3000" />
+    <preference name="FadeSplashScreen" value="false" />
+    <preference name="ShowSplashScreenSpinner" value="false" />
+    <preference name="AndroidPlayBillingMode" value="billingv6" />
+    <plugin name="cordova-plugin-file" spec="^6.0.2" />
+    <plugin name="cordova-plugin-android-permissions" spec="^1.0.0" />
+    <plugin name="cordova-plugin-simple-file-chooser" spec="^1.0.0" />
+    <plugin name="cordova-plugin-filechooser" spec="^1.0.0" />
+    <plugin name="cordova-plugin-documentpicker" spec="^1.0.0" />
+    <plugin name="cordova-plugin-x-socialsharing" spec="^6.0.3" />
+    <plugin name="cordova-plugin-purchase" spec="^13.12.1" />
+    <plugin name="admob-plus-cordova" spec="1.28.0">
+        <variable name="APP_ID_ANDROID" value="ca-app-pub-4263972941440160~3007691342" />
+    </plugin>
+    <plugin name="cordova-plugin-statusbar" spec="^2.4.3" />
+    <platform name="android">
+        <config-file parent="/*" target="AndroidManifest.xml">
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+            <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+        </config-file>
+        <uses-permission android:name="com.android.vending.BILLING" />
+        <resource-file overwrite="true" src="resources/android/values/themes.xml" target="app/src/main/res/values/themes.xml" />
+        <resource-file overwrite="true" src="resources/android/values/colors.xml" target="app/src/main/res/values/colors.xml" />
+        <icon density="ldpi" src="resources/android/icon/mipmap-ldpi/ic_launcher.png" />
+        <icon density="mdpi" src="resources/android/icon/mipmap-mdpi/ic_launcher.png" />
+        <icon density="hdpi" src="resources/android/icon/mipmap-hdpi/ic_launcher.png" />
+        <icon density="xhdpi" src="resources/android/icon/mipmap-xhdpi/ic_launcher.png" />
+        <icon density="xxhdpi" src="resources/android/icon/mipmap-xxhdpi/ic_launcher.png" />
+        <icon density="xxxhdpi" src="resources/android/icon/mipmap-xxxhdpi/ic_launcher.png" />
+        <preference name="AndroidWindowSplashScreenAnimatedIcon" value="resources/splash.png" />
+    </platform>
+</widget>

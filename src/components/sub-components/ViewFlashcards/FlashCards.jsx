@@ -1,11 +1,12 @@
 // FlashCards.jsx
-import React, {useEffect, useRef, useState, useCallback, useMemo} from "react";
+import React, {useEffect, useRef, useState, useCallback, useMemo, useContext} from "react";
 import { AnimatePresence, motion, useAnimation } from "framer-motion";
 import { useTranslation } from 'react-i18next';
 import { editFlashcardInDB } from "../../../db";
 import useWcagModal from "../../../hooks/useWcagModal";
 import { showInterstitial } from '../../../services/admobService';
-import {parseCardText, stripBoldTags} from '../../../utils/formatTextes';
+import {parseCardText, stripFormattingTags} from '../../../utils/formatTextes';
+import {FlashcardContext} from "../../../context/FlashcardContext";
 
 const FlashCards = ({
                         syntAudioRef,
@@ -39,6 +40,7 @@ const FlashCards = ({
     const [quickEdit, setQuickEdit] = useState({});
     const modalRef = useRef(null);
     const controls = useAnimation();
+    const { rtlCodeLangs } = useContext(FlashcardContext);
 
     useWcagModal(quickEdit, setQuickEdit, modalRef);
 
@@ -68,6 +70,8 @@ const FlashCards = ({
                 back: card.back,
                 frontDesc: card.frontDesc,
                 backDesc: card.backDesc,
+                langFront: card.langFront,
+                langBack: card.langBack
             },
         }));
         setOpenCardId(card.id);
@@ -133,9 +137,9 @@ const FlashCards = ({
             const card = twoCards.find(c => c.id === id);
             if (card) {
                 if (reversFrontBack) {
-                    handleSpeak(card.front, card.langFront);
+                    handleSpeak(stripFormattingTags(card.front), card.langFront);
                 } else {
-                    handleSpeak(card.back, card.langBack);
+                    handleSpeak(stripFormattingTags(card.back), card.langBack);
                 }
             }
         }
@@ -181,41 +185,30 @@ const FlashCards = ({
     const filteredFlashcardCount = useMemo(() => getFilteredFlashcardCount('learningOnly'), [getFilteredFlashcardCount]);
 
 
-    const CardFrontOrBack = useCallback(({ card, cardLang }) => {
-        return (
-            <div className="o-list-flashcards__text o-list-flashcards__front o-default-box">
-                <p
-                    role="button"
-                    onClick={() => handleSpeak(card, cardLang)}
-                >
-                <span className="o-list-flashcards__lang">
-                    <span className="o-list-flashcards__lang-code">{cardLang}</span>
-                    <i className="icon-volume" />
-                </span>
-                    {card}
-                </p>
-            </div>
-        );
-    }, [handleSpeak]);
-
-    const CardFrontDescOrBackDesc = useCallback(({ card, cardLang }) => {
+    const CardSide = useCallback(({ type, card, cardLang }) => {
         if (!card) return null;
         const handleClick = () => {
-            const cleanCard = stripBoldTags(card);
+            const cleanCard = stripFormattingTags(card);
             handleSpeak(cleanCard, cardLang);
         };
-        return (
-            <p
+
+        const InsideContent = () => {
+            return <p
                 role="button"
                 onClick={handleClick}
             >
-            <span className="o-list-flashcards__lang">
-                <span className="o-list-flashcards__lang-code">{cardLang}</span>
-                <i className="icon-volume" />
-            </span>
+                    <span className="o-list-flashcards__lang">
+                        <span className="o-list-flashcards__lang-code">{cardLang}</span>
+                        <i className="icon-volume"/>
+                    </span>
                 {parseCardText(card)}
-            </p>
-        );
+            </p>;
+        };
+
+        return (type === 'card-front-or-back' ?
+            <div className="o-list-flashcards__text o-list-flashcards__front o-default-box">
+                <InsideContent />
+            </div> : <InsideContent />)
     }, [handleSpeak]);
 
 
@@ -277,7 +270,7 @@ const FlashCards = ({
                                         className="o-list-flashcards__single-card"
                                         key={card.id}
                                         drag="x"
-                                        dragConstraints={{ left: 0, right: 0 }}
+                                        dragConstraints={{left: 0, right: 0}}
                                         dragElastic={1}
                                         whileDrag={{
                                             scale: 1.03,
@@ -289,7 +282,7 @@ const FlashCards = ({
                                                         : 0,
                                         }}
                                         onDrag={(event, info) => {
-                                            const { offset } = info;
+                                            const {offset} = info;
                                             const threshold = 0;
                                             if (Math.abs(offset.x) > threshold) {
                                                 const direction = offset.x > 0 ? 'prawo' : 'lewo';
@@ -301,7 +294,7 @@ const FlashCards = ({
                                         }}
                                         onDragEnd={(event, info) => {
                                             const threshold = 50;
-                                            const { offset } = info;
+                                            const {offset} = info;
                                             const absX = Math.abs(offset.x);
 
                                             if (absX > threshold) {
@@ -310,7 +303,7 @@ const FlashCards = ({
                                             }
 
                                             setDraggingDirection(prev => {
-                                                const newDrag = { ...prev };
+                                                const newDrag = {...prev};
                                                 delete newDrag[card.id];
                                                 return newDrag;
                                             });
@@ -326,12 +319,12 @@ const FlashCards = ({
                                             }
 
                                             setAnimatingCards(prev => {
-                                                const newAnim = { ...prev };
+                                                const newAnim = {...prev};
                                                 delete newAnim[card.id];
                                                 return newAnim;
                                             });
                                             setDraggingDirection(prev => {
-                                                const newDrag = { ...prev };
+                                                const newDrag = {...prev};
                                                 delete newDrag[card.id];
                                                 return newDrag;
                                             });
@@ -348,20 +341,25 @@ const FlashCards = ({
                                             }`}
                                         ></div>
 
-                                        <CardFrontOrBack
-                                            card={cardText}
-                                            cardLang={cardLang}
-                                        />
-                                        <hr />
+                                        <div className="o-list-flashcards__text o-list-flashcards__front o-default-box">
+                                            <CardSide
+                                                type={'card-front-or-back'}
+                                                card={cardText}
+                                                cardLang={cardLang}
+                                            />
+                                        </div>
+                                        <hr/>
                                         <div className="o-animated-wrap text-center">
                                             {checkedCards.has(card.id) ? <div className="o-animated-dropdown">
                                                     {reversFrontBack ? (
-                                                        <CardFrontOrBack
+                                                        <CardSide
+                                                            type={'card-front-or-back'}
                                                             card={card.front}
                                                             cardLang={card.langFront}
                                                         />
                                                     ) : (
-                                                        <CardFrontOrBack
+                                                        <CardSide
+                                                            type={'card-front-or-back'}
                                                             card={card.back}
                                                             cardLang={card.langBack}
                                                         />
@@ -374,24 +372,29 @@ const FlashCards = ({
 
 
                                         {(card.frontDesc || card.backDesc) && <div className="o-list-flashcards__desc">
-                                            <CardFrontDescOrBackDesc
+                                            <CardSide
+                                                type={'card-front-desc-or-back-desc'}
                                                 card={cardTextDesc}
                                                 cardLang={cardLang}
                                             />
 
-                                            {checkedCards.has(card.id) ? <div className="o-animated-dropdown"><hr/>{(
-                                                reversFrontBack ? (
-                                                    <CardFrontDescOrBackDesc
-                                                        card={card.frontDesc}
-                                                        cardLang={card.langFront}
-                                                    />
-                                                ) : (
-                                                    <CardFrontDescOrBackDesc
-                                                        card={card.backDesc}
-                                                        cardLang={card.langBack}
-                                                    />
-                                                )
-                                            )}</div> : ''}
+                                            {checkedCards.has(card.id) ? <div className="o-animated-dropdown">
+                                                <hr/>
+                                                {(
+                                                    reversFrontBack ? (
+                                                        <CardSide
+                                                            type={'card-front-desc-or-back-desc'}
+                                                            card={card.frontDesc}
+                                                            cardLang={card.langFront}
+                                                        />
+                                                    ) : (
+                                                        <CardSide
+                                                            type={'card-front-desc-or-back-desc'}
+                                                            card={card.backDesc}
+                                                            cardLang={card.langBack}
+                                                        />
+                                                    )
+                                                )}</div> : ''}
                                         </div>}
 
                                         <div className="o-list-flashcards__know">
@@ -503,6 +506,7 @@ const FlashCards = ({
                                         value={quickEdit[openCardId].front}
                                         maxLength="1200"
                                         onChange={(e) => handleQuickEditChange(openCardId, 'front', e.target.value)}
+                                        dir={rtlCodeLangs.includes(quickEdit[openCardId].langFront) ? 'rtl' : 'ltr'}
                                     />
                                     <label
                                         className="color-white"
@@ -515,6 +519,7 @@ const FlashCards = ({
                                         maxLength="1200"
                                         value={quickEdit[openCardId].frontDesc}
                                         onChange={(e) => handleQuickEditChange(openCardId, 'frontDesc', e.target.value)}
+                                        dir={rtlCodeLangs.includes(quickEdit[openCardId].langFront) ? 'rtl' : 'ltr'}
                                     />
                                 </p>
                                 <hr className="order-2" />
@@ -530,9 +535,8 @@ const FlashCards = ({
                                         maxLength="1200"
                                         id={`back-${openCardId}`}
                                         value={quickEdit[openCardId].back}
-                                        onChange={(e) =>
-                                            handleQuickEditChange(openCardId, 'back', e.target.value)
-                                        }
+                                        onChange={(e) => handleQuickEditChange(openCardId, 'back', e.target.value)}
+                                        dir={rtlCodeLangs.includes(quickEdit[openCardId].langBack) ? 'rtl' : 'ltr'}
                                     />
                                     <label
                                         className="color-white"
@@ -544,9 +548,8 @@ const FlashCards = ({
                                         id={`back-desc-${openCardId}`}
                                         maxLength="1200"
                                         value={quickEdit[openCardId].backDesc}
-                                        onChange={(e) =>
-                                            handleQuickEditChange(openCardId, 'backDesc', e.target.value)
-                                        }
+                                        onChange={(e) => handleQuickEditChange(openCardId, 'backDesc', e.target.value)}
+                                        dir={rtlCodeLangs.includes(quickEdit[openCardId].langBack) ? 'rtl' : 'ltr'}
                                     />
                                 </p>
                                 <ul className="o-list-buttons-clear o-list-buttons-clear--nowrap order-4">

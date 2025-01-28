@@ -48,7 +48,12 @@ function Search() {
             const filtered = flashcards.filter(
                 (card) =>
                     (card.front && card.front.toLowerCase().includes(lowerTerm)) ||
-                    (card.back && card.back.toLowerCase().includes(lowerTerm))
+                    (card.back && card.back.toLowerCase().includes(lowerTerm)) ||
+                    (card.frontDesc && card.frontDesc.toLowerCase().includes(lowerTerm)) ||
+                    (card.backDesc && card.backDesc.toLowerCase().includes(lowerTerm)) ||
+                    (card.front && card.front.toLowerCase().includes(lowerTerm))
+                    // || (card.category && card.category.toLowerCase().includes(lowerTerm)) ||
+                    // (card.superCategory && card.superCategory.toLowerCase().includes(lowerTerm))
             );
             setResults(filtered);
         }, 500),

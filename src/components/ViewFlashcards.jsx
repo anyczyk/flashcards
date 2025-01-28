@@ -10,6 +10,7 @@ import FlashCards from "./sub-components/ViewFlashcards/FlashCards";
 import CategoryList from "./sub-components/ViewFlashcards/CategoryList";
 import { calculateReadingTimeInMs } from '../utils/calculateReadingTimeInMs';
 import { FlashcardContext } from '../context/FlashcardContext';
+import {parseCardText, stripFormattingTags} from '../utils/formatTextes';
 
 function ViewFlashcards({ clearInsomnia, mainHomePageLoad, setMainHomePageLoad }) {
     const { t } = useTranslation();
@@ -153,7 +154,7 @@ function ViewFlashcards({ clearInsomnia, mainHomePageLoad, setMainHomePageLoad }
 
                 let waiting1 = 1000;
                 if (syntAudioRef.current) {
-                    await speakText(firstSideText, firstSideLang);
+                    await speakText(stripFormattingTags(firstSideText), firstSideLang);
                     if (isAutoPlayCancelledRef.current) return;
                 } else {
                     waiting1 = calculateReadingTimeInMs(firstSideText);
@@ -170,7 +171,7 @@ function ViewFlashcards({ clearInsomnia, mainHomePageLoad, setMainHomePageLoad }
                 if (syntAudioRef.current) {
                     const secondSideText = reversFrontBack ? currentCard.front : currentCard.back;
                     const secondSideLang = reversFrontBack ? currentCard.langFront : currentCard.langBack;
-                    await speakText(secondSideText, secondSideLang);
+                    await speakText(stripFormattingTags(secondSideText), secondSideLang);
                     if (isAutoPlayCancelledRef.current) return;
                 } else {
                     waiting2 = calculateReadingTimeInMs(firstSideText);
@@ -279,9 +280,9 @@ function ViewFlashcards({ clearInsomnia, mainHomePageLoad, setMainHomePageLoad }
                 stopSpeaking();
                 lastSpokenCardIdRef.current = topCard.id;
                 if (reversFrontBack) {
-                    handleSpeak(topCard.back, topCard.langBack);
+                    handleSpeak(stripFormattingTags(topCard.back), topCard.langBack);
                 } else {
-                    handleSpeak(topCard.front, topCard.langFront);
+                    handleSpeak(stripFormattingTags(topCard.front), topCard.langFront);
                 }
             }
         } else {

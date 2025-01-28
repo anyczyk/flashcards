@@ -38,6 +38,7 @@ label {
 
 p, textarea, input, select {
   font-size: 16px;
+  font-family: Arial, sans-serif;
 }
 
 h2, h3, h4, h5, h6 {
@@ -56,6 +57,10 @@ hr {
   margin-bottom: vars.$padding-default;
   margin-top: 0;
   width: 100%;
+}
+
+.text-small {
+  font-size: 12px;
 }
 
 .mt-1 {
@@ -87,6 +92,10 @@ hr {
 
 .justify-content-left {
   justify-content: start !important;
+}
+
+.gap-05 {
+  gap: calc(#{$padding-temp} / 2);
 }
 
 .gap-1 {
@@ -455,6 +464,8 @@ hr {
 
   > li {
     position: relative;
+    z-index: 2;
+    transition: opacity 250ms ease-in-out;
   }
 
   &--edit {
@@ -800,7 +811,7 @@ hr {
 }
 
 .o-preloader {
-  background-color: black;
+  background-color: var(--color-green-less-dark);
   position: fixed;
   inset: 0;
   z-index: 9999999;
@@ -949,3 +960,54 @@ html[dir=rtl] {
     font-weight: 400;
   }
 }
+
+.o-textarea-advanced {
+  & &__tools {
+    padding: calc(#{$padding-temp} / 2);
+    background-color: var(--color-black-opacity-10);
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    button {
+      min-height: 32px;
+      width: 32px !important;
+    }
+  }
+
+  textarea {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
+
+.o-install-item {
+  position: relative;
+  button {
+    padding-right: calc($padding-temp * 4);
+  }
+  &__checked {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    translate: 0 -50%;
+
+    &-icon {
+      font-size: 20px;
+      pointer-events: none;
+    }
+    &-text {
+      font-size: 10px;
+      display: block;
+      position: absolute;
+      right: 0;
+      bottom: -10px;
+    }
+  }
+}
+
+.o-button-add-flashcard {
+  z-index: 0 !important;
+}
+
+//[data-rfd-scroll-container-context-id] .o-button-add-flashcard--bottom {
+//  opacity: .8;
+//}

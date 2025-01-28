@@ -6,7 +6,7 @@ import useWcagModal from "../../../hooks/useWcagModal";
 import { FlashcardContext } from "../../../context/FlashcardContext";
 import SelectSuperCategory from "../common/SelectSuperCategory";
 import SelectCategory from "../common/SelectCategory";
-import { getAllFlashcards } from "../../../db";
+import { getAllFlashcards, clearAllFlashcards } from "../../../db";
 import cardsExport from "../../../utils/cardsExport";
 import { removeItemFromLocalStorage } from "../../../utils/storage";
 
@@ -120,7 +120,8 @@ const ModalEdit = ({
         removeFlashcard,
         editFlashcard,
         setOrderedCategories,
-        superCategoriesArray
+        superCategoriesArray,
+        loadData
     } = useContext(FlashcardContext);
 
     const modalRef = useRef(null);
@@ -165,9 +166,22 @@ const ModalEdit = ({
 
     const handleQuickEditSave = async (type, action) => {
         setPreloader(true);
+        if (type === 'remove-all-flashcards') {
+            // console.log("start remove");
+            localStorage.removeItem("categoryOrder");
+            localStorage.removeItem("subCategoriesOrderStorage");
+            localStorage.removeItem("openDropdownSuperCategory");
+            clearAllFlashcards(setPreloader, loadData);
+            // window.indexedDB.deleteDatabase('flashcardsDB').onsuccess = () => {
+            //     // console.log("Base clear");
+            //     loadData();
+            //     setPreloader(false);
+            // }
+            return;
+        }
+
         const exportToFile = [];
         let isRemovedFromLocalStorage = false;
-
         const promises = flashcards.map((card) => {
             // console.log("c1");
             if (type === 'super-category') {
@@ -297,12 +311,13 @@ const ModalEdit = ({
                     card.backDesc
                 );
             }
-            else if (type === 'remove-all-flashcards') {
-                localStorage.removeItem("categoryOrder");
-                localStorage.removeItem("subCategoriesOrderStorage");
-                localStorage.removeItem("openDropdownSuperCategory");
-                return removeFlashcard(card.id);
-            }
+            // else if (type === 'remove-all-flashcards') {
+            //     console.log("x");
+            //     localStorage.removeItem("categoryOrder");
+            //     localStorage.removeItem("subCategoriesOrderStorage");
+            //     localStorage.removeItem("openDropdownSuperCategory");
+            //     return removeFlashcard(card.id);
+            // }
             return null;
         });
 
@@ -521,7 +536,7 @@ const ModalEdit = ({
                                         onClick={() => handleQuickEditSave(nameType, 'reset')}
                                     >
                                         <i className="icon-arrows-cw"></i>{" "}
-                                        <span>x {t('progress_reset')}</span>
+                                        <span>{t('progress_reset')}</span>
                                     </button>
                                 </li>
                                 <li>

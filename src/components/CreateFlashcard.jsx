@@ -1,5 +1,5 @@
 // CreateFlashcard.jsx
-import React, { useState, useEffect, useCallback, useContext } from 'react';
+import React, {useState, useEffect, useCallback, useContext, useRef} from 'react';
 import PropTypes from 'prop-types';
 import { getCordovaLanguage } from '../utils/getLanguage';
 import { loadLanguages } from '../utils/loadLanguages';
@@ -10,6 +10,7 @@ import SelectSuperCategory from "./sub-components/common/SelectSuperCategory";
 import SelectCategory from "./sub-components/common/SelectCategory";
 import { useLocation, useNavigate } from "react-router-dom";
 import { FlashcardContext } from "../context/FlashcardContext";
+import TextAreaAdvanced from "./sub-components/common/TextAreaAdvanced";
 
 function encodeSuperCategoryKey(superCategory) {
     return 'subCategoryOrder_' + btoa(unescape(encodeURIComponent(superCategory)));
@@ -39,6 +40,10 @@ function CreateFlashcard({ addFlashcard, categories, superCategoriesArray }) {
     const [categoriesDependentOnSuperCategory, setCategoriesDependentOnSuperCategory] = useState([]);
     const [currentSelectSuperCategory, setCurrentSelectSuperCategory] = useState('');
     const [continueAdd, setContinueAdd] = useState(false);
+    const frontDescRef = useRef(null);
+    const backDescRef = useRef(null);
+    const frontRef = useRef(null);
+    const backRef = useRef(null);
 
     useEffect(() => {
         if (getSuperCategory !== null && getSuperCategory !== undefined) {
@@ -194,6 +199,7 @@ function CreateFlashcard({ addFlashcard, categories, superCategoriesArray }) {
         }
     };
 
+
     useEffect(() => {
         let timer;
         if (flashcardCreated) {
@@ -204,42 +210,26 @@ function CreateFlashcard({ addFlashcard, categories, superCategoriesArray }) {
         return () => clearTimeout(timer);
     }, [flashcardCreated]);
 
+
     return (
         <div className="o-page-create-flashcard">
             <h2>{t('add_flashcard')}</h2>
-            <hr />
+            <hr/>
             <form className="o-card" onSubmit={handleSubmit}>
                 <div className="o-card__content">
-                    <p>
-                        <label htmlFor="o-front">
+                    <div className="o-default-box">
+                        <label htmlFor="o-textarea-front">
                             <span className="color-red">*</span> {t('front')}:
                         </label>
-                        <textarea
-                            value={front}
-                            onChange={(e) => setFront(e.target.value)}
-                            rows="3"
-                            cols="30"
-                            id="o-front"
-                            dir={rtlCodeLangs.includes(langFront) ? 'rtl' : 'ltr'}
-                            maxLength="1200"
-                            required
-                        />
-                    </p>
-                    <p>
-                        <label htmlFor="o-front-desc">
+                        <TextAreaAdvanced id="o-textarea-front" ref={frontRef} set={setFront} state={front} langForB={langFront} required={true} placeholder={t('enter_text_front')} />
+                    </div>
+                    <div className="o-default-box">
+                        <label htmlFor="o-textarea-front-desc">
                             {t('description')}:
                         </label>
-                        <textarea
-                            value={frontDesc}
-                            onChange={(e) => setFrontDesc(e.target.value)}
-                            rows="3"
-                            cols="30"
-                            id="o-front-desc"
-                            maxLength="1200"
-                            dir={rtlCodeLangs.includes(langFront) ? 'rtl' : 'ltr'}
-                        />
-                    </p>
-                    <p>
+                        <TextAreaAdvanced id="o-textarea-front-desc" ref={frontDescRef} set={setFrontDesc} state={frontDesc} langForB={langFront} required={false} placeholder={t('enter_text_front_desc')} />
+                    </div>
+                    <div className="o-default-box">
                         <label htmlFor="lang-front">
                             {t('language_code')}:
                         </label>
@@ -249,38 +239,21 @@ function CreateFlashcard({ addFlashcard, categories, superCategoriesArray }) {
                             id={'lang-front'}
                             setFunction={setLangFront}
                         />
-                    </p>
+                    </div>
                     <hr/>
-                    <p>
-                        <label htmlFor="o-back">
+                    <div className="o-default-box">
+                        <label htmlFor="o-textarea-back">
                             <span className="color-red">*</span> {t('back')}:
                         </label>
-                        <textarea
-                            value={back}
-                            onChange={(e) => setBack(e.target.value)}
-                            rows="3"
-                            cols="30"
-                            id="o-back"
-                            maxLength="1200"
-                            dir={rtlCodeLangs.includes(langBack) ? 'rtl' : 'ltr'}
-                            required
-                        />
-                    </p>
-                    <p>
-                        <label htmlFor="o-back-desc">
+                        <TextAreaAdvanced id="o-textarea-back" ref={backRef} set={setBack} state={back} langForB={langBack} required={true} placeholder={t('enter_text_back')} />
+                    </div>
+                    <div className="o-default-box">
+                        <label htmlFor="o-textarea-back-desc">
                             {t('description')}:
                         </label>
-                        <textarea
-                            value={backDesc}
-                            onChange={(e) => setBackDesc(e.target.value)}
-                            rows="3"
-                            cols="30"
-                            id="o-back-desc"
-                            maxLength="1200"
-                            dir={rtlCodeLangs.includes(langFront) ? 'rtl' : 'ltr'}
-                        />
-                    </p>
-                    <p>
+                        <TextAreaAdvanced id="o-textarea-back-desc" ref={backDescRef} set={setBackDesc} state={backDesc} langForB={langBack} required={false} placeholder={t('enter_text_back_desc')} />
+                    </div>
+                    <div className="o-default-box">
                         <label htmlFor="lang-back">
                             {t('language_code')}:
                         </label>
@@ -291,7 +264,7 @@ function CreateFlashcard({ addFlashcard, categories, superCategoriesArray }) {
                             id={'lang-back'}
                             setFunction={setLangBack}
                         />
-                    </p>
+                    </div>
                     <hr/>
 
                     <SelectSuperCategory

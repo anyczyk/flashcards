@@ -148,7 +148,7 @@ const CategoryListDragDrop = ({
                         ref={provided.innerRef}
                         dir="ltr"
                     >
-                        <li className="o-button-add-flashcard">
+                        <li className="o-button-add-flashcard o-button-add-flashcard--top">
                             <button
                                 onClick={() => navigate('/create?addFirstOrLast=first&superCategory=')}
                                 type="button"
@@ -265,7 +265,7 @@ const CategoryListDragDrop = ({
                                                                         ref={subProvided.innerRef}
                                                                         {...subProvided.droppableProps}
                                                                     >
-                                                                        <li className="o-button-add-flashcard">
+                                                                        <li className="o-button-add-flashcard o-button-add-flashcard--top">
                                                                             <button
                                                                                 onClick={() =>
                                                                                     navigate(`/create?addFirstOrLast=first&superCategory=${cat}`)
@@ -365,7 +365,7 @@ const CategoryListDragDrop = ({
                                                                                 </Draggable>
                                                                             );
                                                                         })}
-                                                                        <li className="o-button-add-flashcard">
+                                                                        <li className="o-button-add-flashcard o-button-add-flashcard--bottom">
                                                                             <button
                                                                                 onClick={() =>
                                                                                     navigate(`/create?addFirstOrLast=last&superCategory=${cat}`)
@@ -443,7 +443,7 @@ const CategoryListDragDrop = ({
                                 </Draggable>
                             );
                         })}
-                        <li className="o-button-add-flashcard">
+                        <li className="o-button-add-flashcard o-button-add-flashcard--bottom">
                             <button
                                 onClick={() => navigate('/create?addFirstOrLast=last&superCategory=')}
                                 type="button"

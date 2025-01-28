@@ -71,6 +71,7 @@ export const FlashcardProvider = ({ children }) => {
         const storedAudio = getLocalStorage('syntAudio');
         return storedAudio !== null ? storedAudio : true;
     });
+    const [isPremium, setIsPremium] = useState(false);
 
     useEffect(() => {
         setLocalStorage("categoryOrder", currentLocalStorageCategoryOrder);
@@ -204,6 +205,7 @@ export const FlashcardProvider = ({ children }) => {
     return (
         <FlashcardContext.Provider
             value={{
+                isPremium, setIsPremium,
                 languageMap,
                 rtlLangs, rtlCodeLangs,
                 dirAttribute, setDirAttribute,

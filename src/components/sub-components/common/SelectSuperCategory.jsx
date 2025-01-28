@@ -50,7 +50,7 @@ const SelectSuperCategory = ({
 
     return (
         <>
-            <p>
+            <div className="o-default-box">
                 <label htmlFor="o-super-category">{t('folder')}:</label>
                 <select
                     ref={refSelectTextSuperCategory}
@@ -67,9 +67,9 @@ const SelectSuperCategory = ({
                         </option>
                     ))}
                 </select>
-            </p>
+            </div>
 
-            <p className={`o-text-input-with-clear ${superCategory ? 'o-text-input-with-clear--active' : ''}`}>
+            <div className={`o-default-box o-text-input-with-clear ${superCategory ? 'o-text-input-with-clear--active' : ''}`}>
                 <input
                     ref={refInputTextSuperCategory}
                     type="text"
@@ -87,7 +87,7 @@ const SelectSuperCategory = ({
                         <i className="icon-cancel" />
                     </button>
                 )}
-            </p>
+            </div>
         </>
     );
 };
