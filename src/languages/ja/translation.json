@@ -134,5 +134,13 @@
   "enter_text_front": "表紙のテキストを入力してください",
   "enter_text_back": "裏表紙のテキストを入力してください",
   "enter_text_front_desc": "表紙の説明テキストを入力してください",
-  "enter_text_back_desc": "裏表紙の説明テキストを入力してください"
+  "enter_text_back_desc": "裏表紙の説明テキストを入力してください",
+  "turn_off_shadows": "影をオフにする",
+  "turn_off_automatic_audio": "自動オーディオをオフにする",
+  "buy_premium_desc": "広告の削除に加えて、将来的に追加される可能性のあるフラッシュカードを含むすべてのフラッシュカードセットに無制限にアクセスできるプレミアムアカウントを取得してください。",
+  "buy_premium_account": "プレミアムアカウントを購入",
+  "turn_on_shadows": "影をオンにする",
+  "turn_on_automatic_audio": "自動オーディオをオンにする",
+  "premium_account": "プレミアムアカウント",
+  "active": "アクティブ"
 }

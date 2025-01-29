@@ -134,5 +134,13 @@
   "enter_text_front": "Ön səhifə üçün mətn daxil edin",
   "enter_text_back": "Arxa səhifə üçün mətn daxil edin",
   "enter_text_front_desc": "Ön səhifə təsviri üçün mətn daxil edin",
-  "enter_text_back_desc": "Arxa səhifə təsviri üçün mətn daxil edin"
+  "enter_text_back_desc": "Arxa səhifə təsviri üçün mətn daxil edin",
+  "turn_off_shadows": "Kölgələri söndür",
+  "turn_off_automatic_audio": "Avtomatik səsi söndür",
+  "buy_premium_desc": "Reklamları aradan qaldırmaqla yanaşı, gələcəkdə əlavə oluna biləcək bütün fləşkart dəstlərinə limitsiz giriş təmin edən Premium hesabı əldə edin.",
+  "buy_premium_account": "Premium hesabı al",
+  "turn_on_shadows": "Kölgələri yandır",
+  "turn_on_automatic_audio": "Avtomatik səsi yandır",
+  "premium_account": "Premium hesab",
+  "active": "Aktiv"
 }

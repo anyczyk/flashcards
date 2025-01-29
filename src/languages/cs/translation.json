@@ -134,5 +134,13 @@
   "enter_text_front": "Zadejte text pro přední stranu",
   "enter_text_back": "Zadejte text pro zadní stranu",
   "enter_text_front_desc": "Zadejte popis textu pro přední stranu",
-  "enter_text_back_desc": "Zadejte popis textu pro zadní stranu"
+  "enter_text_back_desc": "Zadejte popis textu pro zadní stranu",
+  "turn_off_shadows": "Vypnout stíny",
+  "turn_off_automatic_audio": "Vypnout automatický zvuk",
+  "buy_premium_desc": "Získejte účet Premium, který kromě odstranění reklam poskytuje neomezený přístup ke všem sadám kartiček, včetně případných kartiček, které se mohou objevit v budoucnu.",
+  "buy_premium_account": "Koupit Premium účet",
+  "turn_on_shadows": "Zapnout stíny",
+  "turn_on_automatic_audio": "Zapnout automatický zvuk",
+  "premium_account": "Premium účet",
+  "active": "Aktivní"
 }

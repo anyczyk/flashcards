@@ -134,5 +134,13 @@
   "enter_text_front": "Shigar da rubutu don shafin gaba",
   "enter_text_back": "Shigar da rubutu don shafin baya",
   "enter_text_front_desc": "Shigar da bayanin rubutu don shafin gaba",
-  "enter_text_back_desc": "Shigar da bayanin rubutu don shafin baya"
+  "enter_text_back_desc": "Shigar da bayanin rubutu don shafin baya",
+  "turn_off_shadows": "Kashe inuwa",
+  "turn_off_automatic_audio": "Kashe sautin ta atomatik",
+  "buy_premium_desc": "Sami asusun Premium wanda, na mgbakwunye na iwepuwa da tallace-tallace, yana bayar da damar mara iyaka zuwa dukkan saitunan flashcard, ciki har da duk flashcard da za a iya ƙara a nan gaba.",
+  "buy_premium_account": "Saya asusun Premium",
+  "turn_on_shadows": "Kunna inuwa",
+  "turn_on_automatic_audio": "Kunna sautin ta atomatik",
+  "premium_account": "Asusun Premium",
+  "active": "Mai aiki"
 }

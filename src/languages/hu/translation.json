@@ -134,5 +134,13 @@
   "enter_text_front": "Szöveg bevitele az elülső oldalhoz",
   "enter_text_back": "Szöveg bevitele a hátsó oldalhoz",
   "enter_text_front_desc": "Szöveg leírása az elülső oldalhoz",
-  "enter_text_back_desc": "Szöveg leírása a hátsó oldalhoz"
+  "enter_text_back_desc": "Szöveg leírása a hátsó oldalhoz",
+  "turn_off_shadows": "Árnyékok kikapcsolása",
+  "turn_off_automatic_audio": "Automatikus hang kikapcsolása",
+  "buy_premium_desc": "Szerezzen Premium fiókot, amely a hirdetések eltávolítása mellett korlátlan hozzáférést biztosít minden flashcard készlethez, beleértve a jövőben hozzáadható flashcardokat is.",
+  "buy_premium_account": "Premium fiók vásárlása",
+  "turn_on_shadows": "Árnyékok bekapcsolása",
+  "turn_on_automatic_audio": "Automatikus hang bekapcsolása",
+  "premium_account": "Premium fiók",
+  "active": "Aktív"
 }

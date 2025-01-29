@@ -134,5 +134,13 @@
   "enter_text_front": "ໃສ່ຂໍ້ຄວາມສໍາລັບຫນ້າທໍາອິດ",
   "enter_text_back": "ໃສ່ຂໍ້ຄວາມສໍາລັບຫນ້າຜິດ",
   "enter_text_front_desc": "ໃສ່ລາຍລະອຽດຂໍ້ຄວາມສໍາລັບຫນ້າທໍາອິດ",
-  "enter_text_back_desc": "ໃສ່ລາຍລະອຽດຂໍ້ຄວາມສໍາລັບຫນ້າຜິດ"
+  "enter_text_back_desc": "ໃສ່ລາຍລະອຽດຂໍ້ຄວາມສໍາລັບຫນ້າຜິດ",
+  "turn_off_shadows": "ປິດແຜ່ນຂວາງ",
+  "turn_off_automatic_audio": "ປິດສຽງອັດຕະໂນມັດ",
+  "buy_premium_desc": "ຊື້ບັນຊີ Premium ທີ່, ພຶດຕະກອນການປະຕິບັດຕໍ່ການຕະໂນມັດ, ມີການເຂົ້າເຖິງບໍ່ມີຂອບເຂດໄປຍັງທຸກຊຸດຂອງ flashcard, ລວມທັງ flashcard ໃດໆທີ່ອາດຈະເພີ່ມເຂົ້າໃນອະນາຄົດ.",
+  "buy_premium_account": "ຊື້ບັນຊີ Premium",
+  "turn_on_shadows": "ເປີດແຜ່ນຂວາງ",
+  "turn_on_automatic_audio": "ເປີດສຽງອັດຕະໂນມັດ",
+  "premium_account": "ບັນຊີ Premium",
+  "active": "ກຳລັງເຮັດ"
 }

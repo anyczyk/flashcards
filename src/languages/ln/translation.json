@@ -134,5 +134,13 @@
   "enter_text_front": "Kotokoka tekst mpo na nse ya mbala",
   "enter_text_back": "Kotokoka tekst mpo na nse ya nsuka",
   "enter_text_front_desc": "Kotokoka makambo ya tekst mpo na nse ya mbala",
-  "enter_text_back_desc": "Kotokoka makambo ya tekst mpo na nse ya nsuka"
+  "enter_text_back_desc": "Kotokoka makambo ya tekst mpo na nse ya nsuka",
+  "turn_off_shadows": "Kandula koyinga",
+  "turn_off_automatic_audio": "Kandula audio automatique",
+  "buy_premium_desc": "Zwa compte Premium oyo, na lisusu ya kobima ban publicité, ekotisa kozwa liboso te na boyebi na ndenge nyonso ya flashcard, na kati ya flashcard nyonso oyo ekoki kozala koya na mbula oyo ebelembi te.",
+  "buy_premium_account": "Komama compte Premium",
+  "turn_on_shadows": "Kandula koyinga",
+  "turn_on_automatic_audio": "Kandula audio automatique",
+  "premium_account": "Compte Premium",
+  "active": "Aktif"
 }

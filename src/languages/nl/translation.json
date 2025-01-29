@@ -134,5 +134,13 @@
   "enter_text_front": "Voer tekst in voor de voorkant",
   "enter_text_back": "Voer tekst in voor de achterkant",
   "enter_text_front_desc": "Voer beschrijvingstekst in voor de voorkant",
-  "enter_text_back_desc": "Voer beschrijvingstekst in voor de achterkant"
+  "enter_text_back_desc": "Voer beschrijvingstekst in voor de achterkant",
+  "turn_off_shadows": "Schaduwen uitschakelen",
+  "turn_off_automatic_audio": "Automatisch geluid uitschakelen",
+  "buy_premium_desc": "Krijg een Premium-account dat, naast het verwijderen van advertenties, onbeperkte toegang biedt tot alle flashcard-sets, inclusief eventuele flashcards die in de toekomst worden toegevoegd.",
+  "buy_premium_account": "Premium-account kopen",
+  "turn_on_shadows": "Schaduwen inschakelen",
+  "turn_on_automatic_audio": "Automatisch geluid inschakelen",
+  "premium_account": "Premium-account",
+  "active": "Actief"
 }

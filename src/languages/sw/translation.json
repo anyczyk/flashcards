@@ -134,5 +134,13 @@
   "enter_text_front": "Ingiza maandishi kwa ukurasa wa mbele",
   "enter_text_back": "Ingiza maandishi kwa ukurasa wa nyuma",
   "enter_text_front_desc": "Ingiza maelezo ya maandishi kwa ukurasa wa mbele",
-  "enter_text_back_desc": "Ingiza maelezo ya maandishi kwa ukurasa wa nyuma"
+  "enter_text_back_desc": "Ingiza maelezo ya maandishi kwa ukurasa wa nyuma",
+  "turn_off_shadows": "Zima vivuli",
+  "turn_off_automatic_audio": "Zima sauti ya kiotomatiki",
+  "buy_premium_desc": "Pata akaunti ya Premium ambayo, pamoja na kuondoa matangazo, inatoa upatikanaji usio na mipaka kwa seti zote za flashcard, ikiwa ni pamoja na flashcard yoyote inayoweza kuongezwa katika siku zijazo.",
+  "buy_premium_account": "Nunua akaunti ya Premium",
+  "turn_on_shadows": "Washa vivuli",
+  "turn_on_automatic_audio": "Washa sauti ya kiotomatiki",
+  "premium_account": "Akaunti Premium",
+  "active": "Inafanya kazi"
 }

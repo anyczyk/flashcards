@@ -134,5 +134,13 @@
   "enter_text_front": "Antre tèks pou paj devan",
   "enter_text_back": "Antre tèks pou paj dèyè",
   "enter_text_front_desc": "Antre deskripsyon tèks pou paj devan",
-  "enter_text_back_desc": "Antre deskripsyon tèks pou paj dèyè"
+  "enter_text_back_desc": "Antre deskripsyon tèks pou paj dèyè",
+  "turn_off_shadows": "Etenn lonbraj",
+  "turn_off_automatic_audio": "Etenn odyo otomatik",
+  "buy_premium_desc": "Jwenn yon kont Premium ki, anplis retire piblisite, bay aksè san limit nan tout seri flashcard yo, enkli nenpòt flashcard ki ka ajoute nan lavni.",
+  "buy_premium_account": "Achte kont Premium",
+  "turn_on_shadows": "Demare lonbraj",
+  "turn_on_automatic_audio": "Demare odyo otomatik",
+  "premium_account": "Kont Premium",
+  "active": "Aktif"
 }

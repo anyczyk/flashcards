@@ -134,5 +134,13 @@
   "enter_text_front": "Nhập văn bản cho trang trước",
   "enter_text_back": "Nhập văn bản cho trang sau",
   "enter_text_front_desc": "Nhập mô tả văn bản cho trang trước",
-  "enter_text_back_desc": "Nhập mô tả văn bản cho trang sau"
+  "enter_text_back_desc": "Nhập mô tả văn bản cho trang sau",
+  "turn_off_shadows": "Tắt bóng",
+  "turn_off_automatic_audio": "Tắt âm thanh tự động",
+  "buy_premium_desc": "Mua tài khoản Premium, ngoài việc loại bỏ quảng cáo, còn cung cấp quyền truy cập không giới hạn vào tất cả các bộ flashcard, bao gồm cả các flashcard có thể được thêm vào trong tương lai.",
+  "buy_premium_account": "Mua tài khoản Premium",
+  "turn_on_shadows": "Bật bóng",
+  "turn_on_automatic_audio": "Bật âm thanh tự động",
+  "premium_account": "Tài khoản Premium",
+  "active": "Hoạt động"
 }

@@ -134,5 +134,13 @@
   "enter_text_front": "Enter text for the front page",
   "enter_text_back": "Enter text for the back page",
   "enter_text_front_desc": "Enter text for the front page description",
-  "enter_text_back_desc": "Enter text for the back page description"
+  "enter_text_back_desc": "Enter text for the back page description",
+  "turn_off_shadows": "Turn off shadows",
+  "turn_off_automatic_audio": "Turn off automatic audio",
+  "buy_premium_desc": "Get a Premium account which, in addition to removing ads, provides unlimited access to all flashcard sets, including any flashcards that may be added in the future.",
+  "buy_premium_account": "Buy Premium account",
+  "turn_on_shadows": "Turn on shadows",
+  "turn_on_automatic_audio": "Turn on automatic audio",
+  "premium_account": "Premium account",
+  "active": "Active"
 }

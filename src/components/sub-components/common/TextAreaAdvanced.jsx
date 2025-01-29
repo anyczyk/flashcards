@@ -6,8 +6,8 @@ import {useTranslation} from "react-i18next";
 const TextAreaAdvanced = ({id, set = null, state, langForB, required, placeholder = ''}) => {
     const { rtlCodeLangs } = useContext(FlashcardContext);
     const { t } = useTranslation();
-    const ref = useRef(null);
-    const buttonTag = (e, tag, ref, set, state) => {
+    const refOut = useRef(null);
+    const buttonTag = (e, tag, refIn, set, state) => {
         e.preventDefault();
         let sampleText;
         if(tag === 'b') {
@@ -15,7 +15,7 @@ const TextAreaAdvanced = ({id, set = null, state, langForB, required, placeholde
         } else if(tag === 'i') {
             sampleText = t('italic_text');
         }
-        const textarea = ref.current;
+        const textarea = refIn.current;
         const start = textarea.selectionStart;
         const end = textarea.selectionEnd;
         const selectedText = textarea.value.substring(start, end);
@@ -26,7 +26,7 @@ const TextAreaAdvanced = ({id, set = null, state, langForB, required, placeholde
 
     return <div className="o-textarea-advanced">
         <textarea
-            ref={ref}
+            ref={refOut}
             value={state}
             onChange={(e) => set(e.target.value)}
             rows="3"
@@ -38,10 +38,10 @@ const TextAreaAdvanced = ({id, set = null, state, langForB, required, placeholde
             placeholder={`${placeholder}...`}
         />
         <div className="o-textarea-advanced__tools gap-05 d-flex justify-content-right">
-            <button className="btn--icon" onClick={(e) => buttonTag(e, 'b', ref, set, state)}>
+            <button className="btn--icon" onClick={(e) => buttonTag(e, 'b', refOut, set, state)}>
                 b
             </button>
-            <button className="btn--icon" onClick={(e) => buttonTag(e, 'i', ref, set, state)}>
+            <button className="btn--icon" onClick={(e) => buttonTag(e, 'i', refOut, set, state)}>
                 i
             </button>
         </div>

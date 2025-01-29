@@ -134,5 +134,13 @@
   "enter_text_front": "Go putim tok bilong paji i go het",
   "enter_text_back": "Go putim tok bilong paji i go bihain",
   "enter_text_front_desc": "Go putim tok bilong tok long paji i go het",
-  "enter_text_back_desc": "Go putim tok bilong tok long paji i go bihain"
+  "enter_text_back_desc": "Go putim tok bilong tok long paji i go bihain",
+  "turn_off_shadows": "Stopim draip",
+  "turn_off_automatic_audio": "Stopim otomatiks audio",
+  "buy_premium_desc": "Kisim Premium account we, bihain long rausim reklamen, givim yu nolitim access long olgeta flashcard set, insait long wanwan flashcard we i save kam long bihain taim.",
+  "buy_premium_account": "Baikim Premium account",
+  "turn_on_shadows": "Makim draip",
+  "turn_on_automatic_audio": "Makim otomatiks audio",
+  "premium_account": "Premium account",
+  "active": "Aktif"
 }

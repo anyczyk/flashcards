@@ -8,10 +8,10 @@ const Header = ({clearOptions, setMainHomePageLoad, mainMenuVisible, setMainMenu
     const {
         playFlashcards,
         syntAudio,
-        setSyntAudio,
         dirAttribute,
         setDirAttribute,
-        rtlLangs
+        rtlLangs,
+        audioOnOff
     } = useContext(FlashcardContext);
 
     const closeMenuRef = useRef(null);
@@ -53,10 +53,6 @@ const Header = ({clearOptions, setMainHomePageLoad, mainMenuVisible, setMainMenu
 
     const showMainMenu = () => {
         setMainMenuVisible(prevState => !prevState);
-    };
-
-    const audioOnOff = () => {
-        setSyntAudio(prev => !prev);
     };
 
     return (
@@ -181,6 +177,12 @@ const Header = ({clearOptions, setMainHomePageLoad, mainMenuVisible, setMainMenu
                             clearOptions();
                             showMainMenu();
                         }} to="/list-edit"><i
+                            className="icon-pencil"></i> {t('edit')}</Link></li>
+
+                        <li><Link onClick={() => {
+                            clearOptions();
+                            showMainMenu();
+                        }} to="/settings"><i
                             className="icon-wrench"></i> {t('settings')}</Link></li>
 
                         <li><Link onClick={() => {
@@ -208,7 +210,7 @@ const Header = ({clearOptions, setMainHomePageLoad, mainMenuVisible, setMainMenu
                     </ul>
                 </nav>
                 <div dir="ltr">
-                    <p>Flasho v1.0.88 test {window.cordova ? 'App' : 'Browser'} / <span
+                    <p>Flasho v1.0.91 test {window.cordova ? 'App' : 'Browser'} / <span
                         className="uppercase">{i18n.language}</span></p>
                 </div>
             </div>

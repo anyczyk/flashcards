@@ -1,534 +1,464 @@
 {
   "am": {
-    "enter_text": "ጽሑፍ ያስገቡ",
-    "enter_text_front": "ለፊት ገጽ ጽሑፍ ያስገቡ",
-    "enter_text_back": "ለጀርባ ገጽ ጽሑፍ ያስገቡ",
-    "enter_text_front_desc": "ለፊት ገጽ መግለጫ ጽሑፍ ያስገቡ",
-    "enter_text_back_desc": "ለጀርባ ገጽ መግለጫ ጽሑፍ ያስገቡ"
+    "turn_on_shadows": "ብስክሌት አብንክ",
+    "turn_on_automatic_audio": "አውቶማቲክ ድምጽ አብንክ",
+    "premium_account": "Premium አካውንት",
+    "active": "ተግባር ላይ"
   },
   "ar": {
-    "enter_text": "أدخل النص",
-    "enter_text_front": "أدخل النص للصفحة الأمامية",
-    "enter_text_back": "أدخل النص للصفحة الخلفية",
-    "enter_text_front_desc": "أدخل نصًا لوصف الصفحة الأمامية",
-    "enter_text_back_desc": "أدخل نصًا لوصف الصفحة الخلفية"
+    "turn_on_shadows": "تشغيل الظلال",
+    "turn_on_automatic_audio": "تشغيل الصوت التلقائي",
+    "premium_account": "حساب ممتاز",
+    "active": "نشط"
   },
   "arc": {
-    "enter_text": "ܐܣܝܡ ܟܬܒܐ",
-    "enter_text_front": "ܐܣܝܡ ܟܬܒܐ ܠܦܬܝܐ ܕܦܘܪܬܐ",
-    "enter_text_back": "ܐܣܝܡ ܟܬܒܐ ܠܦܘܪܬܐ ܕܙܠܝܢ",
-    "enter_text_front_desc": "ܐܣܝܡ ܟܬܒܐ ܠܦܘܪܬܐ ܕܦܘܪܬܐ ܕܡܟܠܡܐ",
-    "enter_text_back_desc": "ܐܣܝܡ ܟܬܒܐ ܠܦܘܪܬܐ ܕܙܠܝܢ ܕܡܟܠܡܐ"
+    "turn_on_shadows": "Translation not available",
+    "turn_on_automatic_audio": "Translation not available",
+    "premium_account": "Translation not available",
+    "active": "Translation not available"
   },
   "az": {
-    "enter_text": "Mətn daxil edin",
-    "enter_text_front": "Ön səhifə üçün mətn daxil edin",
-    "enter_text_back": "Arxa səhifə üçün mətn daxil edin",
-    "enter_text_front_desc": "Ön səhifə təsviri üçün mətn daxil edin",
-    "enter_text_back_desc": "Arxa səhifə təsviri üçün mətn daxil edin"
+    "turn_on_shadows": "Kölgələri yandır",
+    "turn_on_automatic_audio": "Avtomatik səsi yandır",
+    "premium_account": "Premium hesab",
+    "active": "Aktiv"
   },
   "be": {
-    "enter_text": "Увядзіце тэкст",
-    "enter_text_front": "Увядзіце тэкст для пярэдняй старонкі",
-    "enter_text_back": "Увядзіце тэкст для задняй старонкі",
-    "enter_text_front_desc": "Увядзіце апісанне тэксту для пярэдняй старонкі",
-    "enter_text_back_desc": "Увядзіце апісанне тэксту для задняй старонкі"
+    "turn_on_shadows": "Уключыць цені",
+    "turn_on_automatic_audio": "Уключыць аўтаматычны аўдыё",
+    "premium_account": "Premium-рахунак",
+    "active": "Актыўны"
   },
   "bg": {
-    "enter_text": "Въведете текст",
-    "enter_text_front": "Въведете текст за предната страница",
-    "enter_text_back": "Въведете текст за задната страница",
-    "enter_text_front_desc": "Въведете описание на текста за предната страница",
-    "enter_text_back_desc": "Въведете описание на текста за задната страница"
+    "turn_on_shadows": "Включи сенките",
+    "turn_on_automatic_audio": "Включи автоматичния звук",
+    "premium_account": "Premium акаунт",
+    "active": "Активен"
   },
   "ckb": {
-    "enter_text": "دەقەکە بنووسە",
-    "enter_text_front": "بۆ لاپەڕەی پێشەوە دەق بنووسە",
-    "enter_text_back": "بۆ لاپەڕەی پشت دەق بنووسە",
-    "enter_text_front_desc": "بۆ ناوەڕۆکی لاپەڕەی پێشەوە دەق بنووسە",
-    "enter_text_back_desc": "بۆ ناوەڕۆکی لاپەڕەی پشت دەق بنووسە"
+    "turn_on_shadows": "سایه‌کان ڕاگەیەنە",
+    "turn_on_automatic_audio": "داهاتوویا ئۆتۆماتیکی ڕاگەیەنە",
+    "premium_account": "هەژماری Premium",
+    "active": "چالاک"
   },
   "crs": {
-    "enter_text": "Antre tèks",
-    "enter_text_front": "Antre tèks pou paj devan",
-    "enter_text_back": "Antre tèks pou paj dèyè",
-    "enter_text_front_desc": "Antre tèks pou deskripsyon paj devan",
-    "enter_text_back_desc": "Antre tèks pou deskripsyon paj dèyè"
+    "turn_on_shadows": "Demare lonbraj",
+    "turn_on_automatic_audio": "Demare odyo otomatik",
+    "premium_account": "Kont Premium",
+    "active": "Aktif"
   },
   "cs": {
-    "enter_text": "Zadejte text",
-    "enter_text_front": "Zadejte text pro přední stranu",
-    "enter_text_back": "Zadejte text pro zadní stranu",
-    "enter_text_front_desc": "Zadejte popis textu pro přední stranu",
-    "enter_text_back_desc": "Zadejte popis textu pro zadní stranu"
+    "turn_on_shadows": "Zapnout stíny",
+    "turn_on_automatic_audio": "Zapnout automatický zvuk",
+    "premium_account": "Premium účet",
+    "active": "Aktivní"
   },
   "da": {
-    "enter_text": "Indtast tekst",
-    "enter_text_front": "Indtast tekst til forsiden",
-    "enter_text_back": "Indtast tekst til bagsiden",
-    "enter_text_front_desc": "Indtast beskrivelse til forsidens tekst",
-    "enter_text_back_desc": "Indtast beskrivelse til bagsidens tekst"
+    "turn_on_shadows": "Tænd skygger",
+    "turn_on_automatic_audio": "Tænd automatisk lyd",
+    "premium_account": "Premiumkonto",
+    "active": "Aktiv"
   },
   "de": {
-    "enter_text": "Text eingeben",
-    "enter_text_front": "Text für die Vorderseite eingeben",
-    "enter_text_back": "Text für die Rückseite eingeben",
-    "enter_text_front_desc": "Textbeschreibung für die Vorderseite eingeben",
-    "enter_text_back_desc": "Textbeschreibung für die Rückseite eingeben"
+    "turn_on_shadows": "Schatten einschalten",
+    "turn_on_automatic_audio": "Automatische Audio einschalten",
+    "premium_account": "Premium-Konto",
+    "active": "Aktiv"
   },
   "el": {
-    "enter_text": "Εισάγετε κείμενο",
-    "enter_text_front": "Εισάγετε κείμενο για την πρώτη σελίδα",
-    "enter_text_back": "Εισάγετε κείμενο για την πίσω σελίδα",
-    "enter_text_front_desc": "Εισάγετε περιγραφή κειμένου για την πρώτη σελίδα",
-    "enter_text_back_desc": "Εισάγετε περιγραφή κειμένου για την πίσω σελίδα"
+    "turn_on_shadows": "Ενεργοποίηση σκιάσεων",
+    "turn_on_automatic_audio": "Ενεργοποίηση αυτόματου ήχου",
+    "premium_account": "Λογαριασμός Premium",
+    "active": "Ενεργό"
+  },
+  "en": {
+    "turn_on_shadows": "Turn on shadows",
+    "turn_on_automatic_audio": "Turn on automatic audio",
+    "premium_account": "Premium account",
+    "active": "Active"
   },
   "es": {
-    "enter_text": "Ingresa el texto",
-    "enter_text_front": "Ingresa el texto para la página frontal",
-    "enter_text_back": "Ingresa el texto para la página trasera",
-    "enter_text_front_desc": "Ingresa la descripción del texto para la página frontal",
-    "enter_text_back_desc": "Ingresa la descripción del texto para la página trasera"
+    "turn_on_shadows": "Activar sombras",
+    "turn_on_automatic_audio": "Activar audio automático",
+    "premium_account": "Cuenta Premium",
+    "active": "Activo"
   },
   "et": {
-    "enter_text": "Sisestage tekst",
-    "enter_text_front": "Sisestage teksti esilehe jaoks",
-    "enter_text_back": "Sisestage teksti tagumise lehe jaoks",
-    "enter_text_front_desc": "Sisestage teksti kirjeldus esilehe jaoks",
-    "enter_text_back_desc": "Sisestage teksti kirjeldus tagumise lehe jaoks"
+    "turn_on_shadows": "Lülita varjud sisse",
+    "turn_on_automatic_audio": "Lülita automaatne heli sisse",
+    "premium_account": "Premium konto",
+    "active": "Aktiivne"
   },
   "fa": {
-    "enter_text": "متن را وارد کنید",
-    "enter_text_front": "متن را برای صفحه جلویی وارد کنید",
-    "enter_text_back": "متن را برای صفحه پشت وارد کنید",
-    "enter_text_front_desc": "متن توضیحات صفحه جلویی را وارد کنید",
-    "enter_text_back_desc": "متن توضیحات صفحه پشت را وارد کنید"
+    "turn_on_shadows": "روشن کردن سایه‌ها",
+    "turn_on_automatic_audio": "روشن کردن صوت خودکار",
+    "premium_account": "حساب پریمیوم",
+    "active": "فعال"
   },
   "fi": {
-    "enter_text": "Syötä teksti",
-    "enter_text_front": "Syötä teksti etusivulle",
-    "enter_text_back": "Syötä teksti takasivulle",
-    "enter_text_front_desc": "Syötä etusivun tekstin kuvaus",
-    "enter_text_back_desc": "Syötä takasivun tekstin kuvaus"
+    "turn_on_shadows": "Ota varjot käyttöön",
+    "turn_on_automatic_audio": "Ota automaattinen ääni käyttöön",
+    "premium_account": "Premium-tili",
+    "active": "Aktiivinen"
   },
   "fr": {
-    "enter_text": "Entrez le texte",
-    "enter_text_front": "Entrez le texte pour la page de devant",
-    "enter_text_back": "Entrez le texte pour la page de derrière",
-    "enter_text_front_desc": "Entrez la description du texte pour la page de devant",
-    "enter_text_back_desc": "Entrez la description du texte pour la page de derrière"
+    "turn_on_shadows": "Activer les ombres",
+    "turn_on_automatic_audio": "Activer l'audio automatique",
+    "premium_account": "Compte Premium",
+    "active": "Actif"
   },
   "ha": {
-    "enter_text": "Shigar da rubutu",
-    "enter_text_front": "Shigar da rubutu don shafin gaba",
-    "enter_text_back": "Shigar da rubutu don shafin baya",
-    "enter_text_front_desc": "Shigar da bayanin rubutu don shafin gaba",
-    "enter_text_back_desc": "Shigar da bayanin rubutu don shafin baya"
+    "turn_on_shadows": "Kunna inuwa",
+    "turn_on_automatic_audio": "Kunna sautin ta atomatik",
+    "premium_account": "Asusun Premium",
+    "active": "Mai aiki"
   },
   "haw": {
-    "enter_text": "E hoʻokomo i ka huaʻōlelo",
-    "enter_text_front": "E hoʻokomo i ka huaʻōlelo no ka ʻaoʻao mua",
-    "enter_text_back": "E hoʻokomo i ka huaʻōlelo no ka ʻaoʻao hope",
-    "enter_text_front_desc": "E hoʻokomo i ka wehewehena huaʻōlelo no ka ʻaoʻao mua",
-    "enter_text_back_desc": "E hoʻokomo i ka wehewehena huaʻōlelo no ka ʻaoʻao hope"
+    "turn_on_shadows": "Hoʻokomo i nā ʻaoʻao",
+    "turn_on_automatic_audio": "Hoʻokomo i ka leo ʻōnaehana",
+    "premium_account": "Moʻokāki Premium",
+    "active": "Kūkākūkā"
   },
   "he": {
-    "enter_text": "הכנס טקסט",
-    "enter_text_front": "הכנס טקסט לדף הקדמי",
-    "enter_text_back": "הכנס טקסט לדף האחורי",
-    "enter_text_front_desc": "הכנס תיאור טקסט לדף הקדמי",
-    "enter_text_back_desc": "הכנס תיאור טקסט לדף האחורי"
+    "turn_on_shadows": "הפעל צללים",
+    "turn_on_automatic_audio": "הפעל אודיו אוטומטי",
+    "premium_account": "חשבון פרימיום",
+    "active": "פעיל"
   },
   "hi": {
-    "enter_text": "पाठ दर्ज करें",
-    "enter_text_front": "सामने के पृष्ठ के लिए पाठ दर्ज करें",
-    "enter_text_back": "पीछे के पृष्ठ के लिए पाठ दर्ज करें",
-    "enter_text_front_desc": "सामने के पृष्ठ के विवरण के लिए पाठ दर्ज करें",
-    "enter_text_back_desc": "पीछे के पृष्ठ के विवरण के लिए पाठ दर्ज करें"
+    "turn_on_shadows": "छायाओं को चालू करें",
+    "turn_on_automatic_audio": "स्वचालित ऑडियो चालू करें",
+    "premium_account": "प्रीमियम खाता",
+    "active": "सक्रिय"
   },
   "hr": {
-    "enter_text": "Unesite tekst",
-    "enter_text_front": "Unesite tekst za prednju stranu",
-    "enter_text_back": "Unesite tekst za stražnju stranu",
-    "enter_text_front_desc": "Unesite opis teksta za prednju stranu",
-    "enter_text_back_desc": "Unesite opis teksta za stražnju stranu"
+    "turn_on_shadows": "Uključi sjene",
+    "turn_on_automatic_audio": "Uključi automatski zvuk",
+    "premium_account": "Premium račun",
+    "active": "Aktivan"
   },
   "ht": {
-    "enter_text": "Antre tèks la",
-    "enter_text_front": "Antre tèks pou paj devan",
-    "enter_text_back": "Antre tèks pou paj dèyè",
-    "enter_text_front_desc": "Antre deskripsyon tèks pou paj devan",
-    "enter_text_back_desc": "Antre deskripsyon tèks pou paj dèyè"
+    "turn_on_shadows": "Demare lonbraj",
+    "turn_on_automatic_audio": "Demare odyo otomatik",
+    "premium_account": "Kont Premium",
+    "active": "Aktif"
   },
   "hu": {
-    "enter_text": "Szöveg bevitele",
-    "enter_text_front": "Szöveg bevitele az elülső oldalhoz",
-    "enter_text_back": "Szöveg bevitele a hátsó oldalhoz",
-    "enter_text_front_desc": "Szöveg leírása az elülső oldalhoz",
-    "enter_text_back_desc": "Szöveg leírása a hátsó oldalhoz"
+    "turn_on_shadows": "Árnyékok bekapcsolása",
+    "turn_on_automatic_audio": "Automatikus hang bekapcsolása",
+    "premium_account": "Premium fiók",
+    "active": "Aktív"
   },
   "hy": {
-    "enter_text": "Մուտքագրեք տեքստ",
-    "enter_text_front": "Մուտքագրեք տեքստը առաջան էջի համար",
-    "enter_text_back": "Մուտքագրեք տեքստը հետևող էջի համար",
-    "enter_text_front_desc": "Մուտքագրեք առաջան էջի տեքստի նկարագրությունը",
-    "enter_text_back_desc": "Մուտքագրեք հետևող էջի տեքստի նկարագրությունը"
+    "turn_on_shadows": "Անջատել ստվերները",
+    "turn_on_automatic_audio": "Անջատել ավտոմատական ձայնը",
+    "premium_account": "Premium ​​հաշիվ",
+    "active": "Ակտիվ"
   },
   "id": {
-    "enter_text": "Masukkan teks",
-    "enter_text_front": "Masukkan teks untuk halaman depan",
-    "enter_text_back": "Masukkan teks untuk halaman belakang",
-    "enter_text_front_desc": "Masukkan deskripsi teks untuk halaman depan",
-    "enter_text_back_desc": "Masukkan deskripsi teks untuk halaman belakang"
+    "turn_on_shadows": "Nyalakan bayangan",
+    "turn_on_automatic_audio": "Nyalakan audio otomatis",
+    "premium_account": "Akun Premium",
+    "active": "Aktif"
   },
   "ig": {
-    "enter_text": "Tinye ederede",
-    "enter_text_front": "Tinye ederede maka ibe ihu",
-    "enter_text_back": "Tinye ederede maka ibe azụ",
-    "enter_text_front_desc": "Tinye nkọwa ederede maka ibe ihu",
-    "enter_text_back_desc": "Tinye nkọwa ederede maka ibe azụ"
+    "turn_on_shadows": "Gbanwee ihe ndị na-acha ọchịchịrị",
+    "turn_on_automatic_audio": "Gbanwee ụda akpaghị aka",
+    "premium_account": "Akaụntụ Premium",
+    "active": "Aktif"
   },
   "it": {
-    "enter_text": "Inserisci testo",
-    "enter_text_front": "Inserisci testo per la pagina frontale",
-    "enter_text_back": "Inserisci testo per la pagina posteriore",
-    "enter_text_front_desc": "Inserisci la descrizione del testo per la pagina frontale",
-    "enter_text_back_desc": "Inserisci la descrizione del testo per la pagina posteriore"
+    "turn_on_shadows": "Attiva ombre",
+    "turn_on_automatic_audio": "Attiva audio automatico",
+    "premium_account": "Account Premium",
+    "active": "Attivo"
   },
   "ja": {
-    "enter_text": "テキストを入力してください",
-    "enter_text_front": "表紙のテキストを入力してください",
-    "enter_text_back": "裏表紙のテキストを入力してください",
-    "enter_text_front_desc": "表紙の説明テキストを入力してください",
-    "enter_text_back_desc": "裏表紙の説明テキストを入力してください"
+    "turn_on_shadows": "影をオンにする",
+    "turn_on_automatic_audio": "自動オーディオをオンにする",
+    "premium_account": "プレミアムアカウント",
+    "active": "アクティブ"
   },
   "ka": {
-    "enter_text": "ტექსტი შეიყვანეთ",
-    "enter_text_front": "შეიყვანეთ ტექსტი წინაშე გვერდისთვის",
-    "enter_text_back": "შეიყვანეთ ტექსტი უკანა გვერდისთვის",
-    "enter_text_front_desc": "შეიყვანეთ წინაშე გვერდის ტექსტის აღწერა",
-    "enter_text_back_desc": "შეიყვანეთ უკანა გვერდის ტექსტის აღწერა"
+    "turn_on_shadows": "გამართეთ ჩრდილები",
+    "turn_on_automatic_audio": "გამართეთ ავტომატური ხმაური",
+    "premium_account": "Premium ​​ანგარიში",
+    "active": "აქტიური"
   },
   "kk": {
-    "enter_text": "Мәтінді енгізіңіз",
-    "enter_text_front": "Алдыңғы бет үшін мәтінді енгізіңіз",
-    "enter_text_back": "Артқы бет үшін мәтінді енгізіңіз",
-    "enter_text_front_desc": "Алдыңғы бет мәтіні сипаттамасын енгізіңіз",
-    "enter_text_back_desc": "Артқы бет мәтіні сипаттамасын енгізіңіз"
+    "turn_on_shadows": "Көлеңкелерді қосу",
+    "turn_on_automatic_audio": "Автоматты дыбысты қосу",
+    "premium_account": "Premium аккаунты",
+    "active": "Белсенді"
   },
   "kl": {
-    "enter_text": "Tekst tik ataat",
-    "enter_text_front": "Tekst tik ataata assarneq ataatsimut apeqqanut",
-    "enter_text_back": "Tekst tik ataata assarneq ataatsimut apeqqanut",
-    "enter_text_front_desc": "Tekst tik ataata assarneq apeqqanut",
-    "enter_text_back_desc": "Tekst tik ataata assarneq apeqqanut"
+    "turn_on_shadows": "Translation not available",
+    "turn_on_automatic_audio": "Translation not available",
+    "premium_account": "Translation not available",
+    "active": "Translation not available"
   },
   "km": {
-    "enter_text": "បញ្ចូលអត្ថបទ",
-    "enter_text_front": "បញ្ចូលអត្ថបទសម្រាប់ទំព័រមុខ",
-    "enter_text_back": "បញ្ចូលអត្ថបទសម្រាប់ទំព័របុរាណ",
-    "enter_text_front_desc": "បញ្ចូលការពិពណ៌នាអត្ថបទសម្រាប់ទំព័រមុខ",
-    "enter_text_back_desc": "បញ្ចូលការពិពណ៌នាអត្ថបទសម្រាប់ទំព័របុរាណ"
+    "turn_on_shadows": "បើកស្រមោល",
+    "turn_on_automatic_audio": "បើកសម្លេងអូតូម៉ាទិក",
+    "premium_account": "គណនី Premium",
+    "active": "សកម្ម"
   },
   "ko": {
-    "enter_text": "텍스트 입력",
-    "enter_text_front": "앞면 페이지에 텍스트 입력",
-    "enter_text_back": "뒷면 페이지에 텍스트 입력",
-    "enter_text_front_desc": "앞면 페이지 설명 텍스트 입력",
-    "enter_text_back_desc": "뒷면 페이지 설명 텍스트 입력"
+    "turn_on_shadows": "그림자 켜기",
+    "turn_on_automatic_audio": "자동 오디오 켜기",
+    "premium_account": "Premium 계정",
+    "active": "활성"
   },
   "ks": {
-    "enter_text": "متن داخل ڪريو",
-    "enter_text_front": "سامنے جي صفحي لاءِ متن داخل ڪريو",
-    "enter_text_back": "پشت جي صفحي لاءِ متن داخل ڪريو",
-    "enter_text_front_desc": "سامنے جي صفحي جي متن جي وضاحت داخل ڪريو",
-    "enter_text_back_desc": "پشت جي صفحي جي متن جي وضاحت داخل ڪريو"
+    "turn_on_shadows": "سایون کول",
+    "turn_on_automatic_audio": "خودڪار آڊيو کول",
+    "premium_account": "پريمیم اڪائونٽ",
+    "active": "فعال"
   },
   "ky": {
-    "enter_text": "Мәтінді енгізүү",
-    "enter_text_front": "Алдыңкы бет үчүн мәтінді енгізүү",
-    "enter_text_back": "Арткы бет үчүн мәтінді енгізүү",
-    "enter_text_front_desc": "Алдыңкы беттеги мәтіндин сүрөттемесин енгізүү",
-    "enter_text_back_desc": "Арткы беттеги мәтіндин сүрөттемесин енгізүү"
+    "turn_on_shadows": "Көгүрөлөрдү жандандыруу",
+    "turn_on_automatic_audio": "Автоматты үндү жандандыруу",
+    "premium_account": "Premium аккаунт",
+    "active": "Активдүү"
   },
   "ln": {
-    "enter_text": "Kotokoka tekst",
-    "enter_text_front": "Kotokoka tekst mpo na nse ya mbala",
-    "enter_text_back": "Kotokoka tekst mpo na nse ya nsuka",
-    "enter_text_front_desc": "Kotokoka makambo ya tekst mpo na nse ya mbala",
-    "enter_text_back_desc": "Kotokoka makambo ya tekst mpo na nse ya nsuka"
+    "turn_on_shadows": "Kandula koyinga",
+    "turn_on_automatic_audio": "Kandula audio automatique",
+    "premium_account": "Compte Premium",
+    "active": "Aktif"
   },
   "lo": {
-    "enter_text": "ໃສ່ຂໍ້ຄວາມ",
-    "enter_text_front": "ໃສ່ຂໍ້ຄວາມສໍາລັບຫນ້າທໍາອິດ",
-    "enter_text_back": "ໃສ່ຂໍ້ຄວາມສໍາລັບຫນ້າຜິດ",
-    "enter_text_front_desc": "ໃສ່ລາຍລະອຽດຂໍ້ຄວາມສໍາລັບຫນ້າທໍາອິດ",
-    "enter_text_back_desc": "ໃສ່ລາຍລະອຽດຂໍ້ຄວາມສໍາລັບຫນ້າຜິດ"
+    "turn_on_shadows": "ເປີດແຜ່ນຂວາງ",
+    "turn_on_automatic_audio": "ເປີດສຽງອັດຕະໂນມັດ",
+    "premium_account": "ບັນຊີ Premium",
+    "active": "ກຳລັງເຮັດ"
   },
   "lt": {
-    "enter_text": "Įveskite tekstą",
-    "enter_text_front": "Įveskite tekstą priekinėje pusėje",
-    "enter_text_back": "Įveskite tekstą galinėje pusėje",
-    "enter_text_front_desc": "Įveskite teksto aprašymą priekinėje pusėje",
-    "enter_text_back_desc": "Įveskite teksto aprašymą galinėje pusėje"
+    "turn_on_shadows": "Įjunkite šešėlius",
+    "turn_on_automatic_audio": "Įjunkite automatinį garsą",
+    "premium_account": "Premium paskyra",
+    "active": "Aktyvus"
   },
   "lv": {
-    "enter_text": "Ievadiet tekstu",
-    "enter_text_front": "Ievadiet tekstu priekšējai lapai",
-    "enter_text_back": "Ievadiet tekstu aizmugurējai lapai",
-    "enter_text_front_desc": "Ievadiet teksta aprakstu priekšējai lapai",
-    "enter_text_back_desc": "Ievadiet teksta aprakstu aizmugurējai lapai"
+    "turn_on_shadows": "Ieslēgt ēnas",
+    "turn_on_automatic_audio": "Ieslēgt automātisko audio",
+    "premium_account": "Premium konts",
+    "active": "Aktīvs"
   },
   "mi": {
-    "enter_text": "Whakatiki i te reo",
-    "enter_text_front": "Whakatiki i te reo mō te whārangi mua",
-    "enter_text_back": "Whakatiki i te reo mō te whārangi muri",
-    "enter_text_front_desc": "Whakatiki i te whakaahua o te reo mō te whārangi mua",
-    "enter_text_back_desc": "Whakatiki i te whakaahua o te reo mō te whārangi muri"
+    "turn_on_shadows": "Whakatakoto i ngā hoariri",
+    "turn_on_automatic_audio": "Whakatakoto i te oro aunoa",
+    "premium_account": "Pūtea Premium",
+    "active": "Hāngai"
   },
   "mn": {
-    "enter_text": "Текст оруулна уу",
-    "enter_text_front": "Урд талын хуудсыг текст оруулна уу",
-    "enter_text_back": "Хойд талын хуудсыг текст оруулна уу",
-    "enter_text_front_desc": "Урд талын хуудсыг текстийн тодорхойлолтыг оруулна уу",
-    "enter_text_back_desc": "Хойд талын хуудсыг текстийн тодорхойлолтыг оруулна уу"
+    "turn_on_shadows": "Сүүдэр асаах",
+    "turn_on_automatic_audio": "Автомата дуу асаах",
+    "premium_account": "Premium данс",
+    "active": "Идэвхтэй"
   },
   "ms": {
-    "enter_text": "Masukkan teks",
-    "enter_text_front": "Masukkan teks untuk halaman depan",
-    "enter_text_back": "Masukkan teks untuk halaman belakang",
-    "enter_text_front_desc": "Masukkan deskripsi teks untuk halaman depan",
-    "enter_text_back_desc": "Masukkan deskripsi teks untuk halaman belakang"
+    "turn_on_shadows": "Hidupkan bayangan",
+    "turn_on_automatic_audio": "Hidupkan audio automatik",
+    "premium_account": "Akaun Premium",
+    "active": "Aktif"
   },
   "ne": {
-    "enter_text": "पाठ प्रवेश गर्नुहोस्",
-    "enter_text_front": "अगाडिको पृष्ठको लागि पाठ प्रवेश गर्नुहोस्",
-    "enter_text_back": "पछाडिको पृष्ठको लागि पाठ प्रवेश गर्नुहोस्",
-    "enter_text_front_desc": "अगाडिको पृष्ठको लागि पाठको विवरण प्रवेश गर्नुहोस्",
-    "enter_text_back_desc": "पछाडिको पृष्ठको लागि पाठको विवरण प्रवेश गर्नुहोस्"
+    "turn_on_shadows": "छायाहरू चालू गर्नुहोस्",
+    "turn_on_automatic_audio": "स्वचालित अडियो चालू गर्नुहोस्",
+    "premium_account": "प्रीमियम खाता",
+    "active": "सक्रिय"
   },
   "nl": {
-    "enter_text": "Voer tekst in",
-    "enter_text_front": "Voer tekst in voor de voorkant",
-    "enter_text_back": "Voer tekst in voor de achterkant",
-    "enter_text_front_desc": "Voer beschrijvingstekst in voor de voorkant",
-    "enter_text_back_desc": "Voer beschrijvingstekst in voor de achterkant"
+    "turn_on_shadows": "Schaduwen inschakelen",
+    "turn_on_automatic_audio": "Automatisch geluid inschakelen",
+    "premium_account": "Premium-account",
+    "active": "Actief"
   },
   "no": {
-    "enter_text": "Skriv inn tekst",
-    "enter_text_front": "Skriv inn tekst for forsiden",
-    "enter_text_back": "Skriv inn tekst for baksiden",
-    "enter_text_front_desc": "Skriv inn beskrivelse av teksten for forsiden",
-    "enter_text_back_desc": "Skriv inn beskrivelse av teksten for baksiden"
+    "turn_on_shadows": "Slå på skygger",
+    "turn_on_automatic_audio": "Slå på automatisk lyd",
+    "premium_account": "Premium-konto",
+    "active": "Aktiv"
   },
   "pl": {
-    "enter_text": "Wprowadź tekst",
-    "enter_text_front": "Wprowadź tekst na przednią stronę",
-    "enter_text_back": "Wprowadź tekst na tylną stronę",
-    "enter_text_front_desc": "Wprowadź opis tekstu na przednią stronę",
-    "enter_text_back_desc": "Wprowadź opis tekstu na tylną stronę"
+    "turn_on_shadows": "Włącz cienie",
+    "turn_on_automatic_audio": "Włącz automatyczne audio",
+    "premium_account": "Konto Premium",
+    "active": "Aktywne"
   },
   "ps": {
-    "enter_text": "متن داخل کړئ",
-    "enter_text_front": "د مخ پرانیستې پاڼې لپاره متن داخل کړئ",
-    "enter_text_back": "د شا پرانیستې پاڼې لپاره متن داخل کړئ",
-    "enter_text_front_desc": "د مخ پرانیستې پاڼې لپاره د متن تشریح داخل کړئ",
-    "enter_text_back_desc": "د شا پرانیستې پاڼې لپاره د متن تشریح داخل کړئ"
+    "turn_on_shadows": "سیوري چالان کړئ",
+    "turn_on_automatic_audio": "خودکار آڈیو چالان کړئ",
+    "premium_account": "پریمیم حساب",
+    "active": "فعال"
   },
   "pt": {
-    "enter_text": "Insira o texto",
-    "enter_text_front": "Insira o texto para a página frontal",
-    "enter_text_back": "Insira o texto para a página traseira",
-    "enter_text_front_desc": "Insira a descrição do texto para a página frontal",
-    "enter_text_back_desc": "Insira a descrição do texto para a página traseira"
+    "turn_on_shadows": "Ativar sombras",
+    "turn_on_automatic_audio": "Ativar áudio automático",
+    "premium_account": "Conta Premium",
+    "active": "Ativo"
   },
   "ro": {
-    "enter_text": "Introduceți textul",
-    "enter_text_front": "Introduceți textul pentru pagina frontală",
-    "enter_text_back": "Introduceți textul pentru pagina din spate",
-    "enter_text_front_desc": "Introduceți descrierea textului pentru pagina frontală",
-    "enter_text_back_desc": "Introduceți descrierea textului pentru pagina din spate"
+    "turn_on_shadows": "Activează umbrele",
+    "turn_on_automatic_audio": "Activează audio automat",
+    "premium_account": "Cont Premium",
+    "active": "Activ"
   },
   "ru": {
-    "enter_text": "Введите текст",
-    "enter_text_front": "Введите текст для передней страницы",
-    "enter_text_back": "Введите текст для задней страницы",
-    "enter_text_front_desc": "Введите описание текста для передней страницы",
-    "enter_text_back_desc": "Введите описание текста для задней страницы"
+    "turn_on_shadows": "Включить тени",
+    "turn_on_automatic_audio": "Включить автоматический звук",
+    "premium_account": "Premium аккаунт",
+    "active": "Активен"
   },
   "sd": {
-    "enter_text": "متن داخل ڪريو",
-    "enter_text_front": "سامنے جي صفحي لاءِ متن داخل ڪريو",
-    "enter_text_back": "پشت جي صفحي لاءِ متن داخل ڪريو",
-    "enter_text_front_desc": "سامنے جي صفحي جي متن جي وضاحت داخل ڪريو",
-    "enter_text_back_desc": "پشت جي صفحي جي متن جي وضاحت داخل ڪريو"
+    "turn_on_shadows": "سایون کول",
+    "turn_on_automatic_audio": "خودڪار آڊيو کول",
+    "premium_account": "پريمیم اڪائونٽ",
+    "active": "فعال"
   },
   "sk": {
-    "enter_text": "Zadajte text",
-    "enter_text_front": "Zadajte text pre prednú stranu",
-    "enter_text_back": "Zadajte text pre zadnú stranu",
-    "enter_text_front_desc": "Zadajte popis textu pre prednú stranu",
-    "enter_text_back_desc": "Zadajte popis textu pre zadnú stranu"
+    "turn_on_shadows": "Zapnúť tiene",
+    "turn_on_automatic_audio": "Zapnúť automatický zvuk",
+    "premium_account": "Premium účet",
+    "active": "Aktívny"
   },
   "sl": {
-    "enter_text": "Vnesite besedilo",
-    "enter_text_front": "Vnesite besedilo za sprednjo stran",
-    "enter_text_back": "Vnesite besedilo za zadnjo stran",
-    "enter_text_front_desc": "Vnesite opis besedila za sprednjo stran",
-    "enter_text_back_desc": "Vnesite opis besedila za zadnjo stran"
+    "turn_on_shadows": "Vklopi sence",
+    "turn_on_automatic_audio": "Vklopi samodejni zvok",
+    "premium_account": "Premium račun",
+    "active": "Aktiven"
   },
   "so": {
-    "enter_text": "Geli qoraalka",
-    "enter_text_front": "Geli qoraalka bogga hore",
-    "enter_text_back": "Geli qoraalka bogga gadaal",
-    "enter_text_front_desc": "Geli sharraxaadda qoraalka bogga hore",
-    "enter_text_back_desc": "Geli sharraxaadda qoraalka bogga gadaal"
+    "turn_on_shadows": "Shadows shid",
+    "turn_on_automatic_audio": "Dhawaaqa otomaatigga ah shid",
+    "premium_account": "Akaawn Premium",
+    "active": "Firfircoon"
   },
   "sq": {
-    "enter_text": "Vendosni tekstin",
-    "enter_text_front": "Vendosni tekstin për faqen e parë",
-    "enter_text_back": "Vendosni tekstin për faqen e pasme",
-    "enter_text_front_desc": "Vendosni përshkrimin e tekstit për faqen e parë",
-    "enter_text_back_desc": "Vendosni përshkrimin e tekstit për faqen e pasme"
+    "turn_on_shadows": "Aktivizo hijet",
+    "turn_on_automatic_audio": "Aktivizo audio automatike",
+    "premium_account": "Llogari Premium",
+    "active": "Aktiv"
   },
   "sr": {
-    "enter_text": "Унесите текст",
-    "enter_text_front": "Унесите текст за предњу страну",
-    "enter_text_back": "Унесите текст за задњу страну",
-    "enter_text_front_desc": "Унесите опис текста за предњу страну",
-    "enter_text_back_desc": "Унесите опис текста за задњу страну"
+    "turn_on_shadows": "Uključi senke",
+    "turn_on_automatic_audio": "Uključi automatski zvuk",
+    "premium_account": "Premium nalog",
+    "active": "Aktivan"
   },
   "sv": {
-    "enter_text": "Ange text",
-    "enter_text_front": "Ange text för framsidan",
-    "enter_text_back": "Ange text för baksidan",
-    "enter_text_front_desc": "Ange textbeskrivning för framsidan",
-    "enter_text_back_desc": "Ange textbeskrivning för baksidan"
+    "turn_on_shadows": "Slå på skuggor",
+    "turn_on_automatic_audio": "Slå på automatisk ljud",
+    "premium_account": "Premium-konto",
+    "active": "Aktiv"
   },
   "sw": {
-    "enter_text": "Ingiza maandishi",
-    "enter_text_front": "Ingiza maandishi kwa ukurasa wa mbele",
-    "enter_text_back": "Ingiza maandishi kwa ukurasa wa nyuma",
-    "enter_text_front_desc": "Ingiza maelezo ya maandishi kwa ukurasa wa mbele",
-    "enter_text_back_desc": "Ingiza maelezo ya maandishi kwa ukurasa wa nyuma"
+    "turn_on_shadows": "Washa vivuli",
+    "turn_on_automatic_audio": "Washa sauti ya kiotomatiki",
+    "premium_account": "Akaunti Premium",
+    "active": "Inafanya kazi"
   },
   "syr": {
-    "enter_text": "ܐܣܝܡ ܟܬܒܐ",
-    "enter_text_front": "ܐܣܝܡ ܟܬܒܐ ܠܫܦܐ ܕܦܬܝܐ",
-    "enter_text_back": "ܐܣܝܡ ܟܬܒܐ ܠܫܦܐ ܕܙܠܝܢ",
-    "enter_text_front_desc": "ܐܣܝܡ ܟܬܒܐ ܠܫܦܐ ܕܦܬܝܐ ܕܟܬܒܐ",
-    "enter_text_back_desc": "ܐܣܝܡ ܟܬܒܐ ܠܫܦܐ ܕܙܠܝܢ ܕܟܬܒܐ"
+    "turn_on_shadows": "ܦܝܫܝܢ ܫܘܪܝܢ",
+    "turn_on_automatic_audio": "ܦܝܫܝܢ ܝܘܕܝܢ ܐܘܬܘܡܛܝܟ",
+    "premium_account": "ܚܕܬܐ ܕܦܪܝܡܝܨܝܡ",
+    "active": "ܥܠܐܐ"
   },
   "tg": {
-    "enter_text": "Матнро ворид кунед",
-    "enter_text_front": "Матнро барои саҳифаи пеш ворид кунед",
-    "enter_text_back": "Матнро барои саҳифаи ором ворид кунед",
-    "enter_text_front_desc": "Тавсифи матнро барои саҳифаи пеш ворид кунед",
-    "enter_text_back_desc": "Тавсифи матнро барои саҳифаи ором ворид кунед"
+    "turn_on_shadows": "Саёраҳоро ёрон",
+    "turn_on_automatic_audio": "Одоиши овози автоматикро ёрон",
+    "premium_account": "Ҳисоби Premium",
+    "active": "Фаъол"
   },
   "th": {
-    "enter_text": "ป้อนข้อความ",
-    "enter_text_front": "ป้อนข้อความสำหรับหน้าหน้า",
-    "enter_text_back": "ป้อนข้อความสำหรับหน้าหลัง",
-    "enter_text_front_desc": "ป้อนคำอธิบายข้อความสำหรับหน้าหน้า",
-    "enter_text_back_desc": "ป้อนคำอธิบายข้อความสำหรับหน้าหลัง"
+    "turn_on_shadows": "เปิดเงา",
+    "turn_on_automatic_audio": "เปิดเสียงอัตโนมัติ",
+    "premium_account": "บัญชี Premium",
+    "active": "ใช้งานอยู่"
   },
   "tk": {
-    "enter_text": "Teksti giriziň",
-    "enter_text_front": "Önüniň sahypasy üçin teksti giriziň",
-    "enter_text_back": "Arka sahypasy üçin teksti giriziň",
-    "enter_text_front_desc": "Önüniň sahypasy üçin teksti düşündirişi giriziň",
-    "enter_text_back_desc": "Arka sahypasy üçin teksti düşündirişi giriziň"
+    "turn_on_shadows": "Gölümleri ýangy",
+    "turn_on_automatic_audio": "Awtoamtik awdy ýangy",
+    "premium_account": "Premium hasaby",
+    "active": "Herekete giren"
   },
   "tl": {
-    "enter_text": "Ipasok ang teksto",
-    "enter_text_front": "Ipasok ang teksto para sa harapang pahina",
-    "enter_text_back": "Ipasok ang teksto para sa likod na pahina",
-    "enter_text_front_desc": "Ipasok ang paglalarawan ng teksto para sa harapang pahina",
-    "enter_text_back_desc": "Ipasok ang paglalarawan ng teksto para sa likod na pahina"
+    "turn_on_shadows": "Buksan ang mga anino",
+    "turn_on_automatic_audio": "Buksan ang awtomatikong audio",
+    "premium_account": "Premium account",
+    "active": "Aktibo"
   },
   "tpi": {
-    "enter_text": "Go putim tok",
-    "enter_text_front": "Go putim tok bilong paji i go het",
-    "enter_text_back": "Go putim tok bilong paji i go bihain",
-    "enter_text_front_desc": "Go putim tok bilong tok long paji i go het",
-    "enter_text_back_desc": "Go putim tok bilong tok long paji i go bihain"
+    "turn_on_shadows": "Makim draip",
+    "turn_on_automatic_audio": "Makim otomatiks audio",
+    "premium_account": "Premium account",
+    "active": "Aktif"
   },
   "tr": {
-    "enter_text": "Metin girin",
-    "enter_text_front": "Ön sayfa için metin girin",
-    "enter_text_back": "Arka sayfa için metin girin",
-    "enter_text_front_desc": "Ön sayfa metni için açıklama girin",
-    "enter_text_back_desc": "Arka sayfa metni için açıklama girin"
+    "turn_on_shadows": "Gölgeleri aç",
+    "turn_on_automatic_audio": "Otomatik sesi aç",
+    "premium_account": "Premium hesabı",
+    "active": "Aktif"
   },
   "ug": {
-    "enter_text": "تېكىستنى كىرگۈزۈڭ",
-    "enter_text_front": "ئالدى سەھىپە ئۈچۈن تېكىستنى كىرگۈزۈڭ",
-    "enter_text_back": "قىسمى سەھىپە ئۈچۈن تېكىستنى كىرگۈزۈڭ",
-    "enter_text_front_desc": "ئالدى سەھىپە تېكىست تەسۋىرىنى كىرگۈزۈڭ",
-    "enter_text_back_desc": "قىسمى سەھىپە تېكىست تەسۋىرىنى كىرگۈزۈڭ"
+    "turn_on_shadows": "سائېننى ئېچىش",
+    "turn_on_automatic_audio": "ئاۋتوماتىك ئاۋازنى ئېچىش",
+    "premium_account": "Premium حسابى",
+    "active": "ئاكتىپ"
   },
   "uk": {
-    "enter_text": "Введіть текст",
-    "enter_text_front": "Введіть текст для передньої сторінки",
-    "enter_text_back": "Введіть текст для задньої сторінки",
-    "enter_text_front_desc": "Введіть опис тексту для передньої сторінки",
-    "enter_text_back_desc": "Введіть опис тексту для задньої сторінки"
+    "turn_on_shadows": "Увімкнути тіні",
+    "turn_on_automatic_audio": "Увімкнути автоматичний звук",
+    "premium_account": "Premium аккаунт",
+    "active": "Активний"
   },
   "ur": {
-    "enter_text": "متن درج کریں",
-    "enter_text_front": "سامنے کے صفحے کے لئے متن درج کریں",
-    "enter_text_back": "پیچھے کے صفحے کے لئے متن درج کریں",
-    "enter_text_front_desc": "سامنے کے صفحے کے متن کی تفصیل درج کریں",
-    "enter_text_back_desc": "پیچھے کے صفحے کے متن کی تفصیل درج کریں"
+    "turn_on_shadows": "سائے چالو کریں",
+    "turn_on_automatic_audio": "خودکار آڈیو چالو کریں",
+    "premium_account": "پریمیم اکاؤنٹ",
+    "active": "فعال"
   },
   "uz": {
-    "enter_text": "Matnni kiriting",
-    "enter_text_front": "Oldingi sahifa uchun matnni kiriting",
-    "enter_text_back": "Orqa sahifa uchun matnni kiriting",
-    "enter_text_front_desc": "Oldingi sahifa matni uchun tavsifni kiriting",
-    "enter_text_back_desc": "Orqa sahifa matni uchun tavsifni kiriting"
+    "turn_on_shadows": "Soyalarni yoqish",
+    "turn_on_automatic_audio": "Avtomatik ovozni yoqish",
+    "premium_account": "Premium hisob",
+    "active": "Faol"
   },
   "vi": {
-    "enter_text": "Nhập văn bản",
-    "enter_text_front": "Nhập văn bản cho trang trước",
-    "enter_text_back": "Nhập văn bản cho trang sau",
-    "enter_text_front_desc": "Nhập mô tả văn bản cho trang trước",
-    "enter_text_back_desc": "Nhập mô tả văn bản cho trang sau"
+    "turn_on_shadows": "Bật bóng",
+    "turn_on_automatic_audio": "Bật âm thanh tự động",
+    "premium_account": "Tài khoản Premium",
+    "active": "Hoạt động"
   },
   "wo": {
-    "enter_text": "Bëggal teksti",
-    "enter_text_front": "Bëggal teksti ngir janxaateef",
-    "enter_text_back": "Bëggal teksti ngir janxaateef yàgg",
-    "enter_text_front_desc": "Bëggal seetlu teksti ngir janxaateef",
-    "enter_text_back_desc": "Bëggal seetlu teksti ngir janxaateef yàgg"
+    "turn_on_shadows": "Jënd njaxlaf",
+    "turn_on_automatic_audio": "Jënd audio otomatik",
+    "premium_account": "Kontu Premium",
+    "active": "Aktif"
   },
   "xh": {
-    "enter_text": "Faka umbhalo",
-    "enter_text_front": "Faka umbhalo kwiphepha lokuphambili",
-    "enter_text_back": "Faka umbhalo kwiphepha lokugqibela",
-    "enter_text_front_desc": "Faka incazelo yombhalo kwiphepha lokuphambili",
-    "enter_text_back_desc": "Faka incazelo yombhalo kwiphepha lokugqibela"
+    "turn_on_shadows": "Vula imithunzi",
+    "turn_on_automatic_audio": "Vula i-audio ezenzekelayo",
+    "premium_account": "Akhawunti ye-Premium",
+    "active": "Isebenza"
   },
   "yo": {
-    "enter_text": "Tẹ ọrọ sii",
-    "enter_text_front": "Tẹ ọrọ sii fun oju-iwe iwaju",
-    "enter_text_back": "Tẹ ọrọ sii fun oju-iwe ẹhin",
-    "enter_text_front_desc": "Tẹ apejuwe ọrọ sii fun oju-iwe iwaju",
-    "enter_text_back_desc": "Tẹ apejuwe ọrọ sii fun oju-iwe ẹhin"
+    "turn_on_shadows": "Ṣii awọn ojiji",
+    "turn_on_automatic_audio": "Ṣii ohun aifọwọyi",
+    "premium_account": "Akọọlẹ Premium",
+    "active": "N ṣiṣẹ"
   },
   "zh": {
-    "enter_text": "输入文本",
-    "enter_text_front": "输入前页的文本",
-    "enter_text_back": "输入后页的文本",
-    "enter_text_front_desc": "输入前页文本的描述",
-    "enter_text_back_desc": "输入后页文本的描述"
+    "turn_on_shadows": "开启阴影",
+    "turn_on_automatic_audio": "开启自动音频",
+    "premium_account": "高级账户",
+    "active": "活跃"
   },
   "zu": {
-    "enter_text": "Faka umbhalo",
-    "enter_text_front": "Faka umbhalo esipheleni esifanele",
-    "enter_text_back": "Faka umbhalo esipheleni esingemuva",
-    "enter_text_front_desc": "Faka incazelo yombhalo esipheleni esifanele",
-    "enter_text_back_desc": "Faka incazelo yombhalo esipheleni esingemuva"
+    "turn_on_shadows": "Vula izithunzi",
+    "turn_on_automatic_audio": "Vula umsindo ozenzakalelayo",
+    "premium_account": "Akhawunti ye-Premium",
+    "active": "Kusebenza"
   }
 }

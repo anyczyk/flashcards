@@ -134,5 +134,13 @@
   "enter_text_front": "Унесите текст за предњу страну",
   "enter_text_back": "Унесите текст за задњу страну",
   "enter_text_front_desc": "Унесите опис текста за предњу страну",
-  "enter_text_back_desc": "Унесите опис текста за задњу страну"
+  "enter_text_back_desc": "Унесите опис текста за задњу страну",
+  "turn_off_shadows": "Isključi senke",
+  "turn_off_automatic_audio": "Isključi automatski zvuk",
+  "buy_premium_desc": "Nabavite Premium nalog koji, pored uklanjanja reklama, omogućava neograničen pristup svim setovima flashcard-a, uključujući bilo koje flashcard-e koji se mogu dodati u budućnosti.",
+  "buy_premium_account": "Kupite Premium nalog",
+  "turn_on_shadows": "Uključi senke",
+  "turn_on_automatic_audio": "Uključi automatski zvuk",
+  "premium_account": "Premium nalog",
+  "active": "Aktivan"
 }

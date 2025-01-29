@@ -134,5 +134,13 @@
   "enter_text_front": "ป้อนข้อความสำหรับหน้าหน้า",
   "enter_text_back": "ป้อนข้อความสำหรับหน้าหลัง",
   "enter_text_front_desc": "ป้อนคำอธิบายข้อความสำหรับหน้าหน้า",
-  "enter_text_back_desc": "ป้อนคำอธิบายข้อความสำหรับหน้าหลัง"
+  "enter_text_back_desc": "ป้อนคำอธิบายข้อความสำหรับหน้าหลัง",
+  "turn_off_shadows": "ปิดเงา",
+  "turn_off_automatic_audio": "ปิดเสียงอัตโนมัติ",
+  "buy_premium_desc": "รับบัญชี Premium ที่นอกจากจะลบโฆษณาแล้ว ยังให้การเข้าถึงไม่จำกัดทุกชุดแฟลชการ์ด รวมถึงแฟลชการ์ดใดๆ ที่อาจเพิ่มขึ้นในอนาคต",
+  "buy_premium_account": "ซื้อบัญชี Premium",
+  "turn_on_shadows": "เปิดเงา",
+  "turn_on_automatic_audio": "เปิดเสียงอัตโนมัติ",
+  "premium_account": "บัญชี Premium",
+  "active": "ใช้งานอยู่"
 }

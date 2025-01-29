@@ -134,5 +134,13 @@
   "enter_text_front": "Vendosni tekstin për faqen e parë",
   "enter_text_back": "Vendosni tekstin për faqen e pasme",
   "enter_text_front_desc": "Vendosni përshkrimin e tekstit për faqen e parë",
-  "enter_text_back_desc": "Vendosni përshkrimin e tekstit për faqen e pasme"
+  "enter_text_back_desc": "Vendosni përshkrimin e tekstit për faqen e pasme",
+  "turn_off_shadows": "Fikshoni hijet",
+  "turn_off_automatic_audio": "Fikshoni audio automatike",
+  "buy_premium_desc": "Merrni një llogari Premium që, përveç heqjes së reklamave, ofron akses të pakufizuar në të gjitha setet e flashcard-eve, përfshirë çdo flashcard që mund të shtohet në të ardhmen.",
+  "buy_premium_account": "Bli llogarinë Premium",
+  "turn_on_shadows": "Aktivizo hijet",
+  "turn_on_automatic_audio": "Aktivizo audio automatike",
+  "premium_account": "Llogari Premium",
+  "active": "Aktiv"
 }

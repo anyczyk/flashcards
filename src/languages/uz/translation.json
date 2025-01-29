@@ -134,5 +134,13 @@
   "enter_text_front": "Oldingi sahifa uchun matnni kiriting",
   "enter_text_back": "Orqa sahifa uchun matnni kiriting",
   "enter_text_front_desc": "Oldingi sahifa matni uchun tavsifni kiriting",
-  "enter_text_back_desc": "Orqa sahifa matni uchun tavsifni kiriting"
+  "enter_text_back_desc": "Orqa sahifa matni uchun tavsifni kiriting",
+  "turn_off_shadows": "Soyalarni o‘chirib qo‘ying",
+  "turn_off_automatic_audio": "Avtomatik ovozni o‘chirib qo‘ying",
+  "buy_premium_desc": "Reklamalarni olib tashlashdan tashqari, kelajakda qo‘shilishi mumkin bo‘lgan har qanday flashcard-larni o‘z ichiga olgan barcha flashcard to‘plamlariga cheksiz kirish taqdim etadigan Premium hisobini oling.",
+  "buy_premium_account": "Premium hisobini sotib oling",
+  "turn_on_shadows": "Soyalarni yoqish",
+  "turn_on_automatic_audio": "Avtomatik ovozni yoqish",
+  "premium_account": "Premium hisob",
+  "active": "Faol"
 }

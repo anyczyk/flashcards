@@ -134,5 +134,13 @@
   "enter_text_front": "Önüniň sahypasy üçin teksti giriziň",
   "enter_text_back": "Arka sahypasy üçin teksti giriziň",
   "enter_text_front_desc": "Önüniň sahypasy üçin teksti düşündirişi giriziň",
-  "enter_text_back_desc": "Arka sahypasy üçin teksti düşündirişi giriziň"
+  "enter_text_back_desc": "Arka sahypasy üçin teksti düşündirişi giriziň",
+  "turn_off_shadows": "Gölümleri öçür",
+  "turn_off_automatic_audio": "Awtoamtik awdy öçür",
+  "buy_premium_desc": "Reklamalary aýyrmak bilen birlikde ähli flashcard toplumy üçin çäksiz elýeterlilik berýän Premium hasabyny alyň, geljekde goşulmagy mümkin bolan ähli flashcardlary hem içerýär.",
+  "buy_premium_account": "Premium hasaby satyn alyň",
+  "turn_on_shadows": "Gölümleri ýangy",
+  "turn_on_automatic_audio": "Awtoamtik awdy ýangy",
+  "premium_account": "Premium hasaby",
+  "active": "Herekete giren"
 }

@@ -134,5 +134,13 @@
   "enter_text_front": "Ange text för framsidan",
   "enter_text_back": "Ange text för baksidan",
   "enter_text_front_desc": "Ange textbeskrivning för framsidan",
-  "enter_text_back_desc": "Ange textbeskrivning för baksidan"
+  "enter_text_back_desc": "Ange textbeskrivning för baksidan",
+  "turn_off_shadows": "Stäng av skuggor",
+  "turn_off_automatic_audio": "Stäng av automatisk ljud",
+  "buy_premium_desc": "Få ett Premium-konto som, förutom att ta bort annonser, ger obegränsad åtkomst till alla flashcard-set, inklusive eventuella flashcards som kan läggas till i framtiden.",
+  "buy_premium_account": "Köp Premium-konto",
+  "turn_on_shadows": "Slå på skuggor",
+  "turn_on_automatic_audio": "Slå på automatisk ljud",
+  "premium_account": "Premium-konto",
+  "active": "Aktiv"
 }

@@ -132,5 +132,13 @@
   "enter_text_front": "Entrez le texte pour la page de devant",
   "enter_text_back": "Entrez le texte pour la page de derrière",
   "enter_text_front_desc": "Entrez la description du texte pour la page de devant",
-  "enter_text_back_desc": "Entrez la description du texte pour la page de derrière"
+  "enter_text_back_desc": "Entrez la description du texte pour la page de derrière",
+  "turn_off_shadows": "Désactiver les ombres",
+  "turn_off_automatic_audio": "Désactiver l'audio automatique",
+  "buy_premium_desc": "Obtenez un compte Premium qui, en plus de supprimer les publicités, offre un accès illimité à tous les ensembles de flashcards, y compris toute carte pouvant être ajoutée à l'avenir.",
+  "buy_premium_account": "Acheter un compte Premium",
+  "turn_on_shadows": "Activer les ombres",
+  "turn_on_automatic_audio": "Activer l'audio automatique",
+  "premium_account": "Compte Premium",
+  "active": "Actif"
 }

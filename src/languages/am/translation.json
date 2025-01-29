@@ -134,5 +134,13 @@
   "enter_text_front": "ለፊት ገጽ ጽሑፍ ያስገቡ",
   "enter_text_back": "ለጀርባ ገጽ ጽሑፍ ያስገቡ",
   "enter_text_front_desc": "ለፊት ገጽ መግለጫ ጽሑፍ ያስገቡ",
-  "enter_text_back_desc": "ለጀርባ ገጽ መግለጫ ጽሑፍ ያስገቡ"
+  "enter_text_back_desc": "ለጀርባ ገጽ መግለጫ ጽሑፍ ያስገቡ",
+  "turn_off_shadows": "ብስክሌት አብጽሕ",
+  "turn_off_automatic_audio": "አውቶማቲክ ድምጽ አብጽሕ",
+  "buy_premium_desc": "Premium አካውንት ያግኙ ያለማስታወቂያዎች ማስወገድ በተጨማሪ ሁሉንም ፍላሽካርድ ስብስቦች ለማግኘት በማይቆጣጠር መንገድ ያስተዋውቁ።",
+  "buy_premium_account": "Premium አካውንት ግዛ",
+  "turn_on_shadows": "ብስክሌት አብንክ",
+  "turn_on_automatic_audio": "አውቶማቲክ ድምጽ አብንክ",
+  "premium_account": "Premium አካውንት",
+  "active": "ተግባር ላይ"
 }

@@ -134,5 +134,13 @@
   "enter_text_front": "Sisestage teksti esilehe jaoks",
   "enter_text_back": "Sisestage teksti tagumise lehe jaoks",
   "enter_text_front_desc": "Sisestage teksti kirjeldus esilehe jaoks",
-  "enter_text_back_desc": "Sisestage teksti kirjeldus tagumise lehe jaoks"
+  "enter_text_back_desc": "Sisestage teksti kirjeldus tagumise lehe jaoks",
+  "turn_off_shadows": "Lülita varjud välja",
+  "turn_off_automatic_audio": "Lülita automaatne heli välja",
+  "buy_premium_desc": "Hangi Premium konto, mis reklaamide eemaldamise kõrval pakub piiramatut ligipääsu kõigile fläschkardinikele, sealhulgas võimalikele tulevikus lisatavatele fläschkardidele.",
+  "buy_premium_account": "Osta Premium konto",
+  "turn_on_shadows": "Lülita varjud sisse",
+  "turn_on_automatic_audio": "Lülita automaatne heli sisse",
+  "premium_account": "Premium konto",
+  "active": "Aktiivne"
 }

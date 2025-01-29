@@ -83,7 +83,12 @@ export const FlashcardProvider = ({ children }) => {
 
     const loadData = useCallback(async () => {
         const data = await getAllFlashcards();
-        setFlashcards(data);
+        // setFlashcards(data);
+        if(isPremium) {
+            setFlashcards(data);
+        } else {
+            setFlashcards(data.filter(fc => fc.type === "free" || !fc.type));
+        }
 
         const allCat = new Set(
             data.filter(fc => fc.category && fc.category.trim() !== '')
@@ -111,14 +116,14 @@ export const FlashcardProvider = ({ children }) => {
         setSuperCategoriesArray([...superCategories]);
         setCategories(cats);
         setAllCategories([...allCat]);
-    }, []);
+    }, [isPremium]);
 
     useEffect(() => {
         loadData();
     }, [loadData]);
 
-    const addFlashcard = async (front, back, category, know, langFront, langBack, superCategory, frontDesc) => {
-        const newFc = await addFlashcardToDB(front, back, category, know, langFront, langBack, superCategory, frontDesc);
+    const addFlashcard = async (front, back, category, know, langFront, langBack, superCategory, frontDesc, type) => {
+        const newFc = await addFlashcardToDB(front, back, category, know, langFront, langBack, superCategory, frontDesc, type);
         setFlashcards((prev) => {
             const updated = [...prev, newFc];
             updateCategories(updated);
@@ -135,8 +140,8 @@ export const FlashcardProvider = ({ children }) => {
         });
     };
 
-    const editFlashcard = async (id, updatedFront, updatedBack, updatedCategory, updatedKnow, updatedFrontLang, updatedBackLang, updateSuperCategory, updatedFrontDesc, updatedBackDesc) => {
-        await editFlashcardInDB(id, updatedFront, updatedBack, updatedCategory, updatedKnow, updatedFrontLang, updatedBackLang, updateSuperCategory, updatedFrontDesc, updatedBackDesc);
+    const editFlashcard = async (id, updatedFront, updatedBack, updatedCategory, updatedKnow, updatedFrontLang, updatedBackLang, updateSuperCategory, updatedFrontDesc, updatedBackDesc, updatedType) => {
+        await editFlashcardInDB(id, updatedFront, updatedBack, updatedCategory, updatedKnow, updatedFrontLang, updatedBackLang, updateSuperCategory, updatedFrontDesc, updatedBackDesc, updatedType);
         setFlashcards((prev) => {
             const updated = prev.map(fc =>
                 fc.id === id
@@ -150,7 +155,8 @@ export const FlashcardProvider = ({ children }) => {
                         langBack: updatedBackLang,
                         superCategory: updateSuperCategory,
                         frontDesc: updatedFrontDesc,
-                        backDesc: updatedBackDesc
+                        backDesc: updatedBackDesc,
+                        type: updatedType
                     }
                     : fc
             );
@@ -172,7 +178,8 @@ export const FlashcardProvider = ({ children }) => {
             card.langBack,
             card.superCategory,
             card.frontDesc,
-            card.backDesc
+            card.backDesc,
+            card.type
         );
         setFlashcards((prev) =>
             prev.map(fc => (fc.id === id ? { ...fc, know: knowValue } : fc))
@@ -202,6 +209,10 @@ export const FlashcardProvider = ({ children }) => {
         setCategories(cats);
     };
 
+    const audioOnOff = () => {
+        setSyntAudio(prev => !prev);
+    };
+
     return (
         <FlashcardContext.Provider
             value={{
@@ -227,7 +238,8 @@ export const FlashcardProvider = ({ children }) => {
                 addFlashcard,
                 removeFlashcard,
                 editFlashcard,
-                setFlashcardKnow
+                setFlashcardKnow,
+                audioOnOff
             }}
         >
             {children}

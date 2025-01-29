@@ -134,5 +134,13 @@
   "enter_text_front": "Bëggal teksti ngir janxaateef",
   "enter_text_back": "Bëggal teksti ngir janxaateef yàgg",
   "enter_text_front_desc": "Bëggal seetlu teksti ngir janxaateef",
-  "enter_text_back_desc": "Bëggal seetlu teksti ngir janxaateef yàgg"
+  "enter_text_back_desc": "Bëggal seetlu teksti ngir janxaateef yàgg",
+  "turn_off_shadows": "Jënd njaxlaf",
+  "turn_off_automatic_audio": "Jënd audio otomatik",
+  "buy_premium_desc": "Naat ci kontu Premium bu, ci kanam jàpp ci yokkute ci yeneen jëfandikukat yi, dinaa defar ci wér gu amul dinga, ak benn flashcard bu nu jàpp ci njiitu bés bi.",
+  "buy_premium_account": "Bëgg ci kontu Premium",
+  "turn_on_shadows": "Jënd njaxlaf",
+  "turn_on_automatic_audio": "Jënd audio otomatik",
+  "premium_account": "Kontu Premium",
+  "active": "Aktif"
 }

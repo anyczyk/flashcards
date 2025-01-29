@@ -49,6 +49,8 @@ const FlashCardListEdit = ({
                                setEditSuperCategory,
                                editKnow,
                                setEditKnow,
+                               editType,
+                               setEditType,
                                selectedCards
                            }) => {
     const { t } = useTranslation();
@@ -62,11 +64,6 @@ const FlashCardListEdit = ({
     const [categoriesDependentOnSuperCategory, setCategoriesDependentOnSuperCategory] = useState([]);
 
     const cardRefs = useRef({});
-
-    const editFrontRef = useRef(null);
-    const editBackRef = useRef(null);
-    const editFrontDescRef = useRef(null);
-    const editBackDescRef = useRef(null);
 
     const loadDataSelectors = useCallback(async () => {
         const data = await getAllFlashcards();
@@ -182,7 +179,8 @@ const FlashCardListEdit = ({
                 editBackLang.trim(),
                 editSuperCategory.trim(),
                 editFrontDesc.trim(),
-                editBackDesc.trim()
+                editBackDesc.trim(),
+                editType
             );
 
             const allFlashcards = await getAllFlashcards();
@@ -255,6 +253,7 @@ const FlashCardListEdit = ({
 
         setOldCategory(card.category || '');
         setOldSuperCategory(card.superCategory || '');
+        setEditType(card.type);
     };
 
     const setCardRef = useCallback((id) => (element) => {
@@ -384,7 +383,7 @@ const FlashCardListEdit = ({
                                     <hr/>
                                     <div className="o-default-box">
                                         <label htmlFor={`o-edit-front-${card.id}`}>{t('front')}:</label>
-                                        <TextAreaAdvanced id={`o-edit-front-${card.id}`} ref={editFrontRef} set={setEditFront} state={editFront} langForB={editFrontLang} required={true} placeholder={t('enter_text_front')} />
+                                        <TextAreaAdvanced id={`o-edit-front-${card.id}`} set={setEditFront} state={editFront} langForB={editFrontLang} required={true} placeholder={t('enter_text_front')} />
                                         {/*<textarea*/}
                                         {/*    ref={editFrontRef}*/}
                                         {/*    value={editFront}*/}
@@ -400,7 +399,7 @@ const FlashCardListEdit = ({
                                     </div>
                                     <div className="o-default-box">
                                         <label htmlFor={`o-edit-front-desc-${card.id}`}>{t('description')}:</label>
-                                        <TextAreaAdvanced id={`o-edit-front-desc-${card.id}`} ref={editFrontDescRef} set={setEditFrontDesc} state={editFrontDesc} langForB={editFrontLang} required={false} placeholder={t('enter_text_front_desc')} />
+                                        <TextAreaAdvanced id={`o-edit-front-desc-${card.id}`} set={setEditFrontDesc} state={editFrontDesc} langForB={editFrontLang} required={false} placeholder={t('enter_text_front_desc')} />
                                         {/*<textarea*/}
                                         {/*    ref={editFrontDescRef}*/}
                                         {/*    value={editFrontDesc}*/}
@@ -427,7 +426,7 @@ const FlashCardListEdit = ({
                                     <hr/>
                                     <div className="o-default-box">
                                         <label htmlFor={`o-edit-back-${card.id}`}>{t('back')}:</label>
-                                        <TextAreaAdvanced id={`o-edit-back-${card.id}`} ref={editBackRef}
+                                        <TextAreaAdvanced id={`o-edit-back-${card.id}`}
                                                           set={setEditBack} state={editBack} langForB={editBackLang}
                                                           required={true} placeholder={t('enter_text_back')}/>
                                         {/*<textarea*/}
@@ -445,7 +444,7 @@ const FlashCardListEdit = ({
                                     </div>
                                     <div className="o-default-box">
                                         <label htmlFor={`o-edit-back-desc-${card.id}`}>{t('description')}:</label>
-                                        <TextAreaAdvanced id={`o-edit-back-desc-${card.id}`} ref={editBackDescRef}
+                                        <TextAreaAdvanced id={`o-edit-back-desc-${card.id}`}
                                                           set={setEditBackDesc} state={editBackDesc}
                                                           langForB={editBackLang} required={false}
                                                           placeholder={t('enter_text_back_desc')}/>

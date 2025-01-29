@@ -134,5 +134,13 @@
   "enter_text_front": "Insira o texto para a página frontal",
   "enter_text_back": "Insira o texto para a página traseira",
   "enter_text_front_desc": "Insira a descrição do texto para a página frontal",
-  "enter_text_back_desc": "Insira a descrição do texto para a página traseira"
+  "enter_text_back_desc": "Insira a descrição do texto para a página traseira",
+  "turn_off_shadows": "Desativar sombras",
+  "turn_off_automatic_audio": "Desativar áudio automático",
+  "buy_premium_desc": "Obtenha uma conta Premium que, além de remover anúncios, fornece acesso ilimitado a todos os conjuntos de flashcards, incluindo quaisquer flashcards que possam ser adicionados no futuro.",
+  "buy_premium_account": "Comprar conta Premium",
+  "turn_on_shadows": "Ativar sombras",
+  "turn_on_automatic_audio": "Ativar áudio automático",
+  "premium_account": "Conta Premium",
+  "active": "Ativo"
 }

@@ -134,5 +134,13 @@
   "enter_text_front": "Introduceți textul pentru pagina frontală",
   "enter_text_back": "Introduceți textul pentru pagina din spate",
   "enter_text_front_desc": "Introduceți descrierea textului pentru pagina frontală",
-  "enter_text_back_desc": "Introduceți descrierea textului pentru pagina din spate"
+  "enter_text_back_desc": "Introduceți descrierea textului pentru pagina din spate",
+  "turn_off_shadows": "Dezactivează umbrele",
+  "turn_off_automatic_audio": "Dezactivează audio automat",
+  "buy_premium_desc": "Obțineți un cont Premium care, pe lângă eliminarea reclamelor, oferă acces nelimitat la toate seturile de flashcard-uri, inclusiv la orice flashcard-uri care pot fi adăugate în viitor.",
+  "buy_premium_account": "Cumpără cont Premium",
+  "turn_on_shadows": "Activează umbrele",
+  "turn_on_automatic_audio": "Activează audio automat",
+  "premium_account": "Cont Premium",
+  "active": "Activ"
 }

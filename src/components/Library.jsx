@@ -6,6 +6,7 @@ import FilesListImportFree from "./sub-components/common/FilesListImportFree";
 import AdButton from "./sub-components/common/AdButton";
 import Premium from "./sub-components/Library/Premium";
 import {FlashcardContext} from "../context/FlashcardContext";
+import PremiumBrowser from "./sub-components/Library/PremiumBrowser";
 
 function Library() {
     const { t } = useTranslation();
@@ -18,12 +19,13 @@ function Library() {
         <div className="o-page-library">
             <h2>{t('library')}</h2>
             <hr/>
-            {window.cordova ? <><Premium /><hr /></> : '' }
+            {window.cordova ? <Premium/> : <PremiumBrowser/>}
+            <hr/>
             {!isPremium && <>
                 {!(timerAccess > 0) && <p>{t('free_access_courses_or_support')}:</p>}
-                <AdButton timerAccess={timerAccess} setTimerAccess={setTimerAccess} />
+                <AdButton timerAccess={timerAccess} setTimerAccess={setTimerAccess}/>
             </>}
-            <FilesListImportFree timerAccess={timerAccess} />
+            <FilesListImportFree timerAccess={timerAccess}/>
         </div>
     );
 }

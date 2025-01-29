@@ -20,6 +20,7 @@ function Search() {
         editCategory, setEditCategory,
         editSuperCategory, setEditSuperCategory,
         editKnow, setEditKnow,
+        editType, setEditType,
         selectedCards, setSelectedCards,
         editFrontLang, setEditFrontLang,
         editBackLang, setEditBackLang,
@@ -119,6 +120,8 @@ function Search() {
                     setEditSuperCategory={setEditSuperCategory}
                     editKnow={editKnow}
                     setEditKnow={setEditKnow}
+                    editType={editType}
+                    setEditType={setEditType}
                     selectedCards={selectedCards}
                     typePage={'search'}
                     setSearchRestart={setSearchRestart}

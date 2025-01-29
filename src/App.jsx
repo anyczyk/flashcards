@@ -13,6 +13,7 @@ import { setLocalStorage, getLocalStorage } from './utils/storage';
 import Footer from "./components/Footer";
 import { FlashcardContext } from './context/FlashcardContext';
 import {EditSearchProvider} from "./context/EditSearchContext";
+import Settings from "./components/Settings";
 
 function App() {
     const { t, i18n } = useTranslation();
@@ -23,13 +24,28 @@ function App() {
         addFlashcard,
         categories,
         superCategoriesArray,
-        setPlayFlashcards
+        setPlayFlashcards,
+        setIsPremium,
+        isPremium
     } = useContext(FlashcardContext);
     const [mainMenuVisible, setMainMenuVisible] = useState(false);
     const [mainHomePageLoad,setMainHomePageLoad] = useState(false);
     const [editPageLoad,setEditPageLoad] = useState(false);
     const [preloader, setPreloader] = useState(false);
+    const [globalNoShadows, setGlobalNoShadows] = useState(() => {
+        const storedShadows = getLocalStorage('oGlobalShadows');
+        return storedShadows !== null ? storedShadows : true;
+    });
 
+    useEffect(() => {
+        setLocalStorage('oGlobalShadows', globalNoShadows);
+    }, [globalNoShadows]);
+
+    useEffect(() => {
+        if (getLocalStorage('oIsPremium4') === 'true') {
+            setIsPremium(true);
+        }
+    }, [isPremium]);
 
     useEffect(() => {
         document.addEventListener('deviceready', () => {
@@ -76,7 +92,7 @@ function App() {
     }, [location.pathname]);
 
     return (
-        <div className={`o ${mainMenuVisible ? 'o-menu-visible' : ''}`}>
+        <div className={`o ${mainMenuVisible ? 'o-menu-visible' : ''} ${!globalNoShadows ? 'o-global-no-shadows' : ''}`}>
 
             <Header clearOptions={clearOptions} setMainHomePageLoad={setMainHomePageLoad} mainMenuVisible={mainMenuVisible} setMainMenuVisible={setMainMenuVisible} />
 
@@ -87,11 +103,12 @@ function App() {
                 )}
                 <Routes>
                     <Route path="/" element={<ViewFlashcards clearInsomnia={clearInsomnia} mainHomePageLoad={mainHomePageLoad} setMainHomePageLoad={setMainHomePageLoad} />}/>
-                    <Route path="/list-edit" element={<EditSearchProvider><EditFlashcardList editPageLoad={editPageLoad} setEditPageLoad={setEditPageLoad} preloader={preloader} setPreloader={setPreloader} /></EditSearchProvider>}/>
+                    <Route path="/list-edit" element={<EditSearchProvider><EditFlashcardList editPageLoad={editPageLoad} setEditPageLoad={setEditPageLoad} preloader={preloader} setPreloader={setPreloader}  /></EditSearchProvider>}/>
                     <Route path="/create" element={<CreateFlashcard addFlashcard={addFlashcard} categories={categories} superCategoriesArray={superCategoriesArray} />} />
                     <Route path="/import-export" element={<ImportExport />} />
                     <Route path="/library" element={<Library />} />
                     <Route path="/Search" element={<EditSearchProvider><Search /></EditSearchProvider>} />
+                    <Route path="/settings" element={<Settings globalNoShadows={globalNoShadows} setGlobalNoShadows={setGlobalNoShadows} />} />
                     <Route path="*" element={<Navigate to="/" replace/>}/>
                 </Routes>
             </main>

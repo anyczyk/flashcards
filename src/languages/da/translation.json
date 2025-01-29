@@ -134,5 +134,13 @@
   "enter_text_front": "Indtast tekst til forsiden",
   "enter_text_back": "Indtast tekst til bagsiden",
   "enter_text_front_desc": "Indtast beskrivelse til forsidens tekst",
-  "enter_text_back_desc": "Indtast beskrivelse til bagsidens tekst"
+  "enter_text_back_desc": "Indtast beskrivelse til bagsidens tekst",
+  "turn_off_shadows": "Sluk skygger",
+  "turn_off_automatic_audio": "Sluk automatisk lyd",
+  "buy_premium_desc": "Få en Premium-konto, som ud over at fjerne reklamer, giver ubegrænset adgang til alle flashcard-sæt, inklusive eventuelle flashcards, der måtte blive tilføjet i fremtiden.",
+  "buy_premium_account": "Køb premiumkonto",
+  "turn_on_shadows": "Tænd skygger",
+  "turn_on_automatic_audio": "Tænd automatisk lyd",
+  "premium_account": "Premiumkonto",
+  "active": "Aktiv"
 }

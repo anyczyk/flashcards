@@ -134,5 +134,13 @@
   "enter_text_front": "Text für die Vorderseite eingeben",
   "enter_text_back": "Text für die Rückseite eingeben",
   "enter_text_front_desc": "Textbeschreibung für die Vorderseite eingeben",
-  "enter_text_back_desc": "Textbeschreibung für die Rückseite eingeben"
+  "enter_text_back_desc": "Textbeschreibung für die Rückseite eingeben",
+  "turn_off_shadows": "Schatten ausschalten",
+  "turn_off_automatic_audio": "Automatische Audio ausschalten",
+  "buy_premium_desc": "Erhalte ein Premium-Konto, das neben der Entfernung von Werbung unbegrenzten Zugang zu allen Kartensätzen bietet, einschließlich eventueller zukünftiger Karten.",
+  "buy_premium_account": "Premium-Konto kaufen",
+  "turn_on_shadows": "Schatten einschalten",
+  "turn_on_automatic_audio": "Automatische Audio einschalten",
+  "premium_account": "Premium-Konto",
+  "active": "Aktiv"
 }

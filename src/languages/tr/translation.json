@@ -134,5 +134,13 @@
   "enter_text_front": "Ön sayfa için metin girin",
   "enter_text_back": "Arka sayfa için metin girin",
   "enter_text_front_desc": "Ön sayfa metni için açıklama girin",
-  "enter_text_back_desc": "Arka sayfa metni için açıklama girin"
+  "enter_text_back_desc": "Arka sayfa metni için açıklama girin",
+  "turn_off_shadows": "Gölgeleri kapat",
+  "turn_off_automatic_audio": "Otomatik sesi kapat",
+  "buy_premium_desc": "Reklamları kaldırmanın yanı sıra gelecekte eklenebilecek tüm flashcard setlerine sınırsız erişim sağlayan Premium hesabı edinin.",
+  "buy_premium_account": "Premium hesabı satın al",
+  "turn_on_shadows": "Gölgeleri aç",
+  "turn_on_automatic_audio": "Otomatik sesi aç",
+  "premium_account": "Premium hesabı",
+  "active": "Aktif"
 }

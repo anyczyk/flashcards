@@ -134,5 +134,13 @@
   "enter_text_front": "Wprowadź tekst na przednią stronę",
   "enter_text_back": "Wprowadź tekst na tylną stronę",
   "enter_text_front_desc": "Wprowadź opis tekstu na przednią stronę",
-  "enter_text_back_desc": "Wprowadź opis tekstu na tylną stronę"
+  "enter_text_back_desc": "Wprowadź opis tekstu na tylną stronę",
+  "turn_off_shadows": "Wyłącz cienie",
+  "turn_off_automatic_audio": "Wyłącz automatyczne audio",
+  "buy_premium_desc": "Zdobądź konto Premium, które oprócz wyłączenia reklam zapewni nielimitowany dostęp do wszystkich zestawów fiszek, włącznie z ewentualnymi fiszkami, które będą się pojawiać w przyszłości.",
+  "buy_premium_account": "Kup konto Premium",
+  "turn_on_shadows": "Włącz cienie",
+  "turn_on_automatic_audio": "Włącz automatyczne audio",
+  "premium_account": "Konto Premium",
+  "active": "Aktywne"
 }

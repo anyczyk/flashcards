@@ -134,5 +134,13 @@
   "enter_text_front": "Ingresa el texto para la página frontal",
   "enter_text_back": "Ingresa el texto para la página trasera",
   "enter_text_front_desc": "Ingresa la descripción del texto para la página frontal",
-  "enter_text_back_desc": "Ingresa la descripción del texto para la página trasera"
+  "enter_text_back_desc": "Ingresa la descripción del texto para la página trasera",
+  "turn_off_shadows": "Apagar sombras",
+  "turn_off_automatic_audio": "Apagar audio automático",
+  "buy_premium_desc": "Obtén una cuenta Premium que, además de eliminar anuncios, proporciona acceso ilimitado a todos los conjuntos de tarjetas de memoria, incluyendo cualquier tarjeta que pueda agregarse en el futuro.",
+  "buy_premium_account": "Comprar cuenta Premium",
+  "turn_on_shadows": "Activar sombras",
+  "turn_on_automatic_audio": "Activar audio automático",
+  "premium_account": "Cuenta Premium",
+  "active": "Activo"
 }

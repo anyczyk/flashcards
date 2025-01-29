@@ -134,5 +134,13 @@
   "enter_text_front": "Masukkan teks untuk halaman depan",
   "enter_text_back": "Masukkan teks untuk halaman belakang",
   "enter_text_front_desc": "Masukkan deskripsi teks untuk halaman depan",
-  "enter_text_back_desc": "Masukkan deskripsi teks untuk halaman belakang"
+  "enter_text_back_desc": "Masukkan deskripsi teks untuk halaman belakang",
+  "turn_off_shadows": "Matikan bayang",
+  "turn_off_automatic_audio": "Matikan audio automatik",
+  "buy_premium_desc": "Dapatkan akaun Premium yang, selain daripada membuang iklan, menyediakan akses tanpa had ke semua set flashcard, termasuk mana-mana flashcard yang mungkin ditambah pada masa hadapan.",
+  "buy_premium_account": "Beli akaun Premium",
+  "turn_on_shadows": "Hidupkan bayangan",
+  "turn_on_automatic_audio": "Hidupkan audio automatik",
+  "premium_account": "Akaun Premium",
+  "active": "Aktif"
 }

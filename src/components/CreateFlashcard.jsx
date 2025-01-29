@@ -9,7 +9,6 @@ import { getAllFlashcards } from '../db';
 import SelectSuperCategory from "./sub-components/common/SelectSuperCategory";
 import SelectCategory from "./sub-components/common/SelectCategory";
 import { useLocation, useNavigate } from "react-router-dom";
-import { FlashcardContext } from "../context/FlashcardContext";
 import TextAreaAdvanced from "./sub-components/common/TextAreaAdvanced";
 
 function encodeSuperCategoryKey(superCategory) {
@@ -18,7 +17,6 @@ function encodeSuperCategoryKey(superCategory) {
 
 function CreateFlashcard({ addFlashcard, categories, superCategoriesArray }) {
     const { t } = useTranslation();
-    const { rtlCodeLangs, dirAttribute } = useContext(FlashcardContext);
 
     const location = useLocation();
     const queryParams = new URLSearchParams(location.search);
@@ -40,10 +38,6 @@ function CreateFlashcard({ addFlashcard, categories, superCategoriesArray }) {
     const [categoriesDependentOnSuperCategory, setCategoriesDependentOnSuperCategory] = useState([]);
     const [currentSelectSuperCategory, setCurrentSelectSuperCategory] = useState('');
     const [continueAdd, setContinueAdd] = useState(false);
-    const frontDescRef = useRef(null);
-    const backDescRef = useRef(null);
-    const frontRef = useRef(null);
-    const backRef = useRef(null);
 
     useEffect(() => {
         if (getSuperCategory !== null && getSuperCategory !== undefined) {
@@ -221,13 +215,13 @@ function CreateFlashcard({ addFlashcard, categories, superCategoriesArray }) {
                         <label htmlFor="o-textarea-front">
                             <span className="color-red">*</span> {t('front')}:
                         </label>
-                        <TextAreaAdvanced id="o-textarea-front" ref={frontRef} set={setFront} state={front} langForB={langFront} required={true} placeholder={t('enter_text_front')} />
+                        <TextAreaAdvanced id="o-textarea-front" set={setFront} state={front} langForB={langFront} required={true} placeholder={t('enter_text_front')} />
                     </div>
                     <div className="o-default-box">
                         <label htmlFor="o-textarea-front-desc">
                             {t('description')}:
                         </label>
-                        <TextAreaAdvanced id="o-textarea-front-desc" ref={frontDescRef} set={setFrontDesc} state={frontDesc} langForB={langFront} required={false} placeholder={t('enter_text_front_desc')} />
+                        <TextAreaAdvanced id="o-textarea-front-desc" set={setFrontDesc} state={frontDesc} langForB={langFront} required={false} placeholder={t('enter_text_front_desc')} />
                     </div>
                     <div className="o-default-box">
                         <label htmlFor="lang-front">
@@ -245,13 +239,13 @@ function CreateFlashcard({ addFlashcard, categories, superCategoriesArray }) {
                         <label htmlFor="o-textarea-back">
                             <span className="color-red">*</span> {t('back')}:
                         </label>
-                        <TextAreaAdvanced id="o-textarea-back" ref={backRef} set={setBack} state={back} langForB={langBack} required={true} placeholder={t('enter_text_back')} />
+                        <TextAreaAdvanced id="o-textarea-back" set={setBack} state={back} langForB={langBack} required={true} placeholder={t('enter_text_back')} />
                     </div>
                     <div className="o-default-box">
                         <label htmlFor="o-textarea-back-desc">
                             {t('description')}:
                         </label>
-                        <TextAreaAdvanced id="o-textarea-back-desc" ref={backDescRef} set={setBackDesc} state={backDesc} langForB={langBack} required={false} placeholder={t('enter_text_back_desc')} />
+                        <TextAreaAdvanced id="o-textarea-back-desc" set={setBackDesc} state={backDesc} langForB={langBack} required={false} placeholder={t('enter_text_back_desc')} />
                     </div>
                     <div className="o-default-box">
                         <label htmlFor="lang-back">

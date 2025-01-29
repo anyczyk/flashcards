@@ -134,5 +134,13 @@
   "enter_text_front": "输入前页的文本",
   "enter_text_back": "输入后页的文本",
   "enter_text_front_desc": "输入前页文本的描述",
-  "enter_text_back_desc": "输入后页文本的描述"
+  "enter_text_back_desc": "输入后页文本的描述",
+  "turn_off_shadows": "关闭阴影",
+  "turn_off_automatic_audio": "关闭自动音频",
+  "buy_premium_desc": "获取一个高级账户，除了移除广告外，还提供对所有闪卡集的无限访问，包括未来可能添加的任何闪卡。",
+  "buy_premium_account": "购买高级账户",
+  "turn_on_shadows": "开启阴影",
+  "turn_on_automatic_audio": "开启自动音频",
+  "premium_account": "高级账户",
+  "active": "活跃"
 }

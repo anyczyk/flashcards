@@ -293,6 +293,10 @@ const CategoryListDragDrop = ({
                                                                                 );
                                                                             }).length;
 
+                                                                            if (knowSubCatCount === 0 && subCatCount === 0) {
+                                                                                return null;
+                                                                            }
+
                                                                             return (
                                                                                 <Draggable
                                                                                     key={subCat}

@@ -207,7 +207,8 @@ const ModalEdit = ({
                             card.langBack,
                             action === 'reset' ? card.superCategory : nameNew,
                             card.frontDesc,
-                            card.backDesc
+                            card.backDesc,
+                            card.type
                         );
                     }
                 }
@@ -234,7 +235,8 @@ const ModalEdit = ({
                             card.langBack,
                             nameNewSuperCategory,
                             card.frontDesc,
-                            card.backDesc
+                            card.backDesc,
+                            card.type
                         );
                     }
                 }
@@ -256,7 +258,8 @@ const ModalEdit = ({
                             card.langBack,
                             card.superCategory,
                             card.frontDesc,
-                            card.backDesc
+                            card.backDesc,
+                            card.type
                         );
                     }
                 }
@@ -291,7 +294,8 @@ const ModalEdit = ({
                             card.langBack,
                             nameNewSuperCategory,
                             card.frontDesc,
-                            card.backDesc
+                            card.backDesc,
+                            card.type
                         );
                     }
                 }
@@ -308,7 +312,8 @@ const ModalEdit = ({
                     card.langBack,
                     card.superCategory,
                     card.frontDesc,
-                    card.backDesc
+                    card.backDesc,
+                    card.type
                 );
             }
             // else if (type === 'remove-all-flashcards') {

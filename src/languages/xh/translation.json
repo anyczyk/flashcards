@@ -134,5 +134,13 @@
   "enter_text_front": "Faka umbhalo kwiphepha lokuphambili",
   "enter_text_back": "Faka umbhalo kwiphepha lokugqibela",
   "enter_text_front_desc": "Faka incazelo yombhalo kwiphepha lokuphambili",
-  "enter_text_back_desc": "Faka incazelo yombhalo kwiphepha lokugqibela"
+  "enter_text_back_desc": "Faka incazelo yombhalo kwiphepha lokugqibela",
+  "turn_off_shadows": "Cima imithunzi",
+  "turn_off_automatic_audio": "Cima i-audio ezenzekelayo",
+  "buy_premium_desc": "Fumana iakhawunti ye-Premium enokuthabatha izikhangiso kunye nokunika ukufikelela okungenamda kuwo onke amasethi e-flashcard, kubandakanywa naziphi na i-flashcard ezinokongezwa esikhathini esizayo.",
+  "buy_premium_account": "Thenga iakhawunti ye-Premium",
+  "turn_on_shadows": "Vula imithunzi",
+  "turn_on_automatic_audio": "Vula i-audio ezenzekelayo",
+  "premium_account": "Akhawunti ye-Premium",
+  "active": "Isebenza"
 }

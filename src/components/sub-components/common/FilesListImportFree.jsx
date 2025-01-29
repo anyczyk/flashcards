@@ -4,9 +4,11 @@ import React, { useContext, useEffect, useState } from "react";
 import enDe from "../../../data/en-de/en-de.json";
 import enFr from "../../../data/en-fr/en-fr.json";
 import enPl from "../../../data/en-pl/en-pl.json";
+// import enPlFree from "../../../data/en-pl/en-pl-free.json";
+// import enPlPremium from "../../../data/en-pl/en-pl-premium.json";
 import enEs from "../../../data/en-es/en-es.json";
 import enId from "../../../data/en-id/en-id.json";
-import plPolskiePrzedmiotyLekcyjne from "../../../data/pl/pl-polskie-przedmioty-lekcyjne.json";
+// import plPolskiePrzedmiotyLekcyjne from "../../../data/pl/pl-polskie-przedmioty-lekcyjne.json";
 import { useTranslation } from "react-i18next";
 import { importAdd } from "../../../utils/import";
 import { FlashcardContext } from "../../../context/FlashcardContext";
@@ -22,8 +24,10 @@ const dataFiles = [
     { mainLanguage: "es", category: esTitle, file: enEs, name: "1000 palabras populares en inglés"},
     { mainLanguage: "fr", category: frTitle, file: enFr, name: "1000 mots anglais populaires"},
     { mainLanguage: "id", category: idTitle, file: enId, name: "1000 Kata Bahasa Inggris yang Populer" },
-    { mainLanguage: "pl", category: plTitle, file: enPl, name: "1000 popularnych angielskich słów" },
-    { mainLanguage: "pl", category: plTitle, file: plPolskiePrzedmiotyLekcyjne, name: "Polskie przedmioty lekcyjne", description: "Najbardziej popularne pytania z przedmiotów szkolnych: Biologii (100), Fizyki (220), Geografii (200), Historii (100)" }
+    { mainLanguage: "pl", category: plTitle, file: enPl, name: "1000 popularnych angielskich słów", description: "1000 popularnych angielskich słów - 3 zestawy fiszek za darmo"},
+    // { mainLanguage: "pl", category: plTitle, file: enPlFree, name: "1000 popularnych angielskich słów", description: "1000 popularnych angielskich słów - 3 zestawy po 20 fiszek za darmo"},
+    // { mainLanguage: "pl", category: plTitle, file: enPlPremium, name: "1000 popularnych angielskich słów", description: "1000 popularnych angielskich słów - aż 47 dodatkowych zestawów Premium", premium: true},
+    // { mainLanguage: "pl", category: plTitle, file: plPolskiePrzedmiotyLekcyjne, name: "Polskie przedmioty lekcyjne", description: "Najbardziej popularne pytania z przedmiotów szkolnych: Biologii (100), Fizyki (220), Geografii (200), Historii (100)" }
 ];
 
 const FilesListImportFree = ({ timerAccess }) => {
@@ -82,8 +86,13 @@ const FilesListImportFree = ({ timerAccess }) => {
                                 <button
                                     className="btn--blue w-100 text-left justify-content-left"
                                     onClick={() => importFile(item)}
-                                    disabled={!(isPremium || timerAccess > 0 || !currentLocalStorageCategoryOrder.includes(item.name))}
-                                    // disabled={!(timerAccess > 0) || currentLocalStorageCategoryOrder.includes(item.name)}
+                                    // disabled={!(isPremium || timerAccess > 0 || !currentLocalStorageCategoryOrder.includes(item.name))}
+                                    disabled={
+                                        isPremium ?
+                                        currentLocalStorageCategoryOrder.includes(item.name)
+                                        :
+                                        (!(timerAccess > 0) || currentLocalStorageCategoryOrder.includes(item.name))
+                                    }
                                 >
                                     <i className="icon-logo-f" />
                                     {item.description || item.name}{" "}
@@ -92,9 +101,8 @@ const FilesListImportFree = ({ timerAccess }) => {
                                 </button>
                                 {currentLocalStorageCategoryOrder.includes(item.name) &&
                                     <div className="o-install-item__checked">
-                                        {/*<span*/}
-                                        {/*    className="color-black o-install-item__checked-text">{t('installed')}</span>*/}
                                         <i className="icon-ok color-green o-install-item__checked-icon"/>
+                                        <i className={`icon-crown o-install-item__checked-icon ${isPremium ? 'o-install-item__checked-icon--premium-active' : 'o-install-item__checked-icon--premium' }`}/>
                                     </div>
                                 }
                             </li>

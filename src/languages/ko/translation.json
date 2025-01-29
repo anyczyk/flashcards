@@ -134,5 +134,13 @@
   "enter_text_front": "앞면 페이지에 텍스트 입력",
   "enter_text_back": "뒷면 페이지에 텍스트 입력",
   "enter_text_front_desc": "앞면 페이지 설명 텍스트 입력",
-  "enter_text_back_desc": "뒷면 페이지 설명 텍스트 입력"
+  "enter_text_back_desc": "뒷면 페이지 설명 텍스트 입력",
+  "turn_off_shadows": "그림자 끄기",
+  "turn_off_automatic_audio": "자동 오디오 끄기",
+  "buy_premium_desc": "광고를 제거하는 것 외에도 미래에 추가될 수 있는 모든 플래시카드 세트에 무제한으로 액세스할 수 있는 Premium 계정을 구입하세요.",
+  "buy_premium_account": "Premium 계정 구매",
+  "turn_on_shadows": "그림자 켜기",
+  "turn_on_automatic_audio": "자동 오디오 켜기",
+  "premium_account": "Premium 계정",
+  "active": "활성"
 }

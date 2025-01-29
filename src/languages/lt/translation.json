@@ -134,5 +134,13 @@
   "enter_text_front": "Įveskite tekstą priekinėje pusėje",
   "enter_text_back": "Įveskite tekstą galinėje pusėje",
   "enter_text_front_desc": "Įveskite teksto aprašymą priekinėje pusėje",
-  "enter_text_back_desc": "Įveskite teksto aprašymą galinėje pusėje"
+  "enter_text_back_desc": "Įveskite teksto aprašymą galinėje pusėje",
+  "turn_off_shadows": "Išjunkite šešėlius",
+  "turn_off_automatic_audio": "Išjunkite automatinį garsą",
+  "buy_premium_desc": "Gaukite Premium paskyrą, kuri be reklamos pašalinimo suteikia neribotą prieigą prie visų flashcard rinkinių, įskaitant bet kokius flashcard, kurie gali būti pridėti ateityje.",
+  "buy_premium_account": "Pirkti Premium paskyrą",
+  "turn_on_shadows": "Įjunkite šešėlius",
+  "turn_on_automatic_audio": "Įjunkite automatinį garsą",
+  "premium_account": "Premium paskyra",
+  "active": "Aktyvus"
 }

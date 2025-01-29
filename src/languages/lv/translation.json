@@ -134,5 +134,13 @@
   "enter_text_front": "Ievadiet tekstu priekšējai lapai",
   "enter_text_back": "Ievadiet tekstu aizmugurējai lapai",
   "enter_text_front_desc": "Ievadiet teksta aprakstu priekšējai lapai",
-  "enter_text_back_desc": "Ievadiet teksta aprakstu aizmugurējai lapai"
+  "enter_text_back_desc": "Ievadiet teksta aprakstu aizmugurējai lapai",
+  "turn_off_shadows": "Izslēgt ēnas",
+  "turn_off_automatic_audio": "Izslēgt automātisko audio",
+  "buy_premium_desc": "Iegūstiet Premium kontu, kas, papildus reklāmu noņemšanai, nodrošina neierobežotu piekļuvi visiem flashcard komplektiem, ieskaitot jebkādus flashcard, kas var tikt pievienoti nākotnē.",
+  "buy_premium_account": "Pērkt Premium kontu",
+  "turn_on_shadows": "Ieslēgt ēnas",
+  "turn_on_automatic_audio": "Ieslēgt automātisko audio",
+  "premium_account": "Premium konts",
+  "active": "Aktīvs"
 }

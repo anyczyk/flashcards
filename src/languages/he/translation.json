@@ -134,5 +134,13 @@
   "enter_text_front": "הכנס טקסט לדף הקדמי",
   "enter_text_back": "הכנס טקסט לדף האחורי",
   "enter_text_front_desc": "הכנס תיאור טקסט לדף הקדמי",
-  "enter_text_back_desc": "הכנס תיאור טקסט לדף האחורי"
+  "enter_text_back_desc": "הכנס תיאור טקסט לדף האחורי",
+  "turn_off_shadows": "כבה צללים",
+  "turn_off_automatic_audio": "כבה אודיו אוטומטי",
+  "buy_premium_desc": "קבל חשבון פרימיום אשר, בנוסף להסרת פרסומות, מספק גישה בלתי מוגבלת לכל קבוצות הכרטיסיות, כולל כרטיסיות שעשויות להתווסף בעתיד.",
+  "buy_premium_account": "קנה חשבון פרימיום",
+  "turn_on_shadows": "הפעל צללים",
+  "turn_on_automatic_audio": "הפעל אודיו אוטומטי",
+  "premium_account": "חשבון פרימיום",
+  "active": "פעיל"
 }

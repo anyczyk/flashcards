@@ -134,5 +134,13 @@
   "enter_text_front": "Zadajte text pre prednú stranu",
   "enter_text_back": "Zadajte text pre zadnú stranu",
   "enter_text_front_desc": "Zadajte popis textu pre prednú stranu",
-  "enter_text_back_desc": "Zadajte popis textu pre zadnú stranu"
+  "enter_text_back_desc": "Zadajte popis textu pre zadnú stranu",
+  "turn_off_shadows": "Vypnúť tiene",
+  "turn_off_automatic_audio": "Vypnúť automatický zvuk",
+  "buy_premium_desc": "Získajte účet Premium, ktorý okrem odstránenia reklám poskytuje neobmedzený prístup ku všetkým sadám flashcardov, vrátane akýchkoľvek flashcardov, ktoré sa môžu pridať v budúcnosti.",
+  "buy_premium_account": "Kúpiť Premium účet",
+  "turn_on_shadows": "Zapnúť tiene",
+  "turn_on_automatic_audio": "Zapnúť automatický zvuk",
+  "premium_account": "Premium účet",
+  "active": "Aktívny"
 }

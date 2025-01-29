@@ -25,6 +25,7 @@ function EditFlashcardList({preloader, setPreloader, editPageLoad, setEditPageLo
         editCategory, setEditCategory,
         editSuperCategory, setEditSuperCategory,
         editKnow, setEditKnow,
+        editType, setEditType,
         selectedCategory, setSelectedCategory,
         selectedSuperCategory, setSelectedSuperCategory,
         selectedCards, setSelectedCards,
@@ -203,6 +204,8 @@ function EditFlashcardList({preloader, setPreloader, editPageLoad, setEditPageLo
                                     setEditSuperCategory={setEditSuperCategory}
                                     editKnow={editKnow}
                                     setEditKnow={setEditKnow}
+                                    editType={editType}
+                                    setEditType={setEditType}
                                     typePage={'main-edit'}
                                 />
                             )}

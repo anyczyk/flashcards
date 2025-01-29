@@ -134,5 +134,13 @@
   "enter_text_front": "Geli qoraalka bogga hore",
   "enter_text_back": "Geli qoraalka bogga gadaal",
   "enter_text_front_desc": "Geli sharraxaadda qoraalka bogga hore",
-  "enter_text_back_desc": "Geli sharraxaadda qoraalka bogga gadaal"
+  "enter_text_back_desc": "Geli sharraxaadda qoraalka bogga gadaal",
+  "turn_off_shadows": "Dami hooska",
+  "turn_off_automatic_audio": "Dami dhawaaqa otomaatiga ah",
+  "buy_premium_desc": "Hel akoonka Premium kaas oo, marka laga reebo ka saarista xayeysiisyada, bixiyaan hel aan xadidneyn dhammaan setiyada flashcard-ka, oo ay ku jiraan flashcard kasta oo laga yaabo in lagu daro mustaqbalka.",
+  "buy_premium_account": "Iibso akoon Premium",
+  "turn_on_shadows": "Shadows shid",
+  "turn_on_automatic_audio": "Dhawaaqa otomaatigga ah shid",
+  "premium_account": "Akaawn Premium",
+  "active": "Firfircoon"
 }

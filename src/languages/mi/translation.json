@@ -134,5 +134,13 @@
   "enter_text_front": "Whakatiki i te reo mō te whārangi mua",
   "enter_text_back": "Whakatiki i te reo mō te whārangi muri",
   "enter_text_front_desc": "Whakatiki i te whakaahua o te reo mō te whārangi mua",
-  "enter_text_back_desc": "Whakatiki i te whakaahua o te reo mō te whārangi muri"
+  "enter_text_back_desc": "Whakatiki i te whakaahua o te reo mō te whārangi muri",
+  "turn_off_shadows": "Whakakore i ngā hoariri",
+  "turn_off_automatic_audio": "Whakakore i te oro aunoa",
+  "buy_premium_desc": "Whiwhi he pūtea Premium e whakarato ana, ā, me te whakakore i ngā pānui, he uru kore i ngā kohinga katoa o ngā flashcard, tae atu ki ngā flashcard e tāpiri ana ā muri ake nei.",
+  "buy_premium_account": "Hokona he pūtea Premium",
+  "turn_on_shadows": "Whakatakoto i ngā hoariri",
+  "turn_on_automatic_audio": "Whakatakoto i te oro aunoa",
+  "premium_account": "Pūtea Premium",
+  "active": "Hāngai"
 }

@@ -134,5 +134,13 @@
   "enter_text_front": "E hoʻokomo i ka huaʻōlelo no ka ʻaoʻao mua",
   "enter_text_back": "E hoʻokomo i ka huaʻōlelo no ka ʻaoʻao hope",
   "enter_text_front_desc": "E hoʻokomo i ka wehewehena huaʻōlelo no ka ʻaoʻao mua",
-  "enter_text_back_desc": "E hoʻokomo i ka wehewehena huaʻōlelo no ka ʻaoʻao hope"
+  "enter_text_back_desc": "E hoʻokomo i ka wehewehena huaʻōlelo no ka ʻaoʻao hope",
+  "turn_off_shadows": "Hoʻopau i nā ʻaoʻao",
+  "turn_off_automatic_audio": "Hoʻopau i ka leo ʻōnaehana",
+  "buy_premium_desc": "E loaʻa i ka moʻokāki Premium i hāʻawi ʻia ma ka hoʻolālā ʻana i nā pākuʻi, hāʻawi i ka ʻike ʻole i nā hui āpau o nā flashcard, me ka hoʻokomo ʻana i nā flashcard e hiki mai ana.",
+  "buy_premium_account": "Hāʻawi i ka moʻokāki Premium",
+  "turn_on_shadows": "Hoʻokomo i nā ʻaoʻao",
+  "turn_on_automatic_audio": "Hoʻokomo i ka leo ʻōnaehana",
+  "premium_account": "Moʻokāki Premium",
+  "active": "Kūkākūkā"
 }

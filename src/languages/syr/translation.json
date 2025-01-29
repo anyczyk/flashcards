@@ -134,5 +134,13 @@
   "enter_text_front": "ܐܣܝܡ ܟܬܒܐ ܠܫܦܐ ܕܦܬܝܐ",
   "enter_text_back": "ܐܣܝܡ ܟܬܒܐ ܠܫܦܐ ܕܙܠܝܢ",
   "enter_text_front_desc": "ܐܣܝܡ ܟܬܒܐ ܠܫܦܐ ܕܦܬܝܐ ܕܟܬܒܐ",
-  "enter_text_back_desc": "ܐܣܝܡ ܟܬܒܐ ܠܫܦܐ ܕܙܠܝܢ ܕܟܬܒܐ"
+  "enter_text_back_desc": "ܐܣܝܡ ܟܬܒܐ ܠܫܦܐ ܕܙܠܝܢ ܕܟܬܒܐ",
+  "turn_off_shadows": "ܦܝܫܝܢ ܫܘܪܝܢ",
+  "turn_off_automatic_audio": "ܦܝܫܝܢ ܝܘܕܝܢ ܐܘܬܘܡܛܝܟ",
+  "buy_premium_desc": "ܚܙܝܬ ܚܕܬܐ ܕܦܪܝܡܝܨܝܡ ܕܐܦܝ ܡܢ ܦܫܝܢ ܡܕܪܘܫܐ ܥܠ ܐܝܟ ܐܦܝ ܬܥܠܦܐ ܚܘܕܫܐ ܥܠ ܟܠܗ ܕܟܐܬܪܐ ܕܦܠܫܩܕܝܪܕܐ, ܡܕܡ ܫܠܐ ܕܟܐܬܪܐ ܕܐܝܟܢܐ ܕܬܫܝܚ ܦܠܝܛܝܢܐ ܕܒܝܬܐ ܕܐܢܘܟܬܐ.",
+  "buy_premium_account": "ܟܘܒܐ ܚܕܬܐ ܕܦܪܝܡܝܨܝܡ",
+  "turn_on_shadows": "ܦܝܫܝܢ ܫܘܪܝܢ",
+  "turn_on_automatic_audio": "ܦܝܫܝܢ ܝܘܕܝܢ ܐܘܬܘܡܛܝܟ",
+  "premium_account": "ܚܕܬܐ ܕܦܪܝܡܝܨܝܡ",
+  "active": "ܥܠܐܐ"
 }

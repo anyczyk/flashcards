@@ -134,5 +134,13 @@
   "enter_text_front": "Ipasok ang teksto para sa harapang pahina",
   "enter_text_back": "Ipasok ang teksto para sa likod na pahina",
   "enter_text_front_desc": "Ipasok ang paglalarawan ng teksto para sa harapang pahina",
-  "enter_text_back_desc": "Ipasok ang paglalarawan ng teksto para sa likod na pahina"
+  "enter_text_back_desc": "Ipasok ang paglalarawan ng teksto para sa likod na pahina",
+  "turn_off_shadows": "Patayin ang mga anino",
+  "turn_off_automatic_audio": "Patayin ang awtomatikong audio",
+  "buy_premium_desc": "Kumuha ng Premium account na, bukod sa pagtanggal ng mga ad, ay nagbibigay ng walang limitasyong access sa lahat ng flashcard sets, kabilang ang anumang flashcards na maaaring idagdag sa hinaharap.",
+  "buy_premium_account": "Bumili ng Premium account",
+  "turn_on_shadows": "Buksan ang mga anino",
+  "turn_on_automatic_audio": "Buksan ang awtomatikong audio",
+  "premium_account": "Premium account",
+  "active": "Aktibo"
 }

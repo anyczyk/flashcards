@@ -71,7 +71,8 @@ const FlashCards = ({
                 frontDesc: card.frontDesc,
                 backDesc: card.backDesc,
                 langFront: card.langFront,
-                langBack: card.langBack
+                langBack: card.langBack,
+                type: card.type
             },
         }));
         setOpenCardId(card.id);
@@ -111,7 +112,8 @@ const FlashCards = ({
                 card.langBack,
                 card.superCategory,
                 frontDesc,
-                backDesc
+                backDesc,
+                card.type
             );
 
             if (loadData) {

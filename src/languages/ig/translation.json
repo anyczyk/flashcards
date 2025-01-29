@@ -134,5 +134,13 @@
   "enter_text_front": "Tinye ederede maka ibe ihu",
   "enter_text_back": "Tinye ederede maka ibe azụ",
   "enter_text_front_desc": "Tinye nkọwa ederede maka ibe ihu",
-  "enter_text_back_desc": "Tinye nkọwa ederede maka ibe azụ"
+  "enter_text_back_desc": "Tinye nkọwa ederede maka ibe azụ",
+  "turn_off_shadows": "Gbanyụọ ihe ndị na-acha ọchịchịrị",
+  "turn_off_automatic_audio": "Gbanyụọ ụda akpaghị aka",
+  "buy_premium_desc": "Nweta akaụntụ Premium nke, na mgbakwunye na iwepu mgbasa ozi, na-enye ohere na-enweghị oke na setịpụ flashcard niile, gụnyere flashcards ọ bụla nwere ike ịgbakwunye n’ọdịnihu.",
+  "buy_premium_account": "Zụta akaụntụ Premium",
+  "turn_on_shadows": "Gbanwee ihe ndị na-acha ọchịchịrị",
+  "turn_on_automatic_audio": "Gbanwee ụda akpaghị aka",
+  "premium_account": "Akaụntụ Premium",
+  "active": "Aktif"
 }

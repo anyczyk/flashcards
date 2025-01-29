@@ -21,6 +21,7 @@ export const EditSearchProvider = ({ children }) => {
     const [editCategory, setEditCategory] = useState('');
     const [editSuperCategory, setEditSuperCategory] = useState('');
     const [editKnow, setEditKnow] = useState(false);
+    const [editType, setEditType] = useState(false);
     const [selectedCategory, setSelectedCategory] = useState(null);
     const [selectedSuperCategory, setSelectedSuperCategory] = useState(null);
     const [selectedCards, setSelectedCards] = useState([]);
@@ -64,6 +65,7 @@ export const EditSearchProvider = ({ children }) => {
         setEditFrontLang('');
         setEditBackLang('');
         setEditSuperCategory('');
+        setEditType(false);
     };
 
     const filteredFlashcards = useMemo(() => {
@@ -128,6 +130,7 @@ export const EditSearchProvider = ({ children }) => {
                 editCategory, setEditCategory,
                 editSuperCategory, setEditSuperCategory,
                 editKnow, setEditKnow,
+                editType, setEditType,
                 selectedCategory, setSelectedCategory,
                 selectedSuperCategory, setSelectedSuperCategory,
                 selectedCards, setSelectedCards,

@@ -134,5 +134,13 @@
   "enter_text_front": "Syötä teksti etusivulle",
   "enter_text_back": "Syötä teksti takasivulle",
   "enter_text_front_desc": "Syötä etusivun tekstin kuvaus",
-  "enter_text_back_desc": "Syötä takasivun tekstin kuvaus"
+  "enter_text_back_desc": "Syötä takasivun tekstin kuvaus",
+  "turn_off_shadows": "Poista varjot käytöstä",
+  "turn_off_automatic_audio": "Poista automaattinen ääni käytöstä",
+  "buy_premium_desc": "Hanki Premium-tili, joka mainosten poistamisen lisäksi tarjoaa rajoittamattoman pääsyn kaikkiin flashcard-sarjoihin, mukaan lukien mahdollisesti tulevaisuudessa lisättävät flashcardit.",
+  "buy_premium_account": "Osta Premium-tili",
+  "turn_on_shadows": "Ota varjot käyttöön",
+  "turn_on_automatic_audio": "Ota automaattinen ääni käyttöön",
+  "premium_account": "Premium-tili",
+  "active": "Aktiivinen"
 }
