@@ -210,7 +210,7 @@ const Header = ({clearOptions, setMainHomePageLoad, mainMenuVisible, setMainMenu
                     </ul>
                 </nav>
                 <div dir="ltr">
-                    <p>Flasho v1.0.91 test {window.cordova ? 'App' : 'Browser'} / <span
+                    <p>Flasho v1.0.93 test {window.cordova ? 'App' : 'Browser'} / <span
                         className="uppercase">{i18n.language}</span></p>
                 </div>
             </div>

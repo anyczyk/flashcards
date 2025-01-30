@@ -11,7 +11,8 @@
     "build-all-prod": "webpack --mode production && cordova build android --release --buildConfig=build.json",
     "start": "webpack serve --mode development",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "update-translations": "node updateTranslations.js"
+    "update-translations": "node updateTranslations.js",
+    "copy-and-overwrite": "node copy.js en-pl.json en-id.json type"
   },
   "keywords": [
     "ecosystem:cordova"

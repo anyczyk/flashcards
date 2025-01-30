@@ -4,27 +4,27 @@ import React, { useContext, useEffect, useState } from "react";
 import enDe from "../../../data/en-de/en-de.json";
 import enFr from "../../../data/en-fr/en-fr.json";
 import enPl from "../../../data/en-pl/en-pl.json";
-// import enPlFree from "../../../data/en-pl/en-pl-free.json";
-// import enPlPremium from "../../../data/en-pl/en-pl-premium.json";
 import enEs from "../../../data/en-es/en-es.json";
 import enId from "../../../data/en-id/en-id.json";
+import plEnIrregularVerbs from "../../../data/en-pl/pl-en-irregular-verbs-full.json";
 // import plPolskiePrzedmiotyLekcyjne from "../../../data/pl/pl-polskie-przedmioty-lekcyjne.json";
 import { useTranslation } from "react-i18next";
 import { importAdd } from "../../../utils/import";
 import { FlashcardContext } from "../../../context/FlashcardContext";
 import { getLocalStorage } from "../../../utils/storage";
 
-const deTitle = "Deutsche Karteikarten (German):";
-const esTitle = "Fichas españolas (Spanish):";
-const frTitle = "Fiches françaises (French):";
-const idTitle = "Flashcard Bahasa Indonesia (Indonesian):";
-const plTitle = "Polskie fiszki (Polish):";
+const deTitle = "Deutsch-Englische Karteikarten (German-English):";
+const esTitle = "Tarjetas didácticas español-inglés (Spanish-English):";
+const frTitle = "Flashcards français-anglais (French-English):";
+const idTitle = "Flashcard bahasa indonesia-inggris (Indonesian-English):";
+const plTitle = "Polsko-angielskie fiszki (Polish-English):";
 const dataFiles = [
-    { mainLanguage: "de", category: deTitle, file: enDe, name: "1000 beliebte englische Wörter" },
-    { mainLanguage: "es", category: esTitle, file: enEs, name: "1000 palabras populares en inglés"},
-    { mainLanguage: "fr", category: frTitle, file: enFr, name: "1000 mots anglais populaires"},
-    { mainLanguage: "id", category: idTitle, file: enId, name: "1000 Kata Bahasa Inggris yang Populer" },
-    { mainLanguage: "pl", category: plTitle, file: enPl, name: "1000 popularnych angielskich słów", description: "1000 popularnych angielskich słów - 3 zestawy fiszek za darmo"},
+    { mainLanguage: "de", category: deTitle, file: enDe, name: "1000 beliebte englische Wörter", description: "1000 gebräuchliche englische Wörter – 3 Sätze (60) Lernkarten kostenlos"},
+    { mainLanguage: "es", category: esTitle, file: enEs, name: "1000 palabras populares en inglés", description: "1000 palabras en inglés: 3 juegos (60) de tarjetas didácticas gratis"},
+    { mainLanguage: "fr", category: frTitle, file: enFr, name: "1000 mots anglais populaires", description: "1000 mots anglais - 3 jeux (60) de flashcards gratuits"},
+    { mainLanguage: "id", category: idTitle, file: enId, name: "1000 Kata Bahasa Inggris yang Populer", description: "1000 kata bahasa Inggris - 3 set (60) kartu flash gratis"},
+    { mainLanguage: "pl", category: plTitle, file: enPl, name: "1000 popularnych angielskich słów", description: "1000 popularnych angielskich słów - 3 zestawy (60) fiszek za darmo"},
+    { mainLanguage: "pl", category: plTitle, file: plEnIrregularVerbs, name: "Angielski - czasowniki nieregularne", description: "158 czasowników nieregularnych - 2 zestawy (40) fiszek za darmo"}
     // { mainLanguage: "pl", category: plTitle, file: enPlFree, name: "1000 popularnych angielskich słów", description: "1000 popularnych angielskich słów - 3 zestawy po 20 fiszek za darmo"},
     // { mainLanguage: "pl", category: plTitle, file: enPlPremium, name: "1000 popularnych angielskich słów", description: "1000 popularnych angielskich słów - aż 47 dodatkowych zestawów Premium", premium: true},
     // { mainLanguage: "pl", category: plTitle, file: plPolskiePrzedmiotyLekcyjne, name: "Polskie przedmioty lekcyjne", description: "Najbardziej popularne pytania z przedmiotów szkolnych: Biologii (100), Fizyki (220), Geografii (200), Historii (100)" }

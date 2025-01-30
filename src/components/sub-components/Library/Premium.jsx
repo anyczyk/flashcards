@@ -43,12 +43,12 @@ const Premium = () => {
     }, []);
 
     const finishPurchase = (p) => {
-        alert("Transakcja przeszla pomyslnie, ustawiamy storage na true i isPremium na true");
+        // alert("Transakcja przeszla pomyslnie, ustawiamy storage na true i isPremium na true");
         setIsPremium(true);
         setLocalStorage('oIsPremium4', 'true');
         p.finish();
         refreshUI();
-        alert("Jest chyba ok");
+        // alert("Jest chyba ok");
     };
 
     const refreshUI = () => {
