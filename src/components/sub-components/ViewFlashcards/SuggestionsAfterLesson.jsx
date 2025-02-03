@@ -1,9 +1,11 @@
-import React, {} from "react";
+import React, {useContext} from "react";
 import { useTranslation } from 'react-i18next';
 import { showInterstitial } from '../../../services/admobService';
+import {FlashcardContext} from "../../../context/FlashcardContext";
 
 const SuggestionsAfterLesson = ({showCompleteMessage, setShowCompleteMessage, applyFilterAndShuffle, getFilteredFlashcardCount, setLearningFilter, setCheckedCards, handleNextLesson}) => {
     const { t } = useTranslation();
+    const { isPremium } = useContext(FlashcardContext);
     return (
         showCompleteMessage && (
             <div className="o-complete-message">
@@ -15,7 +17,7 @@ const SuggestionsAfterLesson = ({showCompleteMessage, setShowCompleteMessage, ap
                             onClick={() => {
                                 setShowCompleteMessage(false);
                                 applyFilterAndShuffle();
-                                showInterstitial();
+                                showInterstitial(isPremium);
                             }}
                         >
                             {t('review_again')}
@@ -28,7 +30,7 @@ const SuggestionsAfterLesson = ({showCompleteMessage, setShowCompleteMessage, ap
                                         setLearningFilter('learningOnly');
                                         setCheckedCards(new Set());
                                         applyFilterAndShuffle();
-                                        showInterstitial();
+                                        showInterstitial(isPremium);
                                     }}
                             >
                                 {t('review_only_the_ones_you_didnt_know')}
@@ -38,7 +40,7 @@ const SuggestionsAfterLesson = ({showCompleteMessage, setShowCompleteMessage, ap
                     <li className="w-100">
                         <button className="btn--green w-100" onClick={()=>{
                             handleNextLesson();
-                            showInterstitial();
+                            showInterstitial(isPremium);
                         }}>{t('next_lesson')}</button>
                     </li>
                 </ul>

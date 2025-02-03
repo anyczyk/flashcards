@@ -40,7 +40,7 @@ const FlashCards = ({
     const [quickEdit, setQuickEdit] = useState({});
     const modalRef = useRef(null);
     const controls = useAnimation();
-    const { rtlCodeLangs } = useContext(FlashcardContext);
+    const { rtlCodeLangs, isPremium } = useContext(FlashcardContext);
 
     useWcagModal(quickEdit, setQuickEdit, modalRef);
 
@@ -231,7 +231,7 @@ const FlashCards = ({
                                             setLearningFilter('learningOnly');
                                             setCheckedCards(new Set());
                                             applyFilterAndShuffle();
-                                            showInterstitial();
+                                            showInterstitial(isPremium);
                                         }}
                                     >
                                         {t('repeat_the_lesson_once_again')}
@@ -244,7 +244,7 @@ const FlashCards = ({
                     )}
                     <p>
                         <button className="btn--green w-100" onClick={()=>{
-                            showInterstitial();
+                            showInterstitial(isPremium);
                             handleNextLesson();
                         }}>{t('next_lesson')}</button>
                     </p>

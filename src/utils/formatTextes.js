@@ -29,5 +29,11 @@ export const parseCardText = (text) => {
 };
 
 export const stripFormattingTags = (text) => {
-    return text.replace(/\[\/?(b|i)\]/g, '');
+    return text
+        .replace(/\[\/?(b|i)\]/g, '') // Usuwa tagi [b], [/b], [i], [/i]
+        .replace(/\//g, '');          // Usuwa wszystkie znaki "/"
 };
+
+// export const stripFormattingTags = (text) => {
+//     return text.replace(/\[\/?(b|i)\]/g, '');
+// };

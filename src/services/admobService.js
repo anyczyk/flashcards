@@ -40,22 +40,26 @@ const initializeAdMob = async () => {
         }
     }
 };
-export const showInterstitial = async (noCookie) => {
-    if((!hasCookie('flasho-cookie-full-screen-ad') || noCookie) && window.cordova) {
+export const showInterstitial = async (premium, noCookie) => {
+    if(!premium && (!hasCookie('flasho-cookie-full-screen-ad') || noCookie)) {
         if(!noCookie) {
             setCookie('flasho-cookie-full-screen-ad','start', 15);
         }
-        try {
-            if (!interstitial) {
-                console.warn('No interstitial (still no loaded)');
-                return;
+        if(window.cordova) {
+            try {
+                if (!interstitial) {
+                    console.warn('No interstitial (still no loaded)');
+                    return;
+                }
+                if (window.StatusBar) {
+                    window.StatusBar.backgroundColorByHexString('#000000');
+                }
+                await interstitial.show();
+            } catch (err) {
+                console.error('Error in showInterstitial:', err);
             }
-            if (window.StatusBar) {
-                window.StatusBar.backgroundColorByHexString('#000000');
-            }
-            await interstitial.show();
-        } catch (err) {
-            console.error('Error in showInterstitial:', err);
+        } else {
+            alert("Ad for mobile");
         }
     }
 };

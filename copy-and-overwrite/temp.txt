@@ -1,0 +1,155 @@
+be	was/were	been	sein
+bear	bore	borne/born 	etwas tragen (literarisch)
+beat	beat	beaten/beat 	schlagen
+become	became	become	werden (FALSE FRIEND!)
+begin	began	begun	beginnen, anfangen
+bend	bent	bent	biegen
+bet*	bet	bet	wetten
+bid	bid, bade	bid, bidden	bieten
+bind	bound	bound	binden
+bite	bit	bitten	beißen, stechen
+bleed	bled	bled	bluten
+blow	blew	blown	blasen
+break	broke	broken	zerbrechen; kaputtgehen
+breed	bred	bred	züchten
+bring	brought	brought	(mit-, her-)bringen
+broadcast	broadcast	broadcast	senden, übertragen, ausstrahlen
+build	built	built	bauen
+burn***	burnt	burnt	brennen, verbrennen
+burst	burst	burst	(zer)platzen
+bust*	bust	bust	kaputtgehen
+buy	bought	bought	kaufen
+cast	cast	cast	werfen
+catch	caught	caught	fangen
+choose	chose	chosen	(aus)wählen; aussuchen
+cling	clung	clung	(sich) klammern, festhalten
+come	came	come	kommen
+cost	cost	cost	kosten
+creep	crept	crept	kriechen schleichen
+cut	cut	cut	(aus)schneiden
+deal	dealt	dealt	verhandeln, verteilen
+dig	dug	dug	graben
+dive	dived/dove	dived	tauchen
+do	did	done	tun, machen
+draw	drew	drawn	zeichnen
+dream***	dreamt	dreamt	träumen
+drink	drank	drunk	trinken
+drive	drove	driven	ein Fahrzeug führen (z.B. Auto/Bus)
+eat	ate	eaten	essen
+fall	fell	fallen	(hin)fallen
+feed	fed	fed	füttern
+feel	felt	felt	fühlen, sich fühlen
+fight	fought	fought	kämpfen
+find	found	found	finden
+flee	fled	fled	fliehen, flüchten
+fling	flung	flung	schleudern
+fly	flew	flown	fliegen
+forbid	forbade, forbad	forbidden	verbieten
+forecast*	forecast	forecast	vorhersagen, prognostizieren
+forget	forgot	forgotten	vergessen
+forsake	forsook	forsaken	(jmd.) verlassen, (etw.) aufgeben
+freeze	froze	frozen	frieren
+get	got	got, gotten 	bekommen, kriegen, holen, besorgen
+give	gave	given	geben
+grind	ground	ground	zerkleinern, mahlen
+go	went	gone	gehen
+grow	grew	grown	wachsen
+hang	hung	hung	hängen, aufhängen
+have	had	had	haben
+hear	heard	heard	hören
+hide	hid	hidden	verstecken
+hit	hit	hit	jemanden/etwas schlagen, treffen
+hold	held	held	halten
+hurt	hurt	hurt	verletzen
+keep	kept	kept	(be)halten
+know	knew	known	wissen, kennen
+lay	laid	laid	legen
+lead	led	led	führen, leiten
+learn***	learnt	learnt	lernen
+leave	left	left	verlassen, weggehen, abfahren
+lend	lent	lent	verleihen
+let	let	let	lassen
+lie**	lay	lain	liegen
+light*	lit	lit	anzünden
+lose	lost	lost	verlieren
+make	made	made	machen (herstellen)
+mean	meant	meant	bedeuten
+meet	met	met	(sich) treffen
+overtake	overtook	overtaken	überholen
+pay	paid	paid	bezahlen
+prove*	proved	proven	beweisen
+put	put	put	legen, stellen, (wohin) tun
+quit*	quit	quit	verlassen, aufhören
+read	read	read	lesen (Aussprache beachten!)
+rid	rid	rid	(jmd. von etwas) befreien
+ride	rode	ridden	reiten, (Rad) fahren
+ring	rang	rung	klingeln, läuten
+rise	rose	risen	aufgehen, ansteigen
+run	ran	run	rennen, laufen
+saw***	sawed	sawed/sawn	sägen
+say	said	said	sagen
+see	saw	seen	sehen, besuchen
+seek	sought	sought	suchen
+sell	sold	sold	verkaufen
+send	sent	sent	schicken, senden an
+set	set	set	setzen, stellen, legen
+sew*	sewed	sewn	nähen
+shake	shook	shaken	schütteln
+shear*	sheared	shorn	scheren (Schafe), abbrechen
+shed	shed	shed	abstoßen, ablegen
+shine	shone	shone	scheinen
+shoot	shot	shot	schießen
+show*	showed	shown	zeigen
+shut	shut	shut	schließen
+sing	sang	sung	singen
+sink	sank	sunk	sinken, untergehen
+sit	sat	sat	sitzen, sich setzen
+slay	slew	slain	erlegen, bezwingen (literarisch)
+sleep	slept	slept	schlafen
+slide	slid	slid	gleiten, rutschen
+sling	slung	slung	werfen, schleudern
+slink	slunk	slunk	schleichen
+slit	slit	slit	aufschlitzen
+sneak****	snuck	snuck	schleichen
+sow	sowed	sown	säen
+speak	spoke	spoken	sprechen
+speed*	sped	sped	sausen, flitzen, rasen
+spend	spent	spent	Geld ausgeben, Zeit verbringen
+spin	spun	spun	drehen, rotieren
+spit	spat, spit	spat, spit	spucken
+split	split	split	teilen
+spread	spread	spread	(sich) ausbreiten, verteilen
+spring	sprang	sprung	aufspringen
+stand	stood	stood	stehen, sich hinstellen
+steal	stole	stolen	stehlen
+stick	stuck	stuck	kleben, stecken bleiben
+sting	stung	stung	stechen
+stink	stank, stunk	stunk	stinken
+stride	strode	stridden	(auf etw.) zugehen
+strike	struck	struck	schlagen, treffen (Blitz, Kugel)
+string	strung	strung	auffädeln, aufziehen
+strive	strove	striven	(sich) bemühen
+swear	swore	sworn	schwören
+sweep	swept	swept	kehren
+swell*	swelled	swollen	anwachsen, anschwellen
+swim	swam	swum	schwimmen
+swing	swung	swung	schwingen
+take	took	taken	nehmen, (weg)bringen; dauern
+teach	taught	taught	lehren, unterrichten
+tear	tore	torn	zerreißen
+tell	told	told	erzählen, berichten
+think	thought	thought	denken
+thrive*	throve	thrived	gedeihen
+throw	threw	thrown	werfen
+thrust	thrust	thrust	stoßen
+tread	trod	trodden, trod	treten
+understand	understood	understood	verstehen
+wake*	woke	woken	wecken
+wear	wore	worn	anhaben, tragen (Kleidung)
+weave	wove	woven	weben
+weep	wept	wept	weinen
+wet*	wet	wet	befeuchten
+win	won	won	gewinnen
+wind	wound	wound	schlängeln, spulen
+wring	wrung	wrung	(aus)wringen
+write	wrote	written	schreiben

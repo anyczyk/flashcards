@@ -1,12 +1,14 @@
-import React, {useState, useEffect, useRef} from 'react';
+import React, {useState, useEffect, useRef, useContext} from 'react';
 import { showInterstitial } from '../../../services/admobService';
 import { useTranslation } from "react-i18next";
 import { setCookie, getCookie, removeCookie, hasCookie } from '../../../utils/cookies';
+import { FlashcardContext } from "../../../context/FlashcardContext";
 
 const numberCookieMinutes = 5;
 
 const AdButton = ({ timerAccess, setTimerAccess }) => {
     const { t } = useTranslation();
+    const { isPremium } = useContext(FlashcardContext);
     const [saveStartTime, setSaveStartTime] = useState(null);
     const intervalRef = useRef(null);
     const formatTime = (seconds) => {
@@ -17,7 +19,7 @@ const AdButton = ({ timerAccess, setTimerAccess }) => {
     const handleClick = () => {
         const now = new Date();
         setSaveStartTime(now);
-        showInterstitial(true);
+        showInterstitial(isPremium, true);
         setCookie('oFlashoAdButtonCookie', now.toISOString(), (numberCookieMinutes+1));
         if (intervalRef.current) {
             clearInterval(intervalRef.current);
