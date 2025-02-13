@@ -142,5 +142,7 @@
   "turn_on_shadows": "سایه‌کان ڕاگەیەنە",
   "turn_on_automatic_audio": "داهاتوویا ئۆتۆماتیکی ڕاگەیەنە",
   "premium_account": "هەژماری Premium",
-  "active": "چالاک"
+  "active": "چالاک",
+  "code": "کۆد",
+  "wrong_code": "کۆدی هەڵە"
 }

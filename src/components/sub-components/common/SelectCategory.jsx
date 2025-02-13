@@ -50,7 +50,7 @@ const SelectCategory = ({
                 <label htmlFor="o-category">
                     <span className="color-red">*</span> {t('deck')}:
                 </label>
-                <select
+                {categoriesDependentOnSuperCategory.length > 0 && <select
                     id="o-category"
                     onChange={handleCategorySelect}
                     value={internalCategory}
@@ -63,7 +63,7 @@ const SelectCategory = ({
                             {cat}
                         </option>
                     ))}
-                </select>
+                </select>}
             </div>
 
             <p className={`o-default-box o-text-input-with-clear ${internalCategory ? "o-text-input-with-clear--active" : ""}`}>

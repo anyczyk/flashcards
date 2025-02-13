@@ -142,5 +142,7 @@
   "turn_on_shadows": "Schaduwen inschakelen",
   "turn_on_automatic_audio": "Automatisch geluid inschakelen",
   "premium_account": "Premium-account",
-  "active": "Actief"
+  "active": "Actief",
+  "code": "Code",
+  "wrong_code": "Verkeerde code"
 }

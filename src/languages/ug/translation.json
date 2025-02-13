@@ -142,5 +142,7 @@
   "turn_on_shadows": "سائېننى ئېچىش",
   "turn_on_automatic_audio": "ئاۋتوماتىك ئاۋازنى ئېچىش",
   "premium_account": "Premium حسابى",
-  "active": "ئاكتىپ"
+  "active": "ئاكتىپ",
+  "code": "كود",
+  "wrong_code": "خاتا كود"
 }

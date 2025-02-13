@@ -1,6 +1,6 @@
 {
   "categories": "หมวดหมู่",
-  "simple_flashcard_creator": "ผู้สร้างแฟลชการ์ดแบบง่าย",
+  "simple_flashcard_creator": "ผู้สร้างแฟลชการ์ด",
   "view_flashcards": "เริ่มการเรียนรู้ของคุณ",
   "create_flashcard": "สร้างแฟลชการ์ด",
   "edit_flashcards": "แก้ไขแฟลชการ์ด",
@@ -142,5 +142,7 @@
   "turn_on_shadows": "เปิดเงา",
   "turn_on_automatic_audio": "เปิดเสียงอัตโนมัติ",
   "premium_account": "บัญชี Premium",
-  "active": "ใช้งานอยู่"
+  "active": "ใช้งานอยู่",
+  "code": "รหัส",
+  "wrong_code": "รหัสไม่ถูกต้อง"
 }

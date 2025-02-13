@@ -7,6 +7,13 @@ import { EditSearchContext } from "../context/EditSearchContext";
 import { debounce } from "../utils/debounce";
 import FlashCardListEdit from "./sub-components/common/FlashCardListEdit";
 
+const removeCustomTags = (text = "") => {
+    return text
+        // usuń dokładnie [b], [/b], [i], [/i]
+        .replace(/\[\/?b\]/gi, "")
+        .replace(/\[\/?i\]/gi, "");
+}
+
 function Search() {
     const { t } = useTranslation();
     const { flashcards } = useContext(FlashcardContext);
@@ -46,16 +53,29 @@ function Search() {
             }
 
             const lowerTerm = trimmedTerm.toLowerCase();
-            const filtered = flashcards.filter(
-                (card) =>
-                    (card.front && card.front.toLowerCase().includes(lowerTerm)) ||
-                    (card.back && card.back.toLowerCase().includes(lowerTerm)) ||
-                    (card.frontDesc && card.frontDesc.toLowerCase().includes(lowerTerm)) ||
-                    (card.backDesc && card.backDesc.toLowerCase().includes(lowerTerm)) ||
-                    (card.front && card.front.toLowerCase().includes(lowerTerm))
-                    // || (card.category && card.category.toLowerCase().includes(lowerTerm)) ||
-                    // (card.superCategory && card.superCategory.toLowerCase().includes(lowerTerm))
-            );
+            // const filtered = flashcards.filter(
+            //     (card) =>
+            //         (card.front && card.front.toLowerCase().includes(lowerTerm)) ||
+            //         (card.back && card.back.toLowerCase().includes(lowerTerm)) ||
+            //         (card.frontDesc && card.frontDesc.toLowerCase().includes(lowerTerm)) ||
+            //         (card.backDesc && card.backDesc.toLowerCase().includes(lowerTerm)) ||
+            //         (card.front && card.front.toLowerCase().includes(lowerTerm))
+            //         // || (card.category && card.category.toLowerCase().includes(lowerTerm)) ||
+            //         // (card.superCategory && card.superCategory.toLowerCase().includes(lowerTerm))
+            // );
+            const filtered = flashcards.filter((card) => {
+
+                const front = removeCustomTags(card.front || "").toLowerCase();
+                const back = removeCustomTags(card.back || "").toLowerCase();
+                const frontDesc = removeCustomTags(card.frontDesc || "").toLowerCase();
+                const backDesc = removeCustomTags(card.backDesc || "").toLowerCase();
+                return (
+                    front.includes(lowerTerm) ||
+                    back.includes(lowerTerm) ||
+                    frontDesc.includes(lowerTerm) ||
+                    backDesc.includes(lowerTerm)
+                );
+            });
             setResults(filtered);
         }, 500),
         [flashcards]

@@ -1,464 +1,79 @@
 {
-  "am": {
-    "turn_on_shadows": "ብስክሌት አብንክ",
-    "turn_on_automatic_audio": "አውቶማቲክ ድምጽ አብንክ",
-    "premium_account": "Premium አካውንት",
-    "active": "ተግባር ላይ"
-  },
-  "ar": {
-    "turn_on_shadows": "تشغيل الظلال",
-    "turn_on_automatic_audio": "تشغيل الصوت التلقائي",
-    "premium_account": "حساب ممتاز",
-    "active": "نشط"
-  },
-  "arc": {
-    "turn_on_shadows": "Translation not available",
-    "turn_on_automatic_audio": "Translation not available",
-    "premium_account": "Translation not available",
-    "active": "Translation not available"
-  },
-  "az": {
-    "turn_on_shadows": "Kölgələri yandır",
-    "turn_on_automatic_audio": "Avtomatik səsi yandır",
-    "premium_account": "Premium hesab",
-    "active": "Aktiv"
-  },
-  "be": {
-    "turn_on_shadows": "Уключыць цені",
-    "turn_on_automatic_audio": "Уключыць аўтаматычны аўдыё",
-    "premium_account": "Premium-рахунак",
-    "active": "Актыўны"
-  },
-  "bg": {
-    "turn_on_shadows": "Включи сенките",
-    "turn_on_automatic_audio": "Включи автоматичния звук",
-    "premium_account": "Premium акаунт",
-    "active": "Активен"
-  },
-  "ckb": {
-    "turn_on_shadows": "سایه‌کان ڕاگەیەنە",
-    "turn_on_automatic_audio": "داهاتوویا ئۆتۆماتیکی ڕاگەیەنە",
-    "premium_account": "هەژماری Premium",
-    "active": "چالاک"
-  },
-  "crs": {
-    "turn_on_shadows": "Demare lonbraj",
-    "turn_on_automatic_audio": "Demare odyo otomatik",
-    "premium_account": "Kont Premium",
-    "active": "Aktif"
-  },
-  "cs": {
-    "turn_on_shadows": "Zapnout stíny",
-    "turn_on_automatic_audio": "Zapnout automatický zvuk",
-    "premium_account": "Premium účet",
-    "active": "Aktivní"
-  },
-  "da": {
-    "turn_on_shadows": "Tænd skygger",
-    "turn_on_automatic_audio": "Tænd automatisk lyd",
-    "premium_account": "Premiumkonto",
-    "active": "Aktiv"
-  },
-  "de": {
-    "turn_on_shadows": "Schatten einschalten",
-    "turn_on_automatic_audio": "Automatische Audio einschalten",
-    "premium_account": "Premium-Konto",
-    "active": "Aktiv"
-  },
-  "el": {
-    "turn_on_shadows": "Ενεργοποίηση σκιάσεων",
-    "turn_on_automatic_audio": "Ενεργοποίηση αυτόματου ήχου",
-    "premium_account": "Λογαριασμός Premium",
-    "active": "Ενεργό"
-  },
-  "en": {
-    "turn_on_shadows": "Turn on shadows",
-    "turn_on_automatic_audio": "Turn on automatic audio",
-    "premium_account": "Premium account",
-    "active": "Active"
-  },
-  "es": {
-    "turn_on_shadows": "Activar sombras",
-    "turn_on_automatic_audio": "Activar audio automático",
-    "premium_account": "Cuenta Premium",
-    "active": "Activo"
-  },
-  "et": {
-    "turn_on_shadows": "Lülita varjud sisse",
-    "turn_on_automatic_audio": "Lülita automaatne heli sisse",
-    "premium_account": "Premium konto",
-    "active": "Aktiivne"
-  },
-  "fa": {
-    "turn_on_shadows": "روشن کردن سایه‌ها",
-    "turn_on_automatic_audio": "روشن کردن صوت خودکار",
-    "premium_account": "حساب پریمیوم",
-    "active": "فعال"
-  },
-  "fi": {
-    "turn_on_shadows": "Ota varjot käyttöön",
-    "turn_on_automatic_audio": "Ota automaattinen ääni käyttöön",
-    "premium_account": "Premium-tili",
-    "active": "Aktiivinen"
-  },
-  "fr": {
-    "turn_on_shadows": "Activer les ombres",
-    "turn_on_automatic_audio": "Activer l'audio automatique",
-    "premium_account": "Compte Premium",
-    "active": "Actif"
-  },
-  "ha": {
-    "turn_on_shadows": "Kunna inuwa",
-    "turn_on_automatic_audio": "Kunna sautin ta atomatik",
-    "premium_account": "Asusun Premium",
-    "active": "Mai aiki"
-  },
-  "haw": {
-    "turn_on_shadows": "Hoʻokomo i nā ʻaoʻao",
-    "turn_on_automatic_audio": "Hoʻokomo i ka leo ʻōnaehana",
-    "premium_account": "Moʻokāki Premium",
-    "active": "Kūkākūkā"
-  },
-  "he": {
-    "turn_on_shadows": "הפעל צללים",
-    "turn_on_automatic_audio": "הפעל אודיו אוטומטי",
-    "premium_account": "חשבון פרימיום",
-    "active": "פעיל"
-  },
-  "hi": {
-    "turn_on_shadows": "छायाओं को चालू करें",
-    "turn_on_automatic_audio": "स्वचालित ऑडियो चालू करें",
-    "premium_account": "प्रीमियम खाता",
-    "active": "सक्रिय"
-  },
-  "hr": {
-    "turn_on_shadows": "Uključi sjene",
-    "turn_on_automatic_audio": "Uključi automatski zvuk",
-    "premium_account": "Premium račun",
-    "active": "Aktivan"
-  },
-  "ht": {
-    "turn_on_shadows": "Demare lonbraj",
-    "turn_on_automatic_audio": "Demare odyo otomatik",
-    "premium_account": "Kont Premium",
-    "active": "Aktif"
-  },
-  "hu": {
-    "turn_on_shadows": "Árnyékok bekapcsolása",
-    "turn_on_automatic_audio": "Automatikus hang bekapcsolása",
-    "premium_account": "Premium fiók",
-    "active": "Aktív"
-  },
-  "hy": {
-    "turn_on_shadows": "Անջատել ստվերները",
-    "turn_on_automatic_audio": "Անջատել ավտոմատական ձայնը",
-    "premium_account": "Premium ​​հաշիվ",
-    "active": "Ակտիվ"
-  },
-  "id": {
-    "turn_on_shadows": "Nyalakan bayangan",
-    "turn_on_automatic_audio": "Nyalakan audio otomatis",
-    "premium_account": "Akun Premium",
-    "active": "Aktif"
-  },
-  "ig": {
-    "turn_on_shadows": "Gbanwee ihe ndị na-acha ọchịchịrị",
-    "turn_on_automatic_audio": "Gbanwee ụda akpaghị aka",
-    "premium_account": "Akaụntụ Premium",
-    "active": "Aktif"
-  },
-  "it": {
-    "turn_on_shadows": "Attiva ombre",
-    "turn_on_automatic_audio": "Attiva audio automatico",
-    "premium_account": "Account Premium",
-    "active": "Attivo"
-  },
-  "ja": {
-    "turn_on_shadows": "影をオンにする",
-    "turn_on_automatic_audio": "自動オーディオをオンにする",
-    "premium_account": "プレミアムアカウント",
-    "active": "アクティブ"
-  },
-  "ka": {
-    "turn_on_shadows": "გამართეთ ჩრდილები",
-    "turn_on_automatic_audio": "გამართეთ ავტომატური ხმაური",
-    "premium_account": "Premium ​​ანგარიში",
-    "active": "აქტიური"
-  },
-  "kk": {
-    "turn_on_shadows": "Көлеңкелерді қосу",
-    "turn_on_automatic_audio": "Автоматты дыбысты қосу",
-    "premium_account": "Premium аккаунты",
-    "active": "Белсенді"
-  },
-  "kl": {
-    "turn_on_shadows": "Translation not available",
-    "turn_on_automatic_audio": "Translation not available",
-    "premium_account": "Translation not available",
-    "active": "Translation not available"
-  },
-  "km": {
-    "turn_on_shadows": "បើកស្រមោល",
-    "turn_on_automatic_audio": "បើកសម្លេងអូតូម៉ាទិក",
-    "premium_account": "គណនី Premium",
-    "active": "សកម្ម"
-  },
-  "ko": {
-    "turn_on_shadows": "그림자 켜기",
-    "turn_on_automatic_audio": "자동 오디오 켜기",
-    "premium_account": "Premium 계정",
-    "active": "활성"
-  },
-  "ks": {
-    "turn_on_shadows": "سایون کول",
-    "turn_on_automatic_audio": "خودڪار آڊيو کول",
-    "premium_account": "پريمیم اڪائونٽ",
-    "active": "فعال"
-  },
-  "ky": {
-    "turn_on_shadows": "Көгүрөлөрдү жандандыруу",
-    "turn_on_automatic_audio": "Автоматты үндү жандандыруу",
-    "premium_account": "Premium аккаунт",
-    "active": "Активдүү"
-  },
-  "ln": {
-    "turn_on_shadows": "Kandula koyinga",
-    "turn_on_automatic_audio": "Kandula audio automatique",
-    "premium_account": "Compte Premium",
-    "active": "Aktif"
-  },
-  "lo": {
-    "turn_on_shadows": "ເປີດແຜ່ນຂວາງ",
-    "turn_on_automatic_audio": "ເປີດສຽງອັດຕະໂນມັດ",
-    "premium_account": "ບັນຊີ Premium",
-    "active": "ກຳລັງເຮັດ"
-  },
-  "lt": {
-    "turn_on_shadows": "Įjunkite šešėlius",
-    "turn_on_automatic_audio": "Įjunkite automatinį garsą",
-    "premium_account": "Premium paskyra",
-    "active": "Aktyvus"
-  },
-  "lv": {
-    "turn_on_shadows": "Ieslēgt ēnas",
-    "turn_on_automatic_audio": "Ieslēgt automātisko audio",
-    "premium_account": "Premium konts",
-    "active": "Aktīvs"
-  },
-  "mi": {
-    "turn_on_shadows": "Whakatakoto i ngā hoariri",
-    "turn_on_automatic_audio": "Whakatakoto i te oro aunoa",
-    "premium_account": "Pūtea Premium",
-    "active": "Hāngai"
-  },
-  "mn": {
-    "turn_on_shadows": "Сүүдэр асаах",
-    "turn_on_automatic_audio": "Автомата дуу асаах",
-    "premium_account": "Premium данс",
-    "active": "Идэвхтэй"
-  },
-  "ms": {
-    "turn_on_shadows": "Hidupkan bayangan",
-    "turn_on_automatic_audio": "Hidupkan audio automatik",
-    "premium_account": "Akaun Premium",
-    "active": "Aktif"
-  },
-  "ne": {
-    "turn_on_shadows": "छायाहरू चालू गर्नुहोस्",
-    "turn_on_automatic_audio": "स्वचालित अडियो चालू गर्नुहोस्",
-    "premium_account": "प्रीमियम खाता",
-    "active": "सक्रिय"
-  },
-  "nl": {
-    "turn_on_shadows": "Schaduwen inschakelen",
-    "turn_on_automatic_audio": "Automatisch geluid inschakelen",
-    "premium_account": "Premium-account",
-    "active": "Actief"
-  },
-  "no": {
-    "turn_on_shadows": "Slå på skygger",
-    "turn_on_automatic_audio": "Slå på automatisk lyd",
-    "premium_account": "Premium-konto",
-    "active": "Aktiv"
-  },
-  "pl": {
-    "turn_on_shadows": "Włącz cienie",
-    "turn_on_automatic_audio": "Włącz automatyczne audio",
-    "premium_account": "Konto Premium",
-    "active": "Aktywne"
-  },
-  "ps": {
-    "turn_on_shadows": "سیوري چالان کړئ",
-    "turn_on_automatic_audio": "خودکار آڈیو چالان کړئ",
-    "premium_account": "پریمیم حساب",
-    "active": "فعال"
-  },
-  "pt": {
-    "turn_on_shadows": "Ativar sombras",
-    "turn_on_automatic_audio": "Ativar áudio automático",
-    "premium_account": "Conta Premium",
-    "active": "Ativo"
-  },
-  "ro": {
-    "turn_on_shadows": "Activează umbrele",
-    "turn_on_automatic_audio": "Activează audio automat",
-    "premium_account": "Cont Premium",
-    "active": "Activ"
-  },
-  "ru": {
-    "turn_on_shadows": "Включить тени",
-    "turn_on_automatic_audio": "Включить автоматический звук",
-    "premium_account": "Premium аккаунт",
-    "active": "Активен"
-  },
-  "sd": {
-    "turn_on_shadows": "سایون کول",
-    "turn_on_automatic_audio": "خودڪار آڊيو کول",
-    "premium_account": "پريمیم اڪائونٽ",
-    "active": "فعال"
-  },
-  "sk": {
-    "turn_on_shadows": "Zapnúť tiene",
-    "turn_on_automatic_audio": "Zapnúť automatický zvuk",
-    "premium_account": "Premium účet",
-    "active": "Aktívny"
-  },
-  "sl": {
-    "turn_on_shadows": "Vklopi sence",
-    "turn_on_automatic_audio": "Vklopi samodejni zvok",
-    "premium_account": "Premium račun",
-    "active": "Aktiven"
-  },
-  "so": {
-    "turn_on_shadows": "Shadows shid",
-    "turn_on_automatic_audio": "Dhawaaqa otomaatigga ah shid",
-    "premium_account": "Akaawn Premium",
-    "active": "Firfircoon"
-  },
-  "sq": {
-    "turn_on_shadows": "Aktivizo hijet",
-    "turn_on_automatic_audio": "Aktivizo audio automatike",
-    "premium_account": "Llogari Premium",
-    "active": "Aktiv"
-  },
-  "sr": {
-    "turn_on_shadows": "Uključi senke",
-    "turn_on_automatic_audio": "Uključi automatski zvuk",
-    "premium_account": "Premium nalog",
-    "active": "Aktivan"
-  },
-  "sv": {
-    "turn_on_shadows": "Slå på skuggor",
-    "turn_on_automatic_audio": "Slå på automatisk ljud",
-    "premium_account": "Premium-konto",
-    "active": "Aktiv"
-  },
-  "sw": {
-    "turn_on_shadows": "Washa vivuli",
-    "turn_on_automatic_audio": "Washa sauti ya kiotomatiki",
-    "premium_account": "Akaunti Premium",
-    "active": "Inafanya kazi"
-  },
-  "syr": {
-    "turn_on_shadows": "ܦܝܫܝܢ ܫܘܪܝܢ",
-    "turn_on_automatic_audio": "ܦܝܫܝܢ ܝܘܕܝܢ ܐܘܬܘܡܛܝܟ",
-    "premium_account": "ܚܕܬܐ ܕܦܪܝܡܝܨܝܡ",
-    "active": "ܥܠܐܐ"
-  },
-  "tg": {
-    "turn_on_shadows": "Саёраҳоро ёрон",
-    "turn_on_automatic_audio": "Одоиши овози автоматикро ёрон",
-    "premium_account": "Ҳисоби Premium",
-    "active": "Фаъол"
-  },
-  "th": {
-    "turn_on_shadows": "เปิดเงา",
-    "turn_on_automatic_audio": "เปิดเสียงอัตโนมัติ",
-    "premium_account": "บัญชี Premium",
-    "active": "ใช้งานอยู่"
-  },
-  "tk": {
-    "turn_on_shadows": "Gölümleri ýangy",
-    "turn_on_automatic_audio": "Awtoamtik awdy ýangy",
-    "premium_account": "Premium hasaby",
-    "active": "Herekete giren"
-  },
-  "tl": {
-    "turn_on_shadows": "Buksan ang mga anino",
-    "turn_on_automatic_audio": "Buksan ang awtomatikong audio",
-    "premium_account": "Premium account",
-    "active": "Aktibo"
-  },
-  "tpi": {
-    "turn_on_shadows": "Makim draip",
-    "turn_on_automatic_audio": "Makim otomatiks audio",
-    "premium_account": "Premium account",
-    "active": "Aktif"
-  },
-  "tr": {
-    "turn_on_shadows": "Gölgeleri aç",
-    "turn_on_automatic_audio": "Otomatik sesi aç",
-    "premium_account": "Premium hesabı",
-    "active": "Aktif"
-  },
-  "ug": {
-    "turn_on_shadows": "سائېننى ئېچىش",
-    "turn_on_automatic_audio": "ئاۋتوماتىك ئاۋازنى ئېچىش",
-    "premium_account": "Premium حسابى",
-    "active": "ئاكتىپ"
-  },
-  "uk": {
-    "turn_on_shadows": "Увімкнути тіні",
-    "turn_on_automatic_audio": "Увімкнути автоматичний звук",
-    "premium_account": "Premium аккаунт",
-    "active": "Активний"
-  },
-  "ur": {
-    "turn_on_shadows": "سائے چالو کریں",
-    "turn_on_automatic_audio": "خودکار آڈیو چالو کریں",
-    "premium_account": "پریمیم اکاؤنٹ",
-    "active": "فعال"
-  },
-  "uz": {
-    "turn_on_shadows": "Soyalarni yoqish",
-    "turn_on_automatic_audio": "Avtomatik ovozni yoqish",
-    "premium_account": "Premium hisob",
-    "active": "Faol"
-  },
-  "vi": {
-    "turn_on_shadows": "Bật bóng",
-    "turn_on_automatic_audio": "Bật âm thanh tự động",
-    "premium_account": "Tài khoản Premium",
-    "active": "Hoạt động"
-  },
-  "wo": {
-    "turn_on_shadows": "Jënd njaxlaf",
-    "turn_on_automatic_audio": "Jënd audio otomatik",
-    "premium_account": "Kontu Premium",
-    "active": "Aktif"
-  },
-  "xh": {
-    "turn_on_shadows": "Vula imithunzi",
-    "turn_on_automatic_audio": "Vula i-audio ezenzekelayo",
-    "premium_account": "Akhawunti ye-Premium",
-    "active": "Isebenza"
-  },
-  "yo": {
-    "turn_on_shadows": "Ṣii awọn ojiji",
-    "turn_on_automatic_audio": "Ṣii ohun aifọwọyi",
-    "premium_account": "Akọọlẹ Premium",
-    "active": "N ṣiṣẹ"
-  },
-  "zh": {
-    "turn_on_shadows": "开启阴影",
-    "turn_on_automatic_audio": "开启自动音频",
-    "premium_account": "高级账户",
-    "active": "活跃"
-  },
-  "zu": {
-    "turn_on_shadows": "Vula izithunzi",
-    "turn_on_automatic_audio": "Vula umsindo ozenzakalelayo",
-    "premium_account": "Akhawunti ye-Premium",
-    "active": "Kusebenza"
-  }
+  "am": { "wrong_code": "የተሳሳተ ኮድ" },
+  "ar": { "wrong_code": "كود خاطئ" },
+  "arc": { "wrong_code": "ܟܘܕ ܕܥܠܚܛܝܐ" },
+  "az": { "wrong_code": "Yanlış kod" },
+  "be": { "wrong_code": "Няправільны код" },
+  "bg": { "wrong_code": "Грешен код" },
+  "ckb": { "wrong_code": "کۆدی هەڵە" },
+  "crs": { "wrong_code": "Kod mal" },
+  "cs": { "wrong_code": "Chybný kód" },
+  "da": { "wrong_code": "Forkert kode" },
+  "de": { "wrong_code": "Falscher Code" },
+  "el": { "wrong_code": "Λάθος κωδικός" },
+  "en": { "wrong_code": "Wrong code" },
+  "es": { "wrong_code": "Código incorrecto" },
+  "et": { "wrong_code": "Vale kood" },
+  "fa": { "wrong_code": "کد اشتباه" },
+  "fi": { "wrong_code": "Väärä koodi" },
+  "fr": { "wrong_code": "Code incorrect" },
+  "ha": { "wrong_code": "Kod mara daidai" },
+  "haw": { "wrong_code": "Code hewa" },
+  "he": { "wrong_code": "קוד שגוי" },
+  "hi": { "wrong_code": "गलत कोड" },
+  "hr": { "wrong_code": "Pogrešan kod" },
+  "ht": { "wrong_code": "Kòd mal" },
+  "hu": { "wrong_code": "Hibás kód" },
+  "hy": { "wrong_code": "Սխալ կոդ" },
+  "id": { "wrong_code": "Kode salah" },
+  "ig": { "wrong_code": "Koodu ezighi ezi" },
+  "it": { "wrong_code": "Codice errato" },
+  "ja": { "wrong_code": "間違ったコード" },
+  "ka": { "wrong_code": "არასწორი კოდი" },
+  "kk": { "wrong_code": "Қате код" },
+  "kl": { "wrong_code": "Forkert kode" },
+  "km": { "wrong_code": "កូដខុស" },
+  "ko": { "wrong_code": "잘못된 코드" },
+  "ks": { "wrong_code": "غلط کوڈ" },
+  "ky": { "wrong_code": "Ката код" },
+  "ln": { "wrong_code": "Kode mabe" },
+  "lo": { "wrong_code": "ລະຫັດຜິດ" },
+  "lt": { "wrong_code": "Neteisingas kodas" },
+  "lv": { "wrong_code": "Nepareizs kods" },
+  "mi": { "wrong_code": "Waehere hē" },
+  "mn": { "wrong_code": "Буруу код" },
+  "ms": { "wrong_code": "Kod salah" },
+  "ne": { "wrong_code": "गलत कोड" },
+  "nl": { "wrong_code": "Verkeerde code" },
+  "no": { "wrong_code": "Feil kode" },
+  "pl": { "wrong_code": "Błędny kod" },
+  "ps": { "wrong_code": "ناسم کوډ" },
+  "pt": { "wrong_code": "Código incorreto" },
+  "ro": { "wrong_code": "Cod greșit" },
+  "ru": { "wrong_code": "Неверный код" },
+  "sd": { "wrong_code": "غلط ڪوڊ" },
+  "sk": { "wrong_code": "Nesprávny kód" },
+  "sl": { "wrong_code": "Napačna koda" },
+  "so": { "wrong_code": "Koodh qaldan" },
+  "sq": { "wrong_code": "Kodi i gabuar" },
+  "sr": { "wrong_code": "Погрешан код" },
+  "sv": { "wrong_code": "Fel kod" },
+  "sw": { "wrong_code": "Msimbo sio sahihi" },
+  "syr": { "wrong_code": "ܟܘܕ ܕܥܠܚܛܝܐ" },
+  "tg": { "wrong_code": "Нодуруст код" },
+  "th": { "wrong_code": "รหัสไม่ถูกต้อง" },
+  "tk": { "wrong_code": "Nädogry kod" },
+  "tl": { "wrong_code": "Maling kodigo" },
+  "tpi": { "wrong_code": "Rong kod" },
+  "tr": { "wrong_code": "Yanlış kod" },
+  "ug": { "wrong_code": "خاتا كود" },
+  "uk": { "wrong_code": "Невірний код" },
+  "ur": { "wrong_code": "غلط کوڈ" },
+  "uz": { "wrong_code": "Noto'g'ri kod" },
+  "vi": { "wrong_code": "Mã sai" },
+  "wo": { "wrong_code": "Kode wuute" },
+  "xh": { "wrong_code": "Ikhodi engalunganga" },
+  "yo": { "wrong_code": "Koodu ti ko tọ" },
+  "zh": { "wrong_code": "错误的代码" },
+  "zu": { "wrong_code": "Ikhodi engalungile" }
 }

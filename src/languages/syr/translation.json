@@ -142,5 +142,7 @@
   "turn_on_shadows": "ܦܝܫܝܢ ܫܘܪܝܢ",
   "turn_on_automatic_audio": "ܦܝܫܝܢ ܝܘܕܝܢ ܐܘܬܘܡܛܝܟ",
   "premium_account": "ܚܕܬܐ ܕܦܪܝܡܝܨܝܡ",
-  "active": "ܥܠܐܐ"
+  "active": "ܥܠܐܐ",
+  "code": "ܟܘܕ",
+  "wrong_code": "ܟܘܕ ܕܥܠܚܛܝܐ"
 }

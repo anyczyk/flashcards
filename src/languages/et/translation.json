@@ -142,5 +142,7 @@
   "turn_on_shadows": "Lülita varjud sisse",
   "turn_on_automatic_audio": "Lülita automaatne heli sisse",
   "premium_account": "Premium konto",
-  "active": "Aktiivne"
+  "active": "Aktiivne",
+  "code": "Kood",
+  "wrong_code": "Vale kood"
 }

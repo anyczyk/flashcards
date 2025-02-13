@@ -142,5 +142,7 @@
   "turn_on_shadows": "הפעל צללים",
   "turn_on_automatic_audio": "הפעל אודיו אוטומטי",
   "premium_account": "חשבון פרימיום",
-  "active": "פעיל"
+  "active": "פעיל",
+  "code": "קוד",
+  "wrong_code": "קוד שגוי"
 }

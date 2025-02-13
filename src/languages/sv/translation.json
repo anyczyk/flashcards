@@ -142,5 +142,7 @@
   "turn_on_shadows": "Slå på skuggor",
   "turn_on_automatic_audio": "Slå på automatisk ljud",
   "premium_account": "Premium-konto",
-  "active": "Aktiv"
+  "active": "Aktiv",
+  "code": "Kod",
+  "wrong_code": "Fel kod"
 }

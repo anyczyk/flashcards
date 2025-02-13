@@ -142,5 +142,7 @@
   "turn_on_shadows": "Shadows shid",
   "turn_on_automatic_audio": "Dhawaaqa otomaatigga ah shid",
   "premium_account": "Akaawn Premium",
-  "active": "Firfircoon"
+  "active": "Firfircoon",
+  "code": "Koodh",
+  "wrong_code": "Koodh qaldan"
 }

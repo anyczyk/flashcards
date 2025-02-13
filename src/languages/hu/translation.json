@@ -1,6 +1,6 @@
 {
   "categories": "Kategóriák",
-  "simple_flashcard_creator": "Kártyakészítő",
+  "simple_flashcard_creator": "Flashkártya-generátor",
   "view_flashcards": "Kezdje el a tanulást",
   "create_flashcard": "Kártya létrehozása",
   "edit_flashcards": "Kártyák szerkesztése",
@@ -142,5 +142,7 @@
   "turn_on_shadows": "Árnyékok bekapcsolása",
   "turn_on_automatic_audio": "Automatikus hang bekapcsolása",
   "premium_account": "Premium fiók",
-  "active": "Aktív"
+  "active": "Aktív",
+  "code": "Kód",
+  "wrong_code": "Hibás kód"
 }

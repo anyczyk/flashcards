@@ -142,5 +142,7 @@
   "turn_on_shadows": "Buksan ang mga anino",
   "turn_on_automatic_audio": "Buksan ang awtomatikong audio",
   "premium_account": "Premium account",
-  "active": "Aktibo"
+  "active": "Aktibo",
+  "code": "Kodigo",
+  "wrong_code": "Maling kodigo"
 }

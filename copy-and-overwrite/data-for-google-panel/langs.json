@@ -1,0 +1,464 @@
+{
+  "am": {
+    "applicationName": "Flasho - ፍላሽካርድ ፈጣሪ",
+    "shortDescription": "የእርስዎን ፍላሽካርዶች ይፍጠሩ እና ምዝገባ ሳይፈልግ ቋንቋዎችን በዝግጅት ዕቃዎች ይማሩ",
+    "fullDescription": "Flasho - ፍላሽካርድ ፈጣሪ ቀላል እና ቀልጣፋ መተግበሪያ ሲሆን በቋንቋ መማር ላይ የተዘጋጀ ነው። የእርስዎን ፍላሽካርዶች ይፍጠሩ ወይም የተዘጋጀ ዕቃ ይጠቀሙ ምዝገባ ሳይፈልግ። የመድገሚያ ስርዓትን እና የንግግር ድጋፍን ተጠቅመው በፍጥነት እና በውጤት ይማሩ። በቀላሉ ውሂብ ያተላለፉ እና ያስወግዱ። ከFlasho ጋር የቋንቋ ትምህርት አስተዳዳሪ እና ተስማሚያ ይሆናል።",
+    "premiumDescription": "ተጨማሪም መተግበሪያው ለብዙ ቋንቋዎች የተዘጋጀ ፍላሽካርድ ዝርዝሮችን ያቀርባል። የ“1000 እንግሊዝኛ ቃላት” ዝርዝር (60 ነጻ ፍላሽካርዶች ያሉት) እና “157 የልዩ ግጥሞች” ዝርዝር (40 ነጻ ፍላሽካርዶች ያሉት) እና ሌሎችም የተዘጋጀ ዕቃዎች ይጠቀሙ።"
+  },
+  "ar": {
+    "applicationName": "Flasho - منشئ البطاقات التعليمية",
+    "shortDescription": "أنشئ بطاقاتك التعليمية وتعلّم اللغات باستخدام مجموعات جاهزة بدون تسجيل",
+    "fullDescription": "Flasho - منشئ البطاقات التعليمية هو تطبيق بسيط وخفيف مصمم لتعلّم اللغات بكفاءة. أنشئ بطاقاتك التعليمية أو استخدم المجموعات الجاهزة دون الحاجة إلى التسجيل. استثمر نظام المراجعة ودعم النطق لاكتساب المعرفة بسرعة وفعالية. رتّب موادك في مجلدات سهلة الاستخدام، واستورد البيانات وصدّرها بسهولة. مع Flasho يصبح تعلّم اللغات ممتعًا ومرنًا وفي متناولك في أي وقت!",
+    "premiumDescription": "بالإضافة إلى ذلك، يقدّم التطبيق مكتبة من مجموعات البطاقات التعليمية الجاهزة للعديد من اللغات، بما في ذلك مجموعة “1000 كلمة إنجليزية” (تتضمن 60 بطاقة مجانية) ومجموعة “157 فعلًا شاذًا” (تتضمن 40 بطاقة مجانية)."
+  },
+  "arc": {
+    "applicationName": "Flasho - ܒܪܝܬܐ ܕܟܪܛܘ̈ܢܐ (Kreator Fiszek)",
+    "shortDescription": "ܥܒܕ ܟܪܛܘ̈ܢܐ ܕܝܠܟ ܘܝܠܦ ܠܫܢ̈ܐ ܒܠܐ ܪܫܝܡܐ",
+    "fullDescription": "Flasho - ܒܪܝܬܐ ܕܟܪܛܘ̈ܢܐ ܐܦܠܝܩܐ ܦܫܝܛܬܐ ܘܙܕܝܬܐ ܕܝܠܦ ܠܫܢ̈ܐ ܒܐܦܝܩܬܐ ܝܬܝܪܬܐ. ܥܒܕ ܟܪܛܘ̈ܢܐ ܕܝܠܟ ܐܘ ܫܬܡܫ ܒܙܡܝܪ̈ܐ ܕܟܪܛܘ̈ܢܐ ܕܟܕܡܐ ܀ ܠܐ ܨܪܝܟ ܪܫܝܡܐ ܀ ܐܬܬܚܝܠ ܒܣܝܪܬܐ ܕܬܬܕܓܪ ܘܣܝܘܥܝܐ ܕܩܪܝܐ ܀ ܤܕܪ ܣܟ̈ܐ ܕܡܦܠܬܐ ܐܝܟ ܩܫܝܛܬܐ ܘܐܥܠ ܘܐܦܩ ܒܤܝܡܬܐ ܀ ܥܡ Flasho ܠܝܦܝ ܠܫܢ̈ܐ ܬܗܘܐ ܦܨܝܚܬܐ ܘܙܕܝܬܐ ܀",
+    "premiumDescription": "ܝܬܝܪܬܐ ܐܦܠܝܩܐ ܩܪܝܐ ܡܟܬܒܐ ܕܙܡܝܪ̈ܐ ܕܟܪܛܘ̈ܢܐ ܕܒܣܓܝܐ ܠܫܢ̈ܐ. ܗܝ ܬܬܐ ܙܡܝܪܐ “1000 ܡܠ̈ܐ ܐܢܓܠܝܫܝܐ” (60 ܟܪܛܘ̈ܢܐ ܕܓܢܝܢܐ) ܘ “157 ܦܥܠ̈ܐ ܕܠܐ ܚܟܝܐ” (40 ܟܪܛܘ̈ܢܐ ܕܓܢܝܢܐ) ܀"
+  },
+  "az": {
+    "applicationName": "Flasho - Flaşkart Yaradıcı",
+    "shortDescription": "Öz fləşkartlarınızı yaradın və qeydiyyata ehtiyac olmadan hazır dəstlərlə dilləri öyrənin",
+    "fullDescription": "Flasho - Flaşkart Yaradıcı dilləri effektiv öyrənmək üçün nəzərdə tutulmuş sadə və yüngül bir tətbiqdir. Öz fləşkartlarınızı yaradın və ya qeydiyyat tələb etmədən mövcud dəstlərdən istifadə edin. Təkrarlama sistemi və tələffüz dəstəyi sayəsində məlumatı daha sürətli və səmərəli mənimsəyin. Materiallarınızı rahat qovluqlarda təşkil edin və məlumatı asanlıqla idxal/ixrac edin. Flasho ilə dil öyrənmək həmişə rahat, çevik və əlçatandır!",
+    "premiumDescription": "Bundan əlavə, tətbiq bir çox dil üçün hazır fləşkart dəstləri kitabxanası təklif edir, o cümlədən “1000 İngilis sözü” (60 pulsuz fləşkart daxil) və “157 qeyri-müntəzəm feil” (40 pulsuz fləşkart daxil)."
+  },
+  "be": {
+    "applicationName": "Flasho Стваральнік флэш-картак",
+    "shortDescription": "Стварайце ўласныя флэш-карткі і вывучайце мовы з гатовымі наборамі без рэгістрацыі",
+    "fullDescription": "Flasho - Стваральнік флэш-картак — гэта просты і лёгкі дадатак, распрацаваны для эфектыўнага вывучэння моваў. Стварайце свае флэш-карткі альбо карыстайцеся гатовымі наборамі без неабходнасці рэгістрацыі. Выкарыстоўвайце сістэму паўтораў і падтрымку вымаўлення, каб засвойваць матэрыял хутчэй і больш эфектыўна. Арганізоўвайце свае матэрыялы ў зручных тэчках, а таксама лёгка імпартуйце і экспартуйце даныя. З Flasho вывучэнне моваў становіцца прыемным, гнуткім і даступным у любы момант!",
+    "premiumDescription": "Акрамя таго, дадатак прапануе бібліятэку гатовых набораў флэш-картак для многіх моваў, у тым ліку набор «1000 англійскіх слоў» (з 60 бясплатнымі флэш-карткамі) і набор «157 няправільных дзеясловаў» (з 40 бясплатнымі флэш-карткамі)."
+  },
+  "bg": {
+    "applicationName": "Flasho - Създател на флашкарти",
+    "shortDescription": "Създайте свои собствени флашкарти и учете езици с готови комплекти без регистрация",
+    "fullDescription": "Flasho - Създател на флашкарти е лесно и леко приложение, създадено за ефективно изучаване на езици. Създайте свои собствени флашкарти или използвайте готовите комплекти без нужда от регистрация. Възползвайте се от системата за преговор и поддръжката за произношение, за да научавате по-бързо и ефективно. Организирайте материалите си в удобни папки и лесно импортирайте и експортирайте данни. С Flasho ученето на езици става приятно, гъвкаво и винаги на разположение!",
+    "premiumDescription": "Освен това приложението предлага библиотека с готови комплекти флашкарти за много езици, включително „1000 английски думи“ (с 60 безплатни флашкарти) и „157 неправилни глагола“ (с 40 безплатни флашкарти)."
+  },
+  "ckb": {
+    "applicationName": "Flasho - بەرهەمساڵەری فلاشکارت",
+    "shortDescription": "فلاشکارتەکانی خۆت دروست بکە و بە کۆمەڵەی ئامادە زمان فێربە بێ توماركردن",
+    "fullDescription": "Flasho - بەرهەمساڵەری فلاشکارت ئەپێكە ئاسان و سووك كە بۆ فێركردنی زمان بە چالاكی دیزاین كراوە. فلاشكارتەكانی خۆت دروست بكە یان لە كۆمەڵەكانی ئامادە بەبێ پێداویستی توماركردن بەكاربهێنە. بە بەكارهێنانی سیستەمی دووبارەكردنەوە و هاوكاری دەنگ، دەستی لە زانیاری بگەڕێنەوە بە خێرتری و چالاكدەتر. مەوادەكانت لە فۆڵدەری ئاسانی گڕوپ بكە و زانیاری دەكرێت بە ئاسانی هێنابوون و هەناردن بكەیت. لەگەڵ Flasho فێر‌بونی زمان ڕوونترە، چەركەس و هەموو كات ئامادە!",
+    "premiumDescription": "زۆتر، ئەم بەرنامەیانە وێستایەكی كۆمەڵەی فلاشكارتە ئامادەكان لە ڕێگەی چەند زمانێك وە دەگەیەنێت، ناوەندە „1000 وشەی ئینگلیزی“ (ڕێكخراوە لە 60 فلاشكاری بەخۆڕایی) و „157 فێڵی ناناسق“ (ڕێكخراوە لە 40 فلاشكاری بەخۆڕایی) جێگیر دەكات."
+  },
+  "crs": {
+    "applicationName": "Flasho - Kreatèr Flashcards",
+    "shortDescription": "Kreé ou prop flashcards e aprann langaz ek set pre-fabrike san enskripsyon",
+    "fullDescription": "Flasho - Kreatèr Flashcards i en apllikasyon fasil e leze dezinyen pou en bon lway aprann langaz. Kreé ou prop flashcards ouswa servi set ki’n fini pare san bezwen enskri. Servi sistem repetisyon ek sipor prononsyasyon pou aprann pli vit e pli efikas. Organiz ou materyo dan folder ki senp e fasilman import ou export done. Avek Flasho, aprann langaz i vin agreab, fleksib e toultan dispozan!",
+    "premiumDescription": "Anplis, sa apllikasyon i ofer en libreri set flashcards ki’n fini pare pou plizyer langaz, enkli set “1000 mo Angle” (avek 60 flashcards gratis) ek set “157 verb irregular” (avek 40 flashcards gratis)."
+  },
+  "cs": {
+    "applicationName": "Flasho - Tvůrce flashkaret",
+    "shortDescription": "Vytvářejte si vlastní kartičky a učte se jazyky s hotovými sadami bez registrace",
+    "fullDescription": "Flasho - Tvůrce flashkaret je jednoduchá a lehká aplikace určená pro efektivní výuku jazyků. Vytvářejte vlastní flashkarty nebo využijte připravené sady bez nutnosti registrace. Využijte systém opakování a podporu výslovnosti pro rychlejší a efektivnější učení. Organizujte své materiály v přehledných složkách a snadno importujte i exportujte data. S Flasho je učení jazyků pohodlné, flexibilní a k dispozici, kdykoliv potřebujete!",
+    "premiumDescription": "Aplikace navíc nabízí knihovnu hotových sad flashkaret pro mnoho jazyků, včetně sady „1000 anglických slov“ (s 60 flashkartami zdarma) a sady „157 nepravidelných sloves“ (se 40 flashkartami zdarma)."
+  },
+  "da": {
+    "applicationName": "Flasho - Flashcard Skaber",
+    "shortDescription": "Lav dine egne flashcards og lær sprog med færdige sæt uden registrering",
+    "fullDescription": "Flasho - Skab dine egne flashkort er en let og enkel app, designet til effektiv sprogindlæring. Lav dine egne kort eller brug de færdige sæt uden at skulle registrere dig. Udnyt repetitionssystemet og støtte til udtale for hurtigere og mere effektiv indlæring. Organisér dit materiale i intuitive mapper, og importér eller eksportér data nemt. Med Flasho bliver sprogindlæring behagelig, fleksibel og altid tilgængelig!",
+    "premiumDescription": "Derudover tilbyder appen et bibliotek med færdige flashkort-sæt til mange sprog, herunder sættet “1000 engelske ord” (med 60 gratis kort) og sættet “157 uregelmæssige verber” (med 40 gratis kort)."
+  },
+  "de": {
+    "applicationName": "Flasho - Flashcard Ersteller",
+    "shortDescription": "Erstelle eigene Karteikarten & lerne Sprachen mit fertigen Sets - ohne Anmeldung",
+    "fullDescription": "Flasho - Kartenlernsystem ist eine einfache und leichte App, die für effektives Sprachenlernen entwickelt wurde. Erstelle deine eigenen Karten oder nutze fertige Sets ganz ohne Registrierung. Verwende das Wiederholungssystem und die Aussprachehilfe, um dir Wissen schneller und effektiver anzueignen. Organisiere deine Materialien in intuitiven Ordnern und importiere/exportiere Daten ganz einfach. Mit Flasho wird das Sprachenlernen angenehm, flexibel und jederzeit verfügbar!",
+    "premiumDescription": "Zusätzlich bietet die App eine Bibliothek mit fertigen Lernkartensets für viele Sprachen, darunter das Set „1000 englische Wörter“ (mit 60 kostenlosen Karten) und das Set „157 unregelmäßige Verben“ (mit 40 kostenlosen Karten)."
+  },
+  "el": {
+    "applicationName": "Flasho - Δημιουργός Flashcard",
+    "shortDescription": "Δημιουργήστε τις δικές σας κάρτες και μάθετε γλώσσες με έτοιμα σετ χωρίς εγγραφή",
+    "fullDescription": "Το Flasho - Δημιουργός καρτών εκμάθησης είναι μια απλή και ελαφριά εφαρμογή σχεδιασμένη για αποτελεσματική εκμάθηση γλωσσών. Δημιουργήστε τις δικές σας κάρτες ή χρησιμοποιήστε τα έτοιμα σετ χωρίς ανάγκη εγγραφής. Αξιοποιήστε το σύστημα επανάληψης και την υποστήριξη προφοράς για πιο γρήγορη και αποτελεσματική μάθηση. Οργανώστε το υλικό σας σε εύχρηστους φακέλους και εισάγετε/εξάγετε δεδομένα εύκολα. Με το Flasho, η εκμάθηση γλωσσών γίνεται ευχάριστη, ευέλικτη και διαθέσιμη όποτε τη χρειάζεστε!",
+    "premiumDescription": "Επιπλέον, η εφαρμογή προσφέρει μια βιβλιοθήκη έτοιμων σετ καρτών για πολλές γλώσσες, συμπεριλαμβανομένου του σετ “1000 αγγλικές λέξεις” (με 60 δωρεάν κάρτες) και του σετ “157 ανώμαλα ρήματα” (με 40 δωρεάν κάρτες)."
+  },
+  "en": {
+    "applicationName": "Flasho - Flashcard Creator",
+    "shortDescription": "Create your own flashcards and learn languages with ready-made sets, no registration needed",
+    "fullDescription": "Flasho - Flashcard Creator is a simple and lightweight app designed for effective language learning. Create your own flashcards or use ready-made sets without needing to register. Use the review system and pronunciation support to acquire knowledge faster and more efficiently. Organize your materials into intuitive folders and easily import or export data. With Flasho, language learning becomes enjoyable, flexible, and available whenever you need it!",
+    "premiumDescription": "Additionally, the app offers a library of ready-made flashcard sets for many languages, including the “1000 English Words” set (with 60 free flashcards) and the “157 Irregular Verbs” set (with 40 free flashcards)."
+  },
+  "es": {
+    "applicationName": "Flasho - Creador de Tarjetas",
+    "shortDescription": "Crea tus propias fichas y aprende idiomas con conjuntos listos, sin registro",
+    "fullDescription": "Flasho - Creador de Tarjetas es una aplicación sencilla y ligera diseñada para un aprendizaje efectivo de idiomas. Crea tus propias tarjetas o utiliza los conjuntos disponibles sin necesidad de registro. Aprovecha el sistema de repeticiones y el soporte de pronunciación para adquirir conocimientos más rápido y de forma más eficaz. Organiza tu material en carpetas intuitivas y exporta o importa datos con facilidad. ¡Con Flasho, aprender idiomas se vuelve agradable, flexible y siempre disponible!",
+    "premiumDescription": "Además, la aplicación ofrece una biblioteca de conjuntos de tarjetas listos para muchos idiomas, incluyendo el conjunto “1000 palabras en inglés” (con 60 tarjetas gratis) y el conjunto “157 verbos irregulares” (con 40 tarjetas gratis)."
+  },
+  "et": {
+    "applicationName": "Flasho - Flashcardi Looja",
+    "shortDescription": "Loo oma mälukaarte ja õpi keeli valmis komplektidega ilma registreerumiseta",
+    "fullDescription": "Flasho - Välkkartide Looja on lihtne ja kerge rakendus, mis on loodud efektiivseks keeleõppeks. Loo oma välkkarbid või kasuta valmis komplekte ilma registreerimise vajaduseta. Kasuta kordussüsteemi ja hääldustoetust, et õppida kiiremini ja tulemuslikumalt. Korralda oma materjalid intuitiivsetesse kaustadesse ning impordi ja ekspordi andmeid hõlpsalt. Flasho abil muutub keeleõpe meeldivaks, paindlikuks ja alati kättesaadavaks!",
+    "premiumDescription": "Lisaks pakub rakendus mitmete keelte jaoks valmis välkkartide komplektide raamatukogu, sealhulgas komplekti “1000 inglise sõna” (koos 60 tasuta kaardiga) ja komplekti “157 ebaregulaarset verbi” (koos 40 tasuta kaardiga)."
+  },
+  "fa": {
+    "applicationName": "Flasho - سازنده فلش‌کارت",
+    "shortDescription": "فلش‌کارت‌های خود را بسازید و با مجموعه‌های آماده بدون نیاز به ثبت‌نام زبان بیاموزید",
+    "fullDescription": "Flasho - سازنده فلش‌کارت یک اپلیکیشن ساده و سبک برای یادگیری مؤثر زبان‌هاست. فلش‌کارت‌های خود را بسازید یا از مجموعه‌های آماده بدون نیاز به ثبت‌نام استفاده کنید. از سیستم مرور و پشتیبانی تلفظ استفاده کنید تا دانش را سریع‌تر و کارآمدتر فرا بگیرید. مطالب خود را در پوشه‌های کارآمد سازمان‌دهی کنید و به‌سادگی داده‌ها را وارد یا صادر کنید. با Flasho یادگیری زبان لذت‌بخش، انعطاف‌پذیر و همیشه در دسترس می‌شود!",
+    "premiumDescription": "علاوه بر این، این اپلیکیشن یک کتابخانه از مجموعه‌های آماده فلش‌کارت برای زبان‌های مختلف ارائه می‌دهد، از جمله مجموعه «1000 واژه انگلیسی» (شامل ۶۰ فلش‌کارت رایگان) و مجموعه «۱۵۷ فعل بی‌قاعده» (شامل ۴۰ فلش‌کارت رایگان)."
+  },
+  "fi": {
+    "applicationName": "Flasho - Flashcard-luoja",
+    "shortDescription": "Luo omat korttisi ja opiskele kieliä valmiilla seteillä ilman rekisteröintiä",
+    "fullDescription": "Flasho - Muistikorttien Luonti on yksinkertainen ja kevyt sovellus, joka on suunniteltu tehokkaaseen kieltenopiskeluun. Luo omat muistikorttisi tai käytä valmiita pakkoja ilman rekisteröintiä. Hyödynnä toistojärjestelmää ja ääntämistukea oppiaksesi nopeammin ja tehokkaammin. Järjestä materiaali käteviin kansioihin ja tuo tai vie dataa helposti. Flashon avulla kieltenoppimisesta tulee miellyttävää, joustavaa ja aina saatavilla olevaa!",
+    "premiumDescription": "Lisäksi sovellus tarjoaa kirjaston valmiita muistikorttipakkoja useille kielille, mukaan lukien “1000 englannin sanaa” (60 ilmaista korttia) sekä “157 epäsäännöllistä verbiä” (40 ilmaista korttia)."
+  },
+  "fr": {
+    "applicationName": "Flasho - Créateur de Cartes",
+    "shortDescription": "Créez vos flashcards, apprenez des langues avec des sets prêts sans inscription",
+    "fullDescription": "Flasho - Créateur de Cartes est une application simple et légère conçue pour un apprentissage efficace des langues. Créez vos propres cartes ou utilisez les ensembles prêts à l’emploi sans avoir besoin de vous inscrire. Exploitez le système de révision et l’assistance à la prononciation pour apprendre plus rapidement et plus efficacement. Organisez vos ressources dans des dossiers intuitifs et importez/exportez facilement vos données. Avec Flasho, l’apprentissage des langues devient agréable, flexible et disponible à tout moment!",
+    "premiumDescription": "De plus, l’application propose une bibliothèque d’ensembles de cartes prêts à l’emploi pour de nombreuses langues, y compris l’ensemble “1000 mots anglais” (avec 60 cartes gratuites) et l’ensemble “157 verbes irréguliers” (avec 40 cartes gratuites)."
+  },
+  "ha": {
+    "applicationName": "Flasho - Mai ƙirƙirar Katin Koyo",
+    "shortDescription": "Ƙirƙiri katin koyonka kuma koyi harsuna da shirye-shiryen da aka riga aka tanada ba tare da rajista ba",
+    "fullDescription": "Flasho - Mai ƙirƙirar Katin Koyo manhaja ce mai sauƙi da nauyi, wacce aka ƙera don ingantaccen koyon harshe. Ƙirƙiri katinka ko amfani da shirye-shiryen da aka riga aka tanada ba tare da buƙatar rajista ba. Amfani da tsarin maimaitawa da tallafin furuci don koyo da sauri da inganci. Tsara kayan ka cikin manyan fayil masu sauƙin amfani kuma ka shigo da/ko fitar da bayanai cikin sauƙi. Tare da Flasho, koyon harsuna yana zama daɗi, sassauƙa, kuma koyaushe a shirye!",
+    "premiumDescription": "Bugu da ƙari, manhajar tana samar da ɗakin karatu na shirye-shiryen katin koyo ga harsuna da dama, ciki har da “1000 Kalmomin Turanci” (tare da katin koyon kyauta 60) da “157 Ƙananan Ayyuka Masu Canji” (tare da katin koyon kyauta 40)."
+  },
+  "haw": {
+    "applicationName": "Flasho - Mea Hō‘ike Pōkole",
+    "shortDescription": "Hana i nā kāleka a‘o pono a e a‘o i nā ‘ōlelo me nā pū‘ulu mākaukau me ka ʻole o ke kakau inoa",
+    "fullDescription": "He polokalamu māmā a maʻalahi ka Flasho - Mea Hō‘ike Pōkole i hoʻolālā ‘ia no ka a‘o ‘ōlelo piha maikaʻi. E hana i kāu mau kāleka a‘o pono a i ʻole e hoʻohana i nā pū‘ulu i mākaukau, me ka ʻole o ke kakau inoa. E hoʻohana i ka ʻōnaehana ho‘ololi hou a me ke kāko‘o ‘ōlelo waha no ka a‘o wikiwiki a maikaʻi. Ho‘oponopono i kāu mau mea i loko o nā faila pa‘a a hō‘ike/hōʻike iā lākou me ka maʻalahi. Me Flasho, lilo ka a‘o ‘ōlelo i mea ‘olu‘olu, hiki ke hoʻololi a loaʻa mau loa!",
+    "premiumDescription": "Eia hou, hāʻawi ka polokalamu i kahi waihona pū‘ulu kāleka i mākaukau no nā ‘ōlelo like ‘ole, me ka pū‘ulu “1000 Hua‘ōlelo Pelekania” (me 60 mau kāleka manuahi) a me ka pū‘ulu “157 Hua Ha‘ina Kūkē” (me 40 mau kāleka manuahi)."
+  },
+  "he": {
+    "applicationName": "Flasho - יוצר כרטיסיות",
+    "shortDescription": "צרו כרטיסיות משלכם ולימדו שפות בעזרת סטים מוכנים ללא הרשמה",
+    "fullDescription": "Flasho - יוצר כרטיסיות היא אפליקציה פשוטה וקלה שתוכננה ללמידת שפות יעילה. צרו כרטיסיות משלכם או השתמשו בסטים מוכנים ללא צורך בהרשמה. השתמשו במערכת החזרות ובתמיכה בהגייה כדי לרכוש ידע מהר וביעילות. ארגנו את החומרים שלכם בתיקיות נוחות וייבאו או ייצאו נתונים בקלות. עם Flasho, לימוד שפות נעשה מהנה, גמיש וזמין תמיד!",
+    "premiumDescription": "בנוסף, האפליקציה מציעה ספרייה של סטים של כרטיסיות מוכנות לשפות רבות, כולל הסט „1000 מילים באנגלית” (עם 60 כרטיסיות חינמיות) והסט „157 פעלים חריגים” (עם 40 כרטיסיות חינמיות)."
+  },
+  "hi": {
+    "applicationName": "Flasho - फ्लैशकार्ड निर्माता",
+    "shortDescription": "अपनी फ्लैशकार्ड्स बनाएं और बिना रजिस्ट्रेशन तैयार सेट्स के साथ भाषाएँ सीखें",
+    "fullDescription": "Flasho - फ्लैशकार्ड निर्माता एक सरल और हल्का ऐप है, जो भाषाओं को प्रभावी ढंग से सीखने के लिए बनाया गया है। अपनी खुद की फ्लैशकार्ड बनाएं या बिना रजिस्ट्रेशन की आवश्यकता के तैयार सेट का उपयोग करें। रिवीजन सिस्टम और उच्चारण सहायता का उपयोग करके जल्दी और प्रभावी ढंग से ज्ञान प्राप्त करें। अपने सामग्रियों को सुविधाजनक फ़ोल्डरों में व्यवस्थित करें और डेटा को आसानी से इम्पोर्ट/एक्सपोर्ट करें। Flasho के साथ भाषा सीखना सुखद, लचीला और जब भी ज़रूरत हो, तब उपलब्ध हो जाता है!",
+    "premiumDescription": "इसके अतिरिक्त, यह ऐप कई भाषाओं के लिए तैयार फ्लैशकार्ड सेट की एक लाइब्रेरी प्रदान करता है, जिसमें “1000 अंग्रेज़ी शब्द” (60 निःशुल्क फ्लैशकार्ड के साथ) और “157 अनियमित क्रियाएँ” (40 निःशुल्क फ्लैशकार्ड के साथ) शामिल हैं।"
+  },
+  "hr": {
+    "applicationName": "Flasho - Kreator flashcardova",
+    "shortDescription": "Izradi svoje kartice i uči jezike uz gotove setove bez registracije",
+    "fullDescription": "Flasho - Kreator Kartica je jednostavna i lagana aplikacija stvorena za učinkovito učenje jezika. Izradite vlastite kartice ili iskoristite gotove setove bez potrebe za registracijom. Koristite sustav ponavljanja i podršku izgovora za brže i kvalitetnije usvajanje znanja. Organizirajte materijale u intuitivne mape i jednostavno uvozite/izvozite podatke. S Flasho, učenje jezika postaje ugodno, fleksibilno i dostupno kad god poželite!",
+    "premiumDescription": "Uz to, aplikacija nudi biblioteku gotovih setova kartica za mnoge jezike, uključujući set “1000 engleskih riječi” (s 60 besplatnih kartica) i set “157 nepravilnih glagola” (s 40 besplatnih kartica)."
+  },
+  "ht": {
+    "applicationName": "Flasho - Kreyatè Kat Memwa",
+    "shortDescription": "Kreye pwòp kat ou pou aprann lang ak pakè ki deja pare san enskripsyon",
+    "fullDescription": "Flasho - Kreyatè Kat Memwa se yon aplikasyon senp ak lejè ki fèt pou aprantisaj lang efikas. Kreye pwòp kat memwa ou oswa itilize pakè ki deja pare san ou pa bezwen enskri. Sèvi ak sistèm repètisyon ak sipò pwononsyasyon pou aprann pi vit ak pi efikas. Òganize materyèl ou nan dosye senp e fasil pou enpòte ak ekspòte done. Ak Flasho, aprann lang vin agreyab, fleksib, epi disponib nenpòt ki lè ou bezwen l!",
+    "premiumDescription": "Anplis, aplikasyon an ofri yon bibliyotèk pakè kat memwa ki deja pare pou anpil lang, ki enkli pakè “1000 mo angle” (ak 60 kat memwa gratis) ak pakè “157 vèb irégilye” (ak 40 kat memwa gratis)."
+  },
+  "hu": {
+    "applicationName": "Flasho - Készíts Saját Kártyákat",
+    "shortDescription": "Készíts saját kártyákat és tanulj nyelveket kész csomagokkal regisztráció nélkül",
+    "fullDescription": "A Flasho - Készíts Saját Kártyákat egy egyszerű és könnyű alkalmazás, amelyet hatékony nyelvtanulásra terveztek. Készítsd el saját kártyáidat, vagy használd a meglévő csomagokat regisztráció nélkül. Használd az ismétlési rendszert és a kiejtéstámogatást, hogy gyorsabban és eredményesebben sajátítsd el a tudást. Rendezd anyagaid intuitív mappákba, és könnyedén importálj és exportálj adatokat. A Flasho-val a nyelvtanulás élvezetes, rugalmas és mindig elérhető!",
+    "premiumDescription": "Ezen felül az alkalmazás egy könyvtárat is kínál előre elkészített kártyacsomagokkal számos nyelvhez, beleértve a „1000 angol szó” csomagot (60 ingyenes kártyával) és a „157 rendhagyó ige” csomagot (40 ingyenes kártyával)."
+  },
+  "hy": {
+    "applicationName": "Flasho - Ֆլեշքարտերի Ստեղծող",
+    "shortDescription": "Ստեղծեք ձեր ֆլեշքարտերը և սովորեք լեզուներ պատրաստի փաթեթներով առանց գրանցման",
+    "fullDescription": "Flasho - Ֆլեշքարտերի Ստեղծողը պարզ և թեթև հավելված է, նախատեսված լեզուների արդյունավետ ուսուցման համար։ Ստեղծեք ձեր ֆլեշքարտերը կամ օգտվեք պատրաստի փաթեթներից առանց գրանցվելու անհրաժեշտության։ Գործածեք կրկնության համակարգն ու արտասանության աջակցությունը, որպեսզի սովորեք ավելի արագ և արդյունավետ։ Կազմակերպեք ձեր նյութերը հարմարավետ թղթապանակներում և հեշտությամբ ներմուծեք/արտահանեք տվյալները։ Flasho-ի հետ լեզուների ուսուցումը դառնում է հաճելի, ճկուն և հասանելի ցանկացած պահի!",
+    "premiumDescription": "Բացի այդ, հավելվածը առաջարկում է պատրաստի ֆլեշքարտերի գրադարան բազմաթիվ լեզուների համար, ներառյալ “1000 անգլերեն բառ” փաթեթը (60 անվճար ֆլեշքարտերով) և “157 ան düzenaget verbեր” փաթեթը (40 անվճար ֆլեշքարտերով):"
+  },
+  "id": {
+    "applicationName": "Flasho - Pembuat Flashcard",
+    "shortDescription": "Buat kartu belajar sendiri dan pelajari bahasa dengan set siap tanpa registrasi",
+    "fullDescription": "Flasho - Pembuat Kartu Flash adalah aplikasi sederhana dan ringan yang dirancang untuk pembelajaran bahasa yang efektif. Buat kartu flash Anda sendiri atau gunakan set siap pakai tanpa memerlukan registrasi. Manfaatkan sistem pengulangan dan dukungan pelafalan untuk menyerap materi lebih cepat dan efektif. Atur materi Anda dalam folder intuitif serta impor/ekspor data dengan mudah. Dengan Flasho, belajar bahasa menjadi menyenangkan, fleksibel, dan selalu siap kapan pun Anda butuhkan!",
+    "premiumDescription": "Selain itu, aplikasi ini menawarkan perpustakaan set kartu flash siap pakai untuk banyak bahasa, termasuk set “1000 Kata Bahasa Inggris” (dengan 60 kartu flash gratis) dan set “157 Kata Kerja Tidak Beraturan” (dengan 40 kartu flash gratis)."
+  },
+  "ig": {
+    "applicationName": "Flasho - Onye Na-eke Kàádị Nkuzi",
+    "shortDescription": "Mepụta kaadị nkuzi nke gị ma mụta asụsụ site na setị dị njikere n’enweghị ndebanye",
+    "fullDescription": "Flasho - Onye Na-eke Kàádị Nkuzi bu ngwa dị mfe na dírịrịrịrịrịrịrịrịrịrịgharị, nke e mebere iji nyere aka n'akụkọ ihe omimi asụsụ n'ụzọ dị irè. Mepụta kaadị nke gị ma ọ bụ jiri setị dị njikere n’enweghị ndebanye. Jiri usoro mmeghachi na nkwado mmasi olu iji mụta ngwa ngwa karị. Dewanye ihe ọmụma gị n'ime folda eji aghọta ngwa ngwa ma weghachite/importa ma ọ bụ exporta data n'ụzọ dị mfe. Na Flasho, ịmụ asụsụ na-atọ ụtọ, na-adịgide adịgide, ma nọnyere gị mgbe ọ bụla ịchọrọ ya!",
+    "premiumDescription": "Nakwa, ngwa a na-enye ọba setị kaadị nkuzi dị njikere maka asụsụ dị iche iche, gụnyere setị “1000 English Words” (nwere kaadị nkuzi 60 n’efu) na setị “157 Irregular Verbs” (nwere kaadị nkuzi 40 n’efu)."
+  },
+  "it": {
+    "applicationName": "Flasho - Creatore di Flashcard",
+    "shortDescription": "Crea le tue flashcard e impara lingue con set pronti, senza registrazione",
+    "fullDescription": "Flasho - Creatore di Flashcard è un'app semplice e leggera progettata per un apprendimento efficace delle lingue. Crea le tue flashcard oppure utilizza i set già pronti senza bisogno di registrarti. Sfrutta il sistema di ripetizione e il supporto per la pronuncia per imparare più velocemente e in modo più efficace. Organizza il tuo materiale in cartelle intuitive e importa/esporta facilmente i dati. Con Flasho, imparare le lingue diventa piacevole, flessibile e sempre disponibile!",
+    "premiumDescription": "Inoltre, l'app offre una libreria di set di flashcard già pronti per molte lingue, tra cui il set “1000 parole inglesi” (con 60 flashcard gratuite) e il set “157 verbi irregolari” (con 40 flashcard gratuite)."
+  },
+  "ja": {
+    "applicationName": "Flasho - フラッシュカード作成ツール",
+    "shortDescription": "自分専用のフラッシュカードを作成し、登録不要の既成セットで語学を学習",
+    "fullDescription": "Flasho - フラッシュカード作成ツールは、効率的な語学学習を目的に設計されたシンプルで軽量なアプリです。自分のフラッシュカードを作成したり、登録不要で利用できる既成セットを使って学習できます。復習システムや発音サポートを活用して、より速く、より効果的に知識を習得しましょう。直感的なフォルダで教材を整理し、データのインポート/エクスポートも簡単。Flashoがあれば、語学学習が楽しく柔軟で、いつでも利用できます！",
+    "premiumDescription": "さらに、このアプリには多言語対応の既成フラッシュカードセットのライブラリがあり、「1000英単語」（無料カード60枚入り）や「不規則動詞157」（無料カード40枚入り）などを含みます。"
+  },
+  "ka": {
+    "applicationName": "Flasho - ფლეშბარათების შემქმნელი",
+    "shortDescription": "შექმენით საკუთარი ბარათები და ისწავლეთ ენები მზა ნაკრებებით რეგისტრაციის გარეშე",
+    "fullDescription": "Flasho - ფლეშბარათების შემქმნელი არის მარტივი და მსუბუქი აპლიკაცია, რომელიც შეიქმნა ენის ეფექტური სწავლისთვის. შექმენით თქვენი ფლეშბარათები ან გამოიყენეთ მზა ნაკრებები რეგისტრაციის საჭიროების გარეშე. გამოიყენეთ გამეორების სისტემა და გამოთქმის მხარდაჭერა, რომ უფრო სწრაფად და ეფექტურად შეითვისოთ ცოდნა. ორგანიზეთ მასალები ინტუიციურ საქაღალდეებში და მარტივად იმპორტირეთ/ექსპორტირეთ მონაცემები. Flasho-სთან ერთად, ენის სწავლა ხდება სასიამოვნო, მოქნილი და ყოველთვის ხელმისაწვდომი!",
+    "premiumDescription": "გარდა ამისა, აპლიკაცია გთავაზობთ მზა ფლეშბარათების ბიბლიოთეკას მრავალი ენისთვის, მათ შორის „1000 ინგლისური სიტყვა“ (60 უფასო ბარათით) და „157 არაწესიერი ზმნა“ (40 უფასო ბარათით)."
+  },
+  "kk": {
+    "applicationName": "Flasho - Флешкарт Жасаушы",
+    "shortDescription": "Өз флешкарттарыңызды жасап, дайын жинақтармен тілдерді тіркелусіз үйреніңіз",
+    "fullDescription": "Flasho - Флешкарт Жасаушы – тілдерді тиімді оқуға арналған қарапайым және жеңіл қосымша. Өз флешкарттарыңызды жасаңыз немесе дайын жинақтарды тіркелусіз пайдаланыңыз. Қайталау жүйесі мен дыбыстау қолдауын қолданып, білімді тез және тиімді меңгеріңіз. Материалдарыңызды ыңғайлы қалталарға реттеп, деректерді оңай импорттау/экспорттау мүмкіндігі бар. Flasho арқылы тіл үйрену қолайлы, икемді және әрқашан қол жетімді болады!",
+    "premiumDescription": "Сонымен қатар, қосымшада бірнеше тілге арналған дайын флешкарт жиынтықтарының кітапханасы бар, олардың ішінде “1000 ағылшын сөзі” (60 тегін флешкартамен) және “157 бұрыс етістік” (40 тегін флешкартамен) бар."
+  },
+  "kl": {
+    "applicationName": "Flasho - Flashcard-imut Aaqqissuisoq",
+    "shortDescription": "Namminerit flashcard-it sanagit, registrering-eqateqinak piareersimaffiusunik sæt-inik atorlugu oqaatsit ilinniarigit",
+    "fullDescription": "Flasho - Flashcard-imut Aaqqissuisoq app-iujuvoq piuminartorlu, atoruminarpoq oqaatsinik ilinniartitseqqissinnaasoq. Namminerit flashcard-it sanagit imalt. piareersimaffiusunik sæt-inik atorit registratie-eqateqinak. Repetition-system-ikkut aammattaaq oqaatsinik tavga prononsiimik ikiorsiissummik atorlutit, ilinniarnerit sukkanerusumik ilisimasaqarnerusumillu angukkit. Atoruminartunik folder-inik aaqqissuuterineq, data import/export-ernerlu ajornanngitsuussaaq. Flasho atorlugu oqaatsinik ilinniaqqissinnaaneq nuannersoq, aalaakkaasoq, tamatigut atorfissaqartitarineqarsinnaasoq!",
+    "premiumDescription": "App-ip aamma bibliotek-eqarpoq flashcard-it piareersimaffiusunik flere oqaasinut, soorlu “1000 tuluit oqaasii” (60 flashcard-it akikitsunnguit peqatigalugu) aamma “157 irregular verbs” (40 flashcard-it akikitsunnguit peqatigalugu)."
+  },
+  "km": {
+    "applicationName": "Flasho - អ្នកបង្កើតកាតប្លាស",
+    "shortDescription": "បង្កើតបន្ទះអានផ្ទាល់ខ្លួន ហើយរៀនភាសាជាមួយឈុតរួចមិនចាំបាច់ចុះឈ្មោះ",
+    "fullDescription": "Flasho - បង្កើតកាតរំលឹក គឺជាកម្មវិធីងាយស្រួល និងមានទំហំតូច ដែលត្រូវបានរចនាឡើងសម្រាប់ការរៀនភាសាដោយប្រសិទ្ធិភាព។ អ្នកអាចបង្កើតកាតរំលឹកផ្ទាល់ខ្លួន ឬប្រើឈុតដែលបានត្រៀមរួចរួច ដោយមិនចាំបាច់ចុះឈ្មោះ។ ប្រើប្រព័ន្ធរំលឹកឡើងវិញ និងការគាំទ្រពេលអានអញ្ជើញ (និយាយ) ដើម្បីដណ្តើមយល់ដឹងបានលឿន និងមានប្រសិទ្ធិភាពជាងមុន។ រៀបចំឯកសាររបស់អ្នកក្នុងថតងាយស្រួលប្រើ ហើយអាចនាំចូល និងនាំចេញទិន្នន័យបានងាយស្រួល។ ជាមួយនឹង Flasho ការរៀនភាសាគឺទទួលបានភាពរីករាយ ងាយបត់បែន ហើយអាចប្រើប្រាស់បានគ្រប់ពេលវេលា!",
+    "premiumDescription": "បន្ថែមពីនេះ កម្មវិធីនេះមានបណ្ណាល័យឈុតកាតរំលឹកដែលបានត្រៀមរួចរួច សម្រាប់ភាសាជាច្រើនរួមមានឈុត “1000 ពាក្យអង់គ្លេស” (មាន 60 កាតរំលឹកឥតគិតថ្លៃ) និងឈុត “157 កិរិយាសព្ទអ النظام្ម​ន” (មាន 40 កាតរំលឹកឥតគិតថ្លៃ)។"
+  },
+  "ko": {
+    "applicationName": "Flasho - 플래시카드 제작기",
+    "shortDescription": "직접 플래시카드를 만들고, 사전 등록된 세트로 회원가입 없이 언어를 배워보세요",
+    "fullDescription": "Flasho - 플래시카드 제작기는 효율적인 언어 학습을 위해 개발된 간편하고 가벼운 앱입니다. 회원가입 없이 직접 플래시카드를 만들거나, 이미 준비된 세트를 활용해보세요. 반복 학습 시스템과 발음 지원을 통해 더 빠르고 효과적으로 지식을 쌓을 수 있습니다. 직관적인 폴더를 통해 학습 자료를 체계적으로 관리하고, 손쉽게 데이터 가져오기와 내보내기가 가능합니다. Flasho와 함께라면 언제든지 즐겁고 유연하게 언어를 배울 수 있습니다!",
+    "premiumDescription": "추가로, 이 앱은 다양한 언어의 미리 준비된 플래시카드 세트를 제공합니다. 여기에는 ‘1000 영어 단어’(무료 플래시카드 60장 포함)와 ‘157 불규칙 동사’(무료 플래시카드 40장 포함) 같은 세트가 포함되어 있습니다."
+  },
+  "ks": {
+    "applicationName": "Flasho - فلیش کارڈ تیارکُن وُن",
+    "shortDescription": "اپنی خودی فلیش کارڈز بناؤ تہ زُوان سِکھو گٹھ بنیو اسِتھ، بِنا رَجسٹریشنس",
+    "fullDescription": "Flasho - فلیش کارڈ تیارکُن وُن ایک سادہ تہ ہلکی ایپ چھُہ ژہ ذبانکُن مؤثر تراوٕکھ کرنہ خاطر بَنیے. آپزِتھان فلیش کارڈز بناؤ یا پہلے سے تیارکَرِتھ سیٹ استعمال کرنہ بےہژ رَجسٹریشنس. دُہراتھی نظام تہ تلفظ مدد سِتھ، تامتی علم یَدی تیزی تہ اثرانک طریقَس حاصِل کرِیو. مواد آسان فولڈرن منز ترتیب کَرِیو تہ ڈیٹا آمپورٹ/ایکسپورٹ آسانی سِتھ کَریو. Flasho سیتھ ذوان سکھنہ نوٚند مزہ دار، لچکدار تہ ہمیش دستیاب چھُہ!",
+    "premiumDescription": "اِمس گۆند اَور، ایپھ منز ناریاز زبانَن خاطر تیارکَرِتھ فلیش کارڈ سیٹکِن مُکتبا چھُہ، ژیہ منز ‘1000 اَنٛگریزی لفظ’ (60 مفت فلیش کارڈسِتھ) تہ ‘157 بےقاعدہ فعل’ (40 مفت فلیش کارڈسِتھ) شامل چھُہ۔"
+  },
+  "ky": {
+    "applicationName": "Flasho - Флешкарт Жараткыч",
+    "shortDescription": "Өз флешкарталарыңды түзүп, даяр топтомдор менен тилдерди каттоосуз үйрөн",
+    "fullDescription": "Flasho - Флешкарт Жараткыч — тилдерди натыйжалуу үйрөнүү үчүн жөнөкөй жана жеңил тиркеме. Каттоосу жок эле флешкарталарыңызды түзүңүз же даяр топтомдорду колдонуңуз. Кайталоо системасын жана айтылышты колдоону колдонуу аркылуу билгиңизди тезирээк жана натыйжалуу өздөштүрүңүз. Материалыңызды түшүнүктүү папкаларга топтоп, дайындарды оңой импорттоого жана экспорттоого болот. Flasho менен тил үйрөнүү жагымдуу, ийкемдүү жана ар дайым жеткиликтүү болот!",
+    "premiumDescription": "Мындан тышкары, тиркемеде ар кандай тилдерге арналган даяр флешкарт топтомдор китепканасы бар, анын ичинде “1000 англис сөзү” (60 бекер флешкарт менен) жана “157 бейтараптанган этиш” (40 бекер флешкарт менен) сыяктуу топтомдор бар."
+  },
+  "ln": {
+    "applicationName": "Flasho - Mobandisi ya Bakarti ya Kokanisa",
+    "shortDescription": "Sala bakarti na yo moko mpe yekola minɔkɔ na biteni esalami liboso, ata kozanga kokomisa nkombo",
+    "fullDescription": "Flasho - Mobandisi ya Bakarti ya Kokanisa ezali eloko ya pɛtɛ mpe ya péso moke, ebongisami mpo na koyekola minɔkɔ na lolenge efandaka malamu. Sala bakarti na yo moko to salela biteni esalami liboso, kozanga kolingana kokomisa nkombo. Salela mokonzi ya bokundoli (systèmes ya repetition) mpe lisungi ya monɔkɔ mpo okumisa mayɛlɛ noki mpe se mwa pɛtɛɛ. Bóngisa biloko na yo na bifɔldɛr bien monanaka pe lakisa bakomi/bima data se pɛtɛɛ. Na Flasho, koyekola minɔkɔ ekómi kitoko, ebongi mpé ezali tango nionso kosalela!",
+    "premiumDescription": "Lisusu, esika oyo ezali na bibliotɛkɛ ya biteni ya bakarti esalami liboso mpo na minɔkɔ mingi, elongo na “1000 maloba ya Lingelesi” (na bakarti 60 ya ofele) mpe “157 bansémbo ya lolenge te” (na bakarti 40 ya ofele)."
+  },
+  "lo": {
+    "applicationName": "Flasho - ຜູ້ສ້າງຟຼັດກາດ",
+    "shortDescription": "ສ້າງຟຼັດກາດຂອງເອງ ແລະຮຽນພາສາດ້ວຍຊຸດທີ່ມີຢູ່ ໂດຍບໍ່ຕ້ອງລົງທະບຽນ",
+    "fullDescription": "Flasho - ຜູ້ສ້າງຟຼັດກາດ ເປັນແອັບງ່າຍໆແລະເບາລົດ ທີ່ອອກແບບມາເພື່ອການຮຽນພາສາຢ່າງມີປະສິດທິພາບ. ສ້າງຟຼັດກາດຂອງເອງ ຫຼືໃຊ້ຊຸດທີ່ມີຢູ່ບໍ່ຕ້ອງລົງທະບຽນ. ນໍາໃຊ້ລະບົບທຳ້ຊ້ຳ ແລະການຊ່ວຍເຫຼືອການອອກສຽງ ເພື່ອໃຫ້ທ່ານໄດ້ຮັບຄວາມຮູ້ຢ່າງໄວວາ ແລະມີປະສິດທິພາບ. ຈັດລຽງເອກະສານຂອງທ່ານໃນໂຟນເດີທີ່ເຂົ້າໃຈງ່າຍ ແລະນຳເຂົ້າ/ສົ່ງອອກຂໍ້ມູນໄດ້ສະດວກ. ດ້ວຍ Flasho, ການຮຽນພາສາຈະກາຍເປັນເລື່ອງສົນຸກ, ຍືດຫຍຸ່ນ ແລະພ້ອມໃຊ້ງານໄດ້ເມື່ອໃດກໍໄດ້!",
+    "premiumDescription": "ນອກຈາກນັ້ນ, ແອັບນີ້ຍັງມີຄັງຊຸດຟຼັດກາດທີ່ຕ້ອງການສໍາລັບພາສາຫຼາຍ, ລວມໄປຖຶງ “1000 ຄໍາສັບພາສາອັງກິດ” (ມີ 60 ຟຼັດກາດຟຣີ) ແລະ “157 ຄໍາົບົກົງກິລິຍາທີ່ບໍ່ປົກກະຕິ” (ມີ 40 ຟຼັດກາດຟຣີ)."
+  },
+  "lt": {
+    "applicationName": "Flasho - Kortelių kūrėjas",
+    "shortDescription": "Kurkite korteles ir mokykitės kalbų su paruoštais rinkiniais be registracijos",
+    "fullDescription": "Flasho - Kortelių kūrėjas – tai paprasta ir lengva programėlė, skirta efektyviam kalbų mokymuisi. Kurkite savo korteles arba naudokitės jau paruoštais rinkiniais be jokios registracijos. Pasitelkite kartojimo sistemą ir tarimo pagalbą, kad žinias įsisavintumėte greičiau ir efektyviau. Tvarkykite savo mokomąją medžiagą patogiuose aplankuose ir lengvai importuokite bei eksportuokite duomenis. Su Flasho kalbų mokymasis tampa smagus, lankstus ir visada prieinamas!",
+    "premiumDescription": "Be to, ši programėlė siūlo paruoštų kortelių rinkinį įvairioms kalboms, tarp jų ir rinkinį „1000 anglų žodžių“ (su 60 nemokamų kortelių) bei „157 netaisyklingų veiksmažodžių“ (su 40 nemokamų kortelių)."
+  },
+  "lv": {
+    "applicationName": "Flasho - Kartīšu veidotājs",
+    "shortDescription": "Izveidojiet kartītes mācies valodas ar gataviem komplektiem bez reģistrācijas",
+    "fullDescription": "Flasho - Kartīšu veidotājs ir vienkārša un viegla lietotne, kas paredzēta efektīvai valodu apguvei. Izveidojiet savas kartītes vai izmantojiet jau sagatavotos komplektus, ne reģistrējoties. Izmantojiet atkārtošanas sistēmu un izrunas atbalstu, lai ātrāk un efektīvāk apgūtu zināšanas. Glabājiet mācību materiālus ērtās mapēs un viegli importējiet vai eksportējiet datus. Ar Flasho valodu apguve kļūst aizraujoša, elastīga un vienmēr pieejama!",
+    "premiumDescription": "Papildus tam lietotne piedāvā jau sagatavotu kartīšu komplektu bibliotēku dažādām valodām, tostarp “1000 angļu vārdi” (ar 60 bezmaksas kartītēm) un “157 neregulārie darbības vārdi” (ar 40 bezmaksas kartītēm)."
+  },
+  "mi": {
+    "applicationName": "Flasho - Kaihanga Kārī Whakamaumahara",
+    "shortDescription": "Waihangahia ō ake kāri whakamaumahara me te ako reo i roto i ngā huinga kua whakareri, kāore he rēhitatanga",
+    "fullDescription": "Ko Flasho - Kaihanga Kārī Whakamaumahara he taupānga māmā, mamā te taumaha, i hoahoatia mō te ako reo whai hua. Hangaia ōu ake kāri whakamaumahara, rānei whakamahia ngā huinga kua whakaritea, me te kore rēhita. Whakamahia te pūnaha tukurua me te āwhina whakahua kia tere ake te whakatinanatanga o ngā mōhiotanga. Whakaritea ō rauemi ki roto i ngā kōpaki mārama, ā, he māmā te kawemai me te kaweake raraunga. Mā Flasho, he ngahau, he ngāwari, ā, he wātea i ngā wā katoa te ako reo!",
+    "premiumDescription": "Hei taapiri, he whare pukapuka huinga kāri kua whakaritea mō ngā reo maha kei roto i te taupānga, pērā i te huinga “1000 kupu Ingarihi” (me ngā kāri koreutu e 60) me “157 kupumahi hē” (me ngā kāri koreutu e 40)."
+  },
+  "mn": {
+    "applicationName": "Flasho - Флешкард бүтээгч",
+    "shortDescription": "Өөрийн флэш картаа үүсгэж, бэлэн багцуудтайгаар бүртгэлгүйгээр хэл сур",
+    "fullDescription": "Flasho - Флэш карт үүсгэгч нь хэл суралцахад зориулагдсан, хэрэглэхэд энгийн бөгөөд хөнгөн апп юм. Бүртгэл шаардахгүйгээр өөрийн флэш картыг үүсгэж эсвэл бэлэн багцуудаас сонгон ашиглаарай. Давталтын систем ба дуудлагын дэмжлэгээр мэдлэгээ илүү хурдан, үр дүнтэй өөртөө шингээж аваарай. Материалаа ойлгомжтой хавтаснуудад ангилан байрлуулж, өгөгдлөө амархан импортлон/export хийх боломжтой. Flasho-той хамт хэл сурах нь тааламжтай, уян хатан, мөн хүссэн үедээ ашиглахад бэлэн болдог!",
+    "premiumDescription": "Нэмэлтээр, энэхүү апп нь олон хэлэнд тохирсон бэлэн флэш картын санг агуулдаг. Үүнд “1000 англи үг” (60 үнэгүй флэш карттай) болон “157 дүрмийн бус үйл үг” (40 үнэгүй флэш карттай) зэрэг багцууд багтсан."
+  },
+  "ms": {
+    "applicationName": "Flasho - Pencipta Flashcard",
+    "shortDescription": "Cipta kad imbasan sendiri dan pelajari bahasa dengan set sedia tanpa pendaftaran",
+    "fullDescription": "Flasho - Pencipta Kad Imbas ialah aplikasi ringkas dan ringan yang direka untuk pembelajaran bahasa yang berkesan. Cipta kad imbas anda sendiri atau gunakan set sedia ada tanpa perlu mendaftar. Manfaatkan sistem ulang kaji dan sokongan sebutan untuk memperoleh pengetahuan dengan lebih pantas dan berkesan. Susun bahan anda dalam folder intuitif serta import dan eksport data dengan mudah. Dengan Flasho, pembelajaran bahasa menjadi menyeronokkan, fleksibel dan sentiasa tersedia bila-bila masa sahaja!",
+    "premiumDescription": "Selain itu, aplikasi ini menawarkan perpustakaan set kad imbas siap untuk pelbagai bahasa, termasuk set “1000 perkataan Inggeris” (dengan 60 kad imbas percuma) serta set “157 kata kerja tidak tetap” (dengan 40 kad imbas percuma)."
+  },
+  "ne": {
+    "applicationName": "Flasho - फ्ल्यासकार्ड निर्माता",
+    "shortDescription": "आफ्नै फ्ल्यास्कार्डहरू बनाएर तयारी सेटहरूसँग दर्ता नगरी भाषा सिक्नुहोस्",
+    "fullDescription": "Flasho - फ्ल्यास्कार्ड सिर्जनाकर्ता एक सरल र हल्का एप हो, जुन प्रभावकारी भाषाशिक्षा उद्देश्यले विकसित गरिएको हो। दर्ता नगरी आफ्नै फ्ल्यास्कार्डहरू बनाउनुहोस् वा तयारी सेटहरूको प्रयोग गर्नुहोस्। दोहोर्‍याउने प्रणाली र उच्चारण सहयोगमार्फत तेज र प्रभावकारी रूपमा ज्ञान習得 गर्नुहोस्। आफ्ना सामग्री सजिलै बुझेका फोल्डरहरूमा व्यवस्थापन गरी डेटा आयात/निर्यात गर्न सकिन्छ। Flasho को साथ, भाषा सिक्ने काम रमाइलो, लचिलो र जुनसुकै बेलासम्म उपलब्ध हुनेछ!",
+    "premiumDescription": "थप रूपमा, यो एपमा विभिन्न भाषाका लागि तयार पारिएका फ्ल्यास्कार्ड सेटहरूको पुस्तकालय छ, जसमा “1000 अंग्रेजी शब्द” (६० निःशुल्क फ्ल्यास्कार्डसहित) र “157 अनियमित क्रियापद” (४० निःशुल्क फ्ल्यास्कार्डसहित) जस्ता सेटहरू समावेश छन्।"
+  },
+  "nl": {
+    "applicationName": "Flasho - Flashcard Maker",
+    "shortDescription": "Maak je eigen flashcards en leer talen met kant-en-klare sets, zonder registratie",
+    "fullDescription": "Flasho - Flashcard Maker is een eenvoudige en lichte app, ontworpen voor effectief talen leren. Maak je eigen flashcards of gebruik kant-en-klare sets zonder dat je je hoeft te registreren. Profiteer van het herhaalsysteem en de ondersteuning bij uitspraak om sneller en efficiënter kennis te vergaren. Orden je materiaal in intuïtieve mappen en importeer of exporteer data eenvoudig. Met Flasho wordt talen leren leuk, flexibel en altijd beschikbaar!",
+    "premiumDescription": "Bovendien biedt de app een bibliotheek met vooraf gemaakte flashcard-sets voor meerdere talen, waaronder “1000 Engelse woorden” (met 60 gratis flashcards) en “157 onregelmatige werkwoorden” (met 40 gratis flashcards)."
+  },
+  "no": {
+    "applicationName": "Flasho - Flashkortskaper",
+    "shortDescription": "Lag dine egne flashkort og lær språk med ferdige sett uten registrering",
+    "fullDescription": "Flasho - Flashkortskaper er en enkel og lett app, designet for effektiv språklæring. Du kan lage dine egne flashkort eller bruke ferdige sett uten å registrere deg. Bruk repetisjonssystemet og støtte for uttale for å tilegne deg kunnskap raskere og mer effektivt. Organiser materialet ditt i intuitive mapper og importer/eksporter data enkelt. Med Flasho blir språklæring gøy, fleksibelt og alltid tilgjengelig!",
+    "premiumDescription": "I tillegg tilbyr appen et bibliotek med ferdiglagde flashkortsett for flere språk, inkludert “1000 engelske ord” (med 60 gratis flashkort) og “157 uregelmessige verb” (med 40 gratis flashkort)."
+  },
+  "pl": {
+    "applicationName": "Flasho - Kreator Fiszek",
+    "shortDescription": "Twórz własne fiszki i ucz się języków z gotowymi zestawami bez rejestracji",
+    "fullDescription": "Flasho - Kreator Fiszek to prosta i lekka aplikacja stworzona z myślą o efektywnej nauce języków. Twórz własne fiszki lub korzystaj z gotowych zestawów bez konieczności rejestracji. Wykorzystaj system powtórek i wsparcie wymowy, by przyswajać wiedzę szybciej i skuteczniej. Organizuj swoje materiały w intuicyjnych folderach oraz łatwo importuj i eksportuj dane. Z Flasho nauka języków staje się przyjemna, elastyczna i dostępna zawsze, gdy tego potrzebujesz!",
+    "premiumDescription": "Dodatkowo aplikacja oferuje bibliotekę gotowych zestawów fiszek dla wielu języków, w tym zestaw “1000 angielskich słów” (z 60 darmowymi fiszkami) oraz zestaw “157 czasowników nieregularnych” (z 40 darmowymi fiszkami)."
+  },
+  "ps": {
+    "applicationName": "Flasho - د فلش کارت جوړوونکی",
+    "shortDescription": "خپل فلش کارتونه جوړ کړئ او د ثبت اړتیا پرته له چمتو شویو سیټونو سره ژبې زده کړئ",
+    "fullDescription": "Flasho - د فلش کارت جوړوونکی یوه ساده او سپکه ایپ ده چې د ژبو د مؤثرې زده کړې لپاره جوړه شوې. پرته له دې چې ثبت شئ، خپل فلش کارتونه جوړ کړئ یا له چمتو شویو سیټونو څخه کار واخلئ. د تکرار سیسټم او تلفظ ملاتړ څخه ګټه واخلئ ترڅو پوهه ژر او اغېزناکه ترلاسه کړئ. خپل توکي د اسانه فولډرونو په مرسته تنظیم کړئ او د معلوماتو واردول/اېستل اسان کړئ. د Flasho سره، د ژبو زده کړه خوښېدونکې، لچکداره او هر وخت د لاسرسي وړ ده!",
+    "premiumDescription": "سربېره پردې، یاد ایپ د ډېرو ژبو لپاره د چمتو شویو فلش کارت سیټونو کتابتون لري، چې پکې “1000 انګلیسي لغتونه” (د 60 وړیا فلش کارتونو سره) او “157 بېقاعده فعلونه” (د 40 وړیا فلش کارتونو سره) شامل دي."
+  },
+  "pt": {
+    "applicationName": "Flasho - Criador de Flashcards",
+    "shortDescription": "Crie seus flashcards e aprenda idiomas com conjuntos prontos, sem registro",
+    "fullDescription": "Flasho - Criador de Flashcards é um aplicativo simples e leve, projetado para facilitar a aprendizagem eficaz de idiomas. Você pode criar seus próprios flashcards ou usar conjuntos prontos sem precisar se registrar. Utilize o sistema de repetições e o suporte à pronúncia para adquirir conhecimento de forma mais rápida e eficiente. Organize seu material em pastas intuitivas e faça a importação/exportação de dados facilmente. Com o Flasho, aprender idiomas se torna divertido, flexível e sempre disponível!",
+    "premiumDescription": "Além disso, o aplicativo oferece uma biblioteca de conjuntos de flashcards prontos para vários idiomas, incluindo o conjunto “1000 palavras em inglês” (com 60 flashcards gratuitos) e o conjunto “157 verbos irregulares” (com 40 flashcards gratuitos)."
+  },
+  "ro": {
+    "applicationName": "Flasho - Creator de Flashcarduri",
+    "shortDescription": "Creează-ți propriile flashcarduri și învață limbi străine cu seturi gata făcute, fără înregistrare",
+    "fullDescription": "Flasho - Creator de Flashcarduri este o aplicație simplă și ușoară, proiectată pentru învățarea eficientă a limbilor străine. Creează-ți propriile flashcarduri sau folosește seturile deja pregătite fără a avea nevoie de înregistrare. Utilizează sistemul de repetiții și suportul de pronunție pentru a obține cunoștințe mai rapid și mai eficient. Organizează-ți materialele în foldere intuitive și importă/exportă date cu ușurință. Cu Flasho, învățarea limbilor devine plăcută, flexibilă și mereu la îndemână!",
+    "premiumDescription": "În plus, aplicația include o bibliotecă de seturi de flashcarduri gata făcute pentru diverse limbi, inclusiv setul „1000 de cuvinte în engleză” (cu 60 de flashcarduri gratuite) și „157 de verbe neregulate” (cu 40 de flashcarduri gratuite)."
+  },
+  "ru": {
+    "applicationName": "Flasho - Создатель флеш-карт",
+    "shortDescription": "Создавайте собственные флеш-карты и изучайте языки с готовыми наборами без регистрации",
+    "fullDescription": "Flasho - Создатель флеш-карт — это простое и легкое приложение для эффективного изучения языков. Создавайте собственные флеш-карты или используйте готовые наборы без регистрации. Используйте систему повторений и поддержку произношения, чтобы быстрее и эффективнее усваивать знания. Организуйте материалы в удобных папках и легко импортируйте или экспортируйте данные. С Flasho изучение языков становится приятным, гибким и доступным в любое время!",
+    "premiumDescription": "Кроме того, приложение предлагает библиотеку готовых наборов флеш-карт для многих языков, в том числе «1000 английских слов» (с 60 бесплатными карточками) и «157 неправильных глаголов» (с 40 бесплатными карточками)."
+  },
+  "sd": {
+    "applicationName": "Flasho - فلياش ڪارڊ ٺاهڻ وارو",
+    "shortDescription": "پنهنجا فلياش ڪارڊ ٺاهيو ۽ بغير رجسٽريشن جي تيار سيٽن سان ٻوليون سکو",
+    "fullDescription": "Flasho - فلياش ڪارڊ ٺاهڻ وارو هڪ سادي ۽ هلڪي ايپ آهي، جيڪا ٻولين جي اثرائتي سکيا لاءِ تيار ڪئي وئي آهي. بغير رجسٽريشن جي پنهنجا فلياش ڪارڊ ٺاهيو يا تيار سيٽن مان فائدو وٺو. دهرائڻ واري نظام ۽ تلفظ جي مدد سان ڄاڻ کي تيزيءَ سان وڌيڪ اثرائتي نموني حاصل ڪريو. پنهنجو مواد آسان فولڊرن ۾ ترتيب ڏيو ۽ ڊيٽا کي آساني سان Import/Export ڪريو. Flasho سان گڏ ٻوليون سکڻ مزيدار، لچڪدار ۽ هر وقت موجود ٿي وڃي ٿو!",
+    "premiumDescription": "ان کان سواءِ، هن ايپ ۾ مختلف ٻولين لاءِ تيار ڪيل فلياش ڪارڊ سيٽن جي لائبريري موجود آهي، جن ۾ '1000 انگريزي لفظ' (60 مفت فلياش ڪارڊن سان) ۽ '157 اڻ規وده فعل' (40 مفت فلياش ڪارڊن سان) شامل آهن."
+  },
+  "sk": {
+    "applicationName": "Flasho - Tvorca Flashkariet",
+    "shortDescription": "Vytvárajte si vlastné kartičky a učte sa jazyky s hotovými setmi bez registrácie",
+    "fullDescription": "Flasho - Tvorca Flashkariet je jednoduchá a ľahká aplikácia, navrhnutá pre efektívne učenie sa jazykov. Môžete si vytvoriť vlastné flashkarty alebo použiť hotové sady bez potreby registrácie. Využite systém opakovania a podporu výslovnosti, aby ste sa vedomosti naučili rýchlejšie a efektívnejšie. Usporiadajte svoje materiály v prehľadných priečinkoch a jednoducho importujte či exportujte dáta. S Flasho je učenie jazykov príjemné, flexibilné a dostupné kedykoľvek!",
+    "premiumDescription": "Okrem toho aplikácia ponúka knižnicu hotových flashkariet pre viaceré jazyky, vrátane sady „1000 anglických slov“ (so 60 bezplatnými kartami) a sady „157 nepravidelných slovies“ (so 40 bezplatnými kartami)."
+  },
+  "sl": {
+    "applicationName": "Flasho - Ustvarjalec Učnih Kartic",
+    "shortDescription": "Ustvarite kartice in učite jezike s pripravljenimi seti brez registracije",
+    "fullDescription": "Flasho - Ustvarjalec Učnih Kartic je preprosta in lahka aplikacija, namenjena učinkovitemu učenju jezikov. Ustvarite svoje kartice ali uporabite že pripravljene sete, ne da bi se morali registrirati. Uporabite sistem ponavljanja in podporo izgovorjavi, da hitreje in učinkoviteje usvojite znanje. Organizirajte gradiva v intuitivnih mapah ter enostavno uvozite in izvozite podatke. Z Flasho postane učenje jezikov prijetno, prilagodljivo in ves čas na voljo!",
+    "premiumDescription": "Aplikacija ponuja tudi knjižnico vnaprej pripravljenih kompletov kartic za različne jezike, vključno s kompletom »1000 angleških besed« (z 60 brezplačnimi karticami) in »157 nepravilnih glagolov« (z 40 brezplačnimi karticami)."
+  },
+  "so": {
+    "applicationName": "Flasho - Abuuraha Kaararka Xusuusta",
+    "shortDescription": "U samee kaararkaaga xusuusta oo baro luuqado adoo isticmaalaya xirmooyin diyaar ah, adigoon isdiiwaangelin",
+    "fullDescription": "Flasho - Abuuraha Kaararka Xusuusta waa app fudud oo khafiif ah, loogu talagalay in si wax ku ool ah lagu barto luuqado. Waxaad ka sameysan kartaa kaararkaaga xusuusta ama waad adeegsan kartaa xirmooyin horay loo diyaariyay adoon isdiiwaangelin. Adeegso nidaamka soo celinta (repetition) iyo taageerada dhawaaqa si aad si dhakhso leh oo hufan aqoon u kororsato. U habee agabyadaada faylal si fudud loo fahmi karo, oo fududee dhoofinta iyo soo dhoofinta xogta. Iyada oo aad la socoto Flasho, barashada luuqado waxay noqonaysaa mid xiiso leh, dabacsan, oo had iyo jeer la heli karo!",
+    "premiumDescription": "Sidoo kale, app-kan waxa uu bixiyaa maktabad xirmooyin kaar xusuus ah oo diyaar u ah luuqado kala duwan, oo ay ka mid yihiin “1000 erey Ingiriisi” (oo leh 60 kaarar xusuus oo bilaash ah) iyo “157 falal aan caadi ahayn” (oo leh 40 kaarar xusuus oo bilaash ah)."
+  },
+  "sq": {
+    "applicationName": "Flasho - Krijuesi i Kartolinave Mësimore",
+    "shortDescription": "Krijoni kartolinat tuaja dhe mësoni gjuhë me sete të gatshme pa regjistrim",
+    "fullDescription": "Flasho - Krijuesi i Kartolinave Mësimore është një aplikacion i thjeshtë dhe i lehtë, i krijuar për mësimin efektiv të gjuhëve. Mund të krijoni kartolinat tuaja ose të përdorni sete të gatshme pa pasur nevojë për regjistrim. Përdorni sistemin e përsëritjes dhe mbështetjen e shqiptimit për të fituar njohuri më shpejt dhe më me efikasitet. Organizoni materialet tuaja në dosje intuitive dhe importoni/eksportoni të dhënat lehtësisht. Me Flasho, mësimi i gjuhëve bëhet i këndshëm, fleksibël dhe gjithmonë i disponueshëm!",
+    "premiumDescription": "Përveç kësaj, aplikacioni ofron një bibliotekë me sete kartolinash mësimore të gatshme për shumë gjuhë, duke përfshirë setin “1000 fjalë anglisht” (me 60 kartolina falas) dhe “157 folje të parregullta” (me 40 kartolina falas)."
+  },
+  "sr": {
+    "applicationName": "Flasho - Kreator Fleš kartica",
+    "shortDescription": "Kreirajte svoje fleš kartice i učite jezike uz gotove setove bez registracije",
+    "fullDescription": "Flasho - Kreator Fleš kartica je jednostavna i lagana aplikacija namenjena efikasnom učenju jezika. Napravite sopstvene fleš kartice ili koristite već pripremljene setove, bez potrebe za registracijom. Iskoristite sistem ponavljanja i podršku za izgovor kako biste znanje usvojili brže i efikasnije. Organizujte svoje materijale u intuitivnim fasciklama i jednostavno uvozite i izvozite podatke. Uz Flasho, učenje jezika postaje prijatno, fleksibilno i uvek dostupno!",
+    "premiumDescription": "Pored toga, aplikacija nudi biblioteku gotovih setova fleš kartica za različite jezike, uključujući set „1000 engleskih reči” (sa 60 besplatnih fleš kartica) i set „157 nepravilnih glagola” (sa 40 besplatnih fleš kartica)."
+  },
+  "sv": {
+    "applicationName": "Flasho - Skapare av Flashcards",
+    "shortDescription": "Skapa dina egna flashcards och lär dig språk med färdiga set utan registrering",
+    "fullDescription": "Flasho - Skapare av Flashcards är en enkel och lättviktig app utformad för effektiv språkinlärning. Du kan skapa egna flashcards eller använda färdiga set utan att behöva registrera dig. Använd repetitionssystemet och stöd för uttal för att snabbare och mer effektivt ta till dig kunskap. Organisera ditt material i intuitiva mappar och importera/exportera data med lätthet. Med Flasho blir språkinlärning roligt, flexibelt och alltid tillgängligt!",
+    "premiumDescription": "Dessutom erbjuder appen ett bibliotek med färdiggjorda flashcard-set för flera språk, inklusive ”1000 engelska ord” (med 60 gratis flashcards) och ”157 oregelbundna verb” (med 40 gratis flashcards)."
+  },
+  "sw": {
+    "applicationName": "Flasho - Mwandaji wa flashcard",
+    "shortDescription": "Tengeneza kadi zako mwenyewe na ujifunze lugha kwa seti zilizopo bila usajili",
+    "fullDescription": "Flasho - Muundaji wa Kadi za Flash ni programu rahisi na nyepesi iliyoundwa kwa ajili ya kujifunza lugha kwa ufanisi. Unaweza kutengeneza kadi zako mwenyewe au kutumia seti zilizopo bila kuhitaji kujisajili. Tumia mfumo wa marudio na msaada wa matamshi ili kupata ujuzi haraka na kwa ufanisi zaidi. Panga nyenzo zako katika folda rahisi kuelewa na fanya uingizaji (import) au utoaji (export) wa data bila matatizo. Ukiwa na Flasho, kujifunza lugha kunakuwa kufurahisha, kunabadilika kirahisi, na kupatikana kila wakati unahitaji!",
+    "premiumDescription": "Zaidi ya hayo, programu hii inatoa maktaba ya seti za kadi za flash zilizotayarishwa tayari kwa lugha mbalimbali, zikiwemo “1000 maneno ya Kiingereza” (pamoja na kadi 60 za bure) na “157 vitenzi visivyo vya kawaida” (pamoja na kadi 40 za bure)."
+  },
+  "syr": {
+    "applicationName": "Flasho - ܒܪܝܬܐ ܕܟܪܛܘ̈ܢܐ ܦܠܐܫ",
+    "shortDescription": "ܒܪܝܬܐ ܕܟܪܛܘ̈ܢܐ ܦܠܐܫ ܕܝܼܠܟܼ ܘܐܝܼܠܦ ܠܫܢ̈ܐ ܒܣܝ̈ܣܬܐ ܕܐܝܟܝܢ ܒܠܐ ܪܓܝܼܣܛܪܐܘܢ",
+    "fullDescription": "Flasho - ܒܪܝܬܐ ܕܟܪܛܘ̈ܢܐ ܦܠܐܫ ܗܘ ܐܦܠܝܩܝܼܬܐ ܦܫܝܛܬܐ ܘܙܥܘܪܬܐ ܕܬܪܨܐ ܠܡܝܼܕܳܢ ܠܫܢ̈ܐ ܒܐܝܼܟܲܪܐ. ܝܼܠܟܼ ܝܬܚܠܝܢ ܒܪܝܼܬܐ ܕܟܪܛܘ̈ܢܐ ܕܝܼܠܟܼ ܐܘ ܫܬܡܫ ܒܣܝ̈ܣܬܐ ܕܐܝܟܝܢ ܠܠܐ ܪܓܝܼܣܛܪܐܘܢ. ܬܟܪܝܼܢ ܣܝܣܛܡܐ ܕܬܪܨܐ ܘܣܝܥܪܬܐ ܕܩܪܝܼܐ ܗܘܝܼܐ ܕܬܩܒܠܘܢ ܝܕܥܬܐ ܒܣܝܪܥܐ. ܫܟܢ ܡܦܠܚܢܐ ܒܦܐܬܐ ܙܘܡܪ̈ܐ ܘܥܸܫܝ ܬܘܒ ܕܥܘܠܘܬܐ ܘܢܦܩܘܬܐ ܕܒܝܼܬܐ. ܥܡ Flasho ܡܝܼܕܳܢ ܠܫܢ̈ܐ ܒܨܦܝܼܪܘܬܐ ܘܩܐܒܠܘܬܐ ܘܚܕ ܝܟܘܢ ܩܬܝܼܒܐ!",
+    "premiumDescription": "ܡܘܣܦܐ ܠܗܝܢ، ܐܦܠܝܩܝܼܬܐ ܝܗܘܝܼ ܓܪܝܡܬܐ ܕܣܝ̈ܣܬܐ ܕܟܪܛܘ̈ܢܐ ܦܠܐܫ ܕܐܝܟܝܢ ܠܐܝܟܝܢ ܕܠܫܢ̈ܐ ܫܘܓܫܐ، ܗܘ ܐܝܼܬ ܒܗܝܢ: “1000 ܡܠܬܐ ܐܢܓܠܝܼܣܝܼܐ” (ܥܡ 60 ܟܪܛܘ̈ܢܐ ܦܠܐܫ ܕܒܠܐ ܦܝܼܨܐ) ܘ “157 ܦܥܘ̈ܠܐ ܕܠܐ ܣܝܪܝܼܐ” (ܥܡ 40 ܟܪܛܘ̈ܢܐ ܕܒܠܐ ܦܝܼܨܐ)."
+  },
+  "tg": {
+    "applicationName": "Flasho - Созмондиҳандаи флеш-кортҳо",
+    "shortDescription": "Флеш-кортҳои худатонро созед ва забонҳоро бо маҷмӯаҳои омода бидуни қайд омӯзед",
+    "fullDescription": "Flasho - Созмондиҳандаи флеш-кортҳо як барномаи содда ва сабук мебошад, ки барои омӯзиши самараноки забонҳо тарҳрезӣ шудааст. Шумо метавонед флеш-кортҳои худатонро бидуни қайд созед ё аз маҷмӯаҳои омода истифода баред. Бо ёрии низоми такрорӣ ва дастгирии талаффуз, донишро тезтар ва самараноктар аз худ кунед. Маводи худро дар ҷузвдонҳои содда ташкил дода, маълумотро осон ворид ва содир намоед. Бо Flasho, омӯзиши забонҳо шавқовар, чандир ва ҳамеша дастрас мегардад!",
+    "premiumDescription": "Илова бар ин, дар барнома китобхонаи маҷмӯаҳои омодашудаи флеш-кортҳо барои забонҳои гуногун мавҷуд аст, аз ҷумла «1000 калимаи англисӣ» (бо 60 флеш-корти ройгон) ва «157 феъли нодуруст» (бо 40 флеш-корти ройгон)."
+  },
+  "th": {
+    "applicationName": "Flasho - ผู้สร้างแฟลชการ์ด",
+    "shortDescription": "สร้างแฟลชการ์ดของคุณเองและเรียนรู้ภาษาได้ด้วยเซ็ตสำเร็จรูปโดยไม่ต้องลงทะเบียน",
+    "fullDescription": "Flasho - ผู้สร้างแฟลชการ์ด เป็นแอปพลิเคชันที่เรียบง่ายและเบา ออกแบบมาเพื่อการเรียนรู้ภาษาอย่างมีประสิทธิภาพ คุณสามารถสร้างแฟลชการ์ดของคุณเองหรือใช้เซ็ตสำเร็จรูปโดยไม่ต้องลงทะเบียน ใช้ระบบทบทวนและการสนับสนุนการออกเสียงเพื่อให้ได้ความรู้เร็วและมีประสิทธิภาพยิ่งขึ้น จัดระเบียบสื่อการเรียนในโฟลเดอร์ที่เข้าใจง่ายและนำเข้า/ส่งออกข้อมูลได้อย่างสะดวก ด้วย Flasho การเรียนรู้ภาษาจะกลายเป็นเรื่องสนุก ยืดหยุ่น และเข้าถึงได้ทุกเมื่อที่คุณต้องการ!",
+    "premiumDescription": "นอกจากนี้ แอปยังมีคลังชุดแฟลชการ์ดที่เตรียมไว้ล่วงหน้าสำหรับหลายภาษา รวมถึงชุด “1000 คำศัพท์ภาษาอังกฤษ” (มีแฟลชการ์ดฟรี 60 ใบ) และชุด “157 คำกริยาที่ผันไม่ปกติ” (มีแฟลชการ์ดฟรี 40 ใบ) เป็นต้น"
+  },
+  "tk": {
+    "applicationName": "Flasho - Fleşkart Dörediji",
+    "shortDescription": "Öz fleşkartlaryňyzy döredip, hasaba alynmazdan taýýar toplumlar bilen dil öwreniň",
+    "fullDescription": "Flasho - Fleşkart Dörediji, dili netijeli öwrenmek üçin döredilen aňsat we ýeňil programmanyň biridir. Hasaba durmazdan öz fleşkartlaryňyzy döredip bilýärsiňiz ýa-da taýýar toplumlary ulanyp bilýärsiňiz. Gaýtalamak ulgamy we aýdylyş kömegi arkaly bilimi çalt hem netijeli özleşdiriň. Resminamalaryňyzy düşnükli bukjalarda tertipleşdirip, maglumaty aňsatlyk bilen import/eksport edip bilersiňiz. Flasho bilen dil öwrenmek elmydama lezzetli, çeýe we elýeterlidir!",
+    "premiumDescription": "Mundan başga-da, bu programma birnäçe dil üçin taýýar fleşkart toplumlarynyň kitaphanasyny hödürleýär. Olaryň arasynda “1000 iňlis sözi” (60 mugt fleşkart bilen) we “157 düzgünsiz işlik” (40 mugt fleşkart bilen) hem bar."
+  },
+  "tl": {
+    "applicationName": "Flasho - Tagalikha ng Flashcard",
+    "shortDescription": "Gumawa ng sarili mong flashcards at matuto ng mga wika sa pamamagitan ng mga handang set nang hindi na kailangan ng rehistrasyon",
+    "fullDescription": "Ang Flasho - Tagalikha ng Flashcard ay isang simpleng magaan na app na idinisenyo para sa epektibong pag-aaral ng wika. Maaari kang gumawa ng sarili mong flashcards o gumamit ng mga handang set nang hindi na kailangang magrehistro. Gamitin ang sistema ng pag-uulit at tulong sa pagbigkas upang mas mabilis at mas mahusay na matamo ang kaalaman. I-organisa ang iyong mga materyal sa mga folder na madaling maunawaan at maaaring i-import/export nang madali. Sa Flasho, nagiging masaya, nababagay, at madaling ma-access ang pag-aaral ng wika kailanman mo ito kailangan!",
+    "premiumDescription": "Bukod pa rito, nag-aalok ang app ng isang silid-aklatan ng mga handang flashcard set para sa iba't ibang wika, kasama na rito ang “1000 salitang Ingles” (may 60 libreng flashcards) at “157 iregular na pandiwa” (may 40 libreng flashcards)."
+  },
+  "tpi": {
+    "applicationName": "Flasho - Mekim Flashkad",
+    "shortDescription": "Mekim ol flashkad bilong yu yet na lainim tok ples wantaim ol redi set, nating nid bilong registration",
+    "fullDescription": "Flasho - Mekim Flashkad em wanpela isi na lait app bilong helpim yupela long lainim tok ples gut. Mekim ol yet flashkad bilong yu o yusim ol redi set nabaut, no nid long registration. Yusim sistem bilong ripit na sapot bilong pronansietion bilong kisim save hariap na gutpela. Putim ol matiriel bilong yu long ol gutpela folded na mekim isi import/ eksport bilong data. Wantaim Flasho, lainim tok ples i stap amamas, fleksibol na redi oltaim!",
+    "premiumDescription": "Na tu, dispela app i gat wanpela laibreri bilong ol redi set flashkad long planti tok ples, olsem “1000 tok Inglis” (wantaim 60 free flashkad) na “157 irregular verb” (wantaim 40 free flashkad)."
+  },
+  "tr": {
+    "applicationName": "Flasho - Flashkart Oluşturucu",
+    "shortDescription": "Kendi flashkartlarınızı oluşturun ve kayıt olmadan hazır setlerle dil öğrenin",
+    "fullDescription": "Flasho - Flashkart Oluşturucu, etkili dil öğrenimi için tasarlanmış basit ve hafif bir uygulamadır. Kayıt gerekmeden kendi flashkartlarınızı oluşturabilir veya hazır setleri kullanabilirsiniz. Tekrar sistemi ve telaffuz desteğiyle bilgiyi daha hızlı ve verimli şekilde edinin. Materyallerinizi sezgisel klasörlerde düzenleyip verileri kolayca içe veya dışa aktarın. Flasho ile dil öğrenmek her zaman keyifli, esnek ve erişilebilir oluyor!",
+    "premiumDescription": "Ayrıca, uygulama birçok dil için önceden hazırlanmış flashkart setlerinden oluşan bir kütüphane sunar. Bunlar arasında “1000 İngilizce kelime” (60 ücretsiz flashkart ile) ve “157 düzensiz fiil” (40 ücretsiz flashkart ile) gibi setler bulunur."
+  },
+  "ug": {
+    "applicationName": "Flasho - خاتىرىلەش كارتا ياساقچىسى",
+    "shortDescription": "ئۆزىڭىزنىڭ خاتىرىلەش كارتلىرىنى قۇرۇپ، تىزىملاتمايلا تەييار توپلاملار بىلەن تىل ئۆگىنىڭ",
+    "fullDescription": "Flasho - خاتىرىلەش كارتا ياساقچىسى تىل ئۆگەنىشتە ئۈنۈملۈك بولۇش ئۈچۈن لايىھەلەنگەن ئىنتايىن ئاددىي ۋە يەڭگىل بىر ئەپ. تىزىملاتمايلا ئۆز خاتىرىلەش كارتلىقىڭىزنى ياسقايسىز ياكى تەييار توپلاملاردىن پايدىلىنالايسىز. قايتىلاش سىستېمىسى ۋە تلفۇز ياردەمچىسى ئارقىلىق بىلىمگە تېز вә ئۈنۈملۈك ئېرىشىڭ. ماتېرىيالىڭىزنى چۈشەنشىلىك قىسقۇچلاردا تەرتىپكە سېلىپ، كۆڭۈلدىكىدەكImport/Export قىلالايسىز. Flasho بىلەن تىل ئۆگەنىش ھەر دائىم خوشاللىق، كەڭ قۇلارلىق ۋە ھەر ۋاقىت ئىشلىتەلىشىدۇ!",
+    "premiumDescription": "بۇنىڭدىن باشقامۇ، بۇ ئەپتە بەك كۆپ تىللارغا ماسلاشقان تەييار خاتىرىلەش كارتا توپلاملىرى كىتىپخانىسى بار. ئۇلارنىڭ ئىچىدە «1000 ئىنگلىزچە سۆز» (60 تاللىقمۇخ بىكار خاتىرىلەش كارتا) ۋە «157 قېلىپسىز فېئل» (40 بىكار خاتىرىلەش كارتا) قوشۇلۇشىمۇ مۇمكىن."
+  },
+  "uk": {
+    "applicationName": "Flasho - Конструктор флешкарт",
+    "shortDescription": "Створюйте власні флешкартки та вивчайте мови за готовими наборами без реєстрації",
+    "fullDescription": "Flasho - Створювач флешкарток — це проста й легка у використанні програма, створена для ефективного вивчення мов. Ви можете створювати власні флешкартки або використовувати готові набори без потреби реєстрації. Використовуйте систему повторень і підтримку вимови, щоб швидше й ефективніше засвоювати знання. Організовуйте матеріали в зручних папках і легко імпортуйте чи експортуйте дані. З Flasho вивчення мов стає приємним, гнучким і доступним будь-коли!",
+    "premiumDescription": "До того ж, програма пропонує бібліотеку готових наборів флешкарток для багатьох мов, серед яких «1000 англійських слів» (із 60 безкоштовними картками) і «157 неправильних дієслів» (із 40 безкоштовними картками)."
+  },
+  "ur": {
+    "applicationName": "Flasho - فلیش کارڈ تخلیق کار",
+    "shortDescription": "اپنے فلیش کارڈز بنائیں اور رجسٹریشن کے بغیر تیار شدہ سیٹوں کے ساتھ زبانیں سیکھیں",
+    "fullDescription": "Flasho - فلیش کارڈ تخلیق کار ایک سادہ اور ہلکا پھلکا ایپ ہے جو زبانوں کی مؤثر تعلیم کے لیے ڈیزائن کیا گیا ہے۔ رجسٹریشن کے بغیر اپنے فلیش کارڈز بنائیں یا پہلے سے موجود سیٹوں کو استعمال کریں۔ دہرائی کے نظام اور تلفظ کی معاونت سے جلد اور مؤثر طریقے سے علم حاصل کریں۔ اپنے مواد کو آسان فولڈرز میں ترتیب دیں اور ڈیٹا درآمد/برآمد کرنا سہل بنائیں۔ Flasho کے ساتھ، زبان سیکھنا خوشگوار، لچک دار اور ہمہ وقت دستیاب ہے!",
+    "premiumDescription": "اس کے علاوہ، یہ ایپ مختلف زبانوں کے لیے تیار شدہ فلیش کارڈ سیٹوں کی ایک لائبریری پیش کرتی ہے، جن میں “1000 انگریزی الفاظ” (60 مفت فلیش کارڈز کے ساتھ) اور “157 بے قاعدہ فعل” (40 مفت فلیش کارڈز کے ساتھ) شامل ہیں۔"
+  },
+  "uz": {
+    "applicationName": "Flasho - Fleşkart Yaratgich",
+    "shortDescription": "Oʻz fleshkartlaringizni yarating va roʻyxatdan oʻtmasdan tayyor toʻplamlar bilan tillarni oʻrganing",
+    "fullDescription": "Flasho - Fleşkart Yaratgich — tillarni samarali oʻrganish uchun yaratilgan sodda va yengil ilova. Hech qanday roʻyxatdan oʻtmasdan oʻz fleshkartlaringizni yarating yoki tayyor toʻplamlarni ishlating. Takrorlash tizimi va talaffuz yordamidan foydalangan holda bilimni tez va samarali oʻzlashtiring. Materiallaringizni qulay papkalarda tartibga soling va maʼlumotni osongina import yoki eksport qiling. Flasho bilan, tillarni oʻrganish har doim zavqli, moslashuvchan va mavjud boʻladi!",
+    "premiumDescription": "Bundan tashqari, ilovada turli tillar uchun tayyor qilingan fleshkart toʻplamlari kutubxonasi mavjud, jumladan “1000 ingliz soʻzi” (60 bepul fleshkart bilan) hamda “157 notoʻgʻri feʼl” (40 bepul fleshkart bilan)."
+  },
+  "vi": {
+    "applicationName": "Flasho - Trình Tạo Flashcard",
+    "shortDescription": "Tạo flashcard của riêng bạn và học ngôn ngữ với các bộ có sẵn, không cần đăng ký",
+    "fullDescription": "Flasho - Trình Tạo Flashcard là ứng dụng đơn giản, nhẹ được thiết kế cho việc học ngôn ngữ hiệu quả. Bạn có thể tự tạo flashcard hoặc sử dụng những bộ có sẵn mà không cần đăng ký. Hãy tận dụng hệ thống ôn tập cùng hỗ trợ phát âm để tiếp thu kiến thức nhanh chóng và hiệu quả hơn. Sắp xếp tài liệu trong các thư mục trực quan và dễ dàng import/export dữ liệu. Với Flasho, việc học ngôn ngữ trở nên thú vị, linh hoạt và luôn sẵn sàng bất cứ khi nào bạn cần!",
+    "premiumDescription": "Ngoài ra, ứng dụng còn cung cấp thư viện các bộ flashcard có sẵn cho nhiều ngôn ngữ, bao gồm bộ “1000 từ tiếng Anh” (với 60 flashcard miễn phí) và bộ “157 động từ bất quy tắc” (với 40 flashcard miễn phí)."
+  },
+  "wo": {
+    "applicationName": "Flasho - Tagg Gëstu Kàrt",
+    "shortDescription": "Defal say kaar gi gëstu te jàng làkk yiy wone set yu pare, amul a bàyyi kokk",
+    "fullDescription": "Flasho - Tagg Gëstu Kàrt mooy abon app bu gën lewet te yomb, ci yoonu jàng làkk ak mun. Defal say kaar gëstu walla jëfandikoo set yu dencoo, amul a bàyyi kokk. Jëfandikoo système repetisyon ak ndimbal nuyoo ngir am xam-xam si gën gaaw te gën wër. Tànn say jumtukaay ci way defar yu wone, te am yool i import/export data. Ak Flasho, jàng làkk dina neex, tàkku te am suba suba bu nekk!",
+    "premiumDescription": "App bii itam amna laybare bi ak set yu pare ngir kaar gëstu ci ay làkk yu bari, ci yeneen ñooy “1000 waxi anglais” (ak 60 kaar gëstu gu free) ak “157 verb yu dul wér” (ak 40 kaar gëstu gu free)."
+  },
+  "xh": {
+    "applicationName": "Flasho - Umvelisi weeKhadi zeFlash",
+    "shortDescription": "Yenza ezakho iikhadi ze-flash kwaye ufunde iilwimi usebenzisa ezilungiselelwe, ngaphandle kobhaliso",
+    "fullDescription": "I-Flasho - Umvelisi weeKhadi zeFlash lusetyenziso olulula nolukhaphukhaphu oluphuhlisiwe ukuze uncede ukufunda iilwimi ngendlela efanelekileyo. Ungazenzela ezakho iikhadi ze-flash okanye usebenzise ezilungiselelwe ngaphandle kokufuneka ubhalise. Sebenzisa inkqubo yokuphindaphinda nenkxaso yokuchaneka kwesandi ukuze ufumane ulwazi ngokukhawuleza nangokufanelekileyo. Cwangcisa umxholo wakho kwiifolda ezicacileyo kwaye wenze ukungenisa/ukuthumela ngaphandle idatha ngokulula. NgeFlasho, ukufunda iilwimi kuba mnandi, kuyaguquguquka, kwaye kufumaneka nanini na!",
+    "premiumDescription": "Ukongeza, esi sicelo sineethala leencwadi zeeseti zemakhadi e-flash azenzelwe iilwimi ezininzi, ezibandakanya “1000 amagama esiNgesi” (aneekhadi ezingama-60 zasimahla) kunye “157 isenzi ezingaqhelekanga” (ezineekhadi ezingama-40 zasimahla)."
+  },
+  "yo": {
+    "applicationName": "Flasho - Olùdá Kàdì Flash",
+    "shortDescription": "Ṣẹda kàdì flash tirẹ ki o kọ èdè pẹ̀lú sètì tí a ti pèsè láìsí ìforúkọsílẹ̀",
+    "fullDescription": "Flasho - Olùdá Kàdì Flash jẹ́ àpù kékeré tó rọọrùn, tí a ṣèdá fún ẹ̀kọ́ èdè tó munadoko. O lè ṣẹda kàdì flash tirẹ tàbí lo sètì tí a ti pèsè, láìsí ìforúkọsílẹ̀. Lo ètò àtúnṣe (repetition) àti àtìlẹ́yìn fònutologọ̀ (pronunciation) láti gba ìmọ̀ rẹ lọ́wọ́ nʼgbà kan. Ṣètò ohun èlò rẹ nínú fọ́ldà ìmọ̀lára, tí o sì le gbé wọlé/gbe jáde dáta rẹ lérò rọọrùn. Pẹ̀lú Flasho, ẹ̀kọ́ èdè ńdinà éré, ńdàrúkọ, ó sì wà nígbà gbogbo!",
+    "premiumDescription": "Bákan náà, àpù náà pèsè ọ̀kan lára àgbègbè sètì kàdì flash tí a ti pèsè fún ọ̀pọ̀ èdè, pẹ̀lú “1000 ọ̀rọ̀ Gẹ̀ẹ́sì” (pẹ̀lú kàdì flash ọ̀fẹ́ 60) àti “157 ẹ̀ṣọ̀ kò-derenú” (pẹ̀lú kàdì flash ọ̀fẹ́ 40)."
+  },
+  "zh": {
+    "applicationName": "Flasho - 闪卡创建器",
+    "shortDescription": "创建自己的闪卡并使用预制卡组学习语言，无需注册",
+    "fullDescription": "Flasho - 闪卡创建器是一款简单轻便的应用程序，旨在帮助高效地学习语言。您可以无需注册就创建自己的闪卡，或者使用现成的卡组。利用复习系统和发音支持，能够更快更有效地掌握知识。您可以在直观的文件夹中管理学习资料，并轻松导入和导出数据。借助 Flasho，语言学习会变得有趣、灵活，并随时随地可用！",
+    "premiumDescription": "此外，该应用还提供适用于多种语言的预制闪卡库，包括“1000个英语单词”（含60张免费闪卡）和“157个不规则动词”（含40张免费闪卡）等。"
+  },
+  "zu": {
+    "applicationName": "Flasho - Umakhi Wamakhadi E-Flash",
+    "shortDescription": "Dala amakhadi akho, funda izilimi ngamaphakheji alungile ngaphandle kokubhalisa",
+    "fullDescription": "I-Flasho - Umakhi Wamakhadi E-Flash uhlelo lokusebenza olulula nolukhanyayo olulungele ukufundisa ulimi ngendlela ephumelela kakhulu. Ungakha amakhadi akho e-flash noma usebenzise lawo asevele elungisiwe ngaphandle kokubhalisa. Sebenzisa uhlelo lokuphindaphinda futhi uthole usizo lokuphimisa ukuze uzuze ulwazi ngokushesha nangendlela ephumelela kakhulu. Hlela okuqukethwe kwakho kumafolda acacile bese wenza kalula i-import/i-export ledatha. Nge-Flasho, ukufunda ulimi kuba mnandi, kuyaguquguquka futhi kutholakala noma kunini!",
+    "premiumDescription": "Ngaphezu kwalokho, lolu hlelo lokusebenza lunelebhulali yamaphakethe amakhadi e-flash alungiselelwe izilimi eziningi, okubalwa kuzona “1000 amagama esiNgisi” (ane 60 wamakhadi e-flash wamahhala) kanye “157 isenzo esingajwayelekile” (ane 40 wamakhadi e-flash wamahhala)."
+  }
+}

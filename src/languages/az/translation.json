@@ -1,6 +1,6 @@
 {
   "categories": "Kateqoriyalar",
-  "simple_flashcard_creator": "Flaşka Yaratıcı",
+  "simple_flashcard_creator": "Fləşkart Yaradıcısı",
   "view_flashcards": "Öyrənməyə başlayın",
   "create_flashcard": "Flaşka Yaradın",
   "edit_flashcards": "Flaşkaları redaktə et",
@@ -142,5 +142,7 @@
   "turn_on_shadows": "Kölgələri yandır",
   "turn_on_automatic_audio": "Avtomatik səsi yandır",
   "premium_account": "Premium hesab",
-  "active": "Aktiv"
+  "active": "Aktiv",
+  "code": "Kod",
+  "wrong_code": "Yanlış kod"
 }

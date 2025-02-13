@@ -1,0 +1,630 @@
+[
+  {
+    "backDesc": "I am a teacher. / I was at the store yesterday. / I have been at that store many times.",
+    "frontDesc": "나는 교사입니다. / 어제 그 가게에 다녀왔습니다. / 그 가게에 여러 번 가본 적이 있습니다."
+  },
+  {
+    "backDesc": "I want to become a doctor. / I became tired. / I have become more determined.",
+    "frontDesc": "나는 의사가 되고 싶습니다. / 나는 피곤해졌습니다. / 나는 더욱 결심이 굳어졌습니다."
+  },
+  {
+    "backDesc": "I begin a new project. / I began reading a book. / I have begun working on it seriously.",
+    "frontDesc": "나는 새로운 프로젝트를 시작합니다. / 나는 책을 읽기 시작했습니다. / 나는 그것을 본격적으로 시작했습니다."
+  },
+  {
+    "backDesc": "I don't want to break the rules. / He broke the branch. / He has broken many rules in the past.",
+    "frontDesc": "나는 규칙을 깨고 싶지 않습니다. / 그는 나뭇가지를 부러뜨렸습니다. / 그는 과거에 많은 규칙을 어겼습니다."
+  },
+  {
+    "backDesc": "I bring coffee. / She brought flowers. / She has brought gifts as well.",
+    "frontDesc": "나는 커피를 가져옵니다. / 그녀는 꽃을 가져왔습니다. / 그녀는 선물도 가져온 적이 있습니다."
+  },
+  {
+    "backDesc": "I build a house. / He built a bridge. / He has built many bridges in his career.",
+    "frontDesc": "나는 집을 짓습니다. / 그는 다리를 지었습니다. / 그는 경력 동안 여러 다리를 지은 적이 있습니다."
+  },
+  {
+    "backDesc": "I buy new clothes. / She bought a car. / She has bought several cars over the years.",
+    "frontDesc": "나는 새 옷을 삽니다. / 그녀는 차를 샀습니다. / 그녀는 여러 해 동안 여러 대의 차를 샀습니다."
+  },
+  {
+    "backDesc": "I can help. / He could come earlier. / He has been able to assist many times.",
+    "frontDesc": "나는 도울 수 있습니다. / 그는 더 일찍 올 수도 있었습니다. / 그는 여러 번 도움을 준 적이 있습니다."
+  },
+  {
+    "backDesc": "I catch the ball. / He caught a fish. / He has caught many fish in this lake.",
+    "frontDesc": "나는 공을 잡습니다. / 그는 물고기를 잡았습니다. / 그는 이 호수에서 물고기를 여러 번 잡은 적이 있습니다."
+  },
+  {
+    "backDesc": "I choose a dish. / She chose a book. / She has chosen wisely every time.",
+    "frontDesc": "나는 요리를 고릅니다. / 그녀는 책을 골랐습니다. / 그녀는 매번 현명하게 선택해 왔습니다."
+  },
+  {
+    "backDesc": "I come to work. / He came earlier. / He has come on time every day.",
+    "frontDesc": "나는 직장에 옵니다. / 그는 더 일찍 왔습니다. / 그는 매일 제시간에 온 적이 있습니다."
+  },
+  {
+    "backDesc": "It costs five dollars. / It cost more yesterday. / It has cost me a fortune so far.",
+    "frontDesc": "그것은 5달러입니다. / 어제는 더 비쌌습니다. / 지금까지 그것 때문에 큰돈을 썼습니다."
+  },
+  {
+    "backDesc": "I cut the paper. / He cut the wood. / He has cut many pieces of wood before.",
+    "frontDesc": "나는 종이를 자릅니다. / 그는 나무를 잘랐습니다. / 그는 이전에도 나무를 여러 번 잘라본 적이 있습니다."
+  },
+  {
+    "backDesc": "I cast away the old clothes. / He cast the net. / He has cast a net before to catch fish.",
+    "frontDesc": "나는 헌 옷을 내다버립니다. / 그는 그물을 던졌습니다. / 그는 물고기를 잡기 위해 그물을 던져본 적이 있습니다."
+  },
+  {
+    "backDesc": "I do my homework. / He did the dinner. / He has done this type of work before.",
+    "frontDesc": "나는 숙제를 합니다. / 그는 저녁 식사를 준비했습니다. / 그는 이런 종류의 일을 이전에 해본 적이 있습니다."
+  },
+  {
+    "backDesc": "I draw a picture. / She drew a landscape. / She has drawn many landscapes.",
+    "frontDesc": "나는 그림을 그립니다. / 그녀는 풍경화를 그렸습니다. / 그녀는 많은 풍경화를 그려왔습니다."
+  },
+  {
+    "backDesc": "I drink water. / He drank juice. / He has drunk all the juice in the fridge.",
+    "frontDesc": "나는 물을 마십니다. / 그는 주스를 마셨습니다. / 그는 냉장고 안의 주스를 모두 마셔버렸습니다."
+  },
+  {
+    "backDesc": "I drive a car. / She drove the bus. / She has driven that route many times.",
+    "frontDesc": "나는 자동차를 운전합니다. / 그녀는 버스를 몰았습니다. / 그녀는 그 노선을 여러 번 운전해 본 적이 있습니다."
+  },
+  {
+    "backDesc": "I dwell in Warsaw. / He dwelt there earlier. / He has dwelt in many cities over the years.",
+    "frontDesc": "나는 바르샤바에서 삽니다. / 그는 이전에 그곳에서 살았습니다. / 그는 여러 해 동안 여러 도시에서 살아왔습니다."
+  },
+  {
+    "backDesc": "I eat breakfast. / She ate lunch. / She has eaten at this restaurant before.",
+    "frontDesc": "나는 아침을 먹습니다. / 그녀는 점심을 먹었습니다. / 그녀는 이 식당에서 먹어본 적이 있습니다."
+  },
+  {
+    "backDesc": "I fall off the bike. / He fell from the ladder. / He has fallen a few times lately.",
+    "frontDesc": "나는 자전거에서 떨어집니다. / 그는 사다리에서 떨어졌습니다. / 그는 최근 몇 번 넘어졌습니다."
+  },
+  {
+    "backDesc": "I feel good. / She felt pain. / She has felt better since then.",
+    "frontDesc": "나는 기분이 좋습니다. / 그녀는 통증을 느꼈습니다. / 그녀는 그 후로 더 나아진 것 같습니다."
+  },
+  {
+    "backDesc": "I fight for my rights. / He fought in the war. / He has fought bravely for his country.",
+    "frontDesc": "나는 내 권리를 위해 싸웁니다. / 그는 전쟁에서 싸웠습니다. / 그는 조국을 위해 용감히 싸워왔습니다."
+  },
+  {
+    "backDesc": "I find the key. / She found the solution. / She has found many solutions so far.",
+    "frontDesc": "나는 열쇠를 찾습니다. / 그녀는 해결책을 찾았습니다. / 그녀는 지금까지 많은 해결책을 찾아왔습니다."
+  },
+  {
+    "backDesc": "I fly by airplane. / He flew to London. / He has flown internationally many times.",
+    "frontDesc": "나는 비행기로 이동합니다. / 그는 런던으로 날아갔습니다. / 그는 국제선을 여러 번 이용했습니다."
+  },
+  {
+    "backDesc": "I forget the name. / She forgot the keys. / She has forgotten them before.",
+    "frontDesc": "나는 이름을 잊습니다. / 그녀는 열쇠를 잊어버렸습니다. / 그녀는 전에 그것들을 잊은 적이 있습니다."
+  },
+  {
+    "backDesc": "I get a letter. / He got a gift. / He has gotten many gifts recently.",
+    "frontDesc": "나는 편지를 받습니다. / 그는 선물을 받았습니다. / 그는 최근에 선물을 많이 받았습니다."
+  },
+  {
+    "backDesc": "I give you a gift. / She gave him a book. / She has given many books as presents.",
+    "frontDesc": "나는 당신에게 선물을 줍니다. / 그녀는 그에게 책을 주었습니다. / 그녀는 선물로 여러 권의 책을 준 적이 있습니다."
+  },
+  {
+    "backDesc": "I go to school. / He went to work. / He has gone there every day this week.",
+    "frontDesc": "나는 학교에 갑니다. / 그는 일하러 갔습니다. / 그는 이번 주 내내 그곳에 매일 갔습니다."
+  },
+  {
+    "backDesc": "I grind coffee. / He ground the grain. / He has ground coffee beans for years.",
+    "frontDesc": "나는 커피를 갑니다. / 그는 곡물을 빻았습니다. / 그는 여러 해 동안 커피 원두를 갈아왔습니다."
+  },
+  {
+    "backDesc": "I grow every day. / He grew quickly. / He has grown a lot this year.",
+    "frontDesc": "나는 매일 자랍니다. / 그는 빠르게 자랐습니다. / 그는 올해 많이 자랐습니다."
+  },
+  {
+    "backDesc": "I have a car. / He had a guitar. / She has had many opportunities to travel.",
+    "frontDesc": "나는 차가 있습니다. / 그는 기타를 가지고 있었습니다. / 그녀는 여행할 기회가 많았습니다."
+  },
+  {
+    "backDesc": "I hear music. / He heard the noise. / He has heard that noise before.",
+    "frontDesc": "나는 음악을 듣습니다. / 그는 소음을 들었습니다. / 그는 전에 그 소음을 들은 적이 있습니다."
+  },
+  {
+    "backDesc": "I hide the gift. / She hid the letter. / She has hidden messages in her diary.",
+    "frontDesc": "나는 선물을 숨깁니다. / 그녀는 편지를 숨겼습니다. / 그녀는 일기에 메시지를 숨긴 적이 있습니다."
+  },
+  {
+    "backDesc": "I hit the ball. / He hit the door. / He has hit that ball many times.",
+    "frontDesc": "나는 공을 칩니다. / 그는 문을 쳤습니다. / 그는 그 공을 여러 번 쳤습니다."
+  },
+  {
+    "backDesc": "I hold the book. / She held the bag. / She has held onto that bag for years.",
+    "frontDesc": "나는 책을 들고 있습니다. / 그녀는 가방을 들었습니다. / 그녀는 그 가방을 여러 해 동안 지녀왔습니다."
+  },
+  {
+    "backDesc": "I hurt myself while running. / He hurt his hand. / He has hurt himself multiple times.",
+    "frontDesc": "나는 달리다가 다쳤습니다. / 그는 손을 다쳤습니다. / 그는 여러 번 자신을 다치게 했습니다."
+  },
+  {
+    "backDesc": "I keep a secret. / She kept the documents. / She has kept them in a safe place.",
+    "frontDesc": "나는 비밀을 지킵니다. / 그녀는 서류를 보관했습니다. / 그녀는 그것들을 안전한 곳에 보관해왔습니다."
+  },
+  {
+    "backDesc": "I know the answer. / He knew the solution. / He has known it all along.",
+    "frontDesc": "나는 정답을 압니다. / 그는 해결책을 알고 있었습니다. / 그는 줄곧 그것을 알고 있었습니다."
+  },
+  {
+    "backDesc": "I learn English. / She learned to dance. / She has learned many languages.",
+    "frontDesc": "나는 영어를 배웁니다. / 그녀는 춤을 배웠습니다. / 그녀는 여러 언어를 배워 왔습니다."
+  },
+  {
+    "backDesc": "I leave the house. / He left the office. / He has left his job recently.",
+    "frontDesc": "나는 집을 떠납니다. / 그는 사무실을 떠났습니다. / 그는 최근에 직장을 그만두었습니다."
+  },
+  {
+    "backDesc": "I lend a book. / She lent money. / She has lent money to friends before.",
+    "frontDesc": "나는 책을 빌려줍니다. / 그녀는 돈을 빌려주었습니다. / 그녀는 이전에도 친구들에게 돈을 빌려준 적이 있습니다."
+  },
+  {
+    "backDesc": "I let you in. / He let her stay. / He has let many people stay at his place.",
+    "frontDesc": "나는 당신을 들여보냅니다. / 그는 그녀가 머무르도록 허락했습니다. / 그는 많은 사람들이 자기 집에 머무를 수 있도록 해주었습니다."
+  },
+  {
+    "backDesc": "I lie on the couch. / He lay on the bed. / He has lain there for hours.",
+    "frontDesc": "나는 소파에 누워 있습니다. / 그는 침대에 누웠습니다. / 그는 몇 시간 동안 그곳에 누워 있었습니다."
+  },
+  {
+    "backDesc": "I lose my keys. / He lost his wallet. / He has lost things many times.",
+    "frontDesc": "나는 열쇠를 잃어버립니다. / 그는 지갑을 잃어버렸습니다. / 그는 여러 번 물건을 잃어버렸습니다."
+  },
+  {
+    "backDesc": "I make dinner. / She made a cake. / She has made many delicious cakes.",
+    "frontDesc": "나는 저녁을 만듭니다. / 그녀는 케이크를 만들었습니다. / 그녀는 맛있는 케이크를 많이 만들어왔습니다."
+  },
+  {
+    "backDesc": "It means something important. / He meant something else. / He has meant it sincerely all along.",
+    "frontDesc": "그것은 중요한 의미가 있습니다. / 그는 다른 것을 의미했습니다. / 그는 줄곧 진심으로 그것을 의미해 왔습니다."
+  },
+  {
+    "backDesc": "I meet with friends. / She met with the manager. / She has met many interesting people.",
+    "frontDesc": "나는 친구들을 만납니다. / 그녀는 매니저와 만났습니다. / 그녀는 많은 흥미로운 사람들을 만나 왔습니다."
+  },
+  {
+    "backDesc": "I pay the bills. / He paid for dinner. / He has paid his dues already.",
+    "frontDesc": "나는 청구서를 지불합니다. / 그는 저녁 식사 값을 지불했습니다. / 그는 이미 의무를 다했습니다."
+  },
+  {
+    "backDesc": "I put the book on the table. / She put the keys on the shelf. / She has put them there before.",
+    "frontDesc": "나는 책을 탁자 위에 놓습니다. / 그녀는 열쇠를 선반 위에 놓았습니다. / 그녀는 이전에도 그것들을 그곳에 놓은 적이 있습니다."
+  },
+  {
+    "backDesc": "I read the newspaper. / He read the book. / He has read that book many times.",
+    "frontDesc": "나는 신문을 읽습니다. / 그는 그 책을 읽었습니다. / 그는 그 책을 여러 번 읽었습니다."
+  },
+  {
+    "backDesc": "I ride a bike. / She rode a horse. / She has ridden many horses in her life.",
+    "frontDesc": "나는 자전거를 탑니다. / 그녀는 말을 탔습니다. / 그녀는 살면서 여러 말들을 타본 적이 있습니다."
+  },
+  {
+    "backDesc": "I ring you. / He rang me. / He has rung me every day this week.",
+    "frontDesc": "나는 당신에게 전화를 겁니다. / 그는 나에게 전화를 걸었습니다. / 그는 이번 주 매일 내게 전화를 걸었습니다."
+  },
+  {
+    "backDesc": "The sun rises in the morning. / He rose his hand. / He has risen early every day.",
+    "frontDesc": "태양은 아침에 떠오릅니다. / 그는 손을 들었습니다. / 그는 매일 일찍 일어났습니다."
+  },
+  {
+    "backDesc": "I run every day. / He ran faster. / He has run marathons before.",
+    "frontDesc": "나는 매일 달립니다. / 그는 더 빨리 달렸습니다. / 그는 전에 마라톤을 뛴 적이 있습니다."
+  },
+  {
+    "backDesc": "I say the truth. / He said something important. / He has said that many times.",
+    "frontDesc": "나는 진실을 말합니다. / 그는 중요한 말을 했습니다. / 그는 그것을 여러 번 말했습니다."
+  },
+  {
+    "backDesc": "I see the stars. / She saw a bird. / She has seen many birds lately.",
+    "frontDesc": "나는 별을 봅니다. / 그녀는 새를 보았습니다. / 그녀는 최근에 새를 많이 봤습니다."
+  },
+  {
+    "backDesc": "I sell a car. / He sold the house. / He has sold several houses this year.",
+    "frontDesc": "나는 차를 팝니다. / 그는 집을 팔았습니다. / 그는 올해 여러 채의 집을 팔았습니다."
+  },
+  {
+    "backDesc": "I send a letter. / She sent a package. / She has sent many packages abroad.",
+    "frontDesc": "나는 편지를 보냅니다. / 그녀는 소포를 보냈습니다. / 그녀는 해외로 여러 소포를 보낸 적이 있습니다."
+  },
+  {
+    "backDesc": "I set the alarm for 7 AM. / He set the tables for the party. / He has set them up perfectly.",
+    "frontDesc": "나는 알람을 오전 7시로 맞춥니다. / 그는 파티를 위해 테이블을 세팅했습니다. / 그는 그것들을 완벽하게 세팅해 왔습니다."
+  },
+  {
+    "backDesc": "I shake my hands when I'm nervous. / He shook his hand in farewell. / He has shaken hands many times.",
+    "frontDesc": "나는 긴장할 때 손을 떱니다. / 그는 작별 인사로 손을 흔들었습니다. / 그는 여러 번 악수를 해왔습니다."
+  },
+  {
+    "backDesc": "The sun shines brightly today. / He shone the lighthouse at night. / He has shone it on the rocks before.",
+    "frontDesc": "오늘 태양이 밝게 빛납니다. / 그는 밤에 등대를 비추었습니다. / 그는 이전에도 바위에 빛을 비춘 적이 있습니다."
+  },
+  {
+    "backDesc": "I shoot with a bow during practice. / He shot a goal in the game. / He has shot many goals this season.",
+    "frontDesc": "나는 연습 중에 활을 쏩니다. / 그는 경기에서 골을 넣었습니다. / 그는 이번 시즌에 여러 골을 넣었습니다."
+  },
+  {
+    "backDesc": "I show photos from vacation. / He showed his new car. / He has shown it to everyone.",
+    "frontDesc": "나는 휴가 사진을 보여줍니다. / 그는 자신의 새 차를 보여주었습니다. / 그는 모두에게 그것을 보여준 적이 있습니다."
+  },
+  {
+    "backDesc": "I shut the door before leaving. / He shut the window when it got cold. / He has shut them every night.",
+    "frontDesc": "나는 나가기 전에 문을 닫습니다. / 그는 추워지자 창문을 닫았습니다. / 그는 매일 밤 그것들을 닫았습니다."
+  },
+  {
+    "backDesc": "I sing my favorite song. / She sang at the concert. / She has sung there many times.",
+    "frontDesc": "나는 내가 가장 좋아하는 노래를 부릅니다. / 그녀는 콘서트에서 노래를 불렀습니다. / 그녀는 그곳에서 여러 번 노래했습니다."
+  },
+  {
+    "backDesc": "The ship sinks in the sea. / He sank during the storm. / It has sunk completely.",
+    "frontDesc": "그 배는 바다에 가라앉습니다. / 그는 폭풍 중에 가라앉았습니다. / 그것은 완전히 가라앉았습니다."
+  },
+  {
+    "backDesc": "I sit on the chair. / She sat at the table. / She has sat there for hours.",
+    "frontDesc": "나는 의자에 앉습니다. / 그녀는 테이블에 앉았습니다. / 그녀는 몇 시간 동안 그곳에 앉아 있었습니다."
+  },
+  {
+    "backDesc": "I sleep in my bed. / He slept all night. / He has slept well lately.",
+    "frontDesc": "나는 내 침대에서 잡니다. / 그는 밤새 잤습니다. / 그는 요즘 숙면을 취하고 있습니다."
+  },
+  {
+    "backDesc": "I speak English. / He spoke at the conference. / He has spoken there twice.",
+    "frontDesc": "나는 영어를 말합니다. / 그는 회의에서 발표했습니다. / 그는 그곳에서 두 번 발표한 적이 있습니다."
+  },
+  {
+    "backDesc": "I spend time with my family. / He spent a lot of money on the trip. / He has spent all his savings.",
+    "frontDesc": "나는 가족과 시간을 보냅니다. / 그는 여행에 많은 돈을 썼습니다. / 그는 자신의 모든 저축을 써버렸습니다."
+  },
+  {
+    "backDesc": "I stand at the head of the team. / She stood by the window. / She has stood there quietly.",
+    "frontDesc": "나는 팀의 선두에 서 있습니다. / 그녀는 창가에 서 있었습니다. / 그녀는 그곳에서 조용히 서 있었습니다."
+  },
+  {
+    "backDesc": "I swim every morning. / He swam in the lake. / He has swum across that lake before.",
+    "frontDesc": "나는 매일 아침 수영합니다. / 그는 호수에서 수영했습니다. / 그는 이전에 그 호수를 건너 수영한 적이 있습니다."
+  },
+  {
+    "backDesc": "I take my medicine in the morning. / She took an umbrella. / She has taken it with her today.",
+    "frontDesc": "나는 아침에 약을 복용합니다. / 그녀는 우산을 챙겼습니다. / 그녀는 오늘 그것을 가져왔습니다."
+  },
+  {
+    "backDesc": "I teach mathematics. / He taught me a new skill. / He has taught many students over the years.",
+    "frontDesc": "나는 수학을 가르칩니다. / 그는 나에게 새로운 기술을 가르쳐 주었습니다. / 그는 여러 해 동안 많은 학생들을 가르쳐 왔습니다."
+  },
+  {
+    "backDesc": "I always tell him about the change of plans. / She told me a secret. / She has told many secrets over time.",
+    "frontDesc": "나는 항상 그에게 계획 변경에 대해 말합니다. / 그녀는 나에게 비밀을 말해주었습니다. / 그녀는 시간이 지나며 많은 비밀을 털어놓았습니다."
+  },
+  {
+    "backDesc": "I think about the future. / He thought about solving the problem. / He has thought it through carefully.",
+    "frontDesc": "나는 미래에 대해 생각합니다. / 그는 문제 해결에 대해 고민했습니다. / 그는 그것을 신중하게 생각해 왔습니다."
+  },
+  {
+    "backDesc": "I throw the ball into the basket. / She threw the bag on the ground. / She has thrown it away now.",
+    "frontDesc": "나는 공을 바구니에 던집니다. / 그녀는 가방을 바닥에 던졌습니다. / 그녀는 이제 그것을 버렸습니다."
+  },
+  {
+    "backDesc": "I understand this task. / He understood my explanation. / He has understood everything clearly.",
+    "frontDesc": "나는 이 과제를 이해합니다. / 그는 내 설명을 이해했습니다. / 그는 모든 것을 명확히 이해해 왔습니다."
+  },
+  {
+    "backDesc": "I always wake up early in the morning. / She woke up late. / She has woken up earlier on other days.",
+    "frontDesc": "나는 항상 아침 일찍 일어납니다. / 그녀는 늦게 일어났습니다. / 그녀는 다른 날에는 더 일찍 일어난 적이 있습니다."
+  },
+  {
+    "backDesc": "I wear a new jacket. / He wore elegant clothes. / He has worn them many times before.",
+    "frontDesc": "나는 새 재킷을 입습니다. / 그는 우아한 옷을 입었습니다. / 그는 그것들을 이전에 여러 번 입었습니다."
+  },
+  {
+    "backDesc": "I win the board game. / She won the contest. / She has won many contests in her life.",
+    "frontDesc": "나는 보드게임에서 이깁니다. / 그녀는 대회에서 우승했습니다. / 그녀는 살면서 많은 대회에서 우승했습니다."
+  },
+  {
+    "backDesc": "I write a letter to a friend. / He wrote an article. / He has written several articles this month.",
+    "frontDesc": "나는 친구에게 편지를 씁니다. / 그는 기사를 썼습니다. / 그는 이번 달에 여러 기사를 썼습니다."
+  },
+  {
+    "backDesc": "Problems arise suddenly. / He arose from the problems. / He has arisen to face new challenges.",
+    "frontDesc": "문제는 갑자기 발생합니다. / 그는 그 문제들에서 벗어났습니다. / 그는 새로운 도전에 맞서 일어섰습니다."
+  },
+  {
+    "backDesc": "I always awake earlier. / She awoke from a light sleep. / She has awoken feeling rested.",
+    "frontDesc": "나는 항상 더 일찍 깨어납니다. / 그녀는 옅은 잠에서 깨어났습니다. / 그녀는 푹 쉰 느낌으로 깨어난 적이 있습니다."
+  },
+  {
+    "backDesc": "I usually bear it well. / He bore many difficulties. / He has borne his burdens with courage.",
+    "frontDesc": "나는 보통 잘 참습니다. / 그는 많은 어려움을 견뎌냈습니다. / 그는 용기로 자신의 짐을 견뎌 왔습니다."
+  },
+  {
+    "backDesc": "I beat the drums during the concert. / He beat the record. / He has beaten several records so far.",
+    "frontDesc": "나는 콘서트에서 드럼을 칩니다. / 그는 기록을 깼습니다. / 그는 지금까지 여러 기록을 경신했습니다."
+  },
+  {
+    "backDesc": "I bend to reach. / She bent the tree branch. / She has bent many branches while gardening.",
+    "frontDesc": "나는 닿기 위해 몸을 숙입니다. / 그녀는 나뭇가지를 구부렸습니다. / 그녀는 정원을 가꾸면서 많은 가지를 구부린 적이 있습니다."
+  },
+  {
+    "backDesc": "I bet that you'll arrive on time. / He bet money. / He has bet on many races.",
+    "frontDesc": "나는 당신이 제시간에 도착할 것이라고 장담합니다. / 그는 돈을 걸었습니다. / 그는 많은 경기에서 내기를 했습니다."
+  },
+  {
+    "backDesc": "I bid on the artwork. / She bid an offer. / She has bid on several pieces of art.",
+    "frontDesc": "나는 그 예술품에 입찰합니다. / 그녀는 입찰가를 제시했습니다. / 그녀는 여러 작품에 입찰한 적이 있습니다."
+  },
+  {
+    "backDesc": "I bind my shoes before leaving. / He bound the package. / He has bound multiple packages for shipping.",
+    "frontDesc": "나는 나가기 전에 신발 끈을 맵니다. / 그는 소포를 묶었습니다. / 그는 배송을 위해 여러 소포를 묶은 적이 있습니다."
+  },
+  {
+    "backDesc": "I bite an apple for breakfast. / She bit her finger. / She has bitten her nails many times.",
+    "frontDesc": "나는 아침에 사과를 한 입 베어 물습니다. / 그녀는 손가락을 물었습니다. / 그녀는 여러 번 손톱을 물어뜯었습니다."
+  },
+  {
+    "backDesc": "My wound bleeds heavily. / He bled after the fall. / He has bled from similar wounds before.",
+    "frontDesc": "내 상처에서 피가 많이 납니다. / 그는 넘어지고 피를 흘렸습니다. / 그는 이전에도 비슷한 상처에서 피를 흘린 적이 있습니다."
+  },
+  {
+    "backDesc": "I blow out the candle on the cake. / He blew up the balloon. / He has blown many balloons for parties.",
+    "frontDesc": "나는 케이크 위의 양초를 불어 끕니다. / 그는 풍선을 불었습니다. / 그는 파티를 위해 풍선을 많이 불어본 적이 있습니다."
+  },
+  {
+    "backDesc": "I breed dogs at home. / She bred horses on the farm. / She has bred different animals over the years.",
+    "frontDesc": "나는 집에서 개를 번식시킵니다. / 그녀는 농장에서 말을 사육했습니다. / 그녀는 여러 해 동안 다양한 동물을 사육해 왔습니다."
+  },
+  {
+    "backDesc": "I broadcast a radio show. / He broadcast the news live. / He has broadcast important announcements recently.",
+    "frontDesc": "나는 라디오 프로그램을 방송합니다. / 그는 뉴스를 생방송으로 내보냈습니다. / 그는 최근 중요한 발표들을 방송해 왔습니다."
+  },
+  {
+    "backDesc": "I burn a candle during dinner. / She burnt the papers in the furnace. / She has burnt old letters before.",
+    "frontDesc": "나는 저녁 식사 중에 양초를 켭니다. / 그녀는 난로에서 서류를 태웠습니다. / 그녀는 예전에 오래된 편지들을 태운 적이 있습니다."
+  },
+  {
+    "backDesc": "I burst the balloon during play. / He burst into laughter. / He has burst into laughter many times.",
+    "frontDesc": "나는 놀이 중에 풍선을 터뜨립니다. / 그는 웃음을 터뜨렸습니다. / 그는 여러 번 크게 웃음을 터뜨렸습니다."
+  },
+  {
+    "backDesc": "I forgive you for the mistake. / She forgave him for everything. / She has forgiven many people in her life.",
+    "frontDesc": "나는 그 실수를 용서합니다. / 그녀는 그를 모든 면에서 용서했습니다. / 그녀는 살면서 많은 사람들을 용서해 왔습니다."
+  },
+  {
+    "backDesc": "I freeze fruits for later. / He froze the water in the fridge. / He has frozen water for ice cubes.",
+    "frontDesc": "나는 나중을 위해 과일을 얼립니다. / 그는 냉장고에 물을 얼렸습니다. / 그는 얼음 조각용 물을 얼려본 적이 있습니다."
+  },
+  {
+    "backDesc": "I clung to my mother during the storm. / He clung to his beliefs. / He has clung to them all this time.",
+    "frontDesc": "나는 폭풍우 동안 어머니에게 꼭 매달렸습니다. / 그는 자신의 신념에 매달렸습니다. / 그는 줄곧 그것들에 집착해 왔습니다."
+  },
+  {
+    "backDesc": "I creep through the grass to avoid being noticed. / She crept quietly. / She has crept in silently before.",
+    "frontDesc": "나는 들키지 않으려고 풀숲을 기어갑니다. / 그녀는 조용히 기어갔습니다. / 그녀는 이전에도 조용히 기어 들어온 적이 있습니다."
+  },
+  {
+    "backDesc": "I deal in stocks on the market. / He dealt the goods in the store. / He has dealt in various products before.",
+    "frontDesc": "나는 시장에서 주식을 취급합니다. / 그는 가게에서 상품을 취급했습니다. / 그는 이전에도 다양한 상품을 취급한 적이 있습니다."
+  },
+  {
+    "backDesc": "I dig a trench in the garden. / She dug to the well. / She has dug many holes for planting.",
+    "frontDesc": "나는 정원에 도랑을 팝니다. / 그녀는 우물까지 땅을 팠습니다. / 그녀는 심기를 위해 여러 구덩이를 판 적이 있습니다."
+  },
+  {
+    "backDesc": "I alighted on a bench in the park. / He alit on the hill. / He has alighted there a few times.",
+    "frontDesc": "나는 공원 벤치에 내려앉았습니다. / 그는 언덕에 내려섰습니다. / 그는 그곳에 몇 번 내려앉은 적이 있습니다."
+  },
+  {
+    "backDesc": "Misfortune befell that family. / He befell bad luck. / Bad luck has befallen him recently.",
+    "frontDesc": "그 가족에게 불운이 닥쳤습니다. / 그는 불운을 겪었습니다. / 최근에 그에게 불운이 닥쳤습니다."
+  },
+  {
+    "backDesc": "Every person can beget offspring. / He begot an heir. / He has begotten two children.",
+    "frontDesc": "모든 사람은 자식을 낳을 수 있습니다. / 그는 상속인을 낳았습니다. / 그는 자녀 두 명을 두었습니다."
+  },
+  {
+    "backDesc": "I behold the sunset. / She beheld a beautiful landscape. / She has beheld many breathtaking views.",
+    "frontDesc": "나는 일몰을 바라봅니다. / 그녀는 아름다운 풍경을 보았습니다. / 그녀는 숨 막히는 광경을 많이 목격해 왔습니다."
+  },
+  {
+    "backDesc": "I beseech you for help. / He besought forgiveness. / He has besought kindness on many occasions.",
+    "frontDesc": "나는 당신에게 도움을 간청합니다. / 그는 용서를 간청했습니다. / 그는 여러 번 자비를 구해 왔습니다."
+  },
+  {
+    "backDesc": "He was beset by financial problems. / He beset his targets. / He has beset them with challenges.",
+    "frontDesc": "그는 재정적 문제에 시달렸습니다. / 그는 자신의 목표들을 에워쌌습니다. / 그는 그들에게 여러 도전 과제를 안겨 왔습니다."
+  },
+  {
+    "backDesc": "Parents chided the child for disobedience. / He chided him publicly. / He has chidden him for his behavior.",
+    "frontDesc": "부모는 아이의 불순종을 꾸짖었습니다. / 그는 공개적으로 그를 나무랐습니다. / 그는 그의 행동에 대해 여러 번 꾸짖었습니다."
+  },
+  {
+    "backDesc": "I clothe myself for winter. / She clad herself elegantly. / She has clad herself in fine clothes before.",
+    "frontDesc": "나는 겨울에 대비해 옷을 입습니다. / 그녀는 우아하게 차려입었습니다. / 그녀는 전에 고급 옷을 입은 적이 있습니다."
+  },
+  {
+    "backDesc": "I dream of vacations. / He dreamt of a trip. / He has dreamt about traveling the world.",
+    "frontDesc": "나는 휴가를 꿈꿉니다. / 그는 여행을 꿈꿨습니다. / 그는 전 세계를 여행하는 꿈을 꿔 왔습니다."
+  },
+  {
+    "backDesc": "I feed the dog every day. / She fed the birds in the garden. / She has fed them every morning.",
+    "frontDesc": "나는 매일 개에게 밥을 줍니다. / 그녀는 정원에서 새들에게 먹이를 주었습니다. / 그녀는 매일 아침 그들에게 먹이를 줘 왔습니다."
+  },
+  {
+    "backDesc": "This shirt fits me perfectly. / He fit into the team. / He has fit in well since day one.",
+    "frontDesc": "이 셔츠는 나에게 딱 맞습니다. / 그는 팀에 잘 어울렸습니다. / 그는 첫날부터 잘 적응해 왔습니다."
+  },
+  {
+    "backDesc": "I flee from the rain. / She fled from home. / She has fled difficult situations before.",
+    "frontDesc": "나는 비를 피해서 달아납니다. / 그녀는 집에서 도망쳤습니다. / 그녀는 이전에도 어려운 상황에서 도망친 적이 있습니다."
+  },
+  {
+    "backDesc": "I fling a stone into the water. / He flung the bottle out the window. / He has flung objects in anger before.",
+    "frontDesc": "나는 물속으로 돌을 던집니다. / 그는 창문 밖으로 병을 내던졌습니다. / 그는 화가 나서 물건을 던진 적이 있습니다."
+  },
+  {
+    "backDesc": "I forbid smoking in the building. / She forbade the children from watching TV. / She has forbidden them multiple times.",
+    "frontDesc": "나는 건물 내 흡연을 금지합니다. / 그녀는 아이들에게 TV 시청을 금지했습니다. / 그녀는 여러 번 그들을 금지시켰습니다."
+  },
+  {
+    "backDesc": "I forecast rain for tomorrow. / He forecast a price increase. / He has forecast such changes accurately.",
+    "frontDesc": "나는 내일 비가 올 거라고 예보합니다. / 그는 가격 인상을 예측했습니다. / 그는 그런 변화를 정확히 예측해 왔습니다."
+  },
+  {
+    "backDesc": "I forsake old habits. / She forsook her dreams. / She has forsaken them all.",
+    "frontDesc": "나는 오래된 습관을 버립니다. / 그녀는 꿈을 버렸습니다. / 그녀는 모든 것을 포기했습니다."
+  },
+  {
+    "backDesc": "I kneel before the altar. / He knelt in a gesture of respect. / He has knelt there many times.",
+    "frontDesc": "나는 제단 앞에 무릎을 꿇습니다. / 그는 존경의 표시로 무릎을 꿇었습니다. / 그는 그곳에서 여러 번 무릎을 꿇었습니다."
+  },
+  {
+    "backDesc": "I knit a sweater for winter. / She knitted a scarf. / She has knitted many scarves before.",
+    "frontDesc": "나는 겨울용 스웨터를 짭니다. / 그녀는 스카프를 떴습니다. / 그녀는 이전에 많은 스카프를 떠왔습니다."
+  },
+  {
+    "backDesc": "I lay the book on the table. / She laid the keys on the shelf. / She has laid them there many times.",
+    "frontDesc": "나는 책을 탁자 위에 놓습니다. / 그녀는 열쇠를 선반 위에 놓았습니다. / 그녀는 그것들을 그곳에 여러 번 놓았습니다."
+  },
+  {
+    "backDesc": "I lead the team. / He led the company for many years. / He has led numerous successful projects.",
+    "frontDesc": "나는 팀을 이끕니다. / 그는 여러 해 동안 회사를 이끌었습니다. / 그는 수많은 성공적인 프로젝트를 주도해 왔습니다."
+  },
+  {
+    "backDesc": "I lean over the book. / He leant over the table. / He has leaned over it for hours.",
+    "frontDesc": "나는 책 위로 몸을 숙입니다. / 그는 테이블 위로 몸을 숙였습니다. / 그는 몇 시간 동안 그것에 몸을 기울였습니다."
+  },
+  {
+    "backDesc": "I leap on the rope. / He leapt over the fence. / He has leapt across many obstacles.",
+    "frontDesc": "나는 밧줄 위로 뛰어오릅니다. / 그는 울타리를 뛰어넘었습니다. / 그는 많은 장애물을 뛰어넘어 왔습니다."
+  },
+  {
+    "backDesc": "I light the room's light. / He lit the light in the evening. / He has lit it every night since then.",
+    "frontDesc": "나는 방의 불을 켭니다. / 그는 저녁에 불을 켰습니다. / 그는 그 이후로 매일 밤 그것을 켜왔습니다."
+  },
+  {
+    "backDesc": "I mistake in the calculations. / He mistook the decision. / He has mistaken people's intentions before.",
+    "frontDesc": "나는 계산에서 실수합니다. / 그는 결정을 잘못 이해했습니다. / 그는 전에 사람들의 의도를 잘못 판단한 적이 있습니다."
+  },
+  {
+    "backDesc": "I mow the grass in the garden. / He mowed the lawn yesterday. / He has mown it regularly.",
+    "frontDesc": "나는 정원에서 잔디를 깎습니다. / 그는 어제 잔디를 깎았습니다. / 그는 그것을 정기적으로 깎아왔습니다."
+  },
+  {
+    "backDesc": "I overcome difficulties every day. / He overcame his fears. / He has overcome many obstacles.",
+    "frontDesc": "나는 매일 어려움을 극복합니다. / 그는 자신의 두려움을 극복했습니다. / 그는 많은 장애물을 극복해 왔습니다."
+  },
+  {
+    "backDesc": "I partake in meetings. / He partook in the conference. / He has partaken in several events recently.",
+    "frontDesc": "나는 회의에 참여합니다. / 그는 그 회의에 참여했습니다. / 그는 최근 여러 행사에 참여해 왔습니다."
+  },
+  {
+    "backDesc": "I plead for help. / He pled for forgiveness. / He has pled for mercy many times.",
+    "frontDesc": "나는 도움을 간청합니다. / 그는 용서를 빌었습니다. / 그는 여러 번 자비를 구했습니다."
+  },
+  {
+    "backDesc": "I prove my innocence. / He proved his theory. / He has proven it beyond doubt.",
+    "frontDesc": "나는 내 무죄를 증명합니다. / 그는 자신의 이론을 증명했습니다. / 그는 그것을 의심의 여지 없이 입증해 왔습니다."
+  },
+  {
+    "backDesc": "I saw wood in the workshop. / He sawed planks for a new boat. / He has sawn many pieces of wood.",
+    "frontDesc": "나는 작업실에서 나무를 톱질합니다. / 그는 새 보트를 위해 널판지를 톱질했습니다. / 그는 많은 나무를 톱질해 왔습니다."
+  },
+  {
+    "backDesc": "I seek the keys at home. / He sought a solution to the problem. / He has sought answers everywhere.",
+    "frontDesc": "나는 집에서 열쇠를 찾습니다. / 그는 문제의 해결책을 찾았습니다. / 그는 모든 곳에서 답을 구해 왔습니다."
+  },
+  {
+    "backDesc": "I sew clothes in my atelier. / He sewed a shirt for several hours. / He has sewn many garments.",
+    "frontDesc": "나는 작업실에서 옷을 바느질합니다. / 그는 몇 시간 동안 셔츠를 바느질했습니다. / 그는 여러 옷들을 만들어 왔습니다."
+  },
+  {
+    "backDesc": "I shear sheep on the farm. / He sheared a sheep yesterday. / He has shorn many sheep this season.",
+    "frontDesc": "나는 농장에서 양을 깎습니다. / 그는 어제 양 한 마리를 깎았습니다. / 그는 이번 시즌에 많은 양을 깎았습니다."
+  },
+  {
+    "backDesc": "My sweater shrinks after washing. / It shrank in high temperature. / It has shrunk too much.",
+    "frontDesc": "내 스웨터는 세탁 후에 줄어듭니다. / 그것은 높은 온도에서 줄어들었습니다. / 그것은 너무 많이 줄어들었습니다."
+  },
+  {
+    "backDesc": "I slay rodents in the basement. / He slew the monster in the forest. / He has slain many creatures in his stories.",
+    "frontDesc": "나는 지하실에서 설치류를 잡습니다. / 그는 숲에서 괴물을 해치웠습니다. / 그는 자신의 이야기 속에서 많은 생명체를 처치해 왔습니다."
+  },
+  {
+    "backDesc": "The kitchen stinks of rotten food. / It stank after a hot day. / It has stunk for hours.",
+    "frontDesc": "부엌에서 썩은 음식 냄새가 납니다. / 더운 날이 지난 후 악취가 났습니다. / 몇 시간째 냄새가 나고 있습니다."
+  },
+  {
+    "backDesc": "I stride with confidence. / He strode quickly, arriving on time. / He has stridden through many challenges.",
+    "frontDesc": "나는 자신감 있게 성큼성큼 걸어갑니다. / 그는 빠르게 걸어가 제시간에 도착했습니다. / 그는 많은 도전을 헤쳐나왔습니다."
+  },
+  {
+    "backDesc": "I strike the ball towards the goal. / He struck the door hard. / He has struck fear into his opponents.",
+    "frontDesc": "나는 골문을 향해 공을 칩니다. / 그는 문을 세게 쳤습니다. / 그는 상대에게 두려움을 심어주었습니다."
+  },
+  {
+    "backDesc": "I string beads on a string. / He strung the lamp on the wall. / He has strung decorations before.",
+    "frontDesc": "나는 끈에 구슬을 꿰어 연결합니다. / 그는 벽에 램프를 달았습니다. / 그는 전에 장식을 걸어본 적이 있습니다."
+  },
+  {
+    "backDesc": "I strive to achieve the goal. / He strove for success for years. / He has striven to reach the top.",
+    "frontDesc": "나는 목표 달성을 위해 노력합니다. / 그는 수년 동안 성공을 위해 애썼습니다. / 그는 정상에 오르기 위해 노력해 왔습니다."
+  },
+  {
+    "backDesc": "I swing on the swing. / He swung on the balcony. / He has swung on that rope many times.",
+    "frontDesc": "나는 그네를 탑니다. / 그는 발코니에서 흔들었습니다. / 그는 그 밧줄에 여러 번 매달려 흔들린 적이 있습니다."
+  },
+  {
+    "backDesc": "I tear the paper to shred it. / He tore the canvas with a knife. / He has torn many papers accidentally.",
+    "frontDesc": "나는 종이를 찢어 잘게 만듭니다. / 그는 칼로 캔버스를 찢었습니다. / 그는 실수로 종이를 많이 찢은 적이 있습니다."
+  },
+  {
+    "backDesc": "I thrust the door to open it. / He thrust the door hard. / He has thrust it open before.",
+    "frontDesc": "나는 문을 열기 위해 밀칩니다. / 그는 문을 세게 밀었습니다. / 그는 전에 그 문을 힘껏 밀어본 적이 있습니다."
+  },
+  {
+    "backDesc": "I tread carefully on the wet floor. / He trod with a confident stride. / He has trodden this path before.",
+    "frontDesc": "나는 젖은 바닥을 조심스럽게 밟습니다. / 그는 자신감 있게 걸었습니다. / 그는 이 길을 전에 걸어본 적이 있습니다."
+  },
+  {
+    "backDesc": "I undo the move I made. / He undid the changes in the document. / He has undone them completely.",
+    "frontDesc": "나는 내가 한 움직임을 되돌립니다. / 그는 문서의 변경 사항을 취소했습니다. / 그는 그것들을 완전히 되돌렸습니다."
+  },
+  {
+    "backDesc": "I weave a scarf on the knitting needles. / He wove a rug in his workshop. / He has woven several rugs now.",
+    "frontDesc": "나는 대바늘로 스카프를 짭니다. / 그는 작업실에서 러그를 짰습니다. / 그는 지금까지 여러 러그를 짜왔습니다."
+  },
+  {
+    "backDesc": "I weep in sorrow. / He wept after the breakup. / He has wept many tears.",
+    "frontDesc": "나는 슬퍼서 웁니다. / 그는 이별 후에 울었습니다. / 그는 수많은 눈물을 흘렸습니다."
+  },
+  {
+    "backDesc": "I wind the watch every morning. / He wound the strings into a tape. / He has wound them neatly.",
+    "frontDesc": "나는 매일 아침 시계를 감습니다. / 그는 줄을 테이프로 감았습니다. / 그는 그것들을 깔끔하게 감아왔습니다."
+  },
+  {
+    "backDesc": "I withdraw from the discussion. / He withdrew from the project. / He has withdrawn completely.",
+    "frontDesc": "나는 그 논의에서 물러납니다. / 그는 그 프로젝트에서 물러났습니다. / 그는 완전히 철수했습니다."
+  },
+  {
+    "backDesc": "I withstand difficult conditions. / He withstood the strong wind. / He has withstood many storms.",
+    "frontDesc": "나는 어려운 환경을 견뎌냅니다. / 그는 강한 바람을 견뎌냈습니다. / 그는 많은 폭풍을 견뎌 왔습니다."
+  },
+  {
+    "backDesc": "I wring out wet towels. / He wrung juice out of fruits. / He has wrung out many towels.",
+    "frontDesc": "나는 젖은 수건을 짜냅니다. / 그는 과일에서 즙을 짰습니다. / 그는 여러 번 수건을 짜낸 적이 있습니다."
+  },
+  {
+    "backDesc": "I freeze food in the freezer. / He froze water for the freezer. / He has frozen enough water for ice.",
+    "frontDesc": "나는 냉동실에 음식을 얼립니다. / 그는 냉동실용 물을 얼렸습니다. / 그는 얼음 만들 만큼 물을 충분히 얼려두었습니다."
+  },
+  {
+    "backDesc": "I hang a picture on the wall. / He hung the lamp in the room. / He has hung many pictures around the house.",
+    "frontDesc": "나는 벽에 그림을 겁니다. / 그는 방에 램프를 걸었습니다. / 그는 집 곳곳에 그림을 많이 걸어두었습니다."
+  }
+]

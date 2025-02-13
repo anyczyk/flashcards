@@ -142,5 +142,7 @@
   "turn_on_shadows": "Kandula koyinga",
   "turn_on_automatic_audio": "Kandula audio automatique",
   "premium_account": "Compte Premium",
-  "active": "Aktif"
+  "active": "Aktif",
+  "code": "Kode",
+  "wrong_code": "Kode mabe"
 }

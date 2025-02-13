@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.flasho.flasho" version="1.0.0" android-versionCode="10098" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget android-versionCode="10121" id="com.flasho.flasho" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Flasho</name>
     <description>Sample Apache Cordova App</description>
     <author email="dev@cordova.apache.org" href="https://cordova.apache.org">
@@ -28,11 +28,8 @@
     <plugin name="cordova-plugin-documentpicker" spec="^1.0.0" />
     <plugin name="cordova-plugin-x-socialsharing" spec="^6.0.3" />
     <plugin name="cordova-plugin-purchase" spec="^13.12.1" />
-    <plugin name="admob-plus-cordova" spec="^1.28.0">
-        <variable name="APP_ID_ANDROID" value="ca-app-pub-4263972941440160~3007691342" />
-    </plugin>
     <plugin name="cordova-plugin-statusbar" spec="^2.4.3" />
-    <plugin name="cordova-plugin-console" spec="^1.1.0" source="npm" />
+    <plugin name="cordova-plugin-console" source="npm" spec="^1.1.0" />
     <platform name="android">
         <config-file parent="/*" target="AndroidManifest.xml">
             <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -47,6 +44,7 @@
         <icon density="xhdpi" src="resources/android/icon/mipmap-xhdpi/ic_launcher.png" />
         <icon density="xxhdpi" src="resources/android/icon/mipmap-xxhdpi/ic_launcher.png" />
         <icon density="xxxhdpi" src="resources/android/icon/mipmap-xxxhdpi/ic_launcher.png" />
+        <icon src="resources/android/icon/mipmap-hdpi/ic_launcher_adaptive.xml" target="android_adaptive_icon" />
         <preference name="AndroidWindowSplashScreenAnimatedIcon" value="resources/splash.png" />
         <preference name="billing-key" value="MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxgjxHaEa0yoFyMX0mjLTfEq4RZklkqN52Me7q3yfMk/6fKVCS/3LwIKaYMMg3JAbxbuy4zrAr+f3PCOx7KKV4ds3OErvU9wqXNXt1cKk4dHDjuuxAl2Uj3/rys92/BlZht3dmR1Z9CNBcoEzQ8xeBzXtKs4CkBFz0yS0mWaQWJEipdFPJsji1i+QwMWJ7t63LNdr1+aTWe5qDoycW2HHGo7ak0ye6+x1bkah9ybxf3R8R/RR9EOiDK4bxFRah6GkmheC0gZ4ESmzPfiC4gC2ib/RHvoNej8noLmEhivDnfvOAxjI4udKfAi3v1BaCJkIIZ9/y7N7Le1YSoDedYZ7JQIDAQAB" />
     </platform>

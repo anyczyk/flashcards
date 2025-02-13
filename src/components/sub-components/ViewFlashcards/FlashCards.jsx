@@ -157,7 +157,7 @@ const FlashCards = ({
 
     const variants = useMemo(() => ({
         animateLeft: {
-            x: -650,
+            x: -800,
             rotate: -5,
             transition: {
                 type: "tween",
@@ -166,7 +166,7 @@ const FlashCards = ({
             },
         },
         animateRight: {
-            x: 650,
+            x: 800,
             rotate: 5,
             transition: {
                 type: "tween",

@@ -1,0 +1,630 @@
+[
+  {
+    "frontDesc": "Saya seorang guru. / Kemarin saya berada di toko. / Saya sudah sering berkunjung ke toko itu.",
+    "backDesc": "I am a teacher. / I was at the store yesterday. / I have been at that store many times."
+  },
+  {
+    "frontDesc": "Saya ingin menjadi dokter. / Saya menjadi lelah. / Saya menjadi lebih bertekad.",
+    "backDesc": "I want to become a doctor. / I became tired. / I have become more determined."
+  },
+  {
+    "frontDesc": "Saya memulai proyek baru. / Saya mulai membaca sebuah buku. / Saya sudah mulai mengerjakannya dengan serius.",
+    "backDesc": "I begin a new project. / I began reading a book. / I have begun working on it seriously."
+  },
+  {
+    "frontDesc": "Saya tidak ingin melanggar peraturan. / Dia mematahkan cabang itu. / Dia sudah melanggar banyak peraturan di masa lalu.",
+    "backDesc": "I don't want to break the rules. / He broke the branch. / He has broken many rules in the past."
+  },
+  {
+    "frontDesc": "Saya membawa kopi. / Dia membawa bunga. / Dia juga sudah membawa hadiah.",
+    "backDesc": "I bring coffee. / She brought flowers. / She has brought gifts as well."
+  },
+  {
+    "frontDesc": "Saya membangun rumah. / Dia membangun jembatan. / Dia telah membangun banyak jembatan dalam kariernya.",
+    "backDesc": "I build a house. / He built a bridge. / He has built many bridges in his career."
+  },
+  {
+    "frontDesc": "Saya membeli baju baru. / Dia membeli mobil. / Dia telah membeli beberapa mobil selama bertahun-tahun.",
+    "backDesc": "I buy new clothes. / She bought a car. / She has bought several cars over the years."
+  },
+  {
+    "frontDesc": "Saya bisa membantu. / Dia bisa datang lebih awal. / Dia sudah beberapa kali bisa membantu.",
+    "backDesc": "I can help. / He could come earlier. / He has been able to assist many times."
+  },
+  {
+    "frontDesc": "Saya menangkap bola. / Dia menangkap ikan. / Dia sudah menangkap banyak ikan di danau ini.",
+    "backDesc": "I catch the ball. / He caught a fish. / He has caught many fish in this lake."
+  },
+  {
+    "frontDesc": "Saya memilih sebuah hidangan. / Dia memilih sebuah buku. / Dia selalu memilih dengan bijak setiap kali.",
+    "backDesc": "I choose a dish. / She chose a book. / She has chosen wisely every time."
+  },
+  {
+    "frontDesc": "Saya datang ke tempat kerja. / Dia datang lebih awal. / Dia selalu datang tepat waktu setiap hari.",
+    "backDesc": "I come to work. / He came earlier. / He has come on time every day."
+  },
+  {
+    "frontDesc": "Harganya lima dolar. / Harganya lebih mahal kemarin. / Sampai saat ini, sudah menghabiskan banyak uang saya.",
+    "backDesc": "It costs five dollars. / It cost more yesterday. / It has cost me a fortune so far."
+  },
+  {
+    "frontDesc": "Saya memotong kertas. / Dia memotong kayu. / Dia sudah banyak memotong kayu sebelumnya.",
+    "backDesc": "I cut the paper. / He cut the wood. / He has cut many pieces of wood before."
+  },
+  {
+    "frontDesc": "Saya membuang pakaian lama. / Dia melempar jaring. / Dia sudah pernah melempar jaring untuk menangkap ikan.",
+    "backDesc": "I cast away the old clothes. / He cast the net. / He has cast a net before to catch fish."
+  },
+  {
+    "frontDesc": "Saya mengerjakan pekerjaan rumah. / Dia menyiapkan makan malam. / Dia sudah pernah melakukan pekerjaan semacam ini sebelumnya.",
+    "backDesc": "I do my homework. / He did the dinner. / He has done this type of work before."
+  },
+  {
+    "frontDesc": "Saya menggambar sebuah gambar. / Dia menggambar pemandangan. / Dia sudah menggambar banyak pemandangan.",
+    "backDesc": "I draw a picture. / She drew a landscape. / She has drawn many landscapes."
+  },
+  {
+    "frontDesc": "Saya minum air. / Dia minum jus. / Dia sudah meminum semua jus di lemari es.",
+    "backDesc": "I drink water. / He drank juice. / He has drunk all the juice in the fridge."
+  },
+  {
+    "frontDesc": "Saya mengemudi mobil. / Dia mengemudikan bus. / Dia sudah sering mengemudikan rute tersebut.",
+    "backDesc": "I drive a car. / She drove the bus. / She has driven that route many times."
+  },
+  {
+    "frontDesc": "Saya tinggal di Warsawa. / Dia pernah tinggal di sana sebelumnya. / Dia sudah tinggal di banyak kota selama bertahun-tahun.",
+    "backDesc": "I dwell in Warsaw. / He dwelt there earlier. / He has dwelt in many cities over the years."
+  },
+  {
+    "frontDesc": "Saya sarapan. / Dia makan siang. / Dia sudah pernah makan di restoran ini sebelumnya.",
+    "backDesc": "I eat breakfast. / She ate lunch. / She has eaten at this restaurant before."
+  },
+  {
+    "frontDesc": "Saya jatuh dari sepeda. / Dia jatuh dari tangga. / Dia sudah beberapa kali jatuh belakangan ini.",
+    "backDesc": "I fall off the bike. / He fell from the ladder. / He has fallen a few times lately."
+  },
+  {
+    "frontDesc": "Saya merasa baik. / Dia merasakan sakit. / Dia sudah merasa lebih baik sejak saat itu.",
+    "backDesc": "I feel good. / She felt pain. / She has felt better since then."
+  },
+  {
+    "frontDesc": "Saya berjuang demi hak-hak saya. / Dia bertempur dalam perang. / Dia sudah berjuang dengan berani untuk negaranya.",
+    "backDesc": "I fight for my rights. / He fought in the war. / He has fought bravely for his country."
+  },
+  {
+    "frontDesc": "Saya menemukan kunci itu. / Dia menemukan solusinya. / Dia sudah menemukan banyak solusi sejauh ini.",
+    "backDesc": "I find the key. / She found the solution. / She has found many solutions so far."
+  },
+  {
+    "frontDesc": "Saya terbang dengan pesawat. / Dia terbang ke London. / Dia sudah sering terbang ke luar negeri.",
+    "backDesc": "I fly by airplane. / He flew to London. / He has flown internationally many times."
+  },
+  {
+    "frontDesc": "Saya lupa namanya. / Dia lupa kuncinya. / Dia sudah pernah lupa sebelumnya.",
+    "backDesc": "I forget the name. / She forgot the keys. / She has forgotten them before."
+  },
+  {
+    "frontDesc": "Saya menerima surat. / Dia menerima hadiah. / Dia sudah mendapat banyak hadiah akhir-akhir ini.",
+    "backDesc": "I get a letter. / He got a gift. / He has gotten many gifts recently."
+  },
+  {
+    "frontDesc": "Saya memberi kamu hadiah. / Dia memberinya sebuah buku. / Dia telah memberikan banyak buku sebagai hadiah.",
+    "backDesc": "I give you a gift. / She gave him a book. / She has given many books as presents."
+  },
+  {
+    "frontDesc": "Saya pergi ke sekolah. / Dia pergi bekerja. / Dia sudah pergi ke sana setiap hari minggu ini.",
+    "backDesc": "I go to school. / He went to work. / He has gone there every day this week."
+  },
+  {
+    "frontDesc": "Saya menggiling kopi. / Dia menggiling biji-bijian. / Dia sudah menggiling biji kopi selama bertahun-tahun.",
+    "backDesc": "I grind coffee. / He ground the grain. / He has ground coffee beans for years."
+  },
+  {
+    "frontDesc": "Saya tumbuh setiap hari. / Dia tumbuh dengan cepat. / Dia sudah banyak berkembang tahun ini.",
+    "backDesc": "I grow every day. / He grew quickly. / He has grown a lot this year."
+  },
+  {
+    "frontDesc": "Saya punya mobil. / Dia pernah memiliki gitar. / Dia sudah memiliki banyak kesempatan untuk bepergian.",
+    "backDesc": "I have a car. / He had a guitar. / She has had many opportunities to travel."
+  },
+  {
+    "frontDesc": "Saya mendengar musik. / Dia mendengar suara bising itu. / Dia sudah pernah mendengar suara itu sebelumnya.",
+    "backDesc": "I hear music. / He heard the noise. / He has heard that noise before."
+  },
+  {
+    "frontDesc": "Saya menyembunyikan hadiah itu. / Dia menyembunyikan surat itu. / Dia sudah menyembunyikan pesan di buku hariannya.",
+    "backDesc": "I hide the gift. / She hid the letter. / She has hidden messages in her diary."
+  },
+  {
+    "frontDesc": "Saya memukul bola. / Dia memukul pintu. / Dia sudah sering memukul bola itu.",
+    "backDesc": "I hit the ball. / He hit the door. / He has hit that ball many times."
+  },
+  {
+    "frontDesc": "Saya memegang buku itu. / Dia memegang tas. / Dia telah memegang tas itu selama bertahun-tahun.",
+    "backDesc": "I hold the book. / She held the bag. / She has held onto that bag for years."
+  },
+  {
+    "frontDesc": "Saya terluka saat berlari. / Dia melukai tangannya. / Dia sudah beberapa kali melukai dirinya sendiri.",
+    "backDesc": "I hurt myself while running. / He hurt his hand. / He has hurt himself multiple times."
+  },
+  {
+    "frontDesc": "Saya menyimpan rahasia. / Dia menyimpan dokumen. / Dia telah menyimpannya di tempat aman.",
+    "backDesc": "I keep a secret. / She kept the documents. / She has kept them in a safe place."
+  },
+  {
+    "frontDesc": "Saya tahu jawabannya. / Dia tahu solusinya. / Dia sudah mengetahuinya sejak awal.",
+    "backDesc": "I know the answer. / He knew the solution. / He has known it all along."
+  },
+  {
+    "frontDesc": "Saya belajar Bahasa Inggris. / Dia belajar menari. / Dia sudah belajar banyak bahasa.",
+    "backDesc": "I learn English. / She learned to dance. / She has learned many languages."
+  },
+  {
+    "frontDesc": "Saya meninggalkan rumah. / Dia meninggalkan kantor. / Dia baru saja meninggalkan pekerjaannya.",
+    "backDesc": "I leave the house. / He left the office. / He has left his job recently."
+  },
+  {
+    "frontDesc": "Saya meminjamkan sebuah buku. / Dia meminjamkan uang. / Dia sudah pernah meminjamkan uang kepada teman-temannya.",
+    "backDesc": "I lend a book. / She lent money. / She has lent money to friends before."
+  },
+  {
+    "frontDesc": "Saya membiarkanmu masuk. / Dia membiarkannya tinggal. / Dia sudah mengizinkan banyak orang tinggal di tempatnya.",
+    "backDesc": "I let you in. / He let her stay. / He has let many people stay at his place."
+  },
+  {
+    "frontDesc": "Saya berbaring di sofa. / Dia berbaring di tempat tidur. / Dia sudah berbaring di sana selama berjam-jam.",
+    "backDesc": "I lie on the couch. / He lay on the bed. / He has lain there for hours."
+  },
+  {
+    "frontDesc": "Saya kehilangan kunci saya. / Dia kehilangan dompetnya. / Dia sudah sering kehilangan barang.",
+    "backDesc": "I lose my keys. / He lost his wallet. / He has lost things many times."
+  },
+  {
+    "frontDesc": "Saya membuat makan malam. / Dia membuat kue. / Dia sudah membuat banyak kue lezat.",
+    "backDesc": "I make dinner. / She made a cake. / She has made many delicious cakes."
+  },
+  {
+    "frontDesc": "Itu berarti sesuatu yang penting. / Maksudnya adalah hal lain. / Dia sudah benar-benar memaksudkannya sejak awal.",
+    "backDesc": "It means something important. / He meant something else. / He has meant it sincerely all along."
+  },
+  {
+    "frontDesc": "Saya bertemu dengan teman-teman. / Dia bertemu dengan manajer. / Dia sudah bertemu banyak orang menarik.",
+    "backDesc": "I meet with friends. / She met with the manager. / She has met many interesting people."
+  },
+  {
+    "frontDesc": "Saya membayar tagihan. / Dia membayar makan malam. / Dia sudah membayar kewajibannya.",
+    "backDesc": "I pay the bills. / He paid for dinner. / He has paid his dues already."
+  },
+  {
+    "frontDesc": "Saya menaruh buku di atas meja. / Dia menaruh kunci di rak. / Dia sudah pernah menaruhnya di sana sebelumnya.",
+    "backDesc": "I put the book on the table. / She put the keys on the shelf. / She has put them there before."
+  },
+  {
+    "frontDesc": "Saya membaca koran. / Dia membaca buku itu. / Dia sudah membaca buku itu berkali-kali.",
+    "backDesc": "I read the newspaper. / He read the book. / He has read that book many times."
+  },
+  {
+    "frontDesc": "Saya mengendarai sepeda. / Dia menunggang kuda. / Dia sudah menunggang banyak kuda dalam hidupnya.",
+    "backDesc": "I ride a bike. / She rode a horse. / She has ridden many horses in her life."
+  },
+  {
+    "frontDesc": "Saya meneleponmu. / Dia menelepon saya. / Dia sudah menelepon saya setiap hari minggu ini.",
+    "backDesc": "I ring you. / He rang me. / He has rung me every day this week."
+  },
+  {
+    "frontDesc": "Matahari terbit di pagi hari. / Dia mengangkat tangannya. / Dia selalu bangun pagi setiap hari.",
+    "backDesc": "The sun rises in the morning. / He rose his hand. / He has risen early every day."
+  },
+  {
+    "frontDesc": "Saya berlari setiap hari. / Dia berlari lebih cepat. / Dia sudah pernah berlari dalam maraton sebelumnya.",
+    "backDesc": "I run every day. / He ran faster. / He has run marathons before."
+  },
+  {
+    "frontDesc": "Saya mengatakan yang sebenarnya. / Dia mengatakan sesuatu yang penting. / Dia sudah sering mengatakannya.",
+    "backDesc": "I say the truth. / He said something important. / He has said that many times."
+  },
+  {
+    "frontDesc": "Saya melihat bintang-bintang. / Dia melihat seekor burung. / Dia sudah melihat banyak burung belakangan ini.",
+    "backDesc": "I see the stars. / She saw a bird. / She has seen many birds lately."
+  },
+  {
+    "frontDesc": "Saya menjual mobil. / Dia menjual rumah itu. / Dia sudah menjual beberapa rumah tahun ini.",
+    "backDesc": "I sell a car. / He sold the house. / He has sold several houses this year."
+  },
+  {
+    "frontDesc": "Saya mengirim surat. / Dia mengirim paket. / Dia sudah mengirim banyak paket ke luar negeri.",
+    "backDesc": "I send a letter. / She sent a package. / She has sent many packages abroad."
+  },
+  {
+    "frontDesc": "Saya mengatur alarm untuk jam 7 pagi. / Dia menata meja untuk pesta. / Dia sudah menatanya dengan sempurna.",
+    "backDesc": "I set the alarm for 7 AM. / He set the tables for the party. / He has set them up perfectly."
+  },
+  {
+    "frontDesc": "Saya menggoyangkan tangan saya saat gugup. / Dia menjabat tangannya sebagai perpisahan. / Dia sudah sering berjabat tangan.",
+    "backDesc": "I shake my hands when I'm nervous. / He shook his hand in farewell. / He has shaken hands many times."
+  },
+  {
+    "frontDesc": "Matahari bersinar terang hari ini. / Dia menyorotkan mercusuar di malam hari. / Dia sudah pernah menyorotkannya ke bebatuan sebelumnya.",
+    "backDesc": "The sun shines brightly today. / He shone the lighthouse at night. / He has shone it on the rocks before."
+  },
+  {
+    "frontDesc": "Saya memanah saat latihan. / Dia mencetak gol dalam pertandingan. / Dia sudah mencetak banyak gol musim ini.",
+    "backDesc": "I shoot with a bow during practice. / He shot a goal in the game. / He has shot many goals this season."
+  },
+  {
+    "frontDesc": "Saya memperlihatkan foto-foto liburan. / Dia memperlihatkan mobil barunya. / Dia sudah menunjukkannya kepada semua orang.",
+    "backDesc": "I show photos from vacation. / He showed his new car. / He has shown it to everyone."
+  },
+  {
+    "frontDesc": "Saya menutup pintu sebelum pergi. / Dia menutup jendela saat cuaca dingin. / Dia sudah menutupnya setiap malam.",
+    "backDesc": "I shut the door before leaving. / He shut the window when it got cold. / He has shut them every night."
+  },
+  {
+    "frontDesc": "Saya menyanyikan lagu favorit saya. / Dia bernyanyi di konser. / Dia sudah bernyanyi di sana berkali-kali.",
+    "backDesc": "I sing my favorite song. / She sang at the concert. / She has sung there many times."
+  },
+  {
+    "frontDesc": "Kapal itu tenggelam di laut. / Dia tenggelam selama badai. / Kapal itu sudah benar-benar tenggelam.",
+    "backDesc": "The ship sinks in the sea. / He sank during the storm. / It has sunk completely."
+  },
+  {
+    "frontDesc": "Saya duduk di kursi. / Dia duduk di meja. / Dia sudah duduk di sana selama berjam-jam.",
+    "backDesc": "I sit on the chair. / She sat at the table. / She has sat there for hours."
+  },
+  {
+    "frontDesc": "Saya tidur di tempat tidur saya. / Dia tidur sepanjang malam. / Dia sudah tidur nyenyak belakangan ini.",
+    "backDesc": "I sleep in my bed. / He slept all night. / He has slept well lately."
+  },
+  {
+    "frontDesc": "Saya berbicara bahasa Inggris. / Dia berbicara di konferensi. / Dia sudah berbicara di sana dua kali.",
+    "backDesc": "I speak English. / He spoke at the conference. / He has spoken there twice."
+  },
+  {
+    "frontDesc": "Saya menghabiskan waktu dengan keluarga. / Dia menghabiskan banyak uang untuk perjalanan itu. / Dia sudah menghabiskan semua tabungannya.",
+    "backDesc": "I spend time with my family. / He spent a lot of money on the trip. / He has spent all his savings."
+  },
+  {
+    "frontDesc": "Saya berdiri di depan tim. / Dia berdiri di dekat jendela. / Dia sudah berdiri di sana dengan tenang.",
+    "backDesc": "I stand at the head of the team. / She stood by the window. / She has stood there quietly."
+  },
+  {
+    "frontDesc": "Saya berenang setiap pagi. / Dia berenang di danau. / Dia sudah pernah berenang menyeberangi danau itu.",
+    "backDesc": "I swim every morning. / He swam in the lake. / He has swum across that lake before."
+  },
+  {
+    "frontDesc": "Saya minum obat di pagi hari. / Dia mengambil payung. / Dia sudah membawanya hari ini.",
+    "backDesc": "I take my medicine in the morning. / She took an umbrella. / She has taken it with her today."
+  },
+  {
+    "frontDesc": "Saya mengajar matematika. / Dia mengajari saya keterampilan baru. / Dia sudah mengajar banyak siswa selama bertahun-tahun.",
+    "backDesc": "I teach mathematics. / He taught me a new skill. / He has taught many students over the years."
+  },
+  {
+    "frontDesc": "Saya selalu memberitahunya tentang perubahan rencana. / Dia memberitahu saya sebuah rahasia. / Dia sudah banyak membocorkan rahasia seiring waktu.",
+    "backDesc": "I always tell him about the change of plans. / She told me a secret. / She has told many secrets over time."
+  },
+  {
+    "frontDesc": "Saya memikirkan masa depan. / Dia memikirkan cara menyelesaikan masalah. / Dia sudah memikirkannya dengan saksama.",
+    "backDesc": "I think about the future. / He thought about solving the problem. / He has thought it through carefully."
+  },
+  {
+    "frontDesc": "Saya melempar bola ke keranjang. / Dia melempar tas ke tanah. / Dia sudah membuangnya sekarang.",
+    "backDesc": "I throw the ball into the basket. / She threw the bag on the ground. / She has thrown it away now."
+  },
+  {
+    "frontDesc": "Saya memahami tugas ini. / Dia memahami penjelasan saya. / Dia sudah memahami semuanya dengan jelas.",
+    "backDesc": "I understand this task. / He understood my explanation. / He has understood everything clearly."
+  },
+  {
+    "frontDesc": "Saya selalu bangun pagi-pagi. / Dia bangun kesiangan. / Dia sudah pernah bangun lebih awal di hari-hari lain.",
+    "backDesc": "I always wake up early in the morning. / She woke up late. / She has woken up earlier on other days."
+  },
+  {
+    "frontDesc": "Saya memakai jaket baru. / Dia mengenakan pakaian elegan. / Dia sudah sering memakainya sebelumnya.",
+    "backDesc": "I wear a new jacket. / He wore elegant clothes. / He has worn them many times before."
+  },
+  {
+    "frontDesc": "Saya menang dalam permainan papan. / Dia memenangkan kontes itu. / Dia sudah memenangkan banyak kontes dalam hidupnya.",
+    "backDesc": "I win the board game. / She won the contest. / She has won many contests in her life."
+  },
+  {
+    "frontDesc": "Saya menulis surat kepada seorang teman. / Dia menulis sebuah artikel. / Dia sudah menulis beberapa artikel bulan ini.",
+    "backDesc": "I write a letter to a friend. / He wrote an article. / He has written several articles this month."
+  },
+  {
+    "frontDesc": "Masalah muncul tiba-tiba. / Dia bangkit dari masalah itu. / Dia sudah bangkit untuk menghadapi tantangan baru.",
+    "backDesc": "Problems arise suddenly. / He arose from the problems. / He has arisen to face new challenges."
+  },
+  {
+    "frontDesc": "Saya selalu terbangun lebih awal. / Dia terbangun dari tidur ringan. / Dia sudah bangun dengan perasaan segar.",
+    "backDesc": "I always awake earlier. / She awoke from a light sleep. / She has awoken feeling rested."
+  },
+  {
+    "frontDesc": "Saya biasanya menanggungnya dengan baik. / Dia menanggung banyak kesulitan. / Dia sudah menanggung bebannya dengan keberanian.",
+    "backDesc": "I usually bear it well. / He bore many difficulties. / He has borne his burdens with courage."
+  },
+  {
+    "frontDesc": "Saya menabuh drum selama konser. / Dia memecahkan rekor itu. / Dia sudah memecahkan beberapa rekor sejauh ini.",
+    "backDesc": "I beat the drums during the concert. / He beat the record. / He has beaten several records so far."
+  },
+  {
+    "frontDesc": "Saya membungkuk untuk meraih. / Dia menekuk cabang pohon itu. / Dia sudah sering menekuk banyak cabang saat berkebun.",
+    "backDesc": "I bend to reach. / She bent the tree branch. / She has bent many branches while gardening."
+  },
+  {
+    "frontDesc": "Saya bertaruh bahwa kamu akan tiba tepat waktu. / Dia bertaruh uang. / Dia sudah sering bertaruh pada banyak perlombaan.",
+    "backDesc": "I bet that you'll arrive on time. / He bet money. / He has bet on many races."
+  },
+  {
+    "frontDesc": "Saya menawar karya seni itu. / Dia memberikan penawaran. / Dia sudah menawar beberapa karya seni.",
+    "backDesc": "I bid on the artwork. / She bid an offer. / She has bid on several pieces of art."
+  },
+  {
+    "frontDesc": "Saya mengikat sepatu sebelum pergi. / Dia mengikat paket itu. / Dia sudah mengikat banyak paket untuk pengiriman.",
+    "backDesc": "I bind my shoes before leaving. / He bound the package. / He has bound multiple packages for shipping."
+  },
+  {
+    "frontDesc": "Saya menggigit apel saat sarapan. / Dia menggigit jarinya. / Dia sudah sering menggigit kukunya.",
+    "backDesc": "I bite an apple for breakfast. / She bit her finger. / She has bitten her nails many times."
+  },
+  {
+    "frontDesc": "Luka saya berdarah banyak. / Dia berdarah setelah jatuh. / Dia sudah pernah berdarah dari luka serupa sebelumnya.",
+    "backDesc": "My wound bleeds heavily. / He bled after the fall. / He has bled from similar wounds before."
+  },
+  {
+    "frontDesc": "Saya meniup lilin di kue. / Dia meniup balon itu. / Dia sudah meniup banyak balon untuk pesta.",
+    "backDesc": "I blow out the candle on the cake. / He blew up the balloon. / He has blown many balloons for parties."
+  },
+  {
+    "frontDesc": "Saya membiakkan anjing di rumah. / Dia membiakkan kuda di peternakan. / Dia sudah membiakkan berbagai hewan selama bertahun-tahun.",
+    "backDesc": "I breed dogs at home. / She bred horses on the farm. / She has bred different animals over the years."
+  },
+  {
+    "frontDesc": "Saya menyiarkan acara radio. / Dia menyiarkan berita secara langsung. / Dia sudah menyiarkan pengumuman penting baru-baru ini.",
+    "backDesc": "I broadcast a radio show. / He broadcast the news live. / He has broadcast important announcements recently."
+  },
+  {
+    "frontDesc": "Saya menyalakan lilin saat makan malam. / Dia membakar kertas di tungku. / Dia sudah pernah membakar surat-surat lama.",
+    "backDesc": "I burn a candle during dinner. / She burnt the papers in the furnace. / She has burnt old letters before."
+  },
+  {
+    "frontDesc": "Saya meletuskan balon saat bermain. / Dia tertawa terbahak-bahak. / Dia sudah sering tertawa seperti itu.",
+    "backDesc": "I burst the balloon during play. / He burst into laughter. / He has burst into laughter many times."
+  },
+  {
+    "frontDesc": "Saya memaafkanmu atas kesalahan itu. / Dia memaafkannya untuk semua hal. / Dia sudah memaafkan banyak orang dalam hidupnya.",
+    "backDesc": "I forgive you for the mistake. / She forgave him for everything. / She has forgiven many people in her life."
+  },
+  {
+    "frontDesc": "Saya membekukan buah-buahan untuk nanti. / Dia membekukan air di lemari es. / Dia sudah membekukan air untuk es batu.",
+    "backDesc": "I freeze fruits for later. / He froze the water in the fridge. / He has frozen water for ice cubes."
+  },
+  {
+    "frontDesc": "Saya berpegangan pada ibu saya saat badai. / Dia berpegang teguh pada keyakinannya. / Dia sudah terus berpegang teguh pada keyakinan itu sepanjang waktu.",
+    "backDesc": "I clung to my mother during the storm. / He clung to his beliefs. / He has clung to them all this time."
+  },
+  {
+    "frontDesc": "Saya merayap di antara rumput untuk menghindari terdeteksi. / Dia merayap dengan tenang. / Dia sudah pernah merayap masuk dengan diam-diam.",
+    "backDesc": "I creep through the grass to avoid being noticed. / She crept quietly. / She has crept in silently before."
+  },
+  {
+    "frontDesc": "Saya berdagang saham di pasar. / Dia menjual barang di toko. / Dia sudah pernah berdagang berbagai produk sebelumnya.",
+    "backDesc": "I deal in stocks on the market. / He dealt the goods in the store. / He has dealt in various products before."
+  },
+  {
+    "frontDesc": "Saya menggali parit di kebun. / Dia menggali sampai ke sumur. / Dia sudah menggali banyak lubang untuk menanam.",
+    "backDesc": "I dig a trench in the garden. / She dug to the well. / She has dug many holes for planting."
+  },
+  {
+    "frontDesc": "Saya turun dan duduk di bangku di taman. / Dia turun di atas bukit. / Dia sudah beberapa kali turun di sana.",
+    "backDesc": "I alighted on a bench in the park. / He alit on the hill. / He has alighted there a few times."
+  },
+  {
+    "frontDesc": "Kemalangan menimpa keluarga itu. / Dia ditimpa kesialan. / Kesialan telah menimpanya baru-baru ini.",
+    "backDesc": "Misfortune befell that family. / He befell bad luck. / Bad luck has befallen him recently."
+  },
+  {
+    "frontDesc": "Setiap orang bisa memiliki keturunan. / Dia memiliki seorang pewaris. / Dia sudah memiliki dua anak.",
+    "backDesc": "Every person can beget offspring. / He begot an heir. / He has begotten two children."
+  },
+  {
+    "frontDesc": "Saya menyaksikan matahari terbenam. / Dia menyaksikan pemandangan yang indah. / Dia sudah menyaksikan banyak pemandangan yang menakjubkan.",
+    "backDesc": "I behold the sunset. / She beheld a beautiful landscape. / She has beheld many breathtaking views."
+  },
+  {
+    "frontDesc": "Saya memohon bantuan kepadamu. / Dia memohon pengampunan. / Dia sudah berkali-kali memohon kebaikan.",
+    "backDesc": "I beseech you for help. / He besought forgiveness. / He has besought kindness on many occasions."
+  },
+  {
+    "frontDesc": "Dia dikelilingi masalah keuangan. / Dia mengepung target-targetnya. / Dia sudah menimpakan berbagai tantangan pada mereka.",
+    "backDesc": "He was beset by financial problems. / He beset his targets. / He has beset them with challenges."
+  },
+  {
+    "frontDesc": "Orang tua menegur anak itu karena ketidakpatuhannya. / Dia menegurnya di depan umum. / Dia sudah sering menegurnya atas perilakunya.",
+    "backDesc": "Parents chided the child for disobedience. / He chided him publicly. / He has chidden him for his behavior."
+  },
+  {
+    "frontDesc": "Saya mengenakan pakaian untuk musim dingin. / Dia berpakaian dengan elegan. / Dia sudah pernah berpakaian mewah sebelumnya.",
+    "backDesc": "I clothe myself for winter. / She clad herself elegantly. / She has clad herself in fine clothes before."
+  },
+  {
+    "frontDesc": "Saya bermimpi tentang liburan. / Dia bermimpi tentang sebuah perjalanan. / Dia sudah bermimpi untuk keliling dunia.",
+    "backDesc": "I dream of vacations. / He dreamt of a trip. / He has dreamt about traveling the world."
+  },
+  {
+    "frontDesc": "Saya memberi makan anjing setiap hari. / Dia memberi makan burung-burung di kebun. / Dia sudah memberi mereka makan setiap pagi.",
+    "backDesc": "I feed the dog every day. / She fed the birds in the garden. / She has fed them every morning."
+  },
+  {
+    "frontDesc": "Kemeja ini pas sekali di saya. / Dia cocok dalam tim itu. / Dia sudah menyesuaikan diri dengan baik sejak hari pertama.",
+    "backDesc": "This shirt fits me perfectly. / He fit into the team. / He has fit in well since day one."
+  },
+  {
+    "frontDesc": "Saya lari menghindari hujan. / Dia melarikan diri dari rumah. / Dia sudah pernah melarikan diri dari situasi sulit sebelumnya.",
+    "backDesc": "I flee from the rain. / She fled from home. / She has fled difficult situations before."
+  },
+  {
+    "frontDesc": "Saya melempar batu ke dalam air. / Dia melempar botol ke luar jendela. / Dia sudah pernah melempar barang saat marah.",
+    "backDesc": "I fling a stone into the water. / He flung the bottle out the window. / He has flung objects in anger before."
+  },
+  {
+    "frontDesc": "Saya melarang merokok di dalam gedung. / Dia melarang anak-anak menonton TV. / Dia sudah beberapa kali melarang mereka.",
+    "backDesc": "I forbid smoking in the building. / She forbade the children from watching TV. / She has forbidden them multiple times."
+  },
+  {
+    "frontDesc": "Saya meramalkan hujan untuk besok. / Dia meramalkan kenaikan harga. / Dia sudah meramalkan perubahan seperti itu dengan akurat.",
+    "backDesc": "I forecast rain for tomorrow. / He forecast a price increase. / He has forecast such changes accurately."
+  },
+  {
+    "frontDesc": "Saya meninggalkan kebiasaan lama. / Dia meninggalkan mimpinya. / Dia sudah meninggalkan semuanya.",
+    "backDesc": "I forsake old habits. / She forsook her dreams. / She has forsaken them all."
+  },
+  {
+    "frontDesc": "Saya berlutut di depan altar. / Dia berlutut sebagai tanda hormat. / Dia sudah berlutut di sana berkali-kali.",
+    "backDesc": "I kneel before the altar. / He knelt in a gesture of respect. / He has knelt there many times."
+  },
+  {
+    "frontDesc": "Saya merajut sweter untuk musim dingin. / Dia merajut syal. / Dia sudah merajut banyak syal sebelumnya.",
+    "backDesc": "I knit a sweater for winter. / She knitted a scarf. / She has knitted many scarves before."
+  },
+  {
+    "frontDesc": "Saya meletakkan buku di atas meja. / Dia meletakkan kunci di rak. / Dia sudah sering meletakkannya di sana.",
+    "backDesc": "I lay the book on the table. / She laid the keys on the shelf. / She has laid them there many times."
+  },
+  {
+    "frontDesc": "Saya memimpin tim. / Dia memimpin perusahaan itu selama bertahun-tahun. / Dia sudah memimpin banyak proyek sukses.",
+    "backDesc": "I lead the team. / He led the company for many years. / He has led numerous successful projects."
+  },
+  {
+    "frontDesc": "Saya membungkuk di atas buku. / Dia membungkuk di atas meja. / Dia sudah membungkuk di sana selama berjam-jam.",
+    "backDesc": "I lean over the book. / He leant over the table. / He has leaned over it for hours."
+  },
+  {
+    "frontDesc": "Saya melompat di atas tali. / Dia melompati pagar. / Dia sudah melompati banyak rintangan.",
+    "backDesc": "I leap on the rope. / He leapt over the fence. / He has leapt across many obstacles."
+  },
+  {
+    "frontDesc": "Saya menyalakan lampu ruangan. / Dia menyalakan lampu di malam hari. / Dia sudah menyalakannya setiap malam sejak saat itu.",
+    "backDesc": "I light the room's light. / He lit the light in the evening. / He has lit it every night since then."
+  },
+  {
+    "frontDesc": "Saya melakukan kesalahan dalam perhitungan. / Dia salah menafsirkan keputusan itu. / Dia sudah beberapa kali salah menafsirkan niat orang lain.",
+    "backDesc": "I mistake in the calculations. / He mistook the decision. / He has mistaken people's intentions before."
+  },
+  {
+    "frontDesc": "Saya memotong rumput di taman. / Dia memotong rumput kemarin. / Dia sudah sering memotongnya secara teratur.",
+    "backDesc": "I mow the grass in the garden. / He mowed the lawn yesterday. / He has mown it regularly."
+  },
+  {
+    "frontDesc": "Saya mengatasi kesulitan setiap hari. / Dia mengatasi rasa takutnya. / Dia sudah mengatasi banyak rintangan.",
+    "backDesc": "I overcome difficulties every day. / He overcame his fears. / He has overcome many obstacles."
+  },
+  {
+    "frontDesc": "Saya ikut serta dalam rapat. / Dia ikut serta dalam konferensi. / Dia sudah berpartisipasi dalam beberapa acara baru-baru ini.",
+    "backDesc": "I partake in meetings. / He partook in the conference. / He has partaken in several events recently."
+  },
+  {
+    "frontDesc": "Saya memohon bantuan. / Dia memohon pengampunan. / Dia sudah sering memohon belas kasihan.",
+    "backDesc": "I plead for help. / He pled for forgiveness. / He has pled for mercy many times."
+  },
+  {
+    "frontDesc": "Saya membuktikan bahwa saya tidak bersalah. / Dia membuktikan teorinya. / Dia sudah membuktikannya tanpa keraguan.",
+    "backDesc": "I prove my innocence. / He proved his theory. / He has proven it beyond doubt."
+  },
+  {
+    "frontDesc": "Saya menggergaji kayu di bengkel. / Dia menggergaji papan untuk perahu baru. / Dia sudah menggergaji banyak kayu.",
+    "backDesc": "I saw wood in the workshop. / He sawed planks for a new boat. / He has sawn many pieces of wood."
+  },
+  {
+    "frontDesc": "Saya mencari kunci di rumah. / Dia mencari solusi untuk masalah itu. / Dia sudah mencari jawaban di mana-mana.",
+    "backDesc": "I seek the keys at home. / He sought a solution to the problem. / He has sought answers everywhere."
+  },
+  {
+    "frontDesc": "Saya menjahit pakaian di atelier saya. / Dia menjahit kemeja selama beberapa jam. / Dia sudah menjahit banyak pakaian.",
+    "backDesc": "I sew clothes in my atelier. / He sewed a shirt for several hours. / He has sewn many garments."
+  },
+  {
+    "frontDesc": "Saya mencukur bulu domba di peternakan. / Dia mencukur bulu domba kemarin. / Dia sudah mencukur banyak domba musim ini.",
+    "backDesc": "I shear sheep on the farm. / He sheared a sheep yesterday. / He has shorn many sheep this season."
+  },
+  {
+    "frontDesc": "Sweter saya menyusut setelah dicuci. / Sweter itu menyusut karena suhu tinggi. / Sweter itu sudah menyusut terlalu banyak.",
+    "backDesc": "My sweater shrinks after washing. / It shrank in high temperature. / It has shrunk too much."
+  },
+  {
+    "frontDesc": "Saya membasmi tikus di ruang bawah tanah. / Dia membunuh monster di hutan. / Dia sudah membunuh banyak makhluk dalam ceritanya.",
+    "backDesc": "I slay rodents in the basement. / He slew the monster in the forest. / He has slain many creatures in his stories."
+  },
+  {
+    "frontDesc": "Dapur itu bau makanan busuk. / Baunya semakin parah setelah hari panas. / Sudah bau selama berjam-jam.",
+    "backDesc": "The kitchen stinks of rotten food. / It stank after a hot day. / It has stunk for hours."
+  },
+  {
+    "frontDesc": "Saya melangkah dengan percaya diri. / Dia melangkah cepat sehingga tiba tepat waktu. / Dia sudah melangkah melalui banyak tantangan.",
+    "backDesc": "I stride with confidence. / He strode quickly, arriving on time. / He has stridden through many challenges."
+  },
+  {
+    "frontDesc": "Saya memukul bola ke arah gawang. / Dia memukul pintu dengan keras. / Dia sudah menimbulkan rasa takut pada lawan-lawannya.",
+    "backDesc": "I strike the ball towards the goal. / He struck the door hard. / He has struck fear into his opponents."
+  },
+  {
+    "frontDesc": "Saya merangkai manik-manik pada seutas tali. / Dia menggantung lampu di dinding. / Dia sudah pernah merangkai dekorasi sebelumnya.",
+    "backDesc": "I string beads on a string. / He strung the lamp on the wall. / He has strung decorations before."
+  },
+  {
+    "frontDesc": "Saya berusaha mencapai tujuan. / Dia berusaha meraih kesuksesan selama bertahun-tahun. / Dia sudah berusaha untuk mencapai puncak.",
+    "backDesc": "I strive to achieve the goal. / He strove for success for years. / He has striven to reach the top."
+  },
+  {
+    "frontDesc": "Saya berayun di ayunan. / Dia berayun di balkon. / Dia sudah sering berayun di tali itu.",
+    "backDesc": "I swing on the swing. / He swung on the balcony. / He has swung on that rope many times."
+  },
+  {
+    "frontDesc": "Saya merobek kertas untuk mencabiknya. / Dia merobek kanvas dengan pisau. / Dia sudah sering secara tidak sengaja merobek banyak kertas.",
+    "backDesc": "I tear the paper to shred it. / He tore the canvas with a knife. / He has torn many papers accidentally."
+  },
+  {
+    "frontDesc": "Saya mendorong pintu itu untuk membukanya. / Dia mendorong pintu dengan keras. / Dia sudah pernah mendorongnya terbuka sebelumnya.",
+    "backDesc": "I thrust the door to open it. / He thrust the door hard. / He has thrust it open before."
+  },
+  {
+    "frontDesc": "Saya melangkah hati-hati di lantai basah. / Dia melangkah dengan penuh percaya diri. / Dia sudah pernah melewati jalur ini sebelumnya.",
+    "backDesc": "I tread carefully on the wet floor. / He trod with a confident stride. / He has trodden this path before."
+  },
+  {
+    "frontDesc": "Saya membatalkan gerakan yang saya buat. / Dia membatalkan perubahan dalam dokumen itu. / Dia sudah sepenuhnya membatalkannya.",
+    "backDesc": "I undo the move I made. / He undid the changes in the document. / He has undone them completely."
+  },
+  {
+    "frontDesc": "Saya menenun syal dengan jarum rajut. / Dia menenun karpet di bengkelnya. / Dia sudah menenun beberapa karpet sekarang.",
+    "backDesc": "I weave a scarf on the knitting needles. / He wove a rug in his workshop. / He has woven several rugs now."
+  },
+  {
+    "frontDesc": "Saya menangis karena sedih. / Dia menangis setelah putus. / Dia sudah meneteskan banyak air mata.",
+    "backDesc": "I weep in sorrow. / He wept after the breakup. / He has wept many tears."
+  },
+  {
+    "frontDesc": "Saya memutar jam setiap pagi. / Dia menggulung tali menjadi gulungan. / Dia sudah menggulungnya dengan rapi.",
+    "backDesc": "I wind the watch every morning. / He wound the strings into a tape. / He has wound them neatly."
+  },
+  {
+    "frontDesc": "Saya mundur dari diskusi. / Dia mengundurkan diri dari proyek itu. / Dia sudah sepenuhnya mundur.",
+    "backDesc": "I withdraw from the discussion. / He withdrew from the project. / He has withdrawn completely."
+  },
+  {
+    "frontDesc": "Saya bertahan dalam kondisi sulit. / Dia bertahan menghadapi angin kencang. / Dia sudah bertahan melalui banyak badai.",
+    "backDesc": "I withstand difficult conditions. / He withstood the strong wind. / He has withstood many storms."
+  },
+  {
+    "frontDesc": "Saya memeras handuk basah. / Dia memeras jus dari buah-buahan. / Dia sudah sering memeras banyak handuk.",
+    "backDesc": "I wring out wet towels. / He wrung juice out of fruits. / He has wrung out many towels."
+  },
+  {
+    "frontDesc": "Saya membekukan makanan di dalam freezer. / Dia membekukan air untuk freezer. / Dia sudah membekukan cukup air untuk es.",
+    "backDesc": "I freeze food in the freezer. / He froze water for the freezer. / He has frozen enough water for ice."
+  },
+  {
+    "frontDesc": "Saya menggantung gambar di dinding. / Dia menggantung lampu di ruangan. / Dia sudah menggantung banyak gambar di seluruh rumah.",
+    "backDesc": "I hang a picture on the wall. / He hung the lamp in the room. / He has hung many pictures around the house."
+  }
+]

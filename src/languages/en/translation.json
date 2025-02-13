@@ -142,5 +142,7 @@
   "turn_on_shadows": "Turn on shadows",
   "turn_on_automatic_audio": "Turn on automatic audio",
   "premium_account": "Premium account",
-  "active": "Active"
+  "active": "Active",
+  "code": "Code",
+  "wrong_code": "Wrong code"
 }

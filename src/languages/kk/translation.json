@@ -142,5 +142,7 @@
   "turn_on_shadows": "Көлеңкелерді қосу",
   "turn_on_automatic_audio": "Автоматты дыбысты қосу",
   "premium_account": "Premium аккаунты",
-  "active": "Белсенді"
+  "active": "Белсенді",
+  "code": "Код",
+  "wrong_code": "Қате код"
 }

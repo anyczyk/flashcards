@@ -142,5 +142,7 @@
   "turn_on_shadows": "Bật bóng",
   "turn_on_automatic_audio": "Bật âm thanh tự động",
   "premium_account": "Tài khoản Premium",
-  "active": "Hoạt động"
+  "active": "Hoạt động",
+  "code": "Mã",
+  "wrong_code": "Mã sai"
 }

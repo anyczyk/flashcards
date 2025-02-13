@@ -1,6 +1,6 @@
 {
   "categories": "ምድቦች",
-  "simple_flashcard_creator": "ቀላል ፍላሽካርድ ፈጣሪ",
+  "simple_flashcard_creator": "ፍላሽካርድ ፈጣሪ",
   "view_flashcards": "ትምህርትዎን ይጀምሩ",
   "create_flashcard": "ፍላሽካርድ ፈጣር",
   "edit_flashcards": "ፍላሽካርድን አስተካክል",
@@ -142,5 +142,7 @@
   "turn_on_shadows": "ብስክሌት አብንክ",
   "turn_on_automatic_audio": "አውቶማቲክ ድምጽ አብንክ",
   "premium_account": "Premium አካውንት",
-  "active": "ተግባር ላይ"
+  "active": "ተግባር ላይ",
+  "code": "ኮድ",
+  "wrong_code": "የተሳሳተ ኮድ"
 }

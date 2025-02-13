@@ -142,5 +142,7 @@
   "turn_on_shadows": "Саёраҳоро ёрон",
   "turn_on_automatic_audio": "Одоиши овози автоматикро ёрон",
   "premium_account": "Ҳисоби Premium",
-  "active": "Фаъол"
+  "active": "Фаъол",
+  "code": "Код",
+  "wrong_code": "Нодуруст код"
 }

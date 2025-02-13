@@ -1,6 +1,6 @@
 {
   "categories": "Категорії",
-  "simple_flashcard_creator": "Створювач карток",
+  "simple_flashcard_creator": "Конструктор флешкарт",
   "view_flashcards": "Почніть своє навчання",
   "create_flashcard": "Створити картку",
   "edit_flashcards": "Редагувати картки",
@@ -142,5 +142,7 @@
   "turn_on_shadows": "Увімкнути тіні",
   "turn_on_automatic_audio": "Увімкнути автоматичний звук",
   "premium_account": "Premium аккаунт",
-  "active": "Активний"
+  "active": "Активний",
+  "code": "Код",
+  "wrong_code": "Невірний код"
 }

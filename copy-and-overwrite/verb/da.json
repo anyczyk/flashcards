@@ -1,0 +1,630 @@
+[
+  {
+    "backDesc": "I am a teacher. / I was at the store yesterday. / I have been at that store many times.",
+    "frontDesc": "Jeg er lærer. / Jeg var i butikken i går. / Jeg har været i den butik mange gange."
+  },
+  {
+    "backDesc": "I want to become a doctor. / I became tired. / I have become more determined.",
+    "frontDesc": "Jeg vil gerne blive læge. / Jeg blev træt. / Jeg er blevet mere beslutsom."
+  },
+  {
+    "backDesc": "I begin a new project. / I began reading a book. / I have begun working on it seriously.",
+    "frontDesc": "Jeg begynder på et nyt projekt. / Jeg begyndte at læse en bog. / Jeg er begyndt at arbejde seriøst på det."
+  },
+  {
+    "backDesc": "I don't want to break the rules. / He broke the branch. / He has broken many rules in the past.",
+    "frontDesc": "Jeg vil ikke bryde reglerne. / Han knækkede grenen. / Han har brudt mange regler før."
+  },
+  {
+    "backDesc": "I bring coffee. / She brought flowers. / She has brought gifts as well.",
+    "frontDesc": "Jeg bringer kaffe. / Hun bragte blomster. / Hun har også bragt gaver."
+  },
+  {
+    "backDesc": "I build a house. / He built a bridge. / He has built many bridges in his career.",
+    "frontDesc": "Jeg bygger et hus. / Han byggede en bro. / Han har bygget mange broer i sin karriere."
+  },
+  {
+    "backDesc": "I buy new clothes. / She bought a car. / She has bought several cars over the years.",
+    "frontDesc": "Jeg køber nyt tøj. / Hun købte en bil. / Hun har købt flere biler gennem årene."
+  },
+  {
+    "backDesc": "I can help. / He could come earlier. / He has been able to assist many times.",
+    "frontDesc": "Jeg kan hjælpe. / Han kunne komme tidligere. / Han har været i stand til at hjælpe mange gange."
+  },
+  {
+    "backDesc": "I catch the ball. / He caught a fish. / He has caught many fish in this lake.",
+    "frontDesc": "Jeg griber bolden. / Han fangede en fisk. / Han har fanget mange fisk i denne sø."
+  },
+  {
+    "backDesc": "I choose a dish. / She chose a book. / She has chosen wisely every time.",
+    "frontDesc": "Jeg vælger en ret. / Hun valgte en bog. / Hun har valgt klogt hver gang."
+  },
+  {
+    "backDesc": "I come to work. / He came earlier. / He has come on time every day.",
+    "frontDesc": "Jeg kommer på arbejde. / Han kom tidligere. / Han er kommet til tiden hver dag."
+  },
+  {
+    "backDesc": "It costs five dollars. / It cost more yesterday. / It has cost me a fortune so far.",
+    "frontDesc": "Den koster fem dollars. / Den kostede mere i går. / Den har kostet mig en formue indtil nu."
+  },
+  {
+    "backDesc": "I cut the paper. / He cut the wood. / He has cut many pieces of wood before.",
+    "frontDesc": "Jeg skærer papiret. / Han skar træet. / Han har skåret mange stykker træ før."
+  },
+  {
+    "backDesc": "I cast away the old clothes. / He cast the net. / He has cast a net before to catch fish.",
+    "frontDesc": "Jeg kaster det gamle tøj væk. / Han kastede nettet. / Han har kastet et net før for at fange fisk."
+  },
+  {
+    "backDesc": "I do my homework. / He did the dinner. / He has done this type of work before.",
+    "frontDesc": "Jeg laver mine lektier. / Han lavede aftensmaden. / Han har lavet denne type arbejde før."
+  },
+  {
+    "backDesc": "I draw a picture. / She drew a landscape. / She has drawn many landscapes.",
+    "frontDesc": "Jeg tegner et billede. / Hun tegnede et landskab. / Hun har tegnet mange landskaber."
+  },
+  {
+    "backDesc": "I drink water. / He drank juice. / He has drunk all the juice in the fridge.",
+    "frontDesc": "Jeg drikker vand. / Han drak juice. / Han har drukket al juicen i køleskabet."
+  },
+  {
+    "backDesc": "I drive a car. / She drove the bus. / She has driven that route many times.",
+    "frontDesc": "Jeg kører bil. / Hun kørte bussen. / Hun har kørt den rute mange gange."
+  },
+  {
+    "backDesc": "I dwell in Warsaw. / He dwelt there earlier. / He has dwelt in many cities over the years.",
+    "frontDesc": "Jeg bor i Warszawa. / Han boede der tidligere. / Han har boet i mange byer gennem årene."
+  },
+  {
+    "backDesc": "I eat breakfast. / She ate lunch. / She has eaten at this restaurant before.",
+    "frontDesc": "Jeg spiser morgenmad. / Hun spiste frokost. / Hun har spist på denne restaurant før."
+  },
+  {
+    "backDesc": "I fall off the bike. / He fell from the ladder. / He has fallen a few times lately.",
+    "frontDesc": "Jeg falder af cyklen. / Han faldt ned fra stigen. / Han er faldet et par gange på det seneste."
+  },
+  {
+    "backDesc": "I feel good. / She felt pain. / She has felt better since then.",
+    "frontDesc": "Jeg har det godt. / Hun følte smerte. / Hun har haft det bedre siden da."
+  },
+  {
+    "backDesc": "I fight for my rights. / He fought in the war. / He has fought bravely for his country.",
+    "frontDesc": "Jeg kæmper for mine rettigheder. / Han kæmpede i krigen. / Han har kæmpet tappert for sit land."
+  },
+  {
+    "backDesc": "I find the key. / She found the solution. / She has found many solutions so far.",
+    "frontDesc": "Jeg finder nøglen. / Hun fandt løsningen. / Hun har fundet mange løsninger indtil nu."
+  },
+  {
+    "backDesc": "I fly by airplane. / He flew to London. / He has flown internationally many times.",
+    "frontDesc": "Jeg flyver med fly. / Han fløj til London. / Han har fløjet internationalt mange gange."
+  },
+  {
+    "backDesc": "I forget the name. / She forgot the keys. / She has forgotten them before.",
+    "frontDesc": "Jeg glemmer navnet. / Hun glemte nøglerne. / Hun har glemt dem før."
+  },
+  {
+    "backDesc": "I get a letter. / He got a gift. / He has gotten many gifts recently.",
+    "frontDesc": "Jeg får et brev. / Han fik en gave. / Han har fået mange gaver for nylig."
+  },
+  {
+    "backDesc": "I give you a gift. / She gave him a book. / She has given many books as presents.",
+    "frontDesc": "Jeg giver dig en gave. / Hun gav ham en bog. / Hun har givet mange bøger som gaver."
+  },
+  {
+    "backDesc": "I go to school. / He went to work. / He has gone there every day this week.",
+    "frontDesc": "Jeg går i skole. / Han gik på arbejde. / Han er gået derhen hver dag i denne uge."
+  },
+  {
+    "backDesc": "I grind coffee. / He ground the grain. / He has ground coffee beans for years.",
+    "frontDesc": "Jeg kværner kaffe. / Han kværnede kornet. / Han har kværnet kaffebønner i årevis."
+  },
+  {
+    "backDesc": "I grow every day. / He grew quickly. / He has grown a lot this year.",
+    "frontDesc": "Jeg vokser hver dag. / Han voksede hurtigt. / Han er vokset meget i år."
+  },
+  {
+    "backDesc": "I have a car. / He had a guitar. / She has had many opportunities to travel.",
+    "frontDesc": "Jeg har en bil. / Han havde en guitar. / Hun har haft mange muligheder for at rejse."
+  },
+  {
+    "backDesc": "I hear music. / He heard the noise. / He has heard that noise before.",
+    "frontDesc": "Jeg hører musik. / Han hørte lyden. / Han har hørt den lyd før."
+  },
+  {
+    "backDesc": "I hide the gift. / She hid the letter. / She has hidden messages in her diary.",
+    "frontDesc": "Jeg gemmer gaven. / Hun gemte brevet. / Hun har gemt beskeder i sin dagbog."
+  },
+  {
+    "backDesc": "I hit the ball. / He hit the door. / He has hit that ball many times.",
+    "frontDesc": "Jeg slår til bolden. / Han slog på døren. / Han har slået til den bold mange gange."
+  },
+  {
+    "backDesc": "I hold the book. / She held the bag. / She has held onto that bag for years.",
+    "frontDesc": "Jeg holder bogen. / Hun holdt tasken. / Hun har holdt fast i den taske i årevis."
+  },
+  {
+    "backDesc": "I hurt myself while running. / He hurt his hand. / He has hurt himself multiple times.",
+    "frontDesc": "Jeg skadede mig selv, mens jeg løb. / Han skadede sin hånd. / Han har skadet sig selv flere gange."
+  },
+  {
+    "backDesc": "I keep a secret. / She kept the documents. / She has kept them in a safe place.",
+    "frontDesc": "Jeg holder en hemmelighed. / Hun beholdt dokumenterne. / Hun har opbevaret dem på et sikkert sted."
+  },
+  {
+    "backDesc": "I know the answer. / He knew the solution. / He has known it all along.",
+    "frontDesc": "Jeg kender svaret. / Han kendte løsningen. / Han har vidst det hele tiden."
+  },
+  {
+    "backDesc": "I learn English. / She learned to dance. / She has learned many languages.",
+    "frontDesc": "Jeg lærer engelsk. / Hun lærte at danse. / Hun har lært mange sprog."
+  },
+  {
+    "backDesc": "I leave the house. / He left the office. / He has left his job recently.",
+    "frontDesc": "Jeg forlader huset. / Han forlod kontoret. / Han har forladt sit job for nylig."
+  },
+  {
+    "backDesc": "I lend a book. / She lent money. / She has lent money to friends before.",
+    "frontDesc": "Jeg låner en bog ud. / Hun lånte penge. / Hun har lånt penge til venner før."
+  },
+  {
+    "backDesc": "I let you in. / He let her stay. / He has let many people stay at his place.",
+    "frontDesc": "Jeg lader dig komme ind. / Han lod hende blive. / Han har ladet mange mennesker bo hos sig."
+  },
+  {
+    "backDesc": "I lie on the couch. / He lay on the bed. / He has lain there for hours.",
+    "frontDesc": "Jeg ligger på sofaen. / Han lå i sengen. / Han har ligget dér i timevis."
+  },
+  {
+    "backDesc": "I lose my keys. / He lost his wallet. / He has lost things many times.",
+    "frontDesc": "Jeg mister mine nøgler. / Han mistede sin pung. / Han har mistet ting mange gange."
+  },
+  {
+    "backDesc": "I make dinner. / She made a cake. / She has made many delicious cakes.",
+    "frontDesc": "Jeg laver aftensmad. / Hun lavede en kage. / Hun har lavet mange lækre kager."
+  },
+  {
+    "backDesc": "It means something important. / He meant something else. / He has meant it sincerely all along.",
+    "frontDesc": "Det betyder noget vigtigt. / Han mente noget andet. / Han har ment det oprigtigt hele tiden."
+  },
+  {
+    "backDesc": "I meet with friends. / She met with the manager. / She has met many interesting people.",
+    "frontDesc": "Jeg mødes med venner. / Hun mødtes med chefen. / Hun har mødt mange interessante mennesker."
+  },
+  {
+    "backDesc": "I pay the bills. / He paid for dinner. / He has paid his dues already.",
+    "frontDesc": "Jeg betaler regningerne. / Han betalte for middagen. / Han har allerede betalt sin gæld."
+  },
+  {
+    "backDesc": "I put the book on the table. / She put the keys on the shelf. / She has put them there before.",
+    "frontDesc": "Jeg lægger bogen på bordet. / Hun lagde nøglerne på hylden. / Hun har lagt dem dér før."
+  },
+  {
+    "backDesc": "I read the newspaper. / He read the book. / He has read that book many times.",
+    "frontDesc": "Jeg læser avisen. / Han læste bogen. / Han har læst den bog mange gange."
+  },
+  {
+    "backDesc": "I ride a bike. / She rode a horse. / She has ridden many horses in her life.",
+    "frontDesc": "Jeg cykler. / Hun red på en hest. / Hun har redet på mange heste i sit liv."
+  },
+  {
+    "backDesc": "I ring you. / He rang me. / He has rung me every day this week.",
+    "frontDesc": "Jeg ringer til dig. / Han ringede til mig. / Han har ringet til mig hver dag i denne uge."
+  },
+  {
+    "backDesc": "The sun rises in the morning. / He rose his hand. / He has risen early every day.",
+    "frontDesc": "Solen står op om morgenen. / Han løftede sin hånd. / Han er stået tidligt op hver dag."
+  },
+  {
+    "backDesc": "I run every day. / He ran faster. / He has run marathons before.",
+    "frontDesc": "Jeg løber hver dag. / Han løb hurtigere. / Han har løbet maraton før."
+  },
+  {
+    "backDesc": "I say the truth. / He said something important. / He has said that many times.",
+    "frontDesc": "Jeg siger sandheden. / Han sagde noget vigtigt. / Han har sagt det mange gange."
+  },
+  {
+    "backDesc": "I see the stars. / She saw a bird. / She has seen many birds lately.",
+    "frontDesc": "Jeg ser stjernerne. / Hun så en fugl. / Hun har set mange fugle på det seneste."
+  },
+  {
+    "backDesc": "I sell a car. / He sold the house. / He has sold several houses this year.",
+    "frontDesc": "Jeg sælger en bil. / Han solgte huset. / Han har solgt adskillige huse i år."
+  },
+  {
+    "backDesc": "I send a letter. / She sent a package. / She has sent many packages abroad.",
+    "frontDesc": "Jeg sender et brev. / Hun sendte en pakke. / Hun har sendt mange pakker til udlandet."
+  },
+  {
+    "backDesc": "I set the alarm for 7 AM. / He set the tables for the party. / He has set them up perfectly.",
+    "frontDesc": "Jeg stiller alarmen til kl. 7. / Han dækkede bordene til festen. / Han har sat dem helt perfekt."
+  },
+  {
+    "backDesc": "I shake my hands when I'm nervous. / He shook his hand in farewell. / He has shaken hands many times.",
+    "frontDesc": "Jeg ryster på hænderne, når jeg er nervøs. / Han gav ham hånden til farvel. / Han har givet hånd mange gange."
+  },
+  {
+    "backDesc": "The sun shines brightly today. / He shone the lighthouse at night. / He has shone it on the rocks before.",
+    "frontDesc": "Solen skinner klart i dag. / Han lyste med fyrtårnet om natten. / Han har lyst på klipperne før."
+  },
+  {
+    "backDesc": "I shoot with a bow during practice. / He shot a goal in the game. / He has shot many goals this season.",
+    "frontDesc": "Jeg skyder med bue under træning. / Han skød et mål i kampen. / Han har skudt mange mål denne sæson."
+  },
+  {
+    "backDesc": "I show photos from vacation. / He showed his new car. / He has shown it to everyone.",
+    "frontDesc": "Jeg viser billeder fra ferien. / Han viste sin nye bil. / Han har vist den til alle."
+  },
+  {
+    "backDesc": "I shut the door before leaving. / He shut the window when it got cold. / He has shut them every night.",
+    "frontDesc": "Jeg lukker døren, før jeg går. / Han lukkede vinduet, da det blev koldt. / Han har lukket dem hver aften."
+  },
+  {
+    "backDesc": "I sing my favorite song. / She sang at the concert. / She has sung there many times.",
+    "frontDesc": "Jeg synger min yndlingssang. / Hun sang ved koncerten. / Hun har sunget der mange gange."
+  },
+  {
+    "backDesc": "The ship sinks in the sea. / He sank during the storm. / It has sunk completely.",
+    "frontDesc": "Skibet synker i havet. / Han sank under stormen. / Det er sunket fuldstændigt."
+  },
+  {
+    "backDesc": "I sit on the chair. / She sat at the table. / She has sat there for hours.",
+    "frontDesc": "Jeg sidder på stolen. / Hun sad ved bordet. / Hun har siddet dér i timevis."
+  },
+  {
+    "backDesc": "I sleep in my bed. / He slept all night. / He has slept well lately.",
+    "frontDesc": "Jeg sover i min seng. / Han sov hele natten. / Han har sovet godt på det seneste."
+  },
+  {
+    "backDesc": "I speak English. / He spoke at the conference. / He has spoken there twice.",
+    "frontDesc": "Jeg taler engelsk. / Han talte på konferencen. / Han har talt dér to gange."
+  },
+  {
+    "backDesc": "I spend time with my family. / He spent a lot of money on the trip. / He has spent all his savings.",
+    "frontDesc": "Jeg bruger tid med min familie. / Han brugte en masse penge på rejsen. / Han har brugt alle sine opsparinger."
+  },
+  {
+    "backDesc": "I stand at the head of the team. / She stood by the window. / She has stood there quietly.",
+    "frontDesc": "Jeg står i spidsen for holdet. / Hun stod ved vinduet. / Hun har stået dér stille."
+  },
+  {
+    "backDesc": "I swim every morning. / He swam in the lake. / He has swum across that lake before.",
+    "frontDesc": "Jeg svømmer hver morgen. / Han svømmede i søen. / Han har svømmet tværs over den sø før."
+  },
+  {
+    "backDesc": "I take my medicine in the morning. / She took an umbrella. / She has taken it with her today.",
+    "frontDesc": "Jeg tager min medicin om morgenen. / Hun tog en paraply. / Hun har taget den med i dag."
+  },
+  {
+    "backDesc": "I teach mathematics. / He taught me a new skill. / He has taught many students over the years.",
+    "frontDesc": "Jeg underviser i matematik. / Han lærte mig en ny færdighed. / Han har undervist mange studerende gennem årene."
+  },
+  {
+    "backDesc": "I always tell him about the change of plans. / She told me a secret. / She has told many secrets over time.",
+    "frontDesc": "Jeg fortæller ham altid om ændringen i planerne. / Hun fortalte mig en hemmelighed. / Hun har fortalt mange hemmeligheder over tid."
+  },
+  {
+    "backDesc": "I think about the future. / He thought about solving the problem. / He has thought it through carefully.",
+    "frontDesc": "Jeg tænker på fremtiden. / Han tænkte på at løse problemet. / Han har tænkt det grundigt igennem."
+  },
+  {
+    "backDesc": "I throw the ball into the basket. / She threw the bag on the ground. / She has thrown it away now.",
+    "frontDesc": "Jeg kaster bolden i kurven. / Hun kastede tasken på jorden. / Hun har smidt den væk nu."
+  },
+  {
+    "backDesc": "I understand this task. / He understood my explanation. / He has understood everything clearly.",
+    "frontDesc": "Jeg forstår denne opgave. / Han forstod min forklaring. / Han har forstået alting tydeligt."
+  },
+  {
+    "backDesc": "I always wake up early in the morning. / She woke up late. / She has woken up earlier on other days.",
+    "frontDesc": "Jeg vågner altid tidligt om morgenen. / Hun vågnede sent. / Hun er vågnet tidligere på andre dage."
+  },
+  {
+    "backDesc": "I wear a new jacket. / He wore elegant clothes. / He has worn them many times before.",
+    "frontDesc": "Jeg har en ny jakke på. / Han havde elegant tøj på. / Han har båret det mange gange før."
+  },
+  {
+    "backDesc": "I win the board game. / She won the contest. / She has won many contests in her life.",
+    "frontDesc": "Jeg vinder brætspillet. / Hun vandt konkurrencen. / Hun har vundet mange konkurrencer i sit liv."
+  },
+  {
+    "backDesc": "I write a letter to a friend. / He wrote an article. / He has written several articles this month.",
+    "frontDesc": "Jeg skriver et brev til en ven. / Han skrev en artikel. / Han har skrevet flere artikler denne måned."
+  },
+  {
+    "backDesc": "Problems arise suddenly. / He arose from the problems. / He has arisen to face new challenges.",
+    "frontDesc": "Problemer opstår pludseligt. / Han rejste sig fra problemerne. / Han har rejst sig for at møde nye udfordringer."
+  },
+  {
+    "backDesc": "I always awake earlier. / She awoke from a light sleep. / She has awoken feeling rested.",
+    "frontDesc": "Jeg vågner altid tidligere. / Hun vågnede fra en let søvn. / Hun er vågnet og føler sig udhvilet."
+  },
+  {
+    "backDesc": "I usually bear it well. / He bore many difficulties. / He has borne his burdens with courage.",
+    "frontDesc": "Jeg bærer det normalt godt. / Han bar mange vanskeligheder. / Han har båret sine byrder med mod."
+  },
+  {
+    "backDesc": "I beat the drums during the concert. / He beat the record. / He has beaten several records so far.",
+    "frontDesc": "Jeg slår på trommerne under koncerten. / Han slog rekorden. / Han har slået adskillige rekorder indtil nu."
+  },
+  {
+    "backDesc": "I bend to reach. / She bent the tree branch. / She has bent many branches while gardening.",
+    "frontDesc": "Jeg bøjer mig for at nå. / Hun bøjede grenene. / Hun har bøjet mange grene, mens hun arbejdede i haven."
+  },
+  {
+    "backDesc": "I bet that you'll arrive on time. / He bet money. / He has bet on many races.",
+    "frontDesc": "Jeg vædder på, at du kommer til tiden. / Han væddede penge. / Han har væddet på mange løb."
+  },
+  {
+    "backDesc": "I bid on the artwork. / She bid an offer. / She has bid on several pieces of art.",
+    "frontDesc": "Jeg byder på kunstværket. / Hun bød et tilbud. / Hun har budt på adskillige kunstværker."
+  },
+  {
+    "backDesc": "I bind my shoes before leaving. / He bound the package. / He has bound multiple packages for shipping.",
+    "frontDesc": "Jeg binder mine sko, før jeg går. / Han bandt pakken. / Han har bundet flere pakker til forsendelse."
+  },
+  {
+    "backDesc": "I bite an apple for breakfast. / She bit her finger. / She has bitten her nails many times.",
+    "frontDesc": "Jeg bider i et æble til morgenmad. / Hun bed sig i fingeren. / Hun har bidt negle mange gange."
+  },
+  {
+    "backDesc": "My wound bleeds heavily. / He bled after the fall. / He has bled from similar wounds before.",
+    "frontDesc": "Mit sår bløder meget. / Han blødte efter faldet. / Han har blødt fra lignende sår før."
+  },
+  {
+    "backDesc": "I blow out the candle on the cake. / He blew up the balloon. / He has blown many balloons for parties.",
+    "frontDesc": "Jeg puster lyset på kagen ud. / Han pustede ballonen op. / Han har pustet mange balloner op til fester."
+  },
+  {
+    "backDesc": "I breed dogs at home. / She bred horses on the farm. / She has bred different animals over the years.",
+    "frontDesc": "Jeg opdrætter hunde derhjemme. / Hun opdrættede heste på gården. / Hun har opdrættet forskellige dyr gennem årene."
+  },
+  {
+    "backDesc": "I broadcast a radio show. / He broadcast the news live. / He has broadcast important announcements recently.",
+    "frontDesc": "Jeg udsender et radioprogram. / Han udsendte nyhederne live. / Han har udsendt vigtige meddelelser for nylig."
+  },
+  {
+    "backDesc": "I burn a candle during dinner. / She burnt the papers in the furnace. / She has burnt old letters before.",
+    "frontDesc": "Jeg brænder et stearinlys under middagen. / Hun brændte papirerne i ovnen. / Hun har brændt gamle breve før."
+  },
+  {
+    "backDesc": "I burst the balloon during play. / He burst into laughter. / He has burst into laughter many times.",
+    "frontDesc": "Jeg sprænger ballonen under legen. / Han brød ud i latter. / Han er brudt ud i latter mange gange."
+  },
+  {
+    "backDesc": "I forgive you for the mistake. / She forgave him for everything. / She has forgiven many people in her life.",
+    "frontDesc": "Jeg tilgiver dig for fejlen. / Hun tilgav ham for alt. / Hun har tilgivet mange mennesker i sit liv."
+  },
+  {
+    "backDesc": "I freeze fruits for later. / He froze the water in the fridge. / He has frozen water for ice cubes.",
+    "frontDesc": "Jeg fryser frugt til senere. / Han frøs vandet i køleskabet. / Han har frosset vand til isterninger."
+  },
+  {
+    "backDesc": "I clung to my mother during the storm. / He clung to his beliefs. / He has clung to them all this time.",
+    "frontDesc": "Jeg klamrede mig til min mor under stormen. / Han klamrede sig til sine overbevisninger. / Han har klamret sig til dem hele denne tid."
+  },
+  {
+    "backDesc": "I creep through the grass to avoid being noticed. / She crept quietly. / She has crept in silently before.",
+    "frontDesc": "Jeg kryber gennem græsset for at undgå at blive opdaget. / Hun krøb stille. / Hun har krøbet lydløst før."
+  },
+  {
+    "backDesc": "I deal in stocks on the market. / He dealt the goods in the store. / He has dealt in various products before.",
+    "frontDesc": "Jeg handler med aktier på markedet. / Han handlede med varerne i butikken. / Han har handlet med forskellige produkter før."
+  },
+  {
+    "backDesc": "I dig a trench in the garden. / She dug to the well. / She has dug many holes for planting.",
+    "frontDesc": "Jeg graver en grøft i haven. / Hun gravede til brønden. / Hun har gravet mange huller til plantning."
+  },
+  {
+    "backDesc": "I alighted on a bench in the park. / He alit on the hill. / He has alighted there a few times.",
+    "frontDesc": "Jeg satte mig på en bænk i parken. / Han landede på bakken. / Han er landet dér et par gange."
+  },
+  {
+    "backDesc": "Misfortune befell that family. / He befell bad luck. / Bad luck has befallen him recently.",
+    "frontDesc": "Uheld ramte den familie. / Han blev ramt af uheld. / Dårligt held har ramt ham for nylig."
+  },
+  {
+    "backDesc": "Every person can beget offspring. / He begot an heir. / He has begotten two children.",
+    "frontDesc": "Enhver person kan få børn. / Han fik en arving. / Han har fået to børn."
+  },
+  {
+    "backDesc": "I behold the sunset. / She beheld a beautiful landscape. / She has beheld many breathtaking views.",
+    "frontDesc": "Jeg betragter solnedgangen. / Hun betragtede et smukt landskab. / Hun har betragtet mange betagende udsigter."
+  },
+  {
+    "backDesc": "I beseech you for help. / He besought forgiveness. / He has besought kindness on many occasions.",
+    "frontDesc": "Jeg bønfalder dig om hjælp. / Han bønfaldt om tilgivelse. / Han har bønfaldt om venlighed mange gange."
+  },
+  {
+    "backDesc": "He was beset by financial problems. / He beset his targets. / He has beset them with challenges.",
+    "frontDesc": "Han var plaget af økonomiske problemer. / Han overfaldt sine mål. / Han har overvældet dem med udfordringer."
+  },
+  {
+    "backDesc": "Parents chided the child for disobedience. / He chided him publicly. / He has chidden him for his behavior.",
+    "frontDesc": "Forældre irettesatte barnet for ulydighed. / Han irettesatte ham offentligt. / Han har irettesat ham for hans opførsel."
+  },
+  {
+    "backDesc": "I clothe myself for winter. / She clad herself elegantly. / She has clad herself in fine clothes before.",
+    "frontDesc": "Jeg klæder mig på til vinter. / Hun klædte sig elegant. / Hun har tidligere klædt sig i fint tøj."
+  },
+  {
+    "backDesc": "I dream of vacations. / He dreamt of a trip. / He has dreamt about traveling the world.",
+    "frontDesc": "Jeg drømmer om ferier. / Han drømte om en rejse. / Han har drømt om at rejse verden rundt."
+  },
+  {
+    "backDesc": "I feed the dog every day. / She fed the birds in the garden. / She has fed them every morning.",
+    "frontDesc": "Jeg fodrer hunden hver dag. / Hun fodrede fuglene i haven. / Hun har fodret dem hver morgen."
+  },
+  {
+    "backDesc": "This shirt fits me perfectly. / He fit into the team. / He has fit in well since day one.",
+    "frontDesc": "Denne skjorte passer mig perfekt. / Han passede ind på holdet. / Han har passet godt ind fra dag ét."
+  },
+  {
+    "backDesc": "I flee from the rain. / She fled from home. / She has fled difficult situations before.",
+    "frontDesc": "Jeg flygter fra regnen. / Hun flygtede hjemmefra. / Hun er flygtet fra svære situationer før."
+  },
+  {
+    "backDesc": "I fling a stone into the water. / He flung the bottle out the window. / He has flung objects in anger before.",
+    "frontDesc": "Jeg slynger en sten i vandet. / Han slyngede flasken ud ad vinduet. / Han har slynget genstande i vrede før."
+  },
+  {
+    "backDesc": "I forbid smoking in the building. / She forbade the children from watching TV. / She has forbidden them multiple times.",
+    "frontDesc": "Jeg forbyder rygning i bygningen. / Hun forbød børnene at se fjernsyn. / Hun har forbudt dem flere gange."
+  },
+  {
+    "backDesc": "I forecast rain for tomorrow. / He forecast a price increase. / He has forecast such changes accurately.",
+    "frontDesc": "Jeg forudsiger regn i morgen. / Han forudsagde en prisstigning. / Han har forudsagt sådanne ændringer nøjagtigt."
+  },
+  {
+    "backDesc": "I forsake old habits. / She forsook her dreams. / She has forsaken them all.",
+    "frontDesc": "Jeg opgiver gamle vaner. / Hun opgav sine drømme. / Hun har opgivet dem alle."
+  },
+  {
+    "backDesc": "I kneel before the altar. / He knelt in a gesture of respect. / He has knelt there many times.",
+    "frontDesc": "Jeg knæler foran alteret. / Han knælede i en gestus af respekt. / Han har knælet dér mange gange."
+  },
+  {
+    "backDesc": "I knit a sweater for winter. / She knitted a scarf. / She has knitted many scarves before.",
+    "frontDesc": "Jeg strikker en sweater til vinter. / Hun strikkede et tørklæde. / Hun har strikket mange tørklæder før."
+  },
+  {
+    "backDesc": "I lay the book on the table. / She laid the keys on the shelf. / She has laid them there many times.",
+    "frontDesc": "Jeg lægger bogen på bordet. / Hun lagde nøglerne på hylden. / Hun har lagt dem dér mange gange."
+  },
+  {
+    "backDesc": "I lead the team. / He led the company for many years. / He has led numerous successful projects.",
+    "frontDesc": "Jeg leder holdet. / Han ledede virksomheden i mange år. / Han har ledet adskillige succesfulde projekter."
+  },
+  {
+    "backDesc": "I lean over the book. / He leant over the table. / He has leaned over it for hours.",
+    "frontDesc": "Jeg læner mig over bogen. / Han lænede sig over bordet. / Han har lænet sig over den i timevis."
+  },
+  {
+    "backDesc": "I leap on the rope. / He leapt over the fence. / He has leapt across many obstacles.",
+    "frontDesc": "Jeg springer på rebet. / Han sprang over hegnet. / Han har sprunget over mange forhindringer."
+  },
+  {
+    "backDesc": "I light the room's light. / He lit the light in the evening. / He has lit it every night since then.",
+    "frontDesc": "Jeg tænder lyset i rummet. / Han tændte lyset om aftenen. / Han har tændt det hver aften siden."
+  },
+  {
+    "backDesc": "I mistake in the calculations. / He mistook the decision. / He has mistaken people's intentions before.",
+    "frontDesc": "Jeg laver en fejl i beregningerne. / Han tog fejl af beslutningen. / Han har misforstået folks intentioner før."
+  },
+  {
+    "backDesc": "I mow the grass in the garden. / He mowed the lawn yesterday. / He has mown it regularly.",
+    "frontDesc": "Jeg slår græsset i haven. / Han slog plænen i går. / Han har slået den regelmæssigt."
+  },
+  {
+    "backDesc": "I overcome difficulties every day. / He overcame his fears. / He has overcome many obstacles.",
+    "frontDesc": "Jeg overvinder vanskeligheder hver dag. / Han overvandt sine frygt. / Han har overvundet mange forhindringer."
+  },
+  {
+    "backDesc": "I partake in meetings. / He partook in the conference. / He has partaken in several events recently.",
+    "frontDesc": "Jeg deltager i møder. / Han deltog i konferencen. / Han har deltaget i flere begivenheder for nylig."
+  },
+  {
+    "backDesc": "I plead for help. / He pled for forgiveness. / He has pled for mercy many times.",
+    "frontDesc": "Jeg beder om hjælp. / Han bad om tilgivelse. / Han har bedt om nåde mange gange."
+  },
+  {
+    "backDesc": "I prove my innocence. / He proved his theory. / He has proven it beyond doubt.",
+    "frontDesc": "Jeg beviser min uskyld. / Han beviste sin teori. / Han har bevist det uden tvivl."
+  },
+  {
+    "backDesc": "I saw wood in the workshop. / He sawed planks for a new boat. / He has sawn many pieces of wood.",
+    "frontDesc": "Jeg saver træ i værkstedet. / Han savede brædder til en ny båd. / Han har savet mange stykker træ."
+  },
+  {
+    "backDesc": "I seek the keys at home. / He sought a solution to the problem. / He has sought answers everywhere.",
+    "frontDesc": "Jeg søger efter nøglerne derhjemme. / Han søgte en løsning på problemet. / Han har søgt svar overalt."
+  },
+  {
+    "backDesc": "I sew clothes in my atelier. / He sewed a shirt for several hours. / He has sewn many garments.",
+    "frontDesc": "Jeg syr tøj i mit atelier. / Han syede en skjorte i flere timer. / Han har syet mange beklædningsgenstande."
+  },
+  {
+    "backDesc": "I shear sheep on the farm. / He sheared a sheep yesterday. / He has shorn many sheep this season.",
+    "frontDesc": "Jeg klipper får på gården. / Han klippede et får i går. / Han har klippet mange får denne sæson."
+  },
+  {
+    "backDesc": "My sweater shrinks after washing. / It shrank in high temperature. / It has shrunk too much.",
+    "frontDesc": "Min sweater krymper efter vask. / Den krympede ved høj temperatur. / Den er krympet for meget."
+  },
+  {
+    "backDesc": "I slay rodents in the basement. / He slew the monster in the forest. / He has slain many creatures in his stories.",
+    "frontDesc": "Jeg dræber gnavere i kælderen. / Han dræbte uhyret i skoven. / Han har dræbt mange skabninger i sine historier."
+  },
+  {
+    "backDesc": "The kitchen stinks of rotten food. / It stank after a hot day. / It has stunk for hours.",
+    "frontDesc": "Køkkenet stinker af rådden mad. / Det stank efter en varm dag. / Det har stinket i flere timer."
+  },
+  {
+    "backDesc": "I stride with confidence. / He strode quickly, arriving on time. / He has stridden through many challenges.",
+    "frontDesc": "Jeg skrider frem med selvtillid. / Han skridtede hurtigt frem og ankom til tiden. / Han har skridtet sig igennem mange udfordringer."
+  },
+  {
+    "backDesc": "I strike the ball towards the goal. / He struck the door hard. / He has struck fear into his opponents.",
+    "frontDesc": "Jeg slår bolden mod målet. / Han slog hårdt på døren. / Han har slået frygt i sine modstandere."
+  },
+  {
+    "backDesc": "I string beads on a string. / He strung the lamp on the wall. / He has strung decorations before.",
+    "frontDesc": "Jeg trækker perler på en snor. / Han hængte lampen på væggen. / Han har hængt pynt op før."
+  },
+  {
+    "backDesc": "I strive to achieve the goal. / He strove for success for years. / He has striven to reach the top.",
+    "frontDesc": "Jeg stræber efter at nå målet. / Han stræbte efter succes i årevis. / Han har stræbt efter at nå toppen."
+  },
+  {
+    "backDesc": "I swing on the swing. / He swung on the balcony. / He has swung on that rope many times.",
+    "frontDesc": "Jeg gynger på gyngen. / Han svang sig på altanen. / Han har svunget sig i det reb mange gange."
+  },
+  {
+    "backDesc": "I tear the paper to shred it. / He tore the canvas with a knife. / He has torn many papers accidentally.",
+    "frontDesc": "Jeg river papiret i stykker. / Han rev lærredet med en kniv. / Han har revet mange papirer ved et uheld."
+  },
+  {
+    "backDesc": "I thrust the door to open it. / He thrust the door hard. / He has thrust it open before.",
+    "frontDesc": "Jeg skubber døren for at åbne den. / Han skubbede hårdt til døren. / Han har skubbet den op før."
+  },
+  {
+    "backDesc": "I tread carefully on the wet floor. / He trod with a confident stride. / He has trodden this path before.",
+    "frontDesc": "Jeg træder forsigtigt på det våde gulv. / Han trådte med selvsikre skridt. / Han har betrådt denne vej før."
+  },
+  {
+    "backDesc": "I undo the move I made. / He undid the changes in the document. / He has undone them completely.",
+    "frontDesc": "Jeg fortryder det træk, jeg lavede. / Han fortrød ændringerne i dokumentet. / Han har fortrudt dem helt."
+  },
+  {
+    "backDesc": "I weave a scarf on the knitting needles. / He wove a rug in his workshop. / He has woven several rugs now.",
+    "frontDesc": "Jeg væver et tørklæde på væven. / Han vævede et tæppe i sit værksted. / Han har vævet adskillige tæpper nu."
+  },
+  {
+    "backDesc": "I weep in sorrow. / He wept after the breakup. / He has wept many tears.",
+    "frontDesc": "Jeg græder i sorg. / Han græd efter bruddet. / Han har grædt mange tårer."
+  },
+  {
+    "backDesc": "I wind the watch every morning. / He wound the strings into a tape. / He has wound them neatly.",
+    "frontDesc": "Jeg trækker uret op hver morgen. / Han viklede snorene til et bånd. / Han har viklet dem pænt sammen."
+  },
+  {
+    "backDesc": "I withdraw from the discussion. / He withdrew from the project. / He has withdrawn completely.",
+    "frontDesc": "Jeg trækker mig fra diskussionen. / Han trak sig fra projektet. / Han har trukket sig helt tilbage."
+  },
+  {
+    "backDesc": "I withstand difficult conditions. / He withstood the strong wind. / He has withstood many storms.",
+    "frontDesc": "Jeg modstår vanskelige forhold. / Han modstod den kraftige vind. / Han har modstået mange storme."
+  },
+  {
+    "backDesc": "I wring out wet towels. / He wrung juice out of fruits. / He has wrung out many towels.",
+    "frontDesc": "Jeg vrider våde håndklæder. / Han vred saften ud af frugter. / Han har vredet mange håndklæder."
+  },
+  {
+    "backDesc": "I freeze food in the freezer. / He froze water for the freezer. / He has frozen enough water for ice.",
+    "frontDesc": "Jeg fryser mad i fryseren. / Han frøs vand til fryseren. / Han har frosset nok vand til is."
+  },
+  {
+    "backDesc": "I hang a picture on the wall. / He hung the lamp in the room. / He has hung many pictures around the house.",
+    "frontDesc": "Jeg hænger et billede på væggen. / Han hængte lampen op i rummet. / Han har hængt mange billeder op rundt om i huset."
+  }
+]

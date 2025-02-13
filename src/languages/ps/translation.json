@@ -142,5 +142,7 @@
   "turn_on_shadows": "سیوري چالان کړئ",
   "turn_on_automatic_audio": "خودکار آڈیو چالان کړئ",
   "premium_account": "پریمیم حساب",
-  "active": "فعال"
+  "active": "فعال",
+  "code": "کوډ",
+  "wrong_code": "ناسم کوډ"
 }

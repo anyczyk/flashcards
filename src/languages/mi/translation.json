@@ -142,5 +142,7 @@
   "turn_on_shadows": "Whakatakoto i ngā hoariri",
   "turn_on_automatic_audio": "Whakatakoto i te oro aunoa",
   "premium_account": "Pūtea Premium",
-  "active": "Hāngai"
+  "active": "Hāngai",
+  "code": "Waehere",
+  "wrong_code": "Waehere hē"
 }

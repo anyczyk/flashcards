@@ -142,5 +142,7 @@
   "turn_on_shadows": "Ενεργοποίηση σκιάσεων",
   "turn_on_automatic_audio": "Ενεργοποίηση αυτόματου ήχου",
   "premium_account": "Λογαριασμός Premium",
-  "active": "Ενεργό"
+  "active": "Ενεργό",
+  "code": "Κώδικας",
+  "wrong_code": "Λάθος κωδικός"
 }

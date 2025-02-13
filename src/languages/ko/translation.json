@@ -142,5 +142,7 @@
   "turn_on_shadows": "그림자 켜기",
   "turn_on_automatic_audio": "자동 오디오 켜기",
   "premium_account": "Premium 계정",
-  "active": "활성"
+  "active": "활성",
+  "code": "코드",
+  "wrong_code": "잘못된 코드"
 }

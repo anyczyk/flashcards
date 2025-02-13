@@ -142,5 +142,7 @@
   "turn_on_shadows": "Անջատել ստվերները",
   "turn_on_automatic_audio": "Անջատել ավտոմատական ձայնը",
   "premium_account": "Premium ​​հաշիվ",
-  "active": "Ակտիվ"
+  "active": "Ակտիվ",
+  "code": "Կոդ",
+  "wrong_code": "Սխալ կոդ"
 }

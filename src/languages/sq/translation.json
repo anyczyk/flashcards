@@ -142,5 +142,7 @@
   "turn_on_shadows": "Aktivizo hijet",
   "turn_on_automatic_audio": "Aktivizo audio automatike",
   "premium_account": "Llogari Premium",
-  "active": "Aktiv"
+  "active": "Aktiv",
+  "code": "Kodi",
+  "wrong_code": "Kodi i gabuar"
 }

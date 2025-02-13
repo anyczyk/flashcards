@@ -142,5 +142,7 @@
   "turn_on_shadows": "Kunna inuwa",
   "turn_on_automatic_audio": "Kunna sautin ta atomatik",
   "premium_account": "Asusun Premium",
-  "active": "Mai aiki"
+  "active": "Mai aiki",
+  "code": "Kod",
+  "wrong_code": "Kod mara daidai"
 }

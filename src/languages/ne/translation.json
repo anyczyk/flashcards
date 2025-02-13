@@ -1,6 +1,6 @@
 {
   "categories": "श्रेणिहरू",
-  "simple_flashcard_creator": "सरल फ्ल्यासकार्ड सिर्जनाकर्ता",
+  "simple_flashcard_creator": "फ्ल्यासकार्ड निर्माता",
   "view_flashcards": "तपाईंको सिकाइ सुरु गर्नुहोस्",
   "create_flashcard": "फ्ल्यासकार्ड सिर्जना गर्नुहोस्",
   "edit_flashcards": "फ्ल्यासकार्ड सम्पादन गर्नुहोस्",
@@ -142,5 +142,7 @@
   "turn_on_shadows": "छायाहरू चालू गर्नुहोस्",
   "turn_on_automatic_audio": "स्वचालित अडियो चालू गर्नुहोस्",
   "premium_account": "प्रीमियम खाता",
-  "active": "सक्रिय"
+  "active": "सक्रिय",
+  "code": "कोड",
+  "wrong_code": "गलत कोड"
 }

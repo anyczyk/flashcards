@@ -52,7 +52,7 @@ const SelectSuperCategory = ({
         <>
             <div className="o-default-box">
                 <label htmlFor="o-super-category">{t('folder')}:</label>
-                <select
+                {superCategoriesArray.length > 0 && <select
                     ref={refSelectTextSuperCategory}
                     id="o-super-category"
                     onChange={handleSuperCategorySelect}
@@ -66,10 +66,11 @@ const SelectSuperCategory = ({
                             {cat}
                         </option>
                     ))}
-                </select>
+                </select>}
             </div>
 
-            <div className={`o-default-box o-text-input-with-clear ${superCategory ? 'o-text-input-with-clear--active' : ''}`}>
+            <div
+                className={`o-default-box o-text-input-with-clear ${superCategory ? 'o-text-input-with-clear--active' : ''}`}>
                 <input
                     ref={refInputTextSuperCategory}
                     type="text"

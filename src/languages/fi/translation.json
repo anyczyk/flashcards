@@ -142,5 +142,7 @@
   "turn_on_shadows": "Ota varjot käyttöön",
   "turn_on_automatic_audio": "Ota automaattinen ääni käyttöön",
   "premium_account": "Premium-tili",
-  "active": "Aktiivinen"
+  "active": "Aktiivinen",
+  "code": "Koodi",
+  "wrong_code": "Väärä koodi"
 }

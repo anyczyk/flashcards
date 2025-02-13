@@ -1,6 +1,6 @@
 {
   "categories": "Kategórie",
-  "simple_flashcard_creator": "Tvorca flashcardov",
+  "simple_flashcard_creator": "Tvorca Flashkariet",
   "view_flashcards": "Začnite svoje učenie",
   "create_flashcard": "Vytvoriť flashcard",
   "edit_flashcards": "Upraviť flashcardy",
@@ -142,5 +142,7 @@
   "turn_on_shadows": "Zapnúť tiene",
   "turn_on_automatic_audio": "Zapnúť automatický zvuk",
   "premium_account": "Premium účet",
-  "active": "Aktívny"
+  "active": "Aktívny",
+  "code": "Kód",
+  "wrong_code": "Nesprávny kód"
 }

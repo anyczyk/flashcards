@@ -142,5 +142,7 @@
   "turn_on_shadows": "Gölümleri ýangy",
   "turn_on_automatic_audio": "Awtoamtik awdy ýangy",
   "premium_account": "Premium hasaby",
-  "active": "Herekete giren"
+  "active": "Herekete giren",
+  "code": "Kod",
+  "wrong_code": "Nädogry kod"
 }

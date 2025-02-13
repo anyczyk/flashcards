@@ -142,5 +142,7 @@
   "turn_on_shadows": "បើកស្រមោល",
   "turn_on_automatic_audio": "បើកសម្លេងអូតូម៉ាទិក",
   "premium_account": "គណនី Premium",
-  "active": "សកម្ម"
+  "active": "សកម្ម",
+  "code": "កូដ",
+  "wrong_code": "កូដខុស"
 }

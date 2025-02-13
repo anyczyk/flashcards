@@ -1,6 +1,6 @@
 {
   "categories": "زمرہ جات",
-  "simple_flashcard_creator": "سادہ فلیش کارڈ تخلیق کنندہ",
+  "simple_flashcard_creator": "فلیش کارڈ بنانے والا",
   "view_flashcards": "اپنی تعلیم شروع کریں",
   "create_flashcard": "فلیش کارڈ تخلیق کریں",
   "edit_flashcards": "فلیش کارڈز ترمیم کریں",
@@ -142,5 +142,7 @@
   "turn_on_shadows": "سائے چالو کریں",
   "turn_on_automatic_audio": "خودکار آڈیو چالو کریں",
   "premium_account": "پریمیم اکاؤنٹ",
-  "active": "فعال"
+  "active": "فعال",
+  "code": "کوڈ",
+  "wrong_code": "غلط کوڈ"
 }

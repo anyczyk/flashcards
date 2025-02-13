@@ -142,5 +142,7 @@
   "turn_on_shadows": "Vula imithunzi",
   "turn_on_automatic_audio": "Vula i-audio ezenzekelayo",
   "premium_account": "Akhawunti ye-Premium",
-  "active": "Isebenza"
+  "active": "Isebenza",
+  "code": "Ikhodi",
+  "wrong_code": "Ikhodi engalunganga"
 }

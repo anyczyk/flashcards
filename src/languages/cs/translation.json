@@ -142,5 +142,7 @@
   "turn_on_shadows": "Zapnout stíny",
   "turn_on_automatic_audio": "Zapnout automatický zvuk",
   "premium_account": "Premium účet",
-  "active": "Aktivní"
+  "active": "Aktivní",
+  "code": "Kód",
+  "wrong_code": "Chybný kód"
 }

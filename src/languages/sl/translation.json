@@ -142,5 +142,7 @@
   "turn_on_shadows": "Vklopi sence",
   "turn_on_automatic_audio": "Vklopi samodejni zvok",
   "premium_account": "Premium račun",
-  "active": "Aktiven"
+  "active": "Aktiven",
+  "code": "Koda",
+  "wrong_code": "Napačna koda"
 }

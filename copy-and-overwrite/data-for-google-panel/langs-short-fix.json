@@ -1,0 +1,233 @@
+{
+  "pl": {
+    "shortDescription": "Twórz własne fiszki i ucz się języków z gotowymi zestawami bez rejestracji"
+  },
+  "am": {
+    "shortDescription": "የእርስዎን ፍላሽ ካርዶች ይፍጠሩ እና ቋንቋዎችን ያለ መመዝገብ ተማሩ"
+  },
+  "ar": {
+    "shortDescription": "أنشئ بطاقاتك التعليمية وتعلم اللغات مع مجموعات جاهزة بلا تسجيل"
+  },
+  "arc": {
+    "shortDescription": "ܒܪ ܠܘܚܬ̈ܐ ܕܝܠܟ ܘܠܡܕ ܠܫܢ̈ܐ ܥܡ ܣܝܣܝܐ ܡܟܝܐ ܕܠܐ ܫܘܡ ܓܝܪܐ"
+  },
+  "az": {
+    "shortDescription": "Öz kartlarınızı yaradın və qeydiyyatsız hazır dəstlərlə dilləri öyrənin"
+  },
+  "be": {
+    "shortDescription": "Стварайце свае карткі і вывучайце мовы з гатовымі наборамі без рэгістрацыі"
+  },
+  "bg": {
+    "shortDescription": "Създавайте свои флашкарти и учете езици с готови комплекти без регистрация"
+  },
+  "ckb": {
+    "shortDescription": "خۆ کارتەکانت دروست بکە و زمانان بفێرە بە کۆمەڵە چاککراوە، بێ تۆمارکردن"
+  },
+  "crs": {
+    "shortDescription": "Kre ou prop flashcards e aprann langaz avek set pare, pa bezwen enskripsyon"
+  },
+  "cs": {
+    "shortDescription": "Vytvářejte si vlastní kartičky a učte se jazyky s hotovými sadami bez registrace"
+  },
+  "da": {
+    "shortDescription": "Lav dine egne flashcards og lær sprog med færdige sæt uden registrering"
+  },
+  "de": {
+    "shortDescription": "Erstelle eigene Karteikarten & lerne Sprachen mit fertigen Sets - ohne Anmeldung"
+  },
+  "el": {
+    "shortDescription": "Δημιουργήστε τις δικές σας κάρτες και μάθετε γλώσσες με έτοιμα σετ χωρίς εγγραφή"
+  },
+  "en": {
+    "shortDescription": "Create your own flashcards and learn languages with ready sets, no registration"
+  },
+  "es": {
+    "shortDescription": "Crea tus propias fichas y aprende idiomas con conjuntos listos, sin registro"
+  },
+  "et": {
+    "shortDescription": "Loo oma mälukaarte ja õpi keeli valmis komplektidega ilma registreerumiseta"
+  },
+  "fa": {
+    "shortDescription": "فلش‌کارت‌های خود را بسازید و بدون ثبت‌نام با بسته‌های آماده زبان بیاموزید"
+  },
+  "fi": {
+    "shortDescription": "Luo omat korttisi ja opiskele kieliä valmiilla seteillä ilman rekisteröintiä"
+  },
+  "fr": {
+    "shortDescription": "Créez vos flashcards, apprenez des langues avec des sets prêts sans inscription"
+  },
+  "ha": {
+    "shortDescription": "Ƙirƙiri katunka, koyi yaruka da shirye-shirye masu ajiye, ba tare da rijista ba"
+  },
+  "haw": {
+    "shortDescription": "E hana i kāu pepahō‘ike a e aʻo i nā ʻōlelo me nā pūʻolo mākaukau, ʻaʻohe kākau inoa"
+  },
+  "he": {
+    "shortDescription": "צרו כרטיסיות משלכם ולמדו שפות עם ערכות מוכנות בלי להירשם"
+  },
+  "hi": {
+    "shortDescription": "अपनी फ्लैशकार्ड्स बनाएं और बिना रजिस्ट्रेशन तैयार सेट्स के साथ भाषाएँ सीखें"
+  },
+  "hr": {
+    "shortDescription": "Izradi svoje kartice i uči jezike uz gotove setove bez registracije"
+  },
+  "ht": {
+    "shortDescription": "Kre kat pa w epi aprann lang ak seri pare, san enskripsyon"
+  },
+  "hu": {
+    "shortDescription": "Készíts saját kártyákat és tanulj nyelveket kész csomagokkal regisztráció nélkül"
+  },
+  "hy": {
+    "shortDescription": "Ստեղծեք ձեր քարտերը և սովորեք լեզուներ պատրաստի փաթեթներով առանց գրանցման"
+  },
+  "id": {
+    "shortDescription": "Buat kartu belajar sendiri dan pelajari bahasa dengan set siap tanpa registrasi"
+  },
+  "ig": {
+    "shortDescription": "Mepụta kaadị gị ma mụta asụsụ na setị dị njikere, enweghi ndebanye aha"
+  },
+  "it": {
+    "shortDescription": "Crea le tue flashcard e impara lingue con set pronti, senza registrazione"
+  },
+  "ja": {
+    "shortDescription": "自分のフラッシュカードを作成して、登録なしで用意されたセットで言語を学ぼう"
+  },
+  "ka": {
+    "shortDescription": "შექმენით საკუთარი ბარათები და ისწავლეთ ენები მზა ნაკრებებით რეგისტრაციის გარეშე"
+  },
+  "kk": {
+    "shortDescription": "Өз флэшкарталарыңызды жасап, дайын жинақтармен тілдерді тіркелусіз үйреніңіз"
+  },
+  "kl": {
+    "shortDescription": "Sanaagit flashcard-itit, ilikkaruk oqaatsit set-it piareersimasut atortut, nalunaarsornak"
+  },
+  "km": {
+    "shortDescription": "បង្កើតបន្ទះអានផ្ទាល់ខ្លួន ហើយរៀនភាសាជាមួយឈុតរួចមិនចាំបាច់ចុះឈ្មោះ"
+  },
+  "ko": {
+    "shortDescription": "직접 플래시카드를 만들고, 등록 없이 준비된 세트로 언어를 배우세요"
+  },
+  "ks": {
+    "shortDescription": "آپنے فلیش کارڈز بنایئے تہٕ بغیر رجسٹریشن تیّار سیٹاں ستھ زَبان سیکھۍ"
+  },
+  "ky": {
+    "shortDescription": "Өз флешкарталарыңды түзүп, даяр топтомдор менен тилдерди каттоосуз үйрөн"
+  },
+  "ln": {
+    "shortDescription": "Fungola bakarti na yo moko, yekolá minɔkɔ na biteni ya kok آماده, kozanga kokɔta"
+  },
+  "lo": {
+    "shortDescription": "ສ້າງຟລັດກາດຂອງທ່ານ ແລະຮຽນພາສາດ້ວຍຊຸດພ້ອມ ບໍ່ຕ້ອງລົງທະບຽນ"
+  },
+  "lt": {
+    "shortDescription": "Kurkite korteles ir mokykitės kalbų su paruoštais rinkiniais be registracijos"
+  },
+  "lv": {
+    "shortDescription": "Izveidojiet kartītes mācies valodas ar gataviem komplektiem bez reģistrācijas"
+  },
+  "mi": {
+    "shortDescription": "Hangaia ō ake kāri ako, ako hoki i ngā reo me ngā huinga kua rite, kāore he rēhita"
+  },
+  "mn": {
+    "shortDescription": "Өөрийн санах картуудыг бүтээгээд бэлэн цуглуулгаар хэл сур, бүртгэлгүй"
+  },
+  "ms": {
+    "shortDescription": "Cipta kad imbasan sendiri dan pelajari bahasa dengan set sedia tanpa pendaftaran"
+  },
+  "ne": {
+    "shortDescription": "आफ्नै फ्ल्यासकार्ड बनाउनुहोस् र तयार सेटहरूसँग बिना दर्ता भाषा सिक्नुहोस्"
+  },
+  "nl": {
+    "shortDescription": "Maak je eigen flashcards en leer talen met kant-en-klare sets zonder registratie"
+  },
+  "no": {
+    "shortDescription": "Lag dine egne flashcards og lær språk med ferdige sett uten registrering"
+  },
+  "ps": {
+    "shortDescription": "خپل فلش کارډونه جوړ کړئ او پرته له ثبت څخه له تيار سیټونو سره ژبې زده کړئ"
+  },
+  "pt": {
+    "shortDescription": "Crie seus próprios flashcards e aprenda idiomas com conjuntos prontos, sem registro"
+  },
+  "ro": {
+    "shortDescription": "Creează-ți propriile flashcarduri și învață limbi cu seturi gata, fără înregistrare"
+  },
+  "ru": {
+    "shortDescription": "Создавайте свои карточки и учите языки с готовыми наборами без регистрации"
+  },
+  "sd": {
+    "shortDescription": "پنهنجا فلئش ڪارڊ تيار ڪريو ۽ بغير داخلا جي تيار ٿيل سيٽن سان ٻوليون سکو"
+  },
+  "sk": {
+    "shortDescription": "Vytvárajte si vlastné kartičky a učte sa jazyky s hotovými setmi bez registrácie"
+  },
+  "sl": {
+    "shortDescription": "Ustvarite kartice in učite jezike s pripravljenimi seti brez registracije"
+  },
+  "so": {
+    "shortDescription": "Abuur kaararkaaga oo bar afaf adigoo isticmaalaya xirmooyin diyaar ah, diiwaangelin la'aan"
+  },
+  "sq": {
+    "shortDescription": "Krijoni flashcards tuaja dhe mësoni gjuhë me sete gati, pa regjistrim"
+  },
+  "sr": {
+    "shortDescription": "Kreiraj svoje kartice i uči jezike uz gotove setove bez registracije"
+  },
+  "sv": {
+    "shortDescription": "Skapa egna flashcards och lär dig språk med färdiga set utan registrering"
+  },
+  "sw": {
+    "shortDescription": "Tengeneza kadi zako mwenyewe na ujifunze lugha kwa seti zilizopo bila usajili"
+  },
+  "syr": {
+    "shortDescription": "ܒܪ ܘܚܬ̈ܐ ܕܦܠܫܟܪܛ ܕܠܟ ܘܠܡܕ ܠܫܢ̈ܐ ܥܡ ܣܐܝ̈ܬܐ ܟܬܝܢ̈ܐ ܕܠܐ ܪܓܫܛܐ"
+  },
+  "tg": {
+    "shortDescription": "Эҷод кунед флешкортҳои худ ва забонҳоро бо маҷмӯаҳои тайёр бидуни қайд омӯзед"
+  },
+  "th": {
+    "shortDescription": "สร้างแฟลชการ์ดของคุณเองและเรียนภาษาด้วยชุดพร้อมใช้โดยไม่ต้องลงทะเบียน"
+  },
+  "tk": {
+    "shortDescription": "Öz kartlaryňyzy düzüň we taýýar toplum bilen agza bolmazdan dil öwreniň"
+  },
+  "tl": {
+    "shortDescription": "Gumawa ng sarili mong flashcards at matuto ng mga wika gamit ang handang set, walang rehistro"
+  },
+  "tpi": {
+    "shortDescription": "Wokim ol flashcard bilong yu yet na lainim tokples wantaim ol redi set, nating makim nem"
+  },
+  "tr": {
+    "shortDescription": "Kendi kartlarınızı oluşturun ve hazır setlerle kayıtsız dil öğrenin"
+  },
+  "ug": {
+    "shortDescription": "ئۆز flashcardلىرىڭىزنى قۇرۇپ، تىزىملاتماي تەييار يۈكلىمىدە تىل ئۆگөнүн"
+  },
+  "uk": {
+    "shortDescription": "Створюйте власні картки і вчіть мови з готовими наборами без реєстрації"
+  },
+  "ur": {
+    "shortDescription": "اپنے فلیش کارڈز بنائیں اور بغیر رجسٹریشن تیار سیٹ کے ساتھ زبانیں سیکھیں"
+  },
+  "uz": {
+    "shortDescription": "O'z flashkartalaringizni yarating va tayyor to'plamlar bilan ro'yxatsiz tillarni o'rganing"
+  },
+  "vi": {
+    "shortDescription": "Tạo flashcard riêng và học ngôn ngữ với bộ sẵn có, không cần đăng ký"
+  },
+  "wo": {
+    "shortDescription": "Sos sa flashcards, jàng làkk ak set yi am, amul réstreseyon"
+  },
+  "xh": {
+    "shortDescription": "Yenza amakhadi akho kwaye ufunde iilwimi usebenzisa iiseti ezilungisiweyo ngaphandle kobhaliso"
+  },
+  "yo": {
+    "shortDescription": "Ṣẹda ilẹkọ tirẹ ki o kẹ́kọ̀ èdè pẹ̀lú sétì tó tayari, láì forúkọsílẹ"
+  },
+  "zh": {
+    "shortDescription": "创建自己的闪卡并使用现成套组学习语言，无需注册"
+  },
+  "zu": {
+    "shortDescription": "Dala amakhadi akho, funda izilimi ngamaphakheji alungile ngaphandle kokubhalisa"
+  }
+}

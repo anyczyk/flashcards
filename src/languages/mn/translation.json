@@ -142,5 +142,7 @@
   "turn_on_shadows": "Сүүдэр асаах",
   "turn_on_automatic_audio": "Автомата дуу асаах",
   "premium_account": "Premium данс",
-  "active": "Идэвхтэй"
+  "active": "Идэвхтэй",
+  "code": "Код",
+  "wrong_code": "Буруу код"
 }

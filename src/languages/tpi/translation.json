@@ -142,5 +142,7 @@
   "turn_on_shadows": "Makim draip",
   "turn_on_automatic_audio": "Makim otomatiks audio",
   "premium_account": "Premium account",
-  "active": "Aktif"
+  "active": "Aktif",
+  "code": "Kod",
+  "wrong_code": "Rong kod"
 }

@@ -1,6 +1,6 @@
 {
   "categories": "Izihloko",
-  "simple_flashcard_creator": "Umsunguli Wezikhasi Ezibhalwe Kalula",
+  "simple_flashcard_creator": "Umkhiqizi wama-flashcard",
   "view_flashcards": "Qala Ukufunda Kwakho",
   "create_flashcard": "Dala I-Flashcard",
   "edit_flashcards": "Hlela Izikhasi Ezibhalwe",
@@ -142,5 +142,7 @@
   "turn_on_shadows": "Vula izithunzi",
   "turn_on_automatic_audio": "Vula umsindo ozenzakalelayo",
   "premium_account": "Akhawunti ye-Premium",
-  "active": "Kusebenza"
+  "active": "Kusebenza",
+  "code": "Ikhodi",
+  "wrong_code": "Ikhodi engalungile"
 }

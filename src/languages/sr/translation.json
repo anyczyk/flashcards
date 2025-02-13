@@ -142,5 +142,7 @@
   "turn_on_shadows": "Uključi senke",
   "turn_on_automatic_audio": "Uključi automatski zvuk",
   "premium_account": "Premium nalog",
-  "active": "Aktivan"
+  "active": "Aktivan",
+  "code": "Код",
+  "wrong_code": "Погрешан код"
 }

@@ -142,5 +142,7 @@
   "turn_on_shadows": "Activar sombras",
   "turn_on_automatic_audio": "Activar audio automático",
   "premium_account": "Cuenta Premium",
-  "active": "Activo"
+  "active": "Activo",
+  "code": "Código",
+  "wrong_code": "Código incorrecto"
 }

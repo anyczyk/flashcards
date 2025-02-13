@@ -142,5 +142,7 @@
   "turn_on_shadows": "Washa vivuli",
   "turn_on_automatic_audio": "Washa sauti ya kiotomatiki",
   "premium_account": "Akaunti Premium",
-  "active": "Inafanya kazi"
+  "active": "Inafanya kazi",
+  "code": "Msimbo",
+  "wrong_code": "Msimbo sio sahihi"
 }

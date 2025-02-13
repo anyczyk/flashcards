@@ -1,0 +1,630 @@
+[
+  {
+    "backDesc": "I am a teacher. / I was at the store yesterday. / I have been at that store many times.",
+    "frontDesc": "Olen opettaja. / Olin eilen kaupassa. / Olen käynyt siinä kaupassa monta kertaa."
+  },
+  {
+    "backDesc": "I want to become a doctor. / I became tired. / I have become more determined.",
+    "frontDesc": "Haluan tulla lääkäriksi. / Väsyin. / Olen tullut päättäväisemmäksi."
+  },
+  {
+    "backDesc": "I begin a new project. / I began reading a book. / I have begun working on it seriously.",
+    "frontDesc": "Aloitan uuden projektin. / Aloitin kirjan lukemisen. / Olen alkanut työskennellä sen parissa tosissani."
+  },
+  {
+    "backDesc": "I don't want to break the rules. / He broke the branch. / He has broken many rules in the past.",
+    "frontDesc": "En halua rikkoa sääntöjä. / Hän rikkoi oksan. / Hän on rikkonut monta sääntöä aiemmin."
+  },
+  {
+    "backDesc": "I bring coffee. / She brought flowers. / She has brought gifts as well.",
+    "frontDesc": "Tuon kahvia. / Hän toi kukkia. / Hän on tuonut myös lahjoja."
+  },
+  {
+    "backDesc": "I build a house. / He built a bridge. / He has built many bridges in his career.",
+    "frontDesc": "Rakennan talon. / Hän rakensi sillan. / Hän on rakentanut urallaan monta siltaa."
+  },
+  {
+    "backDesc": "I buy new clothes. / She bought a car. / She has bought several cars over the years.",
+    "frontDesc": "Ostan uusia vaatteita. / Hän osti auton. / Hän on ostanut useita autoja vuosien varrella."
+  },
+  {
+    "backDesc": "I can help. / He could come earlier. / He has been able to assist many times.",
+    "frontDesc": "Voin auttaa. / Hän pystyi tulemaan aikaisemmin. / Hän on pystynyt auttamaan monta kertaa."
+  },
+  {
+    "backDesc": "I catch the ball. / He caught a fish. / He has caught many fish in this lake.",
+    "frontDesc": "Otan pallon kiinni. / Hän sai kalan. / Hän on saanut tästä järvestä monta kalaa."
+  },
+  {
+    "backDesc": "I choose a dish. / She chose a book. / She has chosen wisely every time.",
+    "frontDesc": "Valitsen ruokalajin. / Hän valitsi kirjan. / Hän on valinnut viisaasti joka kerta."
+  },
+  {
+    "backDesc": "I come to work. / He came earlier. / He has come on time every day.",
+    "frontDesc": "Tulen töihin. / Hän tuli aikaisemmin. / Hän on tullut ajoissa joka päivä."
+  },
+  {
+    "backDesc": "It costs five dollars. / It cost more yesterday. / It has cost me a fortune so far.",
+    "frontDesc": "Se maksaa viisi dollaria. / Se maksoi eilen enemmän. / Se on tähän mennessä maksanut minulle omaisuuden."
+  },
+  {
+    "backDesc": "I cut the paper. / He cut the wood. / He has cut many pieces of wood before.",
+    "frontDesc": "Leikkaan paperin. / Hän leikkasi puuta. / Hän on leikannut monta puupalasta aiemminkin."
+  },
+  {
+    "backDesc": "I cast away the old clothes. / He cast the net. / He has cast a net before to catch fish.",
+    "frontDesc": "Heitän pois vanhat vaatteet. / Hän heitti verkon. / Hän on heittänyt verkon aiemmin kalastaakseen."
+  },
+  {
+    "backDesc": "I do my homework. / He did the dinner. / He has done this type of work before.",
+    "frontDesc": "Teen läksyni. / Hän laittoi päivällisen. / Hän on tehnyt tällaista työtä aiemmin."
+  },
+  {
+    "backDesc": "I draw a picture. / She drew a landscape. / She has drawn many landscapes.",
+    "frontDesc": "Piirrän kuvan. / Hän piirsi maiseman. / Hän on piirtänyt monta maisemaa."
+  },
+  {
+    "backDesc": "I drink water. / He drank juice. / He has drunk all the juice in the fridge.",
+    "frontDesc": "Juon vettä. / Hän joi mehua. / Hän on juonut kaiken mehun jääkaapista."
+  },
+  {
+    "backDesc": "I drive a car. / She drove the bus. / She has driven that route many times.",
+    "frontDesc": "Ajan autoa. / Hän ajoi bussia. / Hän on ajanut sitä reittiä monta kertaa."
+  },
+  {
+    "backDesc": "I dwell in Warsaw. / He dwelt there earlier. / He has dwelt in many cities over the years.",
+    "frontDesc": "Asun Varsovassa. / Hän asui siellä aiemmin. / Hän on asunut monessa kaupungissa vuosien mittaan."
+  },
+  {
+    "backDesc": "I eat breakfast. / She ate lunch. / She has eaten at this restaurant before.",
+    "frontDesc": "Syön aamiaisen. / Hän söi lounaan. / Hän on syönyt tässä ravintolassa aiemmin."
+  },
+  {
+    "backDesc": "I fall off the bike. / He fell from the ladder. / He has fallen a few times lately.",
+    "frontDesc": "Putoan pyörän päältä. / Hän putosi tikkaalta. / Hän on pudonnut muutaman kerran viime aikoina."
+  },
+  {
+    "backDesc": "I feel good. / She felt pain. / She has felt better since then.",
+    "frontDesc": "Tunnen oloni hyväksi. / Hän tunsi kipua. / Hän on tuntenut olonsa paremmaksi siitä lähtien."
+  },
+  {
+    "backDesc": "I fight for my rights. / He fought in the war. / He has fought bravely for his country.",
+    "frontDesc": "Taistelen oikeuksieni puolesta. / Hän taisteli sodassa. / Hän on taistellut urheasti maansa puolesta."
+  },
+  {
+    "backDesc": "I find the key. / She found the solution. / She has found many solutions so far.",
+    "frontDesc": "Löydän avaimen. / Hän löysi ratkaisun. / Hän on löytänyt monta ratkaisua tähän mennessä."
+  },
+  {
+    "backDesc": "I fly by airplane. / He flew to London. / He has flown internationally many times.",
+    "frontDesc": "Lennän lentokoneella. / Hän lensi Lontooseen. / Hän on lentänyt kansainvälisesti monta kertaa."
+  },
+  {
+    "backDesc": "I forget the name. / She forgot the keys. / She has forgotten them before.",
+    "frontDesc": "Unohdan nimen. / Hän unohti avaimet. / Hän on unohtanut ne ennenkin."
+  },
+  {
+    "backDesc": "I get a letter. / He got a gift. / He has gotten many gifts recently.",
+    "frontDesc": "Saan kirjeen. / Hän sai lahjan. / Hän on saanut monta lahjaa viime aikoina."
+  },
+  {
+    "backDesc": "I give you a gift. / She gave him a book. / She has given many books as presents.",
+    "frontDesc": "Annan sinulle lahjan. / Hän antoi hänelle kirjan. / Hän on antanut monta kirjaa lahjaksi."
+  },
+  {
+    "backDesc": "I go to school. / He went to work. / He has gone there every day this week.",
+    "frontDesc": "Menen kouluun. / Hän meni töihin. / Hän on mennyt sinne joka päivä tällä viikolla."
+  },
+  {
+    "backDesc": "I grind coffee. / He ground the grain. / He has ground coffee beans for years.",
+    "frontDesc": "Jauhan kahvia. / Hän jauhoi viljaa. / Hän on jauhanut kahvipapuja vuosia."
+  },
+  {
+    "backDesc": "I grow every day. / He grew quickly. / He has grown a lot this year.",
+    "frontDesc": "Kasvan joka päivä. / Hän kasvoi nopeasti. / Hän on kasvanut paljon tänä vuonna."
+  },
+  {
+    "backDesc": "I have a car. / He had a guitar. / She has had many opportunities to travel.",
+    "frontDesc": "Minulla on auto. / Hänellä oli kitara. / Hänellä on ollut monta mahdollisuutta matkustaa."
+  },
+  {
+    "backDesc": "I hear music. / He heard the noise. / He has heard that noise before.",
+    "frontDesc": "Kuulen musiikkia. / Hän kuuli melun. / Hän on kuullut sen melun aiemminkin."
+  },
+  {
+    "backDesc": "I hide the gift. / She hid the letter. / She has hidden messages in her diary.",
+    "frontDesc": "Piilotan lahjan. / Hän piilotti kirjeen. / Hän on piilottanut viestejä päiväkirjaansa."
+  },
+  {
+    "backDesc": "I hit the ball. / He hit the door. / He has hit that ball many times.",
+    "frontDesc": "Lyön palloa. / Hän löi ovea. / Hän on lyönyt sitä palloa monta kertaa."
+  },
+  {
+    "backDesc": "I hold the book. / She held the bag. / She has held onto that bag for years.",
+    "frontDesc": "Pidän kirjaa käsissäni. / Hän piti laukusta kiinni. / Hän on pitänyt tuosta laukusta kiinni vuosia."
+  },
+  {
+    "backDesc": "I hurt myself while running. / He hurt his hand. / He has hurt himself multiple times.",
+    "frontDesc": "Satutin itseni juostessani. / Hän satutti kätensä. / Hän on satuttanut itsensä useita kertoja."
+  },
+  {
+    "backDesc": "I keep a secret. / She kept the documents. / She has kept them in a safe place.",
+    "frontDesc": "Pidän salaisuuden. / Hän säilytti asiakirjoja. / Hän on säilyttänyt ne turvallisessa paikassa."
+  },
+  {
+    "backDesc": "I know the answer. / He knew the solution. / He has known it all along.",
+    "frontDesc": "Tiedän vastauksen. / Hän tiesi ratkaisun. / Hän on tiennyt sen koko ajan."
+  },
+  {
+    "backDesc": "I learn English. / She learned to dance. / She has learned many languages.",
+    "frontDesc": "Opiskelen englantia. / Hän oppi tanssimaan. / Hän on oppinut monta kieltä."
+  },
+  {
+    "backDesc": "I leave the house. / He left the office. / He has left his job recently.",
+    "frontDesc": "Lähden talosta. / Hän lähti toimistosta. / Hän on jättänyt työnsä äskettäin."
+  },
+  {
+    "backDesc": "I lend a book. / She lent money. / She has lent money to friends before.",
+    "frontDesc": "Lainaan kirjan. / Hän lainasi rahaa. / Hän on lainannut rahaa ystävilleen aiemminkin."
+  },
+  {
+    "backDesc": "I let you in. / He let her stay. / He has let many people stay at his place.",
+    "frontDesc": "Päästän sinut sisään. / Hän antoi hänen jäädä. / Hän on antanut monen ihmisen yöpyä luonaan."
+  },
+  {
+    "backDesc": "I lie on the couch. / He lay on the bed. / He has lain there for hours.",
+    "frontDesc": "Makaan sohvalla. / Hän makasi sängyllä. / Hän on maannut siellä tuntikausia."
+  },
+  {
+    "backDesc": "I lose my keys. / He lost his wallet. / He has lost things many times.",
+    "frontDesc": "Kadotan avaimeni. / Hän kadotti lompakkonsa. / Hän on kadottanut tavaroita monta kertaa."
+  },
+  {
+    "backDesc": "I make dinner. / She made a cake. / She has made many delicious cakes.",
+    "frontDesc": "Valmistan illallisen. / Hän leipoi kakun. / Hän on tehnyt monta herkullista kakkua."
+  },
+  {
+    "backDesc": "It means something important. / He meant something else. / He has meant it sincerely all along.",
+    "frontDesc": "Se tarkoittaa jotakin tärkeää. / Hän tarkoitti jotakin muuta. / Hän on tarkoittanut sitä vilpittömästi koko ajan."
+  },
+  {
+    "backDesc": "I meet with friends. / She met with the manager. / She has met many interesting people.",
+    "frontDesc": "Tapaan ystäviä. / Hän tapasi johtajan. / Hän on tavannut monia mielenkiintoisia ihmisiä."
+  },
+  {
+    "backDesc": "I pay the bills. / He paid for dinner. / He has paid his dues already.",
+    "frontDesc": "Maksan laskut. / Hän maksoi illallisen. / Hän on jo maksanut velvoitteensa."
+  },
+  {
+    "backDesc": "I put the book on the table. / She put the keys on the shelf. / She has put them there before.",
+    "frontDesc": "Laitan kirjan pöydälle. / Hän laittoi avaimet hyllylle. / Hän on laittanut ne sinne aiemminkin."
+  },
+  {
+    "backDesc": "I read the newspaper. / He read the book. / He has read that book many times.",
+    "frontDesc": "Luen sanomalehden. / Hän luki kirjan. / Hän on lukenut sen kirjan monta kertaa."
+  },
+  {
+    "backDesc": "I ride a bike. / She rode a horse. / She has ridden many horses in her life.",
+    "frontDesc": "Ajan pyörällä. / Hän ratsasti hevosella. / Hän on ratsastanut monilla hevosilla elämänsä aikana."
+  },
+  {
+    "backDesc": "I ring you. / He rang me. / He has rung me every day this week.",
+    "frontDesc": "Soitan sinulle. / Hän soitti minulle. / Hän on soittanut minulle joka päivä tällä viikolla."
+  },
+  {
+    "backDesc": "The sun rises in the morning. / He rose his hand. / He has risen early every day.",
+    "frontDesc": "Aurinko nousee aamulla. / Hän nosti kätensä. / Hän on noussut aikaisin joka päivä."
+  },
+  {
+    "backDesc": "I run every day. / He ran faster. / He has run marathons before.",
+    "frontDesc": "Juoksen joka päivä. / Hän juoksi nopeammin. / Hän on juossut maratoneja aiemmin."
+  },
+  {
+    "backDesc": "I say the truth. / He said something important. / He has said that many times.",
+    "frontDesc": "Sanon totuuden. / Hän sanoi jotakin tärkeää. / Hän on sanonut sen monta kertaa."
+  },
+  {
+    "backDesc": "I see the stars. / She saw a bird. / She has seen many birds lately.",
+    "frontDesc": "Näen tähdet. / Hän näki linnun. / Hän on nähnyt paljon lintuja viime aikoina."
+  },
+  {
+    "backDesc": "I sell a car. / He sold the house. / He has sold several houses this year.",
+    "frontDesc": "Myyn auton. / Hän myi talon. / Hän on myynyt useita taloja tänä vuonna."
+  },
+  {
+    "backDesc": "I send a letter. / She sent a package. / She has sent many packages abroad.",
+    "frontDesc": "Lähetän kirjeen. / Hän lähetti paketin. / Hän on lähettänyt monta pakettia ulkomaille."
+  },
+  {
+    "backDesc": "I set the alarm for 7 AM. / He set the tables for the party. / He has set them up perfectly.",
+    "frontDesc": "Asetan herätyksen kello seitsemäksi. / Hän järjesti pöydät juhlia varten. / Hän on laittanut ne täydellisesti."
+  },
+  {
+    "backDesc": "I shake my hands when I'm nervous. / He shook his hand in farewell. / He has shaken hands many times.",
+    "frontDesc": "Ravistan käsiäni, kun olen hermostunut. / Hän kätteli hyvästiksi. / Hän on kätellyt monia kertoja."
+  },
+  {
+    "backDesc": "The sun shines brightly today. / He shone the lighthouse at night. / He has shone it on the rocks before.",
+    "frontDesc": "Aurinko paistaa kirkkaasti tänään. / Hän valaisi majakalla yöllä. / Hän on ohjannut sen valon kallioille aiemminkin."
+  },
+  {
+    "backDesc": "I shoot with a bow during practice. / He shot a goal in the game. / He has shot many goals this season.",
+    "frontDesc": "Ammun jousella harjoituksissa. / Hän teki maalin pelissä. / Hän on tehnyt monta maalia tällä kaudella."
+  },
+  {
+    "backDesc": "I show photos from vacation. / He showed his new car. / He has shown it to everyone.",
+    "frontDesc": "Näytän lomakuvia. / Hän esitteli uuden autonsa. / Hän on näyttänyt sen kaikille."
+  },
+  {
+    "backDesc": "I shut the door before leaving. / He shut the window when it got cold. / He has shut them every night.",
+    "frontDesc": "Suljen oven ennen lähtöä. / Hän sulki ikkunan, kun tuli kylmä. / Hän on sulkenut ne joka ilta."
+  },
+  {
+    "backDesc": "I sing my favorite song. / She sang at the concert. / She has sung there many times.",
+    "frontDesc": "Laulan suosikkikappaleeni. / Hän lauloi konsertissa. / Hän on laulanut siellä monta kertaa."
+  },
+  {
+    "backDesc": "The ship sinks in the sea. / He sank during the storm. / It has sunk completely.",
+    "frontDesc": "Laiva uppoaa mereen. / Hän upposi myrskyn aikana. / Se on uponnut kokonaan."
+  },
+  {
+    "backDesc": "I sit on the chair. / She sat at the table. / She has sat there for hours.",
+    "frontDesc": "Istun tuolilla. / Hän istui pöydän ääressä. / Hän on istunut siinä tuntikausia."
+  },
+  {
+    "backDesc": "I sleep in my bed. / He slept all night. / He has slept well lately.",
+    "frontDesc": "Nukun sängyssäni. / Hän nukkui koko yön. / Hän on nukkunut hyvin viime aikoina."
+  },
+  {
+    "backDesc": "I speak English. / He spoke at the conference. / He has spoken there twice.",
+    "frontDesc": "Puhun englantia. / Hän puhui konferenssissa. / Hän on puhunut siellä kahdesti."
+  },
+  {
+    "backDesc": "I spend time with my family. / He spent a lot of money on the trip. / He has spent all his savings.",
+    "frontDesc": "Vietän aikaa perheeni kanssa. / Hän käytti paljon rahaa matkaan. / Hän on käyttänyt kaikki säästönsä."
+  },
+  {
+    "backDesc": "I stand at the head of the team. / She stood by the window. / She has stood there quietly.",
+    "frontDesc": "Seison joukkueen kärjessä. / Hän seisoi ikkunan ääressä. / Hän on seissyt siellä hiljaa."
+  },
+  {
+    "backDesc": "I swim every morning. / He swam in the lake. / He has swum across that lake before.",
+    "frontDesc": "Uin joka aamu. / Hän ui järvessä. / Hän on uinut tuon järven yli aiemmin."
+  },
+  {
+    "backDesc": "I take my medicine in the morning. / She took an umbrella. / She has taken it with her today.",
+    "frontDesc": "Otan lääkkeeni aamulla. / Hän otti sateenvarjon. / Hän on ottanut sen mukaansa tänään."
+  },
+  {
+    "backDesc": "I teach mathematics. / He taught me a new skill. / He has taught many students over the years.",
+    "frontDesc": "Opetan matematiikkaa. / Hän opetti minulle uuden taidon. / Hän on opettanut monia oppilaita vuosien varrella."
+  },
+  {
+    "backDesc": "I always tell him about the change of plans. / She told me a secret. / She has told many secrets over time.",
+    "frontDesc": "Kerron hänelle aina suunnitelmien muutoksesta. / Hän kertoi minulle salaisuuden. / Hän on kertonut monta salaisuutta ajan mittaan."
+  },
+  {
+    "backDesc": "I think about the future. / He thought about solving the problem. / He has thought it through carefully.",
+    "frontDesc": "Ajattelen tulevaisuutta. / Hän ajatteli ongelman ratkaisua. / Hän on harkinnut sitä tarkasti."
+  },
+  {
+    "backDesc": "I throw the ball into the basket. / She threw the bag on the ground. / She has thrown it away now.",
+    "frontDesc": "Heitän pallon koriin. / Hän heitti laukun maahan. / Hän on nyt heittänyt sen pois."
+  },
+  {
+    "backDesc": "I understand this task. / He understood my explanation. / He has understood everything clearly.",
+    "frontDesc": "Ymmärrän tämän tehtävän. / Hän ymmärsi selitykseni. / Hän on ymmärtänyt kaiken selkeästi."
+  },
+  {
+    "backDesc": "I always wake up early in the morning. / She woke up late. / She has woken up earlier on other days.",
+    "frontDesc": "Herään aina aikaisin aamulla. / Hän heräsi myöhään. / Hän on herännyt aikaisemmin muina päivinä."
+  },
+  {
+    "backDesc": "I wear a new jacket. / He wore elegant clothes. / He has worn them many times before.",
+    "frontDesc": "Pidän päälläni uutta takkia. / Hänellä oli yllään tyylikkäät vaatteet. / Hän on pitänyt niitä monta kertaa aiemmin."
+  },
+  {
+    "backDesc": "I win the board game. / She won the contest. / She has won many contests in her life.",
+    "frontDesc": "Voitan lautapelin. / Hän voitti kilpailun. / Hän on voittanut monta kilpailua elämänsä aikana."
+  },
+  {
+    "backDesc": "I write a letter to a friend. / He wrote an article. / He has written several articles this month.",
+    "frontDesc": "Kirjoitan kirjeen ystävälle. / Hän kirjoitti artikkelin. / Hän on kirjoittanut useita artikkeleita tässä kuussa."
+  },
+  {
+    "backDesc": "Problems arise suddenly. / He arose from the problems. / He has arisen to face new challenges.",
+    "frontDesc": "Ongelmia ilmenee yhtäkkiä. / Hän nousi ongelmien keskeltä. / Hän on noussut kohtaamaan uusia haasteita."
+  },
+  {
+    "backDesc": "I always awake earlier. / She awoke from a light sleep. / She has awoken feeling rested.",
+    "frontDesc": "Herään aina aikaisemmin. / Hän heräsi kevyestä unesta. / Hän on herännyt levänneenä."
+  },
+  {
+    "backDesc": "I usually bear it well. / He bore many difficulties. / He has borne his burdens with courage.",
+    "frontDesc": "Yleensä kestän sen hyvin. / Hän kantoi monia vaikeuksia. / Hän on kantanut taakkansa rohkeasti."
+  },
+  {
+    "backDesc": "I beat the drums during the concert. / He beat the record. / He has beaten several records so far.",
+    "frontDesc": "Lyön rumpuja konsertin aikana. / Hän rikkoi ennätyksen. / Hän on rikkonut useita ennätyksiä tähän mennessä."
+  },
+  {
+    "backDesc": "I bend to reach. / She bent the tree branch. / She has bent many branches while gardening.",
+    "frontDesc": "Kumarrun yltääkseni. / Hän taivutti puunoksaa. / Hän on taivuttanut monta oksaa puutarhatöissä."
+  },
+  {
+    "backDesc": "I bet that you'll arrive on time. / He bet money. / He has bet on many races.",
+    "frontDesc": "Lyön vetoa, että saavut ajoissa. / Hän löi vetoa rahasta. / Hän on lyönyt vetoa monista kisoista."
+  },
+  {
+    "backDesc": "I bid on the artwork. / She bid an offer. / She has bid on several pieces of art.",
+    "frontDesc": "Teen tarjouksen taideteoksesta. / Hän teki tarjouksen. / Hän on tehnyt tarjouksen useista taideteoksista."
+  },
+  {
+    "backDesc": "I bind my shoes before leaving. / He bound the package. / He has bound multiple packages for shipping.",
+    "frontDesc": "Sidon kengät ennen lähtöä. / Hän sitoi paketin. / Hän on sitonut useita paketteja lähetystä varten."
+  },
+  {
+    "backDesc": "I bite an apple for breakfast. / She bit her finger. / She has bitten her nails many times.",
+    "frontDesc": "Puraisen omenaa aamupalalla. / Hän puri sormeensa. / Hän on purrut kynsiään monta kertaa."
+  },
+  {
+    "backDesc": "My wound bleeds heavily. / He bled after the fall. / He has bled from similar wounds before.",
+    "frontDesc": "Haavani vuotaa runsaasti. / Hän vuoti verta kaatumisen jälkeen. / Hän on vuotanut verta samanlaisista haavoista aiemmin."
+  },
+  {
+    "backDesc": "I blow out the candle on the cake. / He blew up the balloon. / He has blown many balloons for parties.",
+    "frontDesc": "Puhallan kakun kynttilän sammuksiin. / Hän puhalsi ilmapallon. / Hän on puhaltanut monta ilmapalloa juhliin."
+  },
+  {
+    "backDesc": "I breed dogs at home. / She bred horses on the farm. / She has bred different animals over the years.",
+    "frontDesc": "Kasvatan koiria kotona. / Hän kasvatti hevosia maatilalla. / Hän on kasvattanut erilaisia eläimiä vuosien varrella."
+  },
+  {
+    "backDesc": "I broadcast a radio show. / He broadcast the news live. / He has broadcast important announcements recently.",
+    "frontDesc": "Lähetän radio-ohjelman. / Hän lähetti uutiset suorana. / Hän on lähettänyt tärkeitä tiedotuksia viime aikoina."
+  },
+  {
+    "backDesc": "I burn a candle during dinner. / She burnt the papers in the furnace. / She has burnt old letters before.",
+    "frontDesc": "Poltan kynttilää illallisen aikana. / Hän poltti paperit uunissa. / Hän on polttanut vanhoja kirjeitä aiemminkin."
+  },
+  {
+    "backDesc": "I burst the balloon during play. / He burst into laughter. / He has burst into laughter many times.",
+    "frontDesc": "Puhkaisen ilmapallon leikin aikana. / Hän purskahti nauruun. / Hän on purskahtanut nauruun monta kertaa."
+  },
+  {
+    "backDesc": "I forgive you for the mistake. / She forgave him for everything. / She has forgiven many people in her life.",
+    "frontDesc": "Annan sinulle anteeksi virheen. / Hän antoi hänelle anteeksi kaiken. / Hän on antanut monille ihmisille anteeksi elämänsä aikana."
+  },
+  {
+    "backDesc": "I freeze fruits for later. / He froze the water in the fridge. / He has frozen water for ice cubes.",
+    "frontDesc": "Pakastan hedelmiä myöhempää käyttöä varten. / Hän jäädytti veden jääkaapissa. / Hän on jäädyttänyt vettä jääpaloja varten."
+  },
+  {
+    "backDesc": "I clung to my mother during the storm. / He clung to his beliefs. / He has clung to them all this time.",
+    "frontDesc": "Tarrasin äitiini myrskyn aikana. / Hän piti tiukasti kiinni uskomuksistaan. / Hän on pitänyt niistä kiinni koko tämän ajan."
+  },
+  {
+    "backDesc": "I creep through the grass to avoid being noticed. / She crept quietly. / She has crept in silently before.",
+    "frontDesc": "Hiivin ruohon seassa välttääkseni huomiota. / Hän hiipi hiljaa. / Hän on hiipinyt sisään äänettömästi aiemminkin."
+  },
+  {
+    "backDesc": "I deal in stocks on the market. / He dealt the goods in the store. / He has dealt in various products before.",
+    "frontDesc": "Käyn kauppaa osakkeilla markkinoilla. / Hän myi tavaroita kaupassa. / Hän on käynyt kauppaa erilaisilla tuotteilla aiemmin."
+  },
+  {
+    "backDesc": "I dig a trench in the garden. / She dug to the well. / She has dug many holes for planting.",
+    "frontDesc": "Kaivan ojan puutarhaan. / Hän kaivoi kaivolle asti. / Hän on kaivanut monta kuoppaa istutuksia varten."
+  },
+  {
+    "backDesc": "I alighted on a bench in the park. / He alit on the hill. / He has alighted there a few times.",
+    "frontDesc": "Laskeuduin penkille puistossa. / Hän laskeutui kukkulalle. / Hän on laskeutunut sinne muutaman kerran."
+  },
+  {
+    "backDesc": "Misfortune befell that family. / He befell bad luck. / Bad luck has befallen him recently.",
+    "frontDesc": "Se perhe kohtasi onnettomuuden. / Hänelle koitui huonoa onnea. / Huono onni on kohdannut häntä hiljattain."
+  },
+  {
+    "backDesc": "Every person can beget offspring. / He begot an heir. / He has begotten two children.",
+    "frontDesc": "Jokainen voi saada jälkeläisiä. / Hän sai perillisen. / Hän on saanut kaksi lasta."
+  },
+  {
+    "backDesc": "I behold the sunset. / She beheld a beautiful landscape. / She has beheld many breathtaking views.",
+    "frontDesc": "Katselen auringonlaskua. / Hän katseli kaunista maisemaa. / Hän on nähnyt monia henkeäsalpaavia näkymiä."
+  },
+  {
+    "backDesc": "I beseech you for help. / He besought forgiveness. / He has besought kindness on many occasions.",
+    "frontDesc": "Pyydän sinulta apua. / Hän anoi anteeksiantoa. / Hän on anonut ystävällisyyttä monissa tilanteissa."
+  },
+  {
+    "backDesc": "He was beset by financial problems. / He beset his targets. / He has beset them with challenges.",
+    "frontDesc": "Häntä vaivasivat taloudelliset ongelmat. / Hän piinasi kohteitaan. / Hän on piinannut heitä haasteilla."
+  },
+  {
+    "backDesc": "Parents chided the child for disobedience. / He chided him publicly. / He has chidden him for his behavior.",
+    "frontDesc": "Vanhemmat moittivat lasta tottelemattomuudesta. / Hän moitti häntä julkisesti. / Hän on moittinut häntä hänen käytöksestään."
+  },
+  {
+    "backDesc": "I clothe myself for winter. / She clad herself elegantly. / She has clad herself in fine clothes before.",
+    "frontDesc": "Pukeudun talvea varten. / Hän pukeutui tyylikkäästi. / Hän on pukeutunut hienoihin vaatteisiin aiemminkin."
+  },
+  {
+    "backDesc": "I dream of vacations. / He dreamt of a trip. / He has dreamt about traveling the world.",
+    "frontDesc": "Unelmoin lomista. / Hän uneksi matkasta. / Hän on unelmoinut matkustavansa ympäri maailmaa."
+  },
+  {
+    "backDesc": "I feed the dog every day. / She fed the birds in the garden. / She has fed them every morning.",
+    "frontDesc": "Ruokin koiran joka päivä. / Hän ruokki linnut puutarhassa. / Hän on ruokkinut niitä joka aamu."
+  },
+  {
+    "backDesc": "This shirt fits me perfectly. / He fit into the team. / He has fit in well since day one.",
+    "frontDesc": "Tämä paita sopii minulle täydellisesti. / Hän sopi joukkueeseen. / Hän on sopinut hyvin alusta asti."
+  },
+  {
+    "backDesc": "I flee from the rain. / She fled from home. / She has fled difficult situations before.",
+    "frontDesc": "Pakenen sadetta. / Hän pakeni kotoa. / Hän on paennut vaikeita tilanteita aiemmin."
+  },
+  {
+    "backDesc": "I fling a stone into the water. / He flung the bottle out the window. / He has flung objects in anger before.",
+    "frontDesc": "Heitän kiven veteen. / Hän paiskasi pullon ulos ikkunasta. / Hän on paiskonut esineitä vihassa aiemminkin."
+  },
+  {
+    "backDesc": "I forbid smoking in the building. / She forbade the children from watching TV. / She has forbidden them multiple times.",
+    "frontDesc": "Kiellän tupakoinnin rakennuksessa. / Hän kielsi lapsia katsomasta televisiota. / Hän on kieltänyt heitä monta kertaa."
+  },
+  {
+    "backDesc": "I forecast rain for tomorrow. / He forecast a price increase. / He has forecast such changes accurately.",
+    "frontDesc": "Ennustan sadetta huomiseksi. / Hän ennusti hinnannousun. / Hän on ennustanut tällaisia muutoksia tarkasti."
+  },
+  {
+    "backDesc": "I forsake old habits. / She forsook her dreams. / She has forsaken them all.",
+    "frontDesc": "Luovun vanhoista tavoista. / Hän luopui unelmistaan. / Hän on luopunut niistä kaikista."
+  },
+  {
+    "backDesc": "I kneel before the altar. / He knelt in a gesture of respect. / He has knelt there many times.",
+    "frontDesc": "Polvistun alttarin eteen. / Hän polvistui kunnioituksen eleenä. / Hän on polvistunut siellä monta kertaa."
+  },
+  {
+    "backDesc": "I knit a sweater for winter. / She knitted a scarf. / She has knitted many scarves before.",
+    "frontDesc": "Neulon villapaidan talvea varten. / Hän neuloi huivin. / Hän on neulonut monta huivia aiemmin."
+  },
+  {
+    "backDesc": "I lay the book on the table. / She laid the keys on the shelf. / She has laid them there many times.",
+    "frontDesc": "Laitan kirjan pöydälle. / Hän laittoi avaimet hyllylle. / Hän on laittanut ne sinne monta kertaa."
+  },
+  {
+    "backDesc": "I lead the team. / He led the company for many years. / He has led numerous successful projects.",
+    "frontDesc": "Johdan tiimiä. / Hän johti yritystä monta vuotta. / Hän on johtanut lukuisia menestyksekkäitä projekteja."
+  },
+  {
+    "backDesc": "I lean over the book. / He leant over the table. / He has leaned over it for hours.",
+    "frontDesc": "Kumarrun kirjan ylle. / Hän kumartui pöydän yli. / Hän on kumartunut sen ääreen tuntikausiksi."
+  },
+  {
+    "backDesc": "I leap on the rope. / He leapt over the fence. / He has leapt across many obstacles.",
+    "frontDesc": "Loikkaan köyden päälle. / Hän loikkasi aidan yli. / Hän on loikannut monien esteiden yli."
+  },
+  {
+    "backDesc": "I light the room's light. / He lit the light in the evening. / He has lit it every night since then.",
+    "frontDesc": "Sytytän huoneen valon. / Hän sytytti valon illalla. / Hän on sytyttänyt sen joka ilta siitä lähtien."
+  },
+  {
+    "backDesc": "I mistake in the calculations. / He mistook the decision. / He has mistaken people's intentions before.",
+    "frontDesc": "Teen virheen laskuissa. / Hän erehtyi päätöksestä. / Hän on erehtynyt ihmisten aikomuksista aiemminkin."
+  },
+  {
+    "backDesc": "I mow the grass in the garden. / He mowed the lawn yesterday. / He has mown it regularly.",
+    "frontDesc": "Leikkaan nurmikon puutarhassa. / Hän leikkasi nurmikon eilen. / Hän on leikannut sen säännöllisesti."
+  },
+  {
+    "backDesc": "I overcome difficulties every day. / He overcame his fears. / He has overcome many obstacles.",
+    "frontDesc": "Voitan vaikeudet joka päivä. / Hän voitti pelkonsa. / Hän on voittanut monia esteitä."
+  },
+  {
+    "backDesc": "I partake in meetings. / He partook in the conference. / He has partaken in several events recently.",
+    "frontDesc": "Osallistun kokouksiin. / Hän osallistui konferenssiin. / Hän on osallistunut useisiin tapahtumiin viime aikoina."
+  },
+  {
+    "backDesc": "I plead for help. / He pled for forgiveness. / He has pled for mercy many times.",
+    "frontDesc": "Anelen apua. / Hän aneli anteeksiantoa. / Hän on anellut armoa monta kertaa."
+  },
+  {
+    "backDesc": "I prove my innocence. / He proved his theory. / He has proven it beyond doubt.",
+    "frontDesc": "Todistan syyttömyyteni. / Hän todisti teoriansa. / Hän on todistanut sen kiistattomasti."
+  },
+  {
+    "backDesc": "I saw wood in the workshop. / He sawed planks for a new boat. / He has sawn many pieces of wood.",
+    "frontDesc": "Sahaan puuta verstaalla. / Hän sahasi lankkuja uutta venettä varten. / Hän on sahannut monta puunpalaa."
+  },
+  {
+    "backDesc": "I seek the keys at home. / He sought a solution to the problem. / He has sought answers everywhere.",
+    "frontDesc": "Etsin avaimia kotoa. / Hän etsi ratkaisua ongelmaan. / Hän on etsinyt vastauksia kaikkialta."
+  },
+  {
+    "backDesc": "I sew clothes in my atelier. / He sewed a shirt for several hours. / He has sewn many garments.",
+    "frontDesc": "Ompelen vaatteita ateljeessani. / Hän ompeli paitaa usean tunnin ajan. / Hän on ommellut monta vaatetta."
+  },
+  {
+    "backDesc": "I shear sheep on the farm. / He sheared a sheep yesterday. / He has shorn many sheep this season.",
+    "frontDesc": "Keritsen lampaita maatilalla. / Hän keritsi lampaan eilen. / Hän on kerinnyt monta lammasta tänä kautena."
+  },
+  {
+    "backDesc": "My sweater shrinks after washing. / It shrank in high temperature. / It has shrunk too much.",
+    "frontDesc": "Villapaitani kutistuu pesun jälkeen. / Se kutistui korkeassa lämpötilassa. / Se on kutistunut liikaa."
+  },
+  {
+    "backDesc": "I slay rodents in the basement. / He slew the monster in the forest. / He has slain many creatures in his stories.",
+    "frontDesc": "Tapan jyrsijöitä kellarissa. / Hän tappoi hirviön metsässä. / Hän on tappanut monia olentoja tarinoissaan."
+  },
+  {
+    "backDesc": "The kitchen stinks of rotten food. / It stank after a hot day. / It has stunk for hours.",
+    "frontDesc": "Keittiössä haisee pilaantunut ruoka. / Se haisi kuuman päivän jälkeen. / Se on haissut jo tunteja."
+  },
+  {
+    "backDesc": "I stride with confidence. / He strode quickly, arriving on time. / He has stridden through many challenges.",
+    "frontDesc": "Astelen itsevarmasti. / Hän asteli nopeasti, saapuen ajoissa. / Hän on astellut monien haasteiden läpi."
+  },
+  {
+    "backDesc": "I strike the ball towards the goal. / He struck the door hard. / He has struck fear into his opponents.",
+    "frontDesc": "Lyön palloa maalia kohti. / Hän löi ovea kovaa. / Hän on herättänyt pelkoa vastustajissaan."
+  },
+  {
+    "backDesc": "I string beads on a string. / He strung the lamp on the wall. / He has strung decorations before.",
+    "frontDesc": "Pujotan helmiä nauhaan. / Hän ripusti lampun seinälle. / Hän on ripustanut koristeita aiemminkin."
+  },
+  {
+    "backDesc": "I strive to achieve the goal. / He strove for success for years. / He has striven to reach the top.",
+    "frontDesc": "Pyrin saavuttamaan tavoitteen. / Hän pyrki menestykseen vuosien ajan. / Hän on pyrkinyt huipulle."
+  },
+  {
+    "backDesc": "I swing on the swing. / He swung on the balcony. / He has swung on that rope many times.",
+    "frontDesc": "Keinun keinussa. / Hän keinui parvekkeella. / Hän on keinunut sillä köydellä monta kertaa."
+  },
+  {
+    "backDesc": "I tear the paper to shred it. / He tore the canvas with a knife. / He has torn many papers accidentally.",
+    "frontDesc": "Revin paperin silpuksi. / Hän repi kankaan veitsellä. / Hän on repinyt monta paperia vahingossa."
+  },
+  {
+    "backDesc": "I thrust the door to open it. / He thrust the door hard. / He has thrust it open before.",
+    "frontDesc": "Tönäisen ovea avatakseni sen. / Hän tönäisi ovea kovaa. / Hän on tönäissyt sen auki aiemmin."
+  },
+  {
+    "backDesc": "I tread carefully on the wet floor. / He trod with a confident stride. / He has trodden this path before.",
+    "frontDesc": "Astin varovasti märälle lattialle. / Hän asteli itsevarmoin askelin. / Hän on kulkenut tätä polkua aiemmin."
+  },
+  {
+    "backDesc": "I undo the move I made. / He undid the changes in the document. / He has undone them completely.",
+    "frontDesc": "Kumoan tekemäni siirron. / Hän kumosi dokumentin muutokset. / Hän on kumonnut ne kokonaan."
+  },
+  {
+    "backDesc": "I weave a scarf on the knitting needles. / He wove a rug in his workshop. / He has woven several rugs now.",
+    "frontDesc": "Kudon huivin puikoilla. / Hän kutoi maton verstaallaan. / Hän on kutonut useita mattoja nyt."
+  },
+  {
+    "backDesc": "I weep in sorrow. / He wept after the breakup. / He has wept many tears.",
+    "frontDesc": "Itken surussa. / Hän itki eron jälkeen. / Hän on itkenyt monet kerrat."
+  },
+  {
+    "backDesc": "I wind the watch every morning. / He wound the strings into a tape. / He has wound them neatly.",
+    "frontDesc": "Vedän kellon joka aamu. / Hän kietoi narut nauhaksi. / Hän on kietonut ne siististi."
+  },
+  {
+    "backDesc": "I withdraw from the discussion. / He withdrew from the project. / He has withdrawn completely.",
+    "frontDesc": "Vetäydyn keskustelusta. / Hän vetäytyi projektista. / Hän on vetäytynyt kokonaan."
+  },
+  {
+    "backDesc": "I withstand difficult conditions. / He withstood the strong wind. / He has withstood many storms.",
+    "frontDesc": "Kestän vaikeita olosuhteita. / Hän kesti kovaa tuulta. / Hän on kestänyt monta myrskyä."
+  },
+  {
+    "backDesc": "I wring out wet towels. / He wrung juice out of fruits. / He has wrung out many towels.",
+    "frontDesc": "Väännän märät pyyhkeet kuiviksi. / Hän puristi hedelmistä mehun. / Hän on vääntänyt monta pyyhettä kuivaksi."
+  },
+  {
+    "backDesc": "I freeze food in the freezer. / He froze water for the freezer. / He has frozen enough water for ice.",
+    "frontDesc": "Pakastan ruokaa pakastimessa. / Hän jäädytti vettä pakastinta varten. / Hän on jäädyttänyt tarpeeksi vettä jäätä varten."
+  },
+  {
+    "backDesc": "I hang a picture on the wall. / He hung the lamp in the room. / He has hung many pictures around the house.",
+    "frontDesc": "Ripustan taulun seinälle. / Hän ripusti lampun huoneeseen. / Hän on ripustanut monta taulua talon ympäri."
+  }
+]

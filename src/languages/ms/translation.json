@@ -1,6 +1,6 @@
 {
   "categories": "Kategori",
-  "simple_flashcard_creator": "Pencipta Flashcard Mudah",
+  "simple_flashcard_creator": "Pencipta Flashcard",
   "view_flashcards": "Mulakan Pembelajaran Anda",
   "create_flashcard": "Buat Flashcard",
   "edit_flashcards": "Sunting Flashcard",
@@ -142,5 +142,7 @@
   "turn_on_shadows": "Hidupkan bayangan",
   "turn_on_automatic_audio": "Hidupkan audio automatik",
   "premium_account": "Akaun Premium",
-  "active": "Aktif"
+  "active": "Aktif",
+  "code": "Kod",
+  "wrong_code": "Kod salah"
 }

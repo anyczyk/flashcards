@@ -142,5 +142,7 @@
   "turn_on_shadows": "Activează umbrele",
   "turn_on_automatic_audio": "Activează audio automat",
   "premium_account": "Cont Premium",
-  "active": "Activ"
+  "active": "Activ",
+  "code": "Cod",
+  "wrong_code": "Cod greșit"
 }

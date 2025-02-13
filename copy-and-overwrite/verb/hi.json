@@ -1,0 +1,630 @@
+[
+  {
+    "backDesc": "I am a teacher. / I was at the store yesterday. / I have been at that store many times.",
+    "frontDesc": "मैं एक अध्यापक हूँ। / मैं कल उस दुकान पर था। / मैं कई बार उस दुकान पर जा चुका हूँ।"
+  },
+  {
+    "backDesc": "I want to become a doctor. / I became tired. / I have become more determined.",
+    "frontDesc": "मैं डॉक्टर बनना चाहता हूँ। / मैं थक गया। / मैं पहले से ज्यादा दृढ़ निश्चयी हो गया हूँ।"
+  },
+  {
+    "backDesc": "I begin a new project. / I began reading a book. / I have begun working on it seriously.",
+    "frontDesc": "मैं एक नया प्रोजेक्ट शुरू करता हूँ। / मैंने एक किताब पढ़ना शुरू की। / मैंने इस पर गंभीरता से काम करना शुरू कर दिया है।"
+  },
+  {
+    "backDesc": "I don't want to break the rules. / He broke the branch. / He has broken many rules in the past.",
+    "frontDesc": "मैं नियमों को तोड़ना नहीं चाहता। / उसने टहनी तोड़ दी। / उसने अतीत में कई नियम तोड़े हैं।"
+  },
+  {
+    "backDesc": "I bring coffee. / She brought flowers. / She has brought gifts as well.",
+    "frontDesc": "मैं कॉफ़ी लाता हूँ। / वह फूल लाई। / वह उपहार भी लाई है।"
+  },
+  {
+    "backDesc": "I build a house. / He built a bridge. / He has built many bridges in his career.",
+    "frontDesc": "मैं एक घर बनाता हूँ। / उसने एक पुल बनाया। / उसने अपने करियर में कई पुल बनाए हैं।"
+  },
+  {
+    "backDesc": "I buy new clothes. / She bought a car. / She has bought several cars over the years.",
+    "frontDesc": "मैं नए कपड़े खरीदता हूँ। / उसने एक कार खरीदी। / उसने वर्षों में कई कारें खरीदी हैं।"
+  },
+  {
+    "backDesc": "I can help. / He could come earlier. / He has been able to assist many times.",
+    "frontDesc": "मैं मदद कर सकता हूँ। / वह पहले आ सकता था। / वह कई बार सहायता करने में सक्षम रहा है।"
+  },
+  {
+    "backDesc": "I catch the ball. / He caught a fish. / He has caught many fish in this lake.",
+    "frontDesc": "मैं गेंद पकड़ता हूँ। / उसने एक मछली पकड़ी। / उसने इस झील में कई मछलियाँ पकड़ी हैं।"
+  },
+  {
+    "backDesc": "I choose a dish. / She chose a book. / She has chosen wisely every time.",
+    "frontDesc": "मैं एक व्यंजन चुनता हूँ। / उसने एक किताब चुनी। / उसने हर बार समझदारी से चुना है।"
+  },
+  {
+    "backDesc": "I come to work. / He came earlier. / He has come on time every day.",
+    "frontDesc": "मैं काम पर आता हूँ। / वह पहले आया। / वह हर दिन समय पर आता रहा है।"
+  },
+  {
+    "backDesc": "It costs five dollars. / It cost more yesterday. / It has cost me a fortune so far.",
+    "frontDesc": "इसकी क़ीमत पाँच डॉलर है। / कल इसकी क़ीमत ज़्यादा थी। / अब तक मुझे इस पर बहुत ख़र्च करना पड़ा है।"
+  },
+  {
+    "backDesc": "I cut the paper. / He cut the wood. / He has cut many pieces of wood before.",
+    "frontDesc": "मैं कागज़ काटता हूँ। / उसने लकड़ी काटी। / उसने पहले भी कई लकड़ी के टुकड़े काटे हैं।"
+  },
+  {
+    "backDesc": "I cast away the old clothes. / He cast the net. / He has cast a net before to catch fish.",
+    "frontDesc": "मैं पुराने कपड़ों को फेंक देता हूँ। / उसने जाल डाला। / उसने मछली पकड़ने के लिए पहले भी जाल डाला है।"
+  },
+  {
+    "backDesc": "I do my homework. / He did the dinner. / He has done this type of work before.",
+    "frontDesc": "मैं अपना होमवर्क करता हूँ। / उसने रात का खाना बनाया। / उसने इस तरह का काम पहले किया है।"
+  },
+  {
+    "backDesc": "I draw a picture. / She drew a landscape. / She has drawn many landscapes.",
+    "frontDesc": "मैं एक तस्वीर बनाता हूँ। / उसने एक दृश्य बनाया। / उसने कई दृश्य बनाए हैं।"
+  },
+  {
+    "backDesc": "I drink water. / He drank juice. / He has drunk all the juice in the fridge.",
+    "frontDesc": "मैं पानी पीता हूँ। / उसने जूस पिया। / उसने फ्रिज का सारा जूस पी लिया है।"
+  },
+  {
+    "backDesc": "I drive a car. / She drove the bus. / She has driven that route many times.",
+    "frontDesc": "मैं कार चलाता हूँ। / उसने बस चलाई। / उसने वह रूट कई बार चलाया है।"
+  },
+  {
+    "backDesc": "I dwell in Warsaw. / He dwelt there earlier. / He has dwelt in many cities over the years.",
+    "frontDesc": "मैं वारसॉ में रहता हूँ। / वह पहले वहाँ रहता था। / वह वर्षों में कई शहरों में रह चुका है।"
+  },
+  {
+    "backDesc": "I eat breakfast. / She ate lunch. / She has eaten at this restaurant before.",
+    "frontDesc": "मैं नाश्ता करता हूँ। / उसने दोपहर का भोजन किया। / वह इस रेस्टोरेंट में पहले खा चुकी है।"
+  },
+  {
+    "backDesc": "I fall off the bike. / He fell from the ladder. / He has fallen a few times lately.",
+    "frontDesc": "मैं बाइक से गिरता हूँ। / वह सीढ़ी से गिर गया। / वह हाल ही में कुछ बार गिर चुका है।"
+  },
+  {
+    "backDesc": "I feel good. / She felt pain. / She has felt better since then.",
+    "frontDesc": "मैं अच्छा महसूस करता हूँ। / उसे दर्द महसूस हुआ। / तब से वह बेहतर महसूस कर रही है।"
+  },
+  {
+    "backDesc": "I fight for my rights. / He fought in the war. / He has fought bravely for his country.",
+    "frontDesc": "मैं अपने अधिकारों के लिए लड़ता हूँ। / उसने युद्ध में लड़ाई की। / उसने अपने देश के लिए बहादुरी से लड़ाई लड़ी है।"
+  },
+  {
+    "backDesc": "I find the key. / She found the solution. / She has found many solutions so far.",
+    "frontDesc": "मैं चाबी ढूँढता हूँ। / उसने समाधान ढूँढा। / उसने अब तक कई समाधान ढूँढे हैं।"
+  },
+  {
+    "backDesc": "I fly by airplane. / He flew to London. / He has flown internationally many times.",
+    "frontDesc": "मैं हवाई जहाज़ से उड़ान भरता हूँ। / वह लंदन गया। / वह कई बार अंतरराष्ट्रीय उड़ानें भर चुका है।"
+  },
+  {
+    "backDesc": "I forget the name. / She forgot the keys. / She has forgotten them before.",
+    "frontDesc": "मैं नाम भूल जाता हूँ। / वह चाबियाँ भूल गई। / वह पहले भी उन्हें भूल चुकी है।"
+  },
+  {
+    "backDesc": "I get a letter. / He got a gift. / He has gotten many gifts recently.",
+    "frontDesc": "मुझे एक पत्र मिलता है। / उसे एक उपहार मिला। / उसे हाल ही में कई उपहार मिले हैं।"
+  },
+  {
+    "backDesc": "I give you a gift. / She gave him a book. / She has given many books as presents.",
+    "frontDesc": "मैं तुम्हें एक उपहार देता हूँ। / उसने उसे एक किताब दी। / उसने कई किताबें उपहार में दी हैं।"
+  },
+  {
+    "backDesc": "I go to school. / He went to work. / He has gone there every day this week.",
+    "frontDesc": "मैं स्कूल जाता हूँ। / वह काम पर गया। / वह इस हफ़्ते हर दिन वहाँ गया है।"
+  },
+  {
+    "backDesc": "I grind coffee. / He ground the grain. / He has ground coffee beans for years.",
+    "frontDesc": "मैं कॉफ़ी पीसता हूँ। / उसने अनाज पीसा। / वह वर्षों से कॉफ़ी बीन्स पीस रहा है।"
+  },
+  {
+    "backDesc": "I grow every day. / He grew quickly. / He has grown a lot this year.",
+    "frontDesc": "मैं हर दिन बढ़ता हूँ। / वह तेज़ी से बढ़ा। / वह इस साल काफ़ी बढ़ चुका है।"
+  },
+  {
+    "backDesc": "I have a car. / He had a guitar. / She has had many opportunities to travel.",
+    "frontDesc": "मेरे पास एक कार है। / उसके पास एक गिटार था। / उसके पास यात्रा करने के कई मौके रहे हैं।"
+  },
+  {
+    "backDesc": "I hear music. / He heard the noise. / He has heard that noise before.",
+    "frontDesc": "मैं संगीत सुनता हूँ। / उसने वह शोर सुना। / उसने वह शोर पहले भी सुना है।"
+  },
+  {
+    "backDesc": "I hide the gift. / She hid the letter. / She has hidden messages in her diary.",
+    "frontDesc": "मैं उपहार छिपाता हूँ। / उसने चिट्ठी छिपाई। / उसने अपनी डायरी में संदेश छिपाए हैं।"
+  },
+  {
+    "backDesc": "I hit the ball. / He hit the door. / He has hit that ball many times.",
+    "frontDesc": "मैं गेंद मारता हूँ। / उसने दरवाज़े को मारा। / वह उस गेंद को कई बार मार चुका है।"
+  },
+  {
+    "backDesc": "I hold the book. / She held the bag. / She has held onto that bag for years.",
+    "frontDesc": "मैं किताब पकड़ता हूँ। / उसने बैग पकड़ा। / वह उस बैग को सालों से पकड़े हुए है।"
+  },
+  {
+    "backDesc": "I hurt myself while running. / He hurt his hand. / He has hurt himself multiple times.",
+    "frontDesc": "मैं दौड़ते समय खुद को चोट पहुँचाता हूँ। / उसने अपना हाथ चोटिल कर लिया। / वह खुद को कई बार चोट पहुँचा चुका है।"
+  },
+  {
+    "backDesc": "I keep a secret. / She kept the documents. / She has kept them in a safe place.",
+    "frontDesc": "मैं एक राज़ रखता हूँ। / उसने दस्तावेज़ रखे। / उसने उन्हें एक सुरक्षित जगह पर रखा है।"
+  },
+  {
+    "backDesc": "I know the answer. / He knew the solution. / He has known it all along.",
+    "frontDesc": "मैं जवाब जानता हूँ। / उसे समाधान पता था। / उसे शुरू से ही यह पता था।"
+  },
+  {
+    "backDesc": "I learn English. / She learned to dance. / She has learned many languages.",
+    "frontDesc": "मैं अंग्रेज़ी सीखता हूँ। / उसने नृत्य सीखा। / उसने कई भाषाएँ सीखी हैं।"
+  },
+  {
+    "backDesc": "I leave the house. / He left the office. / He has left his job recently.",
+    "frontDesc": "मैं घर से निकलता हूँ। / वह दफ़्तर छोड़ गया। / उसने हाल ही में अपनी नौकरी छोड़ी है।"
+  },
+  {
+    "backDesc": "I lend a book. / She lent money. / She has lent money to friends before.",
+    "frontDesc": "मैं एक किताब उधार देता हूँ। / उसने पैसे उधार दिए। / उसने इससे पहले भी दोस्तों को पैसे उधार दिए हैं।"
+  },
+  {
+    "backDesc": "I let you in. / He let her stay. / He has let many people stay at his place.",
+    "frontDesc": "मैं तुम्हें अंदर आने देता हूँ। / उसने उसे रुकने दिया। / उसने कई लोगों को अपने घर में रुकने दिया है।"
+  },
+  {
+    "backDesc": "I lie on the couch. / He lay on the bed. / He has lain there for hours.",
+    "frontDesc": "मैं सोफ़े पर लेटता हूँ। / वह बिस्तर पर लेट गया। / वह वहाँ घंटों से लेटा हुआ है।"
+  },
+  {
+    "backDesc": "I lose my keys. / He lost his wallet. / He has lost things many times.",
+    "frontDesc": "मैं अपनी चाबियाँ खो देता हूँ। / उसने अपना बटुआ खो दिया। / उसने कई बार चीज़ें खोई हैं।"
+  },
+  {
+    "backDesc": "I make dinner. / She made a cake. / She has made many delicious cakes.",
+    "frontDesc": "मैं रात का खाना बनाता हूँ। / उसने एक केक बनाया। / उसने कई स्वादिष्ट केक बनाए हैं।"
+  },
+  {
+    "backDesc": "It means something important. / He meant something else. / He has meant it sincerely all along.",
+    "frontDesc": "इसका कुछ अहम मतलब है। / उसका मतलब कुछ और था। / उसने शुरू से इसे ईमानदारी से ही कहा है।"
+  },
+  {
+    "backDesc": "I meet with friends. / She met with the manager. / She has met many interesting people.",
+    "frontDesc": "मैं दोस्तों से मिलता हूँ। / वह मैनेजर से मिली। / वह कई रोचक लोगों से मिल चुकी है।"
+  },
+  {
+    "backDesc": "I pay the bills. / He paid for dinner. / He has paid his dues already.",
+    "frontDesc": "मैं बिलों का भुगतान करता हूँ। / उसने रात के खाने का भुगतान किया। / वह पहले ही अपना बकाया चुका चुका है।"
+  },
+  {
+    "backDesc": "I put the book on the table. / She put the keys on the shelf. / She has put them there before.",
+    "frontDesc": "मैं किताब को मेज़ पर रखता हूँ। / उसने चाबियाँ शेल्फ़ पर रख दीं। / वह उन्हें वहाँ पहले भी रख चुकी है।"
+  },
+  {
+    "backDesc": "I read the newspaper. / He read the book. / He has read that book many times.",
+    "frontDesc": "मैं अख़बार पढ़ता हूँ। / उसने वह किताब पढ़ी। / वह उस किताब को कई बार पढ़ चुका है।"
+  },
+  {
+    "backDesc": "I ride a bike. / She rode a horse. / She has ridden many horses in her life.",
+    "frontDesc": "मैं बाइक चलाता हूँ। / उसने घोड़ा चलाया। / वह अपने जीवन में कई घोड़े चला चुकी है।"
+  },
+  {
+    "backDesc": "I ring you. / He rang me. / He has rung me every day this week.",
+    "frontDesc": "मैं तुम्हें फ़ोन करता हूँ। / उसने मुझे फ़ोन किया। / उसने इस हफ़्ते मुझे हर दिन फ़ोन किया है।"
+  },
+  {
+    "backDesc": "The sun rises in the morning. / He rose his hand. / He has risen early every day.",
+    "frontDesc": "सूरज सुबह उगता है। / उसने अपना हाथ उठाया। / वह हर दिन जल्दी उठा है।"
+  },
+  {
+    "backDesc": "I run every day. / He ran faster. / He has run marathons before.",
+    "frontDesc": "मैं हर दिन दौड़ता हूँ। / वह तेज़ दौड़ा। / वह पहले मैराथन दौड़ चुका है।"
+  },
+  {
+    "backDesc": "I say the truth. / He said something important. / He has said that many times.",
+    "frontDesc": "मैं सच बोलता हूँ। / उसने कुछ अहम कहा। / वह यह बात कई बार कह चुका है।"
+  },
+  {
+    "backDesc": "I see the stars. / She saw a bird. / She has seen many birds lately.",
+    "frontDesc": "मैं तारों को देखता हूँ। / उसने एक पक्षी देखा। / उसने हाल ही में कई पक्षी देखे हैं।"
+  },
+  {
+    "backDesc": "I sell a car. / He sold the house. / He has sold several houses this year.",
+    "frontDesc": "मैं कार बेचता हूँ। / उसने घर बेचा। / उसने इस साल कई घर बेचे हैं।"
+  },
+  {
+    "backDesc": "I send a letter. / She sent a package. / She has sent many packages abroad.",
+    "frontDesc": "मैं एक पत्र भेजता हूँ। / उसने एक पार्सल भेजा। / उसने विदेश में कई पार्सल भेजे हैं।"
+  },
+  {
+    "backDesc": "I set the alarm for 7 AM. / He set the tables for the party. / He has set them up perfectly.",
+    "frontDesc": "मैं अलार्म को सुबह 7 बजे के लिए सेट करता हूँ। / उसने पार्टी के लिए मेज़ें सजाईं। / उसने उन्हें बेहतरीन तरीक़े से सेट किया है।"
+  },
+  {
+    "backDesc": "I shake my hands when I'm nervous. / He shook his hand in farewell. / He has shaken hands many times.",
+    "frontDesc": "मैं घबराने पर अपने हाथ हिलाता हूँ। / उसने विदाई में हाथ मिलाया। / उसने कई बार हाथ मिलाए हैं।"
+  },
+  {
+    "backDesc": "The sun shines brightly today. / He shone the lighthouse at night. / He has shone it on the rocks before.",
+    "frontDesc": "आज सूरज तेज़ चमकता है। / उसने रात में लाइटहाउस की रोशनी चलाई। / उसने पहले भी चट्टानों पर उसकी रोशनी डाली है।"
+  },
+  {
+    "backDesc": "I shoot with a bow during practice. / He shot a goal in the game. / He has shot many goals this season.",
+    "frontDesc": "मैं अभ्यास के दौरान धनुष से तीर चलाता हूँ। / उसने खेल में एक गोल किया। / उसने इस सीज़न में कई गोल किए हैं।"
+  },
+  {
+    "backDesc": "I show photos from vacation. / He showed his new car. / He has shown it to everyone.",
+    "frontDesc": "मैं छुट्टियों की तस्वीरें दिखाता हूँ। / उसने अपनी नई कार दिखाई। / उसने इसे सभी को दिखाया है।"
+  },
+  {
+    "backDesc": "I shut the door before leaving. / He shut the window when it got cold. / He has shut them every night.",
+    "frontDesc": "मैं जाने से पहले दरवाज़ा बंद करता हूँ। / ठंड लगने पर उसने खिड़की बंद कर दी। / वह उन्हें हर रात बंद करता आया है।"
+  },
+  {
+    "backDesc": "I sing my favorite song. / She sang at the concert. / She has sung there many times.",
+    "frontDesc": "मैं अपना पसंदीदा गीत गाता हूँ। / उसने कॉन्सर्ट में गाना गाया। / वह वहाँ कई बार गा चुकी है।"
+  },
+  {
+    "backDesc": "The ship sinks in the sea. / He sank during the storm. / It has sunk completely.",
+    "frontDesc": "जहाज़ समुद्र में डूबता है। / वह तूफ़ान के दौरान डूब गया। / वह पूरी तरह डूब चुका है।"
+  },
+  {
+    "backDesc": "I sit on the chair. / She sat at the table. / She has sat there for hours.",
+    "frontDesc": "मैं कुर्सी पर बैठता हूँ। / वह मेज़ पर बैठी। / वह वहाँ घंटों से बैठी हुई है।"
+  },
+  {
+    "backDesc": "I sleep in my bed. / He slept all night. / He has slept well lately.",
+    "frontDesc": "मैं अपने बिस्तर में सोता हूँ। / वह पूरी रात सोया। / वह हाल ही में अच्छी नींद सोया है।"
+  },
+  {
+    "backDesc": "I speak English. / He spoke at the conference. / He has spoken there twice.",
+    "frontDesc": "मैं अंग्रेज़ी बोलता हूँ। / उसने कॉन्फ़्रेंस में बोला। / वह वहाँ दो बार बोल चुका है।"
+  },
+  {
+    "backDesc": "I spend time with my family. / He spent a lot of money on the trip. / He has spent all his savings.",
+    "frontDesc": "मैं अपने परिवार के साथ समय बिताता हूँ। / उसने यात्रा पर बहुत पैसे खर्च किए। / उसने अपनी सारी बचत ख़र्च कर दी है।"
+  },
+  {
+    "backDesc": "I stand at the head of the team. / She stood by the window. / She has stood there quietly.",
+    "frontDesc": "मैं टीम की अगुवाई में खड़ा हूँ। / वह खिड़की के पास खड़ी हुई। / वह वहाँ चुपचाप खड़ी रही है।"
+  },
+  {
+    "backDesc": "I swim every morning. / He swam in the lake. / He has swum across that lake before.",
+    "frontDesc": "मैं हर सुबह तैरता हूँ। / वह झील में तैरा। / वह पहले भी उस झील को पार तैर चुका है।"
+  },
+  {
+    "backDesc": "I take my medicine in the morning. / She took an umbrella. / She has taken it with her today.",
+    "frontDesc": "मैं सुबह अपनी दवा लेता हूँ। / वह एक छाता ले गई। / वह आज उसे अपने साथ ले गई है।"
+  },
+  {
+    "backDesc": "I teach mathematics. / He taught me a new skill. / He has taught many students over the years.",
+    "frontDesc": "मैं गणित पढ़ाता हूँ। / उसने मुझे एक नई कौशल सिखाई। / उसने वर्षों में कई छात्रों को पढ़ाया है।"
+  },
+  {
+    "backDesc": "I always tell him about the change of plans. / She told me a secret. / She has told many secrets over time.",
+    "frontDesc": "मैं उसे हमेशा योजनाओं में बदलाव के बारे में बताता हूँ। / उसने मुझे एक राज़ बताया। / उसने समय के साथ कई राज़ बताए हैं।"
+  },
+  {
+    "backDesc": "I think about the future. / He thought about solving the problem. / He has thought it through carefully.",
+    "frontDesc": "मैं भविष्य के बारे में सोचता हूँ। / उसने समस्या का हल निकालने के बारे में सोचा। / उसने इसे सावधानी से सोचा है।"
+  },
+  {
+    "backDesc": "I throw the ball into the basket. / She threw the bag on the ground. / She has thrown it away now.",
+    "frontDesc": "मैं गेंद को टोकरी में फेंकता हूँ। / उसने बैग ज़मीन पर फेंक दिया। / उसने अब उसे फेंक दिया है।"
+  },
+  {
+    "backDesc": "I understand this task. / He understood my explanation. / He has understood everything clearly.",
+    "frontDesc": "मैं इस कार्य को समझता हूँ। / उसने मेरी व्याख्या समझी। / उसने सब कुछ स्पष्ट रूप से समझ लिया है।"
+  },
+  {
+    "backDesc": "I always wake up early in the morning. / She woke up late. / She has woken up earlier on other days.",
+    "frontDesc": "मैं हमेशा सुबह जल्दी उठता हूँ। / वह देर से उठी। / वह और दिनों में जल्दी उठ चुकी है।"
+  },
+  {
+    "backDesc": "I wear a new jacket. / He wore elegant clothes. / He has worn them many times before.",
+    "frontDesc": "मैं नई जैकेट पहनता हूँ। / उसने सुरुचिपूर्ण कपड़े पहने। / वह उन्हें पहले कई बार पहन चुका है।"
+  },
+  {
+    "backDesc": "I win the board game. / She won the contest. / She has won many contests in her life.",
+    "frontDesc": "मैं बोर्ड गेम जीतता हूँ। / उसने प्रतियोगिता जीती। / वह अपने जीवन में कई प्रतियोगिताएँ जीत चुकी है।"
+  },
+  {
+    "backDesc": "I write a letter to a friend. / He wrote an article. / He has written several articles this month.",
+    "frontDesc": "मैं एक दोस्त को पत्र लिखता हूँ। / उसने एक लेख लिखा। / उसने इस महीने कई लेख लिखे हैं।"
+  },
+  {
+    "backDesc": "Problems arise suddenly. / He arose from the problems. / He has arisen to face new challenges.",
+    "frontDesc": "समस्याएँ अचानक उत्पन्न हो जाती हैं। / वह समस्याओं से उठा। / वह नई चुनौतियों का सामना करने के लिए उठ खड़ा हुआ है।"
+  },
+  {
+    "backDesc": "I always awake earlier. / She awoke from a light sleep. / She has awoken feeling rested.",
+    "frontDesc": "मैं हमेशा पहले जाग जाता हूँ। / वह हल्की नींद से जागी। / वह जागकर तरोताज़ा महसूस कर रही है।"
+  },
+  {
+    "backDesc": "I usually bear it well. / He bore many difficulties. / He has borne his burdens with courage.",
+    "frontDesc": "मैं आमतौर पर इसे अच्छी तरह सह लेता हूँ। / उसने कई कठिनाइयाँ झेलीं। / उसने अपने बोझ को हिम्मत से उठाया है।"
+  },
+  {
+    "backDesc": "I beat the drums during the concert. / He beat the record. / He has beaten several records so far.",
+    "frontDesc": "मैं कॉन्सर्ट के दौरान ढोल बजाता हूँ। / उसने रिकॉर्ड तोड़ दिया। / वह अब तक कई रिकॉर्ड तोड़ चुका है।"
+  },
+  {
+    "backDesc": "I bend to reach. / She bent the tree branch. / She has bent many branches while gardening.",
+    "frontDesc": "मैं कुछ पहुँचने के लिए झुकता हूँ। / उसने पेड़ की शाखा मोड़ दी। / उसने बागवानी करते समय कई शाखाएँ मोड़ी हैं।"
+  },
+  {
+    "backDesc": "I bet that you'll arrive on time. / He bet money. / He has bet on many races.",
+    "frontDesc": "मैं शर्त लगाता हूँ कि तुम समय पर आओगे। / उसने पैसे की शर्त लगाई। / उसने कई दौड़ों पर शर्त लगाई है।"
+  },
+  {
+    "backDesc": "I bid on the artwork. / She bid an offer. / She has bid on several pieces of art.",
+    "frontDesc": "मैं उस कलाकृति पर बोली लगाता हूँ। / उसने एक प्रस्ताव रखा। / उसने कई कलाकृतियों पर बोली लगाई है।"
+  },
+  {
+    "backDesc": "I bind my shoes before leaving. / He bound the package. / He has bound multiple packages for shipping.",
+    "frontDesc": "मैं निकलने से पहले अपने जूते बाँधता हूँ। / उसने पार्सल बाँध दिया। / उसने भेजने के लिए कई पार्सल बाँधे हैं।"
+  },
+  {
+    "backDesc": "I bite an apple for breakfast. / She bit her finger. / She has bitten her nails many times.",
+    "frontDesc": "मैं नाश्ते में सेब काटकर खाता हूँ। / उसने अपनी उँगली काट ली। / वह कई बार अपने नाखून काट चुकी है।"
+  },
+  {
+    "backDesc": "My wound bleeds heavily. / He bled after the fall. / He has bled from similar wounds before.",
+    "frontDesc": "मेरा घाव ज़्यादा बह रहा है। / गिरने के बाद वह खून बहा रहा था। / वह पहले भी इसी तरह के घाव से खून बहा चुका है।"
+  },
+  {
+    "backDesc": "I blow out the candle on the cake. / He blew up the balloon. / He has blown many balloons for parties.",
+    "frontDesc": "मैं केक पर लगी मोमबत्ती बुझाता हूँ। / उसने गुब्बारे फुलाए। / वह पार्टियों के लिए कई गुब्बारे फुला चुका है।"
+  },
+  {
+    "backDesc": "I breed dogs at home. / She bred horses on the farm. / She has bred different animals over the years.",
+    "frontDesc": "मैं घर पर कुत्तों का पालन-पोषण करता हूँ। / उसने फ़ार्म पर घोड़ों का पालन किया। / उसने वर्षों में अलग-अलग जानवरों का पालन-पोषण किया है।"
+  },
+  {
+    "backDesc": "I broadcast a radio show. / He broadcast the news live. / He has broadcast important announcements recently.",
+    "frontDesc": "मैं रेडियो शो प्रसारित करता हूँ। / उसने समाचार लाइव प्रसारित किए। / उसने हाल ही में महत्वपूर्ण घोषणाएँ प्रसारित की हैं।"
+  },
+  {
+    "backDesc": "I burn a candle during dinner. / She burnt the papers in the furnace. / She has burnt old letters before.",
+    "frontDesc": "मैं रात के खाने के दौरान एक मोमबत्ती जलाता हूँ। / उसने भट्टी में कागज़ जलाए। / वह पहले भी पुराने पत्र जला चुकी है।"
+  },
+  {
+    "backDesc": "I burst the balloon during play. / He burst into laughter. / He has burst into laughter many times.",
+    "frontDesc": "मैं खेलने के दौरान गुब्बारा फोड़ता हूँ। / वह ज़ोर से हँस पड़ा। / वह कई बार ज़ोर से हँस चुका है।"
+  },
+  {
+    "backDesc": "I forgive you for the mistake. / She forgave him for everything. / She has forgiven many people in her life.",
+    "frontDesc": "मैं तुम्हें उस ग़लती के लिए माफ़ करता हूँ। / उसने उसे सब कुछ माफ़ कर दिया। / वह अपने जीवन में कई लोगों को माफ़ कर चुकी है।"
+  },
+  {
+    "backDesc": "I freeze fruits for later. / He froze the water in the fridge. / He has frozen water for ice cubes.",
+    "frontDesc": "मैं फलों को बाद में इस्तेमाल करने के लिए फ्रीज़ करता हूँ। / उसने फ्रिज में पानी जमा दिया। / वह बर्फ़ के लिए पानी जमा चुका है।"
+  },
+  {
+    "backDesc": "I clung to my mother during the storm. / He clung to his beliefs. / He has clung to them all this time.",
+    "frontDesc": "तूफ़ान के दौरान मैं अपनी माँ से चिपक गया। / वह अपनी मान्यताओं पर क़ायम रहा। / वह इस पूरे समय उन पर क़ायम रहा है।"
+  },
+  {
+    "backDesc": "I creep through the grass to avoid being noticed. / She crept quietly. / She has crept in silently before.",
+    "frontDesc": "मैं घास के बीच से चुपचाप रेंगता हूँ ताकि कोई देख न ले। / वह चुपचाप रेंगती हुई गई। / वह पहले भी चुपके से अंदर आ चुकी है।"
+  },
+  {
+    "backDesc": "I deal in stocks on the market. / He dealt the goods in the store. / He has dealt in various products before.",
+    "frontDesc": "मैं बाज़ार में शेयरों का लेन-देन करता हूँ। / उसने दुकान में सामान बेचे। / वह पहले भी कई तरह के उत्पादों का लेन-देन कर चुका है।"
+  },
+  {
+    "backDesc": "I dig a trench in the garden. / She dug to the well. / She has dug many holes for planting.",
+    "frontDesc": "मैं बगीचे में एक गड्ढा खोदता हूँ। / उसने कुएँ तक खुदाई की। / उसने पौधे लगाने के लिए कई गड्ढे खोदे हैं।"
+  },
+  {
+    "backDesc": "I alighted on a bench in the park. / He alit on the hill. / He has alighted there a few times.",
+    "frontDesc": "मैं पार्क में एक बेंच पर उतरकर बैठ गया। / वह पहाड़ी पर उतरा। / वह वहाँ कुछ बार उतर चुका है।"
+  },
+  {
+    "backDesc": "Misfortune befell that family. / He befell bad luck. / Bad luck has befallen him recently.",
+    "frontDesc": "उस परिवार पर दुर्भाग्य आ पड़ा। / उस पर बुरा भाग्य आ पड़ा। / हाल ही में उस पर बुरा भाग्य छाया है।"
+  },
+  {
+    "backDesc": "Every person can beget offspring. / He begot an heir. / He has begotten two children.",
+    "frontDesc": "हर व्यक्ति संतान उत्पन्न कर सकता है। / उसने एक वारिस को जन्म दिया। / उसने दो बच्चों को जन्म दिया है।"
+  },
+  {
+    "backDesc": "I behold the sunset. / She beheld a beautiful landscape. / She has beheld many breathtaking views.",
+    "frontDesc": "मैं सूर्यास्त देखता हूँ। / उसने एक सुंदर दृश्य देखा। / उसने कई मनमोहक दृश्य देखे हैं।"
+  },
+  {
+    "backDesc": "I beseech you for help. / He besought forgiveness. / He has besought kindness on many occasions.",
+    "frontDesc": "मैं तुमसे मदद की गुहार करता हूँ। / उसने क्षमा की याचना की। / वह कई मौकों पर दया की याचना कर चुका है।"
+  },
+  {
+    "backDesc": "He was beset by financial problems. / He beset his targets. / He has beset them with challenges.",
+    "frontDesc": "वह आर्थिक समस्याओं से घिर गया था। / उसने अपने लक्ष्यों को घेर लिया। / उसने उन्हें चुनौतियों से घेर रखा है।"
+  },
+  {
+    "backDesc": "Parents chided the child for disobedience. / He chided him publicly. / He has chidden him for his behavior.",
+    "frontDesc": "माता-पिता ने बच्चे को अवज्ञा के लिए डाँटा। / उसने उसे सार्वजनिक रूप से फटकारा। / उसने उसके व्यवहार के लिए उसे कई बार फटकार लगाई है।"
+  },
+  {
+    "backDesc": "I clothe myself for winter. / She clad herself elegantly. / She has clad herself in fine clothes before.",
+    "frontDesc": "मैं सर्दियों के लिए अपने को कपड़ों से ढँकता हूँ। / उसने ख़ुद को सुंदर ढंग से तैयार किया। / वह पहले भी बढ़िया कपड़े पहन चुकी है।"
+  },
+  {
+    "backDesc": "I dream of vacations. / He dreamt of a trip. / He has dreamt about traveling the world.",
+    "frontDesc": "मैं छुट्टियों के सपने देखता हूँ। / उसने एक यात्रा का सपना देखा। / वह दुनिया घूमने के बारे में सपने देख चुका है।"
+  },
+  {
+    "backDesc": "I feed the dog every day. / She fed the birds in the garden. / She has fed them every morning.",
+    "frontDesc": "मैं कुत्ते को हर दिन खिलाता हूँ। / उसने बगीचे में पक्षियों को खाना खिलाया। / वह उन्हें हर सुबह खिलाती आई है।"
+  },
+  {
+    "backDesc": "This shirt fits me perfectly. / He fit into the team. / He has fit in well since day one.",
+    "frontDesc": "यह कमीज़ मुझ पर बिलकुल फ़िट है। / वह टीम में अच्छी तरह घुल-मिल गया। / वह पहले दिन से ही अच्छी तरह से शामिल हो गया है।"
+  },
+  {
+    "backDesc": "I flee from the rain. / She fled from home. / She has fled difficult situations before.",
+    "frontDesc": "मैं बारिश से बचकर भागता हूँ। / वह घर से भाग गई। / वह पहले भी कठिन परिस्थितियों से भाग चुकी है।"
+  },
+  {
+    "backDesc": "I fling a stone into the water. / He flung the bottle out the window. / He has flung objects in anger before.",
+    "frontDesc": "मैं पानी में पत्थर फेंकता हूँ। / उसने खिड़की से बोतल फेंक दी। / वह ग़ुस्से में पहले भी चीज़ें फेंक चुका है।"
+  },
+  {
+    "backDesc": "I forbid smoking in the building. / She forbade the children from watching TV. / She has forbidden them multiple times.",
+    "frontDesc": "मैं इमारत में धूम्रपान करने से मना करता हूँ। / उसने बच्चों को टीवी देखने से मना किया। / वह उन्हें कई बार मना कर चुकी है।"
+  },
+  {
+    "backDesc": "I forecast rain for tomorrow. / He forecast a price increase. / He has forecast such changes accurately.",
+    "frontDesc": "मैं कल के लिए बारिश का पूर्वानुमान लगाता हूँ। / उसने क़ीमतों में बढ़ोतरी का पूर्वानुमान लगाया। / वह ऐसे बदलावों का सटीक पूर्वानुमान लगा चुका है।"
+  },
+  {
+    "backDesc": "I forsake old habits. / She forsook her dreams. / She has forsaken them all.",
+    "frontDesc": "मैं पुरानी आदतें छोड़ देता हूँ। / उसने अपने सपनों को त्याग दिया। / वह उन सबको त्याग चुकी है।"
+  },
+  {
+    "backDesc": "I kneel before the altar. / He knelt in a gesture of respect. / He has knelt there many times.",
+    "frontDesc": "मैं वेदी के सामने घुटने टेकता हूँ। / उसने सम्मान में घुटने टेके। / वह वहाँ कई बार घुटने टेक चुका है।"
+  },
+  {
+    "backDesc": "I knit a sweater for winter. / She knitted a scarf. / She has knitted many scarves before.",
+    "frontDesc": "मैं सर्दियों के लिए स्वेटर बुनता हूँ। / उसने एक स्कार्फ बुना। / वह पहले भी कई स्कार्फ बुन चुकी है।"
+  },
+  {
+    "backDesc": "I lay the book on the table. / She laid the keys on the shelf. / She has laid them there many times.",
+    "frontDesc": "मैं किताब को मेज़ पर रख देता हूँ। / उसने चाबियाँ शेल्फ़ पर रख दीं। / वह उन्हें वहाँ कई बार रख चुकी है।"
+  },
+  {
+    "backDesc": "I lead the team. / He led the company for many years. / He has led numerous successful projects.",
+    "frontDesc": "मैं टीम का नेतृत्व करता हूँ। / उसने कई वर्षों तक कंपनी का नेतृत्व किया। / उसने कई सफल प्रोजेक्ट्स का नेतृत्व किया है।"
+  },
+  {
+    "backDesc": "I lean over the book. / He leant over the table. / He has leaned over it for hours.",
+    "frontDesc": "मैं किताब के ऊपर झुकता हूँ। / वह मेज़ पर झुक गया। / वह घंटों से उस पर झुका हुआ है।"
+  },
+  {
+    "backDesc": "I leap on the rope. / He leapt over the fence. / He has leapt across many obstacles.",
+    "frontDesc": "मैं रस्सी पर छलाँग लगाता हूँ। / वह बाड़ के ऊपर कूद गया। / वह कई बाधाओं को पार कूद चुका है।"
+  },
+  {
+    "backDesc": "I light the room's light. / He lit the light in the evening. / He has lit it every night since then.",
+    "frontDesc": "मैं कमरे की बत्ती जलाता हूँ। / उसने शाम को बत्ती जलाई। / तब से वह हर रात इसे जलाता आ रहा है।"
+  },
+  {
+    "backDesc": "I mistake in the calculations. / He mistook the decision. / He has mistaken people's intentions before.",
+    "frontDesc": "मैं गणनाओं में ग़लती कर देता हूँ। / उसने फ़ैसले को ग़लत समझ लिया। / वह पहले भी लोगों की मंशा ग़लत समझ चुका है।"
+  },
+  {
+    "backDesc": "I mow the grass in the garden. / He mowed the lawn yesterday. / He has mown it regularly.",
+    "frontDesc": "मैं बगीचे में घास काटता हूँ। / उसने कल लॉन की घास काटी। / वह इसे नियमित रूप से काटता रहा है।"
+  },
+  {
+    "backDesc": "I overcome difficulties every day. / He overcame his fears. / He has overcome many obstacles.",
+    "frontDesc": "मैं हर दिन कठिनाइयों पर विजय पाता हूँ। / उसने अपने डर पर क़ाबू पाया। / वह कई बाधाओं पर विजय पा चुका है।"
+  },
+  {
+    "backDesc": "I partake in meetings. / He partook in the conference. / He has partaken in several events recently.",
+    "frontDesc": "मैं बैठकों में भाग लेता हूँ। / उसने कॉन्फ़्रेंस में भाग लिया। / उसने हाल ही में कई आयोजनों में भाग लिया है।"
+  },
+  {
+    "backDesc": "I plead for help. / He pled for forgiveness. / He has pled for mercy many times.",
+    "frontDesc": "मैं मदद की गुहार लगाता हूँ। / उसने माफ़ी की गुज़ारिश की। / वह कई बार दया की गुज़ारिश कर चुका है।"
+  },
+  {
+    "backDesc": "I prove my innocence. / He proved his theory. / He has proven it beyond doubt.",
+    "frontDesc": "मैं अपनी बेगुनाही साबित करता हूँ। / उसने अपनी थ्योरी साबित की। / वह इसे संदेह से परे साबित कर चुका है।"
+  },
+  {
+    "backDesc": "I saw wood in the workshop. / He sawed planks for a new boat. / He has sawn many pieces of wood.",
+    "frontDesc": "मैं वर्कशॉप में लकड़ी काटता हूँ। / उसने एक नई नाव के लिए तख्ते काटे। / वह कई लकड़ी के टुकड़े काट चुका है।"
+  },
+  {
+    "backDesc": "I seek the keys at home. / He sought a solution to the problem. / He has sought answers everywhere.",
+    "frontDesc": "मैं घर में चाबियाँ तलाशता हूँ। / उसने समस्या का समाधान तलाशा। / उसने हर जगह जवाब ढूँढे हैं।"
+  },
+  {
+    "backDesc": "I sew clothes in my atelier. / He sewed a shirt for several hours. / He has sewn many garments.",
+    "frontDesc": "मैं अपने स्टूडियो में कपड़े सिलता हूँ। / उसने कई घंटों तक एक क़मीज़ सिली। / वह कई परिधान सिल चुका है।"
+  },
+  {
+    "backDesc": "I shear sheep on the farm. / He sheared a sheep yesterday. / He has shorn many sheep this season.",
+    "frontDesc": "मैं फ़ार्म पर भेड़ों की ऊन उतारता हूँ। / उसने कल एक भेड़ की ऊन उतारी। / वह इस सीज़न में कई भेड़ों की ऊन उतार चुका है।"
+  },
+  {
+    "backDesc": "My sweater shrinks after washing. / It shrank in high temperature. / It has shrunk too much.",
+    "frontDesc": "मेरा स्वेटर धोने के बाद सिकुड़ जाता है। / वह उच्च तापमान में सिकुड़ गया। / वह बहुत ज़्यादा सिकुड़ चुका है।"
+  },
+  {
+    "backDesc": "I slay rodents in the basement. / He slew the monster in the forest. / He has slain many creatures in his stories.",
+    "frontDesc": "मैं तहख़ाने में चूहों को मारता हूँ। / उसने जंगल में राक्षस को मार गिराया। / वह अपनी कहानियों में कई प्राणियों को मार चुका है।"
+  },
+  {
+    "backDesc": "The kitchen stinks of rotten food. / It stank after a hot day. / It has stunk for hours.",
+    "frontDesc": "रसोई में सड़े हुए खाने की बदबू है। / गर्म दिन के बाद उसमें बदबू आने लगी। / उसमें घंटों से बदबू आ रही है।"
+  },
+  {
+    "backDesc": "I stride with confidence. / He strode quickly, arriving on time. / He has stridden through many challenges.",
+    "frontDesc": "मैं आत्मविश्वास के साथ चलता हूँ। / वह तेज़ी से चला और समय पर पहुँच गया। / वह कई चुनौतियों को पार करता आया है।"
+  },
+  {
+    "backDesc": "I strike the ball towards the goal. / He struck the door hard. / He has struck fear into his opponents.",
+    "frontDesc": "मैं गेंद को गोल की ओर मारता हूँ। / उसने दरवाज़े पर ज़ोर से चोट की। / उसने अपने प्रतिद्वंद्वियों के दिल में डर पैदा किया है।"
+  },
+  {
+    "backDesc": "I string beads on a string. / He strung the lamp on the wall. / He has strung decorations before.",
+    "frontDesc": "मैं धागे में मोतियों को पिरोता हूँ। / उसने दीवार पर लैंप टाँगा। / वह पहले भी सजावट की चीज़ें टाँग चुका है।"
+  },
+  {
+    "backDesc": "I strive to achieve the goal. / He strove for success for years. / He has striven to reach the top.",
+    "frontDesc": "मैं लक्ष्य पाने के लिए प्रयास करता हूँ। / उसने वर्षों तक सफलता के लिए मेहनत की। / वह शीर्ष तक पहुँचने के लिए प्रयासरत रहा है।"
+  },
+  {
+    "backDesc": "I swing on the swing. / He swung on the balcony. / He has swung on that rope many times.",
+    "frontDesc": "मैं झूले पर झूलता हूँ। / वह बालकनी में झूला। / वह उस रस्सी पर कई बार झूल चुका है।"
+  },
+  {
+    "backDesc": "I tear the paper to shred it. / He tore the canvas with a knife. / He has torn many papers accidentally.",
+    "frontDesc": "मैं कागज़ को फाड़ता हूँ। / उसने चाकू से कैनवास फाड़ दिया। / वह ग़लती से कई कागज़ फाड़ चुका है।"
+  },
+  {
+    "backDesc": "I thrust the door to open it. / He thrust the door hard. / He has thrust it open before.",
+    "frontDesc": "मैं दरवाज़े को धक्का देकर खोलता हूँ। / उसने दरवाज़े को ज़ोर से धक्का दिया। / वह इसे पहले भी धक्का देकर खोल चुका है।"
+  },
+  {
+    "backDesc": "I tread carefully on the wet floor. / He trod with a confident stride. / He has trodden this path before.",
+    "frontDesc": "मैं गीली फ़र्श पर सावधानी से चलता हूँ। / वह आत्मविश्वास से चलता हुआ गया। / वह इस रास्ते पर पहले भी चल चुका है।"
+  },
+  {
+    "backDesc": "I undo the move I made. / He undid the changes in the document. / He has undone them completely.",
+    "frontDesc": "मैं अपनी की गई चाल को उलटता हूँ। / उसने दस्तावेज़ में किए बदलावों को वापस लिया। / वह उन बदलावों को पूरी तरह वापस ले चुका है।"
+  },
+  {
+    "backDesc": "I weave a scarf on the knitting needles. / He wove a rug in his workshop. / He has woven several rugs now.",
+    "frontDesc": "मैं बुनाई की सलाइयों से एक स्कार्फ बुनता हूँ। / उसने अपनी वर्कशॉप में एक कालीन बुना। / वह अब तक कई कालीन बुन चुका है।"
+  },
+  {
+    "backDesc": "I weep in sorrow. / He wept after the breakup. / He has wept many tears.",
+    "frontDesc": "मैं दुःख में रोता हूँ। / वह ब्रेकअप के बाद रोया। / वह कई बार आँसू बहा चुका है।"
+  },
+  {
+    "backDesc": "I wind the watch every morning. / He wound the strings into a tape. / He has wound them neatly.",
+    "frontDesc": "मैं हर सुबह घड़ी चढ़ाता हूँ। / उसने डोरियों को लपेटकर एक पट्टी बना दी। / वह उन्हें सफ़ाई से लपेट चुका है।"
+  },
+  {
+    "backDesc": "I withdraw from the discussion. / He withdrew from the project. / He has withdrawn completely.",
+    "frontDesc": "मैं चर्चा से पीछे हट जाता हूँ। / उसने प्रोजेक्ट से अपना नाम वापस ले लिया। / वह पूरी तरह पीछे हट चुका है।"
+  },
+  {
+    "backDesc": "I withstand difficult conditions. / He withstood the strong wind. / He has withstood many storms.",
+    "frontDesc": "मैं कठिन परिस्थितियों का सामना करता हूँ। / उसने तेज़ हवा झेली। / उसने कई तूफ़ानों का सामना किया है।"
+  },
+  {
+    "backDesc": "I wring out wet towels. / He wrung juice out of fruits. / He has wrung out many towels.",
+    "frontDesc": "मैं गीले तौलिए निचोड़ता हूँ। / उसने फलों से रस निचोड़ा। / वह कई तौलिए निचोड़ चुका है।"
+  },
+  {
+    "backDesc": "I freeze food in the freezer. / He froze water for the freezer. / He has frozen enough water for ice.",
+    "frontDesc": "मैं फ़्रीज़र में खाना जमा देता हूँ। / उसने फ़्रीज़र के लिए पानी जमा दिया। / उसने बर्फ़ के लिए काफ़ी पानी जमा दिया है।"
+  },
+  {
+    "backDesc": "I hang a picture on the wall. / He hung the lamp in the room. / He has hung many pictures around the house.",
+    "frontDesc": "मैं दीवार पर एक तस्वीर टाँगता हूँ। / उसने कमरे में लैंप टाँगा। / उसने घर के चारों ओर कई तस्वीरें टाँगी हैं।"
+  }
+]

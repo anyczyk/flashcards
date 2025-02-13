@@ -142,5 +142,7 @@
   "turn_on_shadows": "Gölgeleri aç",
   "turn_on_automatic_audio": "Otomatik sesi aç",
   "premium_account": "Premium hesabı",
-  "active": "Aktif"
+  "active": "Aktif",
+  "code": "Kod",
+  "wrong_code": "Yanlış kod"
 }

@@ -142,5 +142,7 @@
   "turn_on_shadows": "Įjunkite šešėlius",
   "turn_on_automatic_audio": "Įjunkite automatinį garsą",
   "premium_account": "Premium paskyra",
-  "active": "Aktyvus"
+  "active": "Aktyvus",
+  "code": "Kodas",
+  "wrong_code": "Neteisingas kodas"
 }

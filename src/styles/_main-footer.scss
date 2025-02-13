@@ -1,6 +1,7 @@
 @use "varibles" as vars;
 
 $padding-temp: vars.$padding-default;
+$width-temp: vars.$max-content;
 
 .o-main-footer {
   background-color: var(--color-green-less-dark);
@@ -105,17 +106,17 @@ $padding-temp: vars.$padding-default;
 .o-up-to-top {
   position: fixed;
   bottom: 72px;
-  right: max(1.5rem, calc(50% - 300px + 1.5rem));
+  right: max(1.5rem, calc(50% - #{$width-temp}/2 + 1.5rem));
   background-color: var(--color-green-less-dark-opacity-09);
   box-shadow: 0 0 4px var(--color-black);
-  max-width: 600px;
+  max-width: $width-temp; // 600px;
   width: 100%;
   z-index: 6000;
 }
 
 html[dir=rtl] {
   .o-up-to-top {
-    left: max(1.5rem, calc(50% - 300px + 1.5rem));
+    left: max(1.5rem, calc(50% - #{$width-temp}/2 + 1.5rem));
     right: auto;
   }
 }

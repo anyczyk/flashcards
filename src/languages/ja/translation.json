@@ -142,5 +142,7 @@
   "turn_on_shadows": "影をオンにする",
   "turn_on_automatic_audio": "自動オーディオをオンにする",
   "premium_account": "プレミアムアカウント",
-  "active": "アクティブ"
+  "active": "アクティブ",
+  "code": "コード",
+  "wrong_code": "間違ったコード"
 }

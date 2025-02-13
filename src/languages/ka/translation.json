@@ -1,6 +1,6 @@
 {
   "categories": "კატეგორიები",
-  "simple_flashcard_creator": "ფლეშკარდების მყრე",
+  "simple_flashcard_creator": "ფლეშ ბარათის შემქმნელი",
   "view_flashcards": "შეუწყნათ სწავლა",
   "create_flashcard": "ფლეშკარდის შექმნა",
   "edit_flashcards": "ფლეშკარდების რედაქტირება",
@@ -142,5 +142,7 @@
   "turn_on_shadows": "გამართეთ ჩრდილები",
   "turn_on_automatic_audio": "გამართეთ ავტომატური ხმაური",
   "premium_account": "Premium ​​ანგარიში",
-  "active": "აქტიური"
+  "active": "აქტიური",
+  "code": "კოდი",
+  "wrong_code": "არასწორი კოდი"
 }

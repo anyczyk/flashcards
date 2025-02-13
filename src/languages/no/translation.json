@@ -1,6 +1,6 @@
 {
   "categories": "Kategorier",
-  "simple_flashcard_creator": "Flashcard oppretter",
+  "simple_flashcard_creator": "Flashcard-skaper",
   "view_flashcards": "Start læringen din",
   "create_flashcard": "Lag flashcard",
   "edit_flashcards": "Rediger flashcards",
@@ -142,5 +142,7 @@
   "turn_on_shadows": "Slå på skygger",
   "turn_on_automatic_audio": "Slå på automatisk lyd",
   "premium_account": "Premium-konto",
-  "active": "Aktiv"
+  "active": "Aktiv",
+  "code": "Kode",
+  "wrong_code": "Feil kode"
 }

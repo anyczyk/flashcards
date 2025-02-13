@@ -1,6 +1,6 @@
 {
   "categories": "Катэгорыі",
-  "simple_flashcard_creator": "Стваральнік флешкард",
+  "simple_flashcard_creator": "Стваральнік флэш-картак",
   "view_flashcards": "Пачніце навучанне",
   "create_flashcard": "Стварыць флешкард",
   "edit_flashcards": "Рэдагаваць флешкарды",
@@ -142,5 +142,7 @@
   "turn_on_shadows": "Уключыць цені",
   "turn_on_automatic_audio": "Уключыць аўтаматычны аўдыё",
   "premium_account": "Premium-рахунак",
-  "active": "Актыўны"
+  "active": "Актыўны",
+  "code": "Код",
+  "wrong_code": "Няправільны код"
 }

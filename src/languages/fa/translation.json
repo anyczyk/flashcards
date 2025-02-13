@@ -1,6 +1,6 @@
 {
   "categories": "دسته‌بندی‌ها",
-  "simple_flashcard_creator": "سازنده فلش‌کارت ساده",
+  "simple_flashcard_creator": "سازنده فلش‌کارت",
   "view_flashcards": "آغاز یادگیری خود کنید",
   "create_flashcard": "ساخت فلش‌کارت",
   "edit_flashcards": "ویرایش فلش‌کارت‌ها",
@@ -142,5 +142,7 @@
   "turn_on_shadows": "روشن کردن سایه‌ها",
   "turn_on_automatic_audio": "روشن کردن صوت خودکار",
   "premium_account": "حساب پریمیوم",
-  "active": "فعال"
+  "active": "فعال",
+  "code": "کد",
+  "wrong_code": "کد اشتباه"
 }

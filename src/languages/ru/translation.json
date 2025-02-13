@@ -142,5 +142,7 @@
   "turn_on_shadows": "Включить тени",
   "turn_on_automatic_audio": "Включить автоматический звук",
   "premium_account": "Premium аккаунт",
-  "active": "Активен"
+  "active": "Активен",
+  "code": "Код",
+  "wrong_code": "Неверный код"
 }

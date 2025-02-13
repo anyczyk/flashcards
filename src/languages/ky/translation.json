@@ -142,5 +142,7 @@
   "turn_on_shadows": "Көгүрөлөрдү жандандыруу",
   "turn_on_automatic_audio": "Автоматты үндү жандандыруу",
   "premium_account": "Premium аккаунт",
-  "active": "Активдүү"
+  "active": "Активдүү",
+  "code": "Код",
+  "wrong_code": "Ката код"
 }

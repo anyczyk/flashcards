@@ -62,52 +62,52 @@ const ukTitle = "Українсько-англійські картки (Ukraini
 
 const dataFiles = [
     { mainLanguage: "da", category: daTitle, file: enDa, name: "1000 almindelige engelske ord", description: "1000 vanlige engelske ord - 3 sett (60) flashcards gratis"},
-    { mainLanguage: "da", category: daTitle, file: daEnIrregularVerbs, name: "Engelsk - uregelmæssige verber", description: "158 uregelmæssige verber - 2 sæt (40) gratis flashcards"},
+    { mainLanguage: "da", category: daTitle, file: daEnIrregularVerbs, name: "Engelsk - uregelmæssige verber", description: "157 uregelmæssige verber - 2 sæt (40) gratis flashcards"},
 
     { mainLanguage: "de", category: deTitle, file: enDe, name: "1000 beliebte englische Wörter", description: "1000 gebräuchliche englische Wörter – 3 Sätze (60) Lernkarten kostenlos"},
-    { mainLanguage: "de", category: deTitle, file: deEnIrregularVerbs, name: "Englisch – unregelmäßige Verben", description: "158 unregelmäßige Verben – 2 Sätze (40) kostenlose Lernkarten"},
+    { mainLanguage: "de", category: deTitle, file: deEnIrregularVerbs, name: "Englisch – unregelmäßige Verben", description: "157 unregelmäßige Verben – 2 Sätze (40) kostenlose Lernkarten"},
 
     { mainLanguage: "es", category: esTitle, file: enEs, name: "1000 palabras populares en inglés", description: "1000 palabras en inglés: 3 juegos (60) de tarjetas didácticas gratis"},
-    { mainLanguage: "es", category: esTitle, file: esEnIrregularVerbs, name: "Inglés - verbos irregulares", description: "158 verbos irregulares - 2 juegos (40) tarjetas didácticas gratuitas"},
+    { mainLanguage: "es", category: esTitle, file: esEnIrregularVerbs, name: "Inglés - verbos irregulares", description: "157 verbos irregulares - 2 juegos (40) tarjetas didácticas gratuitas"},
 
     { mainLanguage: "fi", category: fiTitle, file: enFi, name: "1000 yleistä englanninkielistä sanaa", description: "1000 yleistä englanninkielistä sanaa - 3 sarjaa (60) muistikorttia ilmaiseksi"},
-    { mainLanguage: "fi", category: fiTitle, file: fiEnIrregularVerbs, name: "Englanti - epäsäännölliset verbit", description: "158 epäsäännöllistä verbiä - 2 settiä (40) flashkorttia ilmaiseksi"},
+    { mainLanguage: "fi", category: fiTitle, file: fiEnIrregularVerbs, name: "Englanti - epäsäännölliset verbit", description: "157 epäsäännöllistä verbiä - 2 settiä (40) flashkorttia ilmaiseksi"},
 
     { mainLanguage: "fr", category: frTitle, file: enFr, name: "1000 mots anglais populaires", description: "1000 mots anglais - 3 jeux (60) de flashcards gratuits"},
-    { mainLanguage: "fr", category: frTitle, file: frEnIrregularVerbs, name: "Anglais - verbes irréguliers", description: "158 verbes irréguliers - 2 jeux (40) flashcards gratuits"},
+    { mainLanguage: "fr", category: frTitle, file: frEnIrregularVerbs, name: "Anglais - verbes irréguliers", description: "157 verbes irréguliers - 2 jeux (40) flashcards gratuits"},
 
     { mainLanguage: "hi", category: hiTitle, file: enHi, name: "1000 सामान्य अंग्रेजी शब्द", description: "1000 लोकप्रिय अंग्रेजी शब्द - 3 सेट (60) फ्लैश कार्ड मुफ़्त में"},
-    { mainLanguage: "hi", category: hiTitle, file: hiEnIrregularVerbs, name: "अंग्रेजी - अनियमित क्रियाएँ", description: "158 अनियमित क्रियाएं - 2 सेट (40) फ्लैश कार्ड मुफ़्त में"},
+    { mainLanguage: "hi", category: hiTitle, file: hiEnIrregularVerbs, name: "अंग्रेजी - अनियमित क्रियाएँ", description: "157 अनियमित क्रियाएं - 2 सेट (40) फ्लैश कार्ड मुफ़्त में"},
 
     { mainLanguage: "id", category: idTitle, file: enId, name: "1000 Kata Bahasa Inggris yang Populer", description: "1000 kata bahasa Inggris - 3 set (60) kartu flash gratis"},
-    { mainLanguage: "id", category: idTitle, file: idEnIrregularVerbs, name: "Bahasa Inggris - kata kerja tidak beraturan", description: "158 kata kerja tidak beraturan - 2 set (40) kartu flash gratis"},
+    { mainLanguage: "id", category: idTitle, file: idEnIrregularVerbs, name: "Bahasa Inggris - kata kerja tidak beraturan", description: "157 kata kerja tidak beraturan - 2 set (40) kartu flash gratis"},
 
     { mainLanguage: "it", category: itTitle, file: enIt, name: "1000 parole inglesi comuni", description: "1000 parole inglesi comuni - 3 set (60) flashcard gratis"},
-    { mainLanguage: "it", category: itTitle, file: itEnIrregularVerbs, name: "Inglese - verbi irregolari", description: "158 verbi irregolari - 2 set (40) flashcard gratis"},
+    { mainLanguage: "it", category: itTitle, file: itEnIrregularVerbs, name: "Inglese - verbi irregolari", description: "157 verbi irregolari - 2 set (40) flashcard gratis"},
 
     { mainLanguage: "ja", category: jaTitle, file: enJa, name: "人気のある英単語1000語", description: "人気のある英単語1000語 - 3セット (60枚)のフラッシュカードが無料"},
-    { mainLanguage: "ja", category: jaTitle, file: jaEnIrregularVerbs, name: "英語 - 不規則動詞", description: "158の不規則動詞 - 2セット（40枚）のフラッシュカードが無料"},
+    { mainLanguage: "ja", category: jaTitle, file: jaEnIrregularVerbs, name: "英語 - 不規則動詞", description: "157の不規則動詞 - 2セット（40枚）のフラッシュカードが無料"},
 
     { mainLanguage: "ko", category: koTitle, file: enKo, name: "1000개의 인기 있는 영어 단어", description: "1000개의 인기 있는 영어 단어 - 3세트 (60개의) 플래시 카드 무료"},
-    { mainLanguage: "ko", category: koTitle, file: koEnIrregularVerbs, name: "영어 - 불규칙 동사", description: "158개의 불규칙 동사 - 2세트 (40장의) 플래시 카드 무료"},
+    { mainLanguage: "ko", category: koTitle, file: koEnIrregularVerbs, name: "영어 - 불규칙 동사", description: "157개의 불규칙 동사 - 2세트 (40장의) 플래시 카드 무료"},
 
     { mainLanguage: "no", category: noTitle, file: enNo, name: "1000 vanlige engelske ord", description: "1000 vanlige engelske ord - 3 sett (60) flashcards gratis"},
-    { mainLanguage: "no", category: noTitle, file: noEnIrregularVerbs, name: "Engelsk - uregelmessige verb", description: "158 uregelmessige verb - 2 sett (40) flashkort gratis"},
+    { mainLanguage: "no", category: noTitle, file: noEnIrregularVerbs, name: "Engelsk - uregelmessige verb", description: "157 uregelmessige verb - 2 sett (40) flashkort gratis"},
 
     { mainLanguage: "pl", category: plTitle, file: enPl, name: "1000 popularnych angielskich słów", description: "1000 popularnych angielskich słów - 3 zestawy (60) fiszek za darmo"},
-    { mainLanguage: "pl", category: plTitle, file: plEnIrregularVerbs, name: "Angielski - czasowniki nieregularne", description: "158 czasowników nieregularnych - 2 zestawy (40) fiszek za darmo"},
+    { mainLanguage: "pl", category: plTitle, file: plEnIrregularVerbs, name: "Angielski - czasowniki nieregularne", description: "157 czasowników nieregularnych - 2 zestawy (40) fiszek za darmo"},
 
     { mainLanguage: "pt", category: ptTitle, file: enPt, name: "1000 palavras comuns em inglês", description: "1000 palavras comuns em inglês - 3 conjuntos (60) de flashcards grátis"},
-    { mainLanguage: "pt", category: ptTitle, file: ptEnIrregularVerbs, name: "Inglês - verbos irregulares", description: "158 verbos irregulares - 2 conjuntos (40) flashcards grátis"},
+    { mainLanguage: "pt", category: ptTitle, file: ptEnIrregularVerbs, name: "Inglês - verbos irregulares", description: "157 verbos irregulares - 2 conjuntos (40) flashcards grátis"},
 
     { mainLanguage: "sv", category: svTitle, file: svTh, name: "1000 vanliga engelska ord", description: "1000 vanliga engelska ord - 3 set (60) flashcards gratis"},
-    { mainLanguage: "sv", category: svTitle, file: svEnIrregularVerbs, name: "Engelska - oregelbundna verb", description: "158 oregelbundna verb - 2 set (40) flashkort gratis"},
+    { mainLanguage: "sv", category: svTitle, file: svEnIrregularVerbs, name: "Engelska - oregelbundna verb", description: "157 oregelbundna verb - 2 set (40) flashkort gratis"},
 
     { mainLanguage: "th", category: thTitle, file: enTh, name: "1000 คำศัพท์ภาษาอังกฤษยอดนิยม", description: "1000 คำศัพท์ภาษาอังกฤษยอดนิยม - 3 ชุด (60ใบ) แฟลชการ์ด ฟรี"},
-    { mainLanguage: "th", category: thTitle, file: thEnIrregularVerbs, name: "ภาษาอังกฤษ - กริยาที่ไม่สม่ำเสมอ", description: "158 คำกริยาไม่ปกติ - 2 ชุด (40 ใบ) แฟลชการ์ด ฟรี"},
+    { mainLanguage: "th", category: thTitle, file: thEnIrregularVerbs, name: "ภาษาอังกฤษ - กริยาที่ไม่สม่ำเสมอ", description: "157 คำกริยาไม่ปกติ - 2 ชุด (40 ใบ) แฟลชการ์ด ฟรี"},
 
     { flagFirst: "GB", flagSecond: "UA", mainLanguage: "uk", category: ukTitle, file: enUk, name: "1000 поширених англійських слів", description: "1000 поширених англійських слів - 3 набори (60) карток безкоштовно"},
-    { flagFirst: "UA", flagSecond: "GB", mainLanguage: "uk", category: ukTitle, file: ukEnIrregularVerbs, name: "Англійська - неправильні дієслова", description: "158 неправильних дієслів - 2 набори (40) флеш-карток безкоштовно"}
+    { flagFirst: "UA", flagSecond: "GB", mainLanguage: "uk", category: ukTitle, file: ukEnIrregularVerbs, name: "Англійська - неправильні дієслова", description: "157 неправильних дієслів - 2 набори (40) флеш-карток безкоштовно"}
 ];
 
 const FilesListImportFree = ({ timerAccess }) => {
@@ -156,7 +156,7 @@ const FilesListImportFree = ({ timerAccess }) => {
         ? [matchedCategory, ...allCategories.filter(cat => cat !== matchedCategory)]
         : allCategories;
 
-    console.log("c:",orderedCategories);
+    // console.log("c:",orderedCategories);
 
     return (
         <div className="o-files-list-import-free">

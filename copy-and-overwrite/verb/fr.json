@@ -1,0 +1,630 @@
+[
+  {
+    "backDesc": "I am a teacher. / I was at the store yesterday. / I have been at that store many times.",
+    "frontDesc": "Je suis enseignant. / J'étais au magasin hier. / Je suis allé dans ce magasin plusieurs fois."
+  },
+  {
+    "backDesc": "I want to become a doctor. / I became tired. / I have become more determined.",
+    "frontDesc": "Je veux devenir médecin. / Je suis devenu fatigué. / Je suis devenu plus déterminé."
+  },
+  {
+    "backDesc": "I begin a new project. / I began reading a book. / I have begun working on it seriously.",
+    "frontDesc": "Je commence un nouveau projet. / J'ai commencé à lire un livre. / J'ai commencé à y travailler sérieusement."
+  },
+  {
+    "backDesc": "I don't want to break the rules. / He broke the branch. / He has broken many rules in the past.",
+    "frontDesc": "Je ne veux pas enfreindre les règles. / Il a cassé la branche. / Il a enfreint de nombreuses règles par le passé."
+  },
+  {
+    "backDesc": "I bring coffee. / She brought flowers. / She has brought gifts as well.",
+    "frontDesc": "J'apporte du café. / Elle a apporté des fleurs. / Elle a également apporté des cadeaux."
+  },
+  {
+    "backDesc": "I build a house. / He built a bridge. / He has built many bridges in his career.",
+    "frontDesc": "Je construis une maison. / Il a construit un pont. / Il a construit de nombreux ponts dans sa carrière."
+  },
+  {
+    "backDesc": "I buy new clothes. / She bought a car. / She has bought several cars over the years.",
+    "frontDesc": "J'achète de nouveaux vêtements. / Elle a acheté une voiture. / Elle a acheté plusieurs voitures au fil des ans."
+  },
+  {
+    "backDesc": "I can help. / He could come earlier. / He has been able to assist many times.",
+    "frontDesc": "Je peux aider. / Il pouvait venir plus tôt. / Il a pu aider de nombreuses fois."
+  },
+  {
+    "backDesc": "I catch the ball. / He caught a fish. / He has caught many fish in this lake.",
+    "frontDesc": "J'attrape le ballon. / Il a attrapé un poisson. / Il a attrapé beaucoup de poissons dans ce lac."
+  },
+  {
+    "backDesc": "I choose a dish. / She chose a book. / She has chosen wisely every time.",
+    "frontDesc": "Je choisis un plat. / Elle a choisi un livre. / Elle a choisi judicieusement à chaque fois."
+  },
+  {
+    "backDesc": "I come to work. / He came earlier. / He has come on time every day.",
+    "frontDesc": "Je viens travailler. / Il est venu plus tôt. / Il est venu à l'heure tous les jours."
+  },
+  {
+    "backDesc": "It costs five dollars. / It cost more yesterday. / It has cost me a fortune so far.",
+    "frontDesc": "Ça coûte cinq dollars. / Ça coûtait plus cher hier. / Ça m'a coûté une fortune jusqu'à présent."
+  },
+  {
+    "backDesc": "I cut the paper. / He cut the wood. / He has cut many pieces of wood before.",
+    "frontDesc": "Je coupe le papier. / Il a coupé le bois. / Il a déjà coupé beaucoup de morceaux de bois."
+  },
+  {
+    "backDesc": "I cast away the old clothes. / He cast the net. / He has cast a net before to catch fish.",
+    "frontDesc": "Je jette les vieux vêtements. / Il a jeté le filet. / Il a déjà utilisé un filet pour pêcher."
+  },
+  {
+    "backDesc": "I do my homework. / He did the dinner. / He has done this type of work before.",
+    "frontDesc": "Je fais mes devoirs. / Il a préparé le dîner. / Il a déjà fait ce type de travail auparavant."
+  },
+  {
+    "backDesc": "I draw a picture. / She drew a landscape. / She has drawn many landscapes.",
+    "frontDesc": "Je dessine une image. / Elle a dessiné un paysage. / Elle a dessiné de nombreux paysages."
+  },
+  {
+    "backDesc": "I drink water. / He drank juice. / He has drunk all the juice in the fridge.",
+    "frontDesc": "Je bois de l'eau. / Il a bu du jus. / Il a bu tout le jus du frigo."
+  },
+  {
+    "backDesc": "I drive a car. / She drove the bus. / She has driven that route many times.",
+    "frontDesc": "Je conduis une voiture. / Elle a conduit le bus. / Elle a parcouru cet itinéraire de nombreuses fois."
+  },
+  {
+    "backDesc": "I dwell in Warsaw. / He dwelt there earlier. / He has dwelt in many cities over the years.",
+    "frontDesc": "J'habite à Varsovie. / Il y a habité plus tôt. / Il a habité dans de nombreuses villes au fil des ans."
+  },
+  {
+    "backDesc": "I eat breakfast. / She ate lunch. / She has eaten at this restaurant before.",
+    "frontDesc": "Je prends le petit déjeuner. / Elle a déjeuné. / Elle a déjà mangé dans ce restaurant."
+  },
+  {
+    "backDesc": "I fall off the bike. / He fell from the ladder. / He has fallen a few times lately.",
+    "frontDesc": "Je tombe du vélo. / Il est tombé de l'échelle. / Il est tombé plusieurs fois ces derniers temps."
+  },
+  {
+    "backDesc": "I feel good. / She felt pain. / She has felt better since then.",
+    "frontDesc": "Je me sens bien. / Elle a ressenti de la douleur. / Elle se sent mieux depuis."
+  },
+  {
+    "backDesc": "I fight for my rights. / He fought in the war. / He has fought bravely for his country.",
+    "frontDesc": "Je me bats pour mes droits. / Il a combattu pendant la guerre. / Il s'est battu courageusement pour son pays."
+  },
+  {
+    "backDesc": "I find the key. / She found the solution. / She has found many solutions so far.",
+    "frontDesc": "Je trouve la clé. / Elle a trouvé la solution. / Elle a trouvé de nombreuses solutions jusqu'à présent."
+  },
+  {
+    "backDesc": "I fly by airplane. / He flew to London. / He has flown internationally many times.",
+    "frontDesc": "Je prends l'avion. / Il a volé jusqu'à Londres. / Il a voyagé à l'international de nombreuses fois."
+  },
+  {
+    "backDesc": "I forget the name. / She forgot the keys. / She has forgotten them before.",
+    "frontDesc": "J'oublie le nom. / Elle a oublié les clés. / Elle les a déjà oubliées."
+  },
+  {
+    "backDesc": "I get a letter. / He got a gift. / He has gotten many gifts recently.",
+    "frontDesc": "Je reçois une lettre. / Il a reçu un cadeau. / Il a reçu beaucoup de cadeaux récemment."
+  },
+  {
+    "backDesc": "I give you a gift. / She gave him a book. / She has given many books as presents.",
+    "frontDesc": "Je te donne un cadeau. / Elle lui a donné un livre. / Elle a offert de nombreux livres en cadeau."
+  },
+  {
+    "backDesc": "I go to school. / He went to work. / He has gone there every day this week.",
+    "frontDesc": "Je vais à l'école. / Il est allé au travail. / Il y est allé tous les jours cette semaine."
+  },
+  {
+    "backDesc": "I grind coffee. / He ground the grain. / He has ground coffee beans for years.",
+    "frontDesc": "Je mouds le café. / Il a moulu le grain. / Il moud des grains de café depuis des années."
+  },
+  {
+    "backDesc": "I grow every day. / He grew quickly. / He has grown a lot this year.",
+    "frontDesc": "Je grandis chaque jour. / Il a grandi rapidement. / Il a beaucoup grandi cette année."
+  },
+  {
+    "backDesc": "I have a car. / He had a guitar. / She has had many opportunities to travel.",
+    "frontDesc": "J'ai une voiture. / Il avait une guitare. / Elle a eu de nombreuses occasions de voyager."
+  },
+  {
+    "backDesc": "I hear music. / He heard the noise. / He has heard that noise before.",
+    "frontDesc": "J'entends de la musique. / Il a entendu le bruit. / Il a déjà entendu ce bruit."
+  },
+  {
+    "backDesc": "I hide the gift. / She hid the letter. / She has hidden messages in her diary.",
+    "frontDesc": "Je cache le cadeau. / Elle a caché la lettre. / Elle a caché des messages dans son journal."
+  },
+  {
+    "backDesc": "I hit the ball. / He hit the door. / He has hit that ball many times.",
+    "frontDesc": "Je frappe la balle. / Il a frappé la porte. / Il a frappé cette balle plusieurs fois."
+  },
+  {
+    "backDesc": "I hold the book. / She held the bag. / She has held onto that bag for years.",
+    "frontDesc": "Je tiens le livre. / Elle a tenu le sac. / Elle a gardé ce sac pendant des années."
+  },
+  {
+    "backDesc": "I hurt myself while running. / He hurt his hand. / He has hurt himself multiple times.",
+    "frontDesc": "Je me blesse en courant. / Il s'est blessé à la main. / Il s'est fait mal plusieurs fois."
+  },
+  {
+    "backDesc": "I keep a secret. / She kept the documents. / She has kept them in a safe place.",
+    "frontDesc": "Je garde un secret. / Elle a gardé les documents. / Elle les a conservés en lieu sûr."
+  },
+  {
+    "backDesc": "I know the answer. / He knew the solution. / He has known it all along.",
+    "frontDesc": "Je connais la réponse. / Il connaissait la solution. / Il l'a toujours su."
+  },
+  {
+    "backDesc": "I learn English. / She learned to dance. / She has learned many languages.",
+    "frontDesc": "J'apprends l'anglais. / Elle a appris à danser. / Elle a appris de nombreuses langues."
+  },
+  {
+    "backDesc": "I leave the house. / He left the office. / He has left his job recently.",
+    "frontDesc": "Je quitte la maison. / Il a quitté le bureau. / Il a quitté son emploi récemment."
+  },
+  {
+    "backDesc": "I lend a book. / She lent money. / She has lent money to friends before.",
+    "frontDesc": "Je prête un livre. / Elle a prêté de l'argent. / Elle a déjà prêté de l'argent à des amis."
+  },
+  {
+    "backDesc": "I let you in. / He let her stay. / He has let many people stay at his place.",
+    "frontDesc": "Je te laisse entrer. / Il l'a laissée rester. / Il a laissé de nombreuses personnes séjourner chez lui."
+  },
+  {
+    "backDesc": "I lie on the couch. / He lay on the bed. / He has lain there for hours.",
+    "frontDesc": "Je m'allonge sur le canapé. / Il s'est allongé sur le lit. / Il est resté allongé là pendant des heures."
+  },
+  {
+    "backDesc": "I lose my keys. / He lost his wallet. / He has lost things many times.",
+    "frontDesc": "Je perds mes clés. / Il a perdu son portefeuille. / Il a perdu des choses à plusieurs reprises."
+  },
+  {
+    "backDesc": "I make dinner. / She made a cake. / She has made many delicious cakes.",
+    "frontDesc": "Je prépare le dîner. / Elle a fait un gâteau. / Elle a fait de nombreux gâteaux délicieux."
+  },
+  {
+    "backDesc": "It means something important. / He meant something else. / He has meant it sincerely all along.",
+    "frontDesc": "Cela signifie quelque chose d'important. / Il voulait dire autre chose. / Il l'a pensé sincèrement depuis le début."
+  },
+  {
+    "backDesc": "I meet with friends. / She met with the manager. / She has met many interesting people.",
+    "frontDesc": "Je rencontre des amis. / Elle a rencontré le directeur. / Elle a rencontré de nombreuses personnes intéressantes."
+  },
+  {
+    "backDesc": "I pay the bills. / He paid for dinner. / He has paid his dues already.",
+    "frontDesc": "Je paie les factures. / Il a payé le dîner. / Il a déjà payé ses cotisations."
+  },
+  {
+    "backDesc": "I put the book on the table. / She put the keys on the shelf. / She has put them there before.",
+    "frontDesc": "Je pose le livre sur la table. / Elle a mis les clés sur l'étagère. / Elle les y a déjà mises."
+  },
+  {
+    "backDesc": "I read the newspaper. / He read the book. / He has read that book many times.",
+    "frontDesc": "Je lis le journal. / Il a lu le livre. / Il a lu ce livre plusieurs fois."
+  },
+  {
+    "backDesc": "I ride a bike. / She rode a horse. / She has ridden many horses in her life.",
+    "frontDesc": "Je fais du vélo. / Elle a monté un cheval. / Elle a monté de nombreux chevaux dans sa vie."
+  },
+  {
+    "backDesc": "I ring you. / He rang me. / He has rung me every day this week.",
+    "frontDesc": "Je t'appelle. / Il m'a appelé. / Il m'a appelé tous les jours cette semaine."
+  },
+  {
+    "backDesc": "The sun rises in the morning. / He rose his hand. / He has risen early every day.",
+    "frontDesc": "Le soleil se lève le matin. / Il a levé la main. / Il s'est levé tôt chaque jour."
+  },
+  {
+    "backDesc": "I run every day. / He ran faster. / He has run marathons before.",
+    "frontDesc": "Je cours tous les jours. / Il a couru plus vite. / Il a déjà couru des marathons."
+  },
+  {
+    "backDesc": "I say the truth. / He said something important. / He has said that many times.",
+    "frontDesc": "Je dis la vérité. / Il a dit quelque chose d'important. / Il l'a répété plusieurs fois."
+  },
+  {
+    "backDesc": "I see the stars. / She saw a bird. / She has seen many birds lately.",
+    "frontDesc": "Je vois les étoiles. / Elle a vu un oiseau. / Elle a vu beaucoup d'oiseaux ces derniers temps."
+  },
+  {
+    "backDesc": "I sell a car. / He sold the house. / He has sold several houses this year.",
+    "frontDesc": "Je vends une voiture. / Il a vendu la maison. / Il a vendu plusieurs maisons cette année."
+  },
+  {
+    "backDesc": "I send a letter. / She sent a package. / She has sent many packages abroad.",
+    "frontDesc": "J'envoie une lettre. / Elle a envoyé un colis. / Elle a envoyé de nombreux colis à l'étranger."
+  },
+  {
+    "backDesc": "I set the alarm for 7 AM. / He set the tables for the party. / He has set them up perfectly.",
+    "frontDesc": "Je règle le réveil à 7h. / Il a dressé les tables pour la fête. / Il les a disposées parfaitement."
+  },
+  {
+    "backDesc": "I shake my hands when I'm nervous. / He shook his hand in farewell. / He has shaken hands many times.",
+    "frontDesc": "Je tremble des mains quand je suis nerveux(-se). / Il a serré la main pour dire au revoir. / Il a serré des mains de nombreuses fois."
+  },
+  {
+    "backDesc": "The sun shines brightly today. / He shone the lighthouse at night. / He has shone it on the rocks before.",
+    "frontDesc": "Le soleil brille fortement aujourd'hui. / Il a allumé le phare la nuit. / Il l'a déjà dirigé vers les rochers."
+  },
+  {
+    "backDesc": "I shoot with a bow during practice. / He shot a goal in the game. / He has shot many goals this season.",
+    "frontDesc": "Je tire à l'arc pendant l'entraînement. / Il a marqué un but pendant le match. / Il a marqué de nombreux buts cette saison."
+  },
+  {
+    "backDesc": "I show photos from vacation. / He showed his new car. / He has shown it to everyone.",
+    "frontDesc": "Je montre des photos de vacances. / Il a montré sa nouvelle voiture. / Il l'a montrée à tout le monde."
+  },
+  {
+    "backDesc": "I shut the door before leaving. / He shut the window when it got cold. / He has shut them every night.",
+    "frontDesc": "Je ferme la porte avant de partir. / Il a fermé la fenêtre quand il a fait froid. / Il les a fermées tous les soirs."
+  },
+  {
+    "backDesc": "I sing my favorite song. / She sang at the concert. / She has sung there many times.",
+    "frontDesc": "Je chante ma chanson préférée. / Elle a chanté lors du concert. / Elle y a chanté plusieurs fois."
+  },
+  {
+    "backDesc": "The ship sinks in the sea. / He sank during the storm. / It has sunk completely.",
+    "frontDesc": "Le navire coule en mer. / Il a sombré pendant la tempête. / Il a complètement coulé."
+  },
+  {
+    "backDesc": "I sit on the chair. / She sat at the table. / She has sat there for hours.",
+    "frontDesc": "Je m'assieds sur la chaise. / Elle s'est assise à table. / Elle est restée assise là pendant des heures."
+  },
+  {
+    "backDesc": "I sleep in my bed. / He slept all night. / He has slept well lately.",
+    "frontDesc": "Je dors dans mon lit. / Il a dormi toute la nuit. / Il a bien dormi ces derniers temps."
+  },
+  {
+    "backDesc": "I speak English. / He spoke at the conference. / He has spoken there twice.",
+    "frontDesc": "Je parle anglais. / Il a parlé à la conférence. / Il y a parlé deux fois."
+  },
+  {
+    "backDesc": "I spend time with my family. / He spent a lot of money on the trip. / He has spent all his savings.",
+    "frontDesc": "Je passe du temps avec ma famille. / Il a dépensé beaucoup d'argent pour le voyage. / Il a dépensé toutes ses économies."
+  },
+  {
+    "backDesc": "I stand at the head of the team. / She stood by the window. / She has stood there quietly.",
+    "frontDesc": "Je me tiens à la tête de l'équipe. / Elle est restée près de la fenêtre. / Elle est restée là silencieusement."
+  },
+  {
+    "backDesc": "I swim every morning. / He swam in the lake. / He has swum across that lake before.",
+    "frontDesc": "Je nage tous les matins. / Il a nagé dans le lac. / Il a déjà traversé ce lac à la nage."
+  },
+  {
+    "backDesc": "I take my medicine in the morning. / She took an umbrella. / She has taken it with her today.",
+    "frontDesc": "Je prends mes médicaments le matin. / Elle a pris un parapluie. / Elle l'a pris avec elle aujourd'hui."
+  },
+  {
+    "backDesc": "I teach mathematics. / He taught me a new skill. / He has taught many students over the years.",
+    "frontDesc": "J'enseigne les mathématiques. / Il m'a enseigné une nouvelle compétence. / Il a enseigné à de nombreux étudiants au fil des ans."
+  },
+  {
+    "backDesc": "I always tell him about the change of plans. / She told me a secret. / She has told many secrets over time.",
+    "frontDesc": "Je lui dis toujours le changement de programme. / Elle m'a confié un secret. / Elle a révélé de nombreux secrets avec le temps."
+  },
+  {
+    "backDesc": "I think about the future. / He thought about solving the problem. / He has thought it through carefully.",
+    "frontDesc": "Je pense à l'avenir. / Il a réfléchi à la résolution du problème. / Il y a réfléchi attentivement."
+  },
+  {
+    "backDesc": "I throw the ball into the basket. / She threw the bag on the ground. / She has thrown it away now.",
+    "frontDesc": "Je lance la balle dans le panier. / Elle a jeté le sac par terre. / Elle l'a maintenant jeté."
+  },
+  {
+    "backDesc": "I understand this task. / He understood my explanation. / He has understood everything clearly.",
+    "frontDesc": "Je comprends cette tâche. / Il a compris mon explication. / Il a tout compris clairement."
+  },
+  {
+    "backDesc": "I always wake up early in the morning. / She woke up late. / She has woken up earlier on other days.",
+    "frontDesc": "Je me réveille toujours tôt le matin. / Elle s'est réveillée tard. / Elle s'est réveillée plus tôt d'autres jours."
+  },
+  {
+    "backDesc": "I wear a new jacket. / He wore elegant clothes. / He has worn them many times before.",
+    "frontDesc": "Je porte une nouvelle veste. / Il portait des vêtements élégants. / Il les a déjà portés de nombreuses fois."
+  },
+  {
+    "backDesc": "I win the board game. / She won the contest. / She has won many contests in her life.",
+    "frontDesc": "Je gagne à ce jeu de société. / Elle a remporté le concours. / Elle a gagné de nombreux concours dans sa vie."
+  },
+  {
+    "backDesc": "I write a letter to a friend. / He wrote an article. / He has written several articles this month.",
+    "frontDesc": "J'écris une lettre à un ami. / Il a écrit un article. / Il a écrit plusieurs articles ce mois-ci."
+  },
+  {
+    "backDesc": "Problems arise suddenly. / He arose from the problems. / He has arisen to face new challenges.",
+    "frontDesc": "Les problèmes surviennent soudainement. / Il s'est relevé de ses problèmes. / Il s'est préparé à affronter de nouveaux défis."
+  },
+  {
+    "backDesc": "I always awake earlier. / She awoke from a light sleep. / She has awoken feeling rested.",
+    "frontDesc": "Je me réveille toujours plus tôt. / Elle s'est éveillée d'un sommeil léger. / Elle s'est réveillée en se sentant reposée."
+  },
+  {
+    "backDesc": "I usually bear it well. / He bore many difficulties. / He has borne his burdens with courage.",
+    "frontDesc": "En général, je le supporte bien. / Il a supporté de nombreuses difficultés. / Il a enduré ses fardeaux avec courage."
+  },
+  {
+    "backDesc": "I beat the drums during the concert. / He beat the record. / He has beaten several records so far.",
+    "frontDesc": "Je bats le tambour pendant le concert. / Il a battu le record. / Il a déjà battu plusieurs records."
+  },
+  {
+    "backDesc": "I bend to reach. / She bent the tree branch. / She has bent many branches while gardening.",
+    "frontDesc": "Je me penche pour atteindre. / Elle a plié la branche de l'arbre. / Elle a plié de nombreuses branches en jardinant."
+  },
+  {
+    "backDesc": "I bet that you'll arrive on time. / He bet money. / He has bet on many races.",
+    "frontDesc": "Je parie que tu arriveras à l'heure. / Il a misé de l'argent. / Il a parié sur de nombreuses courses."
+  },
+  {
+    "backDesc": "I bid on the artwork. / She bid an offer. / She has bid on several pieces of art.",
+    "frontDesc": "Je fais une offre sur l'œuvre d'art. / Elle a fait une proposition. / Elle a enchéri sur plusieurs œuvres d'art."
+  },
+  {
+    "backDesc": "I bind my shoes before leaving. / He bound the package. / He has bound multiple packages for shipping.",
+    "frontDesc": "J'attache mes chaussures avant de partir. / Il a ficelé le colis. / Il a préparé plusieurs colis pour l'expédition."
+  },
+  {
+    "backDesc": "I bite an apple for breakfast. / She bit her finger. / She has bitten her nails many times.",
+    "frontDesc": "Je mords dans une pomme au petit déjeuner. / Elle s'est mordu le doigt. / Elle s'est rongé les ongles plusieurs fois."
+  },
+  {
+    "backDesc": "My wound bleeds heavily. / He bled after the fall. / He has bled from similar wounds before.",
+    "frontDesc": "Ma blessure saigne abondamment. / Il a saigné après sa chute. / Il a déjà saigné de blessures similaires."
+  },
+  {
+    "backDesc": "I blow out the candle on the cake. / He blew up the balloon. / He has blown many balloons for parties.",
+    "frontDesc": "Je souffle la bougie sur le gâteau. / Il a gonflé le ballon. / Il a gonflé de nombreux ballons pour des fêtes."
+  },
+  {
+    "backDesc": "I breed dogs at home. / She bred horses on the farm. / She has bred different animals over the years.",
+    "frontDesc": "J'élève des chiens à la maison. / Elle a élevé des chevaux à la ferme. / Elle a élevé différents animaux au fil des ans."
+  },
+  {
+    "backDesc": "I broadcast a radio show. / He broadcast the news live. / He has broadcast important announcements recently.",
+    "frontDesc": "Je diffuse une émission de radio. / Il a diffusé les nouvelles en direct. / Il a diffusé récemment des annonces importantes."
+  },
+  {
+    "backDesc": "I burn a candle during dinner. / She burnt the papers in the furnace. / She has burnt old letters before.",
+    "frontDesc": "Je brûle une bougie pendant le dîner. / Elle a brûlé les papiers dans la chaudière. / Elle a déjà brûlé de vieilles lettres."
+  },
+  {
+    "backDesc": "I burst the balloon during play. / He burst into laughter. / He has burst into laughter many times.",
+    "frontDesc": "Je fais éclater le ballon en jouant. / Il a éclaté de rire. / Il a éclaté de rire à maintes reprises."
+  },
+  {
+    "backDesc": "I forgive you for the mistake. / She forgave him for everything. / She has forgiven many people in her life.",
+    "frontDesc": "Je te pardonne pour l'erreur. / Elle lui a tout pardonné. / Elle a pardonné à beaucoup de gens dans sa vie."
+  },
+  {
+    "backDesc": "I freeze fruits for later. / He froze the water in the fridge. / He has frozen water for ice cubes.",
+    "frontDesc": "Je congèle des fruits pour plus tard. / Il a congelé l'eau dans le réfrigérateur. / Il a congelé de l'eau pour faire des glaçons."
+  },
+  {
+    "backDesc": "I clung to my mother during the storm. / He clung to his beliefs. / He has clung to them all this time.",
+    "frontDesc": "Je me suis accroché à ma mère pendant la tempête. / Il s'est accroché à ses croyances. / Il s'y est accroché tout ce temps."
+  },
+  {
+    "backDesc": "I creep through the grass to avoid being noticed. / She crept quietly. / She has crept in silently before.",
+    "frontDesc": "Je rampe dans l'herbe pour éviter d'être remarqué. / Elle a rampé silencieusement. / Elle s'est déjà faufilée en silence."
+  },
+  {
+    "backDesc": "I deal in stocks on the market. / He dealt the goods in the store. / He has dealt in various products before.",
+    "frontDesc": "Je négocie des actions sur le marché. / Il a vendu des marchandises dans le magasin. / Il a déjà traité divers produits."
+  },
+  {
+    "backDesc": "I dig a trench in the garden. / She dug to the well. / She has dug many holes for planting.",
+    "frontDesc": "Je creuse une tranchée dans le jardin. / Elle a creusé jusqu'au puits. / Elle a creusé de nombreux trous pour planter."
+  },
+  {
+    "backDesc": "I alighted on a bench in the park. / He alit on the hill. / He has alighted there a few times.",
+    "frontDesc": "Je suis descendu sur un banc dans le parc. / Il est descendu sur la colline. / Il y est descendu plusieurs fois."
+  },
+  {
+    "backDesc": "Misfortune befell that family. / He befell bad luck. / Bad luck has befallen him recently.",
+    "frontDesc": "Le malheur s'est abattu sur cette famille. / Il a été frappé par la malchance. / La malchance s'est récemment abattue sur lui."
+  },
+  {
+    "backDesc": "Every person can beget offspring. / He begot an heir. / He has begotten two children.",
+    "frontDesc": "Chaque personne peut engendrer une descendance. / Il a engendré un héritier. / Il a engendré deux enfants."
+  },
+  {
+    "backDesc": "I behold the sunset. / She beheld a beautiful landscape. / She has beheld many breathtaking views.",
+    "frontDesc": "Je contemple le coucher de soleil. / Elle a contemplé un beau paysage. / Elle a contemplé de nombreux panoramas à couper le souffle."
+  },
+  {
+    "backDesc": "I beseech you for help. / He besought forgiveness. / He has besought kindness on many occasions.",
+    "frontDesc": "Je te supplie de m'aider. / Il a imploré le pardon. / Il a imploré la bienveillance à de nombreuses reprises."
+  },
+  {
+    "backDesc": "He was beset by financial problems. / He beset his targets. / He has beset them with challenges.",
+    "frontDesc": "Il a été assailli par des problèmes financiers. / Il a assailli ses objectifs. / Il les a accablés de défis."
+  },
+  {
+    "backDesc": "Parents chided the child for disobedience. / He chided him publicly. / He has chidden him for his behavior.",
+    "frontDesc": "Les parents ont réprimandé l'enfant pour sa désobéissance. / Il l'a réprimandé publiquement. / Il l'a déjà réprimandé pour son comportement."
+  },
+  {
+    "backDesc": "I clothe myself for winter. / She clad herself elegantly. / She has clad herself in fine clothes before.",
+    "frontDesc": "Je m'habille pour l'hiver. / Elle s'est vêtue élégamment. / Elle s'est déjà parée de beaux vêtements."
+  },
+  {
+    "backDesc": "I dream of vacations. / He dreamt of a trip. / He has dreamt about traveling the world.",
+    "frontDesc": "Je rêve de vacances. / Il a rêvé d'un voyage. / Il a rêvé de parcourir le monde."
+  },
+  {
+    "backDesc": "I feed the dog every day. / She fed the birds in the garden. / She has fed them every morning.",
+    "frontDesc": "Je nourris le chien tous les jours. / Elle a nourri les oiseaux dans le jardin. / Elle les a nourris chaque matin."
+  },
+  {
+    "backDesc": "This shirt fits me perfectly. / He fit into the team. / He has fit in well since day one.",
+    "frontDesc": "Cette chemise me va parfaitement. / Il s'est intégré dans l'équipe. / Il s'y est bien intégré depuis le premier jour."
+  },
+  {
+    "backDesc": "I flee from the rain. / She fled from home. / She has fled difficult situations before.",
+    "frontDesc": "Je fuis la pluie. / Elle s'est enfuie de chez elle. / Elle a déjà fui des situations difficiles."
+  },
+  {
+    "backDesc": "I fling a stone into the water. / He flung the bottle out the window. / He has flung objects in anger before.",
+    "frontDesc": "Je jette une pierre dans l'eau. / Il a jeté la bouteille par la fenêtre. / Il a déjà lancé des objets sous l'effet de la colère."
+  },
+  {
+    "backDesc": "I forbid smoking in the building. / She forbade the children from watching TV. / She has forbidden them multiple times.",
+    "frontDesc": "J'interdis de fumer dans le bâtiment. / Elle a interdit aux enfants de regarder la télé. / Elle leur a interdit plusieurs fois."
+  },
+  {
+    "backDesc": "I forecast rain for tomorrow. / He forecast a price increase. / He has forecast such changes accurately.",
+    "frontDesc": "Je prévois de la pluie pour demain. / Il a prédit une augmentation des prix. / Il a prédit ces changements avec précision."
+  },
+  {
+    "backDesc": "I forsake old habits. / She forsook her dreams. / She has forsaken them all.",
+    "frontDesc": "J'abandonne mes vieilles habitudes. / Elle a abandonné ses rêves. / Elle les a tous abandonnés."
+  },
+  {
+    "backDesc": "I kneel before the altar. / He knelt in a gesture of respect. / He has knelt there many times.",
+    "frontDesc": "Je m'agenouille devant l'autel. / Il s'est agenouillé en signe de respect. / Il s'y est agenouillé de nombreuses fois."
+  },
+  {
+    "backDesc": "I knit a sweater for winter. / She knitted a scarf. / She has knitted many scarves before.",
+    "frontDesc": "Je tricote un pull pour l'hiver. / Elle a tricoté une écharpe. / Elle a déjà tricoté de nombreuses écharpes."
+  },
+  {
+    "backDesc": "I lay the book on the table. / She laid the keys on the shelf. / She has laid them there many times.",
+    "frontDesc": "Je pose le livre sur la table. / Elle a posé les clés sur l'étagère. / Elle les y a posées de nombreuses fois."
+  },
+  {
+    "backDesc": "I lead the team. / He led the company for many years. / He has led numerous successful projects.",
+    "frontDesc": "Je dirige l'équipe. / Il a dirigé l'entreprise pendant de nombreuses années. / Il a mené de nombreux projets à succès."
+  },
+  {
+    "backDesc": "I lean over the book. / He leant over the table. / He has leaned over it for hours.",
+    "frontDesc": "Je me penche sur le livre. / Il s'est penché sur la table. / Il s'y est penché pendant des heures."
+  },
+  {
+    "backDesc": "I leap on the rope. / He leapt over the fence. / He has leapt across many obstacles.",
+    "frontDesc": "Je saute sur la corde. / Il a sauté par-dessus la clôture. / Il a franchi de nombreux obstacles."
+  },
+  {
+    "backDesc": "I light the room's light. / He lit the light in the evening. / He has lit it every night since then.",
+    "frontDesc": "J'allume la lumière de la pièce. / Il a allumé la lumière le soir. / Il l'a allumée tous les soirs depuis."
+  },
+  {
+    "backDesc": "I mistake in the calculations. / He mistook the decision. / He has mistaken people's intentions before.",
+    "frontDesc": "Je me trompe dans mes calculs. / Il s'est trompé dans la décision. / Il a déjà mal jugé les intentions des gens."
+  },
+  {
+    "backDesc": "I mow the grass in the garden. / He mowed the lawn yesterday. / He has mown it regularly.",
+    "frontDesc": "Je tonds l'herbe dans le jardin. / Il a tondu la pelouse hier. / Il l'a tondue régulièrement."
+  },
+  {
+    "backDesc": "I overcome difficulties every day. / He overcame his fears. / He has overcome many obstacles.",
+    "frontDesc": "Je surmonte des difficultés chaque jour. / Il a surmonté ses peurs. / Il a surmonté de nombreux obstacles."
+  },
+  {
+    "backDesc": "I partake in meetings. / He partook in the conference. / He has partaken in several events recently.",
+    "frontDesc": "Je participe à des réunions. / Il a pris part à la conférence. / Il a participé à plusieurs événements récemment."
+  },
+  {
+    "backDesc": "I plead for help. / He pled for forgiveness. / He has pled for mercy many times.",
+    "frontDesc": "Je plaide pour de l'aide. / Il a imploré le pardon. / Il a imploré la miséricorde à maintes reprises."
+  },
+  {
+    "backDesc": "I prove my innocence. / He proved his theory. / He has proven it beyond doubt.",
+    "frontDesc": "Je prouve mon innocence. / Il a prouvé sa théorie. / Il l'a prouvée sans aucun doute."
+  },
+  {
+    "backDesc": "I saw wood in the workshop. / He sawed planks for a new boat. / He has sawn many pieces of wood.",
+    "frontDesc": "Je scie du bois dans l'atelier. / Il a scié des planches pour un nouveau bateau. / Il a scié de nombreuses pièces de bois."
+  },
+  {
+    "backDesc": "I seek the keys at home. / He sought a solution to the problem. / He has sought answers everywhere.",
+    "frontDesc": "Je cherche les clés à la maison. / Il a cherché une solution au problème. / Il a cherché des réponses partout."
+  },
+  {
+    "backDesc": "I sew clothes in my atelier. / He sewed a shirt for several hours. / He has sewn many garments.",
+    "frontDesc": "Je couds des vêtements dans mon atelier. / Il a cousu une chemise pendant plusieurs heures. / Il a cousu de nombreux vêtements."
+  },
+  {
+    "backDesc": "I shear sheep on the farm. / He sheared a sheep yesterday. / He has shorn many sheep this season.",
+    "frontDesc": "Je tonds les moutons à la ferme. / Il a tondu un mouton hier. / Il a tondu de nombreux moutons cette saison."
+  },
+  {
+    "backDesc": "My sweater shrinks after washing. / It shrank in high temperature. / It has shrunk too much.",
+    "frontDesc": "Mon pull rétrécit après le lavage. / Il a rétréci à haute température. / Il a trop rétréci."
+  },
+  {
+    "backDesc": "I slay rodents in the basement. / He slew the monster in the forest. / He has slain many creatures in his stories.",
+    "frontDesc": "Je tue des rongeurs dans le sous-sol. / Il a tué le monstre dans la forêt. / Il a tué de nombreuses créatures dans ses histoires."
+  },
+  {
+    "backDesc": "The kitchen stinks of rotten food. / It stank after a hot day. / It has stunk for hours.",
+    "frontDesc": "La cuisine pue la nourriture avariée. / Ça sentait mauvais après une journée chaude. / Ça pue depuis des heures."
+  },
+  {
+    "backDesc": "I stride with confidence. / He strode quickly, arriving on time. / He has stridden through many challenges.",
+    "frontDesc": "Je marche avec assurance. / Il a marché rapidement, arrivant à l'heure. / Il a traversé de nombreux défis avec détermination."
+  },
+  {
+    "backDesc": "I strike the ball towards the goal. / He struck the door hard. / He has struck fear into his opponents.",
+    "frontDesc": "Je frappe le ballon en direction du but. / Il a frappé la porte violemment. / Il a inspiré la crainte chez ses adversaires."
+  },
+  {
+    "backDesc": "I string beads on a string. / He strung the lamp on the wall. / He has strung decorations before.",
+    "frontDesc": "J'enfile des perles sur un fil. / Il a suspendu la lampe au mur. / Il a déjà suspendu des décorations."
+  },
+  {
+    "backDesc": "I strive to achieve the goal. / He strove for success for years. / He has striven to reach the top.",
+    "frontDesc": "Je m'efforce d'atteindre l'objectif. / Il a cherché à réussir pendant des années. / Il s'est efforcé d'atteindre le sommet."
+  },
+  {
+    "backDesc": "I swing on the swing. / He swung on the balcony. / He has swung on that rope many times.",
+    "frontDesc": "Je me balance sur la balançoire. / Il s'est balancé sur le balcon. / Il s'est balancé sur cette corde de nombreuses fois."
+  },
+  {
+    "backDesc": "I tear the paper to shred it. / He tore the canvas with a knife. / He has torn many papers accidentally.",
+    "frontDesc": "Je déchire le papier pour le déchiqueter. / Il a déchiré la toile avec un couteau. / Il a déchiré de nombreux papiers par accident."
+  },
+  {
+    "backDesc": "I thrust the door to open it. / He thrust the door hard. / He has thrust it open before.",
+    "frontDesc": "Je pousse la porte pour l'ouvrir. / Il a poussé la porte violemment. / Il l'a déjà ouverte de cette façon."
+  },
+  {
+    "backDesc": "I tread carefully on the wet floor. / He trod with a confident stride. / He has trodden this path before.",
+    "frontDesc": "Je marche prudemment sur le sol mouillé. / Il a avancé d'un pas assuré. / Il a déjà emprunté ce chemin."
+  },
+  {
+    "backDesc": "I undo the move I made. / He undid the changes in the document. / He has undone them completely.",
+    "frontDesc": "J'annule le mouvement que j'ai fait. / Il a annulé les modifications dans le document. / Il les a complètement annulées."
+  },
+  {
+    "backDesc": "I weave a scarf on the knitting needles. / He wove a rug in his workshop. / He has woven several rugs now.",
+    "frontDesc": "Je tisse une écharpe avec des aiguilles à tricoter. / Il a tissé un tapis dans son atelier. / Il a déjà tissé plusieurs tapis."
+  },
+  {
+    "backDesc": "I weep in sorrow. / He wept after the breakup. / He has wept many tears.",
+    "frontDesc": "Je pleure de chagrin. / Il a pleuré après la rupture. / Il a versé beaucoup de larmes."
+  },
+  {
+    "backDesc": "I wind the watch every morning. / He wound the strings into a tape. / He has wound them neatly.",
+    "frontDesc": "Je remonte la montre tous les matins. / Il a enroulé les ficelles en une bande. / Il les a enroulées soigneusement."
+  },
+  {
+    "backDesc": "I withdraw from the discussion. / He withdrew from the project. / He has withdrawn completely.",
+    "frontDesc": "Je me retire de la discussion. / Il s'est retiré du projet. / Il s'est complètement retiré."
+  },
+  {
+    "backDesc": "I withstand difficult conditions. / He withstood the strong wind. / He has withstood many storms.",
+    "frontDesc": "Je résiste à des conditions difficiles. / Il a résisté aux vents violents. / Il a enduré de nombreuses tempêtes."
+  },
+  {
+    "backDesc": "I wring out wet towels. / He wrung juice out of fruits. / He has wrung out many towels.",
+    "frontDesc": "J'essore les serviettes mouillées. / Il a pressé le jus des fruits. / Il a essoré de nombreuses serviettes."
+  },
+  {
+    "backDesc": "I freeze food in the freezer. / He froze water for the freezer. / He has frozen enough water for ice.",
+    "frontDesc": "Je congèle de la nourriture dans le congélateur. / Il a congelé de l'eau pour le congélateur. / Il a congelé suffisamment d'eau pour faire de la glace."
+  },
+  {
+    "backDesc": "I hang a picture on the wall. / He hung the lamp in the room. / He has hung many pictures around the house.",
+    "frontDesc": "J'accroche un tableau au mur. / Il a accroché la lampe dans la pièce. / Il a accroché de nombreux tableaux dans la maison."
+  }
+]

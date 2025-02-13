@@ -12,7 +12,7 @@
     "start": "webpack serve --mode development",
     "test": "echo \"Error: no test specified\" && exit 1",
     "update-translations": "node updateTranslations.js",
-    "copy-and-overwrite": "node copy.js pl-en-irregular-verbs-full.json uk-en-irregular-verbs-full.json category"
+    "copy-and-overwrite": "node copy.js uk.json uk-en-irregular-verbs-full.json frontDesc"
   },
   "keywords": [
     "ecosystem:cordova"
@@ -46,7 +46,7 @@
     "@types/react": "^18.3.5",
     "@types/react-beautiful-dnd": "^13.1.8",
     "@types/react-dom": "^18.3.0",
-    "admob-plus-cordova": "^1.28.0",
+    "admob-plus-cordova": "^2.0.0-alpha.19",
     "babel-loader": "^9.1.3",
     "cordova-android": "^13.0.0",
     "cordova-plugin-android-permissions": "^1.1.5",
@@ -94,14 +94,14 @@
       "cordova-plugin-globalization": {},
       "cordova-plugin-tts-advanced": {},
       "cordova-plugin-insomnia": {},
-      "admob-plus-cordova": {
-        "APP_ID_ANDROID": "ca-app-pub-4263972941440160~3007691342",
-        "PLAY_SERVICES_VERSION": "20.6.0"
-      },
       "cordova-plugin-statusbar": {},
       "cordova-plugin-navigationbar-color": {},
       "cordova-plugin-purchase": {},
-      "cordova-plugin-console": {}
+      "cordova-plugin-console": {},
+      "admob-plus-cordova": {
+        "APP_ID_ANDROID": "ca-app-pub-4263972941440160~3007691342",
+        "PLAY_SERVICES_VERSION": "23.2.0"
+      }
     }
   }
 }

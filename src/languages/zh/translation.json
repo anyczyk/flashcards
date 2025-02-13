@@ -1,6 +1,6 @@
 {
   "categories": "类别",
-  "simple_flashcard_creator": "卡片创建器",
+  "simple_flashcard_creator": "抽认卡创建器",
   "view_flashcards": "开始学习",
   "create_flashcard": "创建卡片",
   "edit_flashcards": "编辑卡片",
@@ -142,5 +142,7 @@
   "turn_on_shadows": "开启阴影",
   "turn_on_automatic_audio": "开启自动音频",
   "premium_account": "高级账户",
-  "active": "活跃"
+  "active": "活跃",
+  "code": "代码",
+  "wrong_code": "错误的代码"
 }

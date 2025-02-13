@@ -1,6 +1,6 @@
 {
   "categories": "ໝວດຫຼັກ",
-  "simple_flashcard_creator": "ຜູ້ສ້າງຟລາຊກາຣດງ່າຍ",
+  "simple_flashcard_creator": "ຜູ້ສ້າງຟຼັດກາດ",
   "view_flashcards": "ເລີ່ມການຮຽນຮູ້ຂອງທ່ານ",
   "create_flashcard": "ສ້າງຟລາຊກາຣດ",
   "edit_flashcards": "ແກ້ໄຂຟລາຊກາຣດ",
@@ -142,5 +142,7 @@
   "turn_on_shadows": "ເປີດແຜ່ນຂວາງ",
   "turn_on_automatic_audio": "ເປີດສຽງອັດຕະໂນມັດ",
   "premium_account": "ບັນຊີ Premium",
-  "active": "ກຳລັງເຮັດ"
+  "active": "ກຳລັງເຮັດ",
+  "code": "ລະຫັດ",
+  "wrong_code": "ລະຫັດຜິດ"
 }

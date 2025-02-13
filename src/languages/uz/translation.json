@@ -142,5 +142,7 @@
   "turn_on_shadows": "Soyalarni yoqish",
   "turn_on_automatic_audio": "Avtomatik ovozni yoqish",
   "premium_account": "Premium hisob",
-  "active": "Faol"
+  "active": "Faol",
+  "code": "Kod",
+  "wrong_code": "Noto'g'ri kod"
 }

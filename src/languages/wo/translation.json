@@ -142,5 +142,7 @@
   "turn_on_shadows": "Jënd njaxlaf",
   "turn_on_automatic_audio": "Jënd audio otomatik",
   "premium_account": "Kontu Premium",
-  "active": "Aktif"
+  "active": "Aktif",
+  "code": "Kode",
+  "wrong_code": "Kode wuute"
 }

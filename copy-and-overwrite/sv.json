@@ -1,0 +1,630 @@
+[
+  {
+    "backDesc": "I am a teacher. / I was at the store yesterday. / I have been at that store many times.",
+    "frontDesc": "Jag är lärare. / Jag var i butiken igår. / Jag har varit i den butiken många gånger."
+  },
+  {
+    "backDesc": "I want to become a doctor. / I became tired. / I have become more determined.",
+    "frontDesc": "Jag vill bli läkare. / Jag blev trött. / Jag har blivit mer beslutsam."
+  },
+  {
+    "backDesc": "I begin a new project. / I began reading a book. / I have begun working on it seriously.",
+    "frontDesc": "Jag börjar ett nytt projekt. / Jag började läsa en bok. / Jag har börjat arbeta med den på allvar."
+  },
+  {
+    "backDesc": "I don't want to break the rules. / He broke the branch. / He has broken many rules in the past.",
+    "frontDesc": "Jag vill inte bryta mot reglerna. / Han bröt grenen. / Han har brutit mot många regler tidigare."
+  },
+  {
+    "backDesc": "I bring coffee. / She brought flowers. / She has brought gifts as well.",
+    "frontDesc": "Jag tar med kaffe. / Hon tog med blommor. / Hon har även tagit med presenter."
+  },
+  {
+    "backDesc": "I build a house. / He built a bridge. / He has built many bridges in his career.",
+    "frontDesc": "Jag bygger ett hus. / Han byggde en bro. / Han har byggt många broar i sin karriär."
+  },
+  {
+    "backDesc": "I buy new clothes. / She bought a car. / She has bought several cars over the years.",
+    "frontDesc": "Jag köper nya kläder. / Hon köpte en bil. / Hon har köpt flera bilar genom åren."
+  },
+  {
+    "backDesc": "I can help. / He could come earlier. / He has been able to assist many times.",
+    "frontDesc": "Jag kan hjälpa till. / Han kunde komma tidigare. / Han har kunnat hjälpa till många gånger."
+  },
+  {
+    "backDesc": "I catch the ball. / He caught a fish. / He has caught many fish in this lake.",
+    "frontDesc": "Jag fångar bollen. / Han fångade en fisk. / Han har fångat många fiskar i den här sjön."
+  },
+  {
+    "backDesc": "I choose a dish. / She chose a book. / She has chosen wisely every time.",
+    "frontDesc": "Jag väljer en rätt. / Hon valde en bok. / Hon har valt klokt varje gång."
+  },
+  {
+    "backDesc": "I come to work. / He came earlier. / He has come on time every day.",
+    "frontDesc": "Jag kommer till jobbet. / Han kom tidigare. / Han har kommit i tid varje dag."
+  },
+  {
+    "backDesc": "It costs five dollars. / It cost more yesterday. / It has cost me a fortune so far.",
+    "frontDesc": "Den kostar fem dollar. / Den kostade mer igår. / Den har kostat mig en förmögenhet hittills."
+  },
+  {
+    "backDesc": "I cut the paper. / He cut the wood. / He has cut many pieces of wood before.",
+    "frontDesc": "Jag skär pappret. / Han skar trä. / Han har skurit många träbitar tidigare."
+  },
+  {
+    "backDesc": "I cast away the old clothes. / He cast the net. / He has cast a net before to catch fish.",
+    "frontDesc": "Jag kastar bort de gamla kläderna. / Han kastade nätet. / Han har kastat nät för att fånga fisk tidigare."
+  },
+  {
+    "backDesc": "I do my homework. / He did the dinner. / He has done this type of work before.",
+    "frontDesc": "Jag gör mina läxor. / Han gjorde middagen. / Han har gjort den här typen av arbete förut."
+  },
+  {
+    "backDesc": "I draw a picture. / She drew a landscape. / She has drawn many landscapes.",
+    "frontDesc": "Jag ritar en bild. / Hon ritade ett landskap. / Hon har ritat många landskap."
+  },
+  {
+    "backDesc": "I drink water. / He drank juice. / He has drunk all the juice in the fridge.",
+    "frontDesc": "Jag dricker vatten. / Han drack juice. / Han har druckit all juice i kylskåpet."
+  },
+  {
+    "backDesc": "I drive a car. / She drove the bus. / She has driven that route many times.",
+    "frontDesc": "Jag kör bil. / Hon körde bussen. / Hon har kört den rutten många gånger."
+  },
+  {
+    "backDesc": "I dwell in Warsaw. / He dwelt there earlier. / He has dwelt in many cities over the years.",
+    "frontDesc": "Jag bor i Warszawa. / Han bodde där tidigare. / Han har bott i många städer genom åren."
+  },
+  {
+    "backDesc": "I eat breakfast. / She ate lunch. / She has eaten at this restaurant before.",
+    "frontDesc": "Jag äter frukost. / Hon åt lunch. / Hon har ätit på den här restaurangen förut."
+  },
+  {
+    "backDesc": "I fall off the bike. / He fell from the ladder. / He has fallen a few times lately.",
+    "frontDesc": "Jag faller av cykeln. / Han föll från stegen. / Han har fallit några gånger på sistone."
+  },
+  {
+    "backDesc": "I feel good. / She felt pain. / She has felt better since then.",
+    "frontDesc": "Jag mår bra. / Hon kände smärta. / Hon har känt sig bättre sedan dess."
+  },
+  {
+    "backDesc": "I fight for my rights. / He fought in the war. / He has fought bravely for his country.",
+    "frontDesc": "Jag kämpar för mina rättigheter. / Han kämpade i kriget. / Han har kämpat tappert för sitt land."
+  },
+  {
+    "backDesc": "I find the key. / She found the solution. / She has found many solutions so far.",
+    "frontDesc": "Jag hittar nyckeln. / Hon hittade lösningen. / Hon har hittat många lösningar hittills."
+  },
+  {
+    "backDesc": "I fly by airplane. / He flew to London. / He has flown internationally many times.",
+    "frontDesc": "Jag flyger med flygplan. / Han flög till London. / Han har flugit internationellt många gånger."
+  },
+  {
+    "backDesc": "I forget the name. / She forgot the keys. / She has forgotten them before.",
+    "frontDesc": "Jag glömmer namnet. / Hon glömde nycklarna. / Hon har glömt dem förut."
+  },
+  {
+    "backDesc": "I get a letter. / He got a gift. / He has gotten many gifts recently.",
+    "frontDesc": "Jag får ett brev. / Han fick en present. / Han har fått många presenter nyligen."
+  },
+  {
+    "backDesc": "I give you a gift. / She gave him a book. / She has given many books as presents.",
+    "frontDesc": "Jag ger dig en gåva. / Hon gav honom en bok. / Hon har gett många böcker som presenter."
+  },
+  {
+    "backDesc": "I go to school. / He went to work. / He has gone there every day this week.",
+    "frontDesc": "Jag går till skolan. / Han gick till jobbet. / Han har gått dit varje dag den här veckan."
+  },
+  {
+    "backDesc": "I grind coffee. / He ground the grain. / He has ground coffee beans for years.",
+    "frontDesc": "Jag mal kaffe. / Han malde säden. / Han har malt kaffebönor i flera år."
+  },
+  {
+    "backDesc": "I grow every day. / He grew quickly. / He has grown a lot this year.",
+    "frontDesc": "Jag växer varje dag. / Han växte snabbt. / Han har vuxit mycket i år."
+  },
+  {
+    "backDesc": "I have a car. / He had a guitar. / She has had many opportunities to travel.",
+    "frontDesc": "Jag har en bil. / Han hade en gitarr. / Hon har haft många möjligheter att resa."
+  },
+  {
+    "backDesc": "I hear music. / He heard the noise. / He has heard that noise before.",
+    "frontDesc": "Jag hör musik. / Han hörde oväsendet. / Han har hört det oväsendet förut."
+  },
+  {
+    "backDesc": "I hide the gift. / She hid the letter. / She has hidden messages in her diary.",
+    "frontDesc": "Jag gömmer presenten. / Hon gömde brevet. / Hon har gömt meddelanden i sin dagbok."
+  },
+  {
+    "backDesc": "I hit the ball. / He hit the door. / He has hit that ball many times.",
+    "frontDesc": "Jag slår bollen. / Han slog dörren. / Han har slagit den bollen många gånger."
+  },
+  {
+    "backDesc": "I hold the book. / She held the bag. / She has held onto that bag for years.",
+    "frontDesc": "Jag håller i boken. / Hon höll i väskan. / Hon har hållit i den väskan i flera år."
+  },
+  {
+    "backDesc": "I hurt myself while running. / He hurt his hand. / He has hurt himself multiple times.",
+    "frontDesc": "Jag skadar mig medan jag springer. / Han skadade sin hand. / Han har skadat sig flera gånger."
+  },
+  {
+    "backDesc": "I keep a secret. / She kept the documents. / She has kept them in a safe place.",
+    "frontDesc": "Jag bevarar en hemlighet. / Hon behöll dokumenten. / Hon har förvarat dem på ett säkert ställe."
+  },
+  {
+    "backDesc": "I know the answer. / He knew the solution. / He has known it all along.",
+    "frontDesc": "Jag vet svaret. / Han visste lösningen. / Han har vetat det hela tiden."
+  },
+  {
+    "backDesc": "I learn English. / She learned to dance. / She has learned many languages.",
+    "frontDesc": "Jag lär mig engelska. / Hon lärde sig dansa. / Hon har lärt sig många språk."
+  },
+  {
+    "backDesc": "I leave the house. / He left the office. / He has left his job recently.",
+    "frontDesc": "Jag lämnar huset. / Han lämnade kontoret. / Han har lämnat sitt jobb nyligen."
+  },
+  {
+    "backDesc": "I lend a book. / She lent money. / She has lent money to friends before.",
+    "frontDesc": "Jag lånar ut en bok. / Hon lånade ut pengar. / Hon har lånat ut pengar till vänner förut."
+  },
+  {
+    "backDesc": "I let you in. / He let her stay. / He has let many people stay at his place.",
+    "frontDesc": "Jag släpper in dig. / Han lät henne stanna. / Han har låtit många människor bo hos sig."
+  },
+  {
+    "backDesc": "I lie on the couch. / He lay on the bed. / He has lain there for hours.",
+    "frontDesc": "Jag ligger på soffan. / Han låg på sängen. / Han har legat där i timmar."
+  },
+  {
+    "backDesc": "I lose my keys. / He lost his wallet. / He has lost things many times.",
+    "frontDesc": "Jag tappar mina nycklar. / Han tappade sin plånbok. / Han har tappat bort saker många gånger."
+  },
+  {
+    "backDesc": "I make dinner. / She made a cake. / She has made many delicious cakes.",
+    "frontDesc": "Jag lagar middag. / Hon bakade en tårta. / Hon har bakat många utsökta tårtor."
+  },
+  {
+    "backDesc": "It means something important. / He meant something else. / He has meant it sincerely all along.",
+    "frontDesc": "Det betyder något viktigt. / Han menade något annat. / Han har menat det uppriktigt hela tiden."
+  },
+  {
+    "backDesc": "I meet with friends. / She met with the manager. / She has met many interesting people.",
+    "frontDesc": "Jag träffar vänner. / Hon träffade chefen. / Hon har träffat många intressanta människor."
+  },
+  {
+    "backDesc": "I pay the bills. / He paid for dinner. / He has paid his dues already.",
+    "frontDesc": "Jag betalar räkningarna. / Han betalade för middagen. / Han har redan betalat sina avgifter."
+  },
+  {
+    "backDesc": "I put the book on the table. / She put the keys on the shelf. / She has put them there before.",
+    "frontDesc": "Jag lägger boken på bordet. / Hon lade nycklarna på hyllan. / Hon har lagt dem där förut."
+  },
+  {
+    "backDesc": "I read the newspaper. / He read the book. / He has read that book many times.",
+    "frontDesc": "Jag läser tidningen. / Han läste boken. / Han har läst den boken många gånger."
+  },
+  {
+    "backDesc": "I ride a bike. / She rode a horse. / She has ridden many horses in her life.",
+    "frontDesc": "Jag cyklar. / Hon red en häst. / Hon har ridit många hästar i sitt liv."
+  },
+  {
+    "backDesc": "I ring you. / He rang me. / He has rung me every day this week.",
+    "frontDesc": "Jag ringer dig. / Han ringde mig. / Han har ringt mig varje dag den här veckan."
+  },
+  {
+    "backDesc": "The sun rises in the morning. / He rose his hand. / He has risen early every day.",
+    "frontDesc": "Solen går upp på morgonen. / Han höjde handen. / Han har stigit upp tidigt varje dag."
+  },
+  {
+    "backDesc": "I run every day. / He ran faster. / He has run marathons before.",
+    "frontDesc": "Jag springer varje dag. / Han sprang snabbare. / Han har sprungit maraton förut."
+  },
+  {
+    "backDesc": "I say the truth. / He said something important. / He has said that many times.",
+    "frontDesc": "Jag säger sanningen. / Han sa något viktigt. / Han har sagt det många gånger."
+  },
+  {
+    "backDesc": "I see the stars. / She saw a bird. / She has seen many birds lately.",
+    "frontDesc": "Jag ser stjärnorna. / Hon såg en fågel. / Hon har sett många fåglar på sistone."
+  },
+  {
+    "backDesc": "I sell a car. / He sold the house. / He has sold several houses this year.",
+    "frontDesc": "Jag säljer en bil. / Han sålde huset. / Han har sålt flera hus i år."
+  },
+  {
+    "backDesc": "I send a letter. / She sent a package. / She has sent many packages abroad.",
+    "frontDesc": "Jag skickar ett brev. / Hon skickade ett paket. / Hon har skickat många paket utomlands."
+  },
+  {
+    "backDesc": "I set the alarm for 7 AM. / He set the tables for the party. / He has set them up perfectly.",
+    "frontDesc": "Jag ställer alarmet på 7. / Han dukade borden för festen. / Han har dukat dem perfekt."
+  },
+  {
+    "backDesc": "I shake my hands when I'm nervous. / He shook his hand in farewell. / He has shaken hands many times.",
+    "frontDesc": "Jag skakar händerna när jag är nervös. / Han skakade hand i avsked. / Han har skakat hand många gånger."
+  },
+  {
+    "backDesc": "The sun shines brightly today. / He shone the lighthouse at night. / He has shone it on the rocks before.",
+    "frontDesc": "Solen skiner starkt idag. / Han lyste med fyren på natten. / Han har lyst den mot klipporna förut."
+  },
+  {
+    "backDesc": "I shoot with a bow during practice. / He shot a goal in the game. / He has shot many goals this season.",
+    "frontDesc": "Jag skjuter med en båge under träningen. / Han sköt ett mål i matchen. / Han har skjutit många mål den här säsongen."
+  },
+  {
+    "backDesc": "I show photos from vacation. / He showed his new car. / He has shown it to everyone.",
+    "frontDesc": "Jag visar foton från semestern. / Han visade sin nya bil. / Han har visat den för alla."
+  },
+  {
+    "backDesc": "I shut the door before leaving. / He shut the window when it got cold. / He has shut them every night.",
+    "frontDesc": "Jag stänger dörren innan jag går. / Han stängde fönstret när det blev kallt. / Han har stängt dem varje natt."
+  },
+  {
+    "backDesc": "I sing my favorite song. / She sang at the concert. / She has sung there many times.",
+    "frontDesc": "Jag sjunger min favoritsång. / Hon sjöng på konserten. / Hon har sjungit där många gånger."
+  },
+  {
+    "backDesc": "The ship sinks in the sea. / He sank during the storm. / It has sunk completely.",
+    "frontDesc": "Skeppet sjunker i havet. / Han sjönk under stormen. / Det har sjunkit helt."
+  },
+  {
+    "backDesc": "I sit on the chair. / She sat at the table. / She has sat there for hours.",
+    "frontDesc": "Jag sitter på stolen. / Hon satt vid bordet. / Hon har suttit där i timmar."
+  },
+  {
+    "backDesc": "I sleep in my bed. / He slept all night. / He has slept well lately.",
+    "frontDesc": "Jag sover i min säng. / Han sov hela natten. / Han har sovit bra på sistone."
+  },
+  {
+    "backDesc": "I speak English. / He spoke at the conference. / He has spoken there twice.",
+    "frontDesc": "Jag talar engelska. / Han talade på konferensen. / Han har talat där två gånger."
+  },
+  {
+    "backDesc": "I spend time with my family. / He spent a lot of money on the trip. / He has spent all his savings.",
+    "frontDesc": "Jag spenderar tid med min familj. / Han spenderade mycket pengar på resan. / Han har spenderat alla sina besparingar."
+  },
+  {
+    "backDesc": "I stand at the head of the team. / She stood by the window. / She has stood there quietly.",
+    "frontDesc": "Jag står i spetsen för teamet. / Hon stod vid fönstret. / Hon har stått där tyst."
+  },
+  {
+    "backDesc": "I swim every morning. / He swam in the lake. / He has swum across that lake before.",
+    "frontDesc": "Jag simmar varje morgon. / Han simmade i sjön. / Han har simmat över den sjön förut."
+  },
+  {
+    "backDesc": "I take my medicine in the morning. / She took an umbrella. / She has taken it with her today.",
+    "frontDesc": "Jag tar min medicin på morgonen. / Hon tog ett paraply. / Hon har tagit det med sig idag."
+  },
+  {
+    "backDesc": "I teach mathematics. / He taught me a new skill. / He has taught many students over the years.",
+    "frontDesc": "Jag undervisar i matematik. / Han lärde mig en ny färdighet. / Han har undervisat många studenter genom åren."
+  },
+  {
+    "backDesc": "I always tell him about the change of plans. / She told me a secret. / She has told many secrets over time.",
+    "frontDesc": "Jag berättar alltid för honom om ändringen av planer. / Hon berättade en hemlighet för mig. / Hon har berättat många hemligheter över tid."
+  },
+  {
+    "backDesc": "I think about the future. / He thought about solving the problem. / He has thought it through carefully.",
+    "frontDesc": "Jag tänker på framtiden. / Han tänkte på att lösa problemet. / Han har tänkt igenom det noggrant."
+  },
+  {
+    "backDesc": "I throw the ball into the basket. / She threw the bag on the ground. / She has thrown it away now.",
+    "frontDesc": "Jag kastar bollen i korgen. / Hon kastade väskan på marken. / Hon har kastat bort den nu."
+  },
+  {
+    "backDesc": "I understand this task. / He understood my explanation. / He has understood everything clearly.",
+    "frontDesc": "Jag förstår den här uppgiften. / Han förstod min förklaring. / Han har förstått allt tydligt."
+  },
+  {
+    "backDesc": "I always wake up early in the morning. / She woke up late. / She has woken up earlier on other days.",
+    "frontDesc": "Jag vaknar alltid tidigt på morgonen. / Hon vaknade sent. / Hon har vaknat tidigare andra dagar."
+  },
+  {
+    "backDesc": "I wear a new jacket. / He wore elegant clothes. / He has worn them many times before.",
+    "frontDesc": "Jag har på mig en ny jacka. / Han bar eleganta kläder. / Han har burit dem många gånger förut."
+  },
+  {
+    "backDesc": "I win the board game. / She won the contest. / She has won many contests in her life.",
+    "frontDesc": "Jag vinner brädspelet. / Hon vann tävlingen. / Hon har vunnit många tävlingar i sitt liv."
+  },
+  {
+    "backDesc": "I write a letter to a friend. / He wrote an article. / He has written several articles this month.",
+    "frontDesc": "Jag skriver ett brev till en vän. / Han skrev en artikel. / Han har skrivit flera artiklar den här månaden."
+  },
+  {
+    "backDesc": "Problems arise suddenly. / He arose from the problems. / He has arisen to face new challenges.",
+    "frontDesc": "Problem uppstår plötsligt. / Han reste sig ur problemen. / Han har rest sig för att möta nya utmaningar."
+  },
+  {
+    "backDesc": "I always awake earlier. / She awoke from a light sleep. / She has awoken feeling rested.",
+    "frontDesc": "Jag vaknar alltid tidigare. / Hon vaknade från en lätt sömn. / Hon har vaknat utvilad."
+  },
+  {
+    "backDesc": "I usually bear it well. / He bore many difficulties. / He has borne his burdens with courage.",
+    "frontDesc": "Jag brukar bära det väl. / Han bar många svårigheter. / Han har burit sina bördor med mod."
+  },
+  {
+    "backDesc": "I beat the drums during the concert. / He beat the record. / He has beaten several records so far.",
+    "frontDesc": "Jag slår på trummorna under konserten. / Han slog rekordet. / Han har slagit flera rekord hittills."
+  },
+  {
+    "backDesc": "I bend to reach. / She bent the tree branch. / She has bent many branches while gardening.",
+    "frontDesc": "Jag böjer mig för att nå. / Hon böjde grenen. / Hon har böjt många grenar under trädgårdsarbetet."
+  },
+  {
+    "backDesc": "I bet that you'll arrive on time. / He bet money. / He has bet on many races.",
+    "frontDesc": "Jag slår vad om att du kommer i tid. / Han slog vad om pengar. / Han har slagit vad på många lopp."
+  },
+  {
+    "backDesc": "I bid on the artwork. / She bid an offer. / She has bid on several pieces of art.",
+    "frontDesc": "Jag lägger ett bud på konstverket. / Hon lade ett bud. / Hon har lagt bud på flera konstverk."
+  },
+  {
+    "backDesc": "I bind my shoes before leaving. / He bound the package. / He has bound multiple packages for shipping.",
+    "frontDesc": "Jag knyter mina skor innan jag går. / Han band ihop paketet. / Han har bundit flera paket för frakt."
+  },
+  {
+    "backDesc": "I bite an apple for breakfast. / She bit her finger. / She has bitten her nails many times.",
+    "frontDesc": "Jag biter i ett äpple till frukost. / Hon bet sig i fingret. / Hon har bitit på sina naglar många gånger."
+  },
+  {
+    "backDesc": "My wound bleeds heavily. / He bled after the fall. / He has bled from similar wounds before.",
+    "frontDesc": "Mitt sår blöder kraftigt. / Han blödde efter fallet. / Han har blött från liknande sår förut."
+  },
+  {
+    "backDesc": "I blow out the candle on the cake. / He blew up the balloon. / He has blown many balloons for parties.",
+    "frontDesc": "Jag blåser ut ljuset på tårtan. / Han blåste upp ballongen. / Han har blåst upp många ballonger till fester."
+  },
+  {
+    "backDesc": "I breed dogs at home. / She bred horses on the farm. / She has bred different animals over the years.",
+    "frontDesc": "Jag föder upp hundar hemma. / Hon födde upp hästar på gården. / Hon har fött upp olika djur genom åren."
+  },
+  {
+    "backDesc": "I broadcast a radio show. / He broadcast the news live. / He has broadcast important announcements recently.",
+    "frontDesc": "Jag sänder ett radioprogram. / Han sände nyheterna live. / Han har sänt viktiga meddelanden nyligen."
+  },
+  {
+    "backDesc": "I burn a candle during dinner. / She burnt the papers in the furnace. / She has burnt old letters before.",
+    "frontDesc": "Jag tänder ett ljus under middagen. / Hon brände pappren i ugnen. / Hon har bränt gamla brev förut."
+  },
+  {
+    "backDesc": "I burst the balloon during play. / He burst into laughter. / He has burst into laughter many times.",
+    "frontDesc": "Jag spräckte ballongen under leken. / Han brast ut i skratt. / Han har brustit ut i skratt många gånger."
+  },
+  {
+    "backDesc": "I forgive you for the mistake. / She forgave him for everything. / She has forgiven many people in her life.",
+    "frontDesc": "Jag förlåter dig för misstaget. / Hon förlät honom för allt. / Hon har förlåtit många människor i sitt liv."
+  },
+  {
+    "backDesc": "I freeze fruits for later. / He froze the water in the fridge. / He has frozen water for ice cubes.",
+    "frontDesc": "Jag fryser in frukt till senare. / Han frös vattnet i kylen. / Han har frusit vatten till isbitar."
+  },
+  {
+    "backDesc": "I clung to my mother during the storm. / He clung to his beliefs. / He has clung to them all this time.",
+    "frontDesc": "Jag klamrade mig fast vid min mamma under stormen. / Han höll fast vid sina övertygelser. / Han har hållit fast vid dem hela tiden."
+  },
+  {
+    "backDesc": "I creep through the grass to avoid being noticed. / She crept quietly. / She has crept in silently before.",
+    "frontDesc": "Jag kryper genom gräset för att undvika att bli sedd. / Hon kröp tyst. / Hon har krupit in tyst förut."
+  },
+  {
+    "backDesc": "I deal in stocks on the market. / He dealt the goods in the store. / He has dealt in various products before.",
+    "frontDesc": "Jag handlar med aktier på marknaden. / Han handlade med varorna i butiken. / Han har handlat med olika produkter tidigare."
+  },
+  {
+    "backDesc": "I dig a trench in the garden. / She dug to the well. / She has dug many holes for planting.",
+    "frontDesc": "Jag gräver ett dike i trädgården. / Hon grävde fram till brunnen. / Hon har grävt många hål för plantering."
+  },
+  {
+    "backDesc": "I alighted on a bench in the park. / He alit on the hill. / He has alighted there a few times.",
+    "frontDesc": "Jag satte mig på en bänk i parken. / Han satte sig på kullen. / Han har satt sig där några gånger."
+  },
+  {
+    "backDesc": "Misfortune befell that family. / He befell bad luck. / Bad luck has befallen him recently.",
+    "frontDesc": "Olycka drabbade den familjen. / Han drabbades av otur. / Otur har drabbat honom nyligen."
+  },
+  {
+    "backDesc": "Every person can beget offspring. / He begot an heir. / He has begotten two children.",
+    "frontDesc": "Varje person kan avla avkomma. / Han avlade en arvinge. / Han har avlat två barn."
+  },
+  {
+    "backDesc": "I behold the sunset. / She beheld a beautiful landscape. / She has beheld many breathtaking views.",
+    "frontDesc": "Jag betraktar solnedgången. / Hon betraktade ett vackert landskap. / Hon har betraktat många hänförande vyer."
+  },
+  {
+    "backDesc": "I beseech you for help. / He besought forgiveness. / He has besought kindness on many occasions.",
+    "frontDesc": "Jag bönfaller dig om hjälp. / Han bönföll om förlåtelse. / Han har bönfallit om vänlighet vid många tillfällen."
+  },
+  {
+    "backDesc": "He was beset by financial problems. / He beset his targets. / He has beset them with challenges.",
+    "frontDesc": "Han var ansatt av ekonomiska problem. / Han ansatte sina mål. / Han har ansatt dem med utmaningar."
+  },
+  {
+    "backDesc": "Parents chided the child for disobedience. / He chided him publicly. / He has chidden him for his behavior.",
+    "frontDesc": "Föräldrarna tillrättavisade barnet för olydnad. / Han tillrättavisade honom offentligt. / Han har tillrättavisat honom för hans beteende."
+  },
+  {
+    "backDesc": "I clothe myself for winter. / She clad herself elegantly. / She has clad herself in fine clothes before.",
+    "frontDesc": "Jag klär mig för vintern. / Hon klädde sig elegant. / Hon har klätt sig i fina kläder tidigare."
+  },
+  {
+    "backDesc": "I dream of vacations. / He dreamt of a trip. / He has dreamt about traveling the world.",
+    "frontDesc": "Jag drömmer om semester. / Han drömde om en resa. / Han har drömt om att resa runt i världen."
+  },
+  {
+    "backDesc": "I feed the dog every day. / She fed the birds in the garden. / She has fed them every morning.",
+    "frontDesc": "Jag matar hunden varje dag. / Hon matade fåglarna i trädgården. / Hon har matat dem varje morgon."
+  },
+  {
+    "backDesc": "This shirt fits me perfectly. / He fit into the team. / He has fit in well since day one.",
+    "frontDesc": "Den här skjortan passar mig perfekt. / Han passade in i laget. / Han har passat in bra sedan första dagen."
+  },
+  {
+    "backDesc": "I flee from the rain. / She fled from home. / She has fled difficult situations before.",
+    "frontDesc": "Jag flyr från regnet. / Hon flydde hemifrån. / Hon har flytt från svåra situationer förut."
+  },
+  {
+    "backDesc": "I fling a stone into the water. / He flung the bottle out the window. / He has flung objects in anger before.",
+    "frontDesc": "Jag kastar en sten i vattnet. / Han kastade flaskan ut genom fönstret. / Han har kastat föremål i ilska förut."
+  },
+  {
+    "backDesc": "I forbid smoking in the building. / She forbade the children from watching TV. / She has forbidden them multiple times.",
+    "frontDesc": "Jag förbjuder rökning i byggnaden. / Hon förbjöd barnen att titta på TV. / Hon har förbjudit dem flera gånger."
+  },
+  {
+    "backDesc": "I forecast rain for tomorrow. / He forecast a price increase. / He has forecast such changes accurately.",
+    "frontDesc": "Jag förutspår regn till imorgon. / Han förutspådde en prisökning. / Han har förutspått sådana förändringar korrekt."
+  },
+  {
+    "backDesc": "I forsake old habits. / She forsook her dreams. / She has forsaken them all.",
+    "frontDesc": "Jag överger gamla vanor. / Hon övergav sina drömmar. / Hon har övergivit dem alla."
+  },
+  {
+    "backDesc": "I kneel before the altar. / He knelt in a gesture of respect. / He has knelt there many times.",
+    "frontDesc": "Jag knäböjer framför altaret. / Han knäböjde i en gest av respekt. / Han har knäböjt där många gånger."
+  },
+  {
+    "backDesc": "I knit a sweater for winter. / She knitted a scarf. / She has knitted many scarves before.",
+    "frontDesc": "Jag stickar en tröja till vintern. / Hon stickade en halsduk. / Hon har stickat många halsdukar tidigare."
+  },
+  {
+    "backDesc": "I lay the book on the table. / She laid the keys on the shelf. / She has laid them there many times.",
+    "frontDesc": "Jag lägger boken på bordet. / Hon lade nycklarna på hyllan. / Hon har lagt dem där många gånger."
+  },
+  {
+    "backDesc": "I lead the team. / He led the company for many years. / He has led numerous successful projects.",
+    "frontDesc": "Jag leder teamet. / Han ledde företaget i många år. / Han har lett många framgångsrika projekt."
+  },
+  {
+    "backDesc": "I lean over the book. / He leant over the table. / He has leaned over it for hours.",
+    "frontDesc": "Jag lutar mig över boken. / Han lutade sig över bordet. / Han har lutat sig över det i timmar."
+  },
+  {
+    "backDesc": "I leap on the rope. / He leapt over the fence. / He has leapt across many obstacles.",
+    "frontDesc": "Jag hoppar på repet. / Han hoppade över staketet. / Han har hoppat över många hinder."
+  },
+  {
+    "backDesc": "I light the room's light. / He lit the light in the evening. / He has lit it every night since then.",
+    "frontDesc": "Jag tänder rummets lampa. / Han tände lampan på kvällen. / Han har tänt den varje kväll sedan dess."
+  },
+  {
+    "backDesc": "I mistake in the calculations. / He mistook the decision. / He has mistaken people's intentions before.",
+    "frontDesc": "Jag gör fel i beräkningarna. / Han missuppfattade beslutet. / Han har missuppfattat människors avsikter förut."
+  },
+  {
+    "backDesc": "I mow the grass in the garden. / He mowed the lawn yesterday. / He has mown it regularly.",
+    "frontDesc": "Jag klipper gräset i trädgården. / Han klippte gräsmattan igår. / Han har klippt den regelbundet."
+  },
+  {
+    "backDesc": "I overcome difficulties every day. / He overcame his fears. / He has overcome many obstacles.",
+    "frontDesc": "Jag övervinner svårigheter varje dag. / Han övervann sina rädslor. / Han har övervunnit många hinder."
+  },
+  {
+    "backDesc": "I partake in meetings. / He partook in the conference. / He has partaken in several events recently.",
+    "frontDesc": "Jag deltar i möten. / Han deltog i konferensen. / Han har deltagit i flera evenemang nyligen."
+  },
+  {
+    "backDesc": "I plead for help. / He pled for forgiveness. / He has pled for mercy many times.",
+    "frontDesc": "Jag vädjar om hjälp. / Han vädjade om förlåtelse. / Han har vädjat om nåd många gånger."
+  },
+  {
+    "backDesc": "I prove my innocence. / He proved his theory. / He has proven it beyond doubt.",
+    "frontDesc": "Jag bevisar min oskuld. / Han bevisade sin teori. / Han har bevisat det utan tvivel."
+  },
+  {
+    "backDesc": "I saw wood in the workshop. / He sawed planks for a new boat. / He has sawn many pieces of wood.",
+    "frontDesc": "Jag sågar trä i verkstaden. / Han sågade plankor till en ny båt. / Han har sågat många träbitar."
+  },
+  {
+    "backDesc": "I seek the keys at home. / He sought a solution to the problem. / He has sought answers everywhere.",
+    "frontDesc": "Jag söker nycklarna hemma. / Han sökte en lösning på problemet. / Han har sökt svar överallt."
+  },
+  {
+    "backDesc": "I sew clothes in my atelier. / He sewed a shirt for several hours. / He has sewn many garments.",
+    "frontDesc": "Jag syr kläder i min ateljé. / Han sydde en skjorta i flera timmar. / Han har sytt många plagg."
+  },
+  {
+    "backDesc": "I shear sheep on the farm. / He sheared a sheep yesterday. / He has shorn many sheep this season.",
+    "frontDesc": "Jag klipper får på gården. / Han klippte ett får igår. / Han har klippt många får den här säsongen."
+  },
+  {
+    "backDesc": "My sweater shrinks after washing. / It shrank in high temperature. / It has shrunk too much.",
+    "frontDesc": "Min tröja krymper efter tvätt. / Den krympte i hög temperatur. / Den har krympt för mycket."
+  },
+  {
+    "backDesc": "I slay rodents in the basement. / He slew the monster in the forest. / He has slain many creatures in his stories.",
+    "frontDesc": "Jag dödar gnagare i källaren. / Han dödade monstret i skogen. / Han har dödat många varelser i sina historier."
+  },
+  {
+    "backDesc": "The kitchen stinks of rotten food. / It stank after a hot day. / It has stunk for hours.",
+    "frontDesc": "Köket stinker av rutten mat. / Det stank efter en varm dag. / Det har stunkit i timmar."
+  },
+  {
+    "backDesc": "I stride with confidence. / He strode quickly, arriving on time. / He has stridden through many challenges.",
+    "frontDesc": "Jag skrider med självförtroende. / Han skred snabbt och anlände i tid. / Han har skridit genom många utmaningar."
+  },
+  {
+    "backDesc": "I strike the ball towards the goal. / He struck the door hard. / He has struck fear into his opponents.",
+    "frontDesc": "Jag slår bollen mot målet. / Han slog hårt på dörren. / Han har slagit skräck i sina motståndare."
+  },
+  {
+    "backDesc": "I string beads on a string. / He strung the lamp on the wall. / He has strung decorations before.",
+    "frontDesc": "Jag trär pärlor på ett snöre. / Han trädde lampan på väggen. / Han har trätt upp dekorationer förut."
+  },
+  {
+    "backDesc": "I strive to achieve the goal. / He strove for success for years. / He has striven to reach the top.",
+    "frontDesc": "Jag strävar efter att uppnå målet. / Han strävade efter framgång i flera år. / Han har strävat efter att nå toppen."
+  },
+  {
+    "backDesc": "I swing on the swing. / He swung on the balcony. / He has swung on that rope many times.",
+    "frontDesc": "Jag gungar på gungan. / Han gungade på balkongen. / Han har gungat i det repet många gånger."
+  },
+  {
+    "backDesc": "I tear the paper to shred it. / He tore the canvas with a knife. / He has torn many papers accidentally.",
+    "frontDesc": "Jag river pappret för att strimla det. / Han rev duken med en kniv. / Han har rivit många papper av misstag."
+  },
+  {
+    "backDesc": "I thrust the door to open it. / He thrust the door hard. / He has thrust it open before.",
+    "frontDesc": "Jag trycker upp dörren för att öppna den. / Han stötte hårt upp dörren. / Han har stött upp den tidigare."
+  },
+  {
+    "backDesc": "I tread carefully on the wet floor. / He trod with a confident stride. / He has trodden this path before.",
+    "frontDesc": "Jag trampar försiktigt på det våta golvet. / Han trampade med ett självsäkert steg. / Han har trampat den här vägen förut."
+  },
+  {
+    "backDesc": "I undo the move I made. / He undid the changes in the document. / He has undone them completely.",
+    "frontDesc": "Jag ångrar draget jag gjorde. / Han ångrade ändringarna i dokumentet. / Han har helt och hållet ångrat dem."
+  },
+  {
+    "backDesc": "I weave a scarf on the knitting needles. / He wove a rug in his workshop. / He has woven several rugs now.",
+    "frontDesc": "Jag väver en halsduk på stickorna. / Han vävde en matta i sin verkstad. / Han har vävt flera mattor nu."
+  },
+  {
+    "backDesc": "I weep in sorrow. / He wept after the breakup. / He has wept many tears.",
+    "frontDesc": "Jag gråter av sorg. / Han grät efter uppbrottet. / Han har gråtit många tårar."
+  },
+  {
+    "backDesc": "I wind the watch every morning. / He wound the strings into a tape. / He has wound them neatly.",
+    "frontDesc": "Jag drar upp klockan varje morgon. / Han lindade in strängarna i ett band. / Han har lindat dem prydligt."
+  },
+  {
+    "backDesc": "I withdraw from the discussion. / He withdrew from the project. / He has withdrawn completely.",
+    "frontDesc": "Jag drar mig ur diskussionen. / Han drog sig ur projektet. / Han har dragit sig ur helt."
+  },
+  {
+    "backDesc": "I withstand difficult conditions. / He withstood the strong wind. / He has withstood many storms.",
+    "frontDesc": "Jag står emot svåra förhållanden. / Han stod emot den starka vinden. / Han har stått emot många stormar."
+  },
+  {
+    "backDesc": "I wring out wet towels. / He wrung juice out of fruits. / He has wrung out many towels.",
+    "frontDesc": "Jag vrider ur våta handdukar. / Han vred ut juice ur frukter. / Han har vridit ur många handdukar."
+  },
+  {
+    "backDesc": "I freeze food in the freezer. / He froze water for the freezer. / He has frozen enough water for ice.",
+    "frontDesc": "Jag fryser in mat i frysen. / Han frös in vatten för frysen. / Han har frusit in tillräckligt med vatten för is."
+  },
+  {
+    "backDesc": "I hang a picture on the wall. / He hung the lamp in the room. / He has hung many pictures around the house.",
+    "frontDesc": "Jag hänger upp en tavla på väggen. / Han hängde upp lampan i rummet. / Han har hängt upp många tavlor runt om i huset."
+  }
+]

@@ -142,5 +142,7 @@
   "turn_on_shadows": "Tænd skygger",
   "turn_on_automatic_audio": "Tænd automatisk lyd",
   "premium_account": "Premiumkonto",
-  "active": "Aktiv"
+  "active": "Aktiv",
+  "code": "Kode",
+  "wrong_code": "Forkert kode"
 }

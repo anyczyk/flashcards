@@ -1,0 +1,630 @@
+[
+  {
+    "backDesc": "I am a teacher. / I was at the store yesterday. / I have been at that store many times.",
+    "frontDesc": "ฉันเป็นครู / ฉันไปที่ร้านเมื่อวาน / ฉันเคยไปร้านนั้นหลายครั้งแล้ว"
+  },
+  {
+    "backDesc": "I want to become a doctor. / I became tired. / I have become more determined.",
+    "frontDesc": "ฉันอยากเป็นหมอ / ฉันเหนื่อยแล้ว / ฉันมีความมุ่งมั่นมากขึ้นแล้ว"
+  },
+  {
+    "backDesc": "I begin a new project. / I began reading a book. / I have begun working on it seriously.",
+    "frontDesc": "ฉันเริ่มโครงการใหม่ / ฉันเริ่มอ่านหนังสือ / ฉันได้เริ่มทำงานกับมันอย่างจริงจังแล้ว"
+  },
+  {
+    "backDesc": "I don't want to break the rules. / He broke the branch. / He has broken many rules in the past.",
+    "frontDesc": "ฉันไม่อยากละเมิดกฎ / เขาหักกิ่งไม้ / เขาได้ละเมิดกฎมาหลายครั้งแล้ว"
+  },
+  {
+    "backDesc": "I bring coffee. / She brought flowers. / She has brought gifts as well.",
+    "frontDesc": "ฉันเอากาแฟมา / เธอเอาดอกไม้มาด้วย / เธอได้นำของขวัญมาด้วยเหมือนกัน"
+  },
+  {
+    "backDesc": "I build a house. / He built a bridge. / He has built many bridges in his career.",
+    "frontDesc": "ฉันสร้างบ้าน / เขาสร้างสะพาน / เขาได้สร้างสะพานหลายแห่งในอาชีพของเขา"
+  },
+  {
+    "backDesc": "I buy new clothes. / She bought a car. / She has bought several cars over the years.",
+    "frontDesc": "ฉันซื้อเสื้อผ้าใหม่ / เธอซื้อรถ / เธอได้ซื้อรถหลายคันตลอดหลายปีที่ผ่านมา"
+  },
+  {
+    "backDesc": "I can help. / He could come earlier. / He has been able to assist many times.",
+    "frontDesc": "ฉันช่วยได้ / เขาอาจจะมาได้เร็วกว่านี้ / เขาได้ช่วยหลายครั้งแล้ว"
+  },
+  {
+    "backDesc": "I catch the ball. / He caught a fish. / He has caught many fish in this lake.",
+    "frontDesc": "ฉันจับลูกบอลได้ / เขาจับปลาได้ / เขาได้จับปลาที่ทะเลสาบนี้มาหลายครั้งแล้ว"
+  },
+  {
+    "backDesc": "I choose a dish. / She chose a book. / She has chosen wisely every time.",
+    "frontDesc": "ฉันเลือกอาหาร / เธอเลือกหนังสือ / เธอเลือกอย่างฉลาดทุกครั้ง"
+  },
+  {
+    "backDesc": "I come to work. / He came earlier. / He has come on time every day.",
+    "frontDesc": "ฉันมาทำงาน / เขามาเร็วกว่านี้ / เขามาตรงเวลาทุกวัน"
+  },
+  {
+    "backDesc": "It costs five dollars. / It cost more yesterday. / It has cost me a fortune so far.",
+    "frontDesc": "มันราคา 5 ดอลลาร์ / เมื่อวานราคาสูงกว่านี้ / จนถึงตอนนี้มันทำให้ฉันเสียเงินไปมาก"
+  },
+  {
+    "backDesc": "I cut the paper. / He cut the wood. / He has cut many pieces of wood before.",
+    "frontDesc": "ฉันตัดกระดาษ / เขาตัดไม้ / เขาเคยตัดไม้มาแล้วหลายครั้ง"
+  },
+  {
+    "backDesc": "I cast away the old clothes. / He cast the net. / He has cast a net before to catch fish.",
+    "frontDesc": "ฉันทิ้งเสื้อผ้าเก่า / เขาทอดแห / เขาเคยทอดแหเพื่อจับปลามาแล้ว"
+  },
+  {
+    "backDesc": "I do my homework. / He did the dinner. / He has done this type of work before.",
+    "frontDesc": "ฉันทำการบ้าน / เขาจัดเตรียมอาหารเย็น / เขาเคยทำงานแบบนี้มาก่อนแล้ว"
+  },
+  {
+    "backDesc": "I draw a picture. / She drew a landscape. / She has drawn many landscapes.",
+    "frontDesc": "ฉันวาดรูป / เธอวาดภาพทิวทัศน์ / เธอเคยวาดทิวทัศน์หลายครั้งแล้ว"
+  },
+  {
+    "backDesc": "I drink water. / He drank juice. / He has drunk all the juice in the fridge.",
+    "frontDesc": "ฉันดื่มน้ำ / เขาดื่มน้ำผลไม้ / เขาดื่มน้ำผลไม้ในตู้เย็นไปหมดแล้ว"
+  },
+  {
+    "backDesc": "I drive a car. / She drove the bus. / She has driven that route many times.",
+    "frontDesc": "ฉันขับรถ / เธอขับรถบัส / เธอเคยขับเส้นทางนั้นหลายครั้งแล้ว"
+  },
+  {
+    "backDesc": "I dwell in Warsaw. / He dwelt there earlier. / He has dwelt in many cities over the years.",
+    "frontDesc": "ฉันพำนักอยู่ในวอร์ซอ / เขาเคยอาศัยอยู่ที่นั่นมาก่อน / เขาเคยอาศัยอยู่ในหลายเมืองตลอดหลายปี"
+  },
+  {
+    "backDesc": "I eat breakfast. / She ate lunch. / She has eaten at this restaurant before.",
+    "frontDesc": "ฉันกินอาหารเช้า / เธอกินอาหารกลางวัน / เธอเคยกินที่ร้านนี้มาก่อน"
+  },
+  {
+    "backDesc": "I fall off the bike. / He fell from the ladder. / He has fallen a few times lately.",
+    "frontDesc": "ฉันตกจากจักรยาน / เขาตกจากบันได / ช่วงนี้เขาล้มบ่อยครั้ง"
+  },
+  {
+    "backDesc": "I feel good. / She felt pain. / She has felt better since then.",
+    "frontDesc": "ฉันรู้สึกดี / เธอรู้สึกเจ็บ / เธอรู้สึกดีขึ้นตั้งแต่นั้นมา"
+  },
+  {
+    "backDesc": "I fight for my rights. / He fought in the war. / He has fought bravely for his country.",
+    "frontDesc": "ฉันต่อสู้เพื่อสิทธิของฉัน / เขาเคยสู้ในสงคราม / เขาต่อสู้อย่างกล้าหาญเพื่อประเทศของเขา"
+  },
+  {
+    "backDesc": "I find the key. / She found the solution. / She has found many solutions so far.",
+    "frontDesc": "ฉันหากุญแจเจอ / เธอพบวิธีแก้ไข / เธอได้ค้นพบวิธีแก้หลายอย่างแล้ว"
+  },
+  {
+    "backDesc": "I fly by airplane. / He flew to London. / He has flown internationally many times.",
+    "frontDesc": "ฉันบินโดยเครื่องบิน / เขาบินไปลอนดอน / เขาเคยบินระหว่างประเทศหลายครั้งแล้ว"
+  },
+  {
+    "backDesc": "I forget the name. / She forgot the keys. / She has forgotten them before.",
+    "frontDesc": "ฉันลืมชื่อ / เธอลืมกุญแจ / เธอเคยลืมมาก่อน"
+  },
+  {
+    "backDesc": "I get a letter. / He got a gift. / He has gotten many gifts recently.",
+    "frontDesc": "ฉันได้รับจดหมาย / เขาได้รับของขวัญ / เขาเพิ่งได้รับของขวัญหลายชิ้นเมื่อไม่นานมานี้"
+  },
+  {
+    "backDesc": "I give you a gift. / She gave him a book. / She has given many books as presents.",
+    "frontDesc": "ฉันให้ของขวัญกับคุณ / เธอให้หนังสือเขา / เธอเคยให้หนังสือเป็นของขวัญหลายเล่ม"
+  },
+  {
+    "backDesc": "I go to school. / He went to work. / He has gone there every day this week.",
+    "frontDesc": "ฉันไปโรงเรียน / เขาไปทำงาน / เขาไปที่นั่นทุกวันในสัปดาห์นี้"
+  },
+  {
+    "backDesc": "I grind coffee. / He ground the grain. / He has ground coffee beans for years.",
+    "frontDesc": "ฉันบดกาแฟ / เขาบดธัญพืช / เขาได้บดเมล็ดกาแฟมาหลายปีแล้ว"
+  },
+  {
+    "backDesc": "I grow every day. / He grew quickly. / He has grown a lot this year.",
+    "frontDesc": "ฉันเติบโตทุกวัน / เขาโตเร็ว / ปีนี้เขาเติบโตขึ้นมาก"
+  },
+  {
+    "backDesc": "I have a car. / He had a guitar. / She has had many opportunities to travel.",
+    "frontDesc": "ฉันมีรถ / เขาเคยมีกีตาร์ / เธอเคยมีโอกาสเดินทางหลายครั้ง"
+  },
+  {
+    "backDesc": "I hear music. / He heard the noise. / He has heard that noise before.",
+    "frontDesc": "ฉันได้ยินเสียงเพลง / เขาได้ยินเสียงรบกวน / เขาเคยได้ยินเสียงนั้นมาก่อน"
+  },
+  {
+    "backDesc": "I hide the gift. / She hid the letter. / She has hidden messages in her diary.",
+    "frontDesc": "ฉันซ่อนของขวัญ / เธอซ่อนจดหมาย / เธอเคยซ่อนข้อความไว้ในไดอารี่ของเธอ"
+  },
+  {
+    "backDesc": "I hit the ball. / He hit the door. / He has hit that ball many times.",
+    "frontDesc": "ฉันตีลูกบอล / เขาชนประตู / เขาเคยตีลูกบอลนั้นหลายครั้งแล้ว"
+  },
+  {
+    "backDesc": "I hold the book. / She held the bag. / She has held onto that bag for years.",
+    "frontDesc": "ฉันถือหนังสือ / เธอถือกระเป๋า / เธอถือกระเป๋าใบนั้นมานานหลายปีแล้ว"
+  },
+  {
+    "backDesc": "I hurt myself while running. / He hurt his hand. / He has hurt himself multiple times.",
+    "frontDesc": "ฉันทำตัวเองเจ็บตอนวิ่ง / เขาทำมือบาดเจ็บ / เขาเคยบาดเจ็บตัวเองหลายครั้งแล้ว"
+  },
+  {
+    "backDesc": "I keep a secret. / She kept the documents. / She has kept them in a safe place.",
+    "frontDesc": "ฉันเก็บความลับ / เธอเก็บเอกสาร / เธอเก็บมันไว้ในที่ปลอดภัย"
+  },
+  {
+    "backDesc": "I know the answer. / He knew the solution. / He has known it all along.",
+    "frontDesc": "ฉันรู้คำตอบ / เขารู้วิธีแก้ / เขารู้อยู่เสมอมา"
+  },
+  {
+    "backDesc": "I learn English. / She learned to dance. / She has learned many languages.",
+    "frontDesc": "ฉันเรียนภาษาอังกฤษ / เธอเรียนเต้น / เธอได้เรียนภาษามาหลายภาษา"
+  },
+  {
+    "backDesc": "I leave the house. / He left the office. / He has left his job recently.",
+    "frontDesc": "ฉันออกจากบ้าน / เขาออกจากสำนักงาน / เขาเพิ่งออกจากงานเมื่อไม่นานมานี้"
+  },
+  {
+    "backDesc": "I lend a book. / She lent money. / She has lent money to friends before.",
+    "frontDesc": "ฉันให้ยืมหนังสือ / เธอให้ยืมเงิน / เธอเคยให้เพื่อนยืมเงินมาก่อน"
+  },
+  {
+    "backDesc": "I let you in. / He let her stay. / He has let many people stay at his place.",
+    "frontDesc": "ฉันให้คุณเข้ามา / เขาให้เธอพัก / เขาเคยให้คนหลายคนพักที่บ้านเขา"
+  },
+  {
+    "backDesc": "I lie on the couch. / He lay on the bed. / He has lain there for hours.",
+    "frontDesc": "ฉันนอนบนโซฟา / เขานอนบนเตียง / เขานอนอยู่ตรงนั้นมาหลายชั่วโมงแล้ว"
+  },
+  {
+    "backDesc": "I lose my keys. / He lost his wallet. / He has lost things many times.",
+    "frontDesc": "ฉันทำกุญแจหาย / เขาทำกระเป๋าสตางค์หาย / เขาเคยทำของหายหลายครั้ง"
+  },
+  {
+    "backDesc": "I make dinner. / She made a cake. / She has made many delicious cakes.",
+    "frontDesc": "ฉันทำอาหารเย็น / เธอทำเค้ก / เธอเคยทำเค้กอร่อยๆมาหลายครั้ง"
+  },
+  {
+    "backDesc": "It means something important. / He meant something else. / He has meant it sincerely all along.",
+    "frontDesc": "มันมีความหมายสำคัญ / เขาตั้งใจพูดถึงสิ่งอื่น / เขาตั้งใจมาโดยตลอด"
+  },
+  {
+    "backDesc": "I meet with friends. / She met with the manager. / She has met many interesting people.",
+    "frontDesc": "ฉันพบเพื่อน / เธอพบผู้จัดการ / เธอได้พบผู้คนน่าสนใจมากมาย"
+  },
+  {
+    "backDesc": "I pay the bills. / He paid for dinner. / He has paid his dues already.",
+    "frontDesc": "ฉันจ่ายบิล / เขาจ่ายค่าอาหารเย็น / เขาได้จ่ายค่าใช้จ่ายของเขาเรียบร้อยแล้ว"
+  },
+  {
+    "backDesc": "I put the book on the table. / She put the keys on the shelf. / She has put them there before.",
+    "frontDesc": "ฉันวางหนังสือบนโต๊ะ / เธอวางกุญแจบนชั้น / เธอเคยวางมันไว้ตรงนั้นมาก่อน"
+  },
+  {
+    "backDesc": "I read the newspaper. / He read the book. / He has read that book many times.",
+    "frontDesc": "ฉันอ่านหนังสือพิมพ์ / เขาอ่านหนังสือเล่มนั้น / เขาเคยอ่านหนังสือเล่มนั้นมาหลายครั้ง"
+  },
+  {
+    "backDesc": "I ride a bike. / She rode a horse. / She has ridden many horses in her life.",
+    "frontDesc": "ฉันขี่จักรยาน / เธอขี่ม้า / เธอเคยขี่ม้ามาหลายตัวในชีวิต"
+  },
+  {
+    "backDesc": "I ring you. / He rang me. / He has rung me every day this week.",
+    "frontDesc": "ฉันโทรหาเธอ / เขาโทรหาฉัน / เขาโทรหาฉันทุกวันในสัปดาห์นี้"
+  },
+  {
+    "backDesc": "The sun rises in the morning. / He rose his hand. / He has risen early every day.",
+    "frontDesc": "ดวงอาทิตย์ขึ้นตอนเช้า / เขายกมือขึ้น / เขาตื่นเช้าทุกวัน"
+  },
+  {
+    "backDesc": "I run every day. / He ran faster. / He has run marathons before.",
+    "frontDesc": "ฉันวิ่งทุกวัน / เขาวิ่งได้เร็วกว่า / เขาเคยวิ่งมาราธอนมาก่อน"
+  },
+  {
+    "backDesc": "I say the truth. / He said something important. / He has said that many times.",
+    "frontDesc": "ฉันพูดความจริง / เขาพูดบางอย่างที่สำคัญ / เขาได้พูดแบบนี้มาหลายครั้งแล้ว"
+  },
+  {
+    "backDesc": "I see the stars. / She saw a bird. / She has seen many birds lately.",
+    "frontDesc": "ฉันเห็นดวงดาว / เธอเห็นนก / ระยะหลังเธอได้เห็นนกหลายตัว"
+  },
+  {
+    "backDesc": "I sell a car. / He sold the house. / He has sold several houses this year.",
+    "frontDesc": "ฉันขายรถ / เขาขายบ้าน / ปีนี้เขาขายบ้านไปหลายหลังแล้ว"
+  },
+  {
+    "backDesc": "I send a letter. / She sent a package. / She has sent many packages abroad.",
+    "frontDesc": "ฉันส่งจดหมาย / เธอส่งพัสดุ / เธอเคยส่งพัสดุไปต่างประเทศหลายครั้ง"
+  },
+  {
+    "backDesc": "I set the alarm for 7 AM. / He set the tables for the party. / He has set them up perfectly.",
+    "frontDesc": "ฉันตั้งปลุกไว้ตอน 7 โมงเช้า / เขาจัดโต๊ะสำหรับงานเลี้ยง / เขาจัดทุกอย่างได้สมบูรณ์แบบ"
+  },
+  {
+    "backDesc": "I shake my hands when I'm nervous. / He shook his hand in farewell. / He has shaken hands many times.",
+    "frontDesc": "ฉันสั่นมือเวลาฉันประหม่า / เขาจับมืออำลา / เขาเคยจับมือมาหลายครั้งแล้ว"
+  },
+  {
+    "backDesc": "The sun shines brightly today. / He shone the lighthouse at night. / He has shone it on the rocks before.",
+    "frontDesc": "วันนี้ดวงอาทิตย์ส่องแสงจ้า / เขาส่องไฟประภาคารในตอนกลางคืน / เขาเคยส่องไปที่โขดหินมาแล้ว"
+  },
+  {
+    "backDesc": "I shoot with a bow during practice. / He shot a goal in the game. / He has shot many goals this season.",
+    "frontDesc": "ฉันยิงธนูระหว่างฝึก / เขายิงประตูได้ในเกม / เขายิงประตูได้หลายครั้งในฤดูกาลนี้"
+  },
+  {
+    "backDesc": "I show photos from vacation. / He showed his new car. / He has shown it to everyone.",
+    "frontDesc": "ฉันโชว์รูปถ่ายจากวันหยุด / เขาอวดรถคันใหม่ / เขาได้โชว์มันให้ทุกคนดูแล้ว"
+  },
+  {
+    "backDesc": "I shut the door before leaving. / He shut the window when it got cold. / He has shut them every night.",
+    "frontDesc": "ฉันปิดประตูก่อนออก / เขาปิดหน้าต่างตอนอากาศหนาว / เขาปิดมันทุกคืน"
+  },
+  {
+    "backDesc": "I sing my favorite song. / She sang at the concert. / She has sung there many times.",
+    "frontDesc": "ฉันร้องเพลงโปรด / เธอร้องเพลงในคอนเสิร์ต / เธอเคยร้องที่นั่นมาหลายครั้งแล้ว"
+  },
+  {
+    "backDesc": "The ship sinks in the sea. / He sank during the storm. / It has sunk completely.",
+    "frontDesc": "เรือจมลงในทะเล / เขาจมลงระหว่างพายุ / มันจมลงไปหมดแล้ว"
+  },
+  {
+    "backDesc": "I sit on the chair. / She sat at the table. / She has sat there for hours.",
+    "frontDesc": "ฉันนั่งบนเก้าอี้ / เธอนั่งที่โต๊ะ / เธอนั่งอยู่ตรงนั้นมาหลายชั่วโมงแล้ว"
+  },
+  {
+    "backDesc": "I sleep in my bed. / He slept all night. / He has slept well lately.",
+    "frontDesc": "ฉันนอนบนเตียง / เขานอนตลอดทั้งคืน / ช่วงนี้เขานอนหลับสบาย"
+  },
+  {
+    "backDesc": "I speak English. / He spoke at the conference. / He has spoken there twice.",
+    "frontDesc": "ฉันพูดภาษาอังกฤษ / เขาพูดในที่ประชุม / เขาเคยพูดที่นั่นสองครั้งแล้ว"
+  },
+  {
+    "backDesc": "I spend time with my family. / He spent a lot of money on the trip. / He has spent all his savings.",
+    "frontDesc": "ฉันใช้เวลากับครอบครัว / เขาใช้เงินไปมากในการเดินทาง / เขาใช้เงินเก็บทั้งหมดไปแล้ว"
+  },
+  {
+    "backDesc": "I stand at the head of the team. / She stood by the window. / She has stood there quietly.",
+    "frontDesc": "ฉันยืนเป็นหัวหน้าทีม / เธอยืนอยู่ข้างหน้าต่าง / เธอยืนอยู่ที่นั่นอย่างเงียบๆ"
+  },
+  {
+    "backDesc": "I swim every morning. / He swam in the lake. / He has swum across that lake before.",
+    "frontDesc": "ฉันว่ายน้ำทุกเช้า / เขาว่ายในทะเลสาบ / เขาเคยว่ายข้ามทะเลสาบนั้นมาแล้ว"
+  },
+  {
+    "backDesc": "I take my medicine in the morning. / She took an umbrella. / She has taken it with her today.",
+    "frontDesc": "ฉันกินยาตอนเช้า / เธอเอาร่มไป / วันนี้เธอเอามันไปด้วย"
+  },
+  {
+    "backDesc": "I teach mathematics. / He taught me a new skill. / He has taught many students over the years.",
+    "frontDesc": "ฉันสอนคณิตศาสตร์ / เขาสอนทักษะใหม่ให้ฉัน / เขาได้สอนนักเรียนหลายคนตลอดหลายปี"
+  },
+  {
+    "backDesc": "I always tell him about the change of plans. / She told me a secret. / She has told many secrets over time.",
+    "frontDesc": "ฉันบอกเขาเสมอเกี่ยวกับการเปลี่ยนแผน / เธอบอกความลับกับฉัน / เธอได้บอกความลับหลายเรื่องตามกาลเวลา"
+  },
+  {
+    "backDesc": "I think about the future. / He thought about solving the problem. / He has thought it through carefully.",
+    "frontDesc": "ฉันคิดถึงอนาคต / เขาคิดเกี่ยวกับการแก้ปัญหา / เขาได้ไตร่ตรองอย่างรอบคอบแล้ว"
+  },
+  {
+    "backDesc": "I throw the ball into the basket. / She threw the bag on the ground. / She has thrown it away now.",
+    "frontDesc": "ฉันโยนลูกบอลลงตะกร้า / เธอโยนกระเป๋าลงพื้น / ตอนนี้เธอโยนมันทิ้งไปแล้ว"
+  },
+  {
+    "backDesc": "I understand this task. / He understood my explanation. / He has understood everything clearly.",
+    "frontDesc": "ฉันเข้าใจงานนี้ / เขาเข้าใจคำอธิบายของฉัน / เขาเข้าใจทุกอย่างอย่างชัดเจนแล้ว"
+  },
+  {
+    "backDesc": "I always wake up early in the morning. / She woke up late. / She has woken up earlier on other days.",
+    "frontDesc": "ฉันตื่นนอนแต่เช้าทุกวัน / เธอตื่นสาย / วันอื่นๆ เธอเคยตื่นเช้ากว่านี้"
+  },
+  {
+    "backDesc": "I wear a new jacket. / He wore elegant clothes. / He has worn them many times before.",
+    "frontDesc": "ฉันใส่เสื้อแจ็คเก็ตใหม่ / เขาใส่เสื้อผ้าสง่างาม / เขาเคยใส่มันมาหลายครั้งแล้ว"
+  },
+  {
+    "backDesc": "I win the board game. / She won the contest. / She has won many contests in her life.",
+    "frontDesc": "ฉันชนะเกมกระดาน / เธอชนะการประกวด / เธอเคยชนะการประกวดมาหลายครั้งในชีวิต"
+  },
+  {
+    "backDesc": "I write a letter to a friend. / He wrote an article. / He has written several articles this month.",
+    "frontDesc": "ฉันเขียนจดหมายถึงเพื่อน / เขาเขียนบทความ / เดือนนี้เขาเขียนบทความไปหลายชิ้นแล้ว"
+  },
+  {
+    "backDesc": "Problems arise suddenly. / He arose from the problems. / He has arisen to face new challenges.",
+    "frontDesc": "ปัญหาเกิดขึ้นอย่างกะทันหัน / เขาลุกขึ้นจากปัญหา / เขาลุกขึ้นเพื่อเผชิญกับความท้าทายใหม่ๆ"
+  },
+  {
+    "backDesc": "I always awake earlier. / She awoke from a light sleep. / She has awoken feeling rested.",
+    "frontDesc": "ฉันตื่นเร็วกว่าปกติเสมอ / เธอตื่นจากการหลับตื้น / เธอตื่นมาด้วยความรู้สึกพักผ่อนเพียงพอ"
+  },
+  {
+    "backDesc": "I usually bear it well. / He bore many difficulties. / He has borne his burdens with courage.",
+    "frontDesc": "ฉันมักจะอดทนกับมันได้ดี / เขาเผชิญความยากลำบากมากมาย / เขาได้แบกรับภาระด้วยความกล้าหาญ"
+  },
+  {
+    "backDesc": "I beat the drums during the concert. / He beat the record. / He has beaten several records so far.",
+    "frontDesc": "ฉันตีกลองระหว่างคอนเสิร์ต / เขาทำลายสถิติ / จนถึงตอนนี้เขาทำลายสถิติได้หลายครั้งแล้ว"
+  },
+  {
+    "backDesc": "I bend to reach. / She bent the tree branch. / She has bent many branches while gardening.",
+    "frontDesc": "ฉันก้มตัวลงเอื้อมหยิบ / เธองอกิ่งไม้ / เธองอหลายกิ่งเวลาอยู่ในสวน"
+  },
+  {
+    "backDesc": "I bet that you'll arrive on time. / He bet money. / He has bet on many races.",
+    "frontDesc": "ฉันพนันว่าคุณจะมาถึงตรงเวลา / เขาพนันด้วยเงิน / เขาเคยพนันในการแข่งหลายรายการ"
+  },
+  {
+    "backDesc": "I bid on the artwork. / She bid an offer. / She has bid on several pieces of art.",
+    "frontDesc": "ฉันประมูลงานศิลปะ / เธอยื่นข้อเสนอ / เธอเคยประมูลงานศิลปะหลายชิ้น"
+  },
+  {
+    "backDesc": "I bind my shoes before leaving. / He bound the package. / He has bound multiple packages for shipping.",
+    "frontDesc": "ฉันผูกเชือกรองเท้าก่อนออก / เขามัดพัสดุ / เขาได้มัดพัสดุหลายกล่องเพื่อจัดส่ง"
+  },
+  {
+    "backDesc": "I bite an apple for breakfast. / She bit her finger. / She has bitten her nails many times.",
+    "frontDesc": "ฉันกัดแอปเปิลเป็นอาหารเช้า / เธอกัดนิ้วตัวเอง / เธอเคยกัดเล็บหลายครั้งแล้ว"
+  },
+  {
+    "backDesc": "My wound bleeds heavily. / He bled after the fall. / He has bled from similar wounds before.",
+    "frontDesc": "แผลของฉันเลือดออกเยอะ / เขาเลือดออกหลังจากล้ม / เขาเคยเลือดออกจากแผลแบบนี้มาก่อน"
+  },
+  {
+    "backDesc": "I blow out the candle on the cake. / He blew up the balloon. / He has blown many balloons for parties.",
+    "frontDesc": "ฉันเป่าเทียนบนเค้ก / เขาเป่าลูกโป่ง / เขาเคยเป่าลูกโป่งหลายลูกสำหรับงานปาร์ตี้"
+  },
+  {
+    "backDesc": "I breed dogs at home. / She bred horses on the farm. / She has bred different animals over the years.",
+    "frontDesc": "ฉันเพาะพันธุ์สุนัขที่บ้าน / เธอเพาะพันธุ์ม้าที่ฟาร์ม / เธอเคยเพาะพันธุ์สัตว์หลายชนิดตลอดหลายปี"
+  },
+  {
+    "backDesc": "I broadcast a radio show. / He broadcast the news live. / He has broadcast important announcements recently.",
+    "frontDesc": "ฉันออกอากาศรายการวิทยุ / เขาออกอากาศข่าวสด / เมื่อไม่นานมานี้เขาได้ออกอากาศประกาศสำคัญ"
+  },
+  {
+    "backDesc": "I burn a candle during dinner. / She burnt the papers in the furnace. / She has burnt old letters before.",
+    "frontDesc": "ฉันจุดเทียนระหว่างมื้อค่ำ / เธอเผากระดาษในเตา / เธอเคยเผาจดหมายเก่ามาก่อน"
+  },
+  {
+    "backDesc": "I burst the balloon during play. / He burst into laughter. / He has burst into laughter many times.",
+    "frontDesc": "ฉันทำลูกโป่งแตกตอนเล่น / เขาหัวเราะออกมาอย่างกะทันหัน / เขาเคยหัวเราะแบบนี้หลายครั้งแล้ว"
+  },
+  {
+    "backDesc": "I forgive you for the mistake. / She forgave him for everything. / She has forgiven many people in her life.",
+    "frontDesc": "ฉันยกโทษให้คุณสำหรับความผิดพลาด / เธอให้อภัยเขาสำหรับทุกอย่าง / เธอเคยให้อภัยคนมามากมายในชีวิต"
+  },
+  {
+    "backDesc": "I freeze fruits for later. / He froze the water in the fridge. / He has frozen water for ice cubes.",
+    "frontDesc": "ฉันแช่แข็งผลไม้ไว้ใช้ทีหลัง / เขาแช่น้ำในตู้เย็นให้กลายเป็นน้ำแข็ง / เขาเคยแช่น้ำเพื่อทำน้ำแข็งก้อน"
+  },
+  {
+    "backDesc": "I clung to my mother during the storm. / He clung to his beliefs. / He has clung to them all this time.",
+    "frontDesc": "ฉันเกาะแม่ไว้ตอนพายุมา / เขายึดมั่นในความเชื่อของเขา / เขายึดมั่นมาตลอดเวลา"
+  },
+  {
+    "backDesc": "I creep through the grass to avoid being noticed. / She crept quietly. / She has crept in silently before.",
+    "frontDesc": "ฉันคลานผ่านหญ้าเพื่อไม่ให้มีคนเห็น / เธอคลานอย่างเงียบๆ / เธอเคยคลานเข้ามาแบบเงียบๆ มาก่อน"
+  },
+  {
+    "backDesc": "I deal in stocks on the market. / He dealt the goods in the store. / He has dealt in various products before.",
+    "frontDesc": "ฉันค้าหุ้นในตลาด / เขาจัดจำหน่ายสินค้าในร้าน / เขาเคยค้าขายในสินค้าหลากหลายมาก่อน"
+  },
+  {
+    "backDesc": "I dig a trench in the garden. / She dug to the well. / She has dug many holes for planting.",
+    "frontDesc": "ฉันขุดคูน้ำในสวน / เธอขุดไปถึงบ่อน้ำ / เธอเคยขุดหลุมหลายหลุมเพื่อปลูกพืช"
+  },
+  {
+    "backDesc": "I alighted on a bench in the park. / He alit on the hill. / He has alighted there a few times.",
+    "frontDesc": "ฉันลงนั่งบนม้านั่งในสวน / เขาลงบนเนินเขา / เขาเคยลงตรงนั้นสองสามครั้งแล้ว"
+  },
+  {
+    "backDesc": "Misfortune befell that family. / He befell bad luck. / Bad luck has befallen him recently.",
+    "frontDesc": "โชคร้ายเกิดขึ้นกับครอบครัวนั้น / เขาประสบกับโชคร้าย / ช่วงนี้โชคร้ายเกิดขึ้นกับเขาบ่อย"
+  },
+  {
+    "backDesc": "Every person can beget offspring. / He begot an heir. / He has begotten two children.",
+    "frontDesc": "ทุกคนสามารถให้กำเนิดลูกได้ / เขาให้กำเนิดทายาท / เขาได้ให้กำเนิดลูกสองคน"
+  },
+  {
+    "backDesc": "I behold the sunset. / She beheld a beautiful landscape. / She has beheld many breathtaking views.",
+    "frontDesc": "ฉันมองดูพระอาทิตย์ตก / เธอมองเห็นทิวทัศน์ที่สวยงาม / เธอได้เห็นวิวที่น่าทึ่งมานับครั้งไม่ถ้วน"
+  },
+  {
+    "backDesc": "I beseech you for help. / He besought forgiveness. / He has besought kindness on many occasions.",
+    "frontDesc": "ฉันขอร้องให้คุณช่วย / เขาวิงวอนขอการให้อภัย / เขาได้วิงวอนขอความเมตตามาหลายครั้ง"
+  },
+  {
+    "backDesc": "He was beset by financial problems. / He beset his targets. / He has beset them with challenges.",
+    "frontDesc": "เขาถูกปัญหาการเงินรุมเร้า / เขาโอบล้อมเป้าหมาย / เขาได้สร้างความท้าทายให้กับพวกเขา"
+  },
+  {
+    "backDesc": "Parents chided the child for disobedience. / He chided him publicly. / He has chidden him for his behavior.",
+    "frontDesc": "พ่อแม่ตำหนิเด็กที่ไม่เชื่อฟัง / เขาตำหนิเขาอย่างเปิดเผย / เขาได้ตำหนิเขาเรื่องพฤติกรรมมาก่อน"
+  },
+  {
+    "backDesc": "I clothe myself for winter. / She clad herself elegantly. / She has clad herself in fine clothes before.",
+    "frontDesc": "ฉันสวมเสื้อผ้ารับหน้าหนาว / เธอสวมใส่อย่างสง่างาม / เธอเคยสวมเสื้อผ้าชั้นดีมาก่อน"
+  },
+  {
+    "backDesc": "I dream of vacations. / He dreamt of a trip. / He has dreamt about traveling the world.",
+    "frontDesc": "ฉันฝันถึงวันหยุด / เขาฝันถึงการเดินทาง / เขาเคยฝันถึงการท่องโลก"
+  },
+  {
+    "backDesc": "I feed the dog every day. / She fed the birds in the garden. / She has fed them every morning.",
+    "frontDesc": "ฉันให้อาหารสุนัขทุกวัน / เธอให้อาหารนกในสวน / เธอให้อาหารพวกมันทุกเช้า"
+  },
+  {
+    "backDesc": "This shirt fits me perfectly. / He fit into the team. / He has fit in well since day one.",
+    "frontDesc": "เสื้อตัวนี้พอดีกับฉันมาก / เขากลมกลืนกับทีม / เขาเข้ากับที่นี่ได้ดีตั้งแต่วันแรก"
+  },
+  {
+    "backDesc": "I flee from the rain. / She fled from home. / She has fled difficult situations before.",
+    "frontDesc": "ฉันหนีฝน / เธอหนีออกจากบ้าน / เธอเคยหนีสถานการณ์ลำบากมาก่อน"
+  },
+  {
+    "backDesc": "I fling a stone into the water. / He flung the bottle out the window. / He has flung objects in anger before.",
+    "frontDesc": "ฉันขว้างก้อนหินลงไปในน้ำ / เขาขว้างขวดออกนอกหน้าต่าง / เขาเคยขว้างของด้วยความโกรธมาก่อน"
+  },
+  {
+    "backDesc": "I forbid smoking in the building. / She forbade the children from watching TV. / She has forbidden them multiple times.",
+    "frontDesc": "ฉันห้ามสูบบุหรี่ในอาคาร / เธอห้ามเด็กๆ ดูทีวี / เธอเคยห้ามพวกเขาหลายครั้งแล้ว"
+  },
+  {
+    "backDesc": "I forecast rain for tomorrow. / He forecast a price increase. / He has forecast such changes accurately.",
+    "frontDesc": "ฉันพยากรณ์ว่าจะมีฝนพรุ่งนี้ / เขาคาดการณ์ว่าจะขึ้นราคา / เขาคาดการณ์การเปลี่ยนแปลงแบบนี้ได้อย่างแม่นยำ"
+  },
+  {
+    "backDesc": "I forsake old habits. / She forsook her dreams. / She has forsaken them all.",
+    "frontDesc": "ฉันละทิ้งนิสัยเก่าๆ / เธอละทิ้งความฝัน / เธอได้ละทิ้งทุกอย่างไปแล้ว"
+  },
+  {
+    "backDesc": "I kneel before the altar. / He knelt in a gesture of respect. / He has knelt there many times.",
+    "frontDesc": "ฉันคุกเข่าต่อหน้าแท่นบูชา / เขาคุกเข่าเป็นการแสดงความเคารพ / เขาเคยคุกเข่าตรงนั้นหลายครั้ง"
+  },
+  {
+    "backDesc": "I knit a sweater for winter. / She knitted a scarf. / She has knitted many scarves before.",
+    "frontDesc": "ฉันถักเสื้อกันหนาวสำหรับหน้าหนาว / เธอถักผ้าพันคอ / เธอเคยถักผ้าพันคอหลายผืนแล้ว"
+  },
+  {
+    "backDesc": "I lay the book on the table. / She laid the keys on the shelf. / She has laid them there many times.",
+    "frontDesc": "ฉันวางหนังสือลงบนโต๊ะ / เธอวางกุญแจไว้บนชั้น / เธอเคยวางมันตรงนั้นหลายครั้งแล้ว"
+  },
+  {
+    "backDesc": "I lead the team. / He led the company for many years. / He has led numerous successful projects.",
+    "frontDesc": "ฉันเป็นผู้นำทีม / เขาบริหารบริษัทมาหลายปี / เขาได้เป็นผู้นำโครงการที่ประสบความสำเร็จมากมาย"
+  },
+  {
+    "backDesc": "I lean over the book. / He leant over the table. / He has leaned over it for hours.",
+    "frontDesc": "ฉันโน้มตัวเหนือหนังสือ / เขาโน้มตัวอยู่เหนือโต๊ะ / เขาโน้มตัวแบบนั้นมาหลายชั่วโมงแล้ว"
+  },
+  {
+    "backDesc": "I leap on the rope. / He leapt over the fence. / He has leapt across many obstacles.",
+    "frontDesc": "ฉันกระโดดบนเชือก / เขากระโดดข้ามรั้ว / เขาได้กระโดดข้ามอุปสรรคหลายครั้ง"
+  },
+  {
+    "backDesc": "I light the room's light. / He lit the light in the evening. / He has lit it every night since then.",
+    "frontDesc": "ฉันเปิดไฟในห้อง / เขาเปิดไฟตอนเย็น / เขาเปิดมันทุกคืนตั้งแต่นั้นมา"
+  },
+  {
+    "backDesc": "I mistake in the calculations. / He mistook the decision. / He has mistaken people's intentions before.",
+    "frontDesc": "ฉันคำนวณผิด / เขาเข้าใจการตัดสินใจผิด / เขาเคยเข้าใจเจตนาของคนอื่นผิดมาก่อน"
+  },
+  {
+    "backDesc": "I mow the grass in the garden. / He mowed the lawn yesterday. / He has mown it regularly.",
+    "frontDesc": "ฉันตัดหญ้าในสวน / เขาตัดหญ้าเมื่อวาน / เขาตัดมันเป็นประจำ"
+  },
+  {
+    "backDesc": "I overcome difficulties every day. / He overcame his fears. / He has overcome many obstacles.",
+    "frontDesc": "ฉันเอาชนะความยากลำบากทุกวัน / เขาเอาชนะความกลัว / เขาเอาชนะอุปสรรคมาแล้วมากมาย"
+  },
+  {
+    "backDesc": "I partake in meetings. / He partook in the conference. / He has partaken in several events recently.",
+    "frontDesc": "ฉันเข้าร่วมการประชุม / เขาเข้าร่วมการประชุมใหญ่ / เขาได้เข้าร่วมงานหลายงานเมื่อไม่นานมานี้"
+  },
+  {
+    "backDesc": "I plead for help. / He pled for forgiveness. / He has pled for mercy many times.",
+    "frontDesc": "ฉันขอความช่วยเหลือ / เขาขอการให้อภัย / เขาเคยขอความเมตตามาหลายครั้ง"
+  },
+  {
+    "backDesc": "I prove my innocence. / He proved his theory. / He has proven it beyond doubt.",
+    "frontDesc": "ฉันพิสูจน์ว่าฉันบริสุทธิ์ / เขาพิสูจน์ทฤษฎีของเขา / เขาพิสูจน์จนไม่มีข้อกังขา"
+  },
+  {
+    "backDesc": "I saw wood in the workshop. / He sawed planks for a new boat. / He has sawn many pieces of wood.",
+    "frontDesc": "ฉันเลื่อยไม้ในเวิร์กช็อป / เขาเลื่อยแผ่นไม้เพื่อสร้างเรือลำใหม่ / เขาเคยเลื่อยไม้มาแล้วหลายชิ้น"
+  },
+  {
+    "backDesc": "I seek the keys at home. / He sought a solution to the problem. / He has sought answers everywhere.",
+    "frontDesc": "ฉันหากุญแจที่บ้าน / เขาค้นหาวิธีแก้ปัญหา / เขาได้ค้นหาคำตอบไปทั่ว"
+  },
+  {
+    "backDesc": "I sew clothes in my atelier. / He sewed a shirt for several hours. / He has sewn many garments.",
+    "frontDesc": "ฉันเย็บเสื้อผ้าในห้องทำงาน / เขาเย็บเสื้อเชิ้ตหลายชั่วโมง / เขาเคยเย็บเสื้อผ้ามาหลายชุด"
+  },
+  {
+    "backDesc": "I shear sheep on the farm. / He sheared a sheep yesterday. / He has shorn many sheep this season.",
+    "frontDesc": "ฉันตัดขนแกะที่ฟาร์ม / เขาตัดขนแกะเมื่อวาน / เขาได้ตัดขนแกะมาหลายตัวในฤดูกาลนี้"
+  },
+  {
+    "backDesc": "My sweater shrinks after washing. / It shrank in high temperature. / It has shrunk too much.",
+    "frontDesc": "เสื้อกันหนาวของฉันหดหลังซัก / มันหดตัวในอุณหภูมิสูง / มันหดมากเกินไปแล้ว"
+  },
+  {
+    "backDesc": "I slay rodents in the basement. / He slew the monster in the forest. / He has slain many creatures in his stories.",
+    "frontDesc": "ฉันฆ่าสัตว์ฟันแทะในห้องใต้ดิน / เขาฆ่าสัตว์ประหลาดในป่า / เขาได้ฆ่าสิ่งมีชีวิตหลายตัวในเรื่องเล่าของเขา"
+  },
+  {
+    "backDesc": "The kitchen stinks of rotten food. / It stank after a hot day. / It has stunk for hours.",
+    "frontDesc": "ห้องครัวมีกลิ่นเหม็นอาหารเน่า / มันเหม็นหลังจากวันที่อากาศร้อน / มันเหม็นมาหลายชั่วโมงแล้ว"
+  },
+  {
+    "backDesc": "I stride with confidence. / He strode quickly, arriving on time. / He has stridden through many challenges.",
+    "frontDesc": "ฉันก้าวเดินด้วยความมั่นใจ / เขาเดินเร็วและมาถึงตรงเวลา / เขาได้ก้าวข้ามความท้าทายมามากมาย"
+  },
+  {
+    "backDesc": "I strike the ball towards the goal. / He struck the door hard. / He has struck fear into his opponents.",
+    "frontDesc": "ฉันเตะลูกบอลไปทางประตู / เขากระแทกประตูอย่างแรง / เขาได้ทำให้คู่แข่งหวาดกลัว"
+  },
+  {
+    "backDesc": "I string beads on a string. / He strung the lamp on the wall. / He has strung decorations before.",
+    "frontDesc": "ฉันร้อยลูกปัดลงบนเส้นด้าย / เขาแขวนโคมไฟไว้บนผนัง / เขาเคยร้อยของตกแต่งมาก่อน"
+  },
+  {
+    "backDesc": "I strive to achieve the goal. / He strove for success for years. / He has striven to reach the top.",
+    "frontDesc": "ฉันพยายามอย่างหนักเพื่อให้บรรลุเป้าหมาย / เขาพยายามเพื่อความสำเร็จมาหลายปี / เขาได้พยายามเพื่อขึ้นสู่จุดสูงสุด"
+  },
+  {
+    "backDesc": "I swing on the swing. / He swung on the balcony. / He has swung on that rope many times.",
+    "frontDesc": "ฉันแกว่งบนชิงช้า / เขาแกว่งตัวบนระเบียง / เขาได้แกว่งบนเชือกเส้นนั้นหลายครั้งแล้ว"
+  },
+  {
+    "backDesc": "I tear the paper to shred it. / He tore the canvas with a knife. / He has torn many papers accidentally.",
+    "frontDesc": "ฉันฉีกกระดาษเพื่อทำลาย / เขาฉีกผ้าใบด้วยมีด / เขาเคยฉีกกระดาษหลายแผ่นโดยไม่ตั้งใจ"
+  },
+  {
+    "backDesc": "I thrust the door to open it. / He thrust the door hard. / He has thrust it open before.",
+    "frontDesc": "ฉันผลักประตูเพื่อเปิด / เขาผลักประตูอย่างแรง / เขาเคยผลักมันให้เปิดมาก่อน"
+  },
+  {
+    "backDesc": "I tread carefully on the wet floor. / He trod with a confident stride. / He has trodden this path before.",
+    "frontDesc": "ฉันเหยียบพื้นเปียกอย่างระมัดระวัง / เขาเดินอย่างมั่นใจ / เขาเคยเดินบนเส้นทางนี้มาก่อน"
+  },
+  {
+    "backDesc": "I undo the move I made. / He undid the changes in the document. / He has undone them completely.",
+    "frontDesc": "ฉันย้อนกลับการกระทำที่ฉันทำ / เขายกเลิกการเปลี่ยนแปลงในเอกสาร / เขายกเลิกมันทั้งหมดเรียบร้อย"
+  },
+  {
+    "backDesc": "I weave a scarf on the knitting needles. / He wove a rug in his workshop. / He has woven several rugs now.",
+    "frontDesc": "ฉันทอผ้าพันคอด้วยไม้นิตติ้ง / เขาทอพรมในเวิร์กช็อป / ตอนนี้เขาทอพรมไปหลายผืนแล้ว"
+  },
+  {
+    "backDesc": "I weep in sorrow. / He wept after the breakup. / He has wept many tears.",
+    "frontDesc": "ฉันร้องไห้ด้วยความเสียใจ / เขาร้องไห้หลังจากเลิกกัน / เขาเคยร้องไห้มาหลายครั้งแล้ว"
+  },
+  {
+    "backDesc": "I wind the watch every morning. / He wound the strings into a tape. / He has wound them neatly.",
+    "frontDesc": "ฉันไขลานนาฬิกาทุกเช้า / เขาม้วนสายเป็นม้วนเทป / เขาม้วนมันไว้อย่างเรียบร้อย"
+  },
+  {
+    "backDesc": "I withdraw from the discussion. / He withdrew from the project. / He has withdrawn completely.",
+    "frontDesc": "ฉันถอนตัวจากการอภิปราย / เขาถอนตัวจากโครงการ / เขาถอนตัวออกไปทั้งหมดแล้ว"
+  },
+  {
+    "backDesc": "I withstand difficult conditions. / He withstood the strong wind. / He has withstood many storms.",
+    "frontDesc": "ฉันทนต่อสภาพที่ยากลำบาก / เขาทนต่อแรงลม / เขาทนพายุมาแล้วหลายครั้ง"
+  },
+  {
+    "backDesc": "I wring out wet towels. / He wrung juice out of fruits. / He has wrung out many towels.",
+    "frontDesc": "ฉันบิดผ้าขนหนูเปียก / เขาบีบน้ำผลไม้จากผลไม้ / เขาได้บิดผ้าขนหนูมาแล้วหลายผืน"
+  },
+  {
+    "backDesc": "I freeze food in the freezer. / He froze water for the freezer. / He has frozen enough water for ice.",
+    "frontDesc": "ฉันแช่แข็งอาหารในช่องฟรีซ / เขาแช่น้ำเพื่อนำไปแช่ช่องฟรีซ / เขาแช่น้ำพอสำหรับทำน้ำแข็งแล้ว"
+  },
+  {
+    "backDesc": "I hang a picture on the wall. / He hung the lamp in the room. / He has hung many pictures around the house.",
+    "frontDesc": "ฉันแขวนรูปบนผนัง / เขาแขวนโคมไฟในห้อง / เขาได้แขวนรูปไว้รอบบ้านหลายรูปแล้ว"
+  }
+]

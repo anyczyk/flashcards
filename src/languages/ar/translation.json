@@ -142,5 +142,7 @@
   "turn_on_shadows": "تشغيل الظلال",
   "turn_on_automatic_audio": "تشغيل الصوت التلقائي",
   "premium_account": "حساب ممتاز",
-  "active": "نشط"
+  "active": "نشط",
+  "code": "كود",
+  "wrong_code": "كود خاطئ"
 }

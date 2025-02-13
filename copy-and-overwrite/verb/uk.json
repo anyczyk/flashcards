@@ -1,0 +1,630 @@
+[
+  {
+    "backDesc": "I am a teacher. / I was at the store yesterday. / I have been at that store many times.",
+    "frontDesc": "Я вчитель. / Учора я був у магазині. / Я багато разів бував у тому магазині."
+  },
+  {
+    "backDesc": "I want to become a doctor. / I became tired. / I have become more determined.",
+    "frontDesc": "Я хочу стати лікарем. / Я втомився. / Я став більш рішучим."
+  },
+  {
+    "backDesc": "I begin a new project. / I began reading a book. / I have begun working on it seriously.",
+    "frontDesc": "Я починаю новий проєкт. / Я почав читати книгу. / Я почав працювати над цим серйозно."
+  },
+  {
+    "backDesc": "I don't want to break the rules. / He broke the branch. / He has broken many rules in the past.",
+    "frontDesc": "Я не хочу порушувати правила. / Він зламав гілку. / Він раніше порушив багато правил."
+  },
+  {
+    "backDesc": "I bring coffee. / She brought flowers. / She has brought gifts as well.",
+    "frontDesc": "Я приношу каву. / Вона принесла квіти. / Вона також приносила подарунки."
+  },
+  {
+    "backDesc": "I build a house. / He built a bridge. / He has built many bridges in his career.",
+    "frontDesc": "Я будую будинок. / Він збудував міст. / Він збудував багато мостів за свою кар’єру."
+  },
+  {
+    "backDesc": "I buy new clothes. / She bought a car. / She has bought several cars over the years.",
+    "frontDesc": "Я купую новий одяг. / Вона купила машину. / Вона купила кілька машин за ці роки."
+  },
+  {
+    "backDesc": "I can help. / He could come earlier. / He has been able to assist many times.",
+    "frontDesc": "Я можу допомогти. / Він міг прийти раніше. / Він неодноразово міг допомогти."
+  },
+  {
+    "backDesc": "I catch the ball. / He caught a fish. / He has caught many fish in this lake.",
+    "frontDesc": "Я ловлю м’яч. / Він зловив рибу. / Він виловив багато риби в цьому озері."
+  },
+  {
+    "backDesc": "I choose a dish. / She chose a book. / She has chosen wisely every time.",
+    "frontDesc": "Я обираю страву. / Вона обрала книгу. / Вона щоразу обирала мудро."
+  },
+  {
+    "backDesc": "I come to work. / He came earlier. / He has come on time every day.",
+    "frontDesc": "Я приходжу на роботу. / Він прийшов раніше. / Він приходив вчасно щодня."
+  },
+  {
+    "backDesc": "It costs five dollars. / It cost more yesterday. / It has cost me a fortune so far.",
+    "frontDesc": "Це коштує п’ять доларів. / Учора це коштувало більше. / Це вже коштувало мені цілий статок."
+  },
+  {
+    "backDesc": "I cut the paper. / He cut the wood. / He has cut many pieces of wood before.",
+    "frontDesc": "Я ріжу папір. / Він різав деревину. / Він уже різав багато деревини раніше."
+  },
+  {
+    "backDesc": "I cast away the old clothes. / He cast the net. / He has cast a net before to catch fish.",
+    "frontDesc": "Я відкидаю старий одяг. / Він закинув сітку. / Він уже закидав сітку, щоб ловити рибу."
+  },
+  {
+    "backDesc": "I do my homework. / He did the dinner. / He has done this type of work before.",
+    "frontDesc": "Я виконую домашнє завдання. / Він приготував вечерю. / Він уже робив таку роботу раніше."
+  },
+  {
+    "backDesc": "I draw a picture. / She drew a landscape. / She has drawn many landscapes.",
+    "frontDesc": "Я малюю картину. / Вона намалювала пейзаж. / Вона намалювала багато пейзажів."
+  },
+  {
+    "backDesc": "I drink water. / He drank juice. / He has drunk all the juice in the fridge.",
+    "frontDesc": "Я п’ю воду. / Він випив сік. / Він випив увесь сік у холодильнику."
+  },
+  {
+    "backDesc": "I drive a car. / She drove the bus. / She has driven that route many times.",
+    "frontDesc": "Я керую автомобілем. / Вона водила автобус. / Вона багато разів їхала цим маршрутом."
+  },
+  {
+    "backDesc": "I dwell in Warsaw. / He dwelt there earlier. / He has dwelt in many cities over the years.",
+    "frontDesc": "Я мешкаю у Варшаві. / Він жив там раніше. / Він жив у багатьох містах протягом років."
+  },
+  {
+    "backDesc": "I eat breakfast. / She ate lunch. / She has eaten at this restaurant before.",
+    "frontDesc": "Я снідаю. / Вона пообідала. / Вона вже їла в цьому ресторані."
+  },
+  {
+    "backDesc": "I fall off the bike. / He fell from the ladder. / He has fallen a few times lately.",
+    "frontDesc": "Я падаю з велосипеда. / Він упав зі сходів. / Останнім часом він кілька разів падав."
+  },
+  {
+    "backDesc": "I feel good. / She felt pain. / She has felt better since then.",
+    "frontDesc": "Я почуваюся добре. / Вона відчула біль. / З того часу вона почувається краще."
+  },
+  {
+    "backDesc": "I fight for my rights. / He fought in the war. / He has fought bravely for his country.",
+    "frontDesc": "Я борюся за свої права. / Він воював на війні. / Він хоробро боровся за свою країну."
+  },
+  {
+    "backDesc": "I find the key. / She found the solution. / She has found many solutions so far.",
+    "frontDesc": "Я знаходжу ключ. / Вона знайшла рішення. / Вона вже знайшла багато розв’язань."
+  },
+  {
+    "backDesc": "I fly by airplane. / He flew to London. / He has flown internationally many times.",
+    "frontDesc": "Я лечу літаком. / Він полетів до Лондона. / Він багато разів літав за кордон."
+  },
+  {
+    "backDesc": "I forget the name. / She forgot the keys. / She has forgotten them before.",
+    "frontDesc": "Я забуваю ім’я. / Вона забула ключі. / Вона вже забувала їх раніше."
+  },
+  {
+    "backDesc": "I get a letter. / He got a gift. / He has gotten many gifts recently.",
+    "frontDesc": "Я отримую лист. / Він отримав подарунок. / Останнім часом він отримав багато подарунків."
+  },
+  {
+    "backDesc": "I give you a gift. / She gave him a book. / She has given many books as presents.",
+    "frontDesc": "Я дарую тобі подарунок. / Вона подарувала йому книгу. / Вона подарувала багато книг у подарунок."
+  },
+  {
+    "backDesc": "I go to school. / He went to work. / He has gone there every day this week.",
+    "frontDesc": "Я йду до школи. / Він пішов на роботу. / Цього тижня він ходив туди щодня."
+  },
+  {
+    "backDesc": "I grind coffee. / He ground the grain. / He has ground coffee beans for years.",
+    "frontDesc": "Я мелю каву. / Він змолов зерно. / Він уже багато років меле кавові зерна."
+  },
+  {
+    "backDesc": "I grow every day. / He grew quickly. / He has grown a lot this year.",
+    "frontDesc": "Я зростаю щодня. / Він швидко виріс. / Цього року він дуже виріс."
+  },
+  {
+    "backDesc": "I have a car. / He had a guitar. / She has had many opportunities to travel.",
+    "frontDesc": "У мене є машина. / У нього була гітара. / Вона мала багато можливостей подорожувати."
+  },
+  {
+    "backDesc": "I hear music. / He heard the noise. / He has heard that noise before.",
+    "frontDesc": "Я чую музику. / Він почув шум. / Він раніше чув цей шум."
+  },
+  {
+    "backDesc": "I hide the gift. / She hid the letter. / She has hidden messages in her diary.",
+    "frontDesc": "Я ховаю подарунок. / Вона сховала лист. / Вона ховала повідомлення у своєму щоденнику."
+  },
+  {
+    "backDesc": "I hit the ball. / He hit the door. / He has hit that ball many times.",
+    "frontDesc": "Я вдаряю по м’ячu. / Він ударив по дверях. / Він багато разів вдаряв по тому м’ячu."
+  },
+  {
+    "backDesc": "I hold the book. / She held the bag. / She has held onto that bag for years.",
+    "frontDesc": "Я тримаю книгу. / Вона тримала сумку. / Вона тримала цю сумку протягом років."
+  },
+  {
+    "backDesc": "I hurt myself while running. / He hurt his hand. / He has hurt himself multiple times.",
+    "frontDesc": "Я поранився під час бігу. / Він поранив руку. / Він уже кілька разів завдавав собі шкоди."
+  },
+  {
+    "backDesc": "I keep a secret. / She kept the documents. / She has kept them in a safe place.",
+    "frontDesc": "Я зберігаю таємницю. / Вона зберігала документи. / Вона зберігала їх у безпечному місці."
+  },
+  {
+    "backDesc": "I know the answer. / He knew the solution. / He has known it all along.",
+    "frontDesc": "Я знаю відповідь. / Він знав розв’язання. / Він знав це весь час."
+  },
+  {
+    "backDesc": "I learn English. / She learned to dance. / She has learned many languages.",
+    "frontDesc": "Я вивчаю англійську. / Вона навчилася танцювати. / Вона вивчила багато мов."
+  },
+  {
+    "backDesc": "I leave the house. / He left the office. / He has left his job recently.",
+    "frontDesc": "Я виходжу з дому. / Він пішов з офісу. / Нещодавно він звільнився з роботи."
+  },
+  {
+    "backDesc": "I lend a book. / She lent money. / She has lent money to friends before.",
+    "frontDesc": "Я позичаю книгу. / Вона позичила гроші. / Вона вже позичала гроші друзям."
+  },
+  {
+    "backDesc": "I let you in. / He let her stay. / He has let many people stay at his place.",
+    "frontDesc": "Я впускаю тебе. / Він дозволив їй залишитися. / Він дозволив багатьом людям залишитися у нього."
+  },
+  {
+    "backDesc": "I lie on the couch. / He lay on the bed. / He has lain there for hours.",
+    "frontDesc": "Я лежу на дивані. / Він лежав на ліжку. / Він лежав там годинами."
+  },
+  {
+    "backDesc": "I lose my keys. / He lost his wallet. / He has lost things many times.",
+    "frontDesc": "Я втрачаю ключі. / Він втратив гаманець. / Він багато разів втрачав речі."
+  },
+  {
+    "backDesc": "I make dinner. / She made a cake. / She has made many delicious cakes.",
+    "frontDesc": "Я готую вечерю. / Вона спекла торт. / Вона приготувала багато смачних тортів."
+  },
+  {
+    "backDesc": "It means something important. / He meant something else. / He has meant it sincerely all along.",
+    "frontDesc": "Це означає щось важливе. / Він мав на увазі щось інше. / Він щиро мав це на увазі весь час."
+  },
+  {
+    "backDesc": "I meet with friends. / She met with the manager. / She has met many interesting people.",
+    "frontDesc": "Я зустрічаюся з друзями. / Вона зустрілася з менеджером. / Вона зустріла багато цікавих людей."
+  },
+  {
+    "backDesc": "I pay the bills. / He paid for dinner. / He has paid his dues already.",
+    "frontDesc": "Я сплачую рахунки. / Він заплатив за вечерю. / Він уже виконав свої зобов’язання."
+  },
+  {
+    "backDesc": "I put the book on the table. / She put the keys on the shelf. / She has put them there before.",
+    "frontDesc": "Я кладу книгу на стіл. / Вона поклала ключі на полицю. / Вона вже клала їх туди раніше."
+  },
+  {
+    "backDesc": "I read the newspaper. / He read the book. / He has read that book many times.",
+    "frontDesc": "Я читаю газету. / Він прочитав книгу. / Він багато разів читав цю книгу."
+  },
+  {
+    "backDesc": "I ride a bike. / She rode a horse. / She has ridden many horses in her life.",
+    "frontDesc": "Я їжджу на велосипеді. / Вона їхала верхи на коні. / Вона їздила на багатьох конях за своє життя."
+  },
+  {
+    "backDesc": "I ring you. / He rang me. / He has rung me every day this week.",
+    "frontDesc": "Я телефоную тобі. / Він подзвонив мені. / Він телефонував мені щодня цього тижня."
+  },
+  {
+    "backDesc": "The sun rises in the morning. / He rose his hand. / He has risen early every day.",
+    "frontDesc": "Сонце сходить вранці. / Він підняв руку. / Він щодня вставав рано."
+  },
+  {
+    "backDesc": "I run every day. / He ran faster. / He has run marathons before.",
+    "frontDesc": "Я бігаю щодня. / Він біг швидше. / Він уже бігав марафони."
+  },
+  {
+    "backDesc": "I say the truth. / He said something important. / He has said that many times.",
+    "frontDesc": "Я кажу правду. / Він сказав щось важливе. / Він уже багато разів це казав."
+  },
+  {
+    "backDesc": "I see the stars. / She saw a bird. / She has seen many birds lately.",
+    "frontDesc": "Я бачу зірки. / Вона побачила птаха. / Останнім часом вона бачила багато птахів."
+  },
+  {
+    "backDesc": "I sell a car. / He sold the house. / He has sold several houses this year.",
+    "frontDesc": "Я продаю машину. / Він продав будинок. / Він продав кілька будинків цього року."
+  },
+  {
+    "backDesc": "I send a letter. / She sent a package. / She has sent many packages abroad.",
+    "frontDesc": "Я відправляю листа. / Вона відправила пакунок. / Вона відправила багато пакунків за кордон."
+  },
+  {
+    "backDesc": "I set the alarm for 7 AM. / He set the tables for the party. / He has set them up perfectly.",
+    "frontDesc": "Я встановлюю будильник на 7 ранку. / Він накрив столи для вечірки. / Він розставив їх ідеально."
+  },
+  {
+    "backDesc": "I shake my hands when I'm nervous. / He shook his hand in farewell. / He has shaken hands many times.",
+    "frontDesc": "Я тремчу руками, коли нервую. / Він потиснув йому руку на прощання. / Він багато разів потискав руки."
+  },
+  {
+    "backDesc": "The sun shines brightly today. / He shone the lighthouse at night. / He has shone it on the rocks before.",
+    "frontDesc": "Сьогодні сонце яскраво світить. / Він світив ліхтарем уночі. / Він уже освітлював ним скелі раніше."
+  },
+  {
+    "backDesc": "I shoot with a bow during practice. / He shot a goal in the game. / He has shot many goals this season.",
+    "frontDesc": "Я стріляю з лука під час тренування. / Він забив гол у грі. / Він забив багато голів цього сезону."
+  },
+  {
+    "backDesc": "I show photos from vacation. / He showed his new car. / He has shown it to everyone.",
+    "frontDesc": "Я показую фото з відпустки. / Він показав свою нову машину. / Він показав її всім."
+  },
+  {
+    "backDesc": "I shut the door before leaving. / He shut the window when it got cold. / He has shut them every night.",
+    "frontDesc": "Я зачиняю двері перед виходом. / Він зачинив вікно, коли похолодало. / Він зачиняв їх щоночі."
+  },
+  {
+    "backDesc": "I sing my favorite song. / She sang at the concert. / She has sung there many times.",
+    "frontDesc": "Я співаю свою улюблену пісню. / Вона співала на концерті. / Вона багато разів там співала."
+  },
+  {
+    "backDesc": "The ship sinks in the sea. / He sank during the storm. / It has sunk completely.",
+    "frontDesc": "Корабель тоне в морі. / Він затонув під час шторму. / Він повністю затонув."
+  },
+  {
+    "backDesc": "I sit on the chair. / She sat at the table. / She has sat there for hours.",
+    "frontDesc": "Я сиджу на стільці. / Вона сіла за стіл. / Вона сиділа там годинами."
+  },
+  {
+    "backDesc": "I sleep in my bed. / He slept all night. / He has slept well lately.",
+    "frontDesc": "Я сплю у своєму ліжку. / Він проспав усю ніч. / Останнім часом він добре спав."
+  },
+  {
+    "backDesc": "I speak English. / He spoke at the conference. / He has spoken there twice.",
+    "frontDesc": "Я розмовляю англійською. / Він виступав на конференції. / Він виступав там двічі."
+  },
+  {
+    "backDesc": "I spend time with my family. / He spent a lot of money on the trip. / He has spent all his savings.",
+    "frontDesc": "Я проводжу час із сім’єю. / Він витратив багато грошей на подорож. / Він витратив усі свої заощадження."
+  },
+  {
+    "backDesc": "I stand at the head of the team. / She stood by the window. / She has stood there quietly.",
+    "frontDesc": "Я стою на чолі команди. / Вона стояла біля вікна. / Вона спокійно стояла там."
+  },
+  {
+    "backDesc": "I swim every morning. / He swam in the lake. / He has swum across that lake before.",
+    "frontDesc": "Я плаваю щоранку. / Він плавав у озері. / Він уже перепливав це озеро."
+  },
+  {
+    "backDesc": "I take my medicine in the morning. / She took an umbrella. / She has taken it with her today.",
+    "frontDesc": "Я приймаю ліки вранці. / Вона взяла парасолю. / Сьогодні вона взяла її з собою."
+  },
+  {
+    "backDesc": "I teach mathematics. / He taught me a new skill. / He has taught many students over the years.",
+    "frontDesc": "Я викладаю математику. / Він навчив мене нового вміння. / Він навчив багатьох учнів за ці роки."
+  },
+  {
+    "backDesc": "I always tell him about the change of plans. / She told me a secret. / She has told many secrets over time.",
+    "frontDesc": "Я завжди кажу йому про зміну планів. / Вона розповіла мені таємницю. / З часом вона розповіла багато таємниць."
+  },
+  {
+    "backDesc": "I think about the future. / He thought about solving the problem. / He has thought it through carefully.",
+    "frontDesc": "Я думаю про майбутнє. / Він думав про розв’язання проблеми. / Він ретельно все обдумав."
+  },
+  {
+    "backDesc": "I throw the ball into the basket. / She threw the bag on the ground. / She has thrown it away now.",
+    "frontDesc": "Я кидаю м’яч у кошик. / Вона кинула сумку на землю. / Вона вже це викинула."
+  },
+  {
+    "backDesc": "I understand this task. / He understood my explanation. / He has understood everything clearly.",
+    "frontDesc": "Я розумію це завдання. / Він зрозумів моє пояснення. / Він усе чітко зрозумів."
+  },
+  {
+    "backDesc": "I always wake up early in the morning. / She woke up late. / She has woken up earlier on other days.",
+    "frontDesc": "Я завжди прокидаюся рано вранці. / Вона прокинулася пізно. / В інші дні вона прокидалася раніше."
+  },
+  {
+    "backDesc": "I wear a new jacket. / He wore elegant clothes. / He has worn them many times before.",
+    "frontDesc": "Я ношу нову куртку. / Він носив елегантний одяг. / Він носив їх багато разів раніше."
+  },
+  {
+    "backDesc": "I win the board game. / She won the contest. / She has won many contests in her life.",
+    "frontDesc": "Я виграю в настільній грі. / Вона виграла конкурс. / Вона виграла багато конкурсів у своєму житті."
+  },
+  {
+    "backDesc": "I write a letter to a friend. / He wrote an article. / He has written several articles this month.",
+    "frontDesc": "Я пишу листа другу. / Він написав статтю. / Цього місяця він написав кілька статей."
+  },
+  {
+    "backDesc": "Problems arise suddenly. / He arose from the problems. / He has arisen to face new challenges.",
+    "frontDesc": "Проблеми виникають раптово. / Він піднявся над проблемами. / Він піднявся, щоб зустріти нові виклики."
+  },
+  {
+    "backDesc": "I always awake earlier. / She awoke from a light sleep. / She has awoken feeling rested.",
+    "frontDesc": "Я завжди прокидаюся раніше. / Вона прокинулася від легкого сну. / Вона прокидалася відпочилою."
+  },
+  {
+    "backDesc": "I usually bear it well. / He bore many difficulties. / He has borne his burdens with courage.",
+    "frontDesc": "Зазвичай я добре це витримую. / Він витримав багато труднощів. / Він мужньо ніс свій тягар."
+  },
+  {
+    "backDesc": "I beat the drums during the concert. / He beat the record. / He has beaten several records so far.",
+    "frontDesc": "Я б’ю в барабани під час концерту. / Він побив рекорд. / Він уже побив кілька рекордів."
+  },
+  {
+    "backDesc": "I bend to reach. / She bent the tree branch. / She has bent many branches while gardening.",
+    "frontDesc": "Я нахиляюся, щоб дотягнутися. / Вона зігнула гілку дерева. / Вона зігнула багато гілок під час садівництва."
+  },
+  {
+    "backDesc": "I bet that you'll arrive on time. / He bet money. / He has bet on many races.",
+    "frontDesc": "Я б’юся об заклад, що ти прибудеш вчасно. / Він поставив гроші. / Він робив ставки на багатьох перегонах."
+  },
+  {
+    "backDesc": "I bid on the artwork. / She bid an offer. / She has bid on several pieces of art.",
+    "frontDesc": "Я зробив ставку на витвір мистецтва. / Вона запропонувала ціну. / Вона робила ставки на кілька витворів мистецтва."
+  },
+  {
+    "backDesc": "I bind my shoes before leaving. / He bound the package. / He has bound multiple packages for shipping.",
+    "frontDesc": "Я зав’язую шнурки перед виходом. / Він зв’язав пакунок. / Він зв’язав кілька пакунків для відправки."
+  },
+  {
+    "backDesc": "I bite an apple for breakfast. / She bit her finger. / She has bitten her nails many times.",
+    "frontDesc": "Я кусаю яблуко на сніданок. / Вона вкусила свій палець. / Вона багато разів гризла нігті."
+  },
+  {
+    "backDesc": "My wound bleeds heavily. / He bled after the fall. / He has bled from similar wounds before.",
+    "frontDesc": "Моя рана сильно кровоточить. / Він стікав кров’ю після падіння. / Він уже стікав кров’ю від подібних ран раніше."
+  },
+  {
+    "backDesc": "I blow out the candle on the cake. / He blew up the balloon. / He has blown many balloons for parties.",
+    "frontDesc": "Я задуваю свічку на торті. / Він надув повітряну кулю. / Він надув багато кульок для вечірок."
+  },
+  {
+    "backDesc": "I breed dogs at home. / She bred horses on the farm. / She has bred different animals over the years.",
+    "frontDesc": "Я розводжу собак удома. / Вона розводила коней на фермі. / За ці роки вона розводила різних тварин."
+  },
+  {
+    "backDesc": "I broadcast a radio show. / He broadcast the news live. / He has broadcast important announcements recently.",
+    "frontDesc": "Я транслюю радіопередачу. / Він транслював новини наживо. / Нещодавно він транслював важливі оголошення."
+  },
+  {
+    "backDesc": "I burn a candle during dinner. / She burnt the papers in the furnace. / She has burnt old letters before.",
+    "frontDesc": "Я палю свічку під час вечері. / Вона спалила папери у печі. / Вона вже спалювала старі листи."
+  },
+  {
+    "backDesc": "I burst the balloon during play. / He burst into laughter. / He has burst into laughter many times.",
+    "frontDesc": "Я луснув кулю під час гри. / Він вибухнув сміхом. / Він багато разів вибухав сміхом."
+  },
+  {
+    "backDesc": "I forgive you for the mistake. / She forgave him for everything. / She has forgiven many people in her life.",
+    "frontDesc": "Я прощаю тобі помилку. / Вона пробачила йому за все. / Вона пробачила багатьох людей у своєму житті."
+  },
+  {
+    "backDesc": "I freeze fruits for later. / He froze the water in the fridge. / He has frozen water for ice cubes.",
+    "frontDesc": "Я заморожую фрукти на потім. / Він заморозив воду в холодильнику. / Він заморожував воду для льоду."
+  },
+  {
+    "backDesc": "I clung to my mother during the storm. / He clung to his beliefs. / He has clung to them all this time.",
+    "frontDesc": "Я чіплявся за матір під час шторму. / Він чіплявся за свої переконання. / Він тримався їх увесь цей час."
+  },
+  {
+    "backDesc": "I creep through the grass to avoid being noticed. / She crept quietly. / She has crept in silently before.",
+    "frontDesc": "Я повзу по траві, щоб мене не помітили. / Вона повзла тихо. / Вона вже раніше безшумно повзла всередину."
+  },
+  {
+    "backDesc": "I deal in stocks on the market. / He dealt the goods in the store. / He has dealt in various products before.",
+    "frontDesc": "Я торгую акціями на біржі. / Він торгував товарами у крамниці. / Він уже торгував різними товарами."
+  },
+  {
+    "backDesc": "I dig a trench in the garden. / She dug to the well. / She has dug many holes for planting.",
+    "frontDesc": "Я копаю рів у саду. / Вона докопалася до колодязя. / Вона викопала багато ям для посадки."
+  },
+  {
+    "backDesc": "I alighted on a bench in the park. / He alit on the hill. / He has alighted there a few times.",
+    "frontDesc": "Я присів на лавку в парку. / Він зійшов на пагорб. / Він кілька разів там зупинявся."
+  },
+  {
+    "backDesc": "Misfortune befell that family. / He befell bad luck. / Bad luck has befallen him recently.",
+    "frontDesc": "Ту сім’ю спіткало нещастя. / Йому трапилася невдача. / Нещодавно на нього звалилася невдача."
+  },
+  {
+    "backDesc": "Every person can beget offspring. / He begot an heir. / He has begotten two children.",
+    "frontDesc": "Кожна людина може народити нащадків. / Він став батьком спадкоємця. / Він став батьком двох дітей."
+  },
+  {
+    "backDesc": "I behold the sunset. / She beheld a beautiful landscape. / She has beheld many breathtaking views.",
+    "frontDesc": "Я споглядаю захід сонця. / Вона милувалася прекрасним краєвидом. / Вона бачила багато захопливих краєвидів."
+  },
+  {
+    "backDesc": "I beseech you for help. / He besought forgiveness. / He has besought kindness on many occasions.",
+    "frontDesc": "Я благаю тебе про допомогу. / Він благав про прощення. / Він багато разів благав про милосердя."
+  },
+  {
+    "backDesc": "He was beset by financial problems. / He beset his targets. / He has beset them with challenges.",
+    "frontDesc": "Його обсіли фінансові проблеми. / Він оточив свої цілі. / Він обсипав їх викликами."
+  },
+  {
+    "backDesc": "Parents chided the child for disobedience. / He chided him publicly. / He has chidden him for his behavior.",
+    "frontDesc": "Батьки дорікали дитині за неслухняність. / Він публічно його дорікав. / Він дорікав йому за його поведінку."
+  },
+  {
+    "backDesc": "I clothe myself for winter. / She clad herself elegantly. / She has clad herself in fine clothes before.",
+    "frontDesc": "Я одягаюся на зиму. / Вона вбралася елегантно. / Вона вже вдягалася у вишуканий одяг раніше."
+  },
+  {
+    "backDesc": "I dream of vacations. / He dreamt of a trip. / He has dreamt about traveling the world.",
+    "frontDesc": "Я мрію про відпустку. / Він мріяв про подорож. / Він мріяв про подорож світом."
+  },
+  {
+    "backDesc": "I feed the dog every day. / She fed the birds in the garden. / She has fed them every morning.",
+    "frontDesc": "Я годую собаку щодня. / Вона годувала птахів у саду. / Щоранку вона їх годувала."
+  },
+  {
+    "backDesc": "This shirt fits me perfectly. / He fit into the team. / He has fit in well since day one.",
+    "frontDesc": "Ця сорочка мені чудово підходить. / Він вписався в команду. / Він добре вписався з першого дня."
+  },
+  {
+    "backDesc": "I flee from the rain. / She fled from home. / She has fled difficult situations before.",
+    "frontDesc": "Я тікаю від дощу. / Вона втекла з дому. / Вона вже раніше тікала від складних ситуацій."
+  },
+  {
+    "backDesc": "I fling a stone into the water. / He flung the bottle out the window. / He has flung objects in anger before.",
+    "frontDesc": "Я жбурляю камінь у воду. / Він викинув пляшку у вікно. / Він уже жбурляв речі в приступі гніву."
+  },
+  {
+    "backDesc": "I forbid smoking in the building. / She forbade the children from watching TV. / She has forbidden them multiple times.",
+    "frontDesc": "Я забороняю палити в будівлі. / Вона заборонила дітям дивитися телевізор. / Вона неодноразово їм забороняла."
+  },
+  {
+    "backDesc": "I forecast rain for tomorrow. / He forecast a price increase. / He has forecast such changes accurately.",
+    "frontDesc": "Я прогнозую дощ на завтра. / Він передбачив підвищення цін. / Він точно передбачав такі зміни."
+  },
+  {
+    "backDesc": "I forsake old habits. / She forsook her dreams. / She has forsaken them all.",
+    "frontDesc": "Я відмовляюся від старих звичок. / Вона зреклася своїх мрій. / Вона зреклася їх усіх."
+  },
+  {
+    "backDesc": "I kneel before the altar. / He knelt in a gesture of respect. / He has knelt there many times.",
+    "frontDesc": "Я стаю навколішки перед вівтарем. / Він став навколішки на знак пошани. / Він багато разів там ставав навколішки."
+  },
+  {
+    "backDesc": "I knit a sweater for winter. / She knitted a scarf. / She has knitted many scarves before.",
+    "frontDesc": "Я в’яжу светр на зиму. / Вона в’язала шарф. / Вона вже в’язала багато шарфів."
+  },
+  {
+    "backDesc": "I lay the book on the table. / She laid the keys on the shelf. / She has laid them there many times.",
+    "frontDesc": "Я кладу книгу на стіл. / Вона поклала ключі на полицю. / Вона багато разів клала їх туди."
+  },
+  {
+    "backDesc": "I lead the team. / He led the company for many years. / He has led numerous successful projects.",
+    "frontDesc": "Я веду команду. / Він керував компанією багато років. / Він керував багатьма успішними проєктами."
+  },
+  {
+    "backDesc": "I lean over the book. / He leant over the table. / He has leaned over it for hours.",
+    "frontDesc": "Я нахиляюся над книгою. / Він нахилився над столом. / Він годинами нахилявся над ним."
+  },
+  {
+    "backDesc": "I leap on the rope. / He leapt over the fence. / He has leapt across many obstacles.",
+    "frontDesc": "Я стрибаю на мотузці. / Він перестрибнув через паркан. / Він перестрибував через багато перепон."
+  },
+  {
+    "backDesc": "I light the room's light. / He lit the light in the evening. / He has lit it every night since then.",
+    "frontDesc": "Я вмикаю світло в кімнаті. / Він увімкнув світло ввечері. / З тих пір він вмикав його щоночі."
+  },
+  {
+    "backDesc": "I mistake in the calculations. / He mistook the decision. / He has mistaken people's intentions before.",
+    "frontDesc": "Я помиляюся в розрахунках. / Він помилився у рішенні. / Він раніше неправильно розумів наміри людей."
+  },
+  {
+    "backDesc": "I mow the grass in the garden. / He mowed the lawn yesterday. / He has mown it regularly.",
+    "frontDesc": "Я кошу траву в саду. / Він учора скосив газон. / Він регулярно його косить."
+  },
+  {
+    "backDesc": "I overcome difficulties every day. / He overcame his fears. / He has overcome many obstacles.",
+    "frontDesc": "Я щодня долаю труднощі. / Він подолав свої страхи. / Він подолав багато перешкод."
+  },
+  {
+    "backDesc": "I partake in meetings. / He partook in the conference. / He has partaken in several events recently.",
+    "frontDesc": "Я беру участь у засіданнях. / Він брав участь у конференції. / Нещодавно він узяв участь у кількох подіях."
+  },
+  {
+    "backDesc": "I plead for help. / He pled for forgiveness. / He has pled for mercy many times.",
+    "frontDesc": "Я прошу про допомогу. / Він благав про прощення. / Він багато разів благав про милість."
+  },
+  {
+    "backDesc": "I prove my innocence. / He proved his theory. / He has proven it beyond doubt.",
+    "frontDesc": "Я доводжу свою невинність. / Він довів свою теорію. / Він довів це без сумнівів."
+  },
+  {
+    "backDesc": "I saw wood in the workshop. / He sawed planks for a new boat. / He has sawn many pieces of wood.",
+    "frontDesc": "Я пилю деревину в майстерні. / Він розпиляв дошки для нового човна. / Він розпиляв багато деревини."
+  },
+  {
+    "backDesc": "I seek the keys at home. / He sought a solution to the problem. / He has sought answers everywhere.",
+    "frontDesc": "Я шукаю ключі вдома. / Він шукав розв’язання проблеми. / Він шукав відповіді всюди."
+  },
+  {
+    "backDesc": "I sew clothes in my atelier. / He sewed a shirt for several hours. / He has sewn many garments.",
+    "frontDesc": "Я шию одяг у своєму ательє. / Він шиїв сорочку кілька годин. / Він пошив багато речей."
+  },
+  {
+    "backDesc": "I shear sheep on the farm. / He sheared a sheep yesterday. / He has shorn many sheep this season.",
+    "frontDesc": "Я стрижу овець на фермі. / Він учора постриг вівцю. / Цього сезону він постриг багато овець."
+  },
+  {
+    "backDesc": "My sweater shrinks after washing. / It shrank in high temperature. / It has shrunk too much.",
+    "frontDesc": "Мій светр зсідається після прання. / Він зсівся при високій температурі. / Він надто зменшився."
+  },
+  {
+    "backDesc": "I slay rodents in the basement. / He slew the monster in the forest. / He has slain many creatures in his stories.",
+    "frontDesc": "Я знищую гризунів у підвалі. / Він убив чудовисько в лісі. / У своїх історіях він убив багато істот."
+  },
+  {
+    "backDesc": "The kitchen stinks of rotten food. / It stank after a hot day. / It has stunk for hours.",
+    "frontDesc": "На кухні тхне зіпсованою їжею. / Після спекотного дня смерділо. / Вже кілька годин стоїть сморід."
+  },
+  {
+    "backDesc": "I stride with confidence. / He strode quickly, arriving on time. / He has stridden through many challenges.",
+    "frontDesc": "Я крокую з упевненістю. / Він швидко йшов і прибув вчасно. / Він пройшов через багато випробувань."
+  },
+  {
+    "backDesc": "I strike the ball towards the goal. / He struck the door hard. / He has struck fear into his opponents.",
+    "frontDesc": "Я вдаряю м'яч у напрямку воріт. / Він сильно вдарив у двері. / Він наганяв страх на своїх суперників."
+  },
+  {
+    "backDesc": "I string beads on a string. / He strung the lamp on the wall. / He has strung decorations before.",
+    "frontDesc": "Я нанизую бісер на нитку. / Він підвісив лампу на стіну. / Він уже підвішував прикраси раніше."
+  },
+  {
+    "backDesc": "I strive to achieve the goal. / He strove for success for years. / He has striven to reach the top.",
+    "frontDesc": "Я прагну досягти мети. / Він роками прагнув успіху. / Він прагнув дістатися вершини."
+  },
+  {
+    "backDesc": "I swing on the swing. / He swung on the balcony. / He has swung on that rope many times.",
+    "frontDesc": "Я гойдаюся на гойдалці. / Він гойдався на балконі. / Він багато разів гойдався на тій мотузці."
+  },
+  {
+    "backDesc": "I tear the paper to shred it. / He tore the canvas with a knife. / He has torn many papers accidentally.",
+    "frontDesc": "Я рву папір, щоб подрібнити його. / Він порвав полотно ножем. / Він випадково порвав багато паперів."
+  },
+  {
+    "backDesc": "I thrust the door to open it. / He thrust the door hard. / He has thrust it open before.",
+    "frontDesc": "Я штовхаю двері, щоб відчинити їх. / Він сильно штовхнув двері. / Він уже штовхав їх, щоб відчинити."
+  },
+  {
+    "backDesc": "I tread carefully on the wet floor. / He trod with a confident stride. / He has trodden this path before.",
+    "frontDesc": "Я обережно ступаю по мокрій підлозі. / Він упевнено крокував. / Він уже ходив цим шляхом."
+  },
+  {
+    "backDesc": "I undo the move I made. / He undid the changes in the document. / He has undone them completely.",
+    "frontDesc": "Я скасовую свій крок. / Він скасував зміни в документі. / Він повністю їх скасував."
+  },
+  {
+    "backDesc": "I weave a scarf on the knitting needles. / He wove a rug in his workshop. / He has woven several rugs now.",
+    "frontDesc": "Я в’яжу шарф на спицях. / Він виткав килим у своїй майстерні. / Він уже виткав кілька килимів."
+  },
+  {
+    "backDesc": "I weep in sorrow. / He wept after the breakup. / He has wept many tears.",
+    "frontDesc": "Я плачу з горя. / Він плакав після розриву. / Він пролив багато сліз."
+  },
+  {
+    "backDesc": "I wind the watch every morning. / He wound the strings into a tape. / He has wound them neatly.",
+    "frontDesc": "Я заводжу годинник щоранку. / Він намотав струни на стрічку. / Він акуратно їх намотав."
+  },
+  {
+    "backDesc": "I withdraw from the discussion. / He withdrew from the project. / He has withdrawn completely.",
+    "frontDesc": "Я відступаю від обговорення. / Він вийшов із проєкту. / Він повністю відійшов."
+  },
+  {
+    "backDesc": "I withstand difficult conditions. / He withstood the strong wind. / He has withstood many storms.",
+    "frontDesc": "Я витримую складні умови. / Він витримав сильний вітер. / Він пережив багато штормів."
+  },
+  {
+    "backDesc": "I wring out wet towels. / He wrung juice out of fruits. / He has wrung out many towels.",
+    "frontDesc": "Я викручую мокрі рушники. / Він віджимав сік із фруктів. / Він викрутив багато рушників."
+  },
+  {
+    "backDesc": "I freeze food in the freezer. / He froze water for the freezer. / He has frozen enough water for ice.",
+    "frontDesc": "Я заморожую їжу в морозилці. / Він заморозив воду для морозилки. / Він заморозив достатньо води для льоду."
+  },
+  {
+    "backDesc": "I hang a picture on the wall. / He hung the lamp in the room. / He has hung many pictures around the house.",
+    "frontDesc": "Я вішаю картину на стіну. / Він повісив лампу в кімнаті. / Він повісив багато картин по всьому будинку."
+  }
+]

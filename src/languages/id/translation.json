@@ -142,5 +142,7 @@
   "turn_on_shadows": "Nyalakan bayangan",
   "turn_on_automatic_audio": "Nyalakan audio otomatis",
   "premium_account": "Akun Premium",
-  "active": "Aktif"
+  "active": "Aktif",
+  "code": "Kode",
+  "wrong_code": "Kode salah"
 }
