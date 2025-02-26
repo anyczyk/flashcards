@@ -26,6 +26,8 @@ function ViewFlashcards({ clearInsomnia, mainHomePageLoad, setMainHomePageLoad }
         setPlayFlashcards
     } = useContext(FlashcardContext);
 
+    console.log("categories ccvv: ", categories);
+
     const newOrders = getLocalStorage('categoryOrder');
 
     const isAutoPlayCancelledRef = useRef(false);

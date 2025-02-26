@@ -73,6 +73,7 @@ const CategoryList = ({
     };
 
 
+    console.log("ccc: ", orderedCategories.length);
     return (
         selectedCategory === null && selectedSuperCategory === null ? (
             <>

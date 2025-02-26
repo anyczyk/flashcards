@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import {FlashcardContext} from "../../../context/FlashcardContext";
 import {getLocalStorage, removeLocalStorage, setLocalStorage} from "../../../utils/storage";
 import {useTranslation} from "react-i18next";
+import {showInterstitial} from "../../../services/admobService";
 
 const PremiumBrowser = () => {
     const { t } = useTranslation();
@@ -11,6 +12,8 @@ const PremiumBrowser = () => {
     const [codeValue, setCodeValue] = useState("");
     // Precomputed SHA-256 hash dla ciągu "offpremium"
     const CORRECT_HASH_OFF_PREMIUM = "03e80960a61c1255174c7e03083fc50017b301fe2d8593e8b8731d1019e31718";
+    // Precomputed SHA-256 hash dla ciągu "showad"
+    const SHOW_AD = "4e976964e42813f0235f36f97268b19f58db72ad4c73f62a49a5d7a87c44195a";
 
 
     const orderProduct = () => {
@@ -38,11 +41,12 @@ const PremiumBrowser = () => {
         // alert('CORRECT_HASH_OFF_PREMIUM: ' + CORRECT_HASH_OFF_PREMIUM);
         if (hashedCode === CORRECT_HASH_OFF_PREMIUM) {
             restoreProduct();
-            setCodeValue('');
+        } else if(hashedCode === SHOW_AD) {
+            alert("Ad sample...");
         } else {
             alert(t('wrong_code'));
-            setCodeValue('');
         }
+        setCodeValue('');
     }
 
     return (

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget android-versionCode="10121" id="com.flasho.flasho" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget android-versionCode="10145" id="com.flasho.flasho" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Flasho</name>
     <description>Sample Apache Cordova App</description>
     <author email="dev@cordova.apache.org" href="https://cordova.apache.org">
@@ -14,11 +14,13 @@
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarPadding" value="true" />
     <preference name="Orientation" value="portrait" />
+
     <preference name="SplashScreen" value="screen" />
     <preference name="AutoHideSplashScreen" value="true" />
     <preference name="SplashScreenDelay" value="3000" />
-    <preference name="FadeSplashScreen" value="false" />
-    <preference name="ShowSplashScreenSpinner" value="false" />
+    <preference name="FadeSplashScreen" value="true" />
+    <preference name="ShowSplashScreenSpinner" value="true" />
+
     <preference name="AndroidPlayBillingMode" value="billingv6" />
     <preference name="Billing" value="true" />
     <plugin name="cordova-plugin-file" spec="^6.0.2" />
@@ -30,7 +32,9 @@
     <plugin name="cordova-plugin-purchase" spec="^13.12.1" />
     <plugin name="cordova-plugin-statusbar" spec="^2.4.3" />
     <plugin name="cordova-plugin-console" source="npm" spec="^1.1.0" />
+
     <platform name="android">
+        <preference name="android-minSdkVersion" value="26" />
         <config-file parent="/*" target="AndroidManifest.xml">
             <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
             <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -44,8 +48,74 @@
         <icon density="xhdpi" src="resources/android/icon/mipmap-xhdpi/ic_launcher.png" />
         <icon density="xxhdpi" src="resources/android/icon/mipmap-xxhdpi/ic_launcher.png" />
         <icon density="xxxhdpi" src="resources/android/icon/mipmap-xxxhdpi/ic_launcher.png" />
-        <icon src="resources/android/icon/mipmap-hdpi/ic_launcher_adaptive.xml" target="android_adaptive_icon" />
-        <preference name="AndroidWindowSplashScreenAnimatedIcon" value="resources/splash.png" />
+
+        <icon density="ldpi-v26" src="resources/android/icon/mipmap-ldpi-v26/ic_launcher.png" />
+        <icon density="mdpi-v26" src="resources/android/icon/mipmap-mdpi-v26/ic_launcher.png" />
+        <icon density="hdpi-v26" src="resources/android/icon/mipmap-hdpi-v26/ic_launcher.png" />
+        <icon density="xhdpi-v26" src="resources/android/icon/mipmap-xhdpi-v26/ic_launcher.png" />
+        <icon density="xxhdpi-v26" src="resources/android/icon/mipmap-xxhdpi-v26/ic_launcher.png" />
+        <icon density="xxxhdpi-v26" src="resources/android/icon/mipmap-xxxhdpi-v26/ic_launcher.png" />
+
+        <icon density="ldpi" src="resources/android/icon/mipmap-ldpi/ic_launcher_adaptive.xml" target="android_adaptive_icon" />
+        <icon density="mdpi" src="resources/android/icon/mipmap-mdpi/ic_launcher_adaptive.xml" target="android_adaptive_icon" />
+        <icon density="hdpi" src="resources/android/icon/mipmap-hdpi/ic_launcher_adaptive.xml" target="android_adaptive_icon" />
+        <icon density="xhdpi" src="resources/android/icon/mipmap-xhdpi/ic_launcher_adaptive.xml" target="android_adaptive_icon" />
+        <icon density="xxhdpi" src="resources/android/icon/mipmap-xxhdpi/ic_launcher_adaptive.xml" target="android_adaptive_icon" />
+        <icon density="xxxhdpi" src="resources/android/icon/mipmap-xxxhdpi/ic_launcher_adaptive.xml" target="android_adaptive_icon" />
+
+<!--        <resource-file src="resources/android/splash_universal.xml" target="app/src/main/res/drawable/splash_universal.xml" />-->
+<!--        <resource-file src="resources/android/your_icon.xml" target="app/src/main/res/drawable/your_icon.xml" />-->
+
+        <resource-file src="resources/android/icon/mipmap-ldpi/ic_launcher_background.png" target="app/src/main/res/mipmap-ldpi/ic_launcher_background.png" />
+        <resource-file src="resources/android/icon/mipmap-mdpi/ic_launcher_background.png" target="app/src/main/res/mipmap-mdpi/ic_launcher_background.png" />
+        <resource-file src="resources/android/icon/mipmap-hdpi/ic_launcher_background.png" target="app/src/main/res/mipmap-hdpi/ic_launcher_background.png" />
+        <resource-file src="resources/android/icon/mipmap-xhdpi/ic_launcher_background.png" target="app/src/main/res/mipmap-xhdpi/ic_launcher_background.png" />
+        <resource-file src="resources/android/icon/mipmap-xxhdpi/ic_launcher_background.png" target="app/src/main/res/mipmap-xxhdpi/ic_launcher_background.png" />
+        <resource-file src="resources/android/icon/mipmap-xxxhdpi/ic_launcher_background.png" target="app/src/main/res/mipmap-xxxhdpi/ic_launcher_background.png" />
+
+        <resource-file src="resources/android/icon/mipmap-ldpi/ic_launcher_foreground.png" target="app/src/main/res/mipmap-ldpi-v26/ic_launcher_foreground.png" />
+        <resource-file src="resources/android/icon/mipmap-mdpi/ic_launcher_foreground.png" target="app/src/main/res/mipmap-mdpi-v26/ic_launcher_foreground.png" />
+        <resource-file src="resources/android/icon/mipmap-hdpi/ic_launcher_foreground.png" target="app/src/main/res/mipmap-hdpi-v26/ic_launcher_foreground.png" />
+        <resource-file src="resources/android/icon/mipmap-xhdpi/ic_launcher_foreground.png" target="app/src/main/res/mipmap-xhdpi-v26/ic_launcher_foreground.png" />
+        <resource-file src="resources/android/icon/mipmap-xxhdpi/ic_launcher_foreground.png" target="app/src/main/res/mipmap-xxhdpi-v26/ic_launcher_foreground.png" />
+        <resource-file src="resources/android/icon/mipmap-xxxhdpi/ic_launcher_foreground.png" target="app/src/main/res/mipmap-xxxhdpi-v26/ic_launcher_foreground.png" />
+
+        <resource-file src="resources/android/icon/mipmap-ldpi-v26/ic_launcher_background.png" target="app/src/main/res/mipmap-ldpi-v26/ic_launcher_background.png" />
+        <resource-file src="resources/android/icon/mipmap-mdpi-v26/ic_launcher_background.png" target="app/src/main/res/mipmap-mdpi-v26/ic_launcher_background.png" />
+        <resource-file src="resources/android/icon/mipmap-hdpi-v26/ic_launcher_background.png" target="app/src/main/res/mipmap-hdpi-v26/ic_launcher_background.png" />
+        <resource-file src="resources/android/icon/mipmap-xhdpi-v26/ic_launcher_background.png" target="app/src/main/res/mipmap-xhdpi-v26/ic_launcher_background.png" />
+        <resource-file src="resources/android/icon/mipmap-xxhdpi-v26/ic_launcher_background.png" target="app/src/main/res/mipmap-xxhdpi-v26/ic_launcher_background.png" />
+        <resource-file src="resources/android/icon/mipmap-xxxhdpi-v26/ic_launcher_background.png" target="app/src/main/res/mipmap-xxxhdpi-v26/ic_launcher_background.png" />
+
+        <resource-file src="resources/android/icon/mipmap-ldpi/ic_launcher_foreground.png" target="app/src/main/res/mipmap-ldpi/ic_launcher_foreground.png" />
+        <resource-file src="resources/android/icon/mipmap-mdpi/ic_launcher_foreground.png" target="app/src/main/res/mipmap-mdpi/ic_launcher_foreground.png" />
+        <resource-file src="resources/android/icon/mipmap-hdpi/ic_launcher_foreground.png" target="app/src/main/res/mipmap-hdpi/ic_launcher_foreground.png" />
+        <resource-file src="resources/android/icon/mipmap-xhdpi/ic_launcher_foreground.png" target="app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.png" />
+        <resource-file src="resources/android/icon/mipmap-xxhdpi/ic_launcher_foreground.png" target="app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png" />
+        <resource-file src="resources/android/icon/mipmap-xxxhdpi/ic_launcher_foreground.png" target="app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png" />
+
+        <splash src="resources/android/splash/drawable-land-hdpi-screen.png" density="land-hdpi"/>
+        <splash src="resources/android/splash/drawable-land-ldpi-screen.png" density="land-ldpi"/>
+        <splash src="resources/android/splash/drawable-land-mdpi-screen.png" density="land-mdpi"/>
+        <splash src="resources/android/splash/drawable-land-xhdpi-screen.png" density="land-xhdpi"/>
+        <splash src="resources/android/splash/drawable-land-xxhdpi-screen.png" density="land-xxhdpi"/>
+        <splash src="resources/android/splash/drawable-land-xxxhdpi-screen.png" density="land-xxxhdpi"/>
+
+        <splash src="resources/android/splash/drawable-port-hdpi-screen.png" density="port-hdpi"/>
+        <splash src="resources/android/splash/drawable-port-ldpi-screen.png" density="port-ldpi"/>
+        <splash src="resources/android/splash/drawable-port-mdpi-screen.png" density="port-mdpi"/>
+        <splash src="resources/android/splash/drawable-port-xhdpi-screen.png" density="port-xhdpi"/>
+        <splash src="resources/android/splash/drawable-port-xxhdpi-screen.png" density="port-xxhdpi"/>
+        <splash src="resources/android/splash/drawable-port-xxxhdpi-screen.png" density="port-xxxhdpi"/>
+
+<!--        <preference name="AndroidWindowSplashScreenAnimatedIcon" value="app/src/main/res/drawable/your_icon.xml" />-->
+        <preference name="AndroidWindowSplashScreenAnimatedIcon" value="resources/splashscreen.png" />
+<!--        <preference name="AndroidWindowSplashScreenAnimatedIcon" value="resources/android/your_icon.xml" />-->
+<!--        <preference name="AndroidWindowSplashScreenAnimatedIcon" value="resources/splash.png" />-->
+<!--        <preference name="AndroidWindowSplashScreenAnimatedIcon" value="res/screen/android/splashscreen.xml" />-->
+<!--        <preference name="AndroidWindowSplashScreenAnimatedIcon" value="res/drawable/your_icon.xml" />-->
+<!--        <icon src="resources/android/icon/mipmap-hdpi/ic_launcher_adaptive.xml" target="android_adaptive_icon" />-->
+
         <preference name="billing-key" value="MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxgjxHaEa0yoFyMX0mjLTfEq4RZklkqN52Me7q3yfMk/6fKVCS/3LwIKaYMMg3JAbxbuy4zrAr+f3PCOx7KKV4ds3OErvU9wqXNXt1cKk4dHDjuuxAl2Uj3/rys92/BlZht3dmR1Z9CNBcoEzQ8xeBzXtKs4CkBFz0yS0mWaQWJEipdFPJsji1i+QwMWJ7t63LNdr1+aTWe5qDoycW2HHGo7ak0ye6+x1bkah9ybxf3R8R/RR9EOiDK4bxFRah6GkmheC0gZ4ESmzPfiC4gC2ib/RHvoNej8noLmEhivDnfvOAxjI4udKfAi3v1BaCJkIIZ9/y7N7Le1YSoDedYZ7JQIDAQAB" />
     </platform>
 </widget>
